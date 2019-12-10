@@ -40,7 +40,7 @@ November 8, 2019
         - [免責事項](#免責事項)
     - [目次](#目次)
     - [イントロダクション](#イントロダクション)
-    - [第１章：箱の外から考えよう (Think Outside the Box)](#第１章箱の外から考えよう-think-outside-the-box)
+    - [第１章：既成概念にとらわれずに考える (Think Outside the Box)](#第１章既成概念にとらわれずに考える-think-outside-the-box)
         - [Petrus](#petrus)
         - [Roux](#roux)
         - [ZZ](#zz)
@@ -351,7 +351,7 @@ Figure 1: Example of official scramble sheet.
 
 -->
 
-## 1.5. 第１章：箱の外から考えよう (Think Outside the Box)
+## 1.5. 第１章：既成概念にとらわれずに考える (Think Outside the Box)
 <!--
 Chapter 1
 Think Outside the Box
