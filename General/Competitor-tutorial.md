@@ -410,6 +410,10 @@ It’s not a good feeling to be blinded during your official solves.
 Make sure to adhere with the WCA Regulations and ask a Delegate!
 -->
 ## 翻訳
+コミュニティによって翻訳版が作られています。これらの翻訳はWCAスタッフメンバーによって確認されたものですが、公式のものではありません。  
+もしオリジナル（英語版）のものと翻訳版に意味の違いがあった場合、オリジナル（英語版）が優先します。[WCA規則](https://www.worldcubeassociation.org/regulations/translations/)においても同様のものとします。
+
+- [ロシア語版 (русский)](https://drive.google.com/a/worldcubeassociation.org/file/d/0Byp2NpItOfD_YTk0TTkwNmNaSll6NDAtQjVFWkIwS0ktZHFz/view?usp=sharing) by Timofei Vikhrianov (Тимофей Вихрянов)
 <!--
 Translations
 The following translations have been contributed by the community. They have been
@@ -419,4 +423,6 @@ English text prevails. This is the same procedure as for the WCA Regulations.
 Russian (русский) - Timofei Vikhrianov (Тимофей Вихрянов) - click
 11
 -->
+---
+訳注：
 [^1]: 2020年01月より、「3x3x3足」競技が廃止されるため、公式協議は17種目になります。
