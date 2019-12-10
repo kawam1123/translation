@@ -1,6 +1,7 @@
 theme: jekyll-theme-slate
 title: Translation
 description: Translation for Speedcubing
+google_analytics: UA-141207758-2
 minimal:
   social_links:
     twitter: kawam1123
