@@ -12,15 +12,52 @@ Sebastiano Tronto
 September 15, 2017
 2
 -->
+
 # 最小手数競技入門 - ルービックキューブを少ない手順で解く
-Written by Sebastiano Tronto  
+**Written by Sebastiano Tronto**  
+Fewest Moves Tutorial - Solving a Rubik’s Cube with as few moves as possible  
 version 2  
-September 15, 2017
+September 15, 2017  
+Original document: [Fewest Moves Tutorial](https://fmcsolves.cubing.net/fmc_tutorial_ENG.pdf)
 
 Translation by kawam1123  
+version 0.0  
 November 8, 2019
 
-## 第二版への序文 (Preface to the Second Edition)
+<!-- TOC -->
+## 目次
+- [最小手数競技入門 - ルービックキューブを少ない手順で解く](#最小手数競技入門---ルービックキューブを少ない手順で解く)
+    - [第二版への序文 (Preface to the Second Edition)](#第二版への序文-preface-to-the-second-edition)
+    - [本書について (About this Book)](#本書について-about-this-book)
+        - [前提条件](#前提条件)
+        - [ソルブ実例について](#ソルブ実例について)
+        - [謝辞](#謝辞)
+        - [免責事項](#免責事項)
+    - [目次](#目次)
+    - [イントロダクション](#イントロダクション)
+    - [第１章：箱の外から考えよう (Think Outside the Box)](#第１章箱の外から考えよう-think-outside-the-box)
+        - [Petrus](#petrus)
+        - [Roux](#roux)
+        - [ZZ](#zz)
+        - [CFOPとFreeFOP](#cfopとfreefop)
+        - [KEYHOLE F2L](#keyhole-f2l)
+        - [Heise](#heise)
+        - [第２章 ソルブの進め方](#第２章-ソルブの進め方)
+    - [第３章　高度なツール (Advanced Tools)](#第３章　高度なツール-advanced-tools)
+    - [第４章　その他の手法 (Some Other Methods)](#第４章　その他の手法-some-other-methods)
+    - [第５章　練習方法 (How To Practice)](#第５章　練習方法-how-to-practice)
+    - [第６章　公式大会 (8)In Competition)](#第６章　公式大会-8in-competition)
+    - [付録A　その他の参考資料 (Other Resources)](#付録a　その他の参考資料-other-resources)
+    - [付録B　回転記号 (Notation)](#付録b　回転記号-notation)
+    - [付録C　LLアルゴリズム (Last Layer Algorithms)](#付録c　llアルゴリズム-last-layer-algorithms)
+
+<!-- /TOC -->
+
+## 1.1. 第二版への序文 (Preface to the Second Edition)
+数年の間、このチュートリアルの新しいバージョンを作ろうと考えていました。いくつか修正や追加の必要な点があり、また、私自身の考え方が変わったことによって変更すべき点などがありました。  
+LaTeXで書き直そうとも考えました。LaTexのドキュメントは見た目がとても良くなるからです。ただし、唯一の欠点は、そうしてしまうと翻訳が難しくなるということです。このチュートリアルが高く評価されており、多くの他言語に翻訳をしてくれて、世界中で読めるようになっていくことを非常に嬉しく思います。翻訳者の皆さんそれぞれにお礼を言いたいのですが、ほとんどの方の名前を忘れてしまいました。  
+第二版をずっと後回しにしていました。大きな理由は、時間がなかったことではなく、モチベーションが足りなかったことです。2017年にパリで行われた世界大会 [^1]では、このチュートリアルについて感謝を言ってくださる方に多くお会いして、必要なモチベーションを得ることができました。全ての人が見返りを求めずにほかの人を助けている。このコミュニティの一員であることの素晴らしさを思い出して、私も再び「自分のやること」をやりたいと思いました。
+
 <!--
 Preface to the Second Edition
 For a couple of years I have been thinking about making a new version of this tutorial. There
@@ -35,6 +72,21 @@ much time, but I also lacked motivation. At World Championship 2017 in Paris I h
 many people who thanked me for this tutorial, and this gave me the motivation I needed. I
 remembered how nice it is to be part of such a nice community where everybody helps each
 other without asking anything back, and I wanted to do my part - again.
+-->
+初版からの変更点のほとんどは見た目に関することです。最初のものよりけっこう長くなっていることに気づくかもしれません。この違いは、画像と空白ページによるものがほとんどです。文章を並べ替えて、単語のミスを修正しました（私の英語力はこの３年で成長してます！）。いくつか新しいことも加えたかもしれません。  
+次のような点を追加しました。
+
+- 2.3.3節：「その他のエッジ3-cycle」（このケースについてはもっと書くことがありますが）
+- 2.4.8節：「3エッジとコーナー」 インサーションについて
+- 3.6節：「ズレたセンター(skew centers)」について
+- 付録：回転記号とLLアルゴリズム
+
+ほかにやったのは、ソルブ例にいい感じの箱をつけたことです。（下のほうをご覧ください）  
+主な理由は、この本を自己完結型にしたいと思ったからです。初版では多くのソルブが単にリンクされていただけでした。ハイパーリンクをつけていますが、脚注に完全なリンクもあわせて書いています。これにより、この本は電子機器と紙の両方で読めるようになっています。  
+パーツの色について話すことがありますが、配色は[標準配色](https://www.speedsolving.com/wiki/index.php/Western_Color_Scheme) [^2]で、標準の向き（白がU、緑がF）でスクランブルすることを想定しています。  
+この第二版について言うことはこれぐらいです。次に進んでチュートリアルを楽しんでください！
+]
+<!--
 The changes since the first version are mostly aesthetical. You may have notice that this
 book is way longer than the first one: the difference is mostly pictures and blank pages. I have
 rearranged a few sentences, corrected a few mistakes (my English got better in the last 3 years!)
@@ -57,7 +109,13 @@ I don’t have anything else to say about this second edition. Go on and enjoy t
 http://www.speedsolving.com/wiki/index.php/Western_Color_Scheme
 3
 -->
-## 本書について (About this Book)
+
+## 1.2. 本書について (About this Book)
+この本は、WCA公式大会の公式競技のひとつである「最小手数競技（FMC、Fewest Moves Challenge）」と呼ばれる競技でよい結果を出すための指針となることを目的としています。もしあなたが世界キューブ協会 (World Cube Association) やスピードキューブの公式大会について知らないのであれば、少し先のイントロダクションを読んでみてください。  
+「最小手数競技」は、特定の状態の(スクランブルされた)ルービックキューブをできる限り短い手数で解くものです。使えるのはいくつかのキューブ、ペン、そして紙だけです。コンピュータープログラムの利用は禁止されており、通常は時間制限があります。（WCA公式大会においては1時間、あるオンラインのものでは1週間)  
+したがって、一般的なアルゴリズムはこの本では説明しません。一般的なアルゴリズムが便利ではないということは、この本の残りの部分で繰り返し述べられており、次のようにまとめることができます。「たった一つのアプローチに限定することは、あまりにも窮屈！」  
+同様に、（短い）解法を生成するようなコンピュータープログラムについても言及しません。もしこのテーマに興味のある方は、www.jaapsch.netの[コンピューターパズルについてのページ](https://www.jaapsch.net/puzzles/index.htm)を一読することをおすすめします。
+
 <!--
 About this Book
 This book is intended to be a guide to get good results in the so called “Fewest Moves Challenge”,
@@ -74,7 +132,8 @@ Likewise, there is no mention on how to program a computer to generate (short) s
 If one is interested in the subject I suggest taking a look a the Computer Puzzling page at
 www.jaapsch.net.
 -->
-### 前提条件
+
+### 1.2.1. 前提条件
 <!--
 Prerequisites
 The reader is assumed to know how to solve a Rubik’s Cube, even with a beginner’s (LBL)
@@ -83,7 +142,8 @@ see also Appedix B) and with some basic terminology (for example, what is 2x2x2 
 Rubik’s Cube) is required, although many technical terms will be explained in the text.
 
 -->
-### ソルブ実例について
+
+### 1.2.2. ソルブ実例について
 <!--
 About Example Solves
 In the second version of this book I have added some example solves, in order to make the text
@@ -103,7 +163,8 @@ x or [f2]. This doesn’t mean that you shouldn’t turn the cube around in your
 trying the solution. If you are not familiar with rotationless solution writing, I advise skipping
 to Section 6.1 before reading the rest of the book.
 -->
-### 謝辞
+
+### 1.2.3. 謝辞
 <!--
 Acknowledgements
 I want to thank the whole international speedcubing community for always openly spread techniques and methods, enabling anyone to freely learn anything that has been discovered (until
@@ -116,7 +177,8 @@ For this second edition I made use of visualcube2 and alg.cubing.net3
 , so a special thanks
 goes also to the creators of this two tools, respectively Conrad Rider and Lucas Garron.
 -->
-### 免責事項
+
+### 1.2.4. 免責事項
 <!--
 Disclaimer
 As you may know, English is not my first language. If you think that a certain passage is poorly
@@ -127,7 +189,8 @@ http://cube.crider.co.uk/visualcube.php, although I have acutally used the versi
 3
 https://alg.cubing.net/
 -->
-## 目次
+
+## 1.3. 目次
 <!--
 Contents
 1 Think Outside the Box 9
@@ -211,7 +274,8 @@ A Other Resources 53
 B Notation 55
 C Last Layer Algorithms 57
 -->
-## イントロダクション
+
+## 1.4. イントロダクション
 <!--
 Introduction
 Trying to solve a Rubik’s Cube (or, in general, any puzzle) as fast as possible is interesting, but
@@ -281,7 +345,8 @@ part of the scrambling algorithm.
 Figure 1: Example of official scramble sheet.
 
 -->
-## 第１章：箱の外から考えよう (Think Outside the Box)
+
+## 1.5. 第１章：箱の外から考えよう (Think Outside the Box)
 <!--
 Chapter 1
 Think Outside the Box
@@ -302,7 +367,8 @@ speedsolving.com forum, although mainly thought for speedsolving, is a good star
 getting more information about the 4 most commonly used methods (CFOP, Roux, ZZ and
 Petrus).
 -->
-### 1.1 Petrus
+
+### 1.5.1. Petrus
 <!--
 1.1 Petrus
 Petrus’ steps are the following:
@@ -341,7 +407,8 @@ methods too). In the next chapter I will explain in detail how you should procee
 enough to be aware that the “last layer” step usually is not included in Fewest Moves solutions.
 Lars Petrus Website: http://lar5.com/cube/.
 -->
-### 1.2 Roux
+
+### 1.5.2. Roux
 <!--
 1.2 Roux
 1. Build a 3x2x1 block.
@@ -356,7 +423,8 @@ avoided like plague (at least, avoid solving it in the “standard” way, i.e. 
 moves): remember that every inner layer move, like M, is worth 2 moves in standard metric!
 Waffle’s Roux Tutorial: http://wafflelikescubes.webs.com/.
 -->
-### 1.3 ZZ
+
+### 1.5.3. ZZ
 <!--
 1.3 ZZ
 1. EOLine (orienting all edges and placing DF and DB, leaving the cube to be possibly solved
@@ -370,7 +438,8 @@ Step 2 is more or less the same as Petrus’ step 4, but you have to build the b
 R and L side at the same time4
 . This is also going to improve your blockbuilding skills.
 -->
-### 1.4 CFOPとFreeFOP
+
+### 1.5.4. CFOPとFreeFOP
 <!--
 1.4 CFOP (Fridrich) and FreeFOP
 In classic CFOP the steps are the following:
@@ -381,7 +450,8 @@ In classic CFOP the steps are the following:
 4For speedsolving, it may be better to solve one block at the time, since it is usually more ergonomic. But this
 is not the case for FMC, as efficiency (i.e. number of moves) is the only thing that matters!
 -->
-### 1.5 KEYHOLE F2L
+
+### 1.5.5. KEYHOLE F2L
 <!--
 1.5. KEYHOLE F2L 11
 Classic CFOP s not considered a good method for FMC, but in some situation it is useful
@@ -403,7 +473,8 @@ few middle layer edges in the meantime. A variation consists in solving the cros
 layer edges, and then placing 3 first layer corners using the “free” edge.
 Despite its simplicity, this method can be very useful in FMC.
 -->
-### 1.6 Heise
+
+### 1.5.6. Heise
 <!--
 1.6 Heise
 1. Build four 2x2x1 “squares” (all sharing one colour).
@@ -489,7 +560,8 @@ post-1013053.
 10Cross and first pair, built at the same time. It can also be seen as a 2x2x2 block + 2 edges.
 14 CHAPTER 1. THINK OUTSIDE THE BOX
 ->
-### 第２章 ソルブの進め方
+
+### 1.5.7. 第２章 ソルブの進め方
 <!--
 Chapter 2
 How to Proceed During a Solve
@@ -1191,9 +1263,10 @@ Conjugate and Solve - Example
 Scramble: R2 L2 D2 F2 D' R2 U' B2 D' F2 U2 F' D2 L' F U B F2 U2 F2 L
 U2 F B' L2 D2 //Two 2x2x1s (5/5)
 F' * R F2 R' L2 B //All but 4 edges and 4 corners (6/11)
-* = U + L' B L' D L B' L # U' //4 edges (9/20)
+* = U + L' B L' D L B' L $ U' //4 edges (9/20)
 + = F2 L' B2 L F2 L' B2 L //3 corners (5/25)
-# = L' D L U L' D' L U' //3 corners (5/30)
+
+$ 2. = L' D L U L' D' L U' //3 corners (5/30)
 Solution: U2 F B' L2 D2 F' U F2 L' B2 L F2 L' B' L' D L B' D L U L' D'
 L U2 R F2 R' L2 B (30)
 See on alg.cubing.net
@@ -1312,7 +1385,8 @@ corners: if you complete the F2L and are left with 2 bad edges, you can try this
 4 different angles to see if you get a skip, or at least an easy case.
 34 CHAPTER 2. HOW TO PROCEED DURING A SOLVE
 -->
-## 第３章　高度なツール (Advanced Tools)
+
+## 1.6. 第３章　高度なツール (Advanced Tools)
 <!--
 Chapter 3
 Advanced Tools
@@ -1657,7 +1731,8 @@ be canged with same method used the first time. If you are disciplined in writin
 partial solutions, you can get the first version of your solution and copy the last moves, but this
 is not my case, as I write stuff down on my sheets in a very chaotic way.
 -->
-## 第４章　その他の手法 (Some Other Methods)
+
+## 1.7. 第４章　その他の手法 (Some Other Methods)
 <!--
 Chapter 4
 Some Other Methods
@@ -1803,7 +1878,8 @@ post-1234805
 6
 https://www.speedsolving.com/forum/threads/the-fmc-thread.13599/page-111#post-945295
 -->
-## 第５章　練習方法 (How To Practice)
+
+## 1.8. 第５章　練習方法 (How To Practice)
 <!--
 Chapter 5
 How To Practice
@@ -1867,7 +1943,8 @@ https://www.speedsolving.com/wiki/index.php/LLEF
 6
 https://www.speedsolving.com/wiki/index.php/Summer_Variation
 -->
-## 第６章　公式大会 (8)In Competition)
+
+## 1.9. 第６章　公式大会 (8)In Competition)
 <!--
 Chapter 6
 In Competition
@@ -1945,7 +2022,8 @@ that you can try and find a way to solve them on your own.
 1
 https://en.wikipedia.org/wiki/Tree_(data_structure)
 -->
-## 付録A　その他の参考資料 (Other Resources)
+
+## 1.10. 付録A　その他の参考資料 (Other Resources)
 <!--
 Appendix A
 Other Resources
@@ -1997,7 +2075,8 @@ Other Websites
 fundamental_techniques.html
 • Lars Petrus’ website, with useful blockbuilding examples: http://lar5.com/cube/
 -->
-## 付録B　回転記号 (Notation)
+
+## 1.11. 付録B　回転記号 (Notation)
 <!--
 Appendix B
 Notation
@@ -2029,7 +2108,8 @@ degrees rotation of the cube along the U/D axis.
 M E S
 They cannot be used in official FMC solutions.
 -->
-## 付録C　LLアルゴリズム (Last Layer Algorithms)
+
+## 1.12. 付録C　LLアルゴリズム (Last Layer Algorithms)
 <!--
 Appendix C
 Last Layer Algorithms
@@ -2108,3 +2188,5 @@ R L2 D' B' D B L B' R' L
 R2 F2 R' U B U' B' R F2 R2
 R2 F2 L D' F' D F L' F2 R2
 -->
+[^1]: 訳注。[World Rubik's Cube Championship 2017](https://www.worldcubeassociation.org/competitions/WC2017)のこと。2年に1回の頻度で開催されるルービックキューブの世界大会を指す。2017年はパリ（フランス）、2019年はメルボルン（オーストラリア）で開催された。
+[^2]: https://www.speedsolving.com/wiki/index.php/Western_Color_Scheme
