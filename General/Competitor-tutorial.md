@@ -4,6 +4,7 @@ title: WCA大会チュートリアル
 # WCA大会チュートリアル (WCA Competition Tutorial)
 WCA Competition Tutorial Version: 2019-10-21  
 Japanese Translation: 2019-12-10 by kawam1123 <!--他の翻訳者名をここに列挙する-->
+Original document is [here](https://www.worldcubeassociation.org/files/WCA_Competition_Tutorial.pdf).
 
 > 翻訳者注：
 >
