@@ -1,0 +1,6 @@
+### Ruby ###
+Gemfile
+Gemfile.lock
+/vendor/
+/.bundle/
+/_site/
