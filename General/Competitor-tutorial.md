@@ -37,6 +37,8 @@ still recommend you to read the WCA Regulations and Guidelines and participate i
 
 **代理人 (Delegate)** : 代理人はWCAの職員であり、大会中にWCA規則が守られているかを保証する責任を持ちます。インシデントの対処を行うほか、スクランブルと競技結果にも責任を持ちます。もしあなたが疑わしいと思うことや質問があったら、まず代理人に聞いてください。
 
+>訳者補足：日本国内の代理人を確認したい場合は、[こちら](https://www.worldcubeassociation.org/delegates)をご参照ください。
+
 <strong class="redbox">重要：もしよくわからないことがあれば、必ず代理人に聞いてください！</strong>
 
 **運営者 (Organizer)** : 運営者は大会を運営し、当日の円滑な運営を保証する責任を持ちます。一般的に運営者は経験豊富なキューバーなので、あなたを助けてくれるでしょう。公式の意思決定をできるのは代理人だけであることは覚えておいてください。

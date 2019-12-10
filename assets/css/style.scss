@@ -7,6 +7,15 @@
 //header {width: auto; float: none;}
 //section {float: none;}
 /*見出しの書式*/
+h2 {
+    background: #063e6b;/*背景色*/
+    color: #FFFFFF;
+    padding: 0.5em;
+}
+
+h3 {
+    border-bottom: solid 1px black;
+}
 
 strong.redbox {
     background: #ff1e00;/*背景色*/
