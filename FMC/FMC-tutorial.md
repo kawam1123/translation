@@ -47,7 +47,7 @@ November 8, 2019
         - [CFOPとFreeFOP](#cfopとfreefop)
         - [KEYHOLE F2L](#keyhole-f2l)
         - [Heise](#heise)
-        - [第２章 ソルブの進め方](#第２章-ソルブの進め方)
+    - [第２章 ソルブの進め方](#第２章-ソルブの進め方)
     - [第３章　高度なツール (Advanced Tools)](#第３章　高度なツール-advanced-tools)
     - [第４章　その他の手法 (Some Other Methods)](#第４章　その他の手法-some-other-methods)
     - [第５章　練習方法 (How To Practice)](#第５章　練習方法-how-to-practice)
@@ -566,7 +566,7 @@ post-1013053.
 14 CHAPTER 1. THINK OUTSIDE THE BOX
 ->
 
-### 1.5.7. 第２章 ソルブの進め方
+## 第２章 ソルブの進め方
 <!--
 Chapter 2
 How to Proceed During a Solve
