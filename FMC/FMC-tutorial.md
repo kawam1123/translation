@@ -2194,4 +2194,4 @@ R2 F2 R' U B U' B' R F2 R2
 R2 F2 L D' F' D F L' F2 R2
 -->
 [^1]: 訳注。[World Rubik's Cube Championship 2017](https://www.worldcubeassociation.org/competitions/WC2017)のこと。2年に1回の頻度で開催されるルービックキューブの世界大会を指す。2017年はパリ（フランス）、2019年はメルボルン（オーストラリア）で開催された。
-[^2]: https://www.speedsolving.com/wiki/index.php/Western_Color_Scheme
+[^2]: [Western Color Scheme](https://www.speedsolving.com/wiki/index.php/Western_Color_Scheme)
