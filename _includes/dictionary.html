@@ -1,0 +1,8 @@
+<nav>
+    <dl>
+    {% for item in site.data.words %}
+    <dt>{{ item.word }}</dt>
+    <dd>{{ item.mean }}</dd>
+    {% endfor %}
+    </dl>
+</nav>
