@@ -405,7 +405,7 @@ Peters also holds the World Champion title (2017).
 このチュートリアルのゴールは、**FMCでよい結果を出すためによく知られたテクニックをまとめることです。** いくつかの説明は詳しく記述して実例もつけていますが、単に総合的な説明を書いて学習のためのリソースを提案しているだけのものもあります。
 
 <!--訳者TODO：ここにFMCの解答用紙の画像をつける-->
-![図1:公式スクランブルシートの例](/assets/img/fmc_scramble_sheet.png "図1:公式スクランブルシートの例"){:class="figure-img img-responsive"}
+![図1:公式スクランブルシートの例](../assets/img/fmc_scramble_sheet.png "図1:公式スクランブルシートの例"){:class="figure-img img-responsive"}
 
 図1:公式スクランブルシートの例
 
