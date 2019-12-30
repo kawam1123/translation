@@ -2,7 +2,7 @@
 title: "最小手数競技入門 - ルービックキューブを少ない手順で解く by Sebastiano Tronto"
 description: Sebastiano TrontoによるFMCチュートリアルの日本語訳
 header:
-  teaser: /assets/img/333fm.png
+  teaser: /assets/img/333fm.jpg
 permalink: /FMC/FMC-tutorial.html
 layout: single
 toc: true
