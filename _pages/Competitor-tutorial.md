@@ -1,6 +1,6 @@
 ---
 title: WCA大会チュートリアル
-permalink: /competitor-tutorial/
+permalink: /competitor-tutorial
 ---
 # WCA大会チュートリアル (WCA Competition Tutorial)
 WCA Competition Tutorial Version: 2019-10-21  
