@@ -40,6 +40,7 @@ November 8, 2019
 {: .notice--info}
 
 <!-- TOC -->
+<!--
 ## 目次
 - [最小手数競技入門 - ルービックキューブを少ない手順で解く](#最小手数競技入門---ルービックキューブを少ない手順で解く)
     - [第二版への序文 (Preface to the Second Edition)](#第二版への序文-preface-to-the-second-edition)
@@ -65,10 +66,11 @@ November 8, 2019
     - [付録A　その他の参考資料 (Other Resources)](#付録a　その他の参考資料-other-resources)
     - [付録B　回転記号 (Notation)](#付録b　回転記号-notation)
     - [付録C　LLアルゴリズム (Last Layer Algorithms)](#付録c　llアルゴリズム-last-layer-algorithms)
-
+-->
 <!-- /TOC -->
 
-## 1.1. 第二版への序文 (Preface to the Second Edition)
+
+## 第二版への序文 (Preface to the Second Edition)
 数年の間、このチュートリアルの新しいバージョンを作ろうと考えていました。いくつか修正や追加の必要な点があり、また、私自身の考え方が変わったことによって変更すべき点などがありました。
 
 LaTeXで書き直そうとも考えました。LaTexのドキュメントは見た目がとても良くなるからです。ただし、唯一の欠点は、そうしてしまうと翻訳が難しくなるということです。このチュートリアルが高く評価されており、多くの他言語に翻訳をしてくれて、世界中で読めるようになっていくことを非常に嬉しく思います。翻訳者の皆さんそれぞれにお礼を言いたいのですが、ほとんどの方の名前を忘れてしまいました。
@@ -131,7 +133,7 @@ http://www.speedsolving.com/wiki/index.php/Western_Color_Scheme
 3
 -->
 
-## 1.2. 本書について (About this Book)
+## 本書について (About this Book)
 この本は、WCA公式大会の公式競技のひとつである「最小手数競技（FMC、Fewest Moves Challenge）」と呼ばれる競技でよい結果を出すための指針となることを目的としています。もしあなたが世界キューブ協会 (World Cube Association) やスピードキューブの公式大会について知らないのであれば、少し先のイントロダクションを読んでみてください。
 
 「最小手数競技」は、特定の状態の(スクランブルされた)ルービックキューブをできる限り短い手数で解くものです。使えるのはいくつかのキューブ、ペン、そして紙だけです。コンピュータープログラムの利用は禁止されており、通常は時間制限があります。（WCA公式大会においては1時間、あるオンラインのものでは1週間)
@@ -157,7 +159,7 @@ If one is interested in the subject I suggest taking a look a the Computer Puzzl
 www.jaapsch.net.
 -->
 
-### 1.2.1. 前提条件
+### 前提条件
 読者は（たとえ簡易LBLであったとしても）ルービックキューブの解き方を知っているものとします。さらに、通常のOBTM回転記号を知っていること（イントロダクション内のリンク、付録Bを参照）、基本的な用語（たとえば「2x2x2ブロック」）について知っていることが求められます。ただし、多くの専門用語は本文中で解説されます。
 
 <!--
@@ -169,7 +171,7 @@ Rubik’s Cube) is required, although many technical terms will be explained in 
 
 -->
 
-### 1.2.2. ソルブ実例について
+### ソルブ実例について
 第二版では、本書を自己完結的にするため、いくつかのソルブ例を収録しています。次のような枠の中で表示されます。
 
 {% capture display_text %}
@@ -214,7 +216,7 @@ trying the solution. If you are not familiar with rotationless solution writing,
 to Section 6.1 before reading the rest of the book.
 -->
 
-### 1.2.3. 謝辞
+### 謝辞
 世界のスピードキューブコミュニティに対して、どんな時もテクニックやメソッドをオープンに広めていることに感謝を申し上げたいです。これによって、誰もが（これまでに）見つかったすべてのことを自由に学ぶことができるようになります。このチュートリアルも同じように役に立つことを臨みます。
 <!--
 Acknowledgements
@@ -233,7 +235,7 @@ For this second edition I made use of visualcube2 and alg.cubing.net3
 goes also to the creators of this two tools, respectively Conrad Rider and Lucas Garron.
 -->
 
-### 1.2.4. 免責事項
+### 免責事項
 ご存知のように、英語は私の母語ではありません。もし文章が下手だったり、間違いを見つけたりした場合、私にご連絡ください。 `sebastiano.tronto [at] gmail [dot] com`
 <!--
 Disclaimer
@@ -246,7 +248,7 @@ http://cube.crider.co.uk/visualcube.php, although I have acutally used the versi
 https://alg.cubing.net/
 -->
 
-## 1.3. 目次
+## 目次
 
 **訳注：**  
 ページ右側に目次を自動生成しましたので、本項目は省略します。
@@ -335,7 +337,7 @@ B Notation 55
 C Last Layer Algorithms 57
 -->
 
-## 1.4. イントロダクション
+## イントロダクション
 
 ルービックキューブをできる限り速く解くということは面白いものですが、さらに面白いのは一番少ない手数で解くということです。**これが最小手数競技のゴールです。** 最小手数競技は**FMC**あるいは**Fewest Moves Challenge**と呼ばれます。
 <!--
@@ -403,6 +405,9 @@ Peters also holds the World Champion title (2017).
 このチュートリアルのゴールは、**FMCでよい結果を出すためによく知られたテクニックをまとめることです。** いくつかの説明は詳しく記述して実例もつけていますが、単に総合的な説明を書いて学習のためのリソースを提案しているだけのものもあります。
 
 <!--訳者TODO：ここにFMCの解答用紙の画像をつける-->
+![図1:公式スクランブルシートの例](/assets/img/fmc_scramble_sheet.png "図1:公式スクランブルシートの例"){:class="figure-img img-responsive"}
+
+図1:公式スクランブルシートの例
 
 <!--
 Goal of This Tutorial
@@ -443,7 +448,7 @@ Figure 1: Example of official scramble sheet.
 
 -->
 
-## 1.5. 第１章：既成概念にとらわれずに考える (Think Outside the Box)
+## 第１章：既成概念にとらわれずに考える (Think Outside the Box)
 あなたのメイン解法何であれ、その一つの解法に縛られるのはFMCにおいて最悪のやり方です。**一つの解法／メソッドに限定してはいけません。** あらゆる状況を活用するようにしましょう。
 
 たとえば、あなたが2x3x3ブロックを作ったとしましょう。ここからいくつもの可能性があります。最後の「クロス」エッジを揃えてからCFOPにおけるF2Lをやっても構いません。Petruxのようにエッジの向きを揃えもよいですし、FreeFOPやHeiseを使ってもっと自由にブロックを作ってもよいでしょう。どの解法を使ってもよい結果になるでしょう。なので、もっともよいやり方は、**これを全部使って解いてしまうということです。**（全部でなくても、その多くを使うのでもよいです）
@@ -482,9 +487,12 @@ Petrus).
 
 ### 1.5.1. Petrus
 Petrusのステップは次のようなものです。
-1. 
-1. 
-1. 
+1. 2x2x2ブロックを作る
+1. 2x2x2ブロックを2x2x3ブロックに拡張する
+1. エッジの向きを揃える
+1. 最初の二層を揃える(F2L)
+1. 最終層(LL)を揃える (本来は3つのステップに分割されています)
+
 
 <!--
 1.1 Petrus
