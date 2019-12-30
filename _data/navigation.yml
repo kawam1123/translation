@@ -1,12 +1,12 @@
 main:
   - title: "このサイトについて"
     url: /about/
+  - title: "FMCチュートリアル"
+    url: /FMC/FMC-tutorial.html
+  - title: "競技者チュートリアル"
+    url: /competitor-tutorial/
   - title: "投稿一覧"
     url: /posts/
-  - title: "カテゴリ"
-    url: /categories/
-  - title: "タグ"
-    url: /tags/
 
 leftnav:
   - title: "翻訳プロジェクト"
