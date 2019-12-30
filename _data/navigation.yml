@@ -1,0 +1,21 @@
+main:
+  - title: "このサイトについて"
+    url: /about/
+  - title: "投稿一覧"
+    url: /posts/
+  - title: "カテゴリ"
+    url: /categories/
+  - title: "タグ"
+    url: /tags/
+
+leftnav:
+  - title: "翻訳プロジェクト"
+    children:
+      - title: "翻訳一覧"
+        url: /translation/
+  - title: "大人キューブ会"
+    children:
+      - title: "運営メモ"
+        url: /otonacube/
+      - title: "イベントページ(connpass)"
+        url: https://otonarubik.connpass.com/

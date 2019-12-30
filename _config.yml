@@ -1,9 +1,130 @@
-theme: jekyll-theme-slate
-title: スピードキューブ日本語翻訳
-description: スピードキューブ関連ドキュメントの翻訳（英語→日本語）
-google_analytics: UA-141207758-2
-minimal:
-  social_links:
-    twitter: kawam1123
-    github: kawam1123
-    instagram: kawam1123cuber
+# Site settings
+locale: "ja-JP"
+title: "スピードキューブ日本語翻訳"
+email:
+description: >- # this means to ignore newlines until "baseurl:"
+  "スピードキューブ関連ドキュメントの翻訳（英語→日本語）"
+twitter_username: kawam1123
+github_username: kawam1123
+minimal_mistakes_skin: default
+search: true
+breadcrumbs: true
+
+# Build settings
+markdown: kramdown
+#theme: minimal-mistakes-jekyll
+remote_theme: mmistakes/minimal-mistakes
+# Outputting
+permalink: /:categories/:title/
+paginate: 10 # amount of posts to show
+paginate_path: /page:num/
+timezone: Asia/Tokyo # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+
+include:
+  - _pages
+
+# Exclude from processing.
+# The following items will not be processed, by default. Create a custom list
+# to override the default setting.
+# exclude:
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/
+
+# Plugins (previously gems:)
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  - jemoji
+  - jekyll-include-cache
+  - jekyll-github-metadata
+github : [metadata]
+repository: kawam1123/translation
+
+
+author:
+  name   : "kawam1123"
+  avatar : "/assets/img/icon.jpg"
+  bio    : "Speedcuber. 2018年8月からルービックキューブ始めた32歳。Sub-20(CFOP) 目指せSub-15の世界。 "
+  links:
+    - label: "Twitter"
+      icon: "fab fa-fw fa-twitter-square"
+      url: "https://twitter.com/kawam1123"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/kawam1123"
+    - label: "Instagram"
+      icon: "fab fa-fw fa-instagram"
+      url: "https://instagram.com/kawam1123cuber"
+    - label: "Youtube"
+      icon: "fab fa-fw fa-youtube"
+      url: "https://www.youtube.com/channel/UChIJUW9WUwcijE8RYxFBf5A/"
+    - label: "CubePB"
+      icon: "fas fa-fw fa-table"
+      url: "https://cubepb.com/user/313384"
+    - label: "はてなブログ M'4"
+      icon: "far fa-fw fa-sticky-note"
+      url: "https://kawam1123.hatenablog.com/"
+      
+
+footer:
+  links:
+    - label: "Twitter"
+      icon: "fab fa-fw fa-twitter-square"
+      url: "https://twitter.com/kawam1123"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/kawam1123"
+    - label: "Instagram"
+      icon: "fab fa-fw fa-instagram"
+      url: "https://instagram.com/kawam1123cuber"
+
+
+defaults:
+  # everypage
+  - scope:
+      path: ""
+    values:
+  # _posts  
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: true
+      share: true
+      related: true
+
+  # _pages
+  - scope:
+      path: "_pages"
+      type: pages
+    values:
+      layout: single
+      author_profile: true
+
+category_archive:
+  type: liquid
+  path: /categories/
+tag_archive:
+  type: liquid
+  path: /tags/
+
+analytics:
+  provider: "google-gtag"
+  google:
+    tracking_id: "UA-141207758-2"
+    anonymize_ip: false # default
+
+og_image: /assets/img/icon.jpg
+
+twitter:
+  username: "kawam1123"
