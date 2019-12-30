@@ -7,13 +7,13 @@
 //header {width: auto; float: none;}
 //section {float: none;}
 /*見出しの書式*/
-h2 {
-    background: #063e6b;/*背景色*/
-    color: #FFFFFF;
+section .page__content h2 {
+    border-left: solid 10px navy;
+    border-bottom: solid 1px navy;
+    color: navy;
     padding: 0.5em;
 }
-
-h3 {
+section .page__content h3 {
     border-bottom: solid 1px black;
 }
 
