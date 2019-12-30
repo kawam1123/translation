@@ -34,9 +34,10 @@ Translation by kawam1123
 version 0.0  
 November 8, 2019
 
-> 翻訳者注：
->
-> 本ドキュメントは、未完成です。原文はコメントアウトされた状態で保存されています。翻訳に協力してくださる方は、コメントアウトを外して日本語の翻訳を書き込んでください。文中の画像ファイルおよびリンクについては、いずれGitHubのリポジトリ内に格納予定です。
+
+**翻訳者注：**  
+本ドキュメントは、未完成です。原文はコメントアウトされた状態で保存されています。翻訳に協力してくださる方は、コメントアウトを外して日本語の翻訳を書き込んでください。文中の画像ファイルおよびリンクについては、いずれGitHubのリポジトリ内に格納予定です。
+{: .notice--info}
 
 <!-- TOC -->
 ## 目次
@@ -202,6 +203,10 @@ Solution: B' F D2 L' R2 B R B' R2 F R' B R F' R2 F2 D F' D2 F R' D' R D2
 F U2 (26)
 See on alg.cubing.net
 -->
+
+
+このソリューションの記述のなかで、決して`x`や`[f2]`などの**「持ち替え記号」**を書いていないことに気付くかもしれません。解法を考えるときに手の中でキューブを持ち替えてはいけないということではありません。もし持ち替え記号を使わない記述がよくわからないなら、6.1節までスキップすることがオススメです。
+
 <!--
 You may notice that in writing the solution I almost never use “rotation” moves such as
 x or [f2]. This doesn’t mean that you shouldn’t turn the cube around in your hands when
@@ -210,11 +215,16 @@ to Section 6.1 before reading the rest of the book.
 -->
 
 ### 1.2.3. 謝辞
+世界のスピードキューブコミュニティに対して、どんな時もテクニックやメソッドをオープンに広めていることに感謝を申し上げたいです。これによって、誰もが（これまでに）見つかったすべてのことを自由に学ぶことができるようになります。このチュートリアルも同じように役に立つことを臨みます。
 <!--
 Acknowledgements
 I want to thank the whole international speedcubing community for always openly spread techniques and methods, enabling anyone to freely learn anything that has been discovered (until
 now). I hope this tutorial will be helpful in the same way.
-4
+-->
+あわせて感謝を申し上げたいのは、改善点を指摘してくれた全ての方です。間違いを指摘してくださったり、このチュートリアルを（古い版も含めて）翻訳してくださったりしました。いずれ忘れてしまうでしょうから、全ての方の名前を挙げるのは控えます。
+
+第二版では、visualcubeとalg.cubing.netを使いましたので、この２つのツールの作者であるConrad RiderとLucas Garronには、特に感謝を申し上げます。
+<!--
 I also want to thank everybody who gave me suggestions for improvements, pointed out
 mistakes or translated this tutorial (or rather, the old version). I don’t want to name any of you
 explicitly, because I know I will forget many.
@@ -224,6 +234,9 @@ goes also to the creators of this two tools, respectively Conrad Rider and Lucas
 -->
 
 ### 1.2.4. 免責事項
+ご存知のように、英語は私の母語ではありません。
+
+```訳注：私の母語も英語ではありません。```{: .notice}
 <!--
 Disclaimer
 As you may know, English is not my first language. If you think that a certain passage is poorly
