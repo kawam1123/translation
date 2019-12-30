@@ -8,6 +8,7 @@ layout: single
 toc: true
 toc_icon: "cog"
 toc_sticky: true
+author_profile: false
 ---
 <!--
 訳注：原文はコメントアウトで表示し、必要に応じて参照できるようにしています。
@@ -20,6 +21,8 @@ Sebastiano Tronto
 September 15, 2017
 2
 -->
+
+![333fm](/assets/img/333fm.jpg){:class="img-responsive"}
 
 **Written by Sebastiano Tronto**  
 Fewest Moves Tutorial - Solving a Rubik’s Cube with as few moves as possible  
@@ -34,8 +37,6 @@ November 8, 2019
 > 翻訳者注：
 >
 > 本ドキュメントは、未完成です。原文はコメントアウトされた状態で保存されています。翻訳に協力してくださる方は、コメントアウトを外して日本語の翻訳を書き込んでください。文中の画像ファイルおよびリンクについては、いずれGitHubのリポジトリ内に格納予定です。
-
-<span class="cubing-icon event-333fm"></span>
 
 <!-- TOC -->
 ## 目次
