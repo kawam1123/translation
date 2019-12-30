@@ -31,8 +31,8 @@ September 15, 2017
 Original document: [Fewest Moves Tutorial](https://fmcsolves.cubing.net/fmc_tutorial_ENG.pdf)
 
 Translation by kawam1123  
-version 0.0  
-November 8, 2019
+version 0.1
+December 31, 2019
 
 
 **翻訳者注：**  
