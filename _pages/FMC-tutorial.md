@@ -399,6 +399,10 @@ attempts (in one competition) is 24.33 by Marcel Peters and Baiqiang Dong (China
 Peters also holds the World Champion title (2017).
 -->
 
+### このチュートリアルのゴール
+このチュートリアルのゴールは、**FMCでよい結果を出すためによく知られたテクニックをまとめることです。** いくつかの説明は詳しく記述して実例もつけていますが、単に総合的な説明を書いて学習のためのリソースを提案しているだけのものもあります。
+
+<!--訳者TODO：ここにFMCの解答用紙の画像をつける-->
 
 <!--
 Goal of This Tutorial
@@ -440,6 +444,7 @@ Figure 1: Example of official scramble sheet.
 -->
 
 ## 1.5. 第１章：既成概念にとらわれずに考える (Think Outside the Box)
+
 <!--
 Chapter 1
 Think Outside the Box
