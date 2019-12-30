@@ -234,9 +234,7 @@ goes also to the creators of this two tools, respectively Conrad Rider and Lucas
 -->
 
 ### 1.2.4. 免責事項
-ご存知のように、英語は私の母語ではありません。
-
-```訳注：私の母語も英語ではありません。```{: .notice}
+ご存知のように、英語は私の母語ではありません。もし文章が下手だったり、間違いを見つけたりした場合、私にご連絡ください。 `sebastiano.tronto [at] gmail [dot] com`
 <!--
 Disclaimer
 As you may know, English is not my first language. If you think that a certain passage is poorly
@@ -249,6 +247,10 @@ https://alg.cubing.net/
 -->
 
 ## 1.3. 目次
+
+**訳注：**  
+ページ右側に目次を自動生成しましたので、本項目は省略します。
+{: .notice--info}
 <!--
 Contents
 1 Think Outside the Box 9
@@ -334,11 +336,40 @@ C Last Layer Algorithms 57
 -->
 
 ## 1.4. イントロダクション
+
+ルービックキューブをできる限り速く解くということは面白いものですが、さらに面白いのは一番少ない手数で解くということです。**これが最小手数競技のゴールです。** 最小手数競技は**FMC**あるいは**Fewest Moves Challenge**と呼ばれます。
 <!--
 Introduction
 Trying to solve a Rubik’s Cube (or, in general, any puzzle) as fast as possible is interesting, but
 it is even more interesting trying to solve it using the fewest moves: this is the goal in “Fewest
 Moves” solving (or FMC, “Fewest Moves Challenge”).
+-->
+### 公式大会
+FMCはWCA(World Cube Association、世界キューブ協会)の公式種目として知られています。WCAはルービックキューブやそれに類するパズルの大会を統括する組織です。[WCA大会規則(第E条)](https://www.worldcubeassociation.org/regulations/translations/japanese/#article-E-fewest-moves)に書いてあることをまとめると次のようになります。
+
+- スクランブルの書かれた紙が全競技者に与えられる
+- 時間制限は60分
+- 以下の道具を使用できる
+    - 紙（ジャッジによって支給される）とペン（ジャッジによって支給される、任意で競技者が持参）
+    - 最大3個のルービックキューブ（競技者が持参）
+    - ステッカー（競技者が持参）
+- 解法について
+    - 解法は外層ブロック手数(OBTM記法)を用いて記述したものを提出する。
+    - 持ち替え記号、面操作(R、U2、L'など)、外層ブロック操作(Rw2、FW'など)が許可される。中層回転(M、E、S)は許可されない。
+    - 持ち替え記号は0手とみなす。それ以外の操作は1手と数える。
+    - 競技者の解法はスクランブル手順の任意の部分に直接由来してはならない。解法中の各手順の意図を説明できるようにしておかねばならない。
+
+最後のルールを適用するために、2016年からFMC用のスクランブルには最初と最後に`R' U F`が加えられることになりました。
+
+これまでで最も少ない手数の結果は、Tim Wong (USA)、Marcel Peters (ドイツ)、Vladislav Ushakov (ベラルーシ)による19手のものです。３回の試技の平均では、Marcel PetersとBaiqiang Dong (中国)による24.33が世界記録です。Marcel Petersは2017年の世界大会で世界チャンピオンのタイトルを獲得しました。
+
+**訳注：**  
+翻訳時点(2019/12)において、世界記録はさらに更新されています。  
+現在の世界記録は、**本チュートリアルの執筆者であるSebastiano Trontoによる単発16手、平均22.00手**です。2019年6月15日-16日に開催されたFMC 2019において達成されました。  
+また、日本においては、**Shuto Ueno (上野柊斗)が単発19手、平均24.00手の日本記録を保持しています。**この単発記録はアジア記録(AsR)でもあります。
+{: .notice--success}
+
+<!--Article E: Fewest Moves Solving
 Official Competitions
 FMC is an official event recognized by the WCA (World Cube Association), the organization
 that governs competitions for the Rubik’s cube and similar puzzles. Official regulations (Article
@@ -366,6 +397,10 @@ The best result ever achieved in competition is 19 moves, by Tim Wong (USA), Mar
 Peters (Germany) and Vladislav Ushakov (Belarus). The world record for an average of three
 attempts (in one competition) is 24.33 by Marcel Peters and Baiqiang Dong (China). Marcel
 Peters also holds the World Champion title (2017).
+-->
+
+
+<!--
 Goal of This Tutorial
 The goal of this tutorial is to summarize the best known techniques that lead to good results in
 fewest moves solving. In some cases the explanation will detailed and enriched with examples,
