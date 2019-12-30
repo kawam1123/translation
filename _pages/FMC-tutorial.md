@@ -183,12 +183,10 @@ title = "2C2E Insertion - Example"
 scramble = "B' L' D2 R U F' U' L U2 D R2 U2 F B R2 B U2 B L2 B2 U2"
 text = display_text
 solution = "B' F D2 L' R2 B R B' R2 F R' B R F' R2 F2 D F' D2 F R' D' R D2 F U2 (26)"
-img_src="../assets/img/2C2E_alg.png"%}
+img_src="../assets/img/2C2E_alg.png"
+algcubing = "https://alg.cubing.net/?setup=B-_L-_D2_R_U_F-_U-_L_U2_D_R2_U2_F_B_R2_B_U2_B_L2_B2_U2&alg=B-_F_D2_%2F%2FPseudo_2x2x1_(3%2F3)%0AL-_B_(B2_L_B_L-_B_D2_F-_R_F_D2)_R2_%2F%2FPseudo_3x2x2_(3%2F6)%0AF2_D_F-_D2_F_%2F%2FFound_using_NISS_(5%2F11)%0AR-_D-_R_D2_F_U2_%2F%2FFound_using_NISS_(6%2F17)"
+%}
 
-> [alg.cubing.net](https://alg.cubing.net/?setup=B-_L-_D2_R_U_F-_U-_L_U2_D_R2_U2_F_B_R2_B_U2_B_L2_B2_U2&alg=B-_F_D2_%2F%2FPseudo_2x2x1_(3%2F3)%0AL-_B_(B2_L_B_L-_B_D2_F-_R_F_D2)_R2_%2F%2FPseudo_3x2x2_(3%2F6)%0AF2_D_F-_D2_F_%2F%2FFound_using_NISS_(5%2F11)%0AR-_D-_R_D2_F_U2_%2F%2FFound_using_NISS_(6%2F17))
-
-
-<!--翻訳TODO：ここに画像を挿入する-->
 <!--
 About Example Solves
 In the second version of this book I have added some example solves, in order to make the text
@@ -203,6 +201,8 @@ R' D' R D2 F U2 //Found using NISS (6/17)
 Solution: B' F D2 L' R2 B R B' R2 F R' B R F' R2 F2 D F' D2 F R' D' R D2
 F U2 (26)
 See on alg.cubing.net
+-->
+<!--
 You may notice that in writing the solution I almost never use “rotation” moves such as
 x or [f2]. This doesn’t mean that you shouldn’t turn the cube around in your hands when
 trying the solution. If you are not familiar with rotationless solution writing, I advise skipping
