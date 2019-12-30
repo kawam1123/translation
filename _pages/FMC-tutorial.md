@@ -22,7 +22,7 @@ September 15, 2017
 2
 -->
 
-![333fm](/assets/img/333fm.jpg){:class="img-responsive"}
+![333fm](../assets/img/333fm.jpg){:class="img-responsive"}
 
 **Written by Sebastiano Tronto**  
 Fewest Moves Tutorial - Solving a Rubik’s Cube with as few moves as possible  
