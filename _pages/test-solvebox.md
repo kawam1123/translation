@@ -1,5 +1,6 @@
 ---
 title: ソルブ表示用ボックスの作成
+description: FMCチュートリアルの翻訳用に使うソルブ実例表示用のボックスを作成しました。
 permalink: /FMC/test-solvebox.html
 ---
 
