@@ -161,6 +161,9 @@ Rubik’s Cube) is required, although many technical terms will be explained in 
 
 ### 1.2.2. ソルブ実例について
 第二版では、本書を自己完結的にするため、いくつかのソルブ例を収録しています。次のような枠の中で表示されます。
+![2C2E](../assets/img/2C2E.png){: .img-responsive .pull-left }
+
+{% include solvebox.html %}
 
 > 2C2E Insertion - Example
 > スクランブル：B' L' D2 R U F' U' L U2 D R2 U2 F B R2 B U2 B L2 B2 U2
