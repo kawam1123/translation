@@ -485,7 +485,7 @@ getting more information about the 4 most commonly used methods (CFOP, Roux, ZZ 
 Petrus).
 -->
 
-### 1.5.1. Petrus
+### 1.1 Petrus
 Petrusのステップは次のようなものです。
 1. 2x2x2ブロックを作る
 1. 2x2x2ブロックを2x2x3ブロックに拡張する
@@ -533,7 +533,15 @@ enough to be aware that the “last layer” step usually is not included in Few
 Lars Petrus Website: http://lar5.com/cube/.
 -->
 
-### 1.5.2. Roux
+### 1.2 Roux
+Rouxのステップは次のようなものです。
+1. 3x2x1ブロック(FB, First Block)を作る
+1. 最初のブロックの反対側に3x2x1ブロックをもう一つ作る　(SB, Second Block)
+1. LLのコーナーを揃える。M列を保存していく必要はない　(CMLL)
+1. 残りの6つのエッジを揃える　(LSE,Last Six Edge)
+
+
+
 <!--
 1.2 Roux
 1. Build a 3x2x1 block.
@@ -549,7 +557,11 @@ moves): remember that every inner layer move, like M, is worth 2 moves in standa
 Waffle’s Roux Tutorial: http://wafflelikescubes.webs.com/.
 -->
 
-### 1.5.3. ZZ
+### 1.3. ZZ
+ZZのステップは次のようなものです。
+1. EOLine
+1. F2L
+1. Last Layer
 <!--
 1.3 ZZ
 1. EOLine (orienting all edges and placing DF and DB, leaving the cube to be possibly solved
@@ -564,7 +576,21 @@ R and L side at the same time4
 . This is also going to improve your blockbuilding skills.
 -->
 
-### 1.5.4. CFOPとFreeFOP
+### 1.4. CFOPとFreeFOP
+古典的なCFOPのステップは次のようなものです。
+1. クロスを作る
+1. 4つのコーナーとエッジのペアを挿入する
+1. OLL (Orient Last Layer)
+1. PLL (Permute Last Layer)
+
+古典的なCFOPは**FMC向きの良い解法ではないと考えられています。**しかし、コーナーとエッジのペアを挿入する別の方法をしっておくことは有益である場合があります。
+
+FreeFOPでは、最初の二つのステップは「自由な」ブロックビルディングF2Lに変わります。
+
+何にせよ、スキップができない限り、最終層をOLLとPLLで解くことはまったくおすすめできない方法です。
+
+Badmephisto’s Tutorial: http://badmephisto.com/.
+
 <!--
 1.4 CFOP (Fridrich) and FreeFOP
 In classic CFOP the steps are the following:
@@ -576,7 +602,7 @@ In classic CFOP the steps are the following:
 is not the case for FMC, as efficiency (i.e. number of moves) is the only thing that matters!
 -->
 
-### 1.5.5. KEYHOLE F2L
+### 1.5 キーホールF2L
 <!--
 1.5. KEYHOLE F2L 11
 Classic CFOP s not considered a good method for FMC, but in some situation it is useful
@@ -599,7 +625,7 @@ layer edges, and then placing 3 first layer corners using the “free” edge.
 Despite its simplicity, this method can be very useful in FMC.
 -->
 
-### 1.5.6. Heise
+### 1.6. Heise Method
 <!--
 1.6 Heise
 1. Build four 2x2x1 “squares” (all sharing one colour).
@@ -625,6 +651,13 @@ useful information (see for example the Fundamental Techniques page).
 5As in “linear” FMC, that is without trying different possibilities and/or cancelling or undoing moves.
 6With “F2L-1” I mean an F2L minus a coner/edge pair.
 12 CHAPTER 1. THINK OUTSIDE THE BOX
+-->
+## 1.7 何をどうやって学ぶか
+当たり前のことですが、ここに書いたすべての解法を覚えて速くなることはゴールではありません。スピード解法でキューブを解くことはいくらか助けになることもありますし、楽しいものです。しかし、**ここではスピードは気にしません。**ゴールは**できるだけ短い手順でキューブを解くことですから、効率的になるよう努めましょう。**
+**Color Neutral (CN)**[^7]であることも大切なことですし、**「不一致ブロック(Non Matching Blocks)」**[^8]について取り組むのも役に立つでしょう。
+
+しかし、スピード解法と最小手数競技用の解法の大きな違いは、**FMCではいくつもの異なる可能性を試すことができるということです。**たとえばPetrusにおいては、2x2x3ブロックを作ったあとに6つの悪いエッジが残ったとき、最初から別のブロックを作り始めるか、ブロックの作り方を少し変えて状況を改善させるかすることができます。
+<!--
 1.7 What and How to Learn
 Obviously, getting fast with all of the methods described is not your goal. Doing some speedsolves
 may help seeing some things faster and is fun, but we don’t care about speed. Since our
@@ -638,18 +671,25 @@ a 2x2x3, you can try to build a different block from scratch or to slightly modi
 of the block you have found to improve your situation9
 .
 Here is some piece of advice for some of the methods described.
-1.7.1 Petrus
+-->
+
+
+### 1.7.1 Petrus
+<!--
 • After completing a 2x2x2 block, you can expand it in 3 different directions. Make sure
 to consider all of them!
 • Try to build a 2x2x3 directly, instead of going through the 2x2x2 step.
 • Try using Non Matching Blocks in step 4.
 • In step 4 again, try influencing the last layer to get an easier case (even “Heise style”).
-1.7.2 Roux
+-->
+### 1.7.2 Roux
+<!--
 • Try to build the two blocks at the same time.
 • Try Non Matching Blocks.
 • Influence the CMLL while finishing the second block, and the LSE during the CMLL.
-1.7.3 ZZ
-• After edges orientation, building the “Line” isn’t always a good idea: try blockbuilding
+-->
+### 1.7.3 ZZ
+<!--• After edges orientation, building the “Line” isn’t always a good idea: try blockbuilding
 directly (without breaking the EO!). The difference between solving the line first and then
 the right and left blocks is comparable to the difference between doing CFOP with cross
 + F2L pairs and doing FreeFOP.
@@ -666,8 +706,10 @@ if you are following the method, but that can be placed in the same “slots”.
 powerful if combined with premoves, that will be explained in Chapter 3.
 9Trying to influence a later step while solving another the current one is a good habit, which will be discussed
 again later.
-1.7. WHAT AND HOW TO LEARN 13
-1.7.4 CFOP/FreeFOP
+-->
+## 1.7. WHAT AND HOW TO LEARN 13
+### 1.7.4 CFOP/FreeFOP
+<!--
 • FreeFOP is better than CFOP, at least because CFOP is a special case of FreeFOP,
 by definition. Try at least to build and XCross10
 .
@@ -684,7 +726,7 @@ speedsolving.com/forum/threads/the-3x3x3-example-solve-thread.14345/page-238#
 post-1013053.
 10Cross and first pair, built at the same time. It can also be seen as a 2x2x2 block + 2 edges.
 14 CHAPTER 1. THINK OUTSIDE THE BOX
-->
+-->
 
 ## 第２章 ソルブの進め方
 <!--
@@ -2315,3 +2357,5 @@ R2 F2 L D' F' D F L' F2 R2
 -->
 [^1]: 訳注。[World Rubik's Cube Championship 2017](https://www.worldcubeassociation.org/competitions/WC2017)のこと。2年に1回の頻度で開催されるルービックキューブの世界大会を指す。2017年はパリ（フランス）、2019年はメルボルン（オーストラリア）で開催された。
 [^2]: [Western Color Scheme](https://www.speedsolving.com/wiki/index.php/Western_Color_Scheme)
+[^7]: Color Neutralとはキューブをどの色からスタートしても解くことができることを言います。たとえば、CFOPのクロス食がどの色でもできる、あるいはPetrusの2x2x2ブロックを8つあるパタンからどれでもできるということです。
+[^8]: 不一致ブロックは、特にFMCにおいて「疑似ブロック」と呼ばれることがあります。これはRouxやZZ、Heiseにおいて役に立つテクニックですが、他の解法でも使うことができます。疑似ブロックは、作る必要があるものとは異なるブロックで構築されますが、同じ「スロット」に配置されます。たとえば、Rouxにおいては、3x2x1のSB(Second Block)はFBの反対側にある4つのいずれかのブロックです。このテクニックはpremoveと組み合わせることで非常に強力なツールになります。詳細は第三章で説明します。
