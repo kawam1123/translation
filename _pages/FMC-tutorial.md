@@ -1,5 +1,6 @@
 ---
-title: 最小手数競技入門 - ルービックキューブを少ない手順で解く by Sebastiano Tronto
+title: "最小手数競技入門 - ルービックキューブを少ない手順で解く by Sebastiano Tronto"
+permalink: /FMC-tutorial/
 ---
 <!--
 訳注：原文はコメントアウトで表示し、必要に応じて参照できるようにしています。

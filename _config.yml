@@ -87,10 +87,6 @@ footer:
 
 
 defaults:
-  # everypage
-  - scope:
-      path: ""
-    values:
   # _posts  
   - scope:
       path: ""

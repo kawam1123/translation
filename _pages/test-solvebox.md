@@ -1,5 +1,6 @@
 ---
 title: ソルブ表示用ボックスの作成
+permalink: /FMC/test-solvebox.html
 ---
 
 ## ソルブ表示ボックスを作成する

@@ -1,0 +1,19 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+
+@charset "utf-8";
+
+@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
+@import "minimal-mistakes"; // main partials
+
+/*見出しの書式*/
+section .page__content h2 {
+    border-left: solid 10px navy;
+    border-bottom: solid 1px navy;
+    color: navy;
+    padding: 0.5em;
+}
+section .page__content h3 {
+    border-bottom: solid 1px black;
+}
