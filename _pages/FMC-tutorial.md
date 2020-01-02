@@ -31,8 +31,8 @@ September 15, 2017
 Original document: [Fewest Moves Tutorial](https://fmcsolves.cubing.net/fmc_tutorial_ENG.pdf)
 
 Translation by kawam1123  
-version 0.1
-December 31, 2019
+version 0.2
+January 03, 2020
 
 
 **翻訳者注：**  
@@ -75,7 +75,7 @@ December 31, 2019
 
 LaTeXで書き直そうとも考えました。LaTexのドキュメントは見た目がとても良くなるからです。ただし、唯一の欠点は、そうしてしまうと翻訳が難しくなるということです。このチュートリアルが高く評価されており、多くの他言語に翻訳をしてくれて、世界中で読めるようになっていくことを非常に嬉しく思います。翻訳者の皆さんそれぞれにお礼を言いたいのですが、ほとんどの方の名前を忘れてしまいました。
 
-第二版をずっと後回しにしていました。大きな理由は、時間がなかったことではなく、モチベーションが足りなかったことです。2017年にパリで行われた世界大会 [^1]では、このチュートリアルについて感謝を言ってくださる方に多くお会いして、必要なモチベーションを得ることができました。全ての人が見返りを求めずにほかの人を助けている。このコミュニティの一員であることの素晴らしさを思い出して、私も再び「自分のやること」をやりたいと思いました。
+ですが、第二版を作るのをずっと後回しにしていました。大きな理由は、時間がなかったことではなく、モチベーションが足りなかったことです。しかし、2017年にパリで行われた世界大会 [^1]では、このチュートリアルについて感謝を言ってくださる方に多くお会いして、必要なモチベーションを得ることができました。全ての人が見返りを求めずにほかの人を助けている。このコミュニティの一員であることの素晴らしさを思い出して、私も再び「自分のやること」をやりたいと思いました。
 
 <!--
 Preface to the Second Edition
@@ -92,6 +92,7 @@ many people who thanked me for this tutorial, and this gave me the motivation I 
 remembered how nice it is to be part of such a nice community where everybody helps each
 other without asking anything back, and I wanted to do my part - again.
 -->
+
 初版からの変更点のほとんどは見た目に関することです。最初のものよりけっこう長くなっていることに気づくかもしれません。この違いは、画像と空白ページによるものがほとんどです。文章を並べ替えて、単語のミスを修正しました（私の英語力はこの３年で成長してます！）。いくつか新しいことも加えたかもしれません。
 
 次のような点を追加しました。
@@ -207,7 +208,7 @@ See on alg.cubing.net
 -->
 
 
-このソリューションの記述のなかで、決して`x`や`[f2]`などの**「持ち替え記号」**を書いていないことに気付くかもしれません。解法を考えるときに手の中でキューブを持ち替えてはいけないということではありません。もし持ち替え記号を使わない記述がよくわからないなら、6.1節までスキップすることがオススメです。
+このソリューションの記述のなかで、決して`x`や`[f2]`などの**「持ち替え記号」**を書いていないことに気付くかもしれません。解法を考えるときにキューブを持ち替えてはいけないということではありません。もし持ち替え記号を使わない記述がよくわからないなら、6.1節までスキップすることがオススメです。
 
 <!--
 You may notice that in writing the solution I almost never use “rotation” moves such as
@@ -217,13 +218,15 @@ to Section 6.1 before reading the rest of the book.
 -->
 
 ### 謝辞
-世界のスピードキューブコミュニティに対して、どんな時もテクニックやメソッドをオープンに広めていることに感謝を申し上げたいです。これによって、誰もが（これまでに）見つかったすべてのことを自由に学ぶことができるようになります。このチュートリアルも同じように役に立つことを臨みます。
+**世界のスピードキューブコミュニティに対して、どんな時もテクニックやメソッドをオープンに広めていることに感謝を申し上げたいです。**これによって、誰もが（これまでに）見つかったすべてのことを自由に学ぶことができるようになります。このチュートリアルも同じように役に立つことを臨みます。
+
 <!--
 Acknowledgements
 I want to thank the whole international speedcubing community for always openly spread techniques and methods, enabling anyone to freely learn anything that has been discovered (until
 now). I hope this tutorial will be helpful in the same way.
 -->
-あわせて感謝を申し上げたいのは、改善点を指摘してくれた全ての方です。間違いを指摘してくださったり、このチュートリアルを（古い版も含めて）翻訳してくださったりしました。いずれ忘れてしまうでしょうから、全ての方の名前を挙げるのは控えます。
+
+**あわせて感謝を申し上げたいのは、改善点を指摘してくれた全ての方です。**間違いを指摘してくださったり、このチュートリアルを（古い版も含めて）翻訳してくださったりしました。いずれ忘れてしまうでしょうから、全ての方の名前を挙げるのは控えます。
 
 第二版では、visualcubeとalg.cubing.netを使いましたので、この２つのツールの作者であるConrad RiderとLucas Garronには、特に感謝を申し上げます。
 <!--
@@ -237,6 +240,11 @@ goes also to the creators of this two tools, respectively Conrad Rider and Lucas
 
 ### 免責事項
 ご存知のように、英語は私の母語ではありません。もし文章が下手だったり、間違いを見つけたりした場合、私にご連絡ください。 `sebastiano.tronto [at] gmail [dot] com`
+
+**翻訳者注：**  
+英語は翻訳者の母語でもありません！　本文の内容ではなく、翻訳のミスを見つけた場合は、私にご連絡ください！
+{: .notice--info}
+
 <!--
 Disclaimer
 As you may know, English is not my first language. If you think that a certain passage is poorly
@@ -339,7 +347,7 @@ C Last Layer Algorithms 57
 
 ## イントロダクション
 
-ルービックキューブをできる限り速く解くということは面白いものですが、さらに面白いのは一番少ない手数で解くということです。**これが最少手数競技のゴールです。** 最少手数競技は**FMC**あるいは**Fewest Moves Challenge**と呼ばれます。
+ルービックキューブをできる限り速く解くということは面白いものですが、**さらに面白いのは一番少ない手数で解くということです。これが最少手数競技のゴールです。** 最少手数競技は**FMC**あるいは**Fewest Moves Challenge**と呼ばれます。
 <!--
 Introduction
 Trying to solve a Rubik’s Cube (or, in general, any puzzle) as fast as possible is interesting, but
@@ -366,8 +374,8 @@ FMCはWCA(World Cube Association、世界キューブ協会)の公式種目と�
 これまでで最も少ない手数の結果は、Tim Wong (USA)、Marcel Peters (ドイツ)、Vladislav Ushakov (ベラルーシ)による19手のものです。３回の試技の平均では、Marcel PetersとBaiqiang Dong (中国)による24.33が世界記録です。Marcel Petersは2017年の世界大会で世界チャンピオンのタイトルを獲得しました。
 
 **訳注：**  
-翻訳時点(2019/12)において、世界記録はさらに更新されています。  
-現在の世界記録は、**本チュートリアルの執筆者であるSebastiano Trontoによる単発16手、平均22.00手**です。2019年6月15日-16日に開催されたFMC 2019において達成されました。  
+翻訳時点(2020/01)において、世界記録はさらに更新されています。  
+現在の世界記録は、**本チュートリアルの執筆者であるSebastiano Trontoによる単発16手、平均22.00手**です。2019年6月15日-16日に開催されたFMC 2019において達成されました。  2019年に開催された世界大会では、**Firstian Fushada (符逢城)	が単発24手、平均25.33手で世界チャンピオンのタイトルを獲得しました。**  
 また、日本においては、**Shuto Ueno (上野柊斗)が単発19手、平均24.00手の日本記録を保持しています。**この単発記録はアジア記録(AsR)でもあります。
 {: .notice--success}
 
