@@ -565,7 +565,7 @@ Waffle’s Roux Tutorial: [http://wafflelikescubes.webs.com/](http://wafflelikes
 
 **訳注：**  
 実際の最少手数競技においては、解答用紙に**M、S、Eの中層回転（スライスムーブ)**の記号を書くことは認められていません。[規則12a](https://www.worldcubeassociation.org/regulations/translations/japanese/#12a)に定義されている記号のみを使うようにしましょう。ここでは「RouxメソッドのやりかたでM列を使う（解答用紙にはR L'のように書く）と2手としてカウントされるので避けたほうがよいですよ」ということを言っています。
-{: .notice--success}
+{: .notice--danger}
 
 <!--
 1.2 Roux
