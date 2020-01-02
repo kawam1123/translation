@@ -666,13 +666,13 @@ layer edges, and then placing 3 first layer corners using the “free” edge.
 Despite its simplicity, this method can be very useful in FMC.
 -->
 
-### 1.6. Heise Method
+### 1.6. Heise
 1. 2x2x1の「四角」を作る
 1. 「四角」を揃えてエッジを合わせる
 1. 残った5つのエッジと2つのコーナーを揃える
 1. 最後の3つのコーナーをコミューテータで揃える
 
-もしあなたが熟練者のアドバイスを無視して、一つの解法だけを使ってFMCをやりたいというなら、Heiseを選ぶのがよいです。
+もしあなたが熟練者のアドバイスを無視して、一つの解法だけを使ってFMCをやりたいというなら、Heiseを選ぶのがよいでしょう。
 
 <!--
 1.6 Heise
