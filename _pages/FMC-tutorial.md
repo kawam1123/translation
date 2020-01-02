@@ -563,6 +563,9 @@ Petrusはブロックビルディングを学ぶには素晴らしい解法で�
 
 Waffle’s Roux Tutorial: [http://wafflelikescubes.webs.com/](http://wafflelikescubes.webs.com/)
 
+**訳注：**  
+実際の最少手数競技においては、解答用紙に**M、S、Eの中層回転（スライスムーブ)**の記号を書くことは認められていません。[規則12a](https://www.worldcubeassociation.org/regulations/translations/japanese/#12a)に定義されている記号のみを使うようにしましょう。ここでは「RouxメソッドのやりかたでM列を使う（解答用紙にはR L'のように書く）と2手としてカウントされるので避けたほうがよいですよ」ということを言っています。
+{: .notice--success}
 
 <!--
 1.2 Roux
@@ -616,7 +619,7 @@ FreeFOPでは、最初の二つのステップは「自由な」ブロックビ�
 
 何にせよ、スキップができない限り、Last LayerをOLLとPLLで解くことはまったくおすすめできない方法です。
 
-Badmephisto’s Tutorial: http://badmephisto.com/.
+Badmephisto’s Tutorial: [http://badmephisto.com/](http://badmephisto.com/)
 
 <!--
 1.4 CFOP (Fridrich) and FreeFOP
@@ -625,19 +628,30 @@ In classic CFOP the steps are the following:
 2. 4 corner/edge pair insertions.
 3. OLL (Orient Last Layer).
 4. PLL (Permute Last Layer).
-4For speedsolving, it may be better to solve one block at the time, since it is usually more ergonomic. But this
-is not the case for FMC, as efficiency (i.e. number of moves) is the only thing that matters!
--->
-
-### 1.5 キーホールF2L
-<!--
-1.5. KEYHOLE F2L 11
 Classic CFOP s not considered a good method for FMC, but in some situation it is useful
 to know different ways to insert a corner/edge pair.
 In FreeFOP, the first two steps are replaced by a “free” blockbuilding F2L.
 Anyways, I strongly advise against solving the last layer with OLL + PLL, unless you get
 to skip one of the two steps.
 Badmephisto’s Tutorial: http://badmephisto.com/.
+4For speedsolving, it may be better to solve one block at the time, since it is usually more ergonomic. But this
+is not the case for FMC, as efficiency (i.e. number of moves) is the only thing that matters!
+-->
+
+### 1.5 キーホールF2L
+キーホールは厳密にはキューブの解法ではなく、最初の二段目を解くためのテクニックです。LBL(Layer by Layer)からCFOPの中間にあたる解法として位置づけられています。ステップは次のようなものです。
+
+1. クロス
+1. 1段目に3つのコーナーを配置する
+1. 3つの中層エッジをインサートする。「自由に」コーナーを使う
+1. コーナーとエッジのペアをインサートする。CFOPやLBLと同様
+
+最初の２ステップをブロックビルディングに置き換えることと、中層のエッジを同時に揃えることで、効率化するとよいでしょう。クロスと3つの中層エッジを揃えてから、3つのコーナーを「自由な」エッジを使って揃えるというバリエーションもあります。
+
+非常にシンプルですが、この解法はFMCにおいてとても役に立ちます。
+
+<!--
+
 1.5 Keyhole F2L
 Keyhole is not really a method to solve the cube, but a technique to solve the first two layers.
 It is considerate an intermediate method between “Layer by Layer” and CFOP. The steps are
@@ -653,6 +667,13 @@ Despite its simplicity, this method can be very useful in FMC.
 -->
 
 ### 1.6. Heise Method
+1. 2x2x1の「四角」を作る
+1. 「四角」を揃えてエッジを合わせる
+1. 残った5つのエッジと2つのコーナーを揃える
+1. 最後の3つのコーナーをコミューテータで揃える
+
+もしあなたが熟練者のアドバイスを無視して、一つの解法だけを使ってFMCをやりたいというなら、Heiseを選ぶのがよいです。
+
 <!--
 1.6 Heise
 1. Build four 2x2x1 “squares” (all sharing one colour).
@@ -2386,7 +2407,7 @@ R2 F2 L D' F' D F L' F2 R2
 [^2]: [Western Color Scheme](https://www.speedsolving.com/wiki/index.php/Western_Color_Scheme)
 [^1-1-Petrus]: ブロックビルディングとは、複数のピースからブロックを作り、つなげるテクニックのことです。CFOPにおけるF2Lとは大きく違うものと見なされがちですが、F2Lも一種のブロックビルディングと見なすことができます。対比すべきものとしては、エッジオリエンテーション(EO、PetrusやZZで用いられる)や「コーナーファースト」、アルゴリズムやコミューテータの利用などがあります。これらのテクニックは全て本書で説明されます。
 [^1-1-Petrus-2]: たとえば、HARCSというは無料で利用できます。 https://www.speedsolving.com/forum/threads/
-[^1-3-ZZ]: 
+[^1-3-ZZ]: スピード解法では、ブロックを一つずつ揃えていくほうが、人間工学に叶った動きになるため、望ましいです。しかし、FMCにおいてこれは当てはまりません。効率性（つまり、手数）だけを気にするべきです！
 harcs-jarcs-replacement-cube-solver.63241/
 [^7]: Color Neutralとはキューブをどの色からスタートしても解くことができることを言います。たとえば、CFOPのクロス食がどの色でもできる、あるいはPetrusの2x2x2ブロックを8つあるパタンからどれでもできるということです。
 [^8]: 不一致ブロックは、特にFMCにおいて「疑似ブロック」と呼ばれることがあります。これはRouxやZZ、Heiseにおいて役に立つテクニックですが、他の解法でも使うことができます。疑似ブロックは、作る必要があるものとは異なるブロックで構築されますが、同じ「スロット」に配置されます。たとえば、Rouxにおいては、3x2x1のSB(Second Block)はFBの反対側にある4つのいずれかのブロックです。このテクニックはpremoveと組み合わせることで非常に強力なツールになります。詳細は第三章で説明します。
