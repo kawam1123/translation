@@ -823,7 +823,7 @@ post-1013053.
 
 ## 第２章 ソルブの進め方
 
-[Per Kristen Fredlund](https://www.worldcubeassociation.org/persons/2004FRED02)[^2-0]{:.underline}の言葉を引用すれば、一般的な進め方は次の通りです。
+[Per Kristen Fredlund](https://www.worldcubeassociation.org/persons/2004FRED02)[^2-0]の言葉を引用すれば、一般的な進め方は次の通りです。
 > もっと次のように考えましょう。キューブを二段階で解くのだ、と。
 >
 > 一段階目では、可能な限り多くのピースを、可能な限り効率的に解きましょう。（つまり、よいスケルトン[^2-0-1]を作りましょう）  
@@ -963,7 +963,7 @@ the yellow-orange-blue one!
 #### 2.1.3 壊して直す (Destroy and Restore)
 ソース: [http://www.ryanheise.com/cube/destroy_restore.html](http://www.ryanheise.com/cube/destroy_restore.html)
 
-![](../assets/img/alg-213.png){: }
+![](../assets/img/alg-213.png){:width="200px" height="auto" class=""}
 
 <!--
 2.1.3 Destroy and Restore
