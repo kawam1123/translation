@@ -51,12 +51,12 @@ January 03, 2020
 
 |章|ページ|進捗|メモ|
 |:---|:---:|:---:|:---:|
-|序文                                   |1-8    |[完了](#){: .btn .btn-success}     |2019/12/31|
-|1章 Think Outside the Box              |9-14   |[完了](#){:.btn .btn-success}      |2020/01/03|
-|2章 How to Proceed During a Solve      |15-34  |[作業中](#){: .btn .btn-warning}   ||
+|序文                                   |1-8    |[完了](#){: .btn .btn-success}     |2019/12/31完了|
+|1章 Think Outside the Box              |9-14   |[完了](#){:.btn .btn-success}      |2020/01/03完了|
+|2章 How to Proceed During a Solve      |15-34  |[作業中](#){: .btn .btn-warning}   |2020/01/03着手|
 |3章 Advanced Tools                     |35-44  |[未着手](#){: .btn .btn-danger}    ||
 |4章 Some Other Methods                 |45-48  |[未着手](#){: .btn .btn-danger}    ||
-|5章 How To Practice                    |49-50  |[未着手](#){: .btn .btn-danger}    ||
+|5章 How To Practice                    |49-50  |[完了](#){:.btn .btn-success}     |2020/01/03完了|
 |6章 In Competitoin                     |51-52  |[未着手](#){: .btn .btn-danger}    ||
 |付録A Other Resources                  |53-54  |[未着手](#){: .btn .btn-danger}    ||
 |付録B Notation                         |55-56  |[未着手](#){: .btn .btn-danger}    ||
@@ -879,7 +879,7 @@ to study some other. Some will be explained in detail, some other will be only m
 other tutorials will be linked for a more complete study.
 -->
 ### 2.1 ブロックビルディング (Blockbuilding)
-ブロックビルディングはFMCにおける最重要のテクニックでしょう。簡単なコンセプトですが、しっかり習得するにはたくさんの練習が必要です。前の章で書いたような、ブロックビルディングの考え方に基づく解法（Petrus、Roux、Heise、ZZ）を練習することはブロックビルディングを上達させるのに最も直接的です。
+ブロックビルディングはFMCにおける最重要のテクニックでしょう。簡単なコンセプトですが、しっかり習得するにはたくさんの練習が必要です。前の章で書いたような、ブロックビルディングの考え方に基づく解法（Petrus、Roux、Heise、ZZ）を練習することで直接的にブロックビルディングのスキルを高めることができます。
 
 ここではいくつか便利な基本テクニックを書きましょう。一つ目はRyan Heiseのウェブサイト ([www.ryanheise.com/cube](www.ryanheise.com/cube))から取ってきたものです。ウェブサイトには実例がたくさんありますから、是非見てみましょう！
 <!--
@@ -1023,18 +1023,19 @@ R //“Restore”
 F' //Put back the pieces moved away with F
 -->
 #### 2.1.4 キーホール (Keyhole)
-
+単独の解法として既に書いたことですが、キーホールはブロックを津作るための戦略のひとつとして考えることができます。このテクニックの本質は未完成であるキューブの一部を活用してほかのピースを揃えることです。キーホールF2Lの練習をうまくやっていれば、私が言わんとしていることを理解するのに実例を出す必要はないでしょうけれど、念のためにキーホールの例を書いておきます。
 {% capture display_text %}
-F' L' //Layer minus one corner
-F2 L' B' L //Keyhole
-F U' B U //Keyhole, accidentally solving the last corner
-F' R' B2 R //Keyhole
+F' L' //コーナーが一つない一面が完成
+F2 L' B' L //キーホール
+F U' B U //キーホール、偶然にも最後のコーナーが揃う
+F' R' B2 R //キーホール
 F B L B L' //F2L
 B' //LL
 {% endcapture %}
 {% include solvebox.html
 title = "キーホール (出典：Edoardo Disarò)"
 scramble = "R U' R' L F' B U2 R2 B2 L' B R D F2 D2 L2 F2 D' R2 F2"
+solution = "alg.cubing.net"
 text = display_text
 img_src="../assets/img/alg-214.png"
 algcubing="https://alg.cubing.net/?setup=U-_R-_L_F-_B_U2_R2_B2_L-_B_R_D_F2_D2_L2_F2_D-_R2_F2&alg=F-_L-_%2F%2FLayer_minus_one_corner%0AF2_L-_B-_L_%2F%2FKeyhole%0AF_U-_B_U_%2F%2FKeyhole,_accidentally_solving_the_last_corner%0AF-_R-_B2_R_%2F%2FKeyhole%0AF_B_L_B_L-_%2F%2FF2L%0AB-_%2F%2FLL"
@@ -1057,7 +1058,7 @@ B' //LL
 See on alg.cubing.net
 -->
 #### 2.1.5 一つのムーブ、二つのゴール (One Move, Two Goals)
-
+単一のムーブで二つのブロックを作ることができる場合は多くあります。一般的には「二つのことを同時にやる」ことができます。実例を見ることでよりはっきりとわかるでしょう。
 {% capture display_text %}
 L U' F2 D' //2x2x2 (4/4)
 U2 B R2 B //Pseudo F2L-1 (4/8)
@@ -1074,6 +1075,10 @@ text = display_text
 img_src="../assets/img/alg-215.png"
 algcubing="https://alg.cubing.net/?setup=D_U-_F2_U-_R-_F_R2_B_D-_B_R_F_B-_U_R-_D2_L-_R2_F2_B-_U-_B_D_B2_F2_U_L_F_U-_B2&alg=L_U-_F2_D-_%2F%2F2x2x2_(4%2F4)%0AU2_B_R2_B_%2F%2FPseudo_F2L%26%2345%3B1_(4%2F8)%0AF-_(B-_U_F2_U-_B_U_F2_U-)_U_F_R_U2_R-_%2F%2FPseudo_F2L_(6%2F14)%0AU2_R2_%2F%2FAll_but_3_corners_(2%2F16)"
 %}[^2-1-5]
+
+もしあなたがインサーションについてまだ知らないなら、最後の行は無視してください。今回注目すべきは最初の行、特に`F2`をしているところです。この一手でDFに2x2x1ブロックを作り、同時に橙-緑エッジを合わせています。次の一手で2x2x2ブロックができるようになりました。
+
+このような状況は偶然に生まれることがありますが、そうでない場合でも認識の仕方を学んでおくことは役に立ちます。
 
 <!--
 2.1.5 One Move, Two Goals
@@ -1097,7 +1102,24 @@ the 2x2x2 with the next move.
 Situations like this may arise without forcing them, but it useful to learn to recognize them,
 in case they don’t.
 -->
-#### 2.1.6 Influence Later Steps
+#### 2.1.6 あとのステップに影響を与える(Influence Later Steps)
+F2Lを完成させるときにLLに影響を与える点についてはすでに（少しだけ）話しました[^2-1-6-1]。このアイディアはブロックビルディングにも適用できます。つまり、ブロックを準最適(sub-optimally)[^2-1-6-2]に作っておくか、あるいは「不要な」ムーブを加えることで後の繋がりをよくしたり、よいブロックビルディングができたりします。
+
+たとえば、次のスクランブルを考えてみましょう。
+{% capture display_text %}
+L2 B R B //２つの 2x2x1 ブロック
+{% endcapture %}
+{% include solvebox.html
+title = "あとのステップに影響を与える - Example"
+scramble = "L2 D2 U R2 F2 D2 B2 U' R2 B2 U B U F D B2 U L D' R' F"
+solution = "alg.cubing.net"
+text = display_text
+img_src="../assets/img/alg-216.png"
+algcubing="https://alg.cubing.net/?setup=L2_D2_U_R2_F2_D2_B2_U-_R2_B2_U_B_U_F_D_B2_U_L_D-_R-_F&alg=L2_B_R_B_%2F%2FTwo_2x2x1_blocks"
+%}
+
+見てわかるように、`L2 R B`で赤-青-白の四角を作ることができますが、`L2 B R B`と一手加えることで、四角が二つになります。
+
 <!--
 2.1.6 Influence Later Steps
 We have already (quickly) talked about influencing the LL step while finishing the F2L5
@@ -1114,7 +1136,15 @@ See on alg.cubing.net
 As you can see, the sequence L2 R B builds the red-blue-white square, but adding only one
 move (the red B) the square become 2.
 -->
-#### 2.1.7 Pay Attention to EO
+#### 2.1.7 EOに気をつけよう (Pay Attention to EO)
+ここでいう**EO**とはエッジの向き(Edge Orientation)を略したものです。
+
+既にお気づきの方もいるかもしれませんが、複数の異なる解法を学んでいると、Edge Orientationというのは再帰的なステップです。前述のように、**Bad edgeが多ければ多いほど、解くのは困難になっていきます。**通常、最後にエッジの向きをそろえることは、効率的ではありません。ZZでそうするように、まず最初にエッジの向きを揃えることが手軽ですが、ブロックビルディングのフェイズで制約を持つことになります。
+
+部分的にでも、Edge Orientationをブロックビルディングの途中で終わらせてしまうようにすることが、最良の方法のひとつです。ZZやPetrusなどの解法に習熟すると、数手動かしたあとでエッジの向きが正しいかどうかを簡単に判定できるようになります。もしまだ判定ができないのなら、FMCにおいてはいつでも望むときに戻って修正できるということを忘れないでおきましょう。つまり、EOがうまくいかないときには、前に戻って、何手か加えたり変えたりして、よい方向に進むかどうかを確認すればいいのです。（2.5.1節もご参照ください）
+
+しかし、「EOファーストのアプローチ」をただちに却下しないようにしてください。[João Pedro Batista Ribeiro Costa](https://www.worldcubeassociation.org/persons/2013COST02)(世界大会2015のFMCチャンピオン)や[Grzegorz Łuczyna](https://www.worldcubeassociation.org/persons/2005LUCZ01)(ヨーロッパ大会2010のFMCチャンピオン)などの著名なキューバーは、ほとんど常にEOから始めていますし、[Sébastien Auroux](https://www.worldcubeassociation.org/persons/2008AURO01)(世界大会2011のFMCチャンピオン)や私(Sebastiano Tronto)も非常によく使います。詳細と実例については4.1節を参照してください。
+
 <!--
 2.1.7 Pay Attention to EO
 Here EO is the common shortcut for Edge Orientation.
@@ -1133,7 +1163,28 @@ Pedro Batista Ribeiro Costa (2015 World Champion) and Grzegorz Luczyna (2010 Eur
 Champion) almost always start with edge orientation and other like S´ebastien Auroux (2011
 World Champion) and myself do it very often. For more details and examples see section 4.1.
 -->
-#### 2.1.8 Which Block Should I Build?
+#### 2.1.8 どのブロックを作るべきか？ (Which Block Should I Build?)
+様々な状況を活用せよ、ということが黄金律です。つまり、2x2x2ブロック、3x2x1ブロック、2つの2x2x1の四角、ほかの様々なブロックから始めることができます。全ての可能性を試しましょう。
+
+可能な２つのアプローチとしては次のようなものがります。
+1. 2x2x3やF2L-1のような大きなブロックを作ろうとする
+1. 小さなステップで前に進み、たくさんの小さなブロックを作って最後につなげる
+
+Erik Jernqvistは「好調なスタート」を切るための指標として、次の手数の表を作りました。[^2-1-8]
+
+|ブロックの種類|手数|
+|:------------|:----------:|
+|2x2x1四角＋コーナー／エッジペア|3|
+|2x2x2ブロック|4|
+|2つの2x2x1四角|5|
+|2x2x3ブロック|9|
+|F2L-1|14|
+|F2L|17|
+
+個人的には、この表の手数は、特に最初の３つについて、ちょうどよい推計だと思います。しかし、**好調なスタートを切れたかどうかはその後のつながりがどうなるかにかかっている**ということを覚えておかなければなりません。もしF2L-1が12手でできたけれど、bad edgeが4つも残っていて、最後のF2Lのエッジが反転して入っているとしたらどうするでしょう。すぐに投げ捨てるだろうと思います。一方で、全てのエッジの向きが揃った2x2x3ブロックが12手でできたならもっとよいでしょう。もちろんEOだけが考慮すべきことではありませんが、最も重要なものの一つです。
+
+もう一つのルールは**決してLast Layerに影響を与えずにF2Lを完成させてはならない**[^2-1-8-2]ということです。理由は単純です。つまり、Last layerが悪い状態であるなら、どんなに多くのアルゴリズムを知っていたとしても多くの手数が必要になります。また、F2Lを完成させてしまうことはキューブ全体を操作する自由度が減るということです。一方で、**F2L-1を目指すことは良い部分解です。**これは、多くのピースが既に配置されているにも関わらず、より多くの自由度があるからです。
+
 <!--
 2.1.8 Which Block Should I Build?
 The golden rule is to exploit different situations: a 2x2x2 block, a 3x2x1, two 2x2x1 squares and
@@ -1168,7 +1219,7 @@ you know, and a completely built F2L gives a little freedom to manipulate the cu
 other hand, an F2L-1 is a good partial goal, because it leaves you more with more freedom,
 despite the many pieces already placed.
 -->
-#### 2.1.9 Ready-Made Blocks: How to Deal with Them?
+#### 2.1.9 すでにブロックがある：どうすればいいか？(Ready-Made Blocks: How to Deal with Them?)
 <!--
 2.1.9 Ready-Made Blocks: How to Deal with Them?
 It can happen that you find some blocks already built after scrambling the cube, or that with
@@ -2418,6 +2469,7 @@ post-1234805
 https://www.speedsolving.com/forum/threads/the-fmc-thread.13599/page-111#post-945295
 -->
 ## 第５章　練習方法 (How To Practice)
+多くの人は、上達するためには「練習と、練習と、練習が必要です！」と言うでしょう。これは真ですが、練習のやり方を知る必要もあります。ここでは、FMCで上達するための練習方法についていくつかアドバイスをします。
 <!--
 Chapter 5
 How To Practice
@@ -2425,7 +2477,21 @@ Many people say that to get better you need to “practice, practice, practice�
 you also need to know how to practice: here is some advice on how to practice to get better at
 FMC.
 -->
-### 5.1 No Time Limit and Competition Simulation
+### 5.1 時間無制限と大会シミュレーション(No Time Limit and Competition Simulation)
+常に大会をシミュレーションして1時間以内に解答を完成させるようにすることは一番よい方法ではありません。これと反対に、時間制限を設けないで、結果に満足するまで同じスクランブルを何度もやることをおすすめします。
+
+1時間の時間制限を設けた練習が悪いわけではありません。自分のレベルを判別することができるようになるでしょうし、タイムマネジメントの戦略を探すのにも役立つでしょう[^5-1-1]。私がおすすめするのは、FMCのオンライン大会に参加することです。たとえば、David Adamsのウェブサイト[^5-1-2]やGerman Forum competition[^5-1-3]などがあります。
+
+大会と同じように1時間を使ってやってみてから、よい結果を得るまで続けることが、ちょうどよい妥協点でしょう。
+
+**訳注：** 2020年1月時点で、上記のDavid Adamsのウェブサイトは動作していないようでした。  
+Speedcube(rs).deのフォーラム上での大会は継続されています。
+{: .notice--warning}
+
+**訳注：** 日本国内においては[Tribox Contest](https://contest.tribox.com)が毎週FMCを含むオンラインの大会を開催しています。  
+Redditのr/Cubersコミュニティでは[Cubers.io](http://www.cubers.io/)というウィークリーの大会を開催しています。
+{: .notice--info}
+
 <!--
 5.1 No Time Limit and Competition Simulation
 Always trying to simulate a competition and forcing yourself to complete your solution in one
@@ -2440,7 +2506,11 @@ competition3
 Trying for one hour as it was a competition and then keep trying until you reach a good
 result is a balanced compromise.
 -->
-### 5.2 Compare Yourself to the Masters (and Study their Solves)
+### 5.2 上級者と比べよう (Compare Yourself to the Masters (and Study their Solves))
+練習したいときは、既にどこかでFMC上級者が解いたスクランブル使ってみるとよいでしょう。あなたの解答と上級者のものを比べて、あなたが気付かなかった点を見つけることができます。全ての秘密を手中に収めましょう！
+
+加えて、ブロックビルディングや他の解法の訓練をするのであれば、上級者の解答を研究することは必須です。オンライン大会の過去のラウンドの結果から見ることもできますし、speedsolving.comのFMCスレッドでも見つかるでしょう。数年前、ブログ型のウェブサイト[http://fmcsolves.cubing.net/](http://fmcsolves.cubing.net/)を始めて、FMCの素晴らしいソルブ例を集めています。しかし、ここ数年更新していません。
+
 <!--
 5.2 Compare Yourself to the Masters (and Study their Solves)
 When you want to practice, I suggest trying a scramble that has already been solved by some
@@ -2453,6 +2523,8 @@ blog-style website http://fmcsolves.cubing.net/ to collect nice FMC solves, but 
 updated it in ages.
 -->
 ### 5.3 Hard Scrambles
+「最悪ケースのシナリオ」において何ができるかを知るために、上級者でも難しかったというスクランブルをやってみるのもよいでしょう。[ここ](
+https://www.speedsolving.com/forum/threads/the-fmc-thread.13599/page-88#post-842681)[^5-3]で難しいスクランブルのリストを得られます。
 <!--
 5.3 Hard Scrambles
 To see what you can do in the “worst case scenario”, I suggest trying out some scrambles that
@@ -2469,14 +2541,16 @@ https://www.speedsolving.com/forum/threads/the-fmc-thread.13599/page-88#post-842
 49
 50 CHAPTER 5. HOW TO PRACTICE
 -->
-### 5.4 Deliberate Practice
+### 5.4 熟考する練習(Deliberate Practice)
+よいスタートがなかなか見つからないと感じているのであれば、こういう練習をしてみましょう。スクランブルをして、2x2x2や2x2x3などを気が済むまで探します。そのあと、スクランブルを変えて、同じように続けます。同じ考えをF2L-1や他のサブステップについてやることもできます。
 <!--
 5.4 Deliberate Practice
 If you think you have troubles in finding a good start, practice that: take a scramble, find a
 2x2x2, 2x2x3 or something else until you are satisfied, then change scramble. You can apply
 this idea to F2L-1 or any other substep.
 -->
-### 5.5 Fast Scrambling
+### 5.5 ファストスクランブル(Fast Scrambling)
+必要ではないとしても、NISSのようなテクニックを使うときや、単に私と同じように、ソルブ中に何度もキューブをスクランブルすることがあるなら、「ゆっくり過ぎない」スクランブルを試してみるといいでしょう。最も重要なことは正確性です。（スクランブルを間違えないこと！）20手のスクランブルを10秒でできるようになれば上出来です。
 <!--
 5.5 Fast Scrambling
 Even if it is not necessary, when using techniques like NISS, or simply if like me you tend to
@@ -2484,7 +2558,10 @@ solve and scramble the cube many times during a solve, you should try to be at l
 slow” at scrambling, and most important to be accurate (don’t make mistakes). 10 seconds for
 a 20 moves scramble is fine.
 -->
-### 5.6 Study!
+### 5.6 よく学べ！(Study!)
+大事なことを言い忘れていました。**このガイドをよく読んで学び、他のリソースからも学び、既知のものも未知のものも含めてアルゴリズムやテクニックを学びましょう。**speedsolving.comの「FMCスレッド」を二回、最初から最後まで読みました。
+
+アルゴリズムを学びましょう。膨大な量のアルゴリズムがあります。たとえば、LLEF(Last Layes Edges First)[^5-6-1]やSummer Variation[^5-6-2]などがあります。繰り返しますが、**単に暗記するのではなく、どのように機能しているのかを理解するようにしましょう。**
 <!--
 5.6 Study!
 Last but not least. Study this guide, study from other sources, study algorithms and techniques,
@@ -2778,5 +2855,15 @@ R2 F2 L D' F' D F L' F2 R2
 [^2-0-2]: ソルブのより前の段階で数手をインサートすることで完成させるテクニックです。これもすぐに解説します！もうちょっと待って！
 [^2-0-3]: [http://www.speedsolving.com/forum/threads/fewest-moves-tips-and-techniques.1566/#post-16209](http://www.speedsolving.com/forum/threads/fewest-moves-tips-and-techniques.1566/#post-16209)
 [^2-1-5]: [19 HTM Solve by Mirek Goljan and Guus Razoux Schultz](https://fmcsolves.cubing.net/?p=107)
+[^2-1-6-1]: 著名な例はZBLS(ZBF2Lとも呼ばれる)やWinter Variationです。これに限らず非常に沢山あります。調べてみましょう！
+[^2-1-6-2]: 「準最適」とは最良の解法よりも多くの手数がかかる解法のことです。
+[^2-1-8]: speedsolving.comの投稿による。もちろん、何が「好調なスタート」であるかはあなたのレベルによって変わります。ここでの手数は、熟練者を目指す人にとってのよいゴールとなるように考えられています。もしあなたがそこまで上達していないなら、あまり効率的でないブロックを作って進めてもいいでしょう。「好調なスタート」を探すのに多くの時間を使わないようにしてください。最終結果だけがカウントされます！
+[^2-1-8-2]: もっと重要なルールは**「決して『決して』と言わない！」**ということです。
+[^5-1-1]: タイムマネジメントについては6.3節で話します。
+[^5-1-2]: [https://www.ocf.berkeley.edu/˜dadams/fmc/](https://www.ocf.berkeley.edu/˜dadams/fmc/)
+[^5-1-3]: [https://speedcube.de/forum/showthread.php?tid=5795](https://speedcube.de/forum/showthread.php?tid=5795)
+[^5-3]: [https://www.speedsolving.com/forum/threads/the-fmc-thread.13599/page-88#post-842681](https://www.speedsolving.com/forum/threads/the-fmc-thread.13599/page-88#post-842681)
+[^5-6-1]: [https://www.speedsolving.com/wiki/index.php/LLEF](https://www.speedsolving.com/wiki/index.php/LLEF)
+[^5-6-2]: [https://www.speedsolving.com/wiki/index.php/Summer_Variation](https://www.speedsolving.com/wiki/index.php/Summer_Variation)
 *[CFOP]: Cross, F2L, OLL, and PLL
 *[F2L]: First Two Layer
