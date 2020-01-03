@@ -2,10 +2,10 @@
     {% if include.title %}<h2>{{ include.title }}</h2>{% endif %}
     {% if include.scramble %}<div class="solvetext scramble">スクランブル: {{ include.scramble }}</div>{% endif %}
     <img class='float-md-right img-responsive shadow-none' style='width:150px;height:auto;padding:0;margin:15px 0 0 15px;' src='{{ include.img_src }}'>
-    <div class="solvetext clearfix shadow-none"><pre class="shadow-none">{{ include.text }}</pre></div>
+    <div class="solvetext shadow-none float-left"><pre class="shadow-none">{{ include.text }}</pre></div>
     {% if include.solution %}
         {% if include.algcubing %}
-        <div class="solvetext solution">ソリューション: <a href = "{{ include.algcubing }}">{{ include.solution }}</a></div>
+        <div class="solvetext solution clearfix">ソリューション: <a href = "{{ include.algcubing }}">{{ include.solution }}</a></div>
         {% else %}
         <div class="solvetext solution">ソリューション: {{ include.solution }}</div>
         {% endif %}
