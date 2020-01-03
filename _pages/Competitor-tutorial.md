@@ -7,9 +7,9 @@ WCA Competition Tutorial Version: 2019-10-21
 Original document is [here](https://www.worldcubeassociation.org/files/WCA_Competition_Tutorial.pdf).  
 Japanese Translation: 2019-12-10 by kawam1123 <!--他の翻訳者名をここに列挙する-->  
 
-> 翻訳者注：
->
-> 本ドキュメントは、未完成です。原文はコメントアウトされた状態で保存されています。翻訳に協力してくださる方は、コメントアウトを外して日本語の翻訳を書き込んでください。文中の画像ファイルおよびリンクについては、いずれGitHubのリポジトリ内に格納予定です。
+**翻訳者注：**  
+本ドキュメントは、未完成です。原文はコメントアウトされた状態で保存されています。翻訳に協力してくださる方は、コメントアウトを外して日本語の翻訳を書き込んでください。文中の画像ファイルおよびリンクについては、いずれGitHubのリポジトリ内に格納予定です。
+{: .notice--info}
 
 <!--原文
 WCA Competition Tutorial Version: 2019-10-21
