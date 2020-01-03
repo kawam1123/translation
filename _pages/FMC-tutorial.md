@@ -976,10 +976,29 @@ but we would break the red-white-blue pair. Notice however that in this case “
 the way” doesn’t seem to be the best idea: in the process of saving that pair, we are breaking
 the yellow-orange-blue one!
 -->
-#### 2.1.3 壊して直す (Destroy and Restore)
+#### 2.1.3 壊して元通りにする (Destroy and Restore)
 ソース: [http://www.ryanheise.com/cube/destroy_restore.html](http://www.ryanheise.com/cube/destroy_restore.html)
 
+この問題を解決するための別のアプローチとは、一時的にブロックを壊してから、あとで元通りつなげるというものです。同様に「別のところに持っていく」テクニックを使います。
+
+基本的な例として、`R U R' U`の「スクランブル」をした状態を考えましょう。
+
 ![](../assets/img/alg-213.png){:width="500px" height="auto" class="align-center"}
+
+`U R U' R'`という手順で元に戻りますが、これを知らないふりをして、Last Layerの状態も無視してください。最初の二段目だけを見ると、`R'`することで既にできたペアをF面にある別のピースの隣に動かせることがわかります。しかし、既に完成している別のF2Lスロットを壊してしまいます。このとき、次のように「壊して元通りにする」ことができます。
+
+{% capture display_text %}
+R' //既にできているペアを「壊す」
+F //「別の所に持っていく」
+R //「元通りにする」
+F' //Fをして動かしたピースを戻す
+{% endcapture %}
+{% include solvebox.html
+title = "壊して元通りにする"
+scramble = "R U R' U'"
+text = display_text
+img_src="../assets/img/alg-213.png"
+%}
 
 <!--
 2.1.3 Destroy and Restore
@@ -998,6 +1017,23 @@ R //“Restore”
 F' //Put back the pieces moved away with F
 -->
 #### 2.1.4 キーホール (Keyhole)
+
+{% capture display_text %}
+F' L' //Layer minus one corner
+F2 L' B' L //Keyhole
+F U' B U //Keyhole, accidentally solving the last corner
+F' R' B2 R //Keyhole
+F B L B L' //F2L
+B' //LL
+{% endcapture %}
+{% include solvebox.html
+title = "キーホール (出典：Edoardo Disarò)"
+scramble = "R U' R' L F' B U2 R2 B2 L' B R D F2 D2 L2 F2 D' R2 F2"
+text = display_text
+img_src="../assets/img/alg-214.png"
+algcubing="https://alg.cubing.net/?setup=U-_R-_L_F-_B_U2_R2_B2_L-_B_R_D_F2_D2_L2_F2_D-_R2_F2&alg=F-_L-_%2F%2FLayer_minus_one_corner%0AF2_L-_B-_L_%2F%2FKeyhole%0AF_U-_B_U_%2F%2FKeyhole,_accidentally_solving_the_last_corner%0AF-_R-_B2_R_%2F%2FKeyhole%0AF_B_L_B_L-_%2F%2FF2L%0AB-_%2F%2FLL"
+%}
+
 <!--
 2.1.4 Keyhole
 We talked about it earlier as a standalone method, but keyhole can be considered a particular
@@ -1015,12 +1051,29 @@ B' //LL
 See on alg.cubing.net
 -->
 #### 2.1.5 一つのムーブ、二つのゴール (One Move, Two Goals)
+
+{% capture display_text %}
+L U' F2 D' //2x2x2 (4/4)
+U2 B R2 B //Pseudo F2L-1 (4/8)
+F' * U F R U2 R' //Pseudo F2L (6/14)
+U2 R2 //All but 3 corners (2/16)
+* = B' U F2 U' B U F2 U' //Last 3 corners (3/19)
+{% endcapture %}
+{% include solvebox.html
+title = "Example (by Mirek Goljan and Guus Razoux-Schultz[^2-1-5])"
+scramble = "D U' F2 U' R' F R2 B D' B R F B' U R' D2 L' R2 F2 B' U' B D B2 F2
+U L F U' B2"
+solution = "L U' F2 D' U2 B R2 F' U F2 U' B U F' R U2 R' U2 R2 (19)"
+text = display_text
+img_src="../assets/img/alg-215.png"
+algcubing="https://alg.cubing.net/?setup=D_U-_F2_U-_R-_F_R2_B_D-_B_R_F_B-_U_R-_D2_L-_R2_F2_B-_U-_B_D_B2_F2_U_L_F_U-_B2&alg=L_U-_F2_D-_%2F%2F2x2x2_(4%2F4)%0AU2_B_R2_B_%2F%2FPseudo_F2L%26%2345%3B1_(4%2F8)%0AF-_(B-_U_F2_U-_B_U_F2_U-)_U_F_R_U2_R-_%2F%2FPseudo_F2L_(6%2F14)%0AU2_R2_%2F%2FAll_but_3_corners_(2%2F16)"
+%}
+
 <!--
 2.1.5 One Move, Two Goals
 It is often possible to use only one move to build two blocks or, in general, to “get two things
 done”. An example will make this clearer.
-Example (by Mirek Goljan and Guus Razoux-Schultz4
-)
+Example (by Mirek Goljan and Guus Razoux-Schultz4)
 Scramble: D U' F2 U' R' F R2 B D' B R F B' U R' D2 L' R2 F2 B' U' B D B2 F2
 U L F U' B2
 L U' F2 D' //2x2x2 (4/4)
@@ -1037,6 +1090,9 @@ the 2x2x1 block in DF and places the orange-green edge at the same time, which a
 the 2x2x2 with the next move.
 Situations like this may arise without forcing them, but it useful to learn to recognize them,
 in case they don’t.
+-->
+#### 2.1.6 Influence Later Steps
+<!--
 2.1.6 Influence Later Steps
 We have already (quickly) talked about influencing the LL step while finishing the F2L5
 . This
@@ -1051,6 +1107,9 @@ L2 B R B //Two 2x2x1 blocks
 See on alg.cubing.net
 As you can see, the sequence L2 R B builds the red-blue-white square, but adding only one
 move (the red B) the square become 2.
+-->
+#### 2.1.7 Pay Attention to EO
+<!--
 2.1.7 Pay Attention to EO
 Here EO is the common shortcut for Edge Orientation.
 Someone may have noticed, while studying different methods, that “Edges Orientation” is a
@@ -1067,6 +1126,9 @@ However, don’t dismiss the “EO first approach” too quickly: notable cubers
 Pedro Batista Ribeiro Costa (2015 World Champion) and Grzegorz Luczyna (2010 European
 Champion) almost always start with edge orientation and other like S´ebastien Auroux (2011
 World Champion) and myself do it very often. For more details and examples see section 4.1.
+-->
+#### 2.1.8 Which Block Should I Build?
+<!--
 2.1.8 Which Block Should I Build?
 The golden rule is to exploit different situations: a 2x2x2 block, a 3x2x1, two 2x2x1 squares and
 many other kind of blocks can be a good start. Try out every possibility.
@@ -1099,6 +1161,9 @@ reason is simple: a bad last layer can require many moves, no matter how many al
 you know, and a completely built F2L gives a little freedom to manipulate the cube. On the
 other hand, an F2L-1 is a good partial goal, because it leaves you more with more freedom,
 despite the many pieces already placed.
+-->
+#### 2.1.9 Ready-Made Blocks: How to Deal with Them?
+<!--
 2.1.9 Ready-Made Blocks: How to Deal with Them?
 It can happen that you find some blocks already built after scrambling the cube, or that with
 the first moves you unintentionally build some more blocks (mostly corner/edge pairs). In this
@@ -1118,6 +1183,9 @@ good yet you can go on with less efficient blocks. Don’t waste too much time l
 final result that counts!
 8But a more important rule is: never say never!
 20 CHAPTER 2. HOW TO PROCEED DURING A SOLVE
+-->
+#### 2.1.10 Tricks to Get Fast and Advanced Techniques
+<!--
 2.1.10 Tricks to Get Fast and Advanced Techniques
 “Getting fast” is not to be intended as in speedsolving, but as “finding faster a good blockbuilding
 start9
@@ -1147,6 +1215,9 @@ You can train your planning ability with this game: ask a friend to scramble you
 3 moves and then try to find those 3 moves13 (it should be easy). Then try with 4 moves, and
 so on. Depending on your level, you may find it difficult once you reach 6, 7 or 8 moves. If you
 get without problem to 9 or 10 moves, congratulations!
+-->
+### 2.2 Find a Good Skeleton
+<!--
 2.2 Find a Good Skeleton
 Once you have reached good point (i.e.: and F2L-1) with blockbuilding, it is hard to go on with
 the techniques just described. Your goal now is to find a so-called “skeleton”, i.e. a partial
@@ -1170,6 +1241,7 @@ solving another one.
 13You can choose between HTM, QTM or STM, but agree on which metric to use first!
 14A 3-cycle is a cycle of 3 pieces. For example, the A and U perm PLL cases are 3-cycles, as well as the
 algorithm L F R F' L' F R' F' (Niklas).
+
 2.3. COMMUTATORS 21
 2. modfy the steps you have already solved, to get all edges oriented at the end;
 3. orient them while finishing your skeleton.
@@ -1182,6 +1254,9 @@ can choose the scramble type 3x3x3 subsets → last slot + last layer.
 You obviously don’t have to build an F2L-1 before completing your skeleton, but is often the
 easiest way. In any case, try to save small blocks (pairs or 2x2x1 squares) made by LL pieces,
 if some of them happen to get built.
+-->
+### 2.3. COMMUTATORS
+<!--
 2.3 Commutators
 According to speedsolving’s definition15, a commutator is a sequence of moves of the form
 A B A' B'
@@ -1202,6 +1277,9 @@ In contrast with blockbuilding, that solves a lot pieces but heavily influencing
 the cube, commutators solve fewer pieces (usually 3) leaving all the others where they were.
 Therefore, together with blockbuilding and insertions (which we will see in the next section),
 commutators are the basis for a good FMC solve.
+-->
+#### 2.3.1 Corner Commutators
+<!--
 2.3.1 Corner Commutators
 Corner commutators are the most useful kind of commutators in FMC. We have already seen
 the “Niklas” as a commutator. Also the A perm PLL case R2 B2 R F R' B2 R F' R is (almost)
@@ -1219,6 +1297,9 @@ videos, and it is very well made.
 For FMC you only need to know “pure” 8 moves commutators. For example, the Niklas is
 a pure commutator, while the A perm is not. Take a look at A9s and other cases if you want,
 but, as we will see when talking about insertions, you will almost never18 need them in FMC.
+-->
+#### 2.3.2 Edge Commutators
+<!--
 2.3.2 Edge Commutators
 Once you have learned corner commutators, it should not be hard to understand how edge
 commutators work, especially the ones like
@@ -1241,6 +1322,9 @@ These observations are particularly useful when you want to cancel moves, that i
 the first moves of our commutator (or, in general, any sequence of moves we want to apply)
 correspond to the inverse of the preceding moves (or that the last moves correspond to the
 inverse of the following ones).
+-->
+#### 2.3.3 Other Edge 3-cycles
+<!--
 2.3.3 Other Edge 3-cycles
 There are also edge 3-cycles that don’t use inner layer moves. In fact, there are some that are
 not even commutators! Here are two that are 8 HTM long:
@@ -1263,6 +1347,9 @@ and some 10 HTM 2-gen 3-cycles20
 U R U R U R' U' R' U' R'
 U R U R U' R' U' R' U' R
 U R U R U2 R' U' R' U' R2
+-->
+#### 2.3.4 Block Commutators
+<!--
 2.3.4 Block Commutators
 If you have read Ryan Heise’s website carefully, you already know something about the so-called
 “pair 3-cycles”, or block commutators. If you know corner commutators, it will not be hard to
@@ -1275,6 +1362,9 @@ seen as:
 That is a pair commutator with a setup move.
 The J-perm PLL can also be seen as a pair 3-cycle:
 [R2: [Fw2, D B2 D']] = R2 Fw2 D B2 D' Fw2 D B2 D' R2
+-->
+### 2.4 Insertions
+<!--
 2.4 Insertions
 After mentioning them multiple times throughout this tutorial, it is (finally) time for looking at
 insertions in detail.
@@ -1283,6 +1373,9 @@ finish. What do we do now? We can obviously directly solve the cycle with a comm
 if you have studied all the cases, you know that a corner commutator can need up to 12 moves.
 Knowing that the best case only needs 8, those 4 more moves are not really nice. But there is
 a way to solve a corners 3-cycle almost certainly with fewer than 8 moves: insertions.
+-->
+### 2.4.1 Simple Insertions
+<!--
 2.4.1 Simple Insertions
 The idea behind insertions is not too difficult: if there are only 3 corners left to solve, I can go
 through my whole skeleton move by move and solve them when the corresponding commutator
@@ -1366,6 +1459,9 @@ two cycle pieces on the same layer. This fact can be used to seva some time: if 
 at cancelling two or more moves (and you should be) you can assume such a move won’t cancel
 completely, unless it swaps two of you pieces, and only look for commutators that cancel with
 moves after (or before) that one.
+-->
+### 2.4.2 Multiple Insertions: Separated Cycles (3 Edges and 3 Corners)
+<!--
 2.4.2 Multiple Insertions: Separated Cycles (3 Edges and 3 Corners)
 A skeleton doesn’t have to always leave one 3-cycle: insertions can also be used to solve more
 (or longer) cycles.
@@ -1406,6 +1502,9 @@ See on alg.cubing.net
 You can use exactly this approach for other cases that require you to solve two or more
 cycles (3 cycles or double 2-cycles) that are separated. In all other cases, things get a bit more
 complicated.
+-->
+### 2.4.3 Multiple Insertions: 2 or 3 Twisted Corners
+<!--
 2.4.3 Multiple Insertions: 2 or 3 Twisted Corners
 When you need to twist 2 corners, you can try to insert the commutator [F L' D2 L F', U2]
 (12 HTM) somewhere; for three corners, you can use U' B U' F U2 B2 D' R2 U D F' U' B (13
@@ -1421,6 +1520,9 @@ After finding the first cycle, erase the symbols you have drawn and number the s
 and 3.
 You can do the same with two flipped edges, but I suggest avoiding such a case, because
 edge commutators usually require more moves.
+-->
+### 2.4.4 Multiple Insertions: 4 Corners
+<!--
 2.4.4 Multiple Insertions: 4 Corners
 If you have 4 corners left, the only bad case, requiring three inserted commutators, is when the
 corner are all placed but twisted. Try to avoid it, but if you can’t (or if the skeleton is really
@@ -1476,6 +1578,9 @@ A further comment on the solve. Notice that the commutator inserted earlier in t
 (the one labelled with +) is actually the one one found for last, even if just by one move. Vice
 versa the second one in the solve was inserted earlier. That’s perfectly fine!
 Moreover, the two commutator cancel some move with one another.
+-->
+### 2.4.5 Multiple Insertions: 5 Corners
+<!--
 2.4.5 Multiple Insertions: 5 Corners
 Among all the cases with 5 corners left, the only one that requires 2 commutators is the one
 where the pieces make a 5-cycle. All other cases require 3 commutators, except when you have
@@ -1551,6 +1656,9 @@ This method, although faster than the other one, doesn’t allow you to check fo
 inside insertions”. Therefore, I advise using it only if you are short on time, or as “preliminary
 analysis”: try to see how many moves you can get this way, and in the second pass only check
 for commutators that may lead to something better.
+-->
+### 2.4.6 Multiple Insertions: 5 Edges
+<!--
 2.4.6 Multiple Insertions: 5 Edges
 As usual, even for 5-cycles the edge case is preferably to avoid. If you decided to go that way,
 you can use the same method described for corners. But there is one case that can be solve in
@@ -1561,6 +1669,9 @@ possibly also some variations, like the “shifted” L F L' R U' R'. If you get
 an edge 5-cycle, it is a good idea to number the stickers and quickly go through the solve to see
 if you can insert one of these algorithms. But don’t waste to much time looking for it.
 For more about edge insertions, see Section 4.2 about corner-first methods.
+-->
+### 2.4.7 Other Insertions: 2 Corners and 2 Edges
+<!--
 2.4.7 Other Insertions: 2 Corners and 2 Edges
 Sometimes you may find a skeleton leaving 2 corners and 2 edges in a double swap (i.e.: a PLL
 such as J, T, V and so on).
@@ -1592,6 +1703,9 @@ See on alg.cubing.net
 The end of the skeleton was found using NISS, so it will be a bit mysterious until you get
 to that section. Notice that in the same spot marked by * you can insert the sub-optimal Jperm B' R2 B R B' R2 F R' B R F', cancelling 2 moves instead of 1 and getting the same final
 result.
+-->
+### 2.4.8 Other Insertions: 3 Edges and Some Corners
+<!--
 2.4.8 Other Insertions: 3 Edges and Some Corners
 In some cases you can get short skeletons (say 13 moves) that leave a 3-cycle of edges and 4 or
 5 corners (or even more). Of course you can solve this case by inserting and edge 3-cycle and
@@ -1607,6 +1721,9 @@ of this kind of insertion. All of his solutions use NISS, but you can ignore the
 that produce the skeleton and just look at the insertions.
 Another approach to this reverse NISS (Section 3.3), which can help you understand what
 you are actually doing when you insert a sexy move.
+-->
+### 2.4.9 Other Insertions: Conjugate and Solve
+<!--
 2.4.9 Other Insertions: Conjugate and Solve
 A particular situation you can solve with only one insertion is when you have 4 edges and 4
 corners left and both sets make a 4-cycle.
@@ -1640,6 +1757,9 @@ There are also some Last Layer algorithms that work in this way. One of them is:
 (R B2 R2 U2 R) B (R' U2 R2 B2 R')
 and you can find some more here34
 .
+-->
+### 2.4.10 Move Count (an Estimate)
+<!--
 2.4.10 Move Count (an Estimate)
 Here I will give an estimate of how many moves are usually needed for the most common types
 of insertions. It is a heuristic estimate, not a mathematical proven one, and keep in mind that
@@ -1667,11 +1787,17 @@ Corner 5-cycle 10/11
 35Mostly taken from here [1], slightly adjusted to match my personal opinion.
 http://www.speedsolving.com/forum/threads/the-fmc-thread.13599/page-42#post-614593
 32 CHAPTER 2. HOW TO PROCEED DURING A SOLVE
+-->
+### 2.4.11 Insertion Finder
+<!--
 2.4.11 Insertion Finder
 Insertion Finder37, developed by Baiqiang Dong, is a useful tool to find insertions and check if
 you have failed to see something in your solutions: it finds up to 4 insertions to solve a skeleton.
 It is especially useful for easy cases (3 corners or 3 edges) but in complex situation it may
 find solution that are not possible (or very difficult) to find for humans: use it responsibly!
+-->
+## 2.5.11 Insertion Finder
+<!--
 2.5 Other Simple Stragies
 2.5.1 Go Back and Change Your Sove
 If you get stuck after a good start, you can try this: go through your solve move by move,
@@ -2566,6 +2692,6 @@ R2 F2 L D' F' D F L' F2 R2
 [^2-0-1]: スケルトンとは、部分的な解法で、いくつかのピース（通常は2つから6つ）を未完成の状態で残しておくものを言います。
 [^2-0-2]: ソルブのより前の段階で数手をインサートすることで完成させるテクニックです。これもすぐに解説します！もうちょっと待って！
 [^2-0-3]: [http://www.speedsolving.com/forum/threads/fewest-moves-tips-and-techniques.1566/#post-16209](http://www.speedsolving.com/forum/threads/fewest-moves-tips-and-techniques.1566/#post-16209)
-
+[^2-1-5]: [19 HTM Solve by Mirek Goljan and Guus Razoux Schultz](https://fmcsolves.cubing.net/?p=107)
 *[CFOP]: Cross, F2L, OLL, and PLL
 *[F2L]: First Two Layer
