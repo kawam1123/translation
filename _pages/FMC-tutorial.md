@@ -75,7 +75,7 @@ January 03, 2020
 
 LaTeXで書き直そうとも考えました。LaTexのドキュメントは見た目がとても良くなるからです。ただし、唯一の欠点は、そうしてしまうと翻訳が難しくなるということです。このチュートリアルが高く評価されており、多くの他言語に翻訳をしてくれて、世界中で読めるようになっていくことを非常に嬉しく思います。翻訳者の皆さんそれぞれにお礼を言いたいのですが、ほとんどの方の名前を忘れてしまいました。
 
-ですが、第二版を作るのをずっと後回しにしていました。大きな理由は、時間がなかったことではなく、モチベーションが足りなかったことです。しかし、2017年にパリで行われた世界大会 [^1]では、このチュートリアルについて感謝を言ってくださる方に多くお会いして、必要なモチベーションを得ることができました。全ての人が見返りを求めずにほかの人を助けている。このコミュニティの一員であることの素晴らしさを思い出して、私も再び「自分のやること」をやりたいと思いました。
+ですが、第二版を作るのをずっと後回しにしていました。大きな理由は、時間がなかったことではなく、モチベーションが足りなかったことです。しかし、2017年にパリで行われた世界大会 [^0-1]では、このチュートリアルについて感謝を言ってくださる方に多くお会いして、必要なモチベーションを得ることができました。全ての人が見返りを求めずにほかの人を助けている。このコミュニティの一員であることの素晴らしさを思い出して、私も再び「自分のやること」をやりたいと思いました。
 
 <!--
 Preface to the Second Edition
@@ -106,7 +106,7 @@ other without asking anything back, and I wanted to do my part - again.
 
 主な理由は、この本を自己完結型にしたいと思ったからです。初版では多くのソルブが単にリンクされていただけでした。ハイパーリンクをつけていますが、脚注に完全なリンクもあわせて書いています。これにより、この本は電子機器と紙の両方で読めるようになっています。
 
-パーツの色について話すことがありますが、**配色は[標準配色](https://www.speedsolving.com/wiki/index.php/Western_Color_Scheme) [^2]で、標準の向き（白がU、緑がF）でスクランブルすることを想定しています。**
+パーツの色について話すことがありますが、**配色は[標準配色](https://www.speedsolving.com/wiki/index.php/Western_Color_Scheme) [^0-2]で、標準の向き（白がU、緑がF）でスクランブルすることを想定しています。**
 
 この第二版について言うことはこれぐらいです。次に進んでチュートリアルを楽しんでください！
 
@@ -672,7 +672,15 @@ Despite its simplicity, this method can be very useful in FMC.
 1. 残った5つのエッジと2つのコーナーを揃える
 1. 最後の3つのコーナーをコミューテータで揃える
 
-もしあなたが熟練者のアドバイスを無視して、一つの解法だけを使ってFMCをやりたいというなら、Heiseを選ぶのがよいでしょう。
+もしあなたが熟練者のアドバイスを無視して、一つの解法だけを使ってFMCをやりたいというなら、Heiseを選ぶのがよいでしょう。**この解法を一直線[^1-6-Heise]に使うだけでも平均して40手以下で解くことができるでしょう。**非常に極端な解法ですが、同時に極めて効率的です。
+
+最初の二つのステップは奇妙ですが、**F2L-1 [^1-6-Heise-2] を作り、全てのエッジの向きを揃えるのに効率的なやり方です。**「何も制限するな」「様々な状況を活用せよ」というコンセプトに完全に沿っており、ブロックを考えうる最高の方法で作ることができます。
+
+三つ目のステップは複雑ですが、F2Lを完成させてLast Layerのアルゴリズムをやるよりずっと効率的です。これを練習することで、すでにたくさんのブロックが作られて動きが制限されているときでも、ブロックを作って動かすことができる能力が得られるでしょう。（これはこのステップは非常に難しい理由でもあります）
+
+最後のステップではコミューテータを使います。FMCにおいては、インサーションが使えるようになるということです。（コミューテータとインサーションについては、次の章で説明します）
+
+Heise method’s page on Ryan Heise’s website: [http://www.ryanheise.com/cube/heise_method.html](http://www.ryanheise.com/cube/heise_method.html)
 
 <!--
 1.6 Heise
@@ -700,11 +708,13 @@ useful information (see for example the Fundamental Techniques page).
 6With “F2L-1” I mean an F2L minus a coner/edge pair.
 12 CHAPTER 1. THINK OUTSIDE THE BOX
 -->
-## 1.7 何をどうやって学ぶか
-当たり前のことですが、ここに書いたすべての解法を覚えて速くなることはゴールではありません。スピード解法でキューブを解くことはいくらか助けになることもありますし、楽しいものです。しかし、**ここではスピードは気にしません。**ゴールは**できるだけ短い手順でキューブを解くことですから、効率的になるよう努めましょう。**
-**Color Neutral (CN)**[^7]であることも大切なことですし、**「不一致ブロック(Non Matching Blocks)」**[^8]について取り組むのも役に立つでしょう。
+### 1.7 何をどうやって学ぶか
+当たり前のことですが、ここに書いたすべての解法を覚えて速くなることはゴールではありません。スピード解法でキューブを解くことはいくらか助けになることもありますし、楽しいものです。しかし、**ここではスピードは気にしません。**ゴールは**できるだけ短い手順でキューブを解くことですから、効率的になるよう努めましょう。**  
+**Color Neutral (CN)**[^1-7-1]であることも大切なことですし、**「不一致ブロック(Non Matching Blocks)」**（疑似ブロック (Pseudo-block)[^1-7-2]について取り組むのも役に立つでしょう。
 
-しかし、スピード解法と最少手数競技用の解法の大きな違いは、**FMCではいくつもの異なる可能性を試すことができるということです。**たとえばPetrusにおいては、2x2x3ブロックを作ったあとに6つの悪いエッジが残ったとき、最初から別のブロックを作り始めるか、ブロックの作り方を少し変えて状況を改善させるかすることができます。
+しかし、スピード解法と最少手数競技用の解法の大きな違いは、**FMCではいくつもの異なる可能性を試すことができるということです。**たとえばPetrusにおいては、2x2x3ブロックを作ったあとに6つの悪いエッジ(Bad edge)が残ったとき、最初から別のブロックを作り始めるか、ブロックの作り方を少し変えて状況を改善させるかすることができます。[^1-7-3]
+
+それぞれの解法について少しだけアドバイスを書きます。
 <!--
 1.7 What and How to Learn
 Obviously, getting fast with all of the methods described is not your goal. Doing some speedsolves
@@ -721,8 +731,11 @@ of the block you have found to improve your situation9
 Here is some piece of advice for some of the methods described.
 -->
 
-
-### 1.7.1 Petrus
+#### 1.7.1 Petrus
+- 2x2x2ブロックの完成後、拡張する方向は3通りあります。全ての場合を考えましょう！
+- 2x2x2ブロックを作ってからやるよりも、2x2x3ブロックを直接作ってしまいましょう
+- ステップ４では「不一致ブロック」を作ってみましょう
+- ステップ４ではLast Layerをうまく変化させて簡単なケースを引きましょう（Heise Styleのラッキーケースでもよい）
 <!--
 • After completing a 2x2x2 block, you can expand it in 3 different directions. Make sure
 to consider all of them!
@@ -730,13 +743,24 @@ to consider all of them!
 • Try using Non Matching Blocks in step 4.
 • In step 4 again, try influencing the last layer to get an easier case (even “Heise style”).
 -->
-### 1.7.2 Roux
+
+#### 1.7.2 Roux
+- 二つのブロックを同時に作ってみましょう
+- 不一致ブロックを作ってみましょう
+- SBを作るときにCMLLへの影響を考慮してみましょう。そして、CMLLのLSEへの影響を考慮してみましょう
+
 <!--
 • Try to build the two blocks at the same time.
 • Try Non Matching Blocks.
 • Influence the CMLL while finishing the second block, and the LSE during the CMLL.
 -->
-### 1.7.3 ZZ
+
+#### 1.7.3 ZZ
+- エッジの向き(EO)を揃えたあと、「直線(Line)」を作らないほうがよいです。EOを壊さないように、直接ブロックビルディングをしましょう。直線を最初に作ること（ラインファースト）と左右のブロックを作ることの違いは、CFOPでクロス+F2LをやることとFreeFOPの違いと同じものです。
+- エッジの向きを揃えたら、R、L、U、Dだけでキューブを揃えられる状態になったということです。F2Lをどんな向きからでもやることができます。
+- PetrusやRouxと同じように、不一致ブロックを作ってみましょう。また、F2Lの途中ででLast Layerへの影響を考慮してみましょう。
+
+
 <!--• After edges orientation, building the “Line” isn’t always a good idea: try blockbuilding
 directly (without breaking the EO!). The difference between solving the line first and then
 the right and left blocks is comparable to the difference between doing CFOP with cross
@@ -755,8 +779,27 @@ powerful if combined with premoves, that will be explained in Chapter 3.
 9Trying to influence a later step while solving another the current one is a good habit, which will be discussed
 again later.
 -->
-## 1.7. WHAT AND HOW TO LEARN 13
-### 1.7.4 CFOP/FreeFOP
+
+#### 1.7.4 CFOP/FreeFOP
+- 定義によって、少なくともCFOPはFreeFOPの特殊なケースですから、**FreeFOPはCFOPよりよいものです。** 少なくとも**XCross**[^1-7-4-1]を作ってみましょう
+- 「4つのエッジが反転したケース」を避けつつ、Last Layerのエッジの向きに影響を与えてみましょう。いくつかのZBF2Lアルゴリズム[^1-7-4-2]が役に立ちますが、これを暗記する前に**どういう仕組みで機能しているのかを学びましょう。**
+- 最適なペアのインサーションアルゴリズムはあまり知られていません。これを研究しましょう。繰り返しますが、単に学ぶよりも仕組みを理解してみましょう。
+- **「マルチスロット」**を試してみましょう。これは複数のペアを同時に入れるということです。最も簡単なケースは、D面のムーブをセットアップとして使う場合です。（例：`D R U R' D'`）このテクニックのアルゴリズムはオンラインで閲覧できますが、「自由に」やってみることをおすすめします。たとえば、次のソルブ例で私が二つ目、三つ目、四つ目のペアをどのようにインサートしたかをご覧ください。: [https://www.
+speedsolving.com/forum/threads/the-3x3x3-example-solve-thread.14345/page-238#post-1013053](https://www.
+speedsolving.com/forum/threads/the-3x3x3-example-solve-thread.14345/page-238#post-1013053)
+> Next: D2 F2 U' B2 D' B2 D2 F2 L2 F2 U' B' D2 R2 B2 R' D' B L2 F R
+>
+> こちらをどうぞ、CFOPers!
+>
+> x2  
+> B2 D2 B' D' M D'  
+> R F U F' R'  
+> U R2 B' R' U R' U2 R U2 R' U B  
+> R U Lw' D' R D B' D' R' D  
+> R2 B E B2 E' B R2  
+
+
+
 <!--
 • FreeFOP is better than CFOP, at least because CFOP is a special case of FreeFOP,
 by definition. Try at least to build and XCross10
@@ -777,6 +820,20 @@ post-1013053.
 -->
 
 ## 第２章 ソルブの進め方
+
+[Per Kristen Fredlund](https://www.worldcubeassociation.org/persons/2004FRED02)[^2-0]の言葉を引用すれば、一般的な進め方は次の通りです。
+> もっと次のように考えましょう。キューブを二段階で解くのだ、と。
+>
+> 一段階目では、可能な限り多くのピースを、可能な限り効率的に解きましょう。（つまり、よいスケルトン[^2-0-1]を作りましょう）  
+> 二段階目では、未完成のピースを正しく直しましょう。多くの場合、スケルトンにインサートをするアルゴリズム[^2-0-2]を使います。[^2-0-3]
+>
+
+これは一般的なアプローチですが、常にこうする必要はありません。たとえば、F2LでブロックビルディングをしてLast Layerアルゴリズムをやるだけで、とても短い解答を見つけることも時にはあるでしょう。これとは違うやり方もあり、そのうち二つは第四章で解説します。
+
+この記述があまりにも一般的すぎるように見えても、これ以外に書きようがないのです。（FMCで）常によい記録を出すような標準的な解法はありません。チャンスを逃さないためには、**いつでも可能な限り多くの戦略を試してみるしかありません。**
+
+ここではFMCで用いられる基本的なテクニックをいくつか記載します。前の章で書かれた解法を練習しているなら、すでにいくつかは学んだことがあるでしょう。他の解法も学ばなければならないかもしれません。いくつかは詳細に解説しますが、単にさらなる学習のためのチュートリアルへのリンクを書くだけで留めるものもあります。
+
 <!--
 Chapter 2
 How to Proceed During a Solve
@@ -796,6 +853,9 @@ Here I will describe some basic techniques used in FMC solves. You have already 
 some of them by practicing the methods described in the previous chapter, while you will need
 to study some other. Some will be explained in detail, some other will be only mentioned and
 other tutorials will be linked for a more complete study.
+-->
+### 2.1 ブロックビルディング (Blockbuilding)
+<!--
 2.1 Blockbuilding
 Blockbuilding is probably the most important technique in FMC. It is a simple concept, but
 it requires a lot of practice to be mastered. Practicing blockbuilding-based methods (Petrus,
@@ -804,6 +864,9 @@ blockbuilding.
 Here I will list some fundamental techniques that will come in handy; the first ones are taken
 from Ryan Heise’s website (www.ryanheise.com/cube), which is full of examples: look them
 up!
+-->
+#### 2.1.1 そろえてつなげる(Align then Join)
+<!--
 2.1.1 Align then Join
 Source: http://www.ryanheise.com/cube/align_join.html
 Basic technique: to build a corner/edge pair, the simplest kind of block, you have to align
@@ -827,6 +890,9 @@ U2 //Join
 See on alg.cubing.net
 In the example above, two pairs are already built. The sequence L2 U2 pairs up the blue-red
 edge with the blue-red-yellow corner.
+-->
+#### 2.1.2 別のところに持っていく (Move it out of the way)
+<!--
 2.1.2 Move it out of the way
 Source: http://www.ryanheise.com/cube/move_it_out_of_the_way.html
 It can happen that we want to build a block, but the move required to build it breaks other
@@ -843,6 +909,9 @@ If we did F' D' right after building the 2x2x1 block we would still get the same
 but we would break the red-white-blue pair. Notice however that in this case “moving it out of
 the way” doesn’t seem to be the best idea: in the process of saving that pair, we are breaking
 the yellow-orange-blue one!
+-->
+#### 2.1.3 壊して直す (Destroy and Restore)
+<!--
 2.1.3 Destroy and Restore
 Source: http://www.ryanheise.com/cube/destroy_restore.html
 Another approach to solve this problem is to temporarily break some blocks and join them
@@ -857,6 +926,9 @@ R' //“Destroy”
 F //“Move it out of the Way”
 R //“Restore”
 F' //Put back the pieces moved away with F
+-->
+#### 2.1.4 キーホール (Keyhole)
+<!--
 2.1.4 Keyhole
 We talked about it earlier as a standalone method, but keyhole can be considered a particular
 strategy to build blocks. This technique consists in exploiting unsolved parts of the cube to
@@ -871,6 +943,9 @@ F' R' B2 R //Keyhole
 F B L B L' //F2L
 B' //LL
 See on alg.cubing.net
+-->
+#### 2.1.5 一つのムーブ、二つのゴール (One Move, Two Goals)
+<!--
 2.1.5 One Move, Two Goals
 It is often possible to use only one move to build two blocks or, in general, to “get two things
 done”. An example will make this clearer.
@@ -2403,14 +2478,24 @@ R L2 D' B' D B L B' R' L
 R2 F2 R' U B U' B' R F2 R2
 R2 F2 L D' F' D F L' F2 R2
 -->
-[^1]: 訳注。[World Rubik's Cube Championship 2017](https://www.worldcubeassociation.org/competitions/WC2017)のこと。2年に1回の頻度で開催されるルービックキューブの世界大会を指す。2017年はパリ（フランス）、2019年はメルボルン（オーストラリア）で開催された。
-[^2]: [Western Color Scheme](https://www.speedsolving.com/wiki/index.php/Western_Color_Scheme)
+[^0-1]: 訳注。[World Rubik's Cube Championship 2017](https://www.worldcubeassociation.org/competitions/WC2017)のこと。2年に1回の頻度で開催されるルービックキューブの世界大会を指す。2017年はパリ（フランス）、2019年はメルボルン（オーストラリア）で開催された。
+[^0-2]: [Western Color Scheme](https://www.speedsolving.com/wiki/index.php/Western_Color_Scheme)
 [^0-visualcube]: http://cube.crider.co.uk/visualcube.php
 [^0-algcubingnet]: https://alg.cubing.net
-
-[^1-1-Petrus]: ブロックビルディングとは、複数のピースからブロックを作り、つなげるテクニックのことです。CFOPにおけるF2Lとは大きく違うものと見なされがちですが、F2Lも一種のブロックビルディングと見なすことができます。対比すべきものとしては、エッジオリエンテーション(EO、PetrusやZZで用いられる)や「コーナーファースト」、アルゴリズムやコミューテータの利用などがあります。これらのテクニックは全て本書で説明されます。
+[^1-1-Petrus]: **ブロックビルディングとは、複数のピースからブロックを作り、つなげるテクニックのことです。**CFOPにおけるF2Lとは大きく違うものと見なされがちですが、F2Lも一種のブロックビルディングと見なすことができます。対比すべきものとしては、エッジオリエンテーション(EO、PetrusやZZで用いられる)や「コーナーファースト」、アルゴリズムやコミューテータの利用などがあります。これらのテクニックは全て本書で説明されます。
 [^1-1-Petrus-2]: たとえば、HARCSというは無料で利用できます。 https://www.speedsolving.com/forum/threads/
 [^1-3-ZZ]: スピード解法では、ブロックを一つずつ揃えていくほうが、人間工学に叶った動きになるため、望ましいです。しかし、FMCにおいてこれは当てはまりません。効率性（つまり、手数）だけを気にするべきです！
-harcs-jarcs-replacement-cube-solver.63241/
-[^7]: Color Neutralとはキューブをどの色からスタートしても解くことができることを言います。たとえば、CFOPのクロス食がどの色でもできる、あるいはPetrusの2x2x2ブロックを8つあるパタンからどれでもできるということです。
-[^8]: 不一致ブロックは、特にFMCにおいて「疑似ブロック」と呼ばれることがあります。これはRouxやZZ、Heiseにおいて役に立つテクニックですが、他の解法でも使うことができます。疑似ブロックは、作る必要があるものとは異なるブロックで構築されますが、同じ「スロット」に配置されます。たとえば、Rouxにおいては、3x2x1のSB(Second Block)はFBの反対側にある4つのいずれかのブロックです。このテクニックはpremoveと組み合わせることで非常に強力なツールになります。詳細は第三章で説明します。
+[^1-6-Heise]: ここでいう「一直線に」(Linear)解くとは、FMCにおいては別の可能性を考えたり、キャンセル／やり直しを考えないで解くことを言います。
+[^1-6-Heise-2]: F2L-1とはF2Lの完成状態から、コーナーとエッジのペアを一つ欠く状態を言います。
+[^1-7-1]: **Color Neutralとはキューブをどの色からスタートしても解くことができることを言います。**たとえば、CFOPのクロス色がどの色でもできる、あるいはPetrusの2x2x2ブロックを8つあるパタンからどれでもできるということです。
+[^1-7-2]: 不一致ブロックは、特にFMCにおいて**「疑似ブロック」(Pseudo-block)**と呼ばれることがあります。これはRouxやZZ、Heiseにおいて役に立つテクニックですが、他の解法でも使うことができます。疑似ブロックは、作る必要があるものとは異なるブロックで構築されますが、同じ「スロット」に配置されます。たとえば、Rouxにおいては、3x2x1のSB(Second Block)はFBの反対側にある4つのいずれかのブロックです。このテクニックはpremoveと組み合わせることで非常に強力なツールになります。詳細は第三章で説明します。
+[^1-7-3]: **現在のステップで工夫することで次のステップに何らかの影響をもたらす**のはよい習慣です。この点については後の章でまた書きます。
+[^1-7-4-1]: XCrossとは、クロスと最初のペアを同時に作ることです。2x2x2ブロックと2つのエッジを同時に揃えることと見なすこともできます。
+[^1-7-4-2]: 訳注。ZBF2LはEOLS (Edge Orientation Last Slot)とも呼ばれます。「F2Lの4つ目の手順を調節することでEOを同時に処理し、F2L終了時に必ず上面に十字が出来るようにするというSubstepです。VHLSとは違い、IT化の時点で手順を変える場合もあるというのが特徴です。」([CubeVoyage](https://cubevoyage.net/speedcubing/3x3x3/advancedsubsteps/)より)
+[^2-0]: 訳注:ノルウェーのキューバー。2004-2006年にFMCのノルウェーNRを達成。2005年の世界大会でFMC第2位。
+[^2-0-1]: スケルトンとは、部分的な解法で、いくつかのピース（通常は2つから6つ）を未完成の状態で残しておくものを言います。
+[^2-0-2]: ソルブのより前の段階で数手をインサートすることで完成させるテクニックです。これもすぐに解説します！もうちょっと待って！
+[^2-0-3]: [http://www.speedsolving.com/forum/threads/fewest-moves-tips-and-techniques.1566/#post-16209](http://www.speedsolving.com/forum/threads/fewest-moves-tips-and-techniques.1566/#post-16209)
+
+*[CFOP]: Cross, F2L, OLL, and PLL
+*[F2L]: First Two Layer
