@@ -45,17 +45,17 @@ January 03, 2020
 
 |章|進捗|メモ|
 |:---|:---:|:---:|
-|序文|[完了](){: .btn .btn--success}|2020/12/31|
-|1章 Think Outside the Box|[完了](){: .btn .btn--success}|2020/01/03|
-|2章 How to Proceed During a Solve|[作業中](){: .btn .btn--warning}||
-|3章 Advanced Tools|[未着手](){: .btn .btn--danger}||
-|4章 Some Other Methods|[未着手](){: .btn .btn--danger}||
-|5章 How To Practice|[未着手](){: .btn .btn--danger}||
-|6章 In Competitoin|[未着手](){: .btn .btn--danger}||
-|付録A Other Resources|[未着手](){: .btn .btn--danger}||
-|付録B Notation|[未着手](){: .btn .btn--danger}||
-|付録C Last Layer Algorithms|[未着手](){: .btn .btn--danger}||
-{: .table-striped .table-hover }
+|序文|[完了](#){: .btn .btn-success}|2020/12/31|
+|1章 Think Outside the Box|[完了](#){:.btn .btn-success}|2020/01/03|
+|2章 How to Proceed During a Solve|[作業中](#){: .btn .btn-warning}||
+|3章 Advanced Tools|[未着手](#){: .btn .btn-danger}||
+|4章 Some Other Methods|[未着手](#){: .btn .btn-danger}||
+|5章 How To Practice|[未着手](#){: .btn .btn-danger}||
+|6章 In Competitoin|[未着手](#){: .btn .btn-danger}||
+|付録A Other Resources|[未着手](#){: .btn .btn-danger}||
+|付録B Notation|[未着手](#){: .btn .btn-danger}||
+|付録C Last Layer Algorithms|[未着手](#){: .btn .btn-danger}||
+{: .table-hover }
 
 <!-- TOC -->
 <!--
