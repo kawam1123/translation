@@ -43,18 +43,18 @@ January 03, 2020
 
 **翻訳進捗**
 
-|章|進捗|メモ|
-|:---|:---:|:---:|
-|序文|[完了](#){: .btn .btn-success}|2020/12/31|
-|1章 Think Outside the Box|[完了](#){:.btn .btn-success}|2020/01/03|
-|2章 How to Proceed During a Solve|[作業中](#){: .btn .btn-warning}||
-|3章 Advanced Tools|[未着手](#){: .btn .btn-danger}||
-|4章 Some Other Methods|[未着手](#){: .btn .btn-danger}||
-|5章 How To Practice|[未着手](#){: .btn .btn-danger}||
-|6章 In Competitoin|[未着手](#){: .btn .btn-danger}||
-|付録A Other Resources|[未着手](#){: .btn .btn-danger}||
-|付録B Notation|[未着手](#){: .btn .btn-danger}||
-|付録C Last Layer Algorithms|[未着手](#){: .btn .btn-danger}||
+|章|ページ|進捗|メモ|
+|:---|:---:|:---:|:---:|
+|序文                                   |1-8    |[完了](#){: .btn .btn-success}     |2020/12/31|
+|1章 Think Outside the Box              |9-14   |[完了](#){:.btn .btn-success}      |2020/01/03|
+|2章 How to Proceed During a Solve      |15-34  |[作業中](#){: .btn .btn-warning}   ||
+|3章 Advanced Tools                     |35-44  |[未着手](#){: .btn .btn-danger}    ||
+|4章 Some Other Methods                 |45-48  |[未着手](#){: .btn .btn-danger}    ||
+|5章 How To Practice                    |49-50  |[未着手](#){: .btn .btn-danger}    ||
+|6章 In Competitoin                     |51-52  |[未着手](#){: .btn .btn-danger}    ||
+|付録A Other Resources                  |53-54  |[未着手](#){: .btn .btn-danger}    ||
+|付録B Notation                         |55-56  |[未着手](#){: .btn .btn-danger}    ||
+|付録C Last Layer Algorithms            |57-58  |[未着手](#){: .btn .btn-danger}    ||
 {: .table-hover }
 
 <!-- TOC -->
@@ -1060,14 +1060,14 @@ U2 R2 //All but 3 corners (2/16)
 * = B' U F2 U' B U F2 U' //Last 3 corners (3/19)
 {% endcapture %}
 {% include solvebox.html
-title = "Example (by Mirek Goljan and Guus Razoux-Schultz[^2-1-5])"
+title = "Example (by Mirek Goljan and Guus Razoux-Schultz)"
 scramble = "D U' F2 U' R' F R2 B D' B R F B' U R' D2 L' R2 F2 B' U' B D B2 F2
 U L F U' B2"
 solution = "L U' F2 D' U2 B R2 F' U F2 U' B U F' R U2 R' U2 R2 (19)"
 text = display_text
 img_src="../assets/img/alg-215.png"
 algcubing="https://alg.cubing.net/?setup=D_U-_F2_U-_R-_F_R2_B_D-_B_R_F_B-_U_R-_D2_L-_R2_F2_B-_U-_B_D_B2_F2_U_L_F_U-_B2&alg=L_U-_F2_D-_%2F%2F2x2x2_(4%2F4)%0AU2_B_R2_B_%2F%2FPseudo_F2L%26%2345%3B1_(4%2F8)%0AF-_(B-_U_F2_U-_B_U_F2_U-)_U_F_R_U2_R-_%2F%2FPseudo_F2L_(6%2F14)%0AU2_R2_%2F%2FAll_but_3_corners_(2%2F16)"
-%}
+%}[^2-1-5]
 
 <!--
 2.1.5 One Move, Two Goals
@@ -1374,7 +1374,7 @@ if you have studied all the cases, you know that a corner commutator can need up
 Knowing that the best case only needs 8, those 4 more moves are not really nice. But there is
 a way to solve a corners 3-cycle almost certainly with fewer than 8 moves: insertions.
 -->
-### 2.4.1 Simple Insertions
+#### 2.4.1 Simple Insertions
 <!--
 2.4.1 Simple Insertions
 The idea behind insertions is not too difficult: if there are only 3 corners left to solve, I can go
@@ -1460,7 +1460,7 @@ at cancelling two or more moves (and you should be) you can assume such a move w
 completely, unless it swaps two of you pieces, and only look for commutators that cancel with
 moves after (or before) that one.
 -->
-### 2.4.2 Multiple Insertions: Separated Cycles (3 Edges and 3 Corners)
+#### 2.4.2 Multiple Insertions: Separated Cycles (3 Edges and 3 Corners)
 <!--
 2.4.2 Multiple Insertions: Separated Cycles (3 Edges and 3 Corners)
 A skeleton doesn’t have to always leave one 3-cycle: insertions can also be used to solve more
@@ -1503,7 +1503,7 @@ You can use exactly this approach for other cases that require you to solve two 
 cycles (3 cycles or double 2-cycles) that are separated. In all other cases, things get a bit more
 complicated.
 -->
-### 2.4.3 Multiple Insertions: 2 or 3 Twisted Corners
+#### 2.4.3 Multiple Insertions: 2 or 3 Twisted Corners
 <!--
 2.4.3 Multiple Insertions: 2 or 3 Twisted Corners
 When you need to twist 2 corners, you can try to insert the commutator [F L' D2 L F', U2]
@@ -1521,7 +1521,7 @@ and 3.
 You can do the same with two flipped edges, but I suggest avoiding such a case, because
 edge commutators usually require more moves.
 -->
-### 2.4.4 Multiple Insertions: 4 Corners
+#### 2.4.4 Multiple Insertions: 4 Corners
 <!--
 2.4.4 Multiple Insertions: 4 Corners
 If you have 4 corners left, the only bad case, requiring three inserted commutators, is when the
@@ -1579,7 +1579,7 @@ A further comment on the solve. Notice that the commutator inserted earlier in t
 versa the second one in the solve was inserted earlier. That’s perfectly fine!
 Moreover, the two commutator cancel some move with one another.
 -->
-### 2.4.5 Multiple Insertions: 5 Corners
+#### 2.4.5 Multiple Insertions: 5 Corners
 <!--
 2.4.5 Multiple Insertions: 5 Corners
 Among all the cases with 5 corners left, the only one that requires 2 commutators is the one
@@ -1657,7 +1657,7 @@ inside insertions”. Therefore, I advise using it only if you are short on time
 analysis”: try to see how many moves you can get this way, and in the second pass only check
 for commutators that may lead to something better.
 -->
-### 2.4.6 Multiple Insertions: 5 Edges
+#### 2.4.6 Multiple Insertions: 5 Edges
 <!--
 2.4.6 Multiple Insertions: 5 Edges
 As usual, even for 5-cycles the edge case is preferably to avoid. If you decided to go that way,
@@ -1670,7 +1670,7 @@ an edge 5-cycle, it is a good idea to number the stickers and quickly go through
 if you can insert one of these algorithms. But don’t waste to much time looking for it.
 For more about edge insertions, see Section 4.2 about corner-first methods.
 -->
-### 2.4.7 Other Insertions: 2 Corners and 2 Edges
+#### 2.4.7 Other Insertions: 2 Corners and 2 Edges
 <!--
 2.4.7 Other Insertions: 2 Corners and 2 Edges
 Sometimes you may find a skeleton leaving 2 corners and 2 edges in a double swap (i.e.: a PLL
@@ -1704,7 +1704,7 @@ The end of the skeleton was found using NISS, so it will be a bit mysterious unt
 to that section. Notice that in the same spot marked by * you can insert the sub-optimal Jperm B' R2 B R B' R2 F R' B R F', cancelling 2 moves instead of 1 and getting the same final
 result.
 -->
-### 2.4.8 Other Insertions: 3 Edges and Some Corners
+#### 2.4.8 Other Insertions: 3 Edges and Some Corners
 <!--
 2.4.8 Other Insertions: 3 Edges and Some Corners
 In some cases you can get short skeletons (say 13 moves) that leave a 3-cycle of edges and 4 or
@@ -1722,7 +1722,7 @@ that produce the skeleton and just look at the insertions.
 Another approach to this reverse NISS (Section 3.3), which can help you understand what
 you are actually doing when you insert a sexy move.
 -->
-### 2.4.9 Other Insertions: Conjugate and Solve
+#### 2.4.9 Other Insertions: Conjugate and Solve
 <!--
 2.4.9 Other Insertions: Conjugate and Solve
 A particular situation you can solve with only one insertion is when you have 4 edges and 4
@@ -1758,7 +1758,7 @@ There are also some Last Layer algorithms that work in this way. One of them is:
 and you can find some more here34
 .
 -->
-### 2.4.10 Move Count (an Estimate)
+#### 2.4.10 Move Count (an Estimate)
 <!--
 2.4.10 Move Count (an Estimate)
 Here I will give an estimate of how many moves are usually needed for the most common types
@@ -1788,7 +1788,7 @@ Corner 5-cycle 10/11
 http://www.speedsolving.com/forum/threads/the-fmc-thread.13599/page-42#post-614593
 32 CHAPTER 2. HOW TO PROCEED DURING A SOLVE
 -->
-### 2.4.11 Insertion Finder
+#### 2.4.11 Insertion Finder
 <!--
 2.4.11 Insertion Finder
 Insertion Finder37, developed by Baiqiang Dong, is a useful tool to find insertions and check if
@@ -1796,7 +1796,8 @@ you have failed to see something in your solutions: it finds up to 4 insertions 
 It is especially useful for easy cases (3 corners or 3 edges) but in complex situation it may
 find solution that are not possible (or very difficult) to find for humans: use it responsibly!
 -->
-## 2.5.11 Insertion Finder
+### 2.5 Other Simple Stragies
+#### 2.5.1 Go Back and Change Your Sove
 <!--
 2.5 Other Simple Stragies
 2.5.1 Go Back and Change Your Sove
@@ -1810,12 +1811,18 @@ Of course, if you find a spot where there are two “free” layers, you can use
 The moves can, but don’t have to, be random: if you can see a pair forming or the EO gettig
 better with some moves, good for you, but sometimes you might as well try random moves and
 see what happens later.
+-->
+#### 2.5.2 Get Lucky!
+<!--
 2.5.2 Get Lucky!
 Obviously, luck is not a skill to be learned, but remember that in FMC you have to go for
 it: a “simple” solve ending with an LL skip is not less worthy than a complex unlucky one, if
 they have the same length. This is one of the reasons why you need to try as many different
 alternatives as you can: you are more likely to get a skip if you try 100 solutions than if you try
 10 or 20.
+-->
+#### 2.5.3 First Example: Insert Last Pair(s)
+<!--
 2.5.3 First Example: Insert Last Pair(s)
 After completing an F2L-1, you can finish the F2L by inserting the last pair. This isn’t usually a
 good way to continue, unless you get lucky. To improve your chances to get lucky, try to insert
@@ -1852,7 +1859,9 @@ L F L' F' //Insert other pair
 L U L B //Insert saved pair and skip
 Solution: U2 F' U' B' D B D2 L D2 B U' L F L' F' L U L B
 See on alg.cubing.net
-2.5.4 Second Example: How to Use Algorithms
+-->
+#### 2.5.4 Second Example: How to Use Algorithms
+<!--
 First of all, you need to be able to recognize symmetries in algorithms (more precisely, in
 cases): the OLL that is solved by F R U R' U' F' is symmetrical about the S plane, so the
 same case can be solved by B' R' U' R B U. If you want to use it, try also its symmetrical to
@@ -1871,14 +1880,16 @@ corners: if you complete the F2L and are left with 2 bad edges, you can try this
 4 different angles to see if you get a skip, or at least an easy case.
 34 CHAPTER 2. HOW TO PROCEED DURING A SOLVE
 -->
-
-## 1.6. 第３章　高度なツール (Advanced Tools)
+## 第３章　高度なツール (Advanced Tools)
 <!--
 Chapter 3
 Advanced Tools
 In the previous chapter we have looked at the basic techniques, needed to find a good solution.
 In this one more advanced tool will be provided. They are not necessary, but they help getting
 unstuck and give you more possibilities to explore.
+-->
+### 3.1 Inverse Scramble
+<!--
 3.1 Inverse Scramble
 If you can’t find any good start, you can try with inverse scramble: if you find a solution for the
 inverse sequence1
@@ -1925,9 +1936,15 @@ almost without additional effort. It’s up to you to decide which method you pr
 Besides being a technique useful as it is, in case you get stuck right at the beginning of a
 solve or simply to get more possibilities to explore, the ideas explained here are fundamental to
 the techniques introduced in the next paragraph.
+-->
+### 3.2 Pseudo Blocks, Premoves and NISS
+<!--
 3.2 Pseudo Blocks, Premoves and NISS
 This whole Section 3.2 is better read all at the same time, since the three techniques explained
 are deeply related.
+-->
+#### 3.2.1 Pseudo Blocks
+<!--
 3.2.1 Pseudo Blocks
 We have already met some examples of pseudo blocks. To make the concept more clear, lets
 look in detail at the following scramble.
@@ -1951,6 +1968,9 @@ F2 D' L2 D F2 R2 D B2 D' R2 //PLL
 D2 //Undo premove
 In this case the D2 move could have been done before the OLL, or between OLL and PLL,
 but if you don’t finish the F2L as an intermediate step you have to do it at the end.
+-->
+#### 3.2.2 Premoves
+<!--
 3.2.2 Premoves
 The situation of the previous example is not particularly difficult, but the “pseudoness” makes
 it harder to go on with the solve: the recognition of F2L pairs is not immediate. Usually it’s
@@ -1984,6 +2004,9 @@ Solution: R2 B' R2 B D L2 F D F2 L' D F' D2 F D' L' D B L' F L B' L2 F' D'
 L' D2 B2 (28)
 See on alg.cubing.net
 38 CHAPTER 3. ADVANCED TOOLS
+-->
+#### 3.2.3 NISS
+<!--
 3.2.3 NISS
 In the last example, I have found the two premoves in two different moments. It is a little harder
 to recognize pseudo blocks that require more than one premove: with our scramble
@@ -2086,6 +2109,9 @@ D
 (G)
 the final solution is
 A B D G' F' E' C'
+-->
+### 3.3 Reverse NISS
+<!--
 3.3 Reverse NISS
 It is not a widely used technique, but it can occasionally be useful: it can be considered an
 improvement over both “Conjugate and Solve” and “Go Back and Change your Solve”.
@@ -2118,6 +2144,9 @@ scramble and you have:
 Premoves: R' F' F' U2 R D R' D2 B2 R2
 F2L: F2 U R' U' F D2 F R
 LL: F D F2 R F R2 D R D2
+-->
+### 3.4 Useful Algorithms
+<!--
 3.4 Useful Algorithms
 As you can see, in the last example solve I have used an OLL that is maybe not well known, that
 is R U R2 F R F2 U F (U2) (modulo rotations). This one in particular is very useful, because
@@ -2140,6 +2169,9 @@ the F2L. Let’s take a look at the optimal T perm:
 R2 Uw R2 Uw' R2 y L2 Uw' L2 Uw L2 (U')
 It is just a useful F2L algorithm repeated twice.
 Besides just learning algorithms, you can also learn from the algorithms.
+-->
+### 3.5 Pair Analysis
+<!--
 3.5 Pair Analysis
 This is a really obscure technique, based on intuition, not proven to actually give you some
 advantage during the solve. What is it about? “Analyzing pairs” means taking into account
@@ -2157,6 +2189,9 @@ as you can.
 3.6. SOLVING WITH SKEW CENTERS 43
 There isn’t much documentation about this technique, especially for bad pairs. Guus Razoux Schultz did a good analysis for the first scramble7 of Twente Open 2012 in this post8 on
 speedsolving.com.
+-->
+### 3.6 Solving with Skew Centers
+<!--
 3.6 Solving with Skew Centers
 This technique is understood more naturally in the context of corners first solving, but can be
 used with any method.
@@ -2218,12 +2253,15 @@ partial solutions, you can get the first version of your solution and copy the l
 is not my case, as I write stuff down on my sheets in a very chaotic way.
 -->
 
-## 1.7. 第４章　その他の手法 (Some Other Methods)
+## 第４章　その他の手法 (Some Other Methods)
 <!--
 Chapter 4
 Some Other Methods
 The “standard” method is building a skeleton with blockbuilding and then solving the last few
 pieces with insertions. But there are some other approaches worth mentioning.
+-->
+### 4.1 Starting With EO
+<!--
 4.1 Starting With EO
 Starting by orienting all edges, as you would do in a ZZ solve, is a possiblity to always keep
 in mind. Since the first version of this tutorial I have used it more and more in my solves, to
@@ -2236,6 +2274,9 @@ normal ZZ solve, for each of these you can build the F2L on 4 different sides. E
 don’t like starting with EO, I suggest practicing some (color neutral!) ZZ to improve the EO
 recognition.
 From here you have two ways to continue.
+-->
+#### 4.1.1 EO + Blockbuilding
+<!--
 4.1.1 EO + Blockbuilding
 After having oriented all edges, the most common way to go on is blockbuilding. The pro is
 that we don’t have any “bad” edge, but this forces1 us not to use moves that break the EO, and
@@ -2273,6 +2314,9 @@ B2 U' B2 U' B2 U' B2 U' B' U //All but 3 corners (10/20)
 Solution: U2 R' U' R' D2 R U' R' D2 B F2 U2 F B2 U' B2 U' B2 U' B2 U' B'
 U L2 B' (26)
 See on alg.cubing.net
+-->
+#### 4.1.2 Domino Reduction (and HTA)
+<!--
 4.1.2 Domino Reduction (and HTA)
 Edge orientation can be considered, modulo rotations, a reduction to the subgroup generated
 by the moves <R, L, U, D> or, equivalentely, <R, L, U, D, F2, B2>. In other words, by
@@ -2300,6 +2344,9 @@ Solution: R' B U' D F L' F2 L D2 L2 F2 D F2 D L2 U' R2 D2 R2 (19)
 See on alg.cubing.net
 One last consideration: in the examples above there are two nice and short EO steps. But
 this doesn’t mean you shoul discard a longer EO, if you can build a lot of blocks while doing it!
+-->
+### 4.2 Corners First
+<!--
 4.2 Corners First
 “Corners First” (sometimes shortened to CF) is not really a method, but a class of methods
 that, as the name says, solve the corners first, and then the edges. Roux can be considered a
@@ -2364,14 +2411,16 @@ post-1234805
 6
 https://www.speedsolving.com/forum/threads/the-fmc-thread.13599/page-111#post-945295
 -->
-
-## 1.8. 第５章　練習方法 (How To Practice)
+## 第５章　練習方法 (How To Practice)
 <!--
 Chapter 5
 How To Practice
 Many people say that to get better you need to “practice, practice, practice”. It is true, but
 you also need to know how to practice: here is some advice on how to practice to get better at
 FMC.
+-->
+### 5.1 No Time Limit and Competition Simulation
+<!--
 5.1 No Time Limit and Competition Simulation
 Always trying to simulate a competition and forcing yourself to complete your solution in one
 hour is not the best thing to do: on the contrary, I suggest not limiting your time and trying
@@ -2384,6 +2433,9 @@ competition3
 .
 Trying for one hour as it was a competition and then keep trying until you reach a good
 result is a balanced compromise.
+-->
+### 5.2 Compare Yourself to the Masters (and Study their Solves)
+<!--
 5.2 Compare Yourself to the Masters (and Study their Solves)
 When you want to practice, I suggest trying a scramble that has already been solved by some
 expert FMCer, so that you can compare your solution to their and find out whether you have
@@ -2393,6 +2445,9 @@ solutions: you can find many of the them lookig at the old rounds of the online 
 cited before or on the FMC Thread on speedsolving.com. A couple of years ago I started a
 blog-style website http://fmcsolves.cubing.net/ to collect nice FMC solves, but I haven’t
 updated it in ages.
+-->
+### 5.3 Hard Scrambles
+<!--
 5.3 Hard Scrambles
 To see what you can do in the “worst case scenario”, I suggest trying out some scrambles that
 are considered by experts to be really hard. You can find a list of hard scrambles here4
@@ -2407,15 +2462,24 @@ https://speedcube.de/forum/showthread.php?tid=5795
 https://www.speedsolving.com/forum/threads/the-fmc-thread.13599/page-88#post-842681
 49
 50 CHAPTER 5. HOW TO PRACTICE
+-->
+### 5.4 Deliberate Practice
+<!--
 5.4 Deliberate Practice
 If you think you have troubles in finding a good start, practice that: take a scramble, find a
 2x2x2, 2x2x3 or something else until you are satisfied, then change scramble. You can apply
 this idea to F2L-1 or any other substep.
+-->
+### 5.5 Fast Scrambling
+<!--
 5.5 Fast Scrambling
 Even if it is not necessary, when using techniques like NISS, or simply if like me you tend to
 solve and scramble the cube many times during a solve, you should try to be at least “not too
 slow” at scrambling, and most important to be accurate (don’t make mistakes). 10 seconds for
 a 20 moves scramble is fine.
+-->
+### 5.6 Study!
+<!--
 5.6 Study!
 Last but not least. Study this guide, study from other sources, study algorithms and techniques,
 new or known. I have read “The FMC Thread” on speedsolving.com twice, from top to bottom.
@@ -2430,10 +2494,13 @@ https://www.speedsolving.com/wiki/index.php/LLEF
 https://www.speedsolving.com/wiki/index.php/Summer_Variation
 -->
 
-## 1.9. 第６章　公式大会 (8)In Competition)
+## 第６章　公式大会 (8)In Competition)
 <!--
 Chapter 6
 In Competition
+-->
+### 6.1 How to Write a Solution
+<!--
 6.1 How to Write a Solution
 Both in competition and while practicing, you should write down your solution without rotations. There are many good reasons to do so:
 • Using rotations, it is easier to make mistakes.
@@ -2448,6 +2515,9 @@ one, you don’t need to care about how you are looking at the cube at that mome
 U.
 To help memorizing the scheme (not that it is hard), remember that Blue and Red begin
 with the same letter as their layer. This trick actually works well in many other languages.
+-->
+### 6.2 Backup Solution
+<!--
 6.2 Backup Solution
 It is good habit, in time-limited competitions, to write a “backup solution”. It is usually a not
 so good solution, but still better than a DNF, found before the last moments, when haste may
@@ -2471,9 +2541,15 @@ usually takes me about 5 minutes, so you should adjust my “10 minutes” to yo
 What can a good backup solution be? Any solution! Anything is better than a DNF,
 especially now that the preferred format for FMC (in official competitions) is “Mean of 3”: a
 single DNF gives you a DNF mean.
+-->
+### 6.3 Time Managment
+<!--
 6.3 Time Managment
 “How to manage your time” is a complex topic, and I don’t want to say that my advice is
 absolutely good in any case: follow it carefully! In fact, I consider myself pretty bad at timemanagment. The best teacher, in this case, is personal experience.
+-->
+#### 6.3.1 Don’t Get Stuck
+<!--
 6.3.1 Don’t Get Stuck
 It can happen to anyone: during a competition you get stuck on a certain start and don’t
 seem to find any better continuation. The ability to quickly understand if a start can lead to
@@ -2481,6 +2557,9 @@ a good continuation would be as useful as being able to read other people’s mi
 world only). My advice, maybe trivial, is: don’t get stuck. If you have tried every method and
 technique you know and found nothing, don’t stare at the cube hoping it solves itself: go back
 and try something else.
+-->
+#### 6.3.2 (Don’t) Explore Every Possibility
+<!--
 6.3.2 (Don’t) Explore Every Possibility
 In the first version of this tutorial this section was called “Explore Every Possibility” - a radical
 change! The content of the old section is still valid though:
@@ -2509,7 +2588,7 @@ that you can try and find a way to solve them on your own.
 https://en.wikipedia.org/wiki/Tree_(data_structure)
 -->
 
-## 1.10. 付録A　その他の参考資料 (Other Resources)
+## 付録A　その他の参考資料 (Other Resources)
 <!--
 Appendix A
 Other Resources
@@ -2562,7 +2641,7 @@ fundamental_techniques.html
 • Lars Petrus’ website, with useful blockbuilding examples: http://lar5.com/cube/
 -->
 
-## 1.11. 付録B　回転記号 (Notation)
+## 付録B　回転記号 (Notation)
 <!--
 Appendix B
 Notation
@@ -2595,7 +2674,7 @@ M E S
 They cannot be used in official FMC solutions.
 -->
 
-## 1.12. 付録C　LLアルゴリズム (Last Layer Algorithms)
+## 付録C　LLアルゴリズム (Last Layer Algorithms)
 <!--
 Appendix C
 Last Layer Algorithms
