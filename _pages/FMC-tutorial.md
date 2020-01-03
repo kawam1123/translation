@@ -6,10 +6,12 @@ header:
 permalink: /FMC/FMC-tutorial.html
 layout: single
 classes: wide
-toc: true
+toc: false
+tocright: true
 toc_icon: "cog"
-toc_sticky: false
+toc_sticky: true
 author_profile: false
+sidebar: true
 footnote_script: true
 ---
 <!--

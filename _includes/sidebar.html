@@ -2,6 +2,11 @@
   <div class="sidebar sticky">
   {% if page.author_profile or layout.author_profile %}{% include author-profile.html %}{% endif %}
   {% if page.sidebar %}
+    <!--TOC-->
+    {% if page.tocright %}
+      {% include toc_list.html %}
+    {% endif %}
+    <!--endTOC-->
     {% for s in page.sidebar %}
       {% if s.image %}
         <img src=
