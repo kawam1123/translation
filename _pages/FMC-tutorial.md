@@ -5,9 +5,10 @@ header:
   teaser: /assets/img/333fm.jpg
 permalink: /FMC/FMC-tutorial.html
 layout: single
+classes: wide
 toc: true
 toc_icon: "cog"
-toc_sticky: true
+toc_sticky: false
 author_profile: false
 ---
 <!--
@@ -241,7 +242,7 @@ goes also to the creators of this two tools, respectively Conrad Rider and Lucas
 ### 免責事項
 ご存じかもしれませんが、英語は私の母語ではありません。もし文章が下手だったり、間違いを見つけたりした場合、私にご連絡ください。 `sebastiano.tronto [at] gmail [dot] com`
 
-**翻訳者注：**  
+**訳注：**  
 英語は翻訳者の母語でもありません！　本文の内容ではなく、翻訳のミスを見つけた場合は、私にご連絡ください！
 {: .notice--info}
 
@@ -413,9 +414,9 @@ Peters also holds the World Champion title (2017).
 このチュートリアルのゴールは、**FMCでよい結果を出すためによく知られたテクニックをまとめることです。** いくつかの説明は詳しく記述して実例もつけていますが、単に総合的な説明を書いて学習のためのリソースを提案しているだけのものもあります。
 
 <!--訳者TODO：ここにFMCの解答用紙の画像をつける-->
-![図1:公式スクランブルシートの例](../assets/img/fmc_scramble_sheet.png "図1:公式スクランブルシートの例"){:class="figure-img img-responsive"}
+{% include figure image_path="../assets/img/fmc_scramble_sheet.png" alt="図1:公式スクランブルシートの例" caption="図1:公式スクランブルシートの例" %}
+{:class="img-responsive"}
 
-図1:公式スクランブルシートの例
 
 <!--
 Goal of This Tutorial
@@ -855,6 +856,9 @@ to study some other. Some will be explained in detail, some other will be only m
 other tutorials will be linked for a more complete study.
 -->
 ### 2.1 ブロックビルディング (Blockbuilding)
+ブロックビルディングはFMCにおける最重要のテクニックでしょう。簡単なコンセプトですが、しっかり習得するにはたくさんの練習が必要です。前の章で書いたような、ブロックビルディングの考え方に基づく解法（Petrus、Roux、Heise、ZZ）を練習することはブロックビルディングを上達させるのに最も直接的です。
+
+ここではいくつか便利な基本テクニックを書きましょう。一つ目はRyan Heiseのウェブサイト ([www.ryanheise.com/cube](www.ryanheise.com/cube))から取ってきたものです。ウェブサイトには実例がたくさんありますから、是非見てみましょう！
 <!--
 2.1 Blockbuilding
 Blockbuilding is probably the most important technique in FMC. It is a simple concept, but
@@ -865,7 +869,32 @@ Here I will list some fundamental techniques that will come in handy; the first 
 from Ryan Heise’s website (www.ryanheise.com/cube), which is full of examples: look them
 up!
 -->
-#### 2.1.1 そろえてつなげる(Align then Join)
+#### 2.1.1 並べて、つなげる(Align then Join)
+ソース：[http://www.ryanheise.com/cube/align_join.html](http://www.ryanheise.com/cube/align_join.html)
+
+基本テクニック：コーナーとエッジのペア（最も簡単なブロック）を作るためには、まず整列(align)して、一手でつなげられるようにしなければなりません。
+
+この考え方は、さらに一般的には、より大きなブロックを作るときにも適用できます。たとえば、コーナーとエッジのペアと、2x2x1の四角を合わせて3x2x1ブロックを作りたいときです。
+
+こういう言い方をすると平凡なことを言っているように見えますが、重要なことは**二つのピースがいつ整列しているかを認識して、一手でつなげることです。** こうすることで、あるムーブによって２つのピースをつなげることができるかどうかを将来的に判断できるようになります。
+
+{% capture display_text %}
+L2 //Align
+U2 //Join
+{% endcapture %}
+{% include solvebox.html
+title = "Align then Join - Example"
+scramble = "F U' D2 L D L2 D F R2 B U2 R2 D L2 D L2 D R2 U' L2 F2"
+text = display_text
+solution = "alg.cubing.net"
+img_src="../assets/img/alg-211.png"
+algcubing = "https://alg.cubing.net/?setup=B-_L-_D2_R_U_F-_U-_L_U2_D_R2_U2_F_B_R2_B_U2_B_L2_B2_U2&alg=B-_F_D2_%2F%2FPseudo_2x2x1_(3%2F3)%0AL-_B_(B2_L_B_L-_B_D2_F-_R_F_D2)_R2_%2F%2FPseudo_3x2x2_(3%2F6)%0AF2_D_F-_D2_F_%2F%2FFound_using_NISS_(5%2F11)%0AR-_D-_R_D2_F_U2_%2F%2FFound_using_NISS_(6%2F17)"
+%}
+
+上記の例では、二つのペアがすでにできています。`L2 U2`と回すことで青-赤エッジと青-赤-黄コーナーがペアになります。
+
+訳注：`L2`と回すことで青-赤エッジがB面の青センターと合うことを、ここでは整列(align)すると言っています。日本語では「センター合わせ」「エッジセンターペアに合わせる」と言うこともあります。
+{: .notice}
 <!--
 2.1.1 Align then Join
 Source: http://www.ryanheise.com/cube/align_join.html
