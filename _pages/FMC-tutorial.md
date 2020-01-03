@@ -41,6 +41,22 @@ January 03, 2020
 本ドキュメントは、未完成です。原文はコメントアウトされた状態で保存されています。翻訳に協力してくださる方は、コメントアウトを外して日本語の翻訳を書き込んでください。文中の画像ファイルおよびリンクについては、いずれGitHubのリポジトリ内に格納予定です。
 {: .notice--info}
 
+**翻訳進捗**
+
+|章|進捗|メモ|
+|:---|:---:|:---:|
+|序文|[完了](){: .btn .btn--success}||
+|1章 Think Outside the Box|[完了](){: .btn .btn--success}||
+|2章 How to Proceed During a Solve|[作業中](){: .btn .btn--warning}||
+|3章 Advanced Tools|[未着手](){: .btn .btn--danger}||
+|4章 Some Other Methods|[未着手](){: .btn .btn--danger}||
+|5章 How To Practice|[未着手](){: .btn .btn--danger}||
+|6章 In Competitoin|[未着手](){: .btn .btn--danger}||
+|付録A Other Resources|[未着手](){: .btn .btn--danger}||
+|付録B Notation|[未着手](){: .btn .btn--danger}||
+|付録C Last Layer Algorithms|[未着手](){: .btn .btn--danger}||
+{: .table-striped .table-hover }
+
 <!-- TOC -->
 <!--
 ## 目次
