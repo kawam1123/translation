@@ -52,3 +52,9 @@ strong.yellowbox {
 .solvebox .solution{
     border-top: solid 1px rgb(65, 65, 65);
 }
+
+.clearfix::after {
+    content : " ";
+    display : block;
+    clear : both;
+}

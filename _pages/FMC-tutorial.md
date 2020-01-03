@@ -963,7 +963,7 @@ the yellow-orange-blue one!
 #### 2.1.3 壊して直す (Destroy and Restore)
 ソース: [http://www.ryanheise.com/cube/destroy_restore.html](http://www.ryanheise.com/cube/destroy_restore.html)
 
-![](../assets/img/alg-213.png){:width="200px" height="auto" class=""}
+![](../assets/img/alg-213.png){:width="500px" height="auto" class="align-center"}
 
 <!--
 2.1.3 Destroy and Restore
