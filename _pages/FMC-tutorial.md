@@ -10,6 +10,7 @@ toc: true
 toc_icon: "cog"
 toc_sticky: false
 author_profile: false
+footnote_script: true
 ---
 <!--
 訳注：原文はコメントアウトで表示し、必要に応じて参照できるようにしています。
@@ -822,7 +823,7 @@ post-1013053.
 
 ## 第２章 ソルブの進め方
 
-[Per Kristen Fredlund](https://www.worldcubeassociation.org/persons/2004FRED02)[^2-0]の言葉を引用すれば、一般的な進め方は次の通りです。
+[Per Kristen Fredlund](https://www.worldcubeassociation.org/persons/2004FRED02)[^2-0]{:.underline}の言葉を引用すれば、一般的な進め方は次の通りです。
 > もっと次のように考えましょう。キューブを二段階で解くのだ、と。
 >
 > 一段階目では、可能な限り多くのピースを、可能な限り効率的に解きましょう。（つまり、よいスケルトン[^2-0-1]を作りましょう）  
@@ -888,7 +889,7 @@ scramble = "F U' D2 L D L2 D F R2 B U2 R2 D L2 D L2 D R2 U' L2 F2"
 text = display_text
 solution = "alg.cubing.net"
 img_src="../assets/img/alg-211.png"
-algcubing = "https://alg.cubing.net/?setup=B-_L-_D2_R_U_F-_U-_L_U2_D_R2_U2_F_B_R2_B_U2_B_L2_B2_U2&alg=B-_F_D2_%2F%2FPseudo_2x2x1_(3%2F3)%0AL-_B_(B2_L_B_L-_B_D2_F-_R_F_D2)_R2_%2F%2FPseudo_3x2x2_(3%2F6)%0AF2_D_F-_D2_F_%2F%2FFound_using_NISS_(5%2F11)%0AR-_D-_R_D2_F_U2_%2F%2FFound_using_NISS_(6%2F17)"
+algcubing = "https://alg.cubing.net/?alg=L2_%2F%2FAlign%0AU2_%2F%2FJoin&setup=F_U-_D2_L_D_L2_D_F_R2_B_U2_R2_D_L2_D_L2_D_R2_U-_L2_F2"
 %}
 
 上記の例では、二つのペアがすでにできています。`L2 U2`と回すことで青-赤エッジと青-赤-黄コーナーがペアになります。
@@ -921,6 +922,26 @@ In the example above, two pairs are already built. The sequence L2 U2 pairs up t
 edge with the blue-red-yellow corner.
 -->
 #### 2.1.2 別のところに持っていく (Move it out of the way)
+ソース: [http://www.ryanheise.com/cube/move_it_out_of_the_way.html](http://www.ryanheise.com/cube/move_it_out_of_the_way.html)
+
+ブロックを作りたいけれど、そのために必要なムーブが別のブロックを壊してしまうということがあるでしょう。そうしないために、動かしたくないピースをあらかじめ別の場所に動かしておきましょう。一つの方法として、まず壊したくないピースを先に動かして、壊れないように保存しておいてから、（必要なら）あとで戻すことができます。
+
+{% capture display_text %}
+U2 R2 D R2 //2x2x1の四角ができる
+U' //赤-白-青のペアを別のところに持っていく
+F' D' //四角を拡張して2x2x2を作る
+{% endcapture %}
+{% include solvebox.html
+title = "Move it out of the Way - Example"
+scramble = "F R2 B D2 F D2 L2 B2 F' D2 F' L B U' F2 U2 L2 U B R2 F"
+text = display_text
+solution = "alg.cubing.net"
+img_src="../assets/img/alg-212.png"
+algcubing = "https://alg.cubing.net/?setup=F_R2_B_D2_F_D2_L2_B2_F-_D2_F-_L_B_U-_F2_U2_L2_U_B_R2_F&alg=U2_R2_D_R2_%2F%2F2x2x1_square%0AU-_%2F%2FMove_the_red%26%2345%3Bwhite%26%2345%3Bblue_pair_out_of_the_way%0AF-_D-_%2F%2FExpand_the_square_to_a_2x2x2_block"
+%}
+
+もし2x2x1ブロックを作ったあとすぐに`F' D'`と回したとしても、同じ2x2x2ブロックを作ることができます。しかし、赤-白-青のペア壊してしまうことになります。ただし、このケースでは「別のところに持っていく」は最高のアイディアではないかもしれない、と補足しておきます。赤-白-青のペアを保存する過程で、黄-橙-青ペアを壊してしまっています！
+
 <!--
 2.1.2 Move it out of the way
 Source: http://www.ryanheise.com/cube/move_it_out_of_the_way.html
@@ -940,6 +961,10 @@ the way” doesn’t seem to be the best idea: in the process of saving that pai
 the yellow-orange-blue one!
 -->
 #### 2.1.3 壊して直す (Destroy and Restore)
+ソース: [http://www.ryanheise.com/cube/destroy_restore.html](http://www.ryanheise.com/cube/destroy_restore.html)
+
+![](../assets/img/alg-213.png){: }
+
 <!--
 2.1.3 Destroy and Restore
 Source: http://www.ryanheise.com/cube/destroy_restore.html

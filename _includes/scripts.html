@@ -37,3 +37,14 @@
     <script src="{{ script_path }}"></script>
   {% endfor %}
 {% endif %}
+
+{% if page.footnote_script %}
+<script>
+for (let node of document.querySelectorAll('sup[id^=fnref]')) {
+  const anchor =  node.querySelector('a');
+  const footnoteId = anchor.getAttribute('href').replace("#", "");
+  const footnote = document.getElementById(footnoteId);
+  anchor.setAttribute('title', footnote.textContent.slice(1, -1));
+}
+</script>
+{% endif %}
