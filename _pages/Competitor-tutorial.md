@@ -2,7 +2,7 @@
 title: WCA大会チュートリアル
 permalink: /competitor-tutorial
 ---
-# WCA大会チュートリアル (WCA Competition Tutorial)
+<!--# WCA大会チュートリアル (WCA Competition Tutorial)-->
 WCA Competition Tutorial Version: 2019-10-21  
 Original document is [here](https://www.worldcubeassociation.org/files/WCA_Competition_Tutorial.pdf).  
 Japanese Translation: 2019-12-10 by kawam1123 <!--他の翻訳者名をここに列挙する-->  
