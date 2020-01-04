@@ -40,8 +40,15 @@ January 03, 2020
 
 **免責事項：**  
 本ドキュメントは、Sebastiano Tronto氏によって書かれた**Fewest Moves Tutorialを日本語に翻訳したものです。** 2019年12月、本チュートリアルを日本語に翻訳されたものが公開されていなかったため、翻訳プロジェクトをスタートしました。本記事の内容については、最少手数競技に関する知識や用語を確認しながら翻訳を進めていますが、翻訳者の技量不足により不正確である場合があります。あらかじめご了承ください。  
-また、すぐに最少手数競技のやりかたを覚えたいという方には、既に[WRCC](http://wrcc.main.jp/commentary_fmc/fmc/index)や[TRCC](http://trcc.sub.jp/solution/fmc/fmcindex.html)の素晴らしい解説記事がありますので、こちらもあわせてご参照ください。
+また、すぐに最少手数競技のやりかたを覚えたいという方には、既に[WRCC](http://wrcc.main.jp/commentary_fmc/fmc/index)や[TRCC](http://trcc.sub.jp/solution/fmc/fmcindex.html)の素晴らしい解説記事がありますので、こちらもあわせてご参照ください。  
+This documantion is a Japanese translated edition of Fewest Moves Tutorial by Sebastiano Tronto. Since no translation in Japanese had been published at December 2019, I started a tranlation project for the tutorial. I am translating the document looking up the basic knowledges and the technical terms on FMC, but the translated content might be wrong by reason of my lack of translation and FMC skills. If you find any mistakes in the translation, please let me know!
 {: .notice--warning}
+
+**翻訳にあたっての謝辞：**  
+この素晴らしいチュートリアルを無料で公開してくれているSebastiano Tronto氏に最大限の感謝を申し上げます！  
+Special thanks to Sebastiano Tronto, a FMC superstar, for publishing this wonderful tutorial for free!  
+Un ringraziamento speciale a Sebastiano Tronto, una superstar FMC, per aver pubblicato gratuitamente questo meraviglioso tutorial!
+{: .notice--success}
 
 **翻訳者注：**  
 本ドキュメントは、未完成です。原文はコメントアウトされた状態で保存されています。翻訳に協力してくださる方は、コメントアウトを外して日本語の翻訳を書き込んでください。翻訳の進捗は[GitHubのリポジトリ](https://github.com/kawam1123/translation)で管理しており、画像ファイルなどもこちらに格納されています。
