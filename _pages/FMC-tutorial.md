@@ -884,9 +884,9 @@ to study some other. Some will be explained in detail, some other will be only m
 other tutorials will be linked for a more complete study.
 -->
 ### 2.1 ブロックビルディング (Blockbuilding)
-ブロックビルディングはFMCにおける最重要のテクニックでしょう。簡単なコンセプトですが、しっかり習得するにはたくさんの練習が必要です。前の章で書いたような、ブロックビルディングの考え方に基づく解法（Petrus、Roux、Heise、ZZ）を練習することで直接的にブロックビルディングのスキルを高めることができます。
+**ブロックビルディングはFMCにおける最重要のテクニックでしょう。**簡単なコンセプトですが、しっかり習得するにはたくさんの練習が必要です。前の章で書いたような、ブロックビルディングの考え方に基づく解法（Petrus、Roux、Heise、ZZ）を練習することで直接的にブロックビルディングのスキルを高めることができます。
 
-ここではいくつか便利な基本テクニックを書きましょう。一つ目はRyan Heiseのウェブサイト ([www.ryanheise.com/cube](www.ryanheise.com/cube))から取ってきたものです。ウェブサイトには実例がたくさんありますから、是非見てみましょう！
+ここではいくつか便利な基本となるテクニックを並べましょう。一つ目はRyan Heiseのウェブサイト ([www.ryanheise.com/cube](www.ryanheise.com/cube))から取ってきたものです。ウェブサイトには実例がたくさんありますから、是非見てみましょう！
 <!--
 2.1 Blockbuilding
 Blockbuilding is probably the most important technique in FMC. It is a simple concept, but
@@ -894,8 +894,7 @@ it requires a lot of practice to be mastered. Practicing blockbuilding-based met
 Roux, Heise and ZZ), in the ways previously described, is the most direct way to improve at
 blockbuilding.
 Here I will list some fundamental techniques that will come in handy; the first ones are taken
-from Ryan Heise’s website (www.ryanheise.com/cube), which is full of examples: look them
-up!
+from Ryan Heise’s website (www.ryanheise.com/cube), which is full of examples: look them up!
 -->
 #### 2.1.1 並べて、つなげる(Align then Join)
 ソース：[http://www.ryanheise.com/cube/align_join.html](http://www.ryanheise.com/cube/align_join.html)
@@ -1144,9 +1143,9 @@ move (the red B) the square become 2.
 #### 2.1.7 EOに気をつけよう (Pay Attention to EO)
 ここでいう**EO**とはエッジの向き(Edge Orientation)を略したものです。
 
-既にお気づきの方もいるかもしれませんが、複数の異なる解法を学んでいると、Edge Orientationというのは再帰的なステップです。前述のように、**Bad edgeが多ければ多いほど、解くのは困難になっていきます。**通常、最後にエッジの向きをそろえることは、効率的ではありません。ZZでそうするように、まず最初にエッジの向きを揃えることが手軽ですが、ブロックビルディングのフェイズで制約を持つことになります。
+複数の異なる解法を学ぶなかで既にお気づきの方もいるかもしれませんが、Edge Orientationというのは再帰的なステップなのです。前述のように、**Bad edgeが多ければ多いほど、解くのは困難になっていきます。**通常、最後にエッジの向きをそろえることは、効率的ではありません。ZZでそうするように、まず最初にエッジの向きを揃えることが手軽ですが、ブロックビルディングのフェイズで制約を持つことになります。
 
-部分的にでも、Edge Orientationをブロックビルディングの途中で終わらせてしまうようにすることが、最良の方法のひとつです。ZZやPetrusなどの解法に習熟すると、数手動かしたあとでエッジの向きが正しいかどうかを簡単に判定できるようになります。もしまだ判定ができないのなら、FMCにおいてはいつでも望むときに戻って修正できるということを忘れないでおきましょう。つまり、EOがうまくいかないときには、前に戻って、何手か加えたり変えたりして、よい方向に進むかどうかを確認すればいいのです。（2.5.1節もご参照ください）
+部分的にでも、**Edge Orientationをブロックビルディングの途中で終わらせるのが良い方法です。**ZZやPetrusなどの解法に習熟すると、数手動かしたあとでエッジの向きが正しいかどうかを簡単に判定できるようになります。もしまだ判定ができないのなら、FMCにおいてはいつでも望むときに戻って修正できるということを忘れないでおきましょう。つまり、EOがうまくいかないときには、前に戻って、何手か加えたり変えたりして、よい方向に進むかどうかを確認すればいいのです。（2.5.1節もご参照ください）
 
 しかし、「EOファースト・アプローチ」をただちに却下しないようにしてください。[João Pedro Batista Ribeiro Costa](https://www.worldcubeassociation.org/persons/2013COST02)(世界大会2015のFMCチャンピオン)や[Grzegorz Łuczyna](https://www.worldcubeassociation.org/persons/2005LUCZ01)(ヨーロッパ大会2010のFMCチャンピオン)などの著名なキューバーは、ほとんど常にEOから始めていますし、[Sébastien Auroux](https://www.worldcubeassociation.org/persons/2008AURO01)(世界大会2011のFMCチャンピオン)や私(Sebastiano Tronto)も非常によく使います。詳細と実例については4.1節を参照してください。
 
@@ -1171,22 +1170,22 @@ World Champion) and myself do it very often. For more details and examples see s
 #### 2.1.8 どのブロックを作るべきか？ (Which Block Should I Build?)
 様々な状況を活用せよ、ということが黄金律です。つまり、2x2x2ブロック、3x2x1ブロック、2つの2x2x1の四角、ほかの様々なブロックから始めることができます。全ての可能性を試しましょう。
 
-可能な２つのアプローチとしては次のようなものがります。
+可能な２つのアプローチとしては次のようなものがあります。
 1. 2x2x3やF2L-1のような大きなブロックを作ろうとする
 1. 小さなステップで前に進み、たくさんの小さなブロックを作って最後につなげる
 
-Erik Jernqvistは「好調なスタート」を切るための指標として、次の手数の表を作りました。[^2-1-8]
+Erik Jernqvistは「よいなスタート」を切るための指標として、次の手数の表を作りました。[^2-1-8]
 
-|ブロックの種類|手数|
-|:------------|:----------:|
-|2x2x1四角＋コーナー／エッジペア|3|
-|2x2x2ブロック|4|
-|2つの2x2x1四角|5|
-|2x2x3ブロック|9|
-|F2L-1|14|
-|F2L|17|
+|ブロックの種類                  |手数|
+|:------------                  |:---:|
+|2x2x1四角＋コーナー／エッジペア  |3|
+|2x2x2ブロック                  |4|
+|2つの2x2x1四角                 |5|
+|2x2x3ブロック                  |9|
+|F2L-1                          |14|
+|F2L                            |17|
 
-個人的には、この表の手数は、特に最初の３つについて、ちょうどよい推計だと思います。しかし、**好調なスタートを切れたかどうかはその後のつながりがどうなるかにかかっている**ということを覚えておかなければなりません。もしF2L-1が12手でできたけれど、bad edgeが4つも残っていて、最後のF2Lのエッジが反転して入っているとしたらどうするでしょう。すぐに投げ捨てるだろうと思います。一方で、全てのエッジの向きが揃った2x2x3ブロックが12手でできたならもっとよいでしょう。もちろんEOだけが考慮すべきことではありませんが、最も重要なものの一つです。
+個人的には、この表の手数はちょうどよい推計だと思います。特に最初の３つについて当てはまります。しかし、**よいなスタートを切れたかどうかはその後のつながりがどうなるかにかかっている**ということを覚えておかなければなりません。もしF2L-1が12手でできたけれど、bad edgeが4つも残っていて、最後のF2Lのエッジが反転して入っているとしたらどうするでしょう。すぐに投げ捨てるだろうと思います。一方で、全てのエッジの向きが揃った2x2x3ブロックが12手でできたならもっとよいでしょう。もちろんEOだけが考慮すべきことではありませんが、最も重要なものの一つです。
 
 もう一つのルールは**決してLast Layerに影響を与えずにF2Lを完成させてはならない**[^2-1-8-2]ということです。理由は単純です。つまり、Last layerが悪い状態であるなら、どんなに多くのアルゴリズムを知っていたとしても多くの手数が必要になります。また、F2Lを完成させてしまうことはキューブ全体を操作する自由度が減るということです。一方で、**F2L-1を目指すことは良い部分解です。**これは、多くのピースが既に配置されているにも関わらず、より多くの自由度があるからです。
 
@@ -1546,7 +1545,7 @@ inverse of the following ones).
 
 **訳注：**  
 この節は特に説明が希薄なので、訳注で補足します。  
-Speedsolving.comの[元のスレッド](https://www.speedsolving.com/threads/2-gen-edge-cycles.56224/)でJanWが言っていることは、次のような`[U R U R, X]`型と`[R U R U, X]`の2種類の2-genコミューテータの計6種類を基本手順として、（目隠し解法における）エッジの3-cycleのシステムを作ろうというものです。学ぶべきアルゴリズムの数が非常に少なくなるので効率的なのではないか、という提案です。その後、どの程度使われるようになったかは正確にはわかりません。しかし、3x3x3目隠し競技のトップ層は**呼吸をするようにエッジとコーナー合わせて818種類のコミューテータを使いこなす**(さらに平気でバッファ移行をする)ような記憶オバケですから、あまり流行らなかったのでしょう。もしかすると、3x3x3片手目隠し競技をやりたい方にとっては2-genであることが役立つかもしれません。
+Speedsolving.comの[元のスレッド](https://www.speedsolving.com/threads/2-gen-edge-cycles.56224/)でJanWが言っていることは、次のような`[U R U R, X]`型と`[R U R U, X]`の2種類の2-genコミューテータの計6種類を基本手順として、（目隠し解法における）エッジの3-cycleのシステムを作ろうというものです。学ぶべきアルゴリズムの数が非常に少なくなるので効率的なのではないか、という提案です。その後、どの程度使われるようになったかは正確にはわかりません。しかし、3x3x3目隠し競技のトップ層は**呼吸をするようにエッジとコーナー合わせて818種類のコミューテータを使いこなす**(さらに平気でバッファ移行をする)ような記憶オバケですから、あまり流行らなかったのでしょう。もしかすると、3x3x3片手目隠し競技をやりたい方にとっては2-genであることが役立つかもしれません。  
 `[U R U R, U]` (UF->BR->UR)  
 `[U R U R, U']` (UF->BR->DR)  
 `[U R U R, U2]` (UF->BR->FR)  
@@ -1579,7 +1578,7 @@ U R U R U' R' U' R' U' R
 U R U R U2 R' U' R' U' R2
 -->
 #### 2.3.4 ブロックコミューテータ(Block Commutators)
-Ryan Heiseのウェブサイトを注意深く読んだなら、**「ペア3-cycle」**あるいは**「ブロックコミューテータ」**というものについても既に知っているでしょう。コーナーコミューテータについて既に知っているなら、これを直感的に理解するのは難しくはありません。たとえば次の例を見てみましょう。
+Ryan Heiseのウェブサイトを注意深く読んだなら、**「ペア3-cycle」**あるいは**「ブロックコミューテータ」**というものについても既にわかっていることでしょう。コーナーコミューテータについて既に知っているなら、これを直感的に理解するのは難しくはありません。たとえば次の例を見てみましょう。
 
 ![](../assets/img/alg-234-1.png){:width="200px" height="auto" class="align-center"}
 `[L Dw' L', U']` = `L Dw' L' U' L Dw L' U`
@@ -1610,13 +1609,14 @@ That is a pair commutator with a setup move.
 The J-perm PLL can also be seen as a pair 3-cycle:
 [R2: [Fw2, D B2 D']] = R2 Fw2 D B2 D' Fw2 D B2 D' R2
 -->
-### 2.4 Insertions
+### 2.4 インサーション(Insertions)
 このチュートリアルを通じて何度も触れてきましたが、（ようやく）インサーションについて詳しく見てみましょう。
 
 さて、どうにかしてよいスケルトンを見つけることができたとしましょう。コーナー3-cycleを1回やれば完成するという状態です。ここで何をすればいいでしょうか？　もちろんコミューテータを使ってそのまま3点交換をしてもよいでしょう。しかし、全てのケースを学んでいればわかることですが、コーナーコミューテータは最大で12手もかかります。最もいい場合では8手ですから、4手も増えるのはあまりよくありません。**ところが、コーナー3-cycleをほとんど確実に8手以内でやる方法があるのです！**それが**インサーション**です。
 
 **訳注：**ここではInsertionをそのままインサーションと訳しています。日本語の解説記事では「インサート」と書かれることが多いです。単純に訳すなら「挿入」「差し込み」のことです。
 {: .notice--info}
+
 <!--
 2.4 Insertions
 After mentioning them multiple times throughout this tutorial, it is (finally) time for looking at
@@ -1627,7 +1627,33 @@ if you have studied all the cases, you know that a corner commutator can need up
 Knowing that the best case only needs 8, those 4 more moves are not really nice. But there is
 a way to solve a corners 3-cycle almost certainly with fewer than 8 moves: insertions.
 -->
-#### 2.4.1 Simple Insertions
+#### 2.4.1 単純インサーション(Simple Insertions)
+インサーションの背後にある考え方はあまり難しいものではありません。**もしあと3つのコーナーを揃えたら完成するような状態であるとき、スケルトン全体を一手ずつ見ていって、対応する8手のコミューテータを回して完成させることができます。**コミューテータは対象となるピース以外には影響しませんから、3つのコーナー以外の部分（つまりスケルトン）は元々そうであったように全て完成します。そして、3つのコーナーもインサートされたコミューテータによって揃うのです。
+
+これが3-cycleのコーナーをほとんど常に8手で解く仕組みです。どうすれば上達するでしょうか？　3つのコーナーを揃えることができる全てのインサート可能なコミューテータのなかで選ぶべきは、**最も多くのキャンセルが起こるものです。**通常は、3つのコーナーを揃えるピュアコミューテータをチェックするだけで十分です。そのあとで一番いいものを選びましょう。ごく稀に、一番いいインサーションが9手（あるいはそれ以上）のコミューテータであることがありますが、そういう状況はあまり起こらないので、全ての種類のコミューテータをチェックするのはあまり意味がありません。
+
+スケルトンを作ってから、3つのコーナーの動きを追いかけやすくするため、キューブに白いステッカー[^2-4-1]を貼って1、2、3のような番号（あるいはA、B、Cのような文字）[^2-4-1-2]を書いたりすることを進める人が多いです。個人的には、暗めのステッカーがある安いキューブを用意して、その上に鉛筆で書いてしまうのがよいと思います。
+
+ソルブの実例を見るともっとわかりやすくなるでしょう。次のスケルトンを安いキューブで回してみましょう。（もしステッカーを貼るなら、どんなキューブでもよいです）
+
+{% capture display_text %}
+B' U' D L' F' //EO + blocks
+D2 L2 D' L //疑似 2x2x3
+U2 R2 U' R' //疑似 2x2x1
+U L' U R' U' L U2 R' L' //3コーナー以外
+{% endcapture %}
+{% include solvebox.html
+title = "単純コーナーインサーション - Example (スケルトン)"
+scramble = "D B2 U' F2 L2 D2 R2 U F2 U2 L2 R' D2 B L' U' R2 F2 R B F2"
+text = display_text
+solution = "alg.cubing.net"
+img_src="../assets/img/alg-241.png"
+algcubing = "https://alg.cubing.net/?setup=D_B2_U-_F2_L2_D2_R2_U_F2_U2_L2_R-_D2_B_L-_U-_R2_F2_R_B_F2&alg=B-_U-_D_L-_F-_%2F%2FEO_%26%232b%3B_blocks%0AD2_L2_D-_L_%2F%2FPseudo1_2x2x3%0AU2_R2_U-_R-_%2F%2FPseudo_2x2x1%0AU_L-_U_R-_U-_L_U2_R-_L-_%2F%2FAll_but_3_corners"
+%}
+
+この時点で、鉛筆を持って青-赤-黄コーナーの赤ステッカー(ULB)の上に「1」、青-黄-橙コーナーの橙ステッカー(RDB)に「2」、橙-青-白コーナーの白ステッカー(LDB)に「3」と書きましょう[^2-4-1-3]。キューブを揃えて、またスクランブルしましょう。（たとえば`L B2 L F L' B2 L F' L2`などで揃います）
+
+スクランブル後、3つのコーナーを最初からすぐに揃えることもできますが、9手かかります。(`R2 F R B2 R' F' R B2 R`)　なので、まずはスケルトンの最初の1手(`B'`)を回してもっとよいケースがないかを探しましょう。さらに次のムーブ(`U'`)[^2-4-1-4]を回すと
 <!--
 2.4.1 Simple Insertions
 The idea behind insertions is not too difficult: if there are only 3 corners left to solve, I can go
@@ -1641,7 +1667,6 @@ that cancels the most moves. Uusually, it is enough to just check the cases wher
 can be solved with a “pure” commutator, and then choose the best one. It happens extremely
 20For these cases, this thread by JackW on speedsolving.com gives some explanation: https://www.
 speedsolving.com/forum/threads/2-gen-edge-cycles.56224/
-24 CHAPTER 2. HOW TO PROCEED DURING A SOLVE
 rarely that the best insertion is given by a 9 move commutator (or longer), but situations like
 this are so unlikely that it is not worth to check every possible type of commutator.
 In order to make it easier to follow the movements of the 3 corners while going through your
@@ -3053,7 +3078,7 @@ R2 F2 L D' F' D F L' F2 R2
 [^2-1-5]: [19 HTM Solve by Mirek Goljan and Guus Razoux Schultz](https://fmcsolves.cubing.net/?p=107)
 [^2-1-6-1]: 著名な例はZBLS(ZBF2Lとも呼ばれる)やWinter Variationです。これに限らず非常に沢山あります。調べてみましょう！
 [^2-1-6-2]: 「準最適」とは最良の解法よりも多くの手数がかかる解法のことです。
-[^2-1-8]: speedsolving.comの投稿による。もちろん、何が「好調なスタート」であるかはあなたのレベルによって変わります。ここでの手数は、熟練者を目指す人にとってのよいゴールとなるように考えられています。もしあなたがそこまで上達していないなら、あまり効率的でないブロックを作って進めてもいいでしょう。「好調なスタート」を探すのに多くの時間を使わないようにしてください。最終結果だけがカウントされます！
+[^2-1-8]: speedsolving.comの投稿による。もちろん、何が「よいスタート」であるかはあなたのレベルによって変わります。ここでの手数は、熟練者を目指す人にとってのよいゴールとなるように考えられています。もしあなたがそこまで上達していないなら、あまり効率的でないブロックを作って進めてもいいでしょう。「よいスタート」を探すのに多くの時間を使わないようにしてください。最終結果だけがカウントされます！
 [^2-1-8-2]: もっと重要なルールは**「決して『決して』と言わない！」**ということです。
 [^2-1-10-1]: 一時間のあいだ考え続けなければならないので、楽をすることは非常によい習慣です。
 [^2-1-10-2]: ここでいう「計算する」とはチェスの用語のような意図があります。つまり、チェスプレイヤーは6-8手を「計算して」いると言われています。可能なムーブを考えて、そのカウンタームーブを考えて、総計で6-8手ということです。
@@ -3064,9 +3089,12 @@ R2 F2 L D' F' D F L' F2 R2
 [^2-3-1]: [https://www.speedsolving.com/wiki/index.php/Commutator](https://www.speedsolving.com/wiki/index.php/Commutator)
 [^2-3-1-2]: 例外はあります。たとえば、[Tomoaki Okayama (岡山友昭)](https://www.worldcubeassociation.org/persons/2009OKAY01)による次の実例と、そのディスカッションを読んでみてください。[https://www.speedsolving.com/forum/threads/the-fmc-thread.13599/page-21#post-440873](https://www.speedsolving.com/forum/threads/the-fmc-thread.13599/page-21#post-440873)
 [^2-3-2]: `[A:B]` = `A B A'`という記法は**conjugate**(共役、対になった、結合)を表します。`A`という手順は**セットアップムーブ**とも呼ばれます。
-[^2-3-3]: これらのケースについては、speedsolving.comでのJackWのスレッドが説明してくれます。[https://www.
-speedsolving.com/forum/threads/2-gen-edge-cycles.56224/](https://www.
-speedsolving.com/forum/threads/2-gen-edge-cycles.56224/)
+[^2-3-3]: これらのケースについては、speedsolving.comでのJackWのスレッドが説明してくれます。[https://www.speedsolving.com/forum/threads/2-gen-edge-cycles.56224/](https://www.speedsolving.com/forum/threads/2-gen-edge-cycles.56224/)
+[^2-4-1]:  大会規則で「無制限の色付きステッカー」の持ち込みが許可されているのはこのためです。
+[^2-4-1-2]: ステッカーは3-cycleの動きが1から2、2から3、3から1へとわかるように貼ります。
+[^2-4-1-3]: 順番を決めるやりかたは他にも同様のものがあります。まずコーナーから始めたり、好きなステッカーから始めたりすることができます。首尾一貫してさえいればよいです。
+[^2-4-1-4]: 気を付けること：スケルトンにおいて二つの連続した平行な層の回転があるときには、相互に入れ替えてみて、よりよいインサーションがないかを探すこと！今回はそうではありませんが、決してわかりません。
+[^2-4-1-5]: 
 [^5-1-1]: タイムマネジメントについては6.3節で話します。
 [^5-1-2]: [https://www.ocf.berkeley.edu/˜dadams/fmc/](https://www.ocf.berkeley.edu/˜dadams/fmc/)
 [^5-1-3]: [https://speedcube.de/forum/showthread.php?tid=5795](https://speedcube.de/forum/showthread.php?tid=5795)
