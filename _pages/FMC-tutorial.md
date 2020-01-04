@@ -34,12 +34,12 @@ version 2
 September 15, 2017  
 Original document: [Fewest Moves Tutorial](https://fmcsolves.cubing.net/fmc_tutorial_ENG.pdf)
 
-Translation by kawam1123  
+Translated by kawam1123  
 version 0.2
 January 03, 2020
 
 **免責事項：**  
-本ドキュメントは、Sebastiano Tronto氏によって書かれた**Fewest Moves Tutorialを日本語に翻訳したものです。** 2019年12月、本チュートリアルを日本語に翻訳されたものが公開されていなかったため、翻訳プロジェクトをスタートしました。本記事の内容については、最少手数競技に関する知識や用語を確認しながら翻訳を進めていますが、翻訳者の技量不足により不正確である場合があります。あらかじめご了承ください。  
+本ドキュメントは、**2017年にSebastiano Tronto氏によって書かれたFewest Moves Tutorialを日本語に翻訳したものです。** 2019年12月、本チュートリアルを日本語に翻訳されたものが公開されていなかったため、翻訳プロジェクトをスタートしました。本記事の内容については、最少手数競技に関する知識や用語を確認しながら翻訳を進めていますが、翻訳者の技量不足により不正確である場合があります。あらかじめご了承ください。  
 また、すぐに最少手数競技のやりかたを覚えたいという方には、既に[WRCC](http://wrcc.main.jp/commentary_fmc/fmc/index)や[TRCC](http://trcc.sub.jp/solution/fmc/fmcindex.html)の素晴らしい解説記事がありますので、こちらもあわせてご参照ください。  
 This documantion is a Japanese translated edition of Fewest Moves Tutorial by Sebastiano Tronto. Since no translation in Japanese had been published at December 2019, I started a tranlation project for the tutorial. I am translating the document looking up the basic knowledges and the technical terms on FMC, but the translated content might be wrong by reason of my lack of translation and FMC skills. If you find any mistakes in the translation, please let me know!
 {: .notice--warning}
@@ -63,8 +63,8 @@ Un ringraziamento speciale a Sebastiano Tronto, una superstar FMC, per aver pubb
 |2章 How to Proceed During a Solve      |15-34  |[作業中](#){: .btn .btn-warning}   |2020/01/03着手|
 |3章 Advanced Tools                     |35-44  |[未着手](#){: .btn .btn-danger}    ||
 |4章 Some Other Methods                 |45-48  |[未着手](#){: .btn .btn-danger}    ||
-|5章 How To Practice                    |49-50  |[完了](#){:.btn .btn-success}     |2020/01/03完了|
-|6章 In Competitoin                     |51-52  |[未着手](#){: .btn .btn-danger}    ||
+|5章 How To Practice                    |49-50  |[完了](#){:.btn .btn-success}      |2020/01/03完了|
+|6章 In Competitoin                     |51-52  |[作業中](#){: .btn .btn-warning}   |2020/01/03着手|
 |付録A Other Resources                  |53-54  |[未着手](#){: .btn .btn-danger}    ||
 |付録B Notation                         |55-56  |[未着手](#){: .btn .btn-danger}    ||
 |付録C Last Layer Algorithms            |57-58  |[未着手](#){: .btn .btn-danger}    ||
@@ -1630,7 +1630,7 @@ a way to solve a corners 3-cycle almost certainly with fewer than 8 moves: inser
 #### 2.4.1 単純インサーション(Simple Insertions)
 インサーションの背後にある考え方はあまり難しいものではありません。**もしあと3つのコーナーを揃えたら完成するような状態であるとき、スケルトン全体を一手ずつ見ていって、対応する8手のコミューテータを回して完成させることができます。**コミューテータは対象となるピース以外には影響しませんから、3つのコーナー以外の部分（つまりスケルトン）は元々そうであったように全て完成します。そして、3つのコーナーもインサートされたコミューテータによって揃うのです。
 
-これが3-cycleのコーナーをほとんど常に8手で解く仕組みです。どうすれば上達するでしょうか？　3つのコーナーを揃えることができる全てのインサート可能なコミューテータのなかで選ぶべきは、**最も多くのキャンセルが起こるものです。**通常は、3つのコーナーを揃えるピュアコミューテータをチェックするだけで十分です。そのあとで一番いいものを選びましょう。ごく稀に、一番いいインサーションが9手（あるいはそれ以上）のコミューテータであることがありますが、そういう状況はあまり起こらないので、全ての種類のコミューテータをチェックするのはあまり意味がありません。
+これが3-cycleのコーナーをほとんど常に8手で解く仕組みです。どうすればもっと改善するでしょうか？　3つのコーナーを揃えることができる全てのインサート可能なコミューテータのなかで選ぶべきは、**最も多くのキャンセルが起こるものです。**通常は、3つのコーナーを揃えるピュアコミューテータをチェックするだけで十分です。そのあとで一番いいものを選びましょう。ごく稀に、一番いいインサーションが9手（あるいはそれ以上）のコミューテータであることがありますが、そういう状況はあまり起こらないので、全ての種類のコミューテータをチェックするのはあまり意味がありません。
 
 スケルトンを作ってから、3つのコーナーの動きを追いかけやすくするため、キューブに白いステッカー[^2-4-1]を貼って1、2、3のような番号（あるいはA、B、Cのような文字）[^2-4-1-2]を書いたりすることを進める人が多いです。個人的には、暗めのステッカーがある安いキューブを用意して、その上に鉛筆で書いてしまうのがよいと思います。
 
@@ -1783,7 +1783,13 @@ at cancelling two or more moves (and you should be) you can assume such a move w
 completely, unless it swaps two of you pieces, and only look for commutators that cancel with
 moves after (or before) that one.
 -->
-#### 2.4.2 Multiple Insertions: Separated Cycles (3 Edges and 3 Corners)
+#### 2.4.2 複数インサーション：別サイクル(3エッジ、3コーナー) (Multiple Insertions: Separated Cycles (3 Edges and 3 Corners))
+スケルトンは常に3-cycleだけが残ったものとは限りません。インサーションはもっと多くの（もっと長い）サイクルでも使うことができます。
+
+既に見たように、3-cycle（コーナーとエッジ）が2回あるような場合は、**ペアコミューテータ**（必要ならセットアップも含めて）で揃えることができます。別のやり方は、「Sune」(`R U R' U R U2 R'`)やその派生を使ってエッジを揃えることです。これによって必要なコーナーだけに影響を与えることができます[^2-4-2]。どちらのやり方も頭にとどめておくとよいですが、簡単に使えることはあまりありません。「標準的な」解法は**2つのコミューテータをインサートすることです。**
+
+コーナーとエッジに番号を振ったあとで、一手ずつ単純なインサーションを探して進んでいきますが、全ての箇所でコーナーとエッジの解法を見ていきましょう。さらにペアコミューテータとSuneもチェックします。終わったら、2つのインサーションによる最終解答を書くわけですが、別の道を通ることもできます。
+
 <!--
 2.4.2 Multiple Insertions: Separated Cycles (3 Edges and 3 Corners)
 A skeleton doesn’t have to always leave one 3-cycle: insertions can also be used to solve more
@@ -2849,6 +2855,13 @@ Chapter 6
 In Competition
 -->
 ### 6.1 解答の書き方(How to Write a Solution)
+大会のときでも練習のときでも、**解答は持ち替え記号なしで書くのがよいでしょう。**これにはいくつもの理由があります。
+- 持ち替え記号を使うと、間違いを起こしやすい
+- 持ち替え記号があるとキャンセルが見つけにくい。`R z' U'` のようなことをやるのはとんでもない手数のムダです！
+- ソルブ中にキューブを持ち替える場合、どの面がどこにあるかを常に意識しておかなければならない
+
+ではどうやって持ち替え記号なしで解答を書くのか？　B面でPLLを回すのは厄介でしょう。簡単なやり方があるのです。BOYカラースキーム（標準配色）で標準的な持ち方を維持したまま、**「白センターのある面は常にUだ」「緑はF」「と覚えておけばいいだけです。**
+
 <!--
 6.1 How to Write a Solution
 Both in competition and while practicing, you should write down your solution without rotations. There are many good reasons to do so:
@@ -3142,6 +3155,7 @@ R2 F2 L D' F' D F L' F2 R2
 [^2-4-1-5]: 最後の2手(`U' D`)はE列の中層回転(`E'`)と等価ですから、コーナーには影響しません。このムーブをする前後で3-cycleは持ち替えを法(modulo)として同じものです。（この場合はy'/y持ち替え）
 [^2-4-1-6]: `B2 U' F' U B2 U' F U`もある。
 [^2-4-1-7]: コーナーの2-cycleが2つあるなら、インサーションを2回繰り返して揃えてもよいです。あとの節を参照してください。
+[^2-4-2]: これは別の何らかの方法で揃える必要があります。もう一回インサーションをする、など。
 [^5-1-1]: タイムマネジメントについては6.3節で話します。
 [^5-1-2]: [https://www.ocf.berkeley.edu/˜dadams/fmc/](https://www.ocf.berkeley.edu/˜dadams/fmc/)
 [^5-1-3]: [https://speedcube.de/forum/showthread.php?tid=5795](https://speedcube.de/forum/showthread.php?tid=5795)
