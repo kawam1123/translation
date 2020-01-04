@@ -61,6 +61,11 @@ strong.yellowbox {
     clear : both;
 }
 
+//codeの文字サイズを1emにする
+p code {
+    font-size: 1em;
+}
+
 /*TOC LIST用書式*/
 /*トグルボタン*/
 @include breakpoint(max-width ($large - 1px)) {

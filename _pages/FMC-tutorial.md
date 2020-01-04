@@ -1260,7 +1260,8 @@ final result that counts!
 この先を読む能力は次のようなゲームでトレーニングすることができます。  
 友人にキューブを３手[^2-1-10-3]でスクランブルしてもらって、3手の解答を探しましょう。（これは簡単なはずです）次に、4手をやってみる、という風に続けます。あなたのレベルによりますが、6手、7手、8手と行くにつれて難しく感じていくでしょう。9手や10手のものを苦労なくできるようになりましたか？おめでとうございます！
 
-**訳注**：この「詰めキューブ」問題は非常に難しいので、9手や10手のものが苦労なくできるというのはかなりのレベルです！Sebastiano Trontoにとっては簡単なのかもしれませんが…。  
+**訳注：**  
+この「詰めキューブ」問題は非常に難しいので、9手や10手のものが苦労なくできるというのはかなりのレベルです！Sebastiano Trontoにとっては簡単なのかもしれませんが…。  
 日本国内では、[うえしゅう](https://twitter.com/uesyuu_cube)氏による[詰めキューブ生成](https://uesyuu.com/tsume-cube/)のサービスがあり、**3手から14手までの詰めキューブの問題をランダム生成して楽しむことができます。**自分で面白い詰めキューブの問題ができたら、[詰めキューブスクランブル生成器](https://uesyuu.com/tsume-cube/generate-scramble.html)でスクランブルを生成して、知り合いのキューバーに問題を出してみましょう！
 {: .notice--info}
 
@@ -1351,7 +1352,41 @@ You obviously don’t have to build an F2L-1 before completing your skeleton, bu
 easiest way. In any case, try to save small blocks (pairs or 2x2x1 squares) made by LL pieces,
 if some of them happen to get built.
 -->
-### 2.3. COMMUTATORS
+### 2.3. コミューテータ(COMMUTATORS)
+speedsolving.comの定義[^2-3-1]によれば、コミューテータとは次のような形で記述する手順です。
+
+`A B A' B'`
+{: .text-center}
+
+`A`と`B`はそれぞれ手順を示す文字列で、`X'`は`X`という手順の逆手順(inverse)[^2-3-0]です。このようなコミューテータは次のような記法で短く書くことができます。
+
+`[A, B]`
+{: .text-center}
+
+コミューテータの名称や記法は数学、特に群論から来たものです。たとえばWikipediaの記事をご覧ください。[https://en.wikipedia.org/wiki/Commutator](https://en.wikipedia.org/wiki/Commutator)
+
+**訳注：**  
+数学用語としてのコミューテータは、日本語では**交換子（こうかんし）**と書かれます。しかし、キューブ用語としてはコミューテータあるいはコミューテーターとして定着しているため、ここではカタカナで記載します。  
+詳しくは[「交換子 - Wikipedia」](https://ja.wikipedia.org/wiki/%E4%BA%A4%E6%8F%9B%E5%AD%90)をご参照ください。
+{: .notice--info}
+
+たとえばA=`R`、B=`U`であると考えると、「セクシームーブ(sexy move)」がコミューテータであることに気づくでしょう。
+
+`[R, U]` = `R U R' U'`
+{: .text-center}
+
+A=`R`、B=`U' L' U`と考えると、「Niklas」手順になります。
+
+`[R, U' L' U]` = `R U' L' U R' U' L U`
+{: .text-center}
+
+慣習として、「コミューテータ」は「3点の巡回交換(3-cycle)を解くコミューテータ」として使われることが多いです。なので、たとえば「セクシームーブ」は通常はコミューテータとしてみなされませんが、「Niklas」はみなされます。この先も、この慣習に従って使っていきます。
+
+「コミューテータとは何か」という点については、WRCCやTRCCのFMC解説記事のなかにわかりやすく記述されています。簡単に言うと、FMCにおいては**任意の3点だけを8手で自由に入れ替えることができる手順**のことです。これが8手では実現できない場合もあります。詳細は下記の記事を参照してください。  
+[FMC解説 - 7. Commutator (WRCC)](http://wrcc.main.jp/commentary_fmc/fmc/7)  
+[4. ピュア・コミュテーター - 東京大学ルービックキューブサークル](http://trcc.sub.jp/solution/fmc/commutator.html)
+{: .notice--info}
+
 <!--
 2.3 Commutators
 According to speedsolving’s definition15, a commutator is a sequence of moves of the form
@@ -1374,7 +1409,7 @@ the cube, commutators solve fewer pieces (usually 3) leaving all the others wher
 Therefore, together with blockbuilding and insertions (which we will see in the next section),
 commutators are the basis for a good FMC solve.
 -->
-#### 2.3.1 Corner Commutators
+#### 2.3.1 コーナーコミューテータ(Corner Commutators)
 <!--
 2.3.1 Corner Commutators
 Corner commutators are the most useful kind of commutators in FMC. We have already seen
@@ -2902,6 +2937,8 @@ R2 F2 L D' F' D F L' F2 R2
 [^2-1-10-2]: ここでいう「計算する」とはチェスの用語のような意図があります。つまり、チェスプレイヤーは6-8手を「計算して」いると言われています。可能なムーブを考えて、そのカウンタームーブを考えて、総計で6-8手ということです。
 [^2-1-10-3]: 手数の数え方はHTM(ハーフターン法(Half Turn Method)：180度も1手と数える)でもQTM(クオーターターン法(Quarter Trun Method)：90度で1手と数える)でもSTM(スライスターン法(Slice Turn Method)：Mなどのスライスムーブも1手と数える)でも構いませんが、どの数え方を使うかは先に決めておきましょう！（訳注：一般的にはHTMが使われます）
 [^2-2]: 3-cycleとは３つのピースによる巡回交換です。たとえば、PLLのA permとU permは3-cycleですし、`L F R F' L' F R' F'` (Niklas)のアルゴリズムも同じです。
+[^2-3-0]: たとえば、`U R`という手順の逆手順は`R' U'`です。`U' R'`や`R U`ではありません！
+[^2-3-1]: https://www.speedsolving.com/wiki/index.php/Commutator
 [^5-1-1]: タイムマネジメントについては6.3節で話します。
 [^5-1-2]: [https://www.ocf.berkeley.edu/˜dadams/fmc/](https://www.ocf.berkeley.edu/˜dadams/fmc/)
 [^5-1-3]: [https://speedcube.de/forum/showthread.php?tid=5795](https://speedcube.de/forum/showthread.php?tid=5795)
