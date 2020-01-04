@@ -87,6 +87,12 @@ footer:
 
 
 defaults:
+  # everypage
+  - scope:
+      path: ""
+    values:
+      sidebar:
+        nav: "leftnav"
   # _posts  
   - scope:
       path: ""

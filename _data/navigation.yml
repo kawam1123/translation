@@ -1,21 +1,17 @@
 main:
-  - title: "このサイトについて"
+  - title: "About"
     url: /about/
   - title: "FMCチュートリアル"
     url: /FMC/FMC-tutorial.html
   - title: "競技者チュートリアル"
     url: /competitor-tutorial/
-  - title: "投稿一覧"
-    url: /posts/
-
+  - title: "KawamHub"
+    url: ../
+    
 leftnav:
-  - title: "翻訳プロジェクト"
+  - title: "翻訳一覧"
     children:
-      - title: "翻訳一覧"
-        url: /translation/
-  - title: "大人キューブ会"
-    children:
-      - title: "運営メモ"
-        url: /otonacube/
-      - title: "イベントページ(connpass)"
-        url: https://otonarubik.connpass.com/
+      - title: "FMCチュートリアル"
+        url: /FMC/FMC-Tutorial.html
+      - title: "競技者チュートリアル"
+        url: /competitor-tutorial/

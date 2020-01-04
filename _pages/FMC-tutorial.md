@@ -26,7 +26,7 @@ September 15, 2017
 2
 -->
 
-![333fm](../assets/img/333fm.jpg){:class="img-responsive"}
+![333fm](../assets/img/333fm.jpg){:width="400px" height="auto" class="img-responsive align-center"}
 
 **Written by Sebastiano Tronto**  
 Fewest Moves Tutorial - Solving a Rubik’s Cube with as few moves as possible  
@@ -44,14 +44,14 @@ January 03, 2020
 {: .notice--warning}
 
 **翻訳者注：**  
-本ドキュメントは、未完成です。原文はコメントアウトされた状態で保存されています。翻訳に協力してくださる方は、コメントアウトを外して日本語の翻訳を書き込んでください。文中の画像ファイルは[GitHubのリポジトリ内](https://github.com/kawam1123/translation)に格納しています。
+本ドキュメントは、未完成です。原文はコメントアウトされた状態で保存されています。翻訳に協力してくださる方は、コメントアウトを外して日本語の翻訳を書き込んでください。翻訳の進捗は[GitHubのリポジトリ](https://github.com/kawam1123/translation)で管理しており、画像ファイルなどもこちらに格納されています。
 {: .notice--info}
 
 **翻訳進捗**
 
 |章|ページ|進捗|メモ|
 |:---|:---:|:---:|:---:|
-|序文                                   |1-8    |[完了](#){: .btn .btn-success}     |2019/12/31完了|
+|[序文]                                   |1-8    |[完了](#){: .btn .btn-success}     |2019/12/31完了|
 |1章 Think Outside the Box              |9-14   |[完了](#){:.btn .btn-success}      |2020/01/03完了|
 |2章 How to Proceed During a Solve      |15-34  |[作業中](#){: .btn .btn-warning}   |2020/01/03着手|
 |3章 Advanced Tools                     |35-44  |[未着手](#){: .btn .btn-danger}    ||
@@ -906,7 +906,7 @@ L2 //Align
 U2 //Join
 {% endcapture %}
 {% include solvebox.html
-title = "Align then Join - Example"
+title = "並べて、つなげる(Align then Join) - Example"
 scramble = "F U' D2 L D L2 D F R2 B U2 R2 D L2 D L2 D R2 U' L2 F2"
 text = display_text
 solution = "alg.cubing.net"
@@ -954,7 +954,7 @@ U' //赤-白-青のペアを別のところに持っていく
 F' D' //四角を拡張して2x2x2を作る
 {% endcapture %}
 {% include solvebox.html
-title = "Move it out of the Way - Example"
+title = "別のところに持っていく (Move it out of the way) - Example"
 scramble = "F R2 B D2 F D2 L2 B2 F' D2 F' L B U' F2 U2 L2 U B R2 F"
 text = display_text
 solution = "alg.cubing.net"
@@ -1000,7 +1000,7 @@ R //「元通りにする」
 F' //Fをして動かしたピースを戻す
 {% endcapture %}
 {% include solvebox.html
-title = "壊して元通りにする"
+title = "壊して元通りにする (Destroy and Restore) - Example"
 scramble = "R U R' U'"
 text = display_text
 img_src="../assets/img/alg-213.png"
@@ -1033,7 +1033,7 @@ F B L B L' //F2L
 B' //LL
 {% endcapture %}
 {% include solvebox.html
-title = "キーホール (出典：Edoardo Disarò)"
+title = "キーホール - Example (出典：Edoardo Disarò)"
 scramble = "R U' R' L F' B U2 R2 B2 L' B R D F2 D2 L2 F2 D' R2 F2"
 solution = "alg.cubing.net"
 text = display_text
@@ -1058,7 +1058,7 @@ B' //LL
 See on alg.cubing.net
 -->
 #### 2.1.5 一つのムーブ、二つのゴール (One Move, Two Goals)
-単一のムーブで二つのブロックを作ることができる場合は多くあります。一般的には「二つのことを同時にやる」ことができます。実例を見ることでよりはっきりとわかるでしょう。
+**一つのムーブで二つのブロックを作ることができる場合は多くあります。**一般的には「二つのことを同時にやる」ことができます。実例を見ることでよりはっきりとわかるでしょう。
 {% capture display_text %}
 L U' F2 D' //2x2x2 (4/4)
 U2 B R2 B //Pseudo F2L-1 (4/8)
@@ -1076,7 +1076,7 @@ img_src="../assets/img/alg-215.png"
 algcubing="https://alg.cubing.net/?setup=D_U-_F2_U-_R-_F_R2_B_D-_B_R_F_B-_U_R-_D2_L-_R2_F2_B-_U-_B_D_B2_F2_U_L_F_U-_B2&alg=L_U-_F2_D-_%2F%2F2x2x2_(4%2F4)%0AU2_B_R2_B_%2F%2FPseudo_F2L%26%2345%3B1_(4%2F8)%0AF-_(B-_U_F2_U-_B_U_F2_U-)_U_F_R_U2_R-_%2F%2FPseudo_F2L_(6%2F14)%0AU2_R2_%2F%2FAll_but_3_corners_(2%2F16)"
 %}[^2-1-5]
 
-もしあなたがインサーションについてまだ知らないなら、最後の行は無視してください。今回注目すべきは最初の行、特に`F2`をしているところです。この一手でDFに2x2x1ブロックを作り、同時に橙-緑エッジを合わせています。次の一手で2x2x2ブロックができるようになりました。
+もしあなたがインサーションについてまだ知らないなら、最後の行は無視してください。**今回注目すべきは最初の行、特に`F2`をしているところです。この一手でDFに2x2x1ブロックを作り、同時に橙-緑エッジを合わせています。**次の一手で2x2x2ブロックができるようになりました。
 
 このような状況は偶然に生まれることがありますが、そうでない場合でも認識の仕方を学んでおくことは役に立ちます。
 
@@ -1103,7 +1103,7 @@ Situations like this may arise without forcing them, but it useful to learn to r
 in case they don’t.
 -->
 #### 2.1.6 あとのステップに影響を与える(Influence Later Steps)
-F2Lを完成させるときにLLに影響を与える点についてはすでに（少しだけ）話しました[^2-1-6-1]。このアイディアはブロックビルディングにも適用できます。つまり、ブロックを準最適(sub-optimally)[^2-1-6-2]に作っておくか、あるいは「不要な」ムーブを加えることで後の繋がりをよくしたり、よいブロックビルディングができたりします。
+F2Lを完成させるときにLLに影響を与える点についてはすでに（少しだけ）話しました[^2-1-6-1]。このアイディアはブロックビルディングにも適用できます。つまり、**ブロックを準最適(sub-optimally)[^2-1-6-2]に作っておくか、あるいは「不要な」ムーブを加えることで後の繋がりをよくしたり、よいブロックビルディングができたりします。**
 
 たとえば、次のスクランブルを考えてみましょう。
 {% capture display_text %}
@@ -1143,7 +1143,7 @@ move (the red B) the square become 2.
 
 部分的にでも、Edge Orientationをブロックビルディングの途中で終わらせてしまうようにすることが、最良の方法のひとつです。ZZやPetrusなどの解法に習熟すると、数手動かしたあとでエッジの向きが正しいかどうかを簡単に判定できるようになります。もしまだ判定ができないのなら、FMCにおいてはいつでも望むときに戻って修正できるということを忘れないでおきましょう。つまり、EOがうまくいかないときには、前に戻って、何手か加えたり変えたりして、よい方向に進むかどうかを確認すればいいのです。（2.5.1節もご参照ください）
 
-しかし、「EOファーストのアプローチ」をただちに却下しないようにしてください。[João Pedro Batista Ribeiro Costa](https://www.worldcubeassociation.org/persons/2013COST02)(世界大会2015のFMCチャンピオン)や[Grzegorz Łuczyna](https://www.worldcubeassociation.org/persons/2005LUCZ01)(ヨーロッパ大会2010のFMCチャンピオン)などの著名なキューバーは、ほとんど常にEOから始めていますし、[Sébastien Auroux](https://www.worldcubeassociation.org/persons/2008AURO01)(世界大会2011のFMCチャンピオン)や私(Sebastiano Tronto)も非常によく使います。詳細と実例については4.1節を参照してください。
+しかし、「EOファースト・アプローチ」をただちに却下しないようにしてください。[João Pedro Batista Ribeiro Costa](https://www.worldcubeassociation.org/persons/2013COST02)(世界大会2015のFMCチャンピオン)や[Grzegorz Łuczyna](https://www.worldcubeassociation.org/persons/2005LUCZ01)(ヨーロッパ大会2010のFMCチャンピオン)などの著名なキューバーは、ほとんど常にEOから始めていますし、[Sébastien Auroux](https://www.worldcubeassociation.org/persons/2008AURO01)(世界大会2011のFMCチャンピオン)や私(Sebastiano Tronto)も非常によく使います。詳細と実例については4.1節を参照してください。
 
 <!--
 2.1.7 Pay Attention to EO
