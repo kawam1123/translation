@@ -1653,7 +1653,59 @@ algcubing = "https://alg.cubing.net/?setup=D_B2_U-_F2_L2_D2_R2_U_F2_U2_L2_R-_D2_
 
 この時点で、鉛筆を持って青-赤-黄コーナーの赤ステッカー(ULB)の上に「1」、青-黄-橙コーナーの橙ステッカー(RDB)に「2」、橙-青-白コーナーの白ステッカー(LDB)に「3」と書きましょう[^2-4-1-3]。キューブを揃えて、またスクランブルしましょう。（たとえば`L B2 L F L' B2 L F' L2`などで揃います）
 
-スクランブル後、3つのコーナーを最初からすぐに揃えることもできますが、9手かかります。(`R2 F R B2 R' F' R B2 R`)　なので、まずはスケルトンの最初の1手(`B'`)を回してもっとよいケースがないかを探しましょう。さらに次のムーブ(`U'`)[^2-4-1-4]を回すと
+スクランブル後、3つのコーナーを最初からすぐに揃えることもできますが、9手かかります。(`R2 F R B2 R' F' R B2 R`)　なので、まずはスケルトンの最初の1手(`B'`)を回してもっとよいケースがないかを探しましょう。さらに次のムーブ(`U'`)[^2-4-1-4]を回すと、ターゲットの3つのコーナーを8手コミューテータで揃えられます！(`L2 F R F' L2 F R' F'`)　もしこれを採用したいなら、最終解答は次のようになります。
+
+`B' U'` `L2 F R F' L2 F R' F'`{: .codestrong} `D L' F' D2 L2 D' L U2 R2 U' R' U L' U R' U' L U2 R' L'`
+{: .text-center}
+
+実際に試してみて、ちゃんと揃うことを確認してみましょう。
+
+何にせよ、もっとうまくやることができます。次のムーブ(`D`)を回すと9手のコミューテータが必要であることがわかります[^2-4-1-5]。この調子で何手か進んでいくと、やがて`L' F' D2`までたどりつきます。ここで3つのコーナーを8手(`D' F2 D B2 D' F2 D B2`)[^2-4-1-6]で揃えてみましょう。しかし、これで終わりではありません。最後の1手とコミューテータの最初でキャンセルがあります！これを採用するなら、次のように書きましょう。
+
+`B' U' D L' F' D2` `D' F2 D B2 D' F2 D B2`{: .codestrong} `L2 D' L U2 R2 U' R' U L' U R' U' L U2 R' L'`
+{: .text-center}
+
+これは次のようにまとめても同じことです。
+
+`B' U' D L' F'` `D F2 D B2 D' F2 D B2`{: .codestrong} `L2 D' L U2 R2 U' R' U L' U R' U' L U2 R' L'`
+{: .text-center}
+
+**1手少なくなりましたね！**　3つのコーナーを7手で揃えることができました。
+
+ちゃんと網羅するために、スケルトンの最後までもっとよいインサーションがないかを探してみましょう。実は、一番いいインサーションは後ろのほうにあります。
+
+`B' U' D L' F' D2 L2 D' L U2 R2 U' R' U L' * U R' U' L U2 R' L'`  
+`*` = `L F' L' B L F L' B'`
+{: .text-center}
+
+この書き方は、一行目の`*`と書かれたところを二行目の内容で置き換えるという意味です。最終解答は次のようになります。
+
+`B' U' D L' F' D2 L2 D' L U2 R2 U' R' U L'` `L F' L' B L F L' B'`{: .codestring} `U R' U' L U2 R' L'`
+{: .text-center}
+
+
+明らかに`L`と`L'`でキャンセルします。なので、
+
+`B' U' D L' F' D2 L2 D' L U2 R2 U' R' U F' L' B L F L' B' U R' U' L U2 R' L'`
+{: .text-center}
+
+となります。さらに説明を重ねなくても、エッジ3-cycleでのインサーションの探し方はわかることでしょう。同じことを、次のアルゴリズムで揃えられるようなエッジ2-cycleを二回繰り返すことでもできます。
+
+`M2 U2 M2 U2`  
+`R2 U2 R2 U2 R2 U2`  
+`U2 L2 D2 R2 D2 L2`  
+{: .text-center}
+
+そのほか、バリエーションがあります（シフトしてみてください）[^2-4-1-7]
+
+最後のヒントです。180度のムーブ(`U2`など)は8手コミューテータの最初や最後にあるのは、それがインターチェンジ(interchange)である場合です。つまり、同じ面にある2点交換をしているということです。この事実がわかっていると時間を節約できます。2手以上のキャンセルを狙っているとき（狙うべきです）、2点交換がない限り、このようなムーブは完全にキャンセルすることはないと推測できます。前後でキャンセルをするようなコミューテータだけを探せばいいでしょう。
+
+The notation above means that you should replace the * in the first line with sequence of
+moves in the second line. The final solution is
+B' U' D L' F' D2 L2 D' L U2 R2 U' R' U L' L F' L' B L F L' B' U R' U' L U2 R' L'
+Where L and L' obviously cancel, so:
+B' U' D L' F' D2 L2 D' L U2 R2 U' R' U F' L' B L F L' B' U R' U' L U2 R' L'
+
 <!--
 2.4.1 Simple Insertions
 The idea behind insertions is not too difficult: if there are only 3 corners left to solve, I can go
@@ -1713,7 +1765,6 @@ this gives better insertions. This is not the case, but you never know.
 25The last 2 moves (U' D) are equivalent to an inner-layer move (E'), so they don’t affect corners: it is reasonable
 that, before and after these moves, our 3-cycle is the same, modulo a rotation (y'/y in this case).
 26Also B2 U' F' U B2 U' F U
-2.4. INSERTIONS 25
 One move less, yay! So we got to solve 3 corners with 7 moves.
 For the sake of completeness, we should continue until the end of the skeleton looking for
 better insertions. Actually, the best insertion is towards the end:
@@ -3094,7 +3145,9 @@ R2 F2 L D' F' D F L' F2 R2
 [^2-4-1-2]: ステッカーは3-cycleの動きが1から2、2から3、3から1へとわかるように貼ります。
 [^2-4-1-3]: 順番を決めるやりかたは他にも同様のものがあります。まずコーナーから始めたり、好きなステッカーから始めたりすることができます。首尾一貫してさえいればよいです。
 [^2-4-1-4]: 気を付けること：スケルトンにおいて二つの連続した平行な層の回転があるときには、相互に入れ替えてみて、よりよいインサーションがないかを探すこと！今回はそうではありませんが、決してわかりません。
-[^2-4-1-5]: 
+[^2-4-1-5]: 最後の2手(`U' D`)はE列の中層回転(`E'`)と等価ですから、コーナーには影響しません。このムーブをする前後で3-cycleは持ち替えを法(modulo)として同じものです。（この場合はy'/y持ち替え）
+[^2-4-1-6]: `B2 U' F' U B2 U' F U`もある。
+[^2-4-1-7]: コーナーの2-cycleが2つあるなら、インサーションを2回繰り返して揃えてもよいです。あとの節を参照してください。
 [^5-1-1]: タイムマネジメントについては6.3節で話します。
 [^5-1-2]: [https://www.ocf.berkeley.edu/˜dadams/fmc/](https://www.ocf.berkeley.edu/˜dadams/fmc/)
 [^5-1-3]: [https://speedcube.de/forum/showthread.php?tid=5795](https://speedcube.de/forum/showthread.php?tid=5795)

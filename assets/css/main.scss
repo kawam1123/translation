@@ -65,6 +65,11 @@ strong.yellowbox {
 p code {
     font-size: 1em;
 }
+p code.codestrong {
+    font-size: 1em;
+    background-color: #ffdc74;
+    font-weight: bold;
+}
 
 /*TOC LIST用書式*/
 /*トグルボタン*/
