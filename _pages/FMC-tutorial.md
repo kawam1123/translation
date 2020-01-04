@@ -1700,12 +1700,6 @@ algcubing = "https://alg.cubing.net/?setup=D_B2_U-_F2_L2_D2_R2_U_F2_U2_L2_R-_D2_
 
 最後のヒントです。180度のムーブ(`U2`など)は8手コミューテータの最初や最後にあるのは、それがインターチェンジ(interchange)である場合です。つまり、同じ面にある2点交換をしているということです。この事実がわかっていると時間を節約できます。2手以上のキャンセルを狙っているとき（狙うべきです）、2点交換がない限り、このようなムーブは完全にキャンセルすることはないと推測できます。前後でキャンセルをするようなコミューテータだけを探せばいいでしょう。
 
-The notation above means that you should replace the * in the first line with sequence of
-moves in the second line. The final solution is
-B' U' D L' F' D2 L2 D' L U2 R2 U' R' U L' L F' L' B L F L' B' U R' U' L U2 R' L'
-Where L and L' obviously cancel, so:
-B' U' D L' F' D2 L2 D' L U2 R2 U' R' U F' L' B L F L' B' U R' U' L U2 R' L'
-
 <!--
 2.4.1 Simple Insertions
 The idea behind insertions is not too difficult: if there are only 3 corners left to solve, I can go
