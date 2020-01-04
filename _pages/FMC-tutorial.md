@@ -588,7 +588,7 @@ Rouxのステップは次のようなものです。
 
 Petrusはブロックビルディングを学ぶには素晴らしい解法ですが、Petrusだけを使うというのは間違いです。あわせてRouxのブロックビルディング（特に最初の2つのステップ）を学ぶことで、スキルが完成に近づくでしょう。また、この解法では熟練のキューバーの解法から学ぶことが多くあります。
 
-ステップ3ではLast Layerについて先述したことは変わらず有効です。ステップ4ではこの弊害を除くことができますが、Mのような中層回転は全て2手としてカウントされることは忘れないでください！（少なくとも、Rouxの標準的なLSEのやりかたは避けましょう。つまり、MとUだけで解くやりかたです）
+ステップ3ではLast Layerについて書いたことはここでも変わりません。ステップ4ではこの弊害を除くことができますが、Mのような中層回転は全て2手としてカウントされることは忘れないでください！（少なくとも、Rouxの標準的なLSEのやりかたは避けましょう。つまり、MとUだけで解くやりかたです）
 
 Waffle’s Roux Tutorial: [http://wafflelikescubes.webs.com/](http://wafflelikescubes.webs.com/)
 
@@ -1028,7 +1028,7 @@ R //“Restore”
 F' //Put back the pieces moved away with F
 -->
 #### 2.1.4 キーホール (Keyhole)
-単独の解法として既に書いたことですが、キーホールはブロックを津作るための戦略のひとつとして考えることができます。このテクニックの本質は未完成であるキューブの一部を活用してほかのピースを揃えることです。キーホールF2Lの練習をうまくやっていれば、私が言わんとしていることを理解するのに実例を出す必要はないでしょうけれど、念のためにキーホールの例を書いておきます。
+単独の解法として既に書いたことですが、キーホールはブロックを作るための戦略のひとつとして考えることができます。このテクニックの本質は未完成であるキューブの一部を活用してほかのピースを揃えることです。キーホールF2Lの練習をうまくやっていれば、私が言わんとしていることを理解するのに実例を出す必要はないでしょうけれど、念のためにキーホールの例を書いておきます。
 {% capture display_text %}
 F' L' //コーナーが一つない一面が完成
 F2 L' B' L //キーホール
@@ -1259,7 +1259,7 @@ final result that counts!
 
 最も簡単なブロックはコーナー／エッジのペア（2x1x1ブロック）です。スクランブル後に何も動かさなくても、一つできていることもあるでしょう。もし一つでも（二つ以上でも）あったなら、2.1.9節で書いたように、これをうまく使ってもよいでしょう。もし一つもなかったとしたら、見えるところにあるもので一手でペアになるものを認識できるようにしましょう（2.1.1節を参照）。もしまだすぐにわからなくて、楽をしようとするなら[^2-1-10-1]、「総当たり戦略」をやってみるのもよいでしょう。つまり、**すべての可能なムーブ試すのです。`U`、`U2`、`U'`と順番に試してから、次に`R`、`R2`、`R'`と続けていき、ペアができたかどうかを確認すればいいのです。**
 
-役に立つけれど少し考えなければならない、もっと高度なテクニックは、**全ての可能な2x2x2ブロック（8通り）をチェックすることです。**次のようにやります。**全てのコーナーについて、3つの一致するエッジを探して、**どうすればつなげて2x2x2ブロックが作れるかを考えます。実際に動かして「テスト」しないようにすることで、再度スクランブルせずに他のコーナーについても同じことを繰り返すことができます。通常、非常に悪い2x2x2ブロック（とてもたくさんの手数がかかる）を見つけたとき、私はそれを無視して次に進みます。このテクニックを使うことで、全てのピースがキューブのどこに位置しているかということがわかり、さらに最適な2x2x2ブロック（これはよいスタートになることが多い）を見つけられるようになるでしょう。
+もっと高度で役立つテクニックがあります。検討する時間はかかりますが、**全ての可能な2x2x2ブロック（8通り）をチェックするとよいでしょう。**やり方はこうです。**全てのコーナーについて、3つの一致するエッジを探して、**どうすればつなげて2x2x2ブロックが作れるかを考えます。実際に動かして「テスト」しないようにすることで、再度スクランブルせずに他のコーナーについても同じことを繰り返すことができます。通常、非常に悪い2x2x2ブロック（とてもたくさんの手数がかかる）を見つけたとき、私はそれを無視して次に進みます。このテクニックを使うことで、全てのピースがキューブのどこに位置しているかということがわかり、さらに最適な2x2x2ブロック（これはよいスタートになることが多い）を見つけられるようになるでしょう。
 
 実際にキューブを回さずに2x2x2ブロックを作るムーブを考えることは他にもよい意味があります。より速く上手にブロックビルディングできるようになるためには、**実際の動きを見ずにピースの動きを「計算できる」ようになる**[^2-1-10-2]ことが大切です。  
 [Alexander Lau](https://www.worldcubeassociation.org/persons/2011LAUA01) (2014 年のヨーロッパチャンピオンであり、Rouxメソッドの達人)は15秒間のインスペクションタイムで3x2x1ブロック（Rouxの最初のステップ）を読むことができます。この読みは非常に正確で、ブロックを作りながら先読み(look-ahead)をして、Second Block（の一部）を読むことができるようです。
@@ -1429,7 +1429,7 @@ commutators are the basis for a good FMC solve.
 
 FMCをやる上では、**8手の「ピュアコミューテータ」**だけを覚えればいいでしょう。たとえば、Niklasはピュアコミューテータですが、A permは違います。必要ならA9やほかのケースを見てください。しかし、インサーションのところでも話しますが、FMCにおいてはほとんど必要がありません[^2-3-1-2]。
 
-**訳注：**
+**訳注：**  
 上記のBrian Yuのチュートリアルにおいては、コミューテータの種類として次のものを上げています。8手のものがピュアコミューテータです。ここでは、A9(9手コミューテータ)以上のコミューテータを覚えても、FMCではあまり使わない、ということを言っています  
 Pure (8 moves)  
 A9 (9 moves)  
@@ -1439,6 +1439,9 @@ Columns (11 moves)
 Per Special (12 moves)
 {: .notice--info}
 
+**訳注：**  
+「ピュアコミューテータ以外はFMCにおいてはほとんど必要ない」ことの例外として、Tomoaki Okayama (岡山友昭)による[実例](https://www.speedsolving.com/threads/the-fmc-thread.13599/page-21#post-440873)が脚注に上げられています。ここでは`F2 (R F' L2 F R' F' L2 F) F2`という、`F2`セットアップして1手キャンセルする9手のインサーションをしていますが、8手のピュアコミューテータによるインサーションがまったく見つからないという状況が議論されています。
+{: .notice--info}
 
 <!--
 2.3.1 Corner Commutators
@@ -1459,7 +1462,39 @@ For FMC you only need to know “pure” 8 moves commutators. For example, the N
 a pure commutator, while the A perm is not. Take a look at A9s and other cases if you want,
 but, as we will see when talking about insertions, you will almost never18 need them in FMC.
 -->
-#### 2.3.2 Edge Commutators
+#### 2.3.2 エッジコミューテータ(Edge Commutators)
+コーナーコミューテータを学んだら、エッジコミューテータの仕組みを理解するのも難しくないでしょう。たとえば次の例を見てみましょう。
+
+`[U R U', M']` = `U R U' M' U R' U' M`
+{: .text-center}
+
+残念ながら、上記のようなコミューテータがよい結果につながるのはごく稀です。その理由は**M列を使うので、2手として数えられてしまうからです。**
+
+全ての人が知っておくべきエッジコミューテータは
+
+![](../assets/img/alg-232.png){:width="200px" height="auto" class="align-center"}
+`[M', U2]` = `M' U2 M U2` (DF->UB->UF)
+{: .text-center}
+
+です。これはセットアップすることでとても役立ちます。たとえば、次のような形です。
+
+`[U: [M', U2]]`[^2-3-2] = `U M' U2 M U2 U'` = `U M' U2 M U`
+{: .text-center}
+
+公式大会においては中層回転（スライスムーブ）を書くことはできませんから、`[M', U2]`のコミューテータは次のように書きます。
+
+`M' U2 M U2` = `R' L x U2 R L' x' U2` = `R' L F2 R L' U2`
+{: .text-center}
+
+最初の`R' L`というムーブは交換可能であることがわかると思います。このことは全ての並行な（つまり対面にある）ムーブについて言えます。
+
+もう一つ知っておかなければならないのは、**最初の2手は交換したい3つのエッジにまったく影響を及ぼさないということです。**なので、`R' L F2 R L' U2`は`L F2 R L' U2 R'`、`F2 R L' U2 R' L`、`R' F2 R L' U2 L`と等しいのです。
+
+**訳注：** `[M', U2]`はDF->UB->UFの3点を交換するコミューテータです。
+{: .notice}
+
+**このことは特にキャンセルを探しているときに役に立ちます。**コミューテータの最初のムーブと、後続のムーブの逆手順とを対応させることでキャンセルが起きます（あるいはその逆もあります）。一般的にはコミューテータでなくともこのような探索を使うことができます。
+
 <!--
 2.3.2 Edge Commutators
 Once you have learned corner commutators, it should not be hard to understand how edge
@@ -1484,7 +1519,42 @@ the first moves of our commutator (or, in general, any sequence of moves we want
 correspond to the inverse of the preceding moves (or that the last moves correspond to the
 inverse of the following ones).
 -->
-#### 2.3.3 Other Edge 3-cycles
+#### 2.3.3 その他のエッジ3-cycle(Other Edge 3-cycles)
+中層回転を使わないエッジの3-cycleもあります。実際にはコミューテータですらないものも含まれます！HTMで8手の例を2つ上げましょう。
+
+![](../assets/img/alg-233.png){:width="200px" height="auto" class="align-center"}
+`R2 Fw2 R2 U R2 Fw2 R2 U` = `R2 B2 L2 D L2 B2 R2 U`  
+`R2 Fw2 R2 Uw R2 Fw2 R2 Uw` = `R2 B2 L2 U B2 R2 F2 D`
+{: .text-center}
+
+**訳注：** 一つ目も二つ目もDF->UF->ULを交換する三点交換です。途中の`U`が`Uw`に変わっただけです。
+{: .notice}
+
+一つ目の最初の2手は交換したい3つのエッジにまったく影響しません。なので、これを先ほどの`R' L F2 R L' U2`と同じように「シフト」することができます。
+
+しかし、エッジ3-cycleのジャングルはこれよりもさらに複雑なのです。たとえば、次の10手のアルゴリズムをチェックしてみましょう。
+
+`U L D R F R' D' L' U' F'` (UF->RU->RF)
+{: .text-center}
+
+さらに10手の2-gen 3-cycle[^2-3-3]もあります。
+
+`U R U R U R' U' R' U' R'`  (UF->BR->UR)  
+`U R U R U' R' U' R' U' R`  (UF->BR->DR)  
+`U R U R U2 R' U' R' U' R2` (UF->BR->FR)  
+{: .text-center}
+
+**訳注：**  
+この節は特に説明が希薄なので、訳注で補足します。  
+Speedsolving.comの[元のスレッド](https://www.speedsolving.com/threads/2-gen-edge-cycles.56224/)でJanWが言っていることは、次のような`[U R U R, X]`型と`[R U R U, X]`の2種類の2-genコミューテータの計6種類を基本手順として、（目隠し解法における）エッジの3-cycleのシステムを作ろうというものです。学ぶべきアルゴリズムの数が非常に少なくなるので効率的なのではないか、という提案です。その後、どの程度使われるようになったかは正確にはわかりません。しかし、3x3x3目隠し競技のトップ層は**呼吸をするようにエッジとコーナー合わせて818種類のコミューテータを使いこなす**(さらに平気でバッファ移行をする)ような記憶オバケですから、あまり流行らなかったのでしょう。もしかすると、3x3x3片手目隠し競技をやりたい方にとっては2-genであることが役立つかもしれません。
+`[U R U R, U]` (UF->BR->UR)  
+`[U R U R, U']` (UF->BR->DR)  
+`[U R U R, U2]` (UF->BR->FR)  
+`[R U R U, R]` (UF->UR->BR)  
+`[R U R U, R']` (UF->UL->BR)  
+`[R U R U, R2]` (UF->UB->BR)  
+{: .notice--info}
+
 <!--
 2.3.3 Other Edge 3-cycles
 There are also edge 3-cycles that don’t use inner layer moves. In fact, there are some that are
@@ -1498,7 +1568,6 @@ F' R U R' U' F' = U R' U R' U' F'
 18Even in this case there are exceptions: see for example this post by Tomoaki Okayama and the following
 discussion: https://www.speedsolving.com/forum/threads/the-fmc-thread.13599/page-21#post-440873.
 19The notation [A:B] = A B A' stands for a conjugate. The sequence A is usually called “setup moves”.
-2.4. INSERTIONS 23
 Notice how the first two moves of the first one don’t affect our 3 edges: we can therefore
 “shift” it, as we have done before with R' L F2 R L' U2.
 But the jungle of edge 3-cycles is more intricated than this. For example, check out this 10
@@ -1509,7 +1578,24 @@ U R U R U R' U' R' U' R'
 U R U R U' R' U' R' U' R
 U R U R U2 R' U' R' U' R2
 -->
-#### 2.3.4 Block Commutators
+#### 2.3.4 ブロックコミューテータ(Block Commutators)
+Ryan Heiseのウェブサイトを注意深く読んだなら、**「ペア3-cycle」**あるいは**「ブロックコミューテータ」**というものについても既に知っているでしょう。コーナーコミューテータについて既に知っているなら、これを直感的に理解するのは難しくはありません。たとえば次の例を見てみましょう。
+
+![](../assets/img/alg-234-1.png){:width="200px" height="auto" class="align-center"}
+`[L Dw' L', U']` = `L Dw' L' U' L Dw L' U`
+{: .text-center}
+
+これはHeiseのステップ3でとても役立つ手順です。しかしこれは、コーナー3-cycleとエッジ3-cycleを同時に揃えることができます。たとえば、Last layerのアルゴリズムである`M F U F' U' F' L F R'`は次のように書くことができます。
+
+![](../assets/img/alg-234-2.png){:width="200px" height="auto" class="align-center"}
+`[R: [L' Dw L, U']]` = `R L' Dw L U' L' Dw' L U R'`
+{: .text-center}
+
+これはペアコミューテータにセットアップを加えたものです。PLLのJ permも次のようなペア3-cycleとして書くことができます。
+
+![](../assets/img/alg-234-3.png){:width="200px" height="auto" class="align-center"}
+`[R2: [Fw2, D B2 D']]` = `R2 Fw2 D B2 D' Fw2 D B2 D' R2`
+{: .text-center}
 <!--
 2.3.4 Block Commutators
 If you have read Ryan Heise’s website carefully, you already know something about the so-called
@@ -1525,6 +1611,12 @@ The J-perm PLL can also be seen as a pair 3-cycle:
 [R2: [Fw2, D B2 D']] = R2 Fw2 D B2 D' Fw2 D B2 D' R2
 -->
 ### 2.4 Insertions
+このチュートリアルを通じて何度も触れてきましたが、（ようやく）インサーションについて詳しく見てみましょう。
+
+さて、どうにかしてよいスケルトンを見つけることができたとしましょう。コーナー3-cycleを1回やれば完成するという状態です。ここで何をすればいいでしょうか？　もちろんコミューテータを使ってそのまま3点交換をしてもよいでしょう。しかし、全てのケースを学んでいればわかることですが、コーナーコミューテータは最大で12手もかかります。最もいい場合では8手ですから、4手も増えるのはあまりよくありません。**ところが、コーナー3-cycleをほとんど確実に8手以内でやる方法があるのです！**それが**インサーション**です。
+
+**訳注：**ここではInsertionをそのままインサーションと訳しています。日本語の解説記事では「インサート」と書かれることが多いです。単純に訳すなら「挿入」「差し込み」のことです。
+{: .notice--info}
 <!--
 2.4 Insertions
 After mentioning them multiple times throughout this tutorial, it is (finally) time for looking at
@@ -2663,9 +2755,9 @@ slow” at scrambling, and most important to be accurate (don’t make mistakes)
 a 20 moves scramble is fine.
 -->
 ### 5.6 よく学べ！(Study!)
-大事なことを言い忘れていました。**このガイドをよく読んで学び、他のリソースからも学び、既知のものも未知のものも含めてアルゴリズムやテクニックを学びましょう。**speedsolving.comの「FMCスレッド」を二回、最初から最後まで読みました。
+大事なことを言い忘れていました。**このガイドをよく読んで学び、他のリソースからも学び、既知のものも未知のものも含めてアルゴリズムやテクニックを学びましょう。**私はspeedsolving.comの「FMCスレッド」を二回、最初から最後まで読みました。
 
-アルゴリズムを学びましょう。膨大な量のアルゴリズムがあります。たとえば、LLEF(Last Layes Edges First)[^5-6-1]やSummer Variation[^5-6-2]などがあります。繰り返しますが、**単に暗記するのではなく、どのように機能しているのかを理解するようにしましょう。**
+**アルゴリズムを学びましょう。**膨大な量のアルゴリズムがあります。たとえば、LLEF(Last Layes Edges First)[^5-6-1]やSummer Variation[^5-6-2]などがあります。繰り返しますが、**単に暗記するのではなく、どのように機能しているのかを理解するようにしましょう。**
 <!--
 5.6 Study!
 Last but not least. Study this guide, study from other sources, study algorithms and techniques,
@@ -2681,12 +2773,12 @@ https://www.speedsolving.com/wiki/index.php/LLEF
 https://www.speedsolving.com/wiki/index.php/Summer_Variation
 -->
 
-## 第６章　公式大会 (8)In Competition)
+## 第６章　公式大会 (In Competition)
 <!--
 Chapter 6
 In Competition
 -->
-### 6.1 How to Write a Solution
+### 6.1 解答の書き方(How to Write a Solution)
 <!--
 6.1 How to Write a Solution
 Both in competition and while practicing, you should write down your solution without rotations. There are many good reasons to do so:
@@ -2703,7 +2795,7 @@ U.
 To help memorizing the scheme (not that it is hard), remember that Blue and Red begin
 with the same letter as their layer. This trick actually works well in many other languages.
 -->
-### 6.2 Backup Solution
+### 6.2 バックアップ解答(Backup Solution)
 <!--
 6.2 Backup Solution
 It is good habit, in time-limited competitions, to write a “backup solution”. It is usually a not
@@ -2729,13 +2821,13 @@ What can a good backup solution be? Any solution! Anything is better than a DNF,
 especially now that the preferred format for FMC (in official competitions) is “Mean of 3”: a
 single DNF gives you a DNF mean.
 -->
-### 6.3 Time Managment
+### 6.3 タイムマネジメント(Time Managment)
 <!--
 6.3 Time Managment
 “How to manage your time” is a complex topic, and I don’t want to say that my advice is
 absolutely good in any case: follow it carefully! In fact, I consider myself pretty bad at timemanagment. The best teacher, in this case, is personal experience.
 -->
-#### 6.3.1 Don’t Get Stuck
+#### 6.3.1 ひっからないように(Don’t Get Stuck)
 <!--
 6.3.1 Don’t Get Stuck
 It can happen to anyone: during a competition you get stuck on a certain start and don’t
@@ -2745,7 +2837,7 @@ world only). My advice, maybe trivial, is: don’t get stuck. If you have tried 
 technique you know and found nothing, don’t stare at the cube hoping it solves itself: go back
 and try something else.
 -->
-#### 6.3.2 (Don’t) Explore Every Possibility
+#### 6.3.2 全ての可能性を調べようとしない((Don’t) Explore Every Possibility)
 <!--
 6.3.2 (Don’t) Explore Every Possibility
 In the first version of this tutorial this section was called “Explore Every Possibility” - a radical
@@ -2970,7 +3062,11 @@ R2 F2 L D' F' D F L' F2 R2
 [^2-3-0]: たとえば、`U R`という手順の逆手順は`R' U'`です。`U' R'`や`R U`ではありません！
 [^2-3-1]: 連続する二つの統合して一緒にできるムーブがある(たとえば`R' R2`=`R`)ときや、逆手順が含まれる(`L L'`のような場合)とき、1手以上のムーブが**キャンセルする**と言います。たとえば、F2Lの最後が`...U R2 F'`で終わって`F R U R' U' F'`というアルゴリズムを使うとき、**3手キャンセル**します。`...U R2 F' F R U R' U' F'`=`U R' U R' U' F`となります。
 [^2-3-1]: [https://www.speedsolving.com/wiki/index.php/Commutator](https://www.speedsolving.com/wiki/index.php/Commutator)
-[^2-3-1-2]: 
+[^2-3-1-2]: 例外はあります。たとえば、[Tomoaki Okayama (岡山友昭)](https://www.worldcubeassociation.org/persons/2009OKAY01)による次の実例と、そのディスカッションを読んでみてください。[https://www.speedsolving.com/forum/threads/the-fmc-thread.13599/page-21#post-440873](https://www.speedsolving.com/forum/threads/the-fmc-thread.13599/page-21#post-440873)
+[^2-3-2]: `[A:B]` = `A B A'`という記法は**conjugate**(共役、対になった、結合)を表します。`A`という手順は**セットアップムーブ**とも呼ばれます。
+[^2-3-3]: これらのケースについては、speedsolving.comでのJackWのスレッドが説明してくれます。[https://www.
+speedsolving.com/forum/threads/2-gen-edge-cycles.56224/](https://www.
+speedsolving.com/forum/threads/2-gen-edge-cycles.56224/)
 [^5-1-1]: タイムマネジメントについては6.3節で話します。
 [^5-1-2]: [https://www.ocf.berkeley.edu/˜dadams/fmc/](https://www.ocf.berkeley.edu/˜dadams/fmc/)
 [^5-1-3]: [https://speedcube.de/forum/showthread.php?tid=5795](https://speedcube.de/forum/showthread.php?tid=5795)
@@ -2979,3 +3075,4 @@ R2 F2 L D' F' D F L' F2 R2
 [^5-6-2]: [https://www.speedsolving.com/wiki/index.php/Summer_Variation](https://www.speedsolving.com/wiki/index.php/Summer_Variation)
 *[CFOP]: Cross, F2L, OLL, and PLL
 *[F2L]: First Two Layer
+*[HTM]: Half Turn Method
