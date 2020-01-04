@@ -1358,7 +1358,7 @@ speedsolving.comの定義[^2-3-1]によれば、コミューテータとは次�
 `A B A' B'`
 {: .text-center}
 
-`A`と`B`はそれぞれ手順を示す文字列で、`X'`は`X`という手順の逆手順(inverse)[^2-3-0]です。このようなコミューテータは次のような記法で短く書くことができます。
+`A`と`B`はそれぞれ手順を示す配列で、`X'`は`X`という手順の逆手順(inverse)[^2-3-0]です。このようなコミューテータは次のような記法で短く書くことができます。
 
 `[A, B]`
 {: .text-center}
@@ -1380,7 +1380,7 @@ A=`R`、B=`U' L' U`と考えると、「Niklas」手順になります。
 `[R, U' L' U]` = `R U' L' U R' U' L U`
 {: .text-center}
 
-慣習として、「コミューテータ」は「3点の巡回交換(3-cycle)を解くコミューテータ」として使われることが多いです。なので、たとえば「セクシームーブ」は通常はコミューテータとしてみなされませんが、「Niklas」はみなされます。この先も、この慣習に従って使っていきます。
+慣習として、「コミューテータ」は「3点の巡回交換(3-cycle)を解くコミューテータ」として使われることが多いです。なので、たとえば「セクシームーブ」は通常コミューテータとみなされませんが、「Niklas」はコミューテータとみなされます。この先も、この慣習に従って使っていきます。
 
 「コミューテータとは何か」という点については、WRCCやTRCCのFMC解説記事のなかにわかりやすく記述されています。簡単に言うと、FMCにおいては**任意の3点だけを8手で自由に入れ替えることができる手順**のことです。これが8手では実現できない場合もあります。詳細は下記の記事を参照してください。  
 [FMC解説 - 7. Commutator (WRCC)](http://wrcc.main.jp/commentary_fmc/fmc/7)  
@@ -1392,8 +1392,7 @@ A=`R`、B=`U' L' U`と考えると、「Niklas」手順になります。
 According to speedsolving’s definition15, a commutator is a sequence of moves of the form
 A B A' B'
 where A and B are move sequences and X' is the inverse sequence of X
-16. Such a commutator
-can be written in compact notation as
+16. Such a commutator can be written in compact notation as
 [A, B]
 The name and notation for commutators come from Mathematics, in particular from Group
 Theory. See https://en.wikipedia.org/wiki/Commutator.
@@ -1410,6 +1409,30 @@ Therefore, together with blockbuilding and insertions (which we will see in the 
 commutators are the basis for a good FMC solve.
 -->
 #### 2.3.1 コーナーコミューテータ(Corner Commutators)
+コーナーコミューテータはFMCにおいて最も役に立つコミューテータです。既に「Niklas」というコミューテータを見ました。PLLのA permである`R2 B2 R F R' B2 R F' R`という手順も、（ほぼ）コミューテータです。
+
+`R2 B2 R F R' B2 R F' R` = `R2 [B2, R F R'] R2`
+{: .text-center}
+
+ここでは`R' R2`という配列がキャンセル[^2-3-1]して`R`になっています。
+
+組み合わせが変わる3つのコーナーは同じ面にある必要はありません。`[L D' L', U2]` = `L D' L' U2 L D L' U2` という手順も3-cycleです！
+
+全ての種類のコーナーコミューテータ（このチュートリアルでは解説しません）を学ぶなら、Speedsolving.comの[Brian Yuのチュートリアル](https://www.speedsolving.com/threads/bh-tutorial.12268/)を見てみるとよいでしょう。文書と動画で解説されていますが、どちらも非常によくできています。
+
+FMCをやる上では、**8手の「ピュアコミューテータ」**だけを覚えればいいでしょう。たとえば、Niklasはピュアコミューテータですが、A permは違います。必要ならA9やほかのケースを見てください。しかし、インサーションのところでも話しますが、FMCにおいてはほとんど必要がありません[^2-3-1-2]。
+
+**訳注：**
+上記のBrian Yuのチュートリアルにおいては、コミューテータの種類として次のものを上げています。8手のものがピュアコミューテータです。ここでは、A9(9手コミューテータ)以上のコミューテータを覚えても、FMCではあまり使わない、ということを言っています  
+Pure (8 moves)  
+A9 (9 moves)  
+Orthogonal (10 moves)  
+Cyclic Shift (10 moves)  
+Columns (11 moves)  
+Per Special (12 moves)
+{: .notice--info}
+
+
 <!--
 2.3.1 Corner Commutators
 Corner commutators are the most useful kind of commutators in FMC. We have already seen
@@ -2938,7 +2961,9 @@ R2 F2 L D' F' D F L' F2 R2
 [^2-1-10-3]: 手数の数え方はHTM(ハーフターン法(Half Turn Method)：180度も1手と数える)でもQTM(クオーターターン法(Quarter Trun Method)：90度で1手と数える)でもSTM(スライスターン法(Slice Turn Method)：Mなどのスライスムーブも1手と数える)でも構いませんが、どの数え方を使うかは先に決めておきましょう！（訳注：一般的にはHTMが使われます）
 [^2-2]: 3-cycleとは３つのピースによる巡回交換です。たとえば、PLLのA permとU permは3-cycleですし、`L F R F' L' F R' F'` (Niklas)のアルゴリズムも同じです。
 [^2-3-0]: たとえば、`U R`という手順の逆手順は`R' U'`です。`U' R'`や`R U`ではありません！
-[^2-3-1]: https://www.speedsolving.com/wiki/index.php/Commutator
+[^2-3-1]: 連続する二つの統合して一緒にできるムーブがある(たとえば`R' R2`=`R`)ときや、逆手順が含まれる(`L L'`のような場合)とき、1手以上のムーブが**キャンセルする**と言います。たとえば、F2Lの最後が`...U R2 F'`で終わって`F R U R' U' F'`というアルゴリズムを使うとき、**3手キャンセル**します。`...U R2 F' F R U R' U' F'`=`U R' U R' U' F`となります。
+[^2-3-1]: [https://www.speedsolving.com/wiki/index.php/Commutator](https://www.speedsolving.com/wiki/index.php/Commutator)
+[^2-3-1-2]: 
 [^5-1-1]: タイムマネジメントについては6.3節で話します。
 [^5-1-2]: [https://www.ocf.berkeley.edu/˜dadams/fmc/](https://www.ocf.berkeley.edu/˜dadams/fmc/)
 [^5-1-3]: [https://speedcube.de/forum/showthread.php?tid=5795](https://speedcube.de/forum/showthread.php?tid=5795)
