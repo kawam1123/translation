@@ -2000,6 +2000,14 @@ if you can insert one of these algorithms. But don’t waste to much time lookin
 For more about edge insertions, see Section 4.2 about corner-first methods.
 -->
 #### 2.4.7 Other Insertions: 2 Corners and 2 Edges
+
+2つのコーナーと2つのエッジがそれぞれ交換するようなスケルトンになることがあるでしょう。(つまり、PLLのJ、T、Vなどです)
+
+このような場合、いくつかの**10手アルゴリズム**を知っておくと役立ちます。
+
+'Fw2 R D R’ Fw2 R D' R D R2 (J perm)'
+'Rw' U Rw' U2 R B' R' U2 Rw2 B' (T-perm + corner twist)'
+
 <!--
 2.4.7 Other Insertions: 2 Corners and 2 Edges
 Sometimes you may find a skeleton leaving 2 corners and 2 edges in a double swap (i.e.: a PLL
