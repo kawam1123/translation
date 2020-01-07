@@ -2005,8 +2005,17 @@ For more about edge insertions, see Section 4.2 about corner-first methods.
 
 このような場合、いくつかの**10手アルゴリズム**を知っておくと役立ちます。
 
-'Fw2 R D R’ Fw2 R D' R D R2 (J perm)'
-'Rw' U Rw' U2 R B' R' U2 Rw2 B' (T-perm + corner twist)'
+`Fw2 R D R’ Fw2 R D' R D R2 (J perm)`  
+`Rw' U Rw' U2 R B' R' U2 Rw2 B' (T-perm + corner twist)`
+{: .text-center}
+
+11手のものも多くあります。
+
+`R U2 R' U' R U2 L' U R' U' L (J perm)`  
+`R2 D B2 D' Fw2 D B2 D' Fw2 R2 U' (J perm)`  
+`R2 Uw R2 Uw' R2 F2 Uw' F2 Uw F2 U' (T perm)`  
+`R' U R U2 L' R' U R U' L U2 (J perm + corner twist)`
+{: .text-center}
 
 <!--
 2.4.7 Other Insertions: 2 Corners and 2 Edges
@@ -2020,6 +2029,14 @@ R U2 R' U' R U2 L' U R' U' L (J perm)
 R2 D B2 D' Fw2 D B2 D' Fw2 R2 U' (J perm)
 R2 Uw R2 Uw' R2 F2 Uw' F2 Uw F2 U' (T perm)
 R' U R U2 L' R' U R U' L U2 (J perm + corner twist)
+-->
+全てを載せたわけではありませんが、このアルゴリズムに加えて、この逆手順やシフトしたものでも2コーナー＋2エッジがそれぞれ交換されます。このアルゴリズムを逆転したものは全く同じように作用することがわかるでしょう。つまり、このことを知っていれば新しいアルゴリズムを学ぶことなく、キャンセルする確率が二倍になるのです。あまり多くの手数をキャンセルすることは望めませんが、多くのアルゴリズムを知っていれば知っているほど、よくなるでしょう。
+
+一つ例をあげましょう。次のソルブを見てください
+
+
+
+<!--
 Besides all of these algorithms (this is not a complete list anyway), also their inverses and
 “shifted” versions solve a 2 corners - 2 edges double swap.
 Note that the inverses of these algorithms solve exactly the same case. Just by
@@ -2037,6 +2054,9 @@ R' D' R D2 F U2 //Found using NISS (6/17)
 Solution: B' F D2 L' R2 B R B' R2 F R' B R F' R2 F2 D F' D2 F R' D' R D2
 F U2 (26)
 See on alg.cubing.net
+-->
+スケルトンの最後のところはNISSを使って見つけたものなので、ここまで読んだだけでは少し意味がわからないことでしょう。「*」と書かれた場所には、準最適なJperm `B' R2 B R B' R2 F R' B R F'` を挿入することができ、2手がキャンセルして1手になり、最終解答になります。
+<!--
 The end of the skeleton was found using NISS, so it will be a bit mysterious until you get
 to that section. Notice that in the same spot marked by * you can insert the sub-optimal Jperm B' R2 B R B' R2 F R' B R F', cancelling 2 moves instead of 1 and getting the same final
 result.
