@@ -2062,6 +2062,9 @@ to that section. Notice that in the same spot marked by * you can insert the sub
 result.
 -->
 #### 2.4.8 Other Insertions: 3 Edges and Some Corners
+
+3つのエッジと、4つか5つ（あるいはもっと）のコーナーが残ったスケルトンが少ない手数（たとえば13手）でできることもあるでしょう。このときエッジ3-cycleのエッジをインサートして
+いくつかコーナー3-cycleを必要なだけインサートして解くこともできます。しかし、別のやり方もあります。「セクシームーブ」（`R U R’ U’`）ではエッジの3-cycleと歪んだコーナーの2-cycleを2回繰り返すことになることがわかると思います。この短いアルゴリズムやその派生をインサートすることで、エッジの3-cycleをとても効率的に解くことができるのです。もちろん、一回のインサーションでコーナーも完全に揃うのは、とてもラッキーな偶然を手に入れたときだけでしょう。
 <!--
 2.4.8 Other Insertions: 3 Edges and Some Corners
 In some cases you can get short skeletons (say 13 moves) that leave a 3-cycle of edges and 4 or
