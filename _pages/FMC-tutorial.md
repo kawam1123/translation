@@ -1852,7 +1852,10 @@ You can use exactly this approach for other cases that require you to solve two 
 cycles (3 cycles or double 2-cycles) that are separated. In all other cases, things get a bit more
 complicated.
 -->
-#### 2.4.3 Multiple Insertions: 2 or 3 Twisted Corners
+#### 2.4.3 複数インサーション: 2つあるいは3つのねじれコーナー(Multiple Insertions: 2 or 3 Twisted Corners)
+
+2つのねじれたコーナーが残ったとき、どこかで`[F L' D2 L F', U2]`(12手) というコミューテータを試してみるといいでしょう。3つある場合は、`U' B U' F U2 B2 D' R2 U D F' U' B`(13
+手)も使えます。しかし、特に2つ目については最良ではないことが多いです。2つあるいは3つのねじれはコーナーを揃える古典的手法は、コーナーコミューテータを2回インサートすることです。
 <!--
 2.4.3 Multiple Insertions: 2 or 3 Twisted Corners
 When you need to twist 2 corners, you can try to insert the commutator [F L' D2 L F', U2]
