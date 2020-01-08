@@ -2088,7 +2088,15 @@ that produce the skeleton and just look at the insertions.
 Another approach to this reverse NISS (Section 3.3), which can help you understand what
 you are actually doing when you insert a sexy move.
 -->
-#### 2.4.9 (Other Insertions: Conjugate and Solve)
+#### 2.4.9 その他のインサーション: Conjugateをして揃える(Other Insertions: Conjugate and Solve)
+
+**訳注:**  
+**Conjugate**の適切な訳語が思いつかないので保留しています。別の箇所でも書きましたが、数学用語としては共役という意味があります。そのままコンジュゲートとカタカナで訳出してもよいかもしれません。インターチェンジもそのまま使われていますし。
+{: .notice--info}
+
+4つのエッジと4つのコーナーがあり、それぞれ4点交換されるときに、一つのインサーションだけで揃えることができる状況というものがあります。このケースは次のように揃えられます。
+
+揃っていない8つのピースをすべて同じ面に集めます(セットアップ)。これで集めた面での単一のムーブで4点交換ができます。そして、8つのピースを元の場所に戻します(逆セットアップ)。8つのピースが2点交換を4つ組み合わせたものであるときにも、このテクニックは使えます。そのときは、「インターチェンジ」は180度のもの、たとえば 'U2' などになります。もしピースの数が8つちょうどでなかったり、適切な交換ができない場合には、3.3節で説明するreverse NISSをまた使うことができます。
 <!--
 2.4.9 Other Insertions: Conjugate and Solve
 A particular situation you can solve with only one insertion is when you have 4 edges and 4
@@ -2099,9 +2107,14 @@ the 8 pieces back (anti-setup). The same technique works when the 8 pieces make 
 in total: in this case, the “interchange” will be a 180° one (for example U2). If the pieces are
 not exactly 8, or do not form the right cycles, you can again use reverse NISS after the setup
 moves, as explained in Section 3.3.
+-->
+実例を見てみましょう。
+<!--訳者TODO:ソルブボックス追加-->
+
+<!--
 Let’s see an example.
 33https://www.speedsolving.com/forum/threads/the-fmc-thread.13599/page-214#post-1247800
-2.4. INSERTIONS 31
+
 Conjugate and Solve - Example
 Scramble: R2 L2 D2 F2 D' R2 U' B2 D' F2 U2 F' D2 L' F U B F2 U2 F2 L
 U2 F B' L2 D2 //Two 2x2x1s (5/5)
@@ -2113,8 +2126,24 @@ $ 2. = L' D L U L' D' L U' //3 corners (5/30)
 Solution: U2 F B' L2 D2 F' U F2 L' B2 L F2 L' B' L' D L B' D L U L' D'
 L U2 R F2 R' L2 B (30)
 See on alg.cubing.net
-As you can see, the insertion in question doesn’t actually solve both the 4 cycles and the
-corners are completed with “normal” insertions. However, as suggested by Mirek Goljan, we
+-->
+見てわかるように、この場合のインサーションは、4点交換を揃えているわけではなく、「通常の」インサーションでコーナーが完成しています。ところが、Mirek Goljanがここで提案しているのは、たった一回のインサーションで全てを揃えられるということなのです。そのためには、同じスケルトンの'*'部分に次の手順をインサートします。
+
+'(B D R2 B R'B2 D U2 F') U (F U2 D' B2 R B' R2 D' B')'
+{: .text-center}
+
+この長いインサーションでも同じ結果(30手)になります。
+
+同じようなLast layerのアルゴリズムもいくつかあります。その一つは次のようなものです。
+
+'(R B2 R2 U2 R) B (R' U2 R2 B2 R')'
+{: .text-center}
+
+その他のアルゴリズムはこちらを参照してください。
+<!--訳者TODO:脚注とリンクの挿入-->
+
+<!--
+As you can see, the insertion in question doesn’t actually solve both the 4 cycles and the corners are completed with “normal” insertions. However, as suggested by Mirek Goljan, we
 could have solved everything with only one insertion, as explained above. To do so, insert in
 the same skeleton, at *:
 (B D R2 B R'B2 D U2 F') U (F U2 D' B2 R B' R2 D' B')
@@ -2124,7 +2153,7 @@ There are also some Last Layer algorithms that work in this way. One of them is:
 and you can find some more here34
 .
 -->
-#### 2.4.10 Move Count (an Estimate)
+#### 2.4.10 手数カウント(推定) (Move Count (an Estimate))
 <!--
 2.4.10 Move Count (an Estimate)
 Here I will give an estimate of how many moves are usually needed for the most common types
