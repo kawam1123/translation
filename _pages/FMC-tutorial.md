@@ -2185,7 +2185,9 @@ http://www.speedsolving.com/forum/threads/the-fmc-thread.13599/page-42#post-6145
 32 CHAPTER 2. HOW TO PROCEED DURING A SOLVE
 -->
 #### 2.4.11 インサーションファインダー (Insertion Finder)
-Baiqiang Dongによって開発された**Insertion Finder**はインサーションを探して解答の中で何かを見逃していなかったかを確認するために役立つツールです。
+Baiqiang Dongによって開発された**Insertion Finder**は、インサーションを探して解答の中で何かを見逃していなかったかを確認するために役立つツールです。スケルトンを与えると、最大で4つのインサーションを探すことができます。
+
+特に、3コーナーや3エッジなどの簡単なケースで役に立ちます。複雑なものについては、人間には発見不可能(あるいはとても困難)な解答を見つけることがありますから、利用は自己責任で！
 <!--
 2.4.11 Insertion Finder
 Insertion Finder37, developed by Baiqiang Dong, is a useful tool to find insertions and check if
@@ -2193,8 +2195,9 @@ you have failed to see something in your solutions: it finds up to 4 insertions 
 It is especially useful for easy cases (3 corners or 3 edges) but in complex situation it may
 find solution that are not possible (or very difficult) to find for humans: use it responsibly!
 -->
-### 2.5 Other Simple Stragies
-#### 2.5.1 Go Back and Change Your Sove
+### 2.5 その他の簡単な戦略(Other Simple Stragies)
+#### 2.5.1 戻ってやり直そう(Go Back and Change Your Sove)
+よいスタートを切ったあとで詰まってしまったら、「そこまでのソルブを一手ずつ見ていく」ということをしてみましょう。まだ揃えていないピースしかない面が、少なくとも1面、出てくるのを探しながらやってみましょう。見つかったら、その面を動かしてみましょう(すでに揃えたブロックは崩れません)。可能性は3種類(`U`、`U2`、`U´`など)あります。こうすると、元々のものよりほんの少し(1手)だけ長くなるでしょう。
 <!--
 2.5 Other Simple Stragies
 2.5.1 Go Back and Change Your Sove
