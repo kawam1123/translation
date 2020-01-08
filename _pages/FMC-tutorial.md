@@ -2153,7 +2153,8 @@ There are also some Last Layer algorithms that work in this way. One of them is:
 and you can find some more here34
 .
 -->
-#### 2.4.10 手数カウント(推定) (Move Count (an Estimate))
+#### 2.4.10 手数カウント(見積もり) (Move Count (an Estimate))
+ここでは、普通のインサーションにおいてどのくらいの手数がかかるのか、見積もってみましょう。数学的に証明したわけではないヒューリスティックな見積もりですし、手数は次のようなことによって決まることを覚えておいてください。
 <!--
 2.4.10 Move Count (an Estimate)
 Here I will give an estimate of how many moves are usually needed for the most common types
