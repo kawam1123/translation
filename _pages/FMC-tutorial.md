@@ -1999,7 +1999,7 @@ an edge 5-cycle, it is a good idea to number the stickers and quickly go through
 if you can insert one of these algorithms. But don’t waste to much time looking for it.
 For more about edge insertions, see Section 4.2 about corner-first methods.
 -->
-#### 2.4.7 Other Insertions: 2 Corners and 2 Edges
+#### 2.4.7 その他のインサーション:2コーナー、2エッジ(Other Insertions: 2 Corners and 2 Edges)
 
 2つのコーナーと2つのエッジがそれぞれ交換するようなスケルトンになることがあるでしょう。(つまり、PLLのJ、T、Vなどです)
 
@@ -2030,11 +2030,10 @@ R2 D B2 D' Fw2 D B2 D' Fw2 R2 U' (J perm)
 R2 Uw R2 Uw' R2 F2 Uw' F2 Uw F2 U' (T perm)
 R' U R U2 L' R' U R U' L U2 (J perm + corner twist)
 -->
-全てを載せたわけではありませんが、このアルゴリズムに加えて、この逆手順やシフトしたものでも2コーナー＋2エッジがそれぞれ交換されます。このアルゴリズムを逆転したものは全く同じように作用することがわかるでしょう。つまり、このことを知っていれば新しいアルゴリズムを学ぶことなく、キャンセルする確率が二倍になるのです。あまり多くの手数をキャンセルすることは望めませんが、多くのアルゴリズムを知っていれば知っているほど、よくなるでしょう。
+全てを載せたわけではありませんが、このアルゴリズムに加えて、この逆手順やシフトしたものでも2コーナー＋2エッジがそれぞれ交換されます。**このアルゴリズムの逆手順は全く同じように作用することがわかるでしょう。** つまり、このことを知っていれば新しいアルゴリズムを学ぶことなく、キャンセルする確率が二倍になるのです。あまり多くの手数をキャンセルすることは望めませんが、多くのアルゴリズムを知っていれば知っているほどよいでしょう。
 
 一つ例をあげましょう。次のソルブを見てください
-
-
+<!--訳者TODO ソルブボックスの挿入-->
 
 <!--
 Besides all of these algorithms (this is not a complete list anyway), also their inverses and
@@ -2061,10 +2060,10 @@ The end of the skeleton was found using NISS, so it will be a bit mysterious unt
 to that section. Notice that in the same spot marked by * you can insert the sub-optimal Jperm B' R2 B R B' R2 F R' B R F', cancelling 2 moves instead of 1 and getting the same final
 result.
 -->
-#### 2.4.8 Other Insertions: 3 Edges and Some Corners
+#### 2.4.8 その他のインサーション:3エッジ、いくつかのコーナー(Other Insertions: 3 Edges and Some Corners)
 
 3つのエッジと、4つか5つ（あるいはもっと）のコーナーが残ったスケルトンが少ない手数（たとえば13手）でできることもあるでしょう。このときエッジ3-cycleのエッジをインサートして
-いくつかコーナー3-cycleを必要なだけインサートして解くこともできます。しかし、別のやり方もあります。「セクシームーブ」（`R U R’ U’`）ではエッジの3-cycleと歪んだコーナーの2-cycleを2回繰り返すことになることがわかると思います。この短いアルゴリズムやその派生をインサートすることで、エッジの3-cycleをとても効率的に解くことができるのです。もちろん、一回のインサーションでコーナーも完全に揃うのは、とてもラッキーな偶然を手に入れたときだけでしょう。
+いくつかコーナー3-cycleを必要なだけインサートして解くこともできます。しかし、別のやり方もあります。**「セクシームーブ」（`R U R’ U’`）ではエッジの3-cycleと歪んだコーナーの2-cycleを2回繰り返すことになることがわかると思います。** この短いアルゴリズムやその派生をインサートすることで、エッジの3-cycleをとても効率的に解くことができるのです。もちろん、一回のインサーションでコーナーも完全に揃うのは、とてもラッキーときだけです。コーナーにこういった影響を与えて、4つか5つかよいコーナーが残るようにする、というのが望み得る最良のことになる場合が多いです。
 <!--
 2.4.8 Other Insertions: 3 Edges and Some Corners
 In some cases you can get short skeletons (say 13 moves) that leave a 3-cycle of edges and 4 or
@@ -2075,6 +2074,13 @@ and a skew doubl 2-cycle of corners. By inserting this short algorithm and its v
 can solve the edge 3-cycle in a very effcient way. Of course the case of also geting the corners
 completely solved with one insertion is a very lucky accident. Often the best you can hope for is
 to affect the corners in such a way that you are left with one of the “good” 4 or 5 corners cases.
+-->
+こういうとき役立つのは「セクシームーブ」だけではありません。ブロックコミューテータもよいツールです。speedsolving.comのこのポストの中で、Cale Schoonはこの類のインサーションについての実例を3つ挙げています。彼の解答はすべてNISSを使っていますが、スケルトンを作るまでのステップは無視して構いません。インサーションだけを見てください。
+
+もう一つのアプローチはreverse NISS(第3.3節も参照)です。これは、セクシームーブをインサートすることで何をしているのかを理解する助けになるでしょう。
+
+
+<!--
 The “sexy move” isn’t the only algorithm that can help in this cases: also block commutators
 are a very good tool. In this post33 on speedsolving.com Cale Schoon gives 3 different examples
 of this kind of insertion. All of his solutions use NISS, but you can ignore the intermediate steps
@@ -2082,7 +2088,7 @@ that produce the skeleton and just look at the insertions.
 Another approach to this reverse NISS (Section 3.3), which can help you understand what
 you are actually doing when you insert a sexy move.
 -->
-#### 2.4.9 Other Insertions: Conjugate and Solve
+#### 2.4.9 (Other Insertions: Conjugate and Solve)
 <!--
 2.4.9 Other Insertions: Conjugate and Solve
 A particular situation you can solve with only one insertion is when you have 4 edges and 4
