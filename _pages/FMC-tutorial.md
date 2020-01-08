@@ -1783,12 +1783,32 @@ at cancelling two or more moves (and you should be) you can assume such a move w
 completely, unless it swaps two of you pieces, and only look for commutators that cancel with
 moves after (or before) that one.
 -->
-#### 2.4.2 複数インサーション：別サイクル(3エッジ、3コーナー) (Multiple Insertions: Separated Cycles (3 Edges and 3 Corners))
+#### 2.4.2 複数インサーション：別々のサイクル(3エッジ、3コーナー) (Multiple Insertions: Separated Cycles (3 Edges and 3 Corners))
 スケルトンは常に3-cycleだけが残ったものとは限りません。インサーションはもっと多くの（もっと長い）サイクルでも使うことができます。
 
 既に見たように、3-cycle（コーナーとエッジ）が2回あるような場合は、**ペアコミューテータ**（必要ならセットアップも含めて）で揃えることができます。別のやり方は、「Sune」(`R U R' U R U2 R'`)やその派生を使ってエッジを揃えることです。これによって必要なコーナーだけに影響を与えることができます[^2-4-2]。どちらのやり方も頭にとどめておくとよいですが、簡単に使えることはあまりありません。「標準的な」解法は**2つのコミューテータをインサートすることです。**
 
-コーナーとエッジに番号を振ったあとで、一手ずつ単純なインサーションを探して進んでいきますが、全ての箇所でコーナーとエッジの解法を見ていきましょう。さらにペアコミューテータとSuneもチェックします。終わったら、2つのインサーションによる最終解答を書くわけですが、別の道を通ることもできます。
+コーナーとエッジに番号を振ったあとで[^2-4-2-2]、一手ずつ単純なインサーションを探して進んでいきますが、全ての箇所でコーナーとエッジの解法を見ていきましょう。さらにペアコミューテータとSuneもチェックします。終わったら、2つのインサーションによる最終解答を書くこともできますが、別のやり方を試してみることもできます。たとえば、コーナーコミューテータを残しておきたいけれど、もっといいエッジの交換を探したいとき、コーナーコミューテータだけをインサートした解答をまず作りましょう。ここでできたものが、**3つのエッジだけが残り、数手だけ長くなった新しいスケルトンです。** ここからは単純な(エッジ)インサーションで揃えられます。他の方法もあるなかで、こうすべき理由はなんでしょうか？ それは、**他のコミューテータの手順の中に、エッジコミューテータをインサートするよいポイントが見つかることもあるからです。** 逆に、エッジの交換をインサートしてからコーナーのインサーションをやることもできます。
+
+次のソルブが単純な実例です。
+<!--訳者TODO:ソルブボックスの修正-->
+
+{% capture display_text %}
+B' U' D L' F' //EO + blocks
+D2 L2 D' L //疑似 2x2x3
+U2 R2 U' R' //疑似 2x2x1
+U L' U R' U' L U2 R' L' //3コーナー以外
+{% endcapture %}
+{% include solvebox.html
+title = "単純コーナーインサーション - Example (スケルトン)"
+scramble = "D B2 U' F2 L2 D2 R2 U F2 U2 L2 R' D2 B L' U' R2 F2 R B F2"
+text = display_text
+solution = "alg.cubing.net"
+img_src="../assets/img/alg-241.png"
+algcubing = "https://alg.cubing.net/?setup=D_B2_U-_F2_L2_D2_R2_U_F2_U2_L2_R-_D2_B_L-_U-_R2_F2_R_B_F2&alg=B-_U-_D_L-_F-_%2F%2FEO_%26%232b%3B_blocks%0AD2_L2_D-_L_%2F%2FPseudo1_2x2x3%0AU2_R2_U-_R-_%2F%2FPseudo_2x2x1%0AU_L-_U_R-_U-_L_U2_R-_L-_%2F%2FAll_but_3_corners"
+%}
+
+2つ以上ある別々の交換が必要なケースについても、全く同じアプローチをすることができますが、もっと複雑になるでしょう。
 
 <!--
 2.4.2 Multiple Insertions: Separated Cycles (3 Edges and 3 Corners)
@@ -2197,7 +2217,7 @@ find solution that are not possible (or very difficult) to find for humans: use 
 -->
 ### 2.5 その他の簡単な戦略(Other Simple Stragies)
 #### 2.5.1 戻ってやり直そう(Go Back and Change Your Sove)
-よいスタートを切ったあとで詰まってしまったら、「そこまでのソルブを一手ずつ見ていく」ということをしてみましょう。まだ揃えていないピースしかない面が、少なくとも1面、出てくるのを探しながらやってみましょう。見つかったら、その面を動かしてみましょう(すでに揃えたブロックは崩れません)。可能性は3種類(`U`、`U2`、`U´`など)あります。こうすると、元々のものよりほんの少し(1手)だけ長くなるでしょう。
+**よいスタートを切ったあとで詰まってしまったら、「そこまでのソルブを一手ずつ見ていく」ということをしてみましょう。** まだ揃えていないピースしかない面が、少なくとも1面、出てくるのを探しながらやってみましょう。見つかったら、その面を動かしてみましょう(すでに揃えたブロックは崩れません)。可能性は3種類(`U`、`U2`、`U´`など)あります。こうすると、元々のものよりほんの少し(1手)だけ長くなるでしょう。
 <!--
 2.5 Other Simple Stragies
 2.5.1 Go Back and Change Your Sove
@@ -3227,6 +3247,7 @@ R2 F2 L D' F' D F L' F2 R2
 [^2-4-1-6]: `B2 U' F' U B2 U' F U`もある。
 [^2-4-1-7]: コーナーの2-cycleが2つあるなら、インサーションを2回繰り返して揃えてもよいです。あとの節を参照してください。
 [^2-4-2]: これは別の何らかの方法で揃える必要があります。もう一回インサーションをする、など。
+[^2-4-2-2]: 私はコーナーには番号を振って、エッジには文字を振るのが好みです。こうすれば取り間違えることがありません。
 [^5-1-1]: タイムマネジメントについては6.3節で話します。
 [^5-1-2]: [https://www.ocf.berkeley.edu/˜dadams/fmc/](https://www.ocf.berkeley.edu/˜dadams/fmc/)
 [^5-1-3]: [https://speedcube.de/forum/showthread.php?tid=5795](https://speedcube.de/forum/showthread.php?tid=5795)
