@@ -2127,16 +2127,16 @@ Solution: U2 F B' L2 D2 F' U F2 L' B2 L F2 L' B' L' D L B' D L U L' D'
 L U2 R F2 R' L2 B (30)
 See on alg.cubing.net
 -->
-見てわかるように、この場合のインサーションは、4点交換を揃えているわけではなく、「通常の」インサーションでコーナーが完成しています。ところが、Mirek Goljanがここで提案しているのは、たった一回のインサーションで全てを揃えられるということなのです。そのためには、同じスケルトンの'*'部分に次の手順をインサートします。
+見てわかるように、この場合のインサーションは、4点交換を揃えているわけではなく、「通常の」インサーションでコーナーが完成しています。ところが、Mirek Goljanがここで提案しているのは、たった一回のインサーションで全てを揃えられるということなのです。そのためには、同じスケルトンの`*`部分に次の手順をインサートします。
 
-'(B D R2 B R'B2 D U2 F') U (F U2 D' B2 R B' R2 D' B')'
+`(B D R2 B R'B2 D U2 F') U (F U2 D' B2 R B' R2 D' B')`
 {: .text-center}
 
 この長いインサーションでも同じ結果(30手)になります。
 
 同じようなLast layerのアルゴリズムもいくつかあります。その一つは次のようなものです。
 
-'(R B2 R2 U2 R) B (R' U2 R2 B2 R')'
+`(R B2 R2 U2 R) B (R' U2 R2 B2 R')`
 {: .text-center}
 
 その他のアルゴリズムはこちらを参照してください。
@@ -2184,7 +2184,8 @@ Corner 5-cycle 10/11
 http://www.speedsolving.com/forum/threads/the-fmc-thread.13599/page-42#post-614593
 32 CHAPTER 2. HOW TO PROCEED DURING A SOLVE
 -->
-#### 2.4.11 Insertion Finder
+#### 2.4.11 インサーションファインダー (Insertion Finder)
+Baiqiang Dongによって開発された**Insertion Finder**はインサーションを探して解答の中で何かを見逃していなかったかを確認するために役立つツールです。
 <!--
 2.4.11 Insertion Finder
 Insertion Finder37, developed by Baiqiang Dong, is a useful tool to find insertions and check if
