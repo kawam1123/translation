@@ -60,7 +60,7 @@ Un ringraziamento speciale a Sebastiano Tronto, una superstar FMC, per aver pubb
 |:---|:---:|:---:|:---:|
 |序文                                   |1-8    |[完了](#){: .btn .btn-success}     |2019/12/31完了|
 |1章 Think Outside the Box              |9-14   |[完了](#){:.btn .btn-success}      |2020/01/03完了|
-|2章 How to Proceed During a Solve      |15-34  |[作業中](#){: .btn .btn-warning}   |2020/01/03着手|
+|2章 How to Proceed During a Solve      |15-34  |[完了](#){:.btn .btn-success}     |2020/01/09完了|
 |3章 Advanced Tools                     |35-44  |[未着手](#){: .btn .btn-danger}    ||
 |4章 Some Other Methods                 |45-48  |[未着手](#){: .btn .btn-danger}    ||
 |5章 How To Practice                    |49-50  |[完了](#){:.btn .btn-success}      |2020/01/03完了|
