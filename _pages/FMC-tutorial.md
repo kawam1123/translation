@@ -1987,7 +1987,16 @@ versa the second one in the solve was inserted earlier. That’s perfectly fine!
 Moreover, the two commutator cancel some move with one another.
 -->
 #### 2.4.5 複数インサーション: 5つのコーナー (Multiple Insertions: 5 Corners)
+5つのコーナーが残ったケースの中で、2回のコミューテータだけで揃えられるのはピースが5点交換になっている場合のみです。それ以外のケースでは、3回のコミューテータが必要です。ただし、5つのコーナーの配置は合っているがねじれているという場合には、4回必要となります。ここでは、3回以上のコミューテータが必要なケースについては触れず、最初のケースについてだけ見てみることにします。（3回のインサーションをやってみたいときもあるでしょうけれど）
 
+さて、こういうときに最も簡単でよく使われる手法は、**4つのコーナーのとき同様に、2段階で解くことです。**コーナーに1から5までの番号を振ったあと、スケルトンを最初から1手ずつ追いかけていき、3つのつながったコーナーの交換を揃えられるコミューテータがないかを探していくわけです。このサイクルは、たとえば次のようなパタンがあります。
+```
+1 → 2 → 3 → 1
+2 → 3 → 4 → 2
+3 → 4 → 5 → 3
+4 → 5 → 1 → 4
+5 → 1 → 2 → 5
+```
 <!--
 2.4.5 Multiple Insertions: 5 Corners
 Among all the cases with 5 corners left, the only one that requires 2 commutators is the one
@@ -1996,19 +2005,22 @@ where the pieces make a 5-cycle. All other cases require 3 commutators, except w
 more commutators (although in some cases you may want to go for 3 insertions) and only look
 at the first one.
 The easiest and probably the most used way to deal with this situation is a two-pass way,
-as for 4 corners. After having numbered the corners 1 to 5, you go through the skeleton move by
-31Always keep in mind that when talking about commutators there is a difference between “sticker” and “piece”.
-28 CHAPTER 2. HOW TO PROCEED DURING A SOLVE
-move and look for any commutator that solves a three consecutive corners cycle. These cycles
+as for 4 corners. After having numbered the corners 1 to 5, you go through the skeleton move by move and look for any commutator that solves a three consecutive corners cycle.These cycles
 are:
 1 → 2 → 3 → 1
 2 → 3 → 4 → 2
 3 → 4 → 5 → 3
 4 → 5 → 1 → 4
 5 → 1 → 2 → 5
-This will obviously take longer than looking for just one corner cycle. It is still enough
-to just look for “pure” commutators. Every time you find a good commutator write it down
-somewhere.
+-->
+当然、単にコーナーの交換をひとつだけ探すよりも時間がかかります。ここでも変わらず
+ピュアコミューテータを探すだけで十分です。いいコミューテータが見つかるたびに、どこかにメモしておきましょう。
+
+この1段階目が終わった時点で、見つかったコミューテータのなかから一番いいもの（一番多くキャンセルするもの）を選びましょう。次にそのコミューテータをインサートして、コーナーの3点交換だけが残った新しいスケルトンを得ます。ここからどうすればいいかはわかるでしょう。
+
+一番いいものは一つではないこともあります。たとえば、3手キャンセルするコミューテータを2つ見つけることもあるでしょう。では、どちらを選べばいいでしょうか？ 時間がないときには、適当に決めてしまいましょう。時間に余裕があるなら、両方のインサーションを試してみて、2つ目のコミューテータがよくなるものを選びましょう。
+<!--
+This will obviously take longer than looking for just one corner cycle. It is still enough to just look for “pure” commutators. Every time you find a good commutator write it down somewhere.
 Once you are done with this first pass, choose the best commutator you have found (the one
 cancelling the most moves)1. Insert that commutator; now you have a new skeleton that only
 leaves a corner 3-cycle: you know what to do.
@@ -2016,12 +2028,16 @@ The best choice may not be unique (for example, if you have found two different 
 canceling 3 moves). Which one should we choose? If you are short on time, just randomly choose
 any of them. If you have some time left, you can try both insertions and which one leads to the
 best second commutator.
+-->
+この手法を使うとき、**最適な解答が見けられたかどうか、確信も持つことはできないでしょう。**なので、安全を取って、1段階目で見つかった全てのコミューテータ（あるいはそのほとんど）をチェックして、2段階目をたくさん（ほとんど意味のないものも）試してみるといいでしょう。通常、これはとても時間の無駄になりますし、よい解答になることは滅多にありません。解答をもっとよくできるかどうかわからないときは、基準として
+**5つのコーナーの交換を10手か11手で揃えられれば満足できる結果だ、**ということを覚えておきましょう。
+
+<!--
 With this method you can’t be sure you have found the optimal solution: to be safer, you
 should check all (or at lest most) of the commutators you have found in the first pass and do
 many other (probably useless) passes. This usually leads to a huge waste of time and rarely to
 a better solution.
-If you don’t know whether you can improve your solution, keep in mind that 10 or 11 moves
-total are a good goal for a corner 5-cycle.
+If you don’t know whether you can improve your solution, keep in mind that 10 or 11 moves total are a good goal for a corner 5-cycle.
 There is also a faster, but slightly more complex, way that only requires one-pass. It is
 almost identical to the first pass of the two-pass way, but besides taking note of any commutator
 you have found, you should also write down which corner cycle it solves. At this point, without
@@ -3317,6 +3333,7 @@ R2 F2 L D' F' D F L' F2 R2
 [^2-4-2]: これは別の何らかの方法で揃える必要があります。もう一回インサーションをする、など。
 [^2-4-2-2]: 私はコーナーには番号を振って、エッジには文字を振るのが好みです。こうすれば取り間違えることがありません。
 [^2-4-4]: [http://www.speedsolving.com/forum/threads/the-fmc-thread.13599/page-126#post-1009830](http://www.speedsolving.com/forum/threads/the-fmc-thread.13599/page-126#post-1009830)
+[^2-4-4-2]: コミューテータについて話すときには、「ピース」と「ステッカー」は違うものであることに気をつけましょう。
 [^2-4-11]: insertion finder
 [^5-1-1]: タイムマネジメントについては6.3節で話します。
 [^5-1-2]: [https://www.ocf.berkeley.edu/˜dadams/fmc/](https://www.ocf.berkeley.edu/˜dadams/fmc/)
