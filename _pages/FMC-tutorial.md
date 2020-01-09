@@ -2172,8 +2172,26 @@ R' U R U2 L' R' U R U' L U2 (J perm + corner twist)
 -->
 全てを載せたわけではありませんが、このアルゴリズムに加えて、この逆手順やシフトしたものでも2コーナー＋2エッジがそれぞれ交換されます。**このアルゴリズムの逆手順は全く同じように作用することがわかるでしょう。** つまり、このことを知っていれば新しいアルゴリズムを学ぶことなく、キャンセルする確率が二倍になるのです。あまり多くの手数をキャンセルすることは望めませんが、多くのアルゴリズムを知っていれば知っているほどよいでしょう。
 
-一つ例をあげましょう。次のソルブを見てください
+一つ例をあげましょう。次のソルブを見てください。
+
+{% capture display_text %}
+B' F D2 //疑似2x2x1 (3/3)
+L' B * R2 //疑似3x2x2 (3/6)
+F2 D F' D2 F //NISSを使って発見 (5/11)
+R' D' R D2 F U2 //NISSを使って発見 (6/17)
+* = B2 L B L' B D2 F' R F D2 //2c2e insertion (9/26)
+{% endcapture %}
+{% include solvebox.html
+title = "2C2E Insertion - Example"
+scramble = "B' L' D2 R U F' U' L U2 D R2 U2 F B R2 B U2 B L2 B2 U2"
+text = display_text
+solution = "B' F D2 L' R2 B R B' R2 F R' B R F' R2 F2 D F' D2 F R' D' R D2 F U2 (26)"
+img_src="../assets/img/alg-247.png"
+algcubing = ""
+%}
+
 <!--訳者TODO ソルブボックスの挿入-->
+
 
 <!--
 Besides all of these algorithms (this is not a complete list anyway), also their inverses and
