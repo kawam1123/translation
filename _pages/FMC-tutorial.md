@@ -2119,7 +2119,14 @@ inside insertions”. Therefore, I advise using it only if you are short on time
 analysis”: try to see how many moves you can get this way, and in the second pass only check
 for commutators that may lead to something better.
 -->
-#### 2.4.6 Multiple Insertions: 5 Edges
+#### 2.4.6 複数インサーション: 5つのエッジ(Multiple Insertions: 5 Edges)
+通常、5点交換の場合でもエッジのケースは避けることが望ましいです。それでもやるなら、コーナーについて説明したのと同じ手法を使うこともできます。しかし、非常に少ない手数で揃えられるケースが一つあります。5点交換を6手でやるときに
+
+`M' U M U'`
+{: .text-center}
+
+が使えます。セットアップが何手かかかる場合でも、非常にいいでしょう。どんなケースで使えるのか、派生はどんなものがあるか、調べてみるといいでしょう。これをシフトした`L F L' R U' R'`というものもあります。エッジの5点交換が残ったスケルトンを得たなら、ステッカーに番号を振ってすぐにこの類のアルゴリズムが使えるかどうか調べてみましょう。しかし、探すのにあまり時間を掛けすぎないようにしてください。エッジのインサーションについては、4.2節のコーナーファーストについて話すところでまた触れます。
+
 <!--
 2.4.6 Multiple Insertions: 5 Edges
 As usual, even for 5-cycles the edge case is preferably to avoid. If you decided to go that way,
