@@ -1174,7 +1174,7 @@ World Champion) and myself do it very often. For more details and examples see s
 1. 2x2x3やF2L-1のような大きなブロックを作ろうとする
 1. 小さなステップで前に進み、たくさんの小さなブロックを作って最後につなげる
 
-Erik Jernqvistは「よいなスタート」を切るための指標として、次の手数の表を作りました。[^2-1-8]
+Erik Jernqvistは「よいスタート」を切るための指標として、次の手数の表を作りました。[^2-1-8]
 
 |ブロックの種類                  |手数|
 |:------------                  |:---:|
@@ -1185,7 +1185,7 @@ Erik Jernqvistは「よいなスタート」を切るための指標として、
 |F2L-1                          |14|
 |F2L                            |17|
 
-個人的には、この表の手数はちょうどよい推計だと思います。特に最初の３つについて当てはまります。しかし、**よいなスタートを切れたかどうかはその後のつながりがどうなるかにかかっている**ということを覚えておかなければなりません。もしF2L-1が12手でできたけれど、bad edgeが4つも残っていて、最後のF2Lのエッジが反転して入っているとしたらどうするでしょう。すぐに投げ捨てるだろうと思います。一方で、全てのエッジの向きが揃った2x2x3ブロックが12手でできたならもっとよいでしょう。もちろんEOだけが考慮すべきことではありませんが、最も重要なものの一つです。
+個人的には、この表の手数はちょうどよい推計だと思います。特に最初の３つについて当てはまります。しかし、**よいスタートを切れたかどうかはその後のつながりがどうなるかにかかっている**ということを覚えておかなければなりません。もしF2L-1が12手でできたけれど、bad edgeが4つも残っていて、最後のF2Lのエッジが反転して入っているとしたらどうするでしょう。すぐに投げ捨てるだろうと思います。一方で、全てのエッジの向きが揃った2x2x3ブロックが12手でできたならもっとよいでしょう。もちろんEOだけが考慮すべきことではありませんが、最も重要なものの一つです。
 
 もう一つのルールは**決してLast Layerに影響を与えずにF2Lを完成させてはならない**[^2-1-8-2]ということです。理由は単純です。つまり、Last layerが悪い状態であるなら、どんなに多くのアルゴリズムを知っていたとしても多くの手数が必要になります。また、F2Lを完成させてしまうことはキューブ全体を操作する自由度が減るということです。一方で、**F2L-1を目指すことは良い部分解です。**これは、多くのピースが既に配置されているにも関わらず、より多くの自由度があるからです。
 
@@ -1883,7 +1883,8 @@ and 3.
 You can do the same with two flipped edges, but I suggest avoiding such a case, because
 edge commutators usually require more moves.
 -->
-#### 2.4.4 Multiple Insertions: 4 Corners
+#### 2.4.4 複数インサーション:4つのコーナー(Multiple Insertions: 4 Corners)
+唯一の悪いケースである、3回のインサーションが必要な4つのコーナーが残った場合、コーナーの位置は正しいけれどねじれているという状態です。なるべくなら避けたいですが、もし避けられない（あるいはスケルトンが本当に短い）なら、前の節で書いたような1つ目のインサーションをやって、4つのコーナーがよい配置になるようにしてもいいでしょう。この状況にかんしては、speedsolving.comによいディスカッションがあります[^2-4-4]。
 <!--
 2.4.4 Multiple Insertions: 4 Corners
 If you have 4 corners left, the only bad case, requiring three inserted commutators, is when the
@@ -1891,17 +1892,61 @@ corner are all placed but twisted. Try to avoid it, but if you can’t (or if th
 short), you can proceed as in the previous section for te first insertion, in order to reduce to a
 better 4 Corners case. About this situation, there is a nice discussion on speedsolving.com30
 .
+-->
+その他に次の3つのケースがあります。
+
+1. 1つのコーナーの場所はあっているがねじれている。他の3つのコーナーは「ねじれた3点交換」になっている。つまり、向きを考えずに位置だけを考えた3点交換。
+1. 2つのコーナーのペアが違いに入れ替わっており、向きが合っている。（2回のスワップ、あるいは
+回の2点交換）後で話をするやり方でも解けますし、コーナーの2回スワップをエッジの2回スワップに組み替えることでも解けます。たとえば、H perm (`M2 U M2 U2 M2 U M2`)に1手（`U2`)加えることで、コーナーの位置合わせに変えられることがわかるでしょう。`(R U R' U') x 3` (トリプルセクシー)や`(R' F R F') x 3`(トリプルスレッジ)のようなアルゴリズムでも2つのコーナーペアをスワップできます。
+1. ねじれたコーナーの2回スワップ
+
+これらのケースは全て**2回のコミュテータで揃えらえます。** 1回目で4つのコーナーのうち1つを揃えて、他の3つのコーナーに適当な影響を与えましょう。そして、1回目のインサーションで新しいスケルトンができますから、2回目では残った3つのコーナーを揃えればいいのです。この1回目のインサーションについて、1つめのケースではもう一つ制限があり、「位置は合っているけれどねじれている」コーナーを1回目のコミューテータに含めなければなりません。もし含めなかった場合
+2つあるいは3つのねじれたコーナーがある状態が残り、さらに2回インサートしなければならなくなります。
+
+これを間違いなくやるために、私は次のようにコーナーに印をつけます。
+
+1. ねじれたコーナーに「X」と印をつけます。ねじれている向きは気にしません。そして、他の3つのコーナーに1から3までの番号を振ります。このとき、ねじれた交換なので、1は2になり、2は3になりますが、3は1ではなく同じコーナーの別のステッカー[^2-4-4-2]になります。大したことではなく、その別のステッカーに4と番号を振れば大丈夫です。
+1. 最初のコーナーのペアにXと印をつけて、次のコーナーのペアにAと印をつける。
+1. ねじれた3点交換には4つの番号を振る必要があり、ねじれた2点交換には3つの番号を振る必要があるので、2点交換には1から3までの番号を、それ以外にはAからCを振る。
+
+たとえば、1つ目のケースでは、可能な「最初のサイクル」は**Xを3に、3を4に、4をXに、**というものがあります。1->2->3->1というのはよいサイクルではなく、3点交換ではなく2つのねじれたコーナーが残ってしまいます。
+
+素晴らしい例は次のソルブです。これは、**Juao Pedro Batista Ribeiro Costaの南アフリカ記録のものです。**解答の説明は私が少し修正しました。元々のものはプリムーブ(premove)を使っていました。プリムーブ(premove)については、次の章で説明します。
+
+{% capture display_text %}
+F D' + U2 * R //EO
+D' F' L2 //Pseudo 2x2x2
+F2 D F2 //Pseudo F2L-2
+B' D B //Pseudo F2L-1
+F' D' F' L2 //All But 4 Corners
+* = U R D' R' U' R D R' //First commutator
++ = L' U' R' U L U' R U //Second commutator
+{% endcapture %}
+{% include solvebox.html
+title = "Juao Pedro Batista Ribeiro Costaの元南アフリカ記録"
+scramble = "L' U2 D' L' U2 B' D B' L U2 F2 R2 F' R2 L2 F' U2 D2 F"
+text = display_text
+solution = "F D' L' U' R' U L U' R2 D' R' U' R F' L2 F2 D F2 B' D B F' D' F' L2 (25)"
+img_src="../assets/img/alg-244.png"
+algcubing = ""
+%}
+
+もう少しコメントを追加しましょう。最初ほうにインサートされたコミューテータ（2つ目のコミューテータ、＋）は後で見つけられたものです。2つ目のコミューテータのほうが早い段階でインサートされています。これでもまったく問題ありません！
+
+さらに、2つのコミューテータの間でお互いに何手かキャンセルをしています。
+
+<!--訳者TODO：この節は全般に文字だけでわかりにくく感じるので、追加の絵を入れてもよい-->
+
+<!--
 There are three other cases:
-1. One corner is placed but twisted, the other 3 form a “twisted 3-cycle”, i.e. a 3-cycle if you
-only regard permutation, without considering orientation. A twisted cycle always depends
-on some other twisted piece (or cycle).
+1. One corner is placed but twisted, the other 3 form a “twisted 3-cycle”, i.e. a 3-cycle if you only regard permutation, without considering orientation. A twisted cycle always depends on some other twisted piece (or cycle).
 2. Two pairs of corners that need to be swapped, correctly oriented (double swap or double
 2-cycle). This case can be solved, besides using the method that will soon be described,
 also by transforming the corner double swap in an edge double swap: remember that an
 H perm (M2 U M2 U2 M2 U M2) can be transformed in a corner permutation with only
 one move (U2). Another way it so use algorithms such as (R U R' U')*3 (“triple sexy”)
 or (R' F R F')*3 (“triple sledge”), that swap two corner pairs.
-30http://www.speedsolving.com/forum/threads/the-fmc-thread.13599/page-126#post-1009830
+[^2-4-4]: http://www.speedsolving.com/forum/threads/the-fmc-thread.13599/page-126#post-1009830
 2.4. INSERTIONS 27
 3. A “twisted double swap”.
 All these cases can be solved with two commutators: the first one has to solve one of the
@@ -3261,6 +3306,7 @@ R2 F2 L D' F' D F L' F2 R2
 [^2-4-1-7]: コーナーの2-cycleが2つあるなら、インサーションを2回繰り返して揃えてもよいです。あとの節を参照してください。
 [^2-4-2]: これは別の何らかの方法で揃える必要があります。もう一回インサーションをする、など。
 [^2-4-2-2]: 私はコーナーには番号を振って、エッジには文字を振るのが好みです。こうすれば取り間違えることがありません。
+[^2-4-4]: [http://www.speedsolving.com/forum/threads/the-fmc-thread.13599/page-126#post-1009830](http://www.speedsolving.com/forum/threads/the-fmc-thread.13599/page-126#post-1009830)
 [^5-1-1]: タイムマネジメントについては6.3節で話します。
 [^5-1-2]: [https://www.ocf.berkeley.edu/˜dadams/fmc/](https://www.ocf.berkeley.edu/˜dadams/fmc/)
 [^5-1-3]: [https://speedcube.de/forum/showthread.php?tid=5795](https://speedcube.de/forum/showthread.php?tid=5795)
