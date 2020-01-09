@@ -2236,7 +2236,7 @@ you are actually doing when you insert a sexy move.
 
 4つのエッジと4つのコーナーがあり、それぞれ4点交換されるときに、一つのインサーションだけで揃えることができる状況というものがあります。このケースは次のように揃えられます。
 
-揃っていない8つのピースをすべて同じ面に集めます(セットアップ)。これで集めた面での単一のムーブで4点交換ができます。そして、8つのピースを元の場所に戻します(逆セットアップ)。8つのピースが2点交換を4つ組み合わせたものであるときにも、このテクニックは使えます。そのときは、「インターチェンジ」は180度のもの、たとえば 'U2' などになります。もしピースの数が8つちょうどでなかったり、適切な交換ができない場合には、3.3節で説明するreverse NISSをまた使うことができます。
+揃っていない8つのピースをすべて同じ面に集めます(セットアップ)。これで集めた面での単一のムーブで4点交換ができます。そして、8つのピースを元の場所に戻します(逆セットアップ)。8つのピースが2点交換を4つ組み合わせたものであるときにも、このテクニックは使えます。そのときは、「インターチェンジ」は180度のもの、たとえば `U2` などになります。もしピースの数が8つちょうどでなかったり、適切な交換ができない場合には、3.3節で説明するreverse NISSをまた使うことができます。
 <!--
 2.4.9 Other Insertions: Conjugate and Solve
 A particular situation you can solve with only one insertion is when you have 4 edges and 4
@@ -2248,8 +2248,24 @@ in total: in this case, the “interchange” will be a 180° one (for example U
 not exactly 8, or do not form the right cycles, you can again use reverse NISS after the setup
 moves, as explained in Section 3.3.
 -->
-実例を見てみましょう。
-<!--訳者TODO:ソルブボックス追加-->
+
+実例を見てみましょう。[^2-4-9]
+
+{% capture display_text %}
+U2 F B' L2 D2 //2つの2x2x1ブロック (5/5)
+F' * R F2 R' L2 B //4エッジと4コーナー残す (6/11)
+* = U + L' B L' D L B' L $ U' //4 エッジ (9/20)
++ = F2 L' B2 L F2 L' B2 L //3 コーナー (5/25)
+$ = L' D L U L' D' L U' //3 コーナー (5/30)
+{% endcapture %}
+{% include solvebox.html
+title = "Conjugate and Solve - Example"
+scramble = "R2 L2 D2 F2 D' R2 U' B2 D' F2 U2 F' D2 L' F U B F2 U2 F2 L"
+text = display_text
+solution = "U2 F B' L2 D2 F' U F2 L' B2 L F2 L' B' L' D L B' D L U L' D' L U2 R F2 R' L2 B (30)"
+img_src="../assets/img/alg-244.png"
+algcubing = "https://alg.cubing.net/?alg=F_D-_(L-_U-_R-_U_L_U-_R_U)_U2_(U_R_D-_R-_U-_R_D_R-)_R_%2F%2FEO%0AD-_F-_L2_%2F%2F2x2x2%0AF2_D_F2_%2F%2FPseudo_F2L%26%2345%3B2%0AB-_D_B_%2F%2FF2L%26%2345%3B1%0AF-_D-_F-_%2F%2FAll_But_4_Corners&setup=_L_U2_D-_L-_U2_B-_D_B-_L_U2_F2_R2_F-_R2_L2_F-_U2_D2_F"
+%}
 
 <!--
 Let’s see an example.
@@ -2267,6 +2283,7 @@ Solution: U2 F B' L2 D2 F' U F2 L' B2 L F2 L' B' L' D L B' D L U L' D'
 L U2 R F2 R' L2 B (30)
 See on alg.cubing.net
 -->
+
 見てわかるように、この場合のインサーションは、4点交換を揃えているわけではなく、「通常の」インサーションでコーナーが完成しています。ところが、Mirek Goljanがここで提案しているのは、たった一回のインサーションで全てを揃えられるということなのです。そのためには、同じスケルトンの`*`部分に次の手順をインサートします。
 
 `(B D R2 B R'B2 D U2 F') U (F U2 D' B2 R B' R2 D' B')`
@@ -2279,8 +2296,22 @@ See on alg.cubing.net
 `(R B2 R2 U2 R) B (R' U2 R2 B2 R')`
 {: .text-center}
 
-その他のアルゴリズムはこちらを参照してください。
-<!--訳者TODO:脚注とリンクの挿入-->
+その他のアルゴリズムはこちらの投稿[^2-4-9-2]を参照してください。
+
+> Here's one example alg for each relevant OLL case. (Invert the middle move to set up the case.)
+> 
+> `(R B2 R2 U2 R) B (R' U2 R2 B2 R')`  
+> `(L' B2 L2 U2 L') B' (L U2 L2 B2 L)`  
+> `(R U' R2 D' L) F' (L' D R2 U R')`  
+> `(R U2 L' B L) U2 (L'B' L U2 R')`  
+> `(R U2 R' F' L') U2 (L F R U2 R')`  
+> `(L' F U2 B' R) U2 (R' B U2 F' L)`  
+> 
+> (found using JACube)
+> 
+> I note there are 5 other 11f* OLLs (besides the ones that flip 4 edges), of which 2 can also be solved with this type of conjugation.  
+> `(R' F2 R2 U2 R') F2 (R U2 R2 F2 R)`  
+> `(R' U F2 D' F) U2 (F' D F2 U' R)`  
 
 <!--
 As you can see, the insertion in question doesn’t actually solve both the 4 cycles and the corners are completed with “normal” insertions. However, as suggested by Mirek Goljan, we
@@ -2293,8 +2324,31 @@ There are also some Last Layer algorithms that work in this way. One of them is:
 and you can find some more here34
 .
 -->
+
 #### 2.4.10 手数カウント(見積もり) (Move Count (an Estimate))
+
 ここでは、普通のインサーションにおいてどのくらいの手数がかかるのか、見積もってみましょう。数学的に証明したわけではないヒューリスティックな見積もりですし、手数は次のようなことによって決まることを覚えておいてください。
+
+- **どのくらい多くのコミューテータやアルゴリズムを知っているか。**また、その認識能力。
+- **スケルトンの長さ。**スケルトンが長ければアルゴリズムをインサートする箇所が多いので、より多くのキャンセルを狙えます。（しかし、この理由のために長いスケルトンを選んではいけません！）
+
+見積もりを持つことは、インサーションを探すのに時間をかける価値があるのか、そうでないのかを判断するうえで役に立ちます。もし30手より短い解答を達成したいとして、3つのコーナーが残ったスケルトンを23手で作れたなら、おそらく達成できるでしょう。25手だったら、少し幸運が必要です。
+
+異なるスケルトンで比較することもできます。18手かかる4コーナーのスケルトンなら、25手かかる3コーナーのスケルトンよりよいでしょう。
+
+参考になる数字を出しておきます。[^2-4-10]
+
+|Type of insertion|Moves|
+|:---------------:|:---:|
+|Corner 3-cycle|5/6|
+|Edge 3-cycle36|7|
+|2 Twisted Corners (2 comms)|8|
+|3 Twisted Corners (2 comms)|9|
+|4 Corners (2 comms)|10|
+|Corner 5-cycle|10/11|
+|2 Corners and 2 Edges (double 2-cycle)|10|
+
+
 <!--
 2.4.10 Move Count (an Estimate)
 Here I will give an estimate of how many moves are usually needed for the most common types
@@ -3379,8 +3433,11 @@ R2 F2 L D' F' D F L' F2 R2
 [^2-4-2-2]: 私はコーナーには番号を振って、エッジには文字を振るのが好みです。こうすれば取り間違えることがありません。
 [^2-4-4]: [http://www.speedsolving.com/forum/threads/the-fmc-thread.13599/page-126#post-1009830](http://www.speedsolving.com/forum/threads/the-fmc-thread.13599/page-126#post-1009830)
 [^2-4-4-2]: コミューテータについて話すときには、「ピース」と「ステッカー」は違うものであることに気をつけましょう。
-[^2-4-11]: insertion finder
 [^2-4-5]: もっと知りたい読者のためには、speedsolving.comのFMCスレッドでの[この投稿](https://www.speedsolving.com/forum/threads/the-fmc-thread.13599/page-50#post-666185)から始まるディスカッションが興味深いでしょう。特に、[2つ目の投稿](https://www.speedsolving.com/forum/threads/the-fmc-thread.13599/page-50#post-666199)では**5点交換を揃えるための3点交換の組み合わせを見つける「法則」についての数学的証明があります。**[3つ目の投稿](https://www.speedsolving.com/forum/threads/the-fmc-thread.13599/page-50#post-666209)では、私が本書で行った説明と同じようなことが書いてあります。（私がこのテクニックを学んだのもこの投稿からです）[4つ目の投稿](https://www.speedsolving.com/forum/threads/the-fmc-thread.13599/page-51#post-666313)にはこの手法を使ったソルブの実例が載っています。
+[^2-4-9]:[https://www.speedsolving.com/forum/threads/the-fmc-thread.13599/page-214#post-1247800](https://www.speedsolving.com/forum/threads/the-fmc-thread.13599/page-214#post-1247800)
+[^2-4-9-2]: [https://www.speedsolving.com/threads/the-fmc-thread.13599/page-28#post-488378](https://www.speedsolving.com/threads/the-fmc-thread.13599/page-28#post-488378)
+[^2-4-10]: ほとんどの例はこの投稿からです。 [http://www.speedsolving.com/forum/threads/the-fmc-thread.13599/page-42#post-614593](http://www.speedsolving.com/forum/threads/the-fmc-thread.13599/page-42#post-614593)。一部、私の個人的な意見を加えて調整しています。
+[^2-4-11]: insertion finder
 [^5-1-1]: タイムマネジメントについては6.3節で話します。
 [^5-1-2]: [https://www.ocf.berkeley.edu/˜dadams/fmc/](https://www.ocf.berkeley.edu/˜dadams/fmc/)
 [^5-1-3]: [https://speedcube.de/forum/showthread.php?tid=5795](https://speedcube.de/forum/showthread.php?tid=5795)
