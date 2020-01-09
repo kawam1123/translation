@@ -1174,7 +1174,7 @@ World Champion) and myself do it very often. For more details and examples see s
 1. 2x2x3やF2L-1のような大きなブロックを作ろうとする
 1. 小さなステップで前に進み、たくさんの小さなブロックを作って最後につなげる
 
-Erik Jernqvistは「よいなスタート」を切るための指標として、次の手数の表を作りました。[^2-1-8]
+Erik Jernqvistは「よいスタート」を切るための指標として、次の手数の表を作りました。[^2-1-8]
 
 |ブロックの種類                  |手数|
 |:------------                  |:---:|
@@ -1185,7 +1185,7 @@ Erik Jernqvistは「よいなスタート」を切るための指標として、
 |F2L-1                          |14|
 |F2L                            |17|
 
-個人的には、この表の手数はちょうどよい推計だと思います。特に最初の３つについて当てはまります。しかし、**よいなスタートを切れたかどうかはその後のつながりがどうなるかにかかっている**ということを覚えておかなければなりません。もしF2L-1が12手でできたけれど、bad edgeが4つも残っていて、最後のF2Lのエッジが反転して入っているとしたらどうするでしょう。すぐに投げ捨てるだろうと思います。一方で、全てのエッジの向きが揃った2x2x3ブロックが12手でできたならもっとよいでしょう。もちろんEOだけが考慮すべきことではありませんが、最も重要なものの一つです。
+個人的には、この表の手数はちょうどよい推計だと思います。特に最初の３つについて当てはまります。しかし、**よいスタートを切れたかどうかはその後のつながりがどうなるかにかかっている**ということを覚えておかなければなりません。もしF2L-1が12手でできたけれど、bad edgeが4つも残っていて、最後のF2Lのエッジが反転して入っているとしたらどうするでしょう。すぐに投げ捨てるだろうと思います。一方で、全てのエッジの向きが揃った2x2x3ブロックが12手でできたならもっとよいでしょう。もちろんEOだけが考慮すべきことではありませんが、最も重要なものの一つです。
 
 もう一つのルールは**決してLast Layerに影響を与えずにF2Lを完成させてはならない**[^2-1-8-2]ということです。理由は単純です。つまり、Last layerが悪い状態であるなら、どんなに多くのアルゴリズムを知っていたとしても多くの手数が必要になります。また、F2Lを完成させてしまうことはキューブ全体を操作する自由度が減るということです。一方で、**F2L-1を目指すことは良い部分解です。**これは、多くのピースが既に配置されているにも関わらず、より多くの自由度があるからです。
 
@@ -1783,12 +1783,35 @@ at cancelling two or more moves (and you should be) you can assume such a move w
 completely, unless it swaps two of you pieces, and only look for commutators that cancel with
 moves after (or before) that one.
 -->
-#### 2.4.2 複数インサーション：別サイクル(3エッジ、3コーナー) (Multiple Insertions: Separated Cycles (3 Edges and 3 Corners))
+#### 2.4.2 複数インサーション：別々のサイクル(3エッジ、3コーナー) (Multiple Insertions: Separated Cycles (3 Edges and 3 Corners))
 スケルトンは常に3-cycleだけが残ったものとは限りません。インサーションはもっと多くの（もっと長い）サイクルでも使うことができます。
 
 既に見たように、3-cycle（コーナーとエッジ）が2回あるような場合は、**ペアコミューテータ**（必要ならセットアップも含めて）で揃えることができます。別のやり方は、「Sune」(`R U R' U R U2 R'`)やその派生を使ってエッジを揃えることです。これによって必要なコーナーだけに影響を与えることができます[^2-4-2]。どちらのやり方も頭にとどめておくとよいですが、簡単に使えることはあまりありません。「標準的な」解法は**2つのコミューテータをインサートすることです。**
 
-コーナーとエッジに番号を振ったあとで、一手ずつ単純なインサーションを探して進んでいきますが、全ての箇所でコーナーとエッジの解法を見ていきましょう。さらにペアコミューテータとSuneもチェックします。終わったら、2つのインサーションによる最終解答を書くわけですが、別の道を通ることもできます。
+コーナーとエッジに番号を振ったあとで[^2-4-2-2]、一手ずつ単純なインサーションを探して進んでいきますが、全ての箇所でコーナーとエッジの解法を見ていきましょう。さらにペアコミューテータとSuneもチェックします。終わったら、2つのインサーションによる最終解答を書くこともできますが、別のやり方を試してみることもできます。たとえば、コーナーコミューテータを残しておきたいけれど、もっといいエッジの交換を探したいとき、コーナーコミューテータだけをインサートした解答をまず作りましょう。ここでできたものが、**3つのエッジだけが残り、数手だけ長くなった新しいスケルトンです。** ここからは単純な(エッジ)インサーションで揃えられます。他の方法もあるなかで、こうすべき理由はなんでしょうか？ それは、**他のコミューテータの手順の中に、エッジコミューテータをインサートするよいポイントが見つかることもあるからです。** 逆に、エッジの交換をインサートしてからコーナーのインサーションをやることもできます。
+
+次のソルブが単純な実例です。
+<!--訳者TODO:ソルブボックスの修正-->
+
+{% capture display_text %}
+B' R' * F2 U F2 //2x2x1 (5/5)
+R //もう一つ2x2x1 (1/6)
+F R U2 F R B R + B' R //F2L-1 + pair (9/15)
+D' B' L B L' //3エッジ3コーナー残す(5/20)
+* = U B U' F2 U B' U' F2 //3コーナー, 4手キャンセル(4/24)
++ = R B' F D' B' D B F' R' B //3エッジ, 5手キャンセル(5/29)
+{% endcapture %}
+{% include solvebox.html
+title = "別々の交換をインサートする - Example"
+scramble = "B2 D' R2 D' F2 R2 D B2 U' L2 D2 R' U' R L' D' F D2 B R U2 R'"
+text = display_text
+solution = "B' R' U B U' F2 U B' F2 R F R U2 F R B R2 B' F D' B' D B F' D'
+B' L B L' (29)"
+img_src="../assets/img/alg-242.png"
+algcubing = ""
+%}
+
+2つ以上ある別々の交換が必要なケースについても、全く同じアプローチをすることができますが、もっと複雑になるでしょう。
 
 <!--
 2.4.2 Multiple Insertions: Separated Cycles (3 Edges and 3 Corners)
@@ -1832,7 +1855,17 @@ You can use exactly this approach for other cases that require you to solve two 
 cycles (3 cycles or double 2-cycles) that are separated. In all other cases, things get a bit more
 complicated.
 -->
-#### 2.4.3 Multiple Insertions: 2 or 3 Twisted Corners
+#### 2.4.3 複数インサーション: 2つあるいは3つのねじれコーナー(Multiple Insertions: 2 or 3 Twisted Corners)
+
+2つのねじれたコーナーが残ったとき、どこかで`[F L' D2 L F', U2]`(12手) というコミューテータを試してみるといいでしょう。3つある場合は、`U' B U' F U2 B2 D' R2 U D F' U' B`(13
+手)も使えます。しかし、特に2つ目については最良ではないことが多いです。2つあるいは3つのねじれはコーナーを揃える古典的手法は、**コーナーコミューテータを2回インサートすることです。** 1回目のコミューテータでは、3つのねじれたコーナー（あるいは2つのねじれたコーナーと、それ以外のコーナー）を交換するだけで十分です、通常、多くのキャンセルが見込めます。そこから先は、新しくできたスケルトンに単純なコーナーコミューテータをインサートすればよいだけです。
+
+こうするためには、ねじれたコーナーに「X」などの記号を描いておけばよいだけです。上に書いたような、「純粋に反転させる（pure flip）」アルゴリズムを使いたい場合は、矢印を描いておいて、どの方向（時計回り、反時計回り）に回転させるべきなのかわかるようにしておくといいでしょう。
+
+1つめの交換が見つかったら、描いた記号を消して（単純なインサーションを探すのと同じように）1、2、3と番号を書きましょう。
+
+2つのエッジがねじれているときにも同じことができますが、おすすめしません。エッジコミューテータはもっと手数がかかることが多いからです。
+
 <!--
 2.4.3 Multiple Insertions: 2 or 3 Twisted Corners
 When you need to twist 2 corners, you can try to insert the commutator [F L' D2 L F', U2]
@@ -1850,7 +1883,8 @@ and 3.
 You can do the same with two flipped edges, but I suggest avoiding such a case, because
 edge commutators usually require more moves.
 -->
-#### 2.4.4 Multiple Insertions: 4 Corners
+#### 2.4.4 複数インサーション:4つのコーナー(Multiple Insertions: 4 Corners)
+唯一の悪いケースである、3回のインサーションが必要な4つのコーナーが残った場合、コーナーの位置は正しいけれどねじれているという状態です。なるべくなら避けたいですが、もし避けられない（あるいはスケルトンが本当に短い）なら、前の節で書いたような1つ目のインサーションをやって、4つのコーナーがよい配置になるようにしてもいいでしょう。この状況にかんしては、speedsolving.comによいディスカッションがあります[^2-4-4]。
 <!--
 2.4.4 Multiple Insertions: 4 Corners
 If you have 4 corners left, the only bad case, requiring three inserted commutators, is when the
@@ -1858,17 +1892,61 @@ corner are all placed but twisted. Try to avoid it, but if you can’t (or if th
 short), you can proceed as in the previous section for te first insertion, in order to reduce to a
 better 4 Corners case. About this situation, there is a nice discussion on speedsolving.com30
 .
+-->
+その他に次の3つのケースがあります。
+
+1. 1つのコーナーの場所はあっているがねじれている。他の3つのコーナーは「ねじれた3点交換」になっている。つまり、向きを考えずに位置だけを考えた3点交換。
+1. 2つのコーナーのペアが違いに入れ替わっており、向きが合っている。（2回のスワップ、あるいは
+回の2点交換）後で話をするやり方でも解けますし、コーナーの2回スワップをエッジの2回スワップに組み替えることでも解けます。たとえば、H perm (`M2 U M2 U2 M2 U M2`)に1手（`U2`)加えることで、コーナーの位置合わせに変えられることがわかるでしょう。`(R U R' U') x 3` (トリプルセクシー)や`(R' F R F') x 3`(トリプルスレッジ)のようなアルゴリズムでも2つのコーナーペアをスワップできます。
+1. ねじれたコーナーの2回スワップ
+
+これらのケースは全て**2回のコミュテータで揃えらえます。** 1回目で4つのコーナーのうち1つを揃えて、他の3つのコーナーに適当な影響を与えましょう。そして、1回目のインサーションで新しいスケルトンができますから、2回目では残った3つのコーナーを揃えればいいのです。この1回目のインサーションについて、1つめのケースではもう一つ制限があり、「位置は合っているけれどねじれている」コーナーを1回目のコミューテータに含めなければなりません。もし含めなかった場合
+2つあるいは3つのねじれたコーナーがある状態が残り、さらに2回インサートしなければならなくなります。
+
+これを間違いなくやるために、私は次のようにコーナーに印をつけます。
+
+1. ねじれたコーナーに「X」と印をつけます。ねじれている向きは気にしません。そして、他の3つのコーナーに1から3までの番号を振ります。このとき、ねじれた交換なので、1は2になり、2は3になりますが、3は1ではなく同じコーナーの別のステッカー[^2-4-4-2]になります。大したことではなく、その別のステッカーに4と番号を振れば大丈夫です。
+1. 最初のコーナーのペアにXと印をつけて、次のコーナーのペアにAと印をつける。
+1. ねじれた3点交換には4つの番号を振る必要があり、ねじれた2点交換には3つの番号を振る必要があるので、2点交換には1から3までの番号を、それ以外にはAからCを振る。
+
+たとえば、1つ目のケースでは、可能な「最初のサイクル」は**Xを3に、3を4に、4をXに、**というものがあります。1->2->3->1というのはよいサイクルではなく、3点交換ではなく2つのねじれたコーナーが残ってしまいます。
+
+素晴らしい例は次のソルブです。これは、**Juao Pedro Batista Ribeiro Costaの南アフリカ記録のものです。**解答の説明は私が少し修正しました。元々のものはプリムーブ(premove)を使っていました。プリムーブ(premove)については、次の章で説明します。
+
+{% capture display_text %}
+F D' + U2 * R //EO
+D' F' L2 //Pseudo 2x2x2
+F2 D F2 //Pseudo F2L-2
+B' D B //Pseudo F2L-1
+F' D' F' L2 //All But 4 Corners
+* = U R D' R' U' R D R' //First commutator
++ = L' U' R' U L U' R U //Second commutator
+{% endcapture %}
+{% include solvebox.html
+title = "Juao Pedro Batista Ribeiro Costaの元南アフリカ記録"
+scramble = "L' U2 D' L' U2 B' D B' L U2 F2 R2 F' R2 L2 F' U2 D2 F"
+text = display_text
+solution = "F D' L' U' R' U L U' R2 D' R' U' R F' L2 F2 D F2 B' D B F' D' F' L2 (25)"
+img_src="../assets/img/alg-244.png"
+algcubing = ""
+%}
+
+もう少しコメントを追加しましょう。最初ほうにインサートされたコミューテータ（2つ目のコミューテータ、＋）は後で見つけられたものです。2つ目のコミューテータのほうが早い段階でインサートされています。これでもまったく問題ありません！
+
+さらに、2つのコミューテータの間でお互いに何手かキャンセルをしています。
+
+<!--訳者TODO：この節は全般に文字だけでわかりにくく感じるので、追加の絵を入れてもよい-->
+
+<!--
 There are three other cases:
-1. One corner is placed but twisted, the other 3 form a “twisted 3-cycle”, i.e. a 3-cycle if you
-only regard permutation, without considering orientation. A twisted cycle always depends
-on some other twisted piece (or cycle).
+1. One corner is placed but twisted, the other 3 form a “twisted 3-cycle”, i.e. a 3-cycle if you only regard permutation, without considering orientation. A twisted cycle always depends on some other twisted piece (or cycle).
 2. Two pairs of corners that need to be swapped, correctly oriented (double swap or double
 2-cycle). This case can be solved, besides using the method that will soon be described,
 also by transforming the corner double swap in an edge double swap: remember that an
 H perm (M2 U M2 U2 M2 U M2) can be transformed in a corner permutation with only
 one move (U2). Another way it so use algorithms such as (R U R' U')*3 (“triple sexy”)
 or (R' F R F')*3 (“triple sledge”), that swap two corner pairs.
-30http://www.speedsolving.com/forum/threads/the-fmc-thread.13599/page-126#post-1009830
+[^2-4-4]: http://www.speedsolving.com/forum/threads/the-fmc-thread.13599/page-126#post-1009830
 2.4. INSERTIONS 27
 3. A “twisted double swap”.
 All these cases can be solved with two commutators: the first one has to solve one of the
@@ -1908,7 +1986,17 @@ A further comment on the solve. Notice that the commutator inserted earlier in t
 versa the second one in the solve was inserted earlier. That’s perfectly fine!
 Moreover, the two commutator cancel some move with one another.
 -->
-#### 2.4.5 Multiple Insertions: 5 Corners
+#### 2.4.5 複数インサーション: 5つのコーナー (Multiple Insertions: 5 Corners)
+5つのコーナーが残ったケースの中で、2回のコミューテータだけで揃えられるのはピースが5点交換になっている場合のみです。それ以外のケースでは、3回のコミューテータが必要です。ただし、5つのコーナーの配置は合っているがねじれているという場合には、4回必要となります。ここでは、3回以上のコミューテータが必要なケースについては触れず、最初のケースについてだけ見てみることにします。（3回のインサーションをやってみたいときもあるでしょうけれど）
+
+さて、こういうときに最も簡単でよく使われる手法は、**4つのコーナーのとき同様に、2段階で解くことです。**コーナーに1から5までの番号を振ったあと、スケルトンを最初から1手ずつ追いかけていき、3つのつながったコーナーの交換を揃えられるコミューテータがないかを探していくわけです。このサイクルは、たとえば次のようなパタンがあります。
+```
+1 → 2 → 3 → 1
+2 → 3 → 4 → 2
+3 → 4 → 5 → 3
+4 → 5 → 1 → 4
+5 → 1 → 2 → 5
+```
 <!--
 2.4.5 Multiple Insertions: 5 Corners
 Among all the cases with 5 corners left, the only one that requires 2 commutators is the one
@@ -1917,19 +2005,22 @@ where the pieces make a 5-cycle. All other cases require 3 commutators, except w
 more commutators (although in some cases you may want to go for 3 insertions) and only look
 at the first one.
 The easiest and probably the most used way to deal with this situation is a two-pass way,
-as for 4 corners. After having numbered the corners 1 to 5, you go through the skeleton move by
-31Always keep in mind that when talking about commutators there is a difference between “sticker” and “piece”.
-28 CHAPTER 2. HOW TO PROCEED DURING A SOLVE
-move and look for any commutator that solves a three consecutive corners cycle. These cycles
+as for 4 corners. After having numbered the corners 1 to 5, you go through the skeleton move by move and look for any commutator that solves a three consecutive corners cycle.These cycles
 are:
 1 → 2 → 3 → 1
 2 → 3 → 4 → 2
 3 → 4 → 5 → 3
 4 → 5 → 1 → 4
 5 → 1 → 2 → 5
-This will obviously take longer than looking for just one corner cycle. It is still enough
-to just look for “pure” commutators. Every time you find a good commutator write it down
-somewhere.
+-->
+当然、単にコーナーの交換をひとつだけ探すよりも時間がかかります。ここでも変わらず
+ピュアコミューテータを探すだけで十分です。いいコミューテータが見つかるたびに、どこかにメモしておきましょう。
+
+この1段階目が終わった時点で、見つかったコミューテータのなかから一番いいもの（一番多くキャンセルするもの）を選びましょう。次にそのコミューテータをインサートして、コーナーの3点交換だけが残った新しいスケルトンを得ます。ここからどうすればいいかはわかるでしょう。
+
+一番いいものは一つではないこともあります。たとえば、3手キャンセルするコミューテータを2つ見つけることもあるでしょう。では、どちらを選べばいいでしょうか？ 時間がないときには、適当に決めてしまいましょう。時間に余裕があるなら、両方のインサーションを試してみて、2つ目のコミューテータがよくなるものを選びましょう。
+<!--
+This will obviously take longer than looking for just one corner cycle. It is still enough to just look for “pure” commutators. Every time you find a good commutator write it down somewhere.
 Once you are done with this first pass, choose the best commutator you have found (the one
 cancelling the most moves)1. Insert that commutator; now you have a new skeleton that only
 leaves a corner 3-cycle: you know what to do.
@@ -1937,12 +2028,16 @@ The best choice may not be unique (for example, if you have found two different 
 canceling 3 moves). Which one should we choose? If you are short on time, just randomly choose
 any of them. If you have some time left, you can try both insertions and which one leads to the
 best second commutator.
+-->
+この手法を使うとき、**最適な解答が見けられたかどうか、確信も持つことはできないでしょう。**なので、安全を取って、1段階目で見つかった全てのコミューテータ（あるいはそのほとんど）をチェックして、2段階目をたくさん（ほとんど意味のないものも）試してみるといいでしょう。通常、これはとても時間の無駄になりますし、よい解答になることは滅多にありません。解答をもっとよくできるかどうかわからないときは、基準として
+**5つのコーナーの交換を10手か11手で揃えられれば満足できる結果だ、**ということを覚えておきましょう。
+
+<!--
 With this method you can’t be sure you have found the optimal solution: to be safer, you
 should check all (or at lest most) of the commutators you have found in the first pass and do
 many other (probably useless) passes. This usually leads to a huge waste of time and rarely to
 a better solution.
-If you don’t know whether you can improve your solution, keep in mind that 10 or 11 moves
-total are a good goal for a corner 5-cycle.
+If you don’t know whether you can improve your solution, keep in mind that 10 or 11 moves total are a good goal for a corner 5-cycle.
 There is also a faster, but slightly more complex, way that only requires one-pass. It is
 almost identical to the first pass of the two-pass way, but besides taking note of any commutator
 you have found, you should also write down which corner cycle it solves. At this point, without
@@ -1999,7 +2094,24 @@ an edge 5-cycle, it is a good idea to number the stickers and quickly go through
 if you can insert one of these algorithms. But don’t waste to much time looking for it.
 For more about edge insertions, see Section 4.2 about corner-first methods.
 -->
-#### 2.4.7 Other Insertions: 2 Corners and 2 Edges
+#### 2.4.7 その他のインサーション:2コーナー、2エッジ(Other Insertions: 2 Corners and 2 Edges)
+
+2つのコーナーと2つのエッジがそれぞれ交換するようなスケルトンになることがあるでしょう。(つまり、PLLのJ、T、Vなどです)
+
+このような場合、いくつかの**10手アルゴリズム**を知っておくと役立ちます。
+
+`Fw2 R D R’ Fw2 R D' R D R2 (J perm)`  
+`Rw' U Rw' U2 R B' R' U2 Rw2 B' (T-perm + corner twist)`
+{: .text-center}
+
+11手のものも多くあります。
+
+`R U2 R' U' R U2 L' U R' U' L (J perm)`  
+`R2 D B2 D' Fw2 D B2 D' Fw2 R2 U' (J perm)`  
+`R2 Uw R2 Uw' R2 F2 Uw' F2 Uw F2 U' (T perm)`  
+`R' U R U2 L' R' U R U' L U2 (J perm + corner twist)`
+{: .text-center}
+
 <!--
 2.4.7 Other Insertions: 2 Corners and 2 Edges
 Sometimes you may find a skeleton leaving 2 corners and 2 edges in a double swap (i.e.: a PLL
@@ -2012,6 +2124,13 @@ R U2 R' U' R U2 L' U R' U' L (J perm)
 R2 D B2 D' Fw2 D B2 D' Fw2 R2 U' (J perm)
 R2 Uw R2 Uw' R2 F2 Uw' F2 Uw F2 U' (T perm)
 R' U R U2 L' R' U R U' L U2 (J perm + corner twist)
+-->
+全てを載せたわけではありませんが、このアルゴリズムに加えて、この逆手順やシフトしたものでも2コーナー＋2エッジがそれぞれ交換されます。**このアルゴリズムの逆手順は全く同じように作用することがわかるでしょう。** つまり、このことを知っていれば新しいアルゴリズムを学ぶことなく、キャンセルする確率が二倍になるのです。あまり多くの手数をキャンセルすることは望めませんが、多くのアルゴリズムを知っていれば知っているほどよいでしょう。
+
+一つ例をあげましょう。次のソルブを見てください
+<!--訳者TODO ソルブボックスの挿入-->
+
+<!--
 Besides all of these algorithms (this is not a complete list anyway), also their inverses and
 “shifted” versions solve a 2 corners - 2 edges double swap.
 Note that the inverses of these algorithms solve exactly the same case. Just by
@@ -2029,11 +2148,17 @@ R' D' R D2 F U2 //Found using NISS (6/17)
 Solution: B' F D2 L' R2 B R B' R2 F R' B R F' R2 F2 D F' D2 F R' D' R D2
 F U2 (26)
 See on alg.cubing.net
+-->
+スケルトンの最後のところはNISSを使って見つけたものなので、ここまで読んだだけでは少し意味がわからないことでしょう。「`*`」と書かれた場所には、準最適なJperm `B' R2 B R B' R2 F R' B R F'` を挿入することができ、2手がキャンセルして1手になり、最終解答になります。
+<!--
 The end of the skeleton was found using NISS, so it will be a bit mysterious until you get
 to that section. Notice that in the same spot marked by * you can insert the sub-optimal Jperm B' R2 B R B' R2 F R' B R F', cancelling 2 moves instead of 1 and getting the same final
 result.
 -->
-#### 2.4.8 Other Insertions: 3 Edges and Some Corners
+#### 2.4.8 その他のインサーション:3エッジ、いくつかのコーナー(Other Insertions: 3 Edges and Some Corners)
+
+3つのエッジと、4つか5つ（あるいはもっと）のコーナーが残ったスケルトンが少ない手数（たとえば13手）でできることもあるでしょう。このときエッジ3-cycleのエッジをインサートして
+いくつかコーナー3-cycleを必要なだけインサートして解くこともできます。しかし、別のやり方もあります。**「セクシームーブ」（`R U R’ U’`）ではエッジの3-cycleと歪んだコーナーの2-cycleを2回繰り返すことになることがわかると思います。** この短いアルゴリズムやその派生をインサートすることで、エッジの3-cycleをとても効率的に解くことができるのです。もちろん、一回のインサーションでコーナーも完全に揃うのは、とてもラッキーときだけです。コーナーにこういった影響を与えて、4つか5つかよいコーナーが残るようにする、というのが望み得る最良のことになる場合が多いです。
 <!--
 2.4.8 Other Insertions: 3 Edges and Some Corners
 In some cases you can get short skeletons (say 13 moves) that leave a 3-cycle of edges and 4 or
@@ -2044,6 +2169,13 @@ and a skew doubl 2-cycle of corners. By inserting this short algorithm and its v
 can solve the edge 3-cycle in a very effcient way. Of course the case of also geting the corners
 completely solved with one insertion is a very lucky accident. Often the best you can hope for is
 to affect the corners in such a way that you are left with one of the “good” 4 or 5 corners cases.
+-->
+こういうとき役立つのは「セクシームーブ」だけではありません。ブロックコミューテータもよいツールです。speedsolving.comのこのポストの中で、Cale Schoonはこの類のインサーションについての実例を3つ挙げています。彼の解答はすべてNISSを使っていますが、スケルトンを作るまでのステップは無視して構いません。インサーションだけを見てください。
+
+もう一つのアプローチはreverse NISS(第3.3節も参照)です。これは、セクシームーブをインサートすることで何をしているのかを理解する助けになるでしょう。
+
+
+<!--
 The “sexy move” isn’t the only algorithm that can help in this cases: also block commutators
 are a very good tool. In this post33 on speedsolving.com Cale Schoon gives 3 different examples
 of this kind of insertion. All of his solutions use NISS, but you can ignore the intermediate steps
@@ -2051,7 +2183,15 @@ that produce the skeleton and just look at the insertions.
 Another approach to this reverse NISS (Section 3.3), which can help you understand what
 you are actually doing when you insert a sexy move.
 -->
-#### 2.4.9 Other Insertions: Conjugate and Solve
+#### 2.4.9 その他のインサーション: Conjugateをして揃える(Other Insertions: Conjugate and Solve)
+
+**訳注:**  
+**Conjugate**の適切な訳語が思いつかないので保留しています。別の箇所でも書きましたが、数学用語としては共役という意味があります。そのままコンジュゲートとカタカナで訳出してもよいかもしれません。インターチェンジもそのまま使われていますし。
+{: .notice--info}
+
+4つのエッジと4つのコーナーがあり、それぞれ4点交換されるときに、一つのインサーションだけで揃えることができる状況というものがあります。このケースは次のように揃えられます。
+
+揃っていない8つのピースをすべて同じ面に集めます(セットアップ)。これで集めた面での単一のムーブで4点交換ができます。そして、8つのピースを元の場所に戻します(逆セットアップ)。8つのピースが2点交換を4つ組み合わせたものであるときにも、このテクニックは使えます。そのときは、「インターチェンジ」は180度のもの、たとえば 'U2' などになります。もしピースの数が8つちょうどでなかったり、適切な交換ができない場合には、3.3節で説明するreverse NISSをまた使うことができます。
 <!--
 2.4.9 Other Insertions: Conjugate and Solve
 A particular situation you can solve with only one insertion is when you have 4 edges and 4
@@ -2062,9 +2202,14 @@ the 8 pieces back (anti-setup). The same technique works when the 8 pieces make 
 in total: in this case, the “interchange” will be a 180° one (for example U2). If the pieces are
 not exactly 8, or do not form the right cycles, you can again use reverse NISS after the setup
 moves, as explained in Section 3.3.
+-->
+実例を見てみましょう。
+<!--訳者TODO:ソルブボックス追加-->
+
+<!--
 Let’s see an example.
 33https://www.speedsolving.com/forum/threads/the-fmc-thread.13599/page-214#post-1247800
-2.4. INSERTIONS 31
+
 Conjugate and Solve - Example
 Scramble: R2 L2 D2 F2 D' R2 U' B2 D' F2 U2 F' D2 L' F U B F2 U2 F2 L
 U2 F B' L2 D2 //Two 2x2x1s (5/5)
@@ -2076,8 +2221,24 @@ $ 2. = L' D L U L' D' L U' //3 corners (5/30)
 Solution: U2 F B' L2 D2 F' U F2 L' B2 L F2 L' B' L' D L B' D L U L' D'
 L U2 R F2 R' L2 B (30)
 See on alg.cubing.net
-As you can see, the insertion in question doesn’t actually solve both the 4 cycles and the
-corners are completed with “normal” insertions. However, as suggested by Mirek Goljan, we
+-->
+見てわかるように、この場合のインサーションは、4点交換を揃えているわけではなく、「通常の」インサーションでコーナーが完成しています。ところが、Mirek Goljanがここで提案しているのは、たった一回のインサーションで全てを揃えられるということなのです。そのためには、同じスケルトンの`*`部分に次の手順をインサートします。
+
+`(B D R2 B R'B2 D U2 F') U (F U2 D' B2 R B' R2 D' B')`
+{: .text-center}
+
+この長いインサーションでも同じ結果(30手)になります。
+
+同じようなLast layerのアルゴリズムもいくつかあります。その一つは次のようなものです。
+
+`(R B2 R2 U2 R) B (R' U2 R2 B2 R')`
+{: .text-center}
+
+その他のアルゴリズムはこちらを参照してください。
+<!--訳者TODO:脚注とリンクの挿入-->
+
+<!--
+As you can see, the insertion in question doesn’t actually solve both the 4 cycles and the corners are completed with “normal” insertions. However, as suggested by Mirek Goljan, we
 could have solved everything with only one insertion, as explained above. To do so, insert in
 the same skeleton, at *:
 (B D R2 B R'B2 D U2 F') U (F U2 D' B2 R B' R2 D' B')
@@ -2087,7 +2248,8 @@ There are also some Last Layer algorithms that work in this way. One of them is:
 and you can find some more here34
 .
 -->
-#### 2.4.10 Move Count (an Estimate)
+#### 2.4.10 手数カウント(見積もり) (Move Count (an Estimate))
+ここでは、普通のインサーションにおいてどのくらいの手数がかかるのか、見積もってみましょう。数学的に証明したわけではないヒューリスティックな見積もりですし、手数は次のようなことによって決まることを覚えておいてください。
 <!--
 2.4.10 Move Count (an Estimate)
 Here I will give an estimate of how many moves are usually needed for the most common types
@@ -2117,7 +2279,10 @@ Corner 5-cycle 10/11
 http://www.speedsolving.com/forum/threads/the-fmc-thread.13599/page-42#post-614593
 32 CHAPTER 2. HOW TO PROCEED DURING A SOLVE
 -->
-#### 2.4.11 Insertion Finder
+#### 2.4.11 インサーションファインダー (Insertion Finder)
+Baiqiang Dongによって開発された**Insertion Finder**[^2-4-11]は、インサーションを探して解答の中で何かを見逃していなかったかを確認するために役立つツールです。スケルトンを与えると、最大で4つのインサーションを探すことができます。
+
+特に、3コーナーや3エッジなどの簡単なケースで役に立ちます。複雑なものについては、人間には発見不可能(あるいはとても困難)な解答を見つけることがありますから、利用は自己責任で！
 <!--
 2.4.11 Insertion Finder
 Insertion Finder37, developed by Baiqiang Dong, is a useful tool to find insertions and check if
@@ -2125,8 +2290,11 @@ you have failed to see something in your solutions: it finds up to 4 insertions 
 It is especially useful for easy cases (3 corners or 3 edges) but in complex situation it may
 find solution that are not possible (or very difficult) to find for humans: use it responsibly!
 -->
-### 2.5 Other Simple Stragies
-#### 2.5.1 Go Back and Change Your Sove
+### 2.5 その他の簡単な戦略(Other Simple Stragies)
+#### 2.5.1 戻ってやり直そう(Go Back and Change Your Sove)
+**よいスタートを切ったあとで詰まってしまったら、「そこまでのソルブを一手ずつ見ていく」ということをしてみましょう。** まだ揃えていないピースしかない面が、少なくとも1面、出てくるのを探しながらやってみましょう。見つかったら、その面を動かしてみましょう(すでに揃えたブロックは崩れません)。可能性は3種類(`U`、`U2`、`U´`など)あります。こうすると、元々のものよりほんの少し(1手)だけ長くなって、3通りのスタートが得られるでしょう。次へのつながりがよくなるなら、たった1手は安いものです！
+
+自由に動かせる面が2つ見つかったなら、もちろん両方使ってみても構いません。追加するムーブはランダムなものでよいですし、そうしなくてもよいです。新しいペアができたり、EOがもっとよくなるのなら、それで十分です。しかし、何手か追加してもすぐにわからず、しばらく進んでいってようやく何が起こったかわかることもあるでしょう。
 <!--
 2.5 Other Simple Stragies
 2.5.1 Go Back and Change Your Sove
@@ -2141,7 +2309,14 @@ The moves can, but don’t have to, be random: if you can see a pair forming or 
 better with some moves, good for you, but sometimes you might as well try random moves and
 see what happens later.
 -->
-#### 2.5.2 Get Lucky!
+#### 2.5.2 幸運を手に入れろ！ (Get Lucky!)
+当たり前ですが、幸運は学べるスキルではありません。しかし、FMCにおいては**そうすべきなのです。** もし手数が同じであれば、LLスキップで終わる「単純な」ソルブは、複雑でアンラッキーなものと同じくらい価値があります。可能な限りたくさんの代替案を試してみるのがよい、というのはこのためです。10回や20回だけやってみるよりも、100回やったほうがスキップする確率は高くなります。
+
+**訳注：**  
+LLスキップを引き当てる幸運値はトレーニングできませんが、**LLのアルゴリズムやサブステップをたくさん知っている人ほど、その確率を高くすることができます。**開眼3x3x3のスキルはFMCには直接影響しないと言われますが、速い人はそもそもたくさんのアルゴリズムを知っていて、制限時間内に何度も試行錯誤をすることができるので、有利かもしれません。他の競技を学ぶことでFMCに生きてくることがある、というのは面白いですね。たとえば、原著者であるSebastiano Trontoは**目隠し競技の達人(3x3x3目隠し、4x4x4目隠し、5x5x5目隠しのイタリアNRホルダー)でもあります。**
+{: .notice--info}
+
+
 <!--
 2.5.2 Get Lucky!
 Obviously, luck is not a skill to be learned, but remember that in FMC you have to go for
@@ -3156,6 +3331,10 @@ R2 F2 L D' F' D F L' F2 R2
 [^2-4-1-6]: `B2 U' F' U B2 U' F U`もある。
 [^2-4-1-7]: コーナーの2-cycleが2つあるなら、インサーションを2回繰り返して揃えてもよいです。あとの節を参照してください。
 [^2-4-2]: これは別の何らかの方法で揃える必要があります。もう一回インサーションをする、など。
+[^2-4-2-2]: 私はコーナーには番号を振って、エッジには文字を振るのが好みです。こうすれば取り間違えることがありません。
+[^2-4-4]: [http://www.speedsolving.com/forum/threads/the-fmc-thread.13599/page-126#post-1009830](http://www.speedsolving.com/forum/threads/the-fmc-thread.13599/page-126#post-1009830)
+[^2-4-4-2]: コミューテータについて話すときには、「ピース」と「ステッカー」は違うものであることに気をつけましょう。
+[^2-4-11]: insertion finder
 [^5-1-1]: タイムマネジメントについては6.3節で話します。
 [^5-1-2]: [https://www.ocf.berkeley.edu/˜dadams/fmc/](https://www.ocf.berkeley.edu/˜dadams/fmc/)
 [^5-1-3]: [https://speedcube.de/forum/showthread.php?tid=5795](https://speedcube.de/forum/showthread.php?tid=5795)
