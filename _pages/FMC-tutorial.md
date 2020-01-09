@@ -1065,9 +1065,9 @@ See on alg.cubing.net
 **一つのムーブで二つのブロックを作ることができる場合は多くあります。**一般的には「二つのことを同時にやる」ことができます。実例を見ることでよりはっきりとわかるでしょう。
 {% capture display_text %}
 L U' F2 D' //2x2x2 (4/4)
-U2 B R2 B //Pseudo F2L-1 (4/8)
-F' * U F R U2 R' //Pseudo F2L (6/14)
-U2 R2 //All but 3 corners (2/16)
+U2 B R2 B //疑似F2L-1 (4/8)
+F' * U F R U2 R' //疑似F2L (6/14)
+U2 R2 //3コーナー以外完成 (2/16)
 * = B' U F2 U' B U F2 U' //Last 3 corners (3/19)
 {% endcapture %}
 {% include solvebox.html
@@ -1640,7 +1640,7 @@ a way to solve a corners 3-cycle almost certainly with fewer than 8 moves: inser
 B' U' D L' F' //EO + blocks
 D2 L2 D' L //疑似 2x2x3
 U2 R2 U' R' //疑似 2x2x1
-U L' U R' U' L U2 R' L' //3コーナー以外
+U L' U R' U' L U2 R' L' //3コーナー以外完成
 {% endcapture %}
 {% include solvebox.html
 title = "単純コーナーインサーション - Example (スケルトン)"
@@ -1796,7 +1796,7 @@ moves after (or before) that one.
 B' R' * F2 U F2 //2x2x1 (5/5)
 R //もう一つ2x2x1 (1/6)
 F R U2 F R B R + B' R //F2L-1 + pair (9/15)
-D' B' L B L' //3エッジ3コーナー残す(5/20)
+D' B' L B L' //3エッジ3コーナー以外完成 (5/20)
 * = U B U' F2 U B' U' F2 //3コーナー, 4手キャンセル(4/24)
 + = R B' F D' B' D B F' R' B //3エッジ, 5手キャンセル(5/29)
 {% endcapture %}
@@ -1921,7 +1921,7 @@ F D' + U2 * R //EO
 D' F' L2 //疑似 2x2x2
 F2 D F2 //疑似 F2L-2
 B' D B //疑似 F2L-1
-F' D' F' L2 //4コーナーだけ残しす
+F' D' F' L2 //4コーナー以外完成
 * = U R D' R' U' R D R' //1つ目のコミューテータ
 + = L' U' R' U L U' R U //2つ目のコミューテータ
 {% endcapture %}
@@ -2253,7 +2253,7 @@ moves, as explained in Section 3.3.
 
 {% capture display_text %}
 U2 F B' L2 D2 //2つの2x2x1ブロック (5/5)
-F' * R F2 R' L2 B //4エッジと4コーナー残す (6/11)
+F' * R F2 R' L2 B //4エッジと4コーナー以外完成 (6/11)
 * = U + L' B L' D L B' L $ U' //4 エッジ (9/20)
 + = F2 L' B2 L F2 L' B2 L //3 コーナー (5/25)
 $ = L' D L U L' D' L U' //3 コーナー (5/30)
