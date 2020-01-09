@@ -2338,15 +2338,15 @@ and you can find some more here34
 
 参考になる数字を出しておきます。[^2-4-10]
 
-|Type of insertion|Moves|
-|:---------------:|:---:|
-|Corner 3-cycle|5/6|
-|Edge 3-cycle36|7|
-|2 Twisted Corners (2 comms)|8|
-|3 Twisted Corners (2 comms)|9|
-|4 Corners (2 comms)|10|
-|Corner 5-cycle|10/11|
-|2 Corners and 2 Edges (double 2-cycle)|10|
+|          インサーションの種類           | 手数  |
+| :-------------------------------------: | :---: |
+|             コーナー3-cycle             |  5/6  |
+|              エッジ3-cycle              |   7   |
+| 2つのねじれたコーナー (2コミューテータ) |   8   |
+| 3つのねじれたコーナー (2コミューテータ) |   9   |
+|       4コーナー(2コミューテータ)        |  10   |
+|             コーナー5-cycle             | 10/11 |
+|     2コーナー、2エッジ(2cycleを2回)     |  10   |
 
 
 <!--
@@ -2379,9 +2379,18 @@ http://www.speedsolving.com/forum/threads/the-fmc-thread.13599/page-42#post-6145
 32 CHAPTER 2. HOW TO PROCEED DURING A SOLVE
 -->
 #### 2.4.11 インサーションファインダー (Insertion Finder)
-Baiqiang Dongによって開発された**Insertion Finder**[^2-4-11]は、インサーションを探して解答の中で何かを見逃していなかったかを確認するために役立つツールです。スケルトンを与えると、最大で4つのインサーションを探すことができます。
+Baiqiang Dongによって開発された**[Insertion Finder](https://fewestmov.es/if)**[^2-4-11]は、インサーションを探して解答の中で何かを見逃していなかったかを確認するために役立つツールです。スケルトンを与えると、最大で4つのインサーションを探すことができます。
 
 特に、3コーナーや3エッジなどの簡単なケースで役に立ちます。複雑なものについては、人間には発見不可能(あるいはとても困難)な解答を見つけることがありますから、利用は自己責任で！
+
+**訳注：**  
+インサーションファインダーを使うと、自分が見つけられなかったインサーションを見つけることができるので、自分のFMCのソルブを振り返るときに使うといいでしょう。下記に出力される画面の例を下記の追加します。インサーションに使われる記号はなぜか絵文字なのでかわいく見えます。
+{: .notice--info}
+
+![Insertion Finder](../assets/img/if.png){:width="auto" height="200px" class="align-center img-thumbnail"}
+インサーションファインダーの出力画面例
+{: .text-center}
+
 <!--
 2.4.11 Insertion Finder
 Insertion Finder37, developed by Baiqiang Dong, is a useful tool to find insertions and check if
@@ -2424,7 +2433,56 @@ they have the same length. This is one of the reasons why you need to try as man
 alternatives as you can: you are more likely to get a skip if you try 100 solutions than if you try
 10 or 20.
 -->
-#### 2.5.3 First Example: Insert Last Pair(s)
+#### 2.5.3 一つ目の例: 最後のペアをインサート(First Example: Insert Last Pair(s))
+
+F2L-1が完成したあと、最後のペアをインサートすることでF2Lが終わります。これは、幸運が振ってこない限り、あまりよいやり方ではありません。幸運を引き当てるチャンスを高めるには、**考えうる全ての方法で最後のペアをインサートしましょう。**
+
+たとえば、最後のペアが既にできているとすれば、少なくとも3つの違う方法でインサートすることができます。`U R U' R'`、`U2 R U2 R'`、そして `R' F R F'`です。VHF2LやZBF2Lのアルゴリズムをいくつか知っていれば、スキップを引くチャンスを高めるのに役立つでしょう。しかし、単に暗記するよりも、どういう仕組みでうまくいくかを学ぶとよいでしょう。
+
+ペアをインサートする別の方法の例として、次のソルブを考えてみましょう。（このスクランブルはGerman Forum Competitionのもので、premovesを使わないようにしたものです）
+
+{% capture display_text %}
+U2 F' U' //2x2x2
+B' D B //2つのエッジの向き合わせ
+D2 L D2 B2 //2x2x3 + 6 ペア
+B' //ペアを一つ保存 (F2L on R)
+L F L' F' //別のペアをインサート
+B D L' D' //保存しておいたペアをインサート
+U' L2 U L U' L U L' //Last Layer
+{% endcapture %}
+{% include solvebox.html
+title = "Insert Last Pairs - Example"
+scramble = "D' R' U' F U2 F2 L2 D' B2 F2 D' L R' D F' U' R' B' R2 F D U' B' R' U' F"
+text = display_text
+solution = "U2 F' U' B' D B D2 L D2 B L F L' F' B D L' D' U' L2 U L U' L U L'(27)"
+img_src="../assets/img/alg-253.png"
+algcubing = "https://alg.cubing.net/?setup=D-_R-_U-_F_U2_F2_L2_D-_B2_F2_D-_L_R-_D_F-_U-_R-_B-_R2_F_D_U-_B-_R-_U-_F&alg=U2_F-_U-_%2F%2F2x2x2%0AB-_D_B_%2F%2FOrient_two_edges%0AD2_L_D2_B2_%2F%2F2x2x3_%26%232b%3B_6_pairs%0AB-_%2F%2FSave_one_pair_(for_F2L_on_R)%0AL_F_L-_F-_%2F%2FInsert_other_pair%0AB_D_L-_D-_%2F%2FInsert_saved_pair%0AU-_L2_U_L_U-_L_U_L-_%2F%2FLast_Layer"
+%}
+
+このとき、最後のペアのインサートをどうやって選んだかというと、最後にPLLスキップをしたからです。ところが、実はもっとよいインサート方法があって、Cube Explorer (PCのソフトウェア)見つけたものがこちらです。
+
+**訳注:**  
+元々の解答の27手でも十分すごいのですが、ペアの保存方法と最後のインサート方法を変えることで、20手の解答ができました。上記に示すように、`U R U' R'`、`U2 R U2 R'`、`R' F R F'`といった手順を順番に試してみるだけでも価値はあります。
+{: .notice--info}
+
+{% capture display_text %}
+U2 F' U' //2x2x2
+B' D B //2つのエッジの向き合わせ
+D2 L D2 B2 //2x2x3 + 6 ペア
+B' U' //ペアを一つ保存  (F2L on R)
+L F L' F' //別のペアをインサート
+L U L B //保存しておいたペアをインサートして、スキップ！
+{% endcapture %}
+{% include solvebox.html
+title = "Insert Last Pairs - Example"
+scramble = "D' R' U' F U2 F2 L2 D' B2 F2 D' L R' D F' U' R' B' R2 F D U' B' R' U' F"
+text = display_text
+solution = "U2 F' U' B' D B D2 L D2 B U' L F L' F' L U L B (20)"
+img_src="../assets/img/alg-253.png"
+algcubing = "https://alg.cubing.net/?setup=D-_R-_U-_F_U2_F2_L2_D-_B2_F2_D-_L_R-_D_F-_U-_R-_B-_R2_F_D_U-_B-_R-_U-_F&alg=U2_F-_U-_%2F%2F2x2x2%0AB-_D_B_%2F%2FOrient_two_edges%0AD2_L_D2_B2_%2F%2F2x2x3_%26%232b%3B_6_pairs%0AB-_U-%2F%2FSave_one_pair_(for_F2L_on_R)%0AL_F_L-_F-_%2F%2FInsert_other_pair%0AL_U_L_B_%2F%2FInsert_saved_pair_and_skip"
+%}
+
+
 <!--
 2.5.3 First Example: Insert Last Pair(s)
 After completing an F2L-1, you can finish the F2L by inserting the last pair. This isn’t usually a
@@ -2463,7 +2521,12 @@ L U L B //Insert saved pair and skip
 Solution: U2 F' U' B' D B D2 L D2 B U' L F L' F' L U L B
 See on alg.cubing.net
 -->
-#### 2.5.4 Second Example: How to Use Algorithms
+#### 2.5.4 二つ目の例: アルゴリズムの使い方(Second Example: How to Use Algorithms)
+まず最初に対称なアルゴリズムを識別できるようにしておきましょう（もっと正確にいえば、対称なケース）。つまり`F R U R' U' F'`で揃うOLLはSプレーンについて対称なので、同じケースは`B' R' U' R B U`でも揃います。もし使いたいのであれば、対称なケースも使えるようにして、スキップ（あるいはよいケース）のチャンスを二倍にしましょう。このトリックがうまくいくのは、二つのアルゴリズムは同じOLLケースを揃えるためのものであって、ピースの交換に異なった影響を与えるものだからです。しかし、CLLについては少し違います。同じCLLケースを揃えるアルゴリズムがあって、コーナーが揃わないなら、ほかのアルゴリズムを使ってもコーナーは揃いません。
+
+極端な例を見てみましょう。`R U2 R' U' R U R' U' R U' R'`で揃うOLLを考えます。これと左右対称の`L' U2 L U L' U' L U L' U L`を使うことで、同じケースを4つの向きから揃えることができます。（ほかの2つは逆手順です）このアルゴリズムは、「2-gen」のLast layerアルゴリズムに当てはまることですが、コーナーの相対的な位置関係には影響しません。
+
+次に、学んだときの目的に従ってアルゴリズムを使う必要はありません。`F R U R' U' F'`について考えると、おそらくOLLのひとつとして知っていることでしょう。ところが、コーナーを無視してこれを使うこともできます。すると、F2L完了時点で2つの悪いエッジ（bad edge）が残っているときに、このアルゴリズムを4つの向きから使うことでスキップするか（あるいは簡単なケースになるか）どうかを試すことができます。
 <!--
 First of all, you need to be able to recognize symmetries in algorithms (more precisely, in
 cases): the OLL that is solved by F R U R' U' F' is symmetrical about the S plane, so the
@@ -3437,7 +3500,7 @@ R2 F2 L D' F' D F L' F2 R2
 [^2-4-9]:[https://www.speedsolving.com/forum/threads/the-fmc-thread.13599/page-214#post-1247800](https://www.speedsolving.com/forum/threads/the-fmc-thread.13599/page-214#post-1247800)
 [^2-4-9-2]: [https://www.speedsolving.com/threads/the-fmc-thread.13599/page-28#post-488378](https://www.speedsolving.com/threads/the-fmc-thread.13599/page-28#post-488378)
 [^2-4-10]: ほとんどの例はこの投稿からです。 [http://www.speedsolving.com/forum/threads/the-fmc-thread.13599/page-42#post-614593](http://www.speedsolving.com/forum/threads/the-fmc-thread.13599/page-42#post-614593)。一部、私の個人的な意見を加えて調整しています。
-[^2-4-11]: insertion finder
+[^2-4-11]: [https://fewestmov.es/if](https://fewestmov.es/if)
 [^5-1-1]: タイムマネジメントについては6.3節で話します。
 [^5-1-2]: [https://www.ocf.berkeley.edu/˜dadams/fmc/](https://www.ocf.berkeley.edu/˜dadams/fmc/)
 [^5-1-3]: [https://speedcube.de/forum/showthread.php?tid=5795](https://speedcube.de/forum/showthread.php?tid=5795)
