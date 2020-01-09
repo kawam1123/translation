@@ -1986,7 +1986,8 @@ A further comment on the solve. Notice that the commutator inserted earlier in t
 versa the second one in the solve was inserted earlier. That’s perfectly fine!
 Moreover, the two commutator cancel some move with one another.
 -->
-#### 2.4.5 Multiple Insertions: 5 Corners
+#### 2.4.5 複数インサーション: 5つのコーナー (Multiple Insertions: 5 Corners)
+
 <!--
 2.4.5 Multiple Insertions: 5 Corners
 Among all the cases with 5 corners left, the only one that requires 2 commutators is the one
@@ -2132,7 +2133,7 @@ Solution: B' F D2 L' R2 B R B' R2 F R' B R F' R2 F2 D F' D2 F R' D' R D2
 F U2 (26)
 See on alg.cubing.net
 -->
-スケルトンの最後のところはNISSを使って見つけたものなので、ここまで読んだだけでは少し意味がわからないことでしょう。「*」と書かれた場所には、準最適なJperm `B' R2 B R B' R2 F R' B R F'` を挿入することができ、2手がキャンセルして1手になり、最終解答になります。
+スケルトンの最後のところはNISSを使って見つけたものなので、ここまで読んだだけでは少し意味がわからないことでしょう。「`*`」と書かれた場所には、準最適なJperm `B' R2 B R B' R2 F R' B R F'` を挿入することができ、2手がキャンセルして1手になり、最終解答になります。
 <!--
 The end of the skeleton was found using NISS, so it will be a bit mysterious until you get
 to that section. Notice that in the same spot marked by * you can insert the sub-optimal Jperm B' R2 B R B' R2 F R' B R F', cancelling 2 moves instead of 1 and getting the same final
@@ -2263,7 +2264,7 @@ http://www.speedsolving.com/forum/threads/the-fmc-thread.13599/page-42#post-6145
 32 CHAPTER 2. HOW TO PROCEED DURING A SOLVE
 -->
 #### 2.4.11 インサーションファインダー (Insertion Finder)
-Baiqiang Dongによって開発された**Insertion Finder**は、インサーションを探して解答の中で何かを見逃していなかったかを確認するために役立つツールです。スケルトンを与えると、最大で4つのインサーションを探すことができます。
+Baiqiang Dongによって開発された**Insertion Finder**[^2-4-11]は、インサーションを探して解答の中で何かを見逃していなかったかを確認するために役立つツールです。スケルトンを与えると、最大で4つのインサーションを探すことができます。
 
 特に、3コーナーや3エッジなどの簡単なケースで役に立ちます。複雑なものについては、人間には発見不可能(あるいはとても困難)な解答を見つけることがありますから、利用は自己責任で！
 <!--
@@ -2275,7 +2276,9 @@ find solution that are not possible (or very difficult) to find for humans: use 
 -->
 ### 2.5 その他の簡単な戦略(Other Simple Stragies)
 #### 2.5.1 戻ってやり直そう(Go Back and Change Your Sove)
-**よいスタートを切ったあとで詰まってしまったら、「そこまでのソルブを一手ずつ見ていく」ということをしてみましょう。** まだ揃えていないピースしかない面が、少なくとも1面、出てくるのを探しながらやってみましょう。見つかったら、その面を動かしてみましょう(すでに揃えたブロックは崩れません)。可能性は3種類(`U`、`U2`、`U´`など)あります。こうすると、元々のものよりほんの少し(1手)だけ長くなるでしょう。
+**よいスタートを切ったあとで詰まってしまったら、「そこまでのソルブを一手ずつ見ていく」ということをしてみましょう。** まだ揃えていないピースしかない面が、少なくとも1面、出てくるのを探しながらやってみましょう。見つかったら、その面を動かしてみましょう(すでに揃えたブロックは崩れません)。可能性は3種類(`U`、`U2`、`U´`など)あります。こうすると、元々のものよりほんの少し(1手)だけ長くなって、3通りのスタートが得られるでしょう。次へのつながりがよくなるなら、たった1手は安いものです！
+
+自由に動かせる面が2つ見つかったなら、もちろん両方使ってみても構いません。追加するムーブはランダムなものでよいですし、そうしなくてもよいです。新しいペアができたり、EOがもっとよくなるのなら、それで十分です。しかし、何手か追加してもすぐにわからず、しばらく進んでいってようやく何が起こったかわかることもあるでしょう。
 <!--
 2.5 Other Simple Stragies
 2.5.1 Go Back and Change Your Sove
@@ -2290,7 +2293,12 @@ The moves can, but don’t have to, be random: if you can see a pair forming or 
 better with some moves, good for you, but sometimes you might as well try random moves and
 see what happens later.
 -->
-#### 2.5.2 Get Lucky!
+#### 2.5.2 幸運を手に入れろ！ (Get Lucky!)
+当たり前ですが、幸運は学べるスキルではありません。しかし、FMCにおいては**そうすべきなのです。** もし手数が同じであれば、LLスキップで終わる「単純な」ソルブは、複雑でアンラッキーなものと同じくらい価値があります。可能な限りたくさんの代替案を試してみるのがよい、というのはこのためです。10回や20回だけやってみるよりも、100回やったほうがスキップする確率は高くなります。
+
+
+
+
 <!--
 2.5.2 Get Lucky!
 Obviously, luck is not a skill to be learned, but remember that in FMC you have to go for
@@ -3307,6 +3315,7 @@ R2 F2 L D' F' D F L' F2 R2
 [^2-4-2]: これは別の何らかの方法で揃える必要があります。もう一回インサーションをする、など。
 [^2-4-2-2]: 私はコーナーには番号を振って、エッジには文字を振るのが好みです。こうすれば取り間違えることがありません。
 [^2-4-4]: [http://www.speedsolving.com/forum/threads/the-fmc-thread.13599/page-126#post-1009830](http://www.speedsolving.com/forum/threads/the-fmc-thread.13599/page-126#post-1009830)
+[^2-4-11]: insertion finder
 [^5-1-1]: タイムマネジメントについては6.3節で話します。
 [^5-1-2]: [https://www.ocf.berkeley.edu/˜dadams/fmc/](https://www.ocf.berkeley.edu/˜dadams/fmc/)
 [^5-1-3]: [https://speedcube.de/forum/showthread.php?tid=5795](https://speedcube.de/forum/showthread.php?tid=5795)
