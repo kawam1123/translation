@@ -1794,18 +1794,21 @@ moves after (or before) that one.
 <!--訳者TODO:ソルブボックスの修正-->
 
 {% capture display_text %}
-B' U' D L' F' //EO + blocks
-D2 L2 D' L //疑似 2x2x3
-U2 R2 U' R' //疑似 2x2x1
-U L' U R' U' L U2 R' L' //3コーナー以外
+B' R' * F2 U F2 //2x2x1 (5/5)
+R //もう一つ2x2x1 (1/6)
+F R U2 F R B R + B' R //F2L-1 + pair (9/15)
+D' B' L B L' //3エッジ3コーナー残す(5/20)
+* = U B U' F2 U B' U' F2 //3コーナー, 4手キャンセル(4/24)
++ = R B' F D' B' D B F' R' B //3エッジ, 5手キャンセル(5/29)
 {% endcapture %}
 {% include solvebox.html
-title = "単純コーナーインサーション - Example (スケルトン)"
-scramble = "D B2 U' F2 L2 D2 R2 U F2 U2 L2 R' D2 B L' U' R2 F2 R B F2"
+title = "別々の交換をインサートする - Example"
+scramble = "B2 D' R2 D' F2 R2 D B2 U' L2 D2 R' U' R L' D' F D2 B R U2 R'"
 text = display_text
-solution = "alg.cubing.net"
-img_src="../assets/img/alg-241.png"
-algcubing = "https://alg.cubing.net/?setup=D_B2_U-_F2_L2_D2_R2_U_F2_U2_L2_R-_D2_B_L-_U-_R2_F2_R_B_F2&alg=B-_U-_D_L-_F-_%2F%2FEO_%26%232b%3B_blocks%0AD2_L2_D-_L_%2F%2FPseudo1_2x2x3%0AU2_R2_U-_R-_%2F%2FPseudo_2x2x1%0AU_L-_U_R-_U-_L_U2_R-_L-_%2F%2FAll_but_3_corners"
+solution = "B' R' U B U' F2 U B' F2 R F R U2 F R B R2 B' F D' B' D B F' D'
+B' L B L' (29)"
+img_src="../assets/img/alg-242.png"
+algcubing = ""
 %}
 
 2つ以上ある別々の交換が必要なケースについても、全く同じアプローチをすることができますが、もっと複雑になるでしょう。
@@ -1855,7 +1858,14 @@ complicated.
 #### 2.4.3 複数インサーション: 2つあるいは3つのねじれコーナー(Multiple Insertions: 2 or 3 Twisted Corners)
 
 2つのねじれたコーナーが残ったとき、どこかで`[F L' D2 L F', U2]`(12手) というコミューテータを試してみるといいでしょう。3つある場合は、`U' B U' F U2 B2 D' R2 U D F' U' B`(13
-手)も使えます。しかし、特に2つ目については最良ではないことが多いです。2つあるいは3つのねじれはコーナーを揃える古典的手法は、コーナーコミューテータを2回インサートすることです。
+手)も使えます。しかし、特に2つ目については最良ではないことが多いです。2つあるいは3つのねじれはコーナーを揃える古典的手法は、**コーナーコミューテータを2回インサートすることです。** 1回目のコミューテータでは、3つのねじれたコーナー（あるいは2つのねじれたコーナーと、それ以外のコーナー）を交換するだけで十分です、通常、多くのキャンセルが見込めます。そこから先は、新しくできたスケルトンに単純なコーナーコミューテータをインサートすればよいだけです。
+
+こうするためには、ねじれたコーナーに「X」などの記号を描いておけばよいだけです。上に書いたような、「純粋に反転させる（pure flip）」アルゴリズムを使いたい場合は、矢印を描いておいて、どの方向（時計回り、反時計回り）に回転させるべきなのかわかるようにしておくといいでしょう。
+
+1つめの交換が見つかったら、描いた記号を消して（単純なインサーションを探すのと同じように）1、2、3と番号を書きましょう。
+
+2つのエッジがねじれているときにも同じことができますが、おすすめしません。エッジコミューテータはもっと手数がかかることが多いからです。
+
 <!--
 2.4.3 Multiple Insertions: 2 or 3 Twisted Corners
 When you need to twist 2 corners, you can try to insert the commutator [F L' D2 L F', U2]
