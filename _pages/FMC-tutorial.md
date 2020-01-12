@@ -2615,9 +2615,11 @@ F D' F' D //All but 3 corners (4/18)
 Solution: D' F D F' R2 F R2 F' R2 B' D' B' U2 B D' B' U2 B2 D F2 L2 F U' R (24)
 See on alg.cubing.net
 -->
+
 この解答を追いかけるには、まず逆スクランブルを回してから、解答のステップに入りましょう。画像は「ノーマルスクランブル」のものです。逆スクランブルのものではないので、逆スクランブルしても一致しません。最後に、逆スクランブルに対する`R' U F' L2 F2 D' B2 U2 B D B' U2 B D B R2 F R2 F' R2 F D' F' D`という解答が見つかりました。これを逆手順にしたものが上記の最終解答です。
 
 よくある間違いとして、通常のスクランブルと逆スクランブルはまったく関係がないという考えがありますが、実はこの二つはよく似ています。たとえば、ZZを使うなら、二つのスクランブルを見て同じ数の悪いエッジ(bad edge)があるけれど違う場所にあることがわかるでしょう。また、どちらか一方で見つけたブロックはもう一方にもあって、色の組み合わせや場所が違っていることもわかるでしょう。
+
 <!--
 To follow the solution, apply the inverse scramble first, and then the solution steps. The
 picture represents the “normal” scramble, not the inverse one, so your scrambled cube shouldn’t
