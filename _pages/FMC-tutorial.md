@@ -2565,6 +2565,7 @@ corners: if you complete the F2L and are left with 2 bad edges, you can try this
 34 CHAPTER 2. HOW TO PROCEED DURING A SOLVE
 -->
 ## 第３章　高度なツール (Advanced Tools)
+ここまでの章では、よい解答を見つけるために必要な基本的なテクニックを見てきました。この章では、もっと高度なツールを紹介します。必須ではありませんが、探索に行き詰まったときの助けになります。
 <!--
 Chapter 3
 Advanced Tools
@@ -2572,7 +2573,11 @@ In the previous chapter we have looked at the basic techniques, needed to find a
 In this one more advanced tool will be provided. They are not necessary, but they help getting
 unstuck and give you more possibilities to explore.
 -->
-### 3.1 Inverse Scramble
+### 3.1 逆スクランブル(Inverse Scramble)
+
+いいスタートが見つからない時は、逆スクランブル(Inverse scramble)を試してみましょう。逆スクランブルで解答を見つけたら、それを逆手順にすることで通常のスクランブルに対する解答になります。複雑そうに見えますが、実はとてもシンプルです。
+
+Tim Reynoldsの北アメリカ記録から例を挙げましょう。
 <!--
 3.1 Inverse Scramble
 If you can’t find any good start, you can try with inverse scramble: if you find a solution for the
@@ -2591,6 +2596,11 @@ F D' F' D //All but 3 corners (4/18)
 * = B' U2 B D B' U2 B D' //Last 3 corners (6/24)
 Solution: D' F D F' R2 F R2 F' R2 B' D' B' U2 B D' B' U2 B2 D F2 L2 F U' R (24)
 See on alg.cubing.net
+-->
+この解答を追いかけるには、まず逆スクランブルを回してから、解答のステップに入りましょう。画像は「ノーマルスクランブル」のものです。逆スクランブルのものではないので、逆スクランブルしても一致しません。最後に、逆スクランブルに対する`R' U F' L2 F2 D' B2 U2 B D B' U2 B D B R2 F R2 F' R2 F D' F' D`という解答が見つかりました。これを逆手順にしたものが上記の最終解答です。
+
+よくある間違いとして、通常のスクランブルと逆スクランブルはまったく関係がないという考えがあります。しかし、実際はこの二つはよく似ています。たとえば、ZZを使うなら、二つのスクランブルを見て同じ数の悪いエッジ(bad edge)があるけれど違う場所にあることがわかるでしょう。また、どちらか一方で見つけたブロックはもう一方にもあって、色の組み合わせや場所が違っていることもわかるでしょう。
+<!--
 To follow the solution, apply the inverse scramble first, and then the solution steps. The
 picture represents the “normal” scramble, not the inverse one, so your scrambled cube shouldn’t
 match it. In the end you find the solution
@@ -2599,7 +2609,12 @@ for the inverse scramble, that inverted gives the actual solution written above.
 It is a common mistake to think that normal and inverse scramble are complete unrelated.
 They are actually very similar: for example, if you use ZZ, you will notice that, for any orientation, the two scrambles have the same number of “bad” edges, but in different positions. You
 will also notice that any block found in one of the two is also in the other one, but sometimes
-it is somewhere else and made of pieces of different colors. The general rule is this:
+it is somewhere else and made of pieces of different colors.
+
+-->
+一般則は次の通りです。
+<!--
+ The general rule is this:
 1
 I prefer repeating myself: the inverse sequence of, for example, F R U' is U R' F', not F' R' U or U' R F!
 35
