@@ -2676,6 +2676,20 @@ This whole Section 3.2 is better read all at the same time, since the three tech
 are deeply related.
 -->
 #### 3.2.1 疑似ブロック (Pseudo Blocks)
+**疑似ブロック**を使った例はこれまでにもいくつか見てきました。この概念をもっとわかりやすくするために、次のスクランブルを詳しく見てみましょう
+
+スクランブル: `F' L2 F2 U2 R2 B R2 F' R2 D2 U2 L' U' B' U R U L2 F2 L'`
+
+`R2 F`すれば2x2x1ブロックができます。2、3手で2x2x2ブロックに拡張できればいいですが、`L' U B' D`とさらに4手かかるのはちょっと多すぎます。ところが、`L2 D'`とやってみましょう。つまり、合わせて`R2 F L2 D'`と回すと次のようになります。
+
+<!-- 訳者TODO 画像入れる -->
+キューブのDFLコーナーを見てみましょう
+{: .text-center}
+
+ここでできているのは本物の2x2x2ブロックではなく疑似2x2x2ブロックです。このときのD面を一時的に`D2`だけズレた状態であると考えて、すべてが完成したあとで`D2`するものだと考えてみることができます。たとえば、このまま（非効率的ですが）CFOPでソルブを進めてみましょう。
+
+
+
 <!--
 3.2.1 Pseudo Blocks
 We have already met some examples of pseudo blocks. To make the concept more clear, lets
@@ -2691,6 +2705,19 @@ for example, 3x2x1s, 2x2x1s and corner/edge pairs.
 What you get is not an actual 2x2x2 block, but a pseudo 2x2x2 block. We can think of the
 D layer as it was temporarily off by a D2 move, that we can do at the end to solve everything
 back. For example, we can continue with a (inefficient) CFOP solve:
+-->
+`R2 F L2 D'` //Pseudo 2x2x2  
+`B' U2 R' U2 R2 U R` //Cross and second pair  
+`U2 F' U F U' F' U' F` //Third pair  
+`L U2 L'` //Fourth pair  
+`B L' B' U' B U L U' B'` //OLL  
+`F2 D' L2 D F2 R2 D B2 D' R2` //PLL  
+`D2` //Undo premove  
+
+このケースであれば、`D2`はOLLの前やOLLとPLLの間にやってしまっても構いませんが、F2Lのステップが終わっていないなら最後にやらなければなりません。
+
+
+<!--
 R2 F L2 D' //Pseudo 2x2x2
 B' U2 R' U2 R2 U R //Cross and second pair
 U2 F' U F U' F' U' F //Third pair
