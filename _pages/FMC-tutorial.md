@@ -2728,7 +2728,29 @@ D2 //Undo premove
 In this case the D2 move could have been done before the OLL, or between OLL and PLL,
 but if you don’t finish the F2L as an intermediate step you have to do it at the end.
 -->
-#### 3.2.2 Premoves
+#### 3.2.2 プリムーブ (Premoves)
+前の節で示した状況はそこまで難しいものではありませんが、「疑似性 (pseudoness)」を考え
+たまま、ソルブを進めるのは難しいでしょう。**F2Lのペアの認識はすぐにはできませんし、F2Lがズレた状態でのOLLやPLLを認識することを考えると、通常はとんでもないことになります。**たとえば、`R`だけズレたものを考えてみましょう！
+
+疑似ブロックを作ったまま進めるとよいと言う人もいるでしょうが、全てを簡単にしてしまうワザがあります。**全て揃った最後にやるべきムーブ（ここでは`D2`）をスクランブルの前にやるだけでよいのです。**（なので、この手法は**「プリムーブ」**と呼ばれます）さあ、やってみましょう！
+
+{% capture display_text %}
+R2 F L2 D' //2x2x2
+B' U2 R' U2 R2 U R //Cross and second pair
+U2 F' U F U' F' U' F //Third pair
+L U2 L' //Fourth pair
+B L' B' U' B U L U' B' //OLL
+F2 D' L2 D F2 R2 D B2 D' R2 //PLL
+{% endcapture %}
+{% include solvebox.html
+title = "プリムーブで修正したスクランブル Example"
+scramble = "D2 F' L2 F2 U2 R2 B R2 F' R2 D2 U2 L' U' B' U R U L2 F2 L'"
+text = display_text
+solution = ""
+img_src="../assets/img/alg-322.png"
+algcubing = ""
+%}
+
 <!--
 3.2.2 Premoves
 The situation of the previous example is not particularly difficult, but the “pseudoness” makes
@@ -2745,6 +2767,30 @@ L U2 L' //Fourth pair
 B L' B' U' B U L U' B' //OLL
 F2 D' L2 D F2 R2 D B2 D' R2 //PLL
 See on alg.cubing.net
+-->
+このような解答を見つけたときには、プリムーブを解答の最後に付け加えることで元のスクランブルに対する解答になると覚えておきましょう。一つ前の節で見たものはこうして得られたものです。複数手のプリムーブをやることもできます。例として次のソルブを見てみましょう。これは私の最初の公式ソルブで、元イタリア記録のものです。スクランブルする前にプリムーブを入れるのを忘れないようにしてください。
+
+
+{% capture display_text %}
+Premoves: D2 B2
+R2 B' R2 B //2x2x2, found premove B2 here
+D L2 F D F2 //2x2x3
+L' D F' D2 F D' //F2L-1, found premove D2 here
+L' D * L' F L' F' D' L' //All but 3 corners
+* = B L' F L B' L' F' L //Last 3 corners
+{% endcapture %}
+{% include solvebox.html
+title = "プリムーブで修正したスクランブル Example"
+scramble = "U L' F' L2 F' D2 F'B' U' R2 U L' F2 U' F2 L2 U2 F2 L2 U2"
+text = display_text
+solution = "R2 B' R2 B D L2 F D F2 L' D F' D2 F D' L' D B L' F L B' L2 F' D'
+L' D2 B2 (28)"
+img_src="../assets/img/alg-3222.png"
+algcubing = ""
+%}
+
+
+<!--
 Once you have found such a solution, remember that the premove (or premoves, if there is
 more than one) has to be added at the end of the solution, to solve the original scramble. In
 this way we get back the final solution of the previous sub-section.
