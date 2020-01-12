@@ -2575,7 +2575,7 @@ unstuck and give you more possibilities to explore.
 -->
 ### 3.1 逆スクランブル(Inverse Scramble)
 
-いいスタートが見つからない時は、逆スクランブル(Inverse scramble)を試してみましょう。逆スクランブルで解答を見つけたら、それを逆手順にすることで通常のスクランブルに対する解答になります。複雑そうに見えますが、実はとてもシンプルです。
+**いいスタートが見つからない時は、逆スクランブル(Inverse scramble)を試してみましょう。**逆スクランブルで解答を見つけたら、それを逆手順にすることで通常のスクランブルに対する解答になります。複雑そうに見えますが、実はとてもシンプルです。
 
 Tim Reynoldsの北アメリカ記録から例を挙げましょう。
 
@@ -2632,8 +2632,11 @@ it is somewhere else and made of pieces of different colors.
 -->
 一般則は次の通りです。
 
-
+**通常のスクランブルでピース「X」がピース「Y」の場所にあるならば、逆スクランブルではピース「Y」はピース「X」の場所にある**
 {: .notice}
+
+すなわち、**揃ったピースと、場所はあっているがねじれているピースは、逆スクランブルにおいてもそれぞれ同じようになっています。ねじれたコーナーは逆方向にねじれます。**「固定された」ブロックは同様に残りますが「移動する」ブロックは違うピースに入れ替わり別の場所に行きます。
+
 
 <!--
  The general rule is this:
@@ -2645,8 +2648,15 @@ If in the normal scramble piece X is in the place of piece Y, in the inverse
 scramble piece Y is in the place of piece X.
 Therefore, solved and flipped-in-place pieces will be respectively solved and flipped-in-place
 in the inverse scramble, with twisted corners twisted the other way round. “Fixed”2 blocks will
-stay the same, while “moving” blocks will be made of different pieces and placed somewhere
-else.
+stay the same, while “moving” blocks will be made of different pieces and placed somewhere else.
+-->
+
+公式／非公式の試技で、開始時に逆スクランブルをそのまま書いておく人もいますし、NISSなどを使うときに書く人もいます。こうしておくと、特に努力することなく、使いたいときいつでも逆スクランブルを使いやすくなります。ただし、最初に紙に書いて間違いがないかを確認しなければなりません。私はこうする代わりに、**通常のスクランブルを右から左に読みながら、頭の中でそれぞれの記号を逆にして逆スクランブルを使います。** 最初は難しいでしょうけれど、最終的には普通のスクランブルと同じくらい速くなりますし、ほとんど苦労しないでしょう。この手法を取るかはあなたの好み次第です。 
+
+そのままでも役立つテクニックですが、ソルブの最初で詰まったときや単にもっと多くの可能性を探索したいときに、ここで説明したアイディアは次の節で話すことの基礎になります。
+
+
+<!--
 During an official or unofficial attempt, some people write down the inverse scramble in full
 before starting the attempt, or when they decide to use it (or to use NISS). This way it’s easier
 to apply the inverse scramble any time you want without additional effort, but it takes to write
@@ -2658,13 +2668,14 @@ Besides being a technique useful as it is, in case you get stuck right at the be
 solve or simply to get more possibilities to explore, the ideas explained here are fundamental to
 the techniques introduced in the next paragraph.
 -->
-### 3.2 Pseudo Blocks, Premoves and NISS
+### 3.2 疑似ブロック、プリムーブ、NISS (Pseudo Blocks, Premoves and NISS)
+3.2節はまとめて同時に読むといいでしょう。ここで説明する3つのテクニックは密接な関連があります。
 <!--
 3.2 Pseudo Blocks, Premoves and NISS
 This whole Section 3.2 is better read all at the same time, since the three techniques explained
 are deeply related.
 -->
-#### 3.2.1 Pseudo Blocks
+#### 3.2.1 疑似ブロック (Pseudo Blocks)
 <!--
 3.2.1 Pseudo Blocks
 We have already met some examples of pseudo blocks. To make the concept more clear, lets
