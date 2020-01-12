@@ -2685,12 +2685,12 @@ are deeply related.
 `R2 F`すれば2x2x1ブロックができます。2、3手で2x2x2ブロックに拡張できればいいですが、`L' U B' D`とさらに4手かかるのはちょっと多すぎます。ところが、`L2 D'`とやってみましょう。つまり、合わせて`R2 F L2 D'`と回すと次のようになります。
 
 <!-- 訳者TODO 画像入れる -->
+
+![333fm](../assets/img/alg-321.jpg){:width="300px" height="auto" class="img-responsive align-center"}
 キューブのDFLコーナーを見てみましょう
 {: .text-center}
 
 ここでできているのは本物の2x2x2ブロックではなく疑似2x2x2ブロックです。このときのD面を一時的に`D2`だけズレた状態であると考えて、すべてが完成したあとで`D2`するものだと考えてみることができます。たとえば、このまま（非効率的ですが）CFOPでソルブを進めてみましょう。
-
-
 
 <!--
 3.2.1 Pseudo Blocks
@@ -2770,8 +2770,8 @@ B L' B' U' B U L U' B' //OLL
 F2 D' L2 D F2 R2 D B2 D' R2 //PLL
 See on alg.cubing.net
 -->
-このような解答を見つけたときには、プリムーブを解答の最後に付け加えることで元のスクランブルに対する解答になると覚えておきましょう。一つ前の節で見たものはこうして得られたものです。複数手のプリムーブをやることもできます。例として次のソルブを見てみましょう。これは私の最初の公式ソルブで、元イタリア記録のものです。スクランブルする前にプリムーブを入れるのを忘れないようにしてください。
 
+このような解答を見つけたときには、プリムーブを解答の最後に付け加えることで元のスクランブルに対する解答になると覚えておきましょう。一つ前の節で見たものはこうして得られたものです。複数手のプリムーブをやることもできます。例として次のソルブを見てみましょう。これは私の最初の公式ソルブで、元イタリア記録のものです。スクランブルする前にプリムーブを入れるのを忘れないようにしてください。
 
 {% capture display_text %}
 Premoves: D2 B2
@@ -2791,7 +2791,6 @@ img_src="../assets/img/alg-3222.png"
 algcubing = ""
 %}
 
-
 <!--
 Once you have found such a solution, remember that the premove (or premoves, if there is
 more than one) has to be added at the end of the solution, to solve the original scramble. In
@@ -2810,10 +2809,31 @@ L' D * L' F L' F' D' L' //All but 3 corners
 Solution: R2 B' R2 B D L2 F D F2 L' D F' D2 F D' L' D B L' F L B' L2 F' D'
 L' D2 B2 (28)
 See on alg.cubing.net
-38 CHAPTER 3. ADVANCED TOOLS
 -->
 #### 3.2.3 NISS
-<!--
+前の節の最後の例では、2つのプリムーブを、2つの違う時点で見つけました。2つ以上のプリムーブが必要な疑似ブロックを見つけるのは少し難しいです。たとえば次のスクランブルを見てみましょう。
+
+`F' L2 F2 U2 R2 B R2 F' R2 D2 U2 L' U' B' U R U L2 F2 L'`
+{: .text-center}
+
+<!--TODO 画像入れる -->
+
+同じように2x2x1ブロックから始めてみましょう(`R2 F'`)。ここに`D F'`というプリムーブを加えることで2x2x2ブロックができることに気づくのは、たとえ熟練者でも難しいでしょう。加えると次のようになります。
+
+`D F' F' L2 F2 U2 R2 B R2 F' R2 D2 U2 L' U' B' U R U L2 F2 L'`  
+ここに`R2 F'`をして2x2x2ができる
+{: .text-center}
+
+<!--TODO 画像入れる -->
+
+**しかし、NISS (Normal-Inverse Scramble Switch)を知っていれば、こういったプリムーブを見つけることはそう難しくありません。** このテクニックは2009年にRazoux Schultzによって最初に考案されました。ここ説明する概要は、Tomoaki Okayamaによる素晴らしい投稿によるものです。[^3-2-3] 
+
+最も重要な事実は、次の点です。
+
+**スクランブルと解答は、単一のムーブのループ配列として考えることができ、これはキューブの状態にまったく影響しない。**
+{; .notice}
+
+<!--/
 3.2.3 NISS
 In the last example, I have found the two premoves in two different moments. It is a little harder
 to recognize pseudo blocks that require more than one premove: with our scramble
@@ -2829,6 +2849,20 @@ outline here is taken form this excellent post3 by Tomoaki Okayama. The most imp
 is the following:
 The scramble and the solution can be thought of as a single move sequence
 loop, that doesn’t affect the cube in any way.
+-->
+たとえば、抽象化して、`A B C D`をスクランブル、`p q r s`をそれに対する解答と考えてみましょう。`A B C D p q r s `という配列で、キューブは完成状態に戻る。ここで、同じように、「ズラした」配列を考えてみると、どれもキューブの状態に影響しないことがわかります。
+
+`s (A B C D p q r s) s’` = `s A B C D p q r`  
+`r s (A B C D p q r s) s' r'` = `r s A B C D`  
+`q r s (A B C D p q r s) s' r' q'` = `q r s A B C D`  
+`p q r s (A B C D p q r s) s' r' q' p'` = `p q r s A B C D`  
+`D p q r s (A B C D p q r s) s' r' q' p' D'` = `D p q r s A B C`  
+. . .
+{: .text-center}
+
+もちろん、逆手順にしてもキューブの状態に影響しません
+
+<!--
 For example, let abstractly A B C D be a scramble and p q r s a solution for it. The
 sequence A B C D p q r s brings the cube back to it solved state. In the same way, every
 “shifted” version of this sequence:
@@ -2839,6 +2873,16 @@ p q r s (A B C D p q r s) s' r' q' p' = p q r s A B C D
 D p q r s (A B C D p q r s) s' r' q' p' D' = D p q r s A B C
 . . .
 doesn’t affect the cube. Inverse sequences don’t affect the cube either, obviously.
+-->
+`D2`を使う最初のプリムーブの例では、このループは次のようになっていました。
+
+(Scramble) `R2 F L2 D'` (Other moves) `D2`
+{: .text-center}
+
+言い換えれば、ここでの「`R2 F L2 D'` (Other moves) `D2`」をスクランブルに対する解答と見なすことができるわけです。つまり、「`R2 F L2 D'` (Other moves)」を「`D2` (Scramble)」に対する解答と見なすこともできます。[^3-2-3-2]
+
+プリムーブの仕組みを理解するにはこれで十分だと思います。このことを知っていれば、**通常のスクランブルに対する部分解答と逆スクランブルに対する部分解答を見つけることができるのです。** どういうことでしょうか？同じスクランブルで同じように`R2 F`から考えてみましょう。この時点で、(W)を何らかの手順と考えると、解答は`R2 F (W)`となることがわかります。ここでのループ配列は次のようになります。
+<!--
 In our first example with premove D2, the loop would have been:
 (Scramble) R2 F L2 D' (Other moves) D2
 And preforming D2 at the beginning only means taking one of the shifted variations:
@@ -2853,6 +2897,23 @@ look like R2 F (W), where (W) stays for some sequence of moves. Our loop sequenc
 https://www.speedsolving.com/forum/threads/the-fmc-thread.13599/page-52#post-667292
 4You can also see the scramble as a solution to the solution!
 3.2. PSEUDO BLOCKS, PREMOVES AND NISS 39
+-->
+
+`(スクランブル) R2 F (W)`
+{: .text-center}
+
+前にも言ったように、これの逆手順は「同一」のループです。（逆スクランブルを使って解答を探すのと同じです）
+
+`(W)' F' R2 (逆スクランブル)`
+{: .text-center}
+
+なので、`(W)' F' R2`を`(逆スクランブル)`に対するに解答、またたとえば`(W)'`を`F' R2 (逆スクランブル)`に対する解答と考えることができます。このように、次の一般則を導くことができます。
+
+通常スクランブルで見つけた手順の逆手順を、逆スクランブルに対するプリムーブとして使うことができる
+{: .notice}
+
+仮に、逆スクランブルに対して`(K)`という解答を見つけたとしましょう。
+<!--
 (Scramble) R2 F (W)
 As we said before, the inverse of this is also an “identity” loop (It is equivalent to finding a
 solution using the inverse scramble):
