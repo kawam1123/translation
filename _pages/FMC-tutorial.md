@@ -2578,6 +2578,24 @@ unstuck and give you more possibilities to explore.
 いいスタートが見つからない時は、逆スクランブル(Inverse scramble)を試してみましょう。逆スクランブルで解答を見つけたら、それを逆手順にすることで通常のスクランブルに対する解答になります。複雑そうに見えますが、実はとてもシンプルです。
 
 Tim Reynoldsの北アメリカ記録から例を挙げましょう。
+
+{% capture display_text %}
+逆スクランブルで
+R' U F' L2 //2x2x2 (4/4)
+F2 D' B' * D2 B //2x2x3 (5/9)
+R2 F R2 F' R2 //F2L-1 (5/14)
+F D' F' D //3コーナー以外完成 (4/18)
+* = B' U2 B D B' U2 B D' //最後3コーナー (6/24)
+{% endcapture %}
+{% include solvebox.html
+title = "逆スクランブル - Example"
+scramble = "D2 L2 B R2 U2 F' L2 U2 B2 L2 F' D L2 B U L' U2 L' F' R'"
+text = display_text
+solution = "D' F D F' R2 F R2 F' R2 B' D' B' U2 B D' B' U2 B2 D F2 L2 F U' R (24)"
+img_src="../assets/img/alg-310.png"
+algcubing = ""
+%}
+
 <!--
 3.1 Inverse Scramble
 If you can’t find any good start, you can try with inverse scramble: if you find a solution for the
@@ -2599,7 +2617,7 @@ See on alg.cubing.net
 -->
 この解答を追いかけるには、まず逆スクランブルを回してから、解答のステップに入りましょう。画像は「ノーマルスクランブル」のものです。逆スクランブルのものではないので、逆スクランブルしても一致しません。最後に、逆スクランブルに対する`R' U F' L2 F2 D' B2 U2 B D B' U2 B D B R2 F R2 F' R2 F D' F' D`という解答が見つかりました。これを逆手順にしたものが上記の最終解答です。
 
-よくある間違いとして、通常のスクランブルと逆スクランブルはまったく関係がないという考えがあります。しかし、実際はこの二つはよく似ています。たとえば、ZZを使うなら、二つのスクランブルを見て同じ数の悪いエッジ(bad edge)があるけれど違う場所にあることがわかるでしょう。また、どちらか一方で見つけたブロックはもう一方にもあって、色の組み合わせや場所が違っていることもわかるでしょう。
+よくある間違いとして、通常のスクランブルと逆スクランブルはまったく関係がないという考えがありますが、実はこの二つはよく似ています。たとえば、ZZを使うなら、二つのスクランブルを見て同じ数の悪いエッジ(bad edge)があるけれど違う場所にあることがわかるでしょう。また、どちらか一方で見つけたブロックはもう一方にもあって、色の組み合わせや場所が違っていることもわかるでしょう。
 <!--
 To follow the solution, apply the inverse scramble first, and then the solution steps. The
 picture represents the “normal” scramble, not the inverse one, so your scrambled cube shouldn’t
@@ -2613,6 +2631,10 @@ it is somewhere else and made of pieces of different colors.
 
 -->
 一般則は次の通りです。
+
+
+{: .notice}
+
 <!--
  The general rule is this:
 1
