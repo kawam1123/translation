@@ -32,13 +32,13 @@ September 15, 2017
 Fewest Moves Tutorial - Solving a Rubik’s Cube with as few moves as possible  
 version 2  
 September 15, 2017  
-Original document (3rd edition): [Fewest Moves Tutorial](https://fmcsolves.cubing.net/fmc_tutorial_ENG.pdf)
-Original document (2nd edition): [Fewest Moves Tutorial](https://fmcsolves.cubing.net/fmc_tutorial_ENG_v2.pdf)
+Original document (3rd edition): [Fewest Moves Tutorial](https://fmcsolves.cubing.net/fmc_tutorial_ENG.pdf)  
+Original document (2nd edition): [Fewest Moves Tutorial](https://fmcsolves.cubing.net/fmc_tutorial_ENG_v2.pdf)  
 License under CC BY 4.0
 
 Japanese Translated by kawam1123  
-version 0.3
-January 15, 2020
+version 0.3  
+January 15, 2020  
 License under CC BY 4.0
 
 **免責事項：**  
