@@ -32,17 +32,24 @@ September 15, 2017
 Fewest Moves Tutorial - Solving a Rubik’s Cube with as few moves as possible  
 version 2  
 September 15, 2017  
-Original document: [Fewest Moves Tutorial](https://fmcsolves.cubing.net/fmc_tutorial_ENG.pdf)
+Original document (3rd edition): [Fewest Moves Tutorial](https://fmcsolves.cubing.net/fmc_tutorial_ENG.pdf)
+Original document (2nd edition): [Fewest Moves Tutorial](https://fmcsolves.cubing.net/fmc_tutorial_ENG_v2.pdf)
+License under CC BY 4.0
 
-Translated by kawam1123  
-version 0.2
-January 03, 2020
+Japanese Translated by kawam1123  
+version 0.3
+January 15, 2020
+License under CC BY 4.0
 
 **免責事項：**  
-本ドキュメントは、**2017年にSebastiano Tronto氏によって書かれたFewest Moves Tutorialを日本語に翻訳したものです。** 2019年12月、本チュートリアルを日本語に翻訳されたものが公開されていなかったため、翻訳プロジェクトをスタートしました。本記事の内容については、最少手数競技に関する知識や用語を確認しながら翻訳を進めていますが、翻訳者の技量不足により不正確である場合があります。あらかじめご了承ください。  
+本ドキュメントは、**2017年にSebastiano Tronto氏によって書かれたFewest Moves Tutorial(version2.0)を日本語に翻訳したものです。** 2019年12月、本チュートリアルを日本語に翻訳されたものが公開されていなかったため、翻訳プロジェクトをスタートしました。本記事の内容については、最少手数競技に関する知識や用語を確認しながら翻訳を進めていますが、翻訳者の技量不足により不正確である場合があります。あらかじめご了承ください。  
 また、すぐに最少手数競技のやりかたを覚えたいという方には、既に[WRCC](http://wrcc.main.jp/commentary_fmc/fmc/index)や[TRCC](http://trcc.sub.jp/solution/fmc/fmcindex.html)の素晴らしい解説記事がありますので、こちらもあわせてご参照ください。  
-This documantion is a Japanese translated edition of Fewest Moves Tutorial by Sebastiano Tronto. Since no translation in Japanese had been published at December 2019, I started a tranlation project for the tutorial. I am translating the document looking up the basic knowledges and the technical terms on FMC, but the translated content might be wrong by reason of my lack of translation and FMC skills. If you find any mistakes in the translation, please let me know!
+This documantion is a Japanese translated edition of Fewest Moves Tutorial (Second Edition) by Sebastiano Tronto. Since no translation in Japanese had been published at December 2019, I started a tranlation project for the tutorial. I am translating the document looking up the basic knowledges and the technical terms on FMC, but the translated content might be wrong by reason of my lack of translation and FMC skills. If you find any mistakes in the translation, please let me know!
 {: .notice--warning}
+
+**第3版の公開に際して**  
+2020/01/14に本チュートリアルの第3版が公開されました！この日本語版は、追って第3版の内容に沿って公開予定です。下記の内容は第2版によるものですので、ご注意ください。また、**原著者がGitHubにリポジトリを作成し、原文のLaTeXファイルや画像ファイルなどを公開しています。** 詳細は[こちら](https://github.com/sebastianotronto/fmctutorial)をご覧ください。
+{: .notice--success}
 
 **翻訳にあたっての謝辞：**  
 この素晴らしいチュートリアルを無料で公開してくれているSebastiano Tronto氏に最大限の感謝を申し上げます！  
