@@ -12,6 +12,6 @@ title: "About"
 
 |コンテンツ|進捗    |メモ       |更新日時|
 |:--------|:---------:|:---------|:---|
-|[FMC Tutorial 第三版](../FMC/FMC-Tutorial/v3)|10ージ/72ページ [10%くらい](#){: .btn .btn--large .btn-danger}||2020/04/20|
+|[FMC Tutorial 第三版](../FMC/FMC-Tutorial/v3/)|10ージ/72ページ [10%くらい](#){: .btn .btn--large .btn-danger}||2020/04/20|
 |[WCA Competition Tutorial](../competitor-tutorial)|[80%](#){: .btn .btn--large .btn-warning}|画像をまだ入れていない|2020/01/03|
 {: .table-responsive-md}

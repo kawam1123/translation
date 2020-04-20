@@ -5,6 +5,6 @@
 翻訳以外のコンテンツは、[GitHub Pagesのユーザーページ](https://kawam1123.github.io/)をご参照ください。
 
 ## コンテンツ
-- [FMC Tutorial by Sebastiano Tronto（第三版）](./FMC/FMC-Tutorial/v3)
+- [FMC Tutorial by Sebastiano Tronto（第三版）](./FMC/FMC-Tutorial/v3/)
 - [FMC Tutorial by Sebastiano Tronto（第二版）](./FMC/FMC-Tutorial.html)
 - [WCA大会チュートリアル(競技者向けチュートリアル)](./competitor-tutorial)
