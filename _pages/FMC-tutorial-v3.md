@@ -2549,6 +2549,7 @@ normal ZZ solve, for each of these you can build the F2L on 4 different sides. E
 like starting with EO, I suggest practicing some (color neutral!) ZZ to improve EO recognition.
 From here you have at continue in different ways.
 -->
+#### 2.5.1 EO + ブロックビルディング
 <!--
 2.5.1 EO + blockbuilding
 After having oriented all edges, the most common way to go on is blockbuilding. The pro is
@@ -3281,7 +3282,16 @@ Premoves: R' F' F' U2 R D R' D2 B2 R2
 F2L: F2 U R' U' F D2 F R
 LL: F D F2 R F R2 D R D2
 -->
-### 3.4 Useful Algorithms
+### 3.4 EO中のNISS利用 (Using NISS during EO)
+
+未着手
+{: .notice--danger}
+<!--新しく追加されたセクション
+-->
+### 3.5 Useful Algorithms
+
+未着手
+{: .notice--danger}
 <!--
 3.4 Useful Algorithms
 As you can see, in the last example solve I have used an OLL that is maybe not well known, that
@@ -3306,7 +3316,10 @@ R2 Uw R2 Uw' R2 y L2 Uw' L2 Uw L2 (U')
 It is just a useful F2L algorithm repeated twice.
 Besides just learning algorithms, you can also learn from the algorithms.
 -->
-### 3.5 Pair Analysis
+### 3.6 Pair Analysis
+
+未着手
+{: .notice--danger}
 <!--
 3.5 Pair Analysis
 This is a really obscure technique, based on intuition, not proven to actually give you some
@@ -3326,7 +3339,10 @@ as you can.
 There isn’t much documentation about this technique, especially for bad pairs. Guus Razoux Schultz did a good analysis for the first scramble7 of Twente Open 2012 in this post8 on
 speedsolving.com.
 -->
-### 3.6 Solving with Skew Centers
+### 3.7 Solving with Skew Centers
+
+未着手
+{: .notice--danger}
 <!--
 3.6 Solving with Skew Centers
 This technique is understood more naturally in the context of corners first solving, but can be
@@ -3388,165 +3404,26 @@ be canged with same method used the first time. If you are disciplined in writin
 partial solutions, you can get the first version of your solution and copy the last moves, but this
 is not my case, as I write stuff down on my sheets in a very chaotic way.
 -->
+### 3.8 Advanced edge insertions: free slices
+
+未着手
+{: .notice--danger}
+
+### 3.9 Corner First
+
+未着手
+{: .notice--danger}
+
+### 3.10 Replace and shorten
+
+未着手
+{: .notice--danger}
 
 ## 第４章　その他の手法 (Some Other Methods)
-<!--
-Chapter 4
-Some Other Methods
-The “standard” method is building a skeleton with blockbuilding and then solving the last few
-pieces with insertions. But there are some other approaches worth mentioning.
--->
-### 4.1 Starting With EO
-<!--
-4.1 Starting With EO
-Starting by orienting all edges, as you would do in a ZZ solve, is a possiblity to always keep
-in mind. Since the first version of this tutorial I have used it more and more in my solves, to
-the point that at the beginning of an attempt I always look for all possible EOs on normal and
-inverse scramble to see if they are worth a try: they often are. As mentioned in Section 2.1.7,
-there are many notable FMCers that often start with EO.
-Remember that there are 3 possible orientation with respect to which you can orient edges:
-with respect to F/B (reduce to <R, L, U, D>), to R/L and to U/D. If you procede with a
-normal ZZ solve, for each of these you can build the F2L on 4 different sides. Even if you
-don’t like starting with EO, I suggest practicing some (color neutral!) ZZ to improve the EO
-recognition.
-From here you have two ways to continue.
--->
-#### 4.1.1 EO + Blockbuilding
-<!--
-4.1.1 EO + Blockbuilding
-After having oriented all edges, the most common way to go on is blockbuilding. The pro is
-that we don’t have any “bad” edge, but this forces1 us not to use moves that break the EO, and
-this is a (relatively small) limit.
-Since you have usually more than one (nice) way to orient edges for a given orientation, you
-should also try to build as many pairs/blocks as you can during the EO step. As an alternative
-approach, you can pay attention to EO while you build the first block(s) (for example, a 2x2x2)
-and orient edges immediately after that.
-Here the solve that made Gregorz Luczyna the 2010 European Champion. Notice that he
-starts by rotating the cube to his preferred orientation. This makes it easier to spot blocks if
-you are not used to color neutrality, but I dislike this habit. See Section 6.1 for more about how
-to write down a solution.
-1Obviously, no one is forcing you to do anything, but orienting edges and then destroying what you have just
-done doesn’t look like a smart thing to do. You can also start with a partial EO if you wish.
-45
-46 CHAPTER 4. SOME OTHER METHODS
-EO first - Example 1
-Scramble: L D2 B' D2 B R' B' U B L B L2 B2 U2 F2 U R2 D' B2 D' B2
-x y2 L2 D F' //EO (3/3)
-R L2 D * //EOLine (3/6)
-R' U2 B2 R2 B2 //2x2x3 (5/11)
-L2 U' R' U L U' L' R U2 L' U' //All but 3 corners (11/22)
-* = D2 R' U' R D2 R' U R //3c (4/26)
-Solution: x y2 L2 D F' R L2 D' R' U' R D2 R' U' B2 R2 B2 L2 U' R' U L
-U' L' R U2 L' U' (26)
-See on alg.cubing.net
-Here’s another example: the first solve of Jo˜ao Pedro Batista Ribeiro Costa at World Championship 2015, part of his 25.67 winning Mean of 3.
-EO first - Example 2
-Scramble: L2 U' B2 L2 D' F2 L2 D U' L2 U2 B' R2 B' R B R' D' B' F2
-U2 R' U2 * R' //EO (4/4)
-B F2 U2 F //Pseudo 2x2x3 (4/8)
-(B L2) //2x2x3 (2/10)
-B2 U' B2 U' B2 U' B2 U' B' U //All but 3 corners (10/20)
-* = U R' D2 R U' R' D2 R //3c (6/26)
-Solution: U2 R' U' R' D2 R U' R' D2 B F2 U2 F B2 U' B2 U' B2 U' B2 U' B'
-U L2 B' (26)
-See on alg.cubing.net
--->
-#### 4.1.2 Domino Reduction (and HTA)
-<!--
-4.1.2 Domino Reduction (and HTA)
-Edge orientation can be considered, modulo rotations, a reduction to the subgroup generated
-by the moves <R, L, U, D> or, equivalentely, <R, L, U, D, F2, B2>. In other words, by
-orienting edges you reduce the cube to a case that can be solved using only the moves R, L,
-U, D, F2 and B2. Another step in this direction leads to reducing the cube to the subgroup
-generated by <U, D, R2, L2, F2, B2>; to do so you have to:
-• Place E layer edges on the E layer;
-• orient corners.
-This reduction is also called “Domino”, because it makes a Rubik’s Cube solvable as a
-3x3x2 “cube” (also called “Domino Cube”). Moreover, these are the first two steps of Human
-Thistlethwaite Algorithm (HTA), a modified version of Thistlethwaite Algorithm. If you are
-interested in this method for FMC, I suggest this tutorial2
-.
-Here is an example solve by Per Kristen Fredlund.
-2
-https://www.speedsolving.com/forum/threads/guide-human-thistlethwaite-algorithm-for-fewest-moves-hta-for-fmc.
-31704/
-4.2. CORNERS FIRST 47
-EO first - Example 2
-Scramble: R2 F2 L2 D' R' U' R D' F B R U B2 L2 D2 F2 L2 D B2
-R' B U' D F //EO (5/5)
-L' F2 L //Domino reduction (3/8)
-D2 L2 F2 D F2 D L2 U' R2 D2 R2 //Finish (11/19)
-Solution: R' B U' D F L' F2 L D2 L2 F2 D F2 D L2 U' R2 D2 R2 (19)
-See on alg.cubing.net
-One last consideration: in the examples above there are two nice and short EO steps. But
-this doesn’t mean you shoul discard a longer EO, if you can build a lot of blocks while doing it!
--->
-### 4.2 Corners First
-<!--
-4.2 Corners First
-“Corners First” (sometimes shortened to CF) is not really a method, but a class of methods
-that, as the name says, solve the corners first, and then the edges. Roux can be considered a
-CF method.
-Among the ones who have figured out how to solve the cube on their own, many had a
-corners first approach:3 Thinking separately about corners and edges makes it somehow easier
-to solve the cube intuitively. Moreover, by solving the corners first you can solve edges more
-freely: inner layers can be moved without affecting corners.
-But this is also a disadvantage in FMC: inner layer moves count as two moves! Despite
-this, there at least two expert FMCer that use this technique: Attila Horv´ath and Javier
-Cabezuelo S´anchez, Spanish national record holder. Both agree that Corner First methods
-are excellent for FMC, but not very suitable for the one hour time limit. In fact, many of Javier’s
-official results are DNF.
-Attila Horv´ath mostly solves corners using a method similar to Guimond (orient first).
-Centers are not cared about in this step. For this step he sometimes uses premoves or NISS.
-After this, he goes through the solution he has found and modifies it slightly, inserting inner
-layer moves, to get at least 2 or 3 edges solved. At the end he solves the edges left, in no specific
-order. He sometimes doesn’t solve the centers until the end, and solves them with an insertion,
-as discussed in Section 3.6. To learn more about his method, I suggest reading his posts or
-asking him directly on the speedsolving.com forum4
-. He is usually very happy to teach others
-about his techniques.
-Here is a commented solve by Attila.
-Scramble: U L U' R' F' L' U D R L' B2 D B' D L2 D' R2 U F2 D
-3For example, Valery Morozov, who has made a tutorial to learn his method, available here: https://www.
-speedsolving.com/forum/threads/a-unique-phase-method-for-a-rubiks-cube.44264/.
-4Here is his profile: https://www.speedsolving.com/forum/members/attila.10652/.
-48 CHAPTER 4. SOME OTHER METHODS
-Solution: B2 D R' B' D2 U2 F L D' U' R' U2 R' B F2 D2 L2 U' D R U' R' L B2 (24)
-Explanation:
-First I need a short corners-solution, usually I try something with premoves, if the scramble seems too hard. In this case I found this premoves for normal scramble: D B.
-Corners solution:
-B2 D' B' D2 B (Guimond first step: orient corners)
-B2 D' R2 F2 (Solve all corners)
-Corners solve, without premoves:
-B2 D' B' D2 B' D' R2 F2 D B
-Corners solve for inverse scramble: (inverse of previous solve)
-B' D' F2 R2 D B D2 B D B2
-A variation of the previous solve, to get more edges solved:
-B2 M b d' M' F2 R2 d2 D' b d2 B corners -2 moves and 5 edges solve,
-Then I write this, without centers move:
-B2 L' R U R' D' U L2 D2 F2 B' R U2 R
-The second move (M) does not change the first five edges position, but it must be inserted
-to get the lucky ending.
-The next step is obvious, solve more 3 edges:
-U D setup moves, L' F' U2 D2 B R 3 edges algo, then a lucky E slice skip, due to the
-previous M move.
-Since the first version of this tutorial, Attila has gradually changed his method. He still
-orient corners first, but rather solving them completely and then taking care of edges, he reduces
-somehow to a domino solve. Se for example this post5
-.
-Javier Cabezuelo S´anchez solves the corners in a different way: first layer corners first, then
-the other. He then tries to solve the edges inserting moves (or algorithms) in the solution he
-has found. He doesn’t use techniques such as inverse scramble, premoves or NISS. Differently
-from Attila, he cares about centers while solving corners. See also this post6
-.
-Both Attila and Javier only use their CF method, which breaks the “never restrict yourself”
-rule; but they still get excellent results.
-5
-https://www.speedsolving.com/forum/threads/the-3x3x3-example-solve-thread.14345/page-280#
-post-1234805
-6
-https://www.speedsolving.com/forum/threads/the-fmc-thread.13599/page-111#post-945295
--->
+
+未着手
+{: .notice--danger}
+
 ## 第５章　練習方法 (How To Practice)
 多くの人は、上達するためには「練習と、練習と、練習が必要です！」と言うでしょう。これは真ですが、練習のやり方を知る必要もあります。ここでは、FMCで上達するための練習方法についていくつかアドバイスをします。
 <!--
