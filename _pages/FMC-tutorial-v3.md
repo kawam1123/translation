@@ -1997,18 +1997,18 @@ better 4 Corners case. About this situation, there is a nice discussion on speed
 
 1. **1つのコーナーの場所はあっているがねじれている。**他の3つのコーナーは「ねじれた3点交換」になっている。つまり、向きを考えずに位置だけを考えた3点交換。
 1. **2つのコーナーのペアが違いに入れ替わっており、向きが合っている。**（2回のスワップ、あるいは回の2点交換）  
-後で話をするやり方でも解けますし、コーナーの2回スワップをエッジの2回スワップに組み替えることでも解けます。たとえば、H perm (`M2 U M2 U2 M2 U M2`)に1手（`U2`)加えることで、コーナーの位置合わせに変えられることがわかるでしょう。`(R U R' U') x 3` (トリプルセクシー)や`(R' F R F') x 3`(トリプルスレッジ)のようなアルゴリズムでも2つのコーナーペアをスワップできます。
+後で話をするやり方でも解けますし、コーナーの2回スワップをエッジの2回スワップに組み替えることでも解けます。たとえば、H perm (`M2 U M2 U2 M2 U M2`)に1手（`U2`)加えることで、コーナーの位置合わせに変えられることがわかるでしょう。`(R U R' U') x 3` (トリプルセクシー)や`(R' F R F') x 3`(トリプルスレッジ)、`(R2 U' Rw2 U F2) x 2`のようなアルゴリズムでも2つのコーナーペアをスワップできます。
 1. **ねじれたコーナーの2回スワップ**
 
 これらのケースは全て**2回のコミュテータで揃えらえます。** 1回目で4つのコーナーのうち1つを揃えて、他の3つのコーナーに適当な影響を与えましょう。そして、1回目のインサーションで新しいスケルトンができますから、2回目では残った3つのコーナーを揃えればいいのです。
 
-この1回目のインサーションについて、1つめのケース（場所はあっているがねじれている）ではもう一つ制限があり、**「場所は合っているけれどねじれている」コーナーを1回目のコミューテータに含めなければなりません。** 含めないと、2つあるいは3つのねじれたコーナーがある状態が残り、さらに2回インサートしなければならなくなります。
+この1回目のインサーションについて、1つめのケース（場所はあっているがねじれている）ではもう一つ制約があり、**「場所は合っているけれどねじれている」コーナーを1回目のコミューテータに含めなければなりません。** 含めないと、2つあるいは3つのねじれたコーナーがある状態が残り、さらに2回インサートしなければならなくなります。
 
 これを間違いなくやるために、私は次のようにコーナーに印をつけます。
 
-1. ねじれたコーナーに「X」と印をつけます。ねじれている向きは気にしません。そして、他の3つのコーナーに1から3までの番号を振ります。このとき、ねじれた交換なので、**1は2になり、2は3になりますが、3は1ではなく同じコーナーの別のステッカー[^2-4-4-2]になります。**これは大したことではなく、その別のステッカーに4と番号を振れば大丈夫です。
-1. 最初のコーナーのペアにXと印をつけて、次のコーナーのペアにAと印をつける。
-1. ねじれた3点交換には4つの番号を振る必要があり、ねじれた2点交換には3つの番号を振る必要があるので、2点交換には1から3までの番号を、それ以外にはAからCを振る。
+1. **ねじれた3点交換 + ねじれたコーナー x 1** : ねじれたコーナーに「X」と印をつけます。ねじれている向きは気にしません。そして、他の3つのコーナーに1から3までの番号を振ります。このとき、ねじれた交換なので、**1は2になり、2は3になりますが、3は1ではなく同じコーナーの別のステッカー[^2-4-4-2]になります。**これは大したことではなく、その別のステッカーに4と番号を振れば大丈夫です。
+1. **ダブルスワップ** : 最初のコーナーのペアにXと印をつけて、次のコーナーのペアにAと印をつける。
+1. **ねじれたダブルスワップ** : ねじれた3点交換には4つの番号を振る必要があり、ねじれた2点交換には3つの番号を振る必要があるので、2点交換には1から3までの番号を、それ以外にはAからCを振る。
 
 たとえば、1つ目のケースでは、可能な「最初のサイクル」は**Xを3に、3を4に、4をXに、**というものがあります。1->2->3->1というのはよいサイクルではなく、3点交換ではなく2つのねじれたコーナーが残ってしまいます。
 
@@ -2032,7 +2032,7 @@ img_src="../../../assets/img/alg-244.png"
 algcubing = "https://alg.cubing.net/?alg=F_D-_(L-_U-_R-_U_L_U-_R_U)_U2_(U_R_D-_R-_U-_R_D_R-)_R_%2F%2FEO%0AD-_F-_L2_%2F%2F2x2x2%0AF2_D_F2_%2F%2FPseudo_F2L%26%2345%3B2%0AB-_D_B_%2F%2FF2L%26%2345%3B1%0AF-_D-_F-_%2F%2FAll_But_4_Corners&setup=_L_U2_D-_L-_U2_B-_D_B-_L_U2_F2_R2_F-_R2_L2_F-_U2_D2_F"
 %}
 
-もう少しコメントを追加しましょう。最初ほうにインサートされたコミューテータ（2つ目のコミューテータ、＋）は後で見つけられたものです。2つ目のコミューテータのほうが早い段階でインサートされています。これでもまったく問題ありません！
+最初ほうにインサートされたコミューテータ（2つ目のコミューテータ、＋）は後で見つけられたものです。2つ目のコミューテータのほうが早い段階でインサートされています。これでもまったく問題ありません！
 
 さらに、2つのコミューテータの間でお互いに何手かキャンセルをしています。
 
@@ -2131,7 +2131,7 @@ any of them. If you have some time left, you can try both insertions and which o
 best second commutator.
 -->
 
-この手法を使うとき、**最適な解答が見けられたかどうか、確信も持つことはできないでしょう。**なので、安全を取って、1段階目で見つかった全てのコミューテータ（あるいはそのほとんど）をチェックして、2段階目をたくさん（ほとんど意味のないものも）試してみるといいでしょう。通常、これはとても時間の無駄になりますし、よい解答になることは滅多にありません。解答をもっとよくできるかどうかわからないときは、基準として**5つのコーナーの交換を10手か11手で揃えられれば満足できる結果だ**、ということを覚えておきましょう。
+この手法を使うとき、**最適な解答が見けられたかどうか、確信も持つことはできないでしょう。**なので、安全を取って、1段階目で見つかった全てのコミューテータ（あるいはそのほとんど）をチェックして、2段階目をたくさん（ほとんど意味のないものも）試してみるといいでしょう。通常、これはとても時間の無駄になりますし、よい解答になることは滅多にありません。解答をもっとよくできるかどうかわからないときは、基準として**「5つのコーナーの交換を10手か11手で揃えられれば満足できる結果である」**ということを覚えておきましょう。
 
 <!--
 With this method you can’t be sure you have found the optimal solution: to be safer, you
@@ -2177,7 +2177,7 @@ solve the corner 5-cycle.
 
 **順序が大切であることも忘れないようにしてください。**見てわかるように、`(1 2 3)`は、後に`(4 5 1)`が来るか、前に`(3 4 5)`が来るかしかありません。これはどういうことかというと、たとえば、`(1 2 3)`を揃えるいいコミューテータを見つけたなら、`(4 5 1)`を揃えるコミューテータをその後のどこかで使うか、`(3 4 5)`を揃えるコミューテータをその前のどこかで使うか、選ばなければならない、ということです。ここに挙げた交換の組について、同じようにやることができます。
 
-この手法は他のものより速くできますが、**「別のインサーションの中にインサートする」ことはできません。** そのため、時間がない時にだけ使うか、予備的な分析としてやるといいでしょう。つまり、こうやると何手くらいかかるのかを確認して、2段階目でいい結果になるコミューテータだけをチェックするというやり方です。
+この手法は他のものより速くできますが、**「ネストされたインサーション (nested insertions)」、つまり別のインサーションの中にインサートするときには使うことはできません。** そのため、時間がない時にだけ使うか、予備的な分析としてやるといいでしょう。つまり、こうやると何手くらいかかるのかを確認して、2段階目でいい結果になるコミューテータだけをチェックするというやり方です。
 <!--
 To understand how, we need some permutation theory; don’t worry, I will cut it down to
 the essential.32
@@ -2223,7 +2223,11 @@ for commutators that may lead to something better.
 `M' U M U'`
 {: .text-center}
 
-が使えます。セットアップが何手かかかる場合でも、非常にいいでしょう。どんなケースで使えるのか、派生はどんなものがあるか、調べてみるといいでしょう。これをシフトした`L F L' R U' R'`というものもあります。エッジの5点交換が残ったスケルトンを得たなら、ステッカーに番号を振ってすぐにこの類のアルゴリズムが使えるかどうか調べてみましょう。しかし、探すのにあまり時間を掛けすぎないようにしてください。エッジのインサーションについては、4.2節のコーナーファーストについて話すところでまた触れます。
+が使えます。セットアップが何手かかかる場合でも、非常にいいでしょう。どんなケースで使えるのか、派生はどんなものがあるか、調べてみるといいでしょう。これをシフトした`L F L' R U' R'`というものもあります。エッジの5点交換が残ったスケルトンを得たなら、ステッカーに番号を振ってすぐにこの類のアルゴリズムが使えるかどうか調べてみましょう。しかし、探すのにあまり時間を掛けすぎないようにしてください。
+
+エッジの5点交換を揃える別の方法は、**3点交換とダブルスワップ(2点交換の繰り返し)を組み合わせることです。**たとえば、最初の3点交換で5つのうち1つのエッジだけが揃うならば、ダブルスワップが残ることになります。逆に考えても同じで、最初にダブルスワップをインサートして2つのエッジだけが揃ったとすると、3点交換が残ることになります。このテクニックは最初にエッジの向きを揃えておいたときによい結果をもたらすことでしょう。
+
+さらに発展的なエッジのインサーションについては、3.8節で触れます。
 
 <!--
 2.4.6 Multiple Insertions: 5 Edges
@@ -2243,8 +2247,8 @@ For more about edge insertions, see Section 4.2 about corner-first methods.
 
 このような場合、いくつかの**10手アルゴリズム**を知っておくと役立ちます。
 
-`Fw2 R D R’ Fw2 R D' R D R2 (J perm)`  
-`Rw' U Rw' U2 R B' R' U2 Rw2 B' (T-perm + corner twist)`
+`Fw2 R D R' Fw2 R D' R D R2 (J perm)`  
+`Rw' U Rw' U2 R B' R' U2 Rw2 B' (T-perm + ねじれコーナー)`
 {: .text-center}
 
 11手のものも多くあります。
@@ -2252,7 +2256,7 @@ For more about edge insertions, see Section 4.2 about corner-first methods.
 `R U2 R' U' R U2 L' U R' U' L (J perm)`  
 `R2 D B2 D' Fw2 D B2 D' Fw2 R2 U' (J perm)`  
 `R2 Uw R2 Uw' R2 F2 Uw' F2 Uw F2 U' (T perm)`  
-`R' U R U2 L' R' U R U' L U2 (J perm + corner twist)`
+`R' U R U2 L' R' U R U' L U2 (J perm + ねじれコーナー)`
 {: .text-center}
 
 <!--
@@ -2288,9 +2292,6 @@ img_src="../../../assets/img/alg-247.png"
 algcubing = ""
 %}
 
-<!--訳者TODO ソルブボックスの挿入-->
-
-
 <!--
 Besides all of these algorithms (this is not a complete list anyway), also their inverses and
 “shifted” versions solve a 2 corners - 2 edges double swap.
@@ -2318,8 +2319,9 @@ result.
 -->
 #### 2.4.8 その他のインサーション:3エッジ、いくつかのコーナー(Other Insertions: 3 Edges and Some Corners)
 
-3つのエッジと、4つか5つ（あるいはもっと）のコーナーが残ったスケルトンが少ない手数（たとえば13手）でできることもあるでしょう。このときエッジ3-cycleのエッジをインサートして
-いくつかコーナー3-cycleを必要なだけインサートして解くこともできます。しかし、別のやり方もあります。**「セクシームーブ」（`R U R’ U’`）ではエッジの3-cycleと歪んだコーナーの2-cycleを2回繰り返すことになることがわかると思います。** この短いアルゴリズムやその派生をインサートすることで、エッジの3-cycleをとても効率的に解くことができるのです。もちろん、一回のインサーションでコーナーも完全に揃うのは、とてもラッキーときだけです。コーナーにこういった影響を与えて、4つか5つかよいコーナーが残るようにする、というのが望み得る最良のことになる場合が多いです。
+3つのエッジと、4つか5つ（あるいはもっと）のコーナーが残ったスケルトンが少ない手数（たとえば13手）でできることもあるでしょう。このときエッジ3-cycleのエッジをインサートしていくつかコーナー3-cycleを必要なだけインサートして解くこともできます。
+
+しかし、別のやり方もあります。**「セクシームーブ」（`R U R’ U’`）ではエッジの3-cycleと歪んだコーナーの2-cycleを2回繰り返すことになることがわかると思います。** この短いアルゴリズムやその派生をインサートすることで、エッジの3-cycleをとても効率的に解くことができるのです。もちろん、一回のインサーションでコーナーも完全に揃うのは、4つのコーナーとねじれたダブルスワップが残っているときのとてもラッキーなときだけです。コーナーにこういった影響を与えて、4つか5つかよいコーナーが残るようにする、というのが望み得る最良のことになる場合が多いです。
 <!--
 2.4.8 Other Insertions: 3 Edges and Some Corners
 In some cases you can get short skeletons (say 13 moves) that leave a 3-cycle of edges and 4 or
@@ -2350,7 +2352,7 @@ you are actually doing when you insert a sexy move.
 **Conjugate**の適切な訳語が思いつかないので保留しています。別の箇所でも書きましたが、数学用語としては共役という意味があります。そのままコンジュゲートとカタカナで訳出してもよいかもしれません。インターチェンジもそのまま使われていますし。
 {: .notice--info}
 
-4つのエッジと4つのコーナーがあり、それぞれ4点交換されるときに、一つのインサーションだけで揃えることができる状況というものがあります。このケースは次のように揃えられます。
+4つのエッジと4つのコーナーがあり、それぞれ4点交換されるとき（あるいはダブルスワップがあるとき）に、一つのインサーションだけで揃えることができる状況というものがあります。このケースは次のように揃えられます。
 
 揃っていない8つのピースをすべて同じ面に集めます(セットアップ)。これで集めた面での単一のムーブで4点交換ができます。そして、8つのピースを元の場所に戻します(逆セットアップ)。8つのピースが2点交換を4つ組み合わせたものであるときにも、このテクニックは使えます。そのときは、「インターチェンジ」は180度のもの、たとえば `U2` などになります。もしピースの数が8つちょうどでなかったり、適切な交換ができない場合には、3.3節で説明するreverse NISSをまた使うことができます。
 <!--
@@ -2375,7 +2377,7 @@ F' * R F2 R' L2 B //4エッジと4コーナー以外完成 (6/11)
 $ = L' D L U L' D' L U' //3 コーナー (5/30)
 {% endcapture %}
 {% include solvebox.html
-title = "Conjugate and Solve - Example"
+title = "コンジュゲートして揃える Conjugate and Solve - Example"
 scramble = "R2 L2 D2 F2 D' R2 U' B2 D' F2 U2 F' D2 L' F U B F2 U2 F2 L"
 text = display_text
 solution = "U2 F B' L2 D2 F' U F2 L' B2 L F2 L' B' L' D L B' D L U L' D' L U2 R F2 R' L2 B (30)"
@@ -2460,9 +2462,10 @@ and you can find some more here34
 |              エッジ3-cycle              |   7   |
 | 2つのねじれたコーナー (2コミューテータ) |   8   |
 | 3つのねじれたコーナー (2コミューテータ) |   9   |
-|       4コーナー(2コミューテータ)        |  10   |
+|       4コーナー(ダブルスワップ)        |  9/10   |
+|       4コーナー(3コーナー+1ねじれコーナー)        |  10   |
 |             コーナー5-cycle             | 10/11 |
-|     2コーナー、2エッジ(2cycleを2回)     |  10   |
+|     2コーナー、2エッジ(2点交換を2貝)     |  10   |
 
 
 <!--
@@ -2494,6 +2497,7 @@ Corner 5-cycle 10/11
 http://www.speedsolving.com/forum/threads/the-fmc-thread.13599/page-42#post-614593
 32 CHAPTER 2. HOW TO PROCEED DURING A SOLVE
 -->
+
 #### 2.4.11 インサーションファインダー (Insertion Finder)
 Baiqiang Dongによって開発された**[Insertion Finder](https://fewestmov.es/if)**[^2-4-11]は、インサーションを探して解答の中で何かを見逃していなかったかを確認するために役立つツールです。スケルトンを与えると、最大で4つのインサーションを探すことができます。
 
@@ -2514,8 +2518,150 @@ you have failed to see something in your solutions: it finds up to 4 insertions 
 It is especially useful for easy cases (3 corners or 3 edges) but in complex situation it may
 find solution that are not possible (or very difficult) to find for humans: use it responsibly!
 -->
-### 2.5 その他の簡単な戦略(Other Simple Stragies)
-#### 2.5.1 戻ってやり直そう(Go Back and Change Your Sove)
+
+### 2.5 EOから始めよ (Starting with EO)
+
+ZZでのソルブのように、**全てのエッジの向きを揃える(Edge Orientation, EO)ことからスタートする**のは常に考慮すべき可能性です。このチュートリアルの初版のころから自分のソルブの中で何度も繰り返して使ってきました。試技の一番最初にはまずノーマルスクランブルと逆スクランブル全てのEOを探して、試す価値があるのかを見ていました。試す価値はあります！ 2.1.7節で離したように、多くの著名なFMCerがEOから始めています。
+
+**エッジの向きを揃える方向という点から言えば、エッジには3つの向きがありうるのです。** F/B (＜R, L, U, D＞を除く)、R/L、そしてU/Dです。通常のZZのソルブをした場合、それぞれについて4つの異なる向きでF2Lを作ることができるでしょう。EOから始めるのが好みではなくても、（カラーニュートラルの）ZZを練習してEOの認識を成長させましょう。
+
+さて、ここからはZZとは違ったやり方になります。
+
+<!--
+2.5 Starting with EO
+Starting by orienting all edges, as you would do in a ZZ solve, is a possiblity to always keep
+in mind. Since the first version of this tutorial I have used it more and more in my solves, to
+the point that at the beginning of an attempt I always look for all possible EOs on normal and
+inverse scramble to see if they are worth a try: they often are. As mentioned in Section 2.1.7,
+there are many notable FMCers that often start with EO.
+Remember that there are 3 possible orientation with respect to which you can orient edges:
+with respect to F/B (reduce to <R, L, U, D>), to R/L and to U/D. If you procede with a
+normal ZZ solve, for each of these you can build the F2L on 4 different sides. Even if you don’t
+like starting with EO, I suggest practicing some (color neutral!) ZZ to improve EO recognition.
+From here you have at continue in different ways.
+2.5.1 EO + blockbuilding
+After having oriented all edges, the most common way to go on is blockbuilding. The pro is
+that we don’t have any “bad” edge, but this forces40 us not to use moves that break the EO,
+and this is a (relatively small) limit.
+Since you have usually more than one (nice) way to orient edges for a given orientation, you
+should also try to build as many pairs/blocks as you can during the EO step. As an alternative
+approach, you can pay attention to EO while you build the first block(s) (for example, a 2x2x2)
+and orient edges immediately after that.
+Here is the solve that made Gregorz Luczyna the 2010 European Champion. Notice that he
+starts by rotating the cube to his preferred orientation. This makes it easier to spot blocks if
+you are not used to color neutrality, but I dislike this habit. See Section 5.1 for more about how
+to write down a solution.
+38Warning: this varies a lot! If edges are oriented early in the solve, you have better chances of finding a good
+insertion (6 or 8 movers). If you do a domino reduction solve (see Section 2.5.2 and Appendix D), edge insertions
+become much more efficient!
+39https://fewestmov.es/if
+40Obviously, no one is forcing you to do anything, but orienting edges and then destroying what you have just
+done doesn’t look like a smart thing to do. You can also start with a partial EO if you wish.
+2.5. STARTING WITH EO 35
+EO first - Example 1
+Scramble: L D2 B' D2 B R' B' U B L B L2 B2 U2 F2 U R2 D' B2 D' B2
+x y2 L2 D F' //EO (3/3)
+R L2 D * //EOLine (3/6)
+R' U2 B2 R2 B2 //2x2x3 (5/11)
+L2 U' R' U L U' L' R U2 L' U' //All but 3 corners (11/22)
+* = D2 R' U' R D2 R' U R //3c (4/26)
+Solution: x y2 L2 D F' R L2 D' R' U' R D2 R' U' B2 R2 B2 L2 U' R' U L U' L' R
+U2 L' U' (26)
+See on alg.cubing.net
+Here is another example: the first solve of Jo˜ao Pedro Batista Ribeiro Costa at World
+Championship 2015, part of his 25.67 winning mean of 3.
+EO first - Example 2
+Scramble: L2 U' B2 L2 D' F2 L2 D U' L2 U2 B' R2 B' R B R' D' B' F2
+U2 R' U2 * R' //EO (4/4)
+B F2 U2 F //Pseudo 2x2x3 (4/8)
+(B L2) //2x2x3 (2/10)
+B2 U' B2 U' B2 U' B2 U' B' U //All but 3 corners (10/20)
+* = U R' D2 R U' R' D2 R //3c (6/26)
+Solution: U2 R' U' R' D2 R U' R' D2 B F2 U2 F B2 U' B2 U' B2 U' B2 U' B' U L2
+B' (26)
+See on alg.cubing.net
+One last thing: in the examples above there are two nice and short EO steps. But this
+doesn’t mean you should discard a longer EO, if you can build a lot of blocks while doing it!
+2.5.2 Domino Reduction
+Edge orientation can be considered, modulo rotations, a reduction to the subgroup generated
+by the moves <R, L, U, D> or, equivalentely, <R, L, U, D, F2, B2>. In other words, by
+orienting edges you reduce the cube to a case that can be solved using only the moves R, L,
+U, D, F2 and B2. Another step in this direction leads to reducing the cube to the subgroup
+generated by <U, D, R2, L2, F2, B2>; in order to do so you have to:
+• Place E layer edges on the E layer;
+• orient corners.
+This reduction is also called “domino reduction” (often shortened to DR), because it makes
+a Rubik’s Cube solvable as a 3x3x2 “cube” (also called “Domino Cube”).
+Recently (2018-2019), domino reduction has gained a lot of popularity, and it has been shown
+that one can reach consistently good results with this method alone.
+A good tutorial on domino reduction could easily fill another long document. And in fact
+it does: if you are interested in the method, I suggest you read this wonderful tutorial41 by
+Alexandros Fokianos and Tommaso Raposio. I have tried to sum up the most important ideas
+of that document in Appendix D.
+Here is an old example solve by Per Kristen Fredlund.
+41https://drive.google.com/drive/folders/1mppifILqu9Bu2phr8zhXGcXasBsSkv_S
+36 CHAPTER 2. HOW TO PROCEED DURING A SOLVE
+DR - Example
+Scramble: R2 F2 L2 D' R' U' R D' F B R U B2 L2 D2 F2 L2 D B2
+R' B U' D F //EO (5/5)
+L' F2 L //Domino reduction (3/8)
+D2 L2 F2 D F2 D L2 U' R2 D2 R2 //Finish (11/19)
+Solution: R' B U' D F L' F2 L D2 L2 F2 D F2 D L2 U' R2 D2 R2 (19)
+See on alg.cubing.net
+2.5.3 Partial Domino Reduction
+Classic PDR
+The idea of Partial Domino Reduction, shortened to PDR, was first introduced by Alexandre
+Campos42. It consists in solving EO with respect to two axes, which can also be seen as a
+domino reduction with (some) misoriented corners. Although not included in his original idea,
+the term PDR can also refer to a partial DR where the edges and corners are all oriented, but
+not all E-layer edges are in the E-layer.
+After a normal EO, say with respect to F/B, one can procede with a second EO, say on
+L/R. This second EO step can also be seen as placing the E-layer edges on the E-layer, much
+like you would do in a DR solve, but ignoring corners. Since you want to keep the EO you did
+in the first step, you should not use F and B quarter turn moves during this second step.
+When you have EO on two axes (PDR) a normal way to finish your solve is to build blocks
+and find a skeleton using only “domino moves” <U,D,R2,L2,F2,B2> (i.e. moves that don’t break
+any of your EOs). However, there are some restrictions: using only domino moves you have no
+hope to solve the misoriented corners, so you are forced to leave them unsolved and solve them
+later with insertions. That’s why not leaving many misoriented corners is usually a good idea.
+Alexandre has collected some PDR solves in a document43. Let’s look at the first one as an
+example:
+Classic PDR - Example
+Scr: R' U' F L2 U2 B' L2 F' U2 B L2 B R' B2 L U B L2 B' D' F2 R F R' U' F
+D' * R' U' F + //EO (4/4)
+L R2 U R //PDR4 (4/8)
+D F2 D2 B2 //Corner line + edge line (4/12)
+U2 L2 D R2 U //AB5C (5/17)
+* = D' R' U2 R D R' U2 R //(8-4/21)
++ = F2 R B2 R' F2 R B2 R' //(8-2/27)
+Solution: D2 R' U2 R D R' U F' R B2 R' F2 R B2 R L U R D F2 D2 B2 U2 L2 D
+R2 U (27)
+See on alg.cubing.net
+EO+CO PDR
+This second type of “PDR” approach is probably closer to being a “mock DR”, whereas the
+classical PDR described above is closer to an EO + blockbuilding approach.
+42https://www.speedsolving.com/threads/introducing-a-variation-for-fewest-moves.67299/
+43https://docs.google.com/document/d/1oZwr2aSllFBL5lhbLTiWKQWplfk4i0LN0wA0uskeLJs
+2.6. OTHER SIMPLE STRATEGIES 37
+After EO is solved, you can try solving corner orientation using the same type of triggers
+that are used to get a DR. After that, you can solve corners and get an edges-only skeleton.
+This often turns out to be good: although not as nice as with DR, edge insertion can still be
+very good when EO is solved, especially when combined with the advanced techniques described
+in Section 3.8.
+EO+CO PDR - Example
+Scr: F' U R U' F2 R' U2 F' U D' L B' L2 F2 U2 R2 L' U2 B2 U2 R F2 L' F' U R
+F D R2 U' F' //EO (5/5)
+R' //Lucky CO (1/6)
+F2 B2 U2 R2 D U2 * B2 D U' //3e+3e left (9/15)
+* = U R2 U' F2 B2 + D L2 D' F2 B2 //10-3/22)
++ = U' L' D2 F2 D2 L' U D L2 D' //(10-6/26)
+Solution: F D R2 U' F' R' F2 B2 U2 R2 U' D R2 U' F2 B2 U' L' D2 F2 D2 L' U
+F2 U' D (27)
+See on alg.cubing.net
+-->
+
+### 2.6 その他の簡単な戦略(Other Simple Stragies)
+#### 2.6.1 戻ってやり直そう(Go Back and Change Your Sove)
 **よいスタートを切ったあとで詰まってしまったら、「そこまでのソルブを一手ずつ見ていく」ということをしてみましょう。** まだ揃えていないピースしかない面が、少なくとも1面、出てくるのを探しながらやってみましょう。見つかったら、その面を動かしてみましょう(すでに揃えたブロックは崩れません)。可能性は3種類(`U`、`U2`、`U´`など)あります。こうすると、元々のものよりほんの少し(1手)だけ長くなって、3通りのスタートが得られるでしょう。次へのつながりがよくなるなら、たった1手は安いものです！
 
 自由に動かせる面が2つ見つかったなら、もちろん両方使ってみても構いません。追加するムーブはランダムなものでよいですし、そうしなくてもよいです。新しいペアができたり、EOがもっとよくなるのなら、それで十分です。しかし、何手か追加してもすぐにわからず、しばらく進んでいってようやく何が起こったかわかることもあるでしょう。
@@ -2533,7 +2679,7 @@ The moves can, but don’t have to, be random: if you can see a pair forming or 
 better with some moves, good for you, but sometimes you might as well try random moves and
 see what happens later.
 -->
-#### 2.5.2 幸運を手に入れろ！ (Get Lucky!)
+#### 2.6.2 幸運を手に入れろ！ (Get Lucky!)
 当たり前ですが、幸運は学べるスキルではありません。しかし、FMCにおいては**そうすべきなのです。** もし手数が同じであれば、LLスキップで終わる「単純な」ソルブは、複雑でアンラッキーなものと同じくらい価値があります。可能な限りたくさんの代替案を試してみるのがよい、というのはこのためです。10回や20回だけやってみるよりも、100回やったほうがスキップする確率は高くなります。
 
 **訳注：**  
@@ -2549,7 +2695,7 @@ they have the same length. This is one of the reasons why you need to try as man
 alternatives as you can: you are more likely to get a skip if you try 100 solutions than if you try
 10 or 20.
 -->
-#### 2.5.3 一つ目の例: 最後のペアをインサート(First Example: Insert Last Pair(s))
+#### 2.6.3 一つ目の例: 最後のペアをインサート(First Example: Insert Last Pair(s))
 
 F2L-1が完成したあと、最後のペアをインサートすることでF2Lが終わります。これは、幸運が振ってこない限り、あまりよいやり方ではありません。幸運を引き当てるチャンスを高めるには、**考えうる全ての方法で最後のペアをインサートしましょう。**
 
@@ -2637,7 +2783,7 @@ L U L B //Insert saved pair and skip
 Solution: U2 F' U' B' D B D2 L D2 B U' L F L' F' L U L B
 See on alg.cubing.net
 -->
-#### 2.5.4 二つ目の例: アルゴリズムの使い方(Second Example: How to Use Algorithms)
+#### 2.6.4 二つ目の例: アルゴリズムの使い方(Second Example: How to Use Algorithms)
 まず最初に対称なアルゴリズムを識別できるようにしておきましょう（もっと正確にいえば、対称なケース）。つまり`F R U R' U' F'`で揃うOLLはSプレーンについて対称なので、同じケースは`B' R' U' R B U`でも揃います。もし使いたいのであれば、対称なケースも使えるようにして、スキップ（あるいはよいケース）のチャンスを二倍にしましょう。このトリックがうまくいくのは、二つのアルゴリズムは同じOLLケースを揃えるためのものであって、ピースの交換に異なった影響を与えるものだからです。しかし、CLLについては少し違います。同じCLLケースを揃えるアルゴリズムがあって、コーナーが揃わないなら、ほかのアルゴリズムを使ってもコーナーは揃いません。
 
 極端な例を見てみましょう。`R U2 R' U' R U R' U' R U' R'`で揃うOLLを考えます。これと左右対称の`L' U2 L U L' U' L U L' U L`を使うことで、同じケースを4つの向きから揃えることができます。（ほかの2つは逆手順です）このアルゴリズムは、「2-gen」のLast layerアルゴリズムに当てはまることですが、コーナーの相対的な位置関係には影響しません。
