@@ -3,7 +3,7 @@ title: "最少手数競技入門 - ルービックキューブを少ない手順
 description: Sebastiano TrontoによるFMCチュートリアル(第三版)の日本語訳です。ルービックキューブの最少手数競技のための入門記事です。
 header:
   teaser: /assets/img/333fm.jpg
-permalink: /FMC/FMC-Tutorial/v3/
+permalink: ./FMC/FMC-Tutorial/v3/
 layout: single
 classes: wide
 toc: false
@@ -1163,14 +1163,14 @@ U2 R2 //3コーナー以外完成 (2/16)
 * = B' U F2 U' B U F2 U' //Last 3 corners (8-5/19)
 {% endcapture %}
 {% include solvebox.html
-title = "Example (by Mirek Goljan and Guus Razoux-Schultz)[^2-1-5-2]"
+title = "Example (by Mirek Goljan and Guus Razoux-Schultz)"
 scramble = "D U' F2 U' R' F R2 B D' B R F B' U R' D2 L' R2 F2 B' U' B D B2 F2
 U L F U' B2"
 solution = "L U' F2 D' U2 B R2 F' U F2 U' B U F' R U2 R' U2 R2 (19)"
 text = display_text
 img_src="../../../assets/img/alg-215.png"
 algcubing="https://alg.cubing.net/?setup=D_U-_F2_U-_R-_F_R2_B_D-_B_R_F_B-_U_R-_D2_L-_R2_F2_B-_U-_B_D_B2_F2_U_L_F_U-_B2&alg=L_U-_F2_D-_%2F%2F2x2x2_(4%2F4)%0AU2_B_R2_B_%2F%2FPseudo_F2L%26%2345%3B1_(4%2F8)%0AF-_(B-_U_F2_U-_B_U_F2_U-)_U_F_R_U2_R-_%2F%2FPseudo_F2L_(6%2F14)%0AU2_R2_%2F%2FAll_but_3_corners_(2%2F16)"
-%}[^2-1-5]
+%}[^2-1-5] [^2-1-5-2]
 
 もしあなたがインサーションについてまだ知らないなら、最後の行は無視してください。**今回注目すべきは最初の行、特に`F2`をしているところです。この一手でDFに2x2x1ブロックを作り、同時に橙-緑エッジを合わせています。**次の一手で2x2x2ブロックができるようになりました。
 
