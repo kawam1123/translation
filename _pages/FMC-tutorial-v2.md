@@ -1,6 +1,6 @@
 ---
-title: "最少手数競技入門 - ルービックキューブを少ない手順で解く by Sebastiano Tronto"
-description: Sebastiano TrontoによるFMCチュートリアルの日本語訳
+title: "最少手数競技入門 - ルービックキューブを少ない手順で解く by Sebastiano Tronto 第二版"
+description: Sebastiano TrontoによるFMCチュートリアルの日本語訳（第二版）
 header:
   teaser: /assets/img/333fm.jpg
 permalink: /FMC/FMC-tutorial.html
@@ -48,7 +48,7 @@ This documantion is a Japanese translated edition of Fewest Moves Tutorial (Seco
 {: .notice--warning}
 
 **第3版の公開に際して**  
-2020/01/14に本チュートリアルの第3版が公開されました！この日本語版は、追って第3版の内容に沿って公開予定です。下記の内容は第2版によるものですので、ご注意ください。また、**原著者がGitHubにリポジトリを作成し、原文のLaTeXファイルや画像ファイルなどを公開しています。** 詳細は[こちら](https://github.com/sebastianotronto/fmctutorial)をご覧ください。
+2020/01/14に本チュートリアルの第3版が公開されました！この日本語版は、追って第3版の内容に沿って翻訳しています。[第三版はこちらをご参照ください。](/FMC/FMC-Tutorial/v3/)。下記の内容は第2版によるものですので、ご注意ください。また、**原著者がGitHubにリポジトリを作成し、原文のLaTeXファイルや画像ファイルなどを公開しています。** 詳細は[こちら](https://github.com/sebastianotronto/fmctutorial)をご覧ください。
 {: .notice--success}
 
 **翻訳にあたっての謝辞：**  

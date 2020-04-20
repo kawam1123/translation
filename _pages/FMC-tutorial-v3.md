@@ -3,7 +3,7 @@ title: "最少手数競技入門 - ルービックキューブを少ない手順
 description: Sebastiano TrontoによるFMCチュートリアル(第三版)の日本語訳です。ルービックキューブの最少手数競技のための入門記事です。
 header:
   teaser: /assets/img/333fm.jpg
-permalink: /FMC/FMC-tutorial/v3/
+permalink: /FMC/FMC-Tutorial/v3/
 layout: single
 classes: wide
 toc: false
@@ -25,13 +25,13 @@ Sebastiano Tronto
 April 17, 2020
 -->
 
-![333fm](../assets/img/333fm.jpg){:width="400px" height="auto" class="img-responsive align-center"}
+![333fm](../../../assets/img/333fm.jpg){:width="400px" height="auto" class="img-responsive align-center"}
 
 **Written by Sebastiano Tronto**  
 Fewest Moves Tutorial - Solving a Rubik’s Cube with as few moves as possible  
-v3.01
-Sebastiano Tronto
-April 17, 2020
+v3.01  
+Sebastiano Tronto  
+April 17, 2020  
 Original document (3rd edition): [Fewest Moves Tutorial](https://fmcsolves.cubing.net/fmc_tutorial_ENG.pdf)  
 Older edition (2nd edition): [Fewest Moves Tutorial 2nd edition](https://fmcsolves.cubing.net/fmc_tutorial_ENG_v2.pdf)  
 License under CC BY 4.0
@@ -44,7 +44,7 @@ License under CC BY 4.0
 **免責事項：**  
 本ドキュメントは、**2020年にSebastiano Tronto氏によって書かれたFewest Moves Tutorial(version3.01)を日本語に翻訳したものです。** 2019年12月、本チュートリアルを日本語に翻訳されたものが公開されていなかったため、翻訳プロジェクトをスタートしました。本記事の内容については、最少手数競技に関する知識や用語を確認しながら翻訳を進めていますが、翻訳者の技量不足により不正確である場合があります。あらかじめご了承ください。  
 また、すぐに最少手数競技のやりかたを覚えたいという方には、既に[WRCC](http://wrcc.main.jp/commentary_fmc/fmc/index)や[TRCC](http://trcc.sub.jp/solution/fmc/fmcindex.html)の素晴らしい解説記事がありますので、こちらもあわせてご参照ください。  
-This documantion is a Japanese translated edition of Fewest Moves Tutorial (Second Edition) by Sebastiano Tronto. Since no translation in Japanese had been published at December 2019, I started a tranlation project for the tutorial. I am translating the document looking up the basic knowledges and the technical terms on FMC, but the translated content might be wrong by reason of my lack of translation and FMC skills. If you find any mistakes in the translation, please let me know!
+This documantion is a Japanese translated edition of Fewest Moves Tutorial (Third Edition) by Sebastiano Tronto. Since no translation in Japanese had been published at December 2019, I started a tranlation project for the tutorial. I am translating the document looking up the basic knowledges and the technical terms on FMC, but the translated content might be wrong by reason of my lack of translation and FMC skills. If you find any mistakes in the translation, please let me know!
 {: .notice--warning}
 
 **第3版の公開に際して**  
@@ -62,6 +62,7 @@ Un ringraziamento speciale a Sebastiano Tronto, una superstar FMC, per aver pubb
 本ドキュメントは、未完成です。原文はコメントアウトされた状態で保存されています。翻訳に協力してくださる方は、コメントアウトを外して日本語の翻訳を書き込んでください。翻訳の進捗は[GitHubのリポジトリ](https://github.com/kawam1123/translation)で管理しており、画像ファイルなどもこちらに格納されています。
 {: .notice--info}
 
+<!-- 第二版進捗
 **翻訳進捗**
 
 |章|ページ|進捗|メモ|
@@ -77,6 +78,7 @@ Un ringraziamento speciale a Sebastiano Tronto, una superstar FMC, per aver pubb
 |付録B Notation                         |55-56  |[未着手](#){: .btn .btn-danger}    ||
 |付録C Last Layer Algorithms            |57-58  |[未着手](#){: .btn .btn-danger}    ||
 {: .table-hover }
+-->
 
 <!-- TOC -->
 <!--
@@ -109,9 +111,9 @@ Un ringraziamento speciale a Sebastiano Tronto, una superstar FMC, per aver pubb
 <!-- /TOC -->
 
 ## 第三版への序文 (Preface to the Third Edition)
-昨年(2019年はFMCにとって素晴らしい年になりました。2年間、平均24.00手から更新されていなかった世界記録は、Reto Bubendorf (23.00), MarkやBoyanowski (22.33) や私自身(Sebastiano Tronto) (22.00)によって、2手も短くなりました。まとめると、2019年には11人が平均24手の壁を破ったのでした。単発世界記録は18手から16手になりました。
+**昨年(2019年はFMCにとって素晴らしい年になりました。**2年間、平均24.00手から更新されていなかった世界記録は、Reto Bubendorf (23.00), MarkやBoyanowski (22.33) や私自身(Sebastiano Tronto) (22.00)によって、2手も短くなりました。まとめると、2019年には11人が平均24手の壁を破ったのでした。単発世界記録は18手から16手になりました。
 
-2019年は記録更新だけの年ではありません。Domino Reduction(DR)が普及した年でもあります。1年前まで、この手法はトップ競技者によってたまに使われる程度で、継続的に使うのは難しいと考えられていました。しかし、よくあることですが、これがそこまで難しいものではないと気付いた人々がいて、誰にとっても簡単なものになりました。わずか数か月の間で、この手法は多くのトップ競技者がほとんどのソルブで使うようになるまで流行してきました。FMCの新時代が始まったのです。
+2019年は記録更新だけの年ではありません。**Domino Reduction(DR)が普及した年でもあります。**1年前まで、この手法はトップ競技者によってたまに使われる程度で、継続的に使うのは難しいと考えられていました。しかし、よくあることですが、これがそこまで難しいものではないと気付いた人々がいて、誰にとっても簡単なものになりました。わずか数か月の間で、この手法は多くのトップ競技者がほとんどのソルブで使うようになるまで流行してきました。FMCの新時代が始まったのです。
 
 するとこのチュートリアルはどうなるでしょう？第三版のチュートリアルは「新時代」に向けたものでしょうか？実はそうではありません。「旧時代」のチュートリアルの最後のアップデートだと思うかもしれません。いくつか新しく追加したいことがありましたが、最近の発展を踏まえたものは少しだけです。
 
@@ -142,7 +144,7 @@ that it remains a useful guide for many years to come.
 
 付録にあったLast Layerのアルゴリズムは省き、単にテキストファイルへのリンクにしました。EOに関するセクションは第二章に移動し、第四章の残りと第三章をマージしました。
 
-その他、次のようなセクションを追加しました。
+その他、次のようなセクションを追加しました。それ以外は軽微な変更だけです。
 
 - 2.4.6節、3.8節：エッジインサーションについて
 - 2.5.3節：partial domino reductionについて.
@@ -170,9 +172,8 @@ Other than that, I have added a few sections:
 All the rest is just minor changes.
 -->
 
-<!-- 第三版－第二版翻訳ライン -->
-
 ## 第二版への序文 (Preface to the Second Edition)
+<!-- このセクションは第二版から修正しない -->
 数年の間、このチュートリアルの新しいバージョンを作ろうと考えていました。いくつか修正や追加の必要な点があり、また、私自身の考え方が変わったことによって変更すべき点などがありました。
 
 LaTeXで書き直そうとも考えました。LaTexのドキュメントは見た目がとても良くなるからです。ただし、唯一の欠点は、そうしてしまうと翻訳が難しくなるということです。このチュートリアルが高く評価されており、多くの他言語に翻訳をしてくれて、世界中で読めるようになっていくことを非常に嬉しく思います。翻訳者の皆さんそれぞれにお礼を言いたいのですが、ほとんどの方の名前を忘れてしまいました。
@@ -235,11 +236,11 @@ I don’t have anything else to say about this second edition. Go on and enjoy t
 http://www.speedsolving.com/wiki/index.php/Western_Color_Scheme
 3
 -->
-
+<!-- 第三版－第二版翻訳ライン -->
 ## 本書について (About this Book)
-この本は、**WCA公式大会の公式競技のひとつである「最少手数競技（FMC、Fewest Moves Challenge）」と呼ばれる競技でよい結果を出すための指針となることを目的としています。**もしあなたが世界キューブ協会 (World Cube Association) やスピードキューブの公式大会について知らないのであれば、少し先のイントロダクションを読んでみてください。
+この本は、**WCA公式大会の公式競技のひとつである「最少手数競技（FMC、Fewest Moves Challenge）」と呼ばれる競技でよい結果を出すための指針となることを目的としています。**もしあなたが世界キューブ協会 (World Cube Association) やスピードキューブの公式大会について知らないのであれば、下記のイントロダクションを読んでみてください。
 
-「最少手数競技」は、特定の状態の(スクランブルされた)ルービックキューブをできる限り短い手数で解くものです。使えるのはいくつかのキューブ、ペン、そして紙だけです。コンピュータープログラムの利用は禁止されており、通常は時間制限があります。（WCA公式大会においては1時間、あるオンラインのものでは1週間)
+「最少手数競技」は、与えられたルービックキューブの状態(スクランブルされた状態)から、できる限り短い手数で解くものです。使えるのはいくつかのキューブ、ペン、そして紙だけです。コンピュータープログラムの利用は禁止されており、通常は時間制限があります。（WCA公式大会においては1時間、あるオンラインのものでは1週間など)
 
 したがって、この本では一般的なアルゴリズムの説明はしません。一般的なアルゴリズムがFMCで役立たないということは、この本の残りの部分で繰り返し述べられており、次のようにまとめることができます。「たった一つのアプローチに限定することは、あまりにも窮屈！」
 
@@ -289,7 +290,7 @@ title = "2C2E Insertion - Example"
 scramble = "B' L' D2 R U F' U' L U2 D R2 U2 F B R2 B U2 B L2 B2 U2"
 text = display_text
 solution = "B' F D2 L' R2 B R B' R2 F R' B R F' R2 F2 D F' D2 F R' D' R D2 F U2 (26)"
-img_src="../assets/img/2C2E_alg.png"
+img_src="../../../assets/img/2C2E_alg.png"
 algcubing = "https://alg.cubing.net/?setup=B-_L-_D2_R_U_F-_U-_L_U2_D_R2_U2_F_B_R2_B_U2_B_L2_B2_U2&alg=B-_F_D2_%2F%2FPseudo_2x2x1_(3%2F3)%0AL-_B_(B2_L_B_L-_B_D2_F-_R_F_D2)_R2_%2F%2FPseudo_3x2x2_(3%2F6)%0AF2_D_F-_D2_F_%2F%2FFound_using_NISS_(5%2F11)%0AR-_D-_R_D2_F_U2_%2F%2FFound_using_NISS_(6%2F17)"
 %}
 
@@ -310,13 +311,13 @@ See on alg.cubing.net
 -->
 
 
-このソリューションの記述のなかで、決して`x`や`[f2]`などの**「持ち替え記号」**を書いていないことに気付くかもしれません。解法を考えるときにキューブを持ち替えてはいけないということではありません。もし持ち替え記号を使わない記述がよくわからないなら、6.1節までスキップすることがオススメです。
+このソリューションの記述のなかで、決して`x`や`y2`などの**「持ち替え記号」**を書いていないことに気付くかもしれません。解法を考えるときにキューブを持ち替えてはいけないということではありません。もし持ち替え記号を使わない記述がよくわからないなら、5.1節までスキップすることがオススメです。
 
 <!--
-You may notice that in writing the solution I almost never use “rotation” moves such as
-x or [f2]. This doesn’t mean that you shouldn’t turn the cube around in your hands when
-trying the solution. If you are not familiar with rotationless solution writing, I advise skipping
-to Section 6.1 before reading the rest of the book.
+You may notice that in writing the solution I almost never use “rotation” moves such as x or
+y2. This doesn’t mean that you shouldn’t turn the cube around in your hands when trying the
+solution. If you are not familiar with rotationless solution writing, I advise skipping to Section
+5.1 before reading the rest of the book.
 -->
 
 ### 謝辞
@@ -330,7 +331,7 @@ now). I hope this tutorial will be helpful in the same way.
 
 **あわせて感謝を申し上げたいのは、改善点を指摘してくれた全ての方です。**間違いを指摘してくださったり、このチュートリアルを（古い版も含めて）翻訳してくださったりしました。いずれ忘れてしまうでしょうから、全ての方の名前を挙げるのは控えます。
 
-第二版では、[visualcube](http://cube.crider.co.uk/visualcube.php)[^0-visualcube]と[alg.cubing.net](https://alg.cubing.net)[^0-algcubingnet]を使いましたので、この２つのツールの作者であるConrad RiderとLucas Garronには、特に感謝を申し上げます。
+この版では、[visualcube](http://cube.crider.co.uk/visualcube.php)[^0-visualcube]と[alg.cubing.net](https://alg.cubing.net)[^0-algcubingnet]を使いましたので、この２つのツールの作者であるConrad RiderとLucas Garronには、特に感謝を申し上げます。
 <!--
 I also want to thank everybody who gave me suggestions for improvements, pointed out
 mistakes or translated this tutorial (or rather, the old version). I don’t want to name any of you
@@ -349,20 +350,41 @@ goes also to the creators of this two tools, respectively Conrad Rider and Lucas
 
 <!--
 Disclaimer
-As you may know, English is not my first language. If you think that a certain passage is poorly
+As you may know, English is not my first language. If you think that a certain part is poorly
 written or if you find any mistake, please contact me at: sebastiano.tronto [at] gmail [dot] com.
-2
-http://cube.crider.co.uk/visualcube.php, although I have acutally used the version hosted at http:
-//stachu.cubing.net/v/, because of problems with png images.
-3
-https://alg.cubing.net/
+
+Where to find this
+
+This tutorial can be found at https://fmcsolves.cubing.net/fmc_tutorial_ENG.pdf. If a
+new version is released, the link is updated automatically.
+You can find the LaTeX source files, the pictures and more on my Github repository: https:
+//github.com/sebastianotronto/fmctutorial.
+License
+This work is licensed under the Creative Commons Attribution 4.0 License (CC BY 4.0)4
+. This
+means that you are free not only to redistribute this document, but also to remix, transform,
+and build upon it, as long as you give appropriate credit. For example, feel free to translate this
+tutorial to another language!
 -->
+
+### 公開場所
+このチュートリアルは[https://fmcsolves.cubing.net/fmc_tutorial_ENG.pdf](https://fmcsolves.cubing.net/fmc_tutorial_ENG.pdf)で公開しています。新しい版がリリースされたときは、このリンクは自動的に更新されます。LaTexのソースファイルと画像は私のGitHubリポジトリにあります。：[https:
+//github.com/sebastianotronto/fmctutorial](https:
+//github.com/sebastianotronto/fmctutorial)
+
+### ライセンス
+本ドキュメントは[Creative Commons Attribution 4.0 License (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/)で提供されます。つまり、このドキュメントを再配布することができるだけでなく、自由に別の言語に翻訳してもよいということです！
+
+**訳注：**  
+本翻訳も同様にCC BY 4.0で提供されます。
+{: .notice--info}
 
 ## 目次
 
 **訳注：**  
 自動生成しましたので、本項目は省略します。
 {: .notice--info}
+
 <!--
 Contents
 1 Think Outside the Box 9
@@ -465,18 +487,16 @@ FMCはWCA(World Cube Association、世界キューブ協会)の公式種目と�
     - ステッカー（競技者が持参）
 - 解法について
     - 解法は外層ブロック手数(OBTM記法)を用いて記述したものを提出する。
-    - 持ち替え記号、面操作(R、U2、L'など)、外層ブロック操作(Rw2、FW'など)が許可される。中層回転(M、E、S)は許可されない。
+    - 持ち替え記号(x、y2など)、面操作(R、U2、L'など)、外層ブロック操作(Rw2、FW'など)が許可される。中層回転(M、E、S)は許可されない。
     - 持ち替え記号は0手とみなす。それ以外の操作は1手と数える。
     - 競技者の解法はスクランブル手順の任意の部分に直接由来してはならない。解法中の各手順の意図を説明できるようにしておかねばならない。
 
 最後のルールを適用するために、2016年からFMC用のスクランブルには最初と最後に`R' U F`が加えられることになりました。
 
-大会における最高記録は、Tim Wong (USA)、Marcel Peters (ドイツ)、Vladislav Ushakov (ベラルーシ)による19手のものです。３回の試技の平均では、Marcel PetersとBaiqiang Dong (中国)による24.33が世界記録です。Marcel Petersは2017年の世界大会で世界チャンピオンのタイトルを獲得しました。
+現在の大会における最高記録は、**Sebastiano Tronto(イタリア)による単発16手 (FMC 2019)**です。３回の試技の平均では、**Cale Schoon (アメリカ)による21.00手 (North Star Cubing Challenge 2020)**が世界記録です。2019年の世界大会での世界チャンピオンは、ともに平均25.33手を出したFirstian Fushada (符逢城)とChristopher Chiです。
 
 **訳注：**  
-翻訳時点(2020/01)において、世界記録はさらに更新されています。  
-現在の世界記録は、**本チュートリアルの執筆者であるSebastiano Trontoによる単発16手、平均22.00手**です。2019年6月15日-16日に開催されたFMC 2019において達成されました。  2019年に開催された世界大会では、**Firstian Fushada (符逢城)	が単発24手、平均25.33手で世界チャンピオンのタイトルを獲得しました。**  
-また、日本においては、**Shuto Ueno (上野柊斗)が単発19手、平均24.00手の日本記録を保持しています。**この単発記録はアジア記録(AsR)でもあります。
+翻訳時点(2020/04)では**Shuto Ueno (上野柊斗)が単発19手、平均24.00手の日本記録を保持しています。**この単発記録は、Baiqiang Dong (董百强)と並んでアジア記録(AsR)でもあります。
 {: .notice--success}
 
 <!--Article E: Fewest Moves Solving
@@ -513,7 +533,7 @@ Peters also holds the World Champion title (2017).
 このチュートリアルのゴールは、**FMCでよい結果を出すためによく知られたテクニックをまとめることです。** いくつかの説明は詳しく記述して実例もつけていますが、単に総合的な説明を書いて学習のためのリソースを提案しているだけのものもあります。
 
 <!--訳者TODO：ここにFMCの解答用紙の画像をつける-->
-![スクランブルシート](../assets/img/fmc_scramble_sheet.png){: class="img-responsive align-center"}
+![スクランブルシート](../../../assets/img/fmc_scramble_sheet.png){: class="img-responsive align-center"}
 公式スクランブルシートの例
 {: .text-center}
 
@@ -661,7 +681,8 @@ Petrusはブロックビルディングを学ぶには素晴らしい解法で�
 
 ステップ3ではLast Layerについて書いたことはここでも変わりません。ステップ4ではこの弊害を除くことができますが、Mのような中層回転は全て2手としてカウントされることは忘れないでください！（少なくとも、Rouxの標準的なLSEのやりかたは避けましょう。つまり、MとUだけで解くやりかたです）
 
-Waffle’s Roux Tutorial: [http://wafflelikescubes.webs.com/](http://wafflelikescubes.webs.com/)
+- Waffle’s Roux Tutorial: [http://wafflelikescubes.webs.com/](http://wafflelikescubes.webs.com/)
+- Kian Mansour’s Roux Tutorial: [https://sites.google.com/view/kianroux/home](https://sites.google.com/view/kianroux/home)
 
 **訳注：**  
 実際の最少手数競技においては、解答用紙に**M、S、Eの中層回転（スライスムーブ)**の記号を書くことは認められていません。[規則12a](https://www.worldcubeassociation.org/regulations/translations/japanese/#12a)に定義されている3x3x3の回転記号のみを使うようにしましょう。ここでは**「RouxメソッドのやりかたでM列を使う（解答用紙にはR L'のように書く）と2手としてカウントされ、手数が多くなりがちになるので避けたほうがよいですよ」**ということを言っています。
@@ -743,7 +764,7 @@ is not the case for FMC, as efficiency (i.e. number of moves) is the only thing 
 
 1. クロス
 1. 1段目に3つのコーナーを配置する
-1. 3つの中層エッジをインサートする。「自由に」コーナーを使う
+1. 3つの中層エッジをインサートする。「自由に」コーナースロットを使う
 1. コーナーとエッジのペアをインサートする。CFOPやLBLと同様
 
 最初の２ステップをブロックビルディングに置き換えることと、中層のエッジを同時に揃えることで、効率化するとよいでしょう。クロスと3つの中層エッジを揃えてから、3つのコーナーを「自由な」エッジを使って揃えるというバリエーションもあります。
@@ -768,7 +789,7 @@ Despite its simplicity, this method can be very useful in FMC.
 
 ### 1.6. Heise
 1. 2x2x1の「四角」を作る
-1. 「四角」を揃えてエッジを合わせる
+1. 「四角」を揃えてエッジを合わせることで、F2L-1の状態を作る。
 1. 残った5つのエッジと2つのコーナーを揃える
 1. 最後の3つのコーナーをコミューテータで揃える
 
@@ -957,7 +978,7 @@ other tutorials will be linked for a more complete study.
 ### 2.1 ブロックビルディング (Blockbuilding)
 **ブロックビルディングはFMCにおける最重要のテクニックでしょう。**簡単なコンセプトですが、しっかり習得するにはたくさんの練習が必要です。前の章で書いたような、ブロックビルディングの考え方に基づく解法（Petrus、Roux、Heise、ZZ）を練習することで直接的にブロックビルディングのスキルを高めることができます。
 
-ここではいくつか便利な基本となるテクニックを並べましょう。一つ目はRyan Heiseのウェブサイト ([www.ryanheise.com/cube](www.ryanheise.com/cube))から取ってきたものです。ウェブサイトには実例がたくさんありますから、是非見てみましょう！
+ここではいくつか便利な基本となるテクニックを並べましょう。一つ目はRyan Heiseのウェブサイト ([https://www.ryanheise.com/cube](https://www.ryanheise.com/cube))から取ってきたものです。ウェブサイトには実例がたくさんありますから、是非見てみましょう！
 <!--
 2.1 Blockbuilding
 Blockbuilding is probably the most important technique in FMC. It is a simple concept, but
@@ -985,7 +1006,7 @@ title = "並べて、つなげる(Align then Join) - Example"
 scramble = "F U' D2 L D L2 D F R2 B U2 R2 D L2 D L2 D R2 U' L2 F2"
 text = display_text
 solution = "alg.cubing.net"
-img_src="../assets/img/alg-211.png"
+img_src="../../../assets/img/alg-211.png"
 algcubing = "https://alg.cubing.net/?alg=L2_%2F%2FAlign%0AU2_%2F%2FJoin&setup=F_U-_D2_L_D_L2_D_F_R2_B_U2_R2_D_L2_D_L2_D_R2_U-_L2_F2"
 %}
 
@@ -1033,7 +1054,7 @@ title = "別のところに持っていく (Move it out of the way) - Example"
 scramble = "F R2 B D2 F D2 L2 B2 F' D2 F' L B U' F2 U2 L2 U B R2 F"
 text = display_text
 solution = "alg.cubing.net"
-img_src="../assets/img/alg-212.png"
+img_src="../../../assets/img/alg-212.png"
 algcubing = "https://alg.cubing.net/?setup=F_R2_B_D2_F_D2_L2_B2_F-_D2_F-_L_B_U-_F2_U2_L2_U_B_R2_F&alg=U2_R2_D_R2_%2F%2F2x2x1_square%0AU-_%2F%2FMove_the_red%26%2345%3Bwhite%26%2345%3Bblue_pair_out_of_the_way%0AF-_D-_%2F%2FExpand_the_square_to_a_2x2x2_block"
 %}
 
@@ -1060,11 +1081,11 @@ the yellow-orange-blue one!
 #### 2.1.3 壊して元通りにする (Destroy and Restore)
 ソース: [http://www.ryanheise.com/cube/destroy_restore.html](http://www.ryanheise.com/cube/destroy_restore.html)
 
-この問題を解決するための別のアプローチとは、一時的にブロックを壊してから、あとで元通りつなげるというものです。同様に「別のところに持っていく」テクニックを使います。
+この問題を解決するための別の方法とは、一時的にブロックを壊してから、あとで元通りつなげるというものです。同様に「別のところに持っていく」テクニックを使います。
 
 基本的な例として、`R U R' U`の「スクランブル」をした状態を考えましょう。
 
-![](../assets/img/alg-213.png){:width="500px" height="auto" class="align-center"}
+![](../../../assets/img/alg-213.png){:width="500px" height="auto" class="align-center"}
 
 `U R U' R'`という手順で元に戻りますが、これを知らないふりをして、Last Layerの状態も無視してください。最初の二段目だけを見ると、`R'`することで既にできたペアをF面にある別のピースの隣に動かせることがわかります。しかし、既に完成している別のF2Lスロットを壊してしまいます。このとき、次のように「壊して元通りにする」ことができます。
 
@@ -1078,7 +1099,7 @@ F' //Fをして動かしたピースを戻す
 title = "壊して元通りにする (Destroy and Restore) - Example"
 scramble = "R U R' U'"
 text = display_text
-img_src="../assets/img/alg-213.png"
+img_src="../../../assets/img/alg-213.png"
 %}
 
 <!--
@@ -1112,7 +1133,7 @@ title = "キーホール - Example (出典：Edoardo Disarò)"
 scramble = "R U' R' L F' B U2 R2 B2 L' B R D F2 D2 L2 F2 D' R2 F2"
 solution = "alg.cubing.net"
 text = display_text
-img_src="../assets/img/alg-214.png"
+img_src="../../../assets/img/alg-214.png"
 algcubing="https://alg.cubing.net/?setup=U-_R-_L_F-_B_U2_R2_B2_L-_B_R_D_F2_D2_L2_F2_D-_R2_F2&alg=F-_L-_%2F%2FLayer_minus_one_corner%0AF2_L-_B-_L_%2F%2FKeyhole%0AF_U-_B_U_%2F%2FKeyhole,_accidentally_solving_the_last_corner%0AF-_R-_B2_R_%2F%2FKeyhole%0AF_B_L_B_L-_%2F%2FF2L%0AB-_%2F%2FLL"
 %}
 
@@ -1139,15 +1160,15 @@ L U' F2 D' //2x2x2 (4/4)
 U2 B R2 B //疑似F2L-1 (4/8)
 F' * U F R U2 R' //疑似F2L (6/14)
 U2 R2 //3コーナー以外完成 (2/16)
-* = B' U F2 U' B U F2 U' //Last 3 corners (3/19)
+* = B' U F2 U' B U F2 U' //Last 3 corners (8-5/19)
 {% endcapture %}
 {% include solvebox.html
-title = "Example (by Mirek Goljan and Guus Razoux-Schultz)"
+title = "Example (by Mirek Goljan and Guus Razoux-Schultz)[^2-1-5-2]"
 scramble = "D U' F2 U' R' F R2 B D' B R F B' U R' D2 L' R2 F2 B' U' B D B2 F2
 U L F U' B2"
 solution = "L U' F2 D' U2 B R2 F' U F2 U' B U F' R U2 R' U2 R2 (19)"
 text = display_text
-img_src="../assets/img/alg-215.png"
+img_src="../../../assets/img/alg-215.png"
 algcubing="https://alg.cubing.net/?setup=D_U-_F2_U-_R-_F_R2_B_D-_B_R_F_B-_U_R-_D2_L-_R2_F2_B-_U-_B_D_B2_F2_U_L_F_U-_B2&alg=L_U-_F2_D-_%2F%2F2x2x2_(4%2F4)%0AU2_B_R2_B_%2F%2FPseudo_F2L%26%2345%3B1_(4%2F8)%0AF-_(B-_U_F2_U-_B_U_F2_U-)_U_F_R_U2_R-_%2F%2FPseudo_F2L_(6%2F14)%0AU2_R2_%2F%2FAll_but_3_corners_(2%2F16)"
 %}[^2-1-5]
 
@@ -1189,7 +1210,7 @@ title = "あとのステップに影響を与える - Example"
 scramble = "L2 D2 U R2 F2 D2 B2 U' R2 B2 U B U F D B2 U L D' R' F"
 solution = "alg.cubing.net"
 text = display_text
-img_src="../assets/img/alg-216.png"
+img_src="../../../assets/img/alg-216.png"
 algcubing="https://alg.cubing.net/?setup=L2_D2_U_R2_F2_D2_B2_U-_R2_B2_U_B_U_F_D_B2_U_L_D-_R-_F&alg=L2_B_R_B_%2F%2FTwo_2x2x1_blocks"
 %}
 
@@ -1542,7 +1563,7 @@ but, as we will see when talking about insertions, you will almost never18 need 
 
 全ての人が知っておくべきエッジコミューテータは
 
-![](../assets/img/alg-232.png){:width="200px" height="auto" class="align-center"}
+![](../../../assets/img/alg-232.png){:width="200px" height="auto" class="align-center"}
 `[M', U2]` = `M' U2 M U2` (DF->UB->UF)
 {: .text-center}
 
@@ -1592,7 +1613,7 @@ inverse of the following ones).
 #### 2.3.3 その他のエッジ3-cycle(Other Edge 3-cycles)
 中層回転を使わないエッジの3-cycleもあります。実際にはコミューテータですらないものも含まれます！HTMで8手の例を2つ上げましょう。
 
-![](../assets/img/alg-233.png){:width="200px" height="auto" class="align-center"}
+![](../../../assets/img/alg-233.png){:width="200px" height="auto" class="align-center"}
 `R2 Fw2 R2 U R2 Fw2 R2 U` = `R2 B2 L2 D L2 B2 R2 U`  
 `R2 Fw2 R2 Uw R2 Fw2 R2 Uw` = `R2 B2 L2 U B2 R2 F2 D`
 {: .text-center}
@@ -1651,19 +1672,19 @@ U R U R U2 R' U' R' U' R2
 #### 2.3.4 ブロックコミューテータ(Block Commutators)
 Ryan Heiseのウェブサイトを注意深く読んだなら、**「ペア3-cycle」**あるいは**「ブロックコミューテータ」**というものについても既にわかっていることでしょう。コーナーコミューテータについて既に知っているなら、これを直感的に理解するのは難しくはありません。たとえば次の例を見てみましょう。
 
-![](../assets/img/alg-234-1.png){:width="200px" height="auto" class="align-center"}
+![](../../../assets/img/alg-234-1.png){:width="200px" height="auto" class="align-center"}
 `[L Dw' L', U']` = `L Dw' L' U' L Dw L' U`
 {: .text-center}
 
 これはHeiseのステップ3でとても役立つ手順です。しかしこれは、コーナー3-cycleとエッジ3-cycleを同時に揃えることができます。たとえば、Last layerのアルゴリズムである`M F U F' U' F' L F R'`は次のように書くことができます。
 
-![](../assets/img/alg-234-2.png){:width="200px" height="auto" class="align-center"}
+![](../../../assets/img/alg-234-2.png){:width="200px" height="auto" class="align-center"}
 `[R: [L' Dw L, U']]` = `R L' Dw L U' L' Dw' L U R'`
 {: .text-center}
 
 これはペアコミューテータにセットアップを加えたものです。PLLのJ permも次のようなペア3-cycleとして書くことができます。
 
-![](../assets/img/alg-234-3.png){:width="200px" height="auto" class="align-center"}
+![](../../../assets/img/alg-234-3.png){:width="200px" height="auto" class="align-center"}
 `[R2: [Fw2, D B2 D']]` = `R2 Fw2 D B2 D' Fw2 D B2 D' R2`
 {: .text-center}
 <!--
@@ -1718,7 +1739,7 @@ title = "単純コーナーインサーション - Example (スケルトン)"
 scramble = "D B2 U' F2 L2 D2 R2 U F2 U2 L2 R' D2 B L' U' R2 F2 R B F2"
 text = display_text
 solution = "alg.cubing.net"
-img_src="../assets/img/alg-241.png"
+img_src="../../../assets/img/alg-241.png"
 algcubing = "https://alg.cubing.net/?setup=D_B2_U-_F2_L2_D2_R2_U_F2_U2_L2_R-_D2_B_L-_U-_R2_F2_R_B_F2&alg=B-_U-_D_L-_F-_%2F%2FEO_%26%232b%3B_blocks%0AD2_L2_D-_L_%2F%2FPseudo1_2x2x3%0AU2_R2_U-_R-_%2F%2FPseudo_2x2x1%0AU_L-_U_R-_U-_L_U2_R-_L-_%2F%2FAll_but_3_corners"
 %}
 
@@ -1877,7 +1898,7 @@ scramble = "B2 D' R2 D' F2 R2 D B2 U' L2 D2 R' U' R L' D' F D2 B R U2 R'"
 text = display_text
 solution = "B' R' U B U' F2 U B' F2 R F R U2 F R B R2 B' F D' B' D B F' D'
 B' L B L' (29)"
-img_src="../assets/img/alg-242.png"
+img_src="../../../assets/img/alg-242.png"
 algcubing = "https://alg.cubing.net/?alg=B-_R-_(U_B_U-_F2_U_B-_U-_F2)_F2_U_F2_%2F%2F2x2x1_(5%2F5)%0AR_%2F%2FAnother_2x2x1_(1%2F6)%0AF_R_U2_F_R_B_R_(R_B-_F_D-_B-_D_B_F-_R-_B)_B-_R_%2F%2FF2L%26%2345%3B1_%26%232b%3B_pair_(9%2F15)%0AD-_B-_L_B_L-_%2F%2FAll_but_3_edges_and_3_corners_(5%2F20)%0A%0A&setup=B2_D-_R2_D-_F2_R2_D_B2_U-_L2_D2_R-_U-_R_L-_D-_F_D2_B_R_U2_R-"
 %}
 
@@ -2001,7 +2022,7 @@ title = "João Pedro Batista Ribeiro Costaの元南アフリカ記録(SAR)"
 scramble = "L' U2 D' L' U2 B' D B' L U2 F2 R2 F' R2 L2 F' U2 D2 F"
 text = display_text
 solution = "F D' L' U' R' U L U' R2 D' R' U' R F' L2 F2 D F2 B' D B F' D' F' L2 (25)"
-img_src="../assets/img/alg-244.png"
+img_src="../../../assets/img/alg-244.png"
 algcubing = "https://alg.cubing.net/?alg=F_D-_(L-_U-_R-_U_L_U-_R_U)_U2_(U_R_D-_R-_U-_R_D_R-)_R_%2F%2FEO%0AD-_F-_L2_%2F%2F2x2x2%0AF2_D_F2_%2F%2FPseudo_F2L%26%2345%3B2%0AB-_D_B_%2F%2FF2L%26%2345%3B1%0AF-_D-_F-_%2F%2FAll_But_4_Corners&setup=_L_U2_D-_L-_U2_B-_D_B-_L_U2_F2_R2_F-_R2_L2_F-_U2_D2_F"
 %}
 
@@ -2257,7 +2278,7 @@ title = "2C2E Insertion - Example"
 scramble = "B' L' D2 R U F' U' L U2 D R2 U2 F B R2 B U2 B L2 B2 U2"
 text = display_text
 solution = "B' F D2 L' R2 B R B' R2 F R' B R F' R2 F2 D F' D2 F R' D' R D2 F U2 (26)"
-img_src="../assets/img/alg-247.png"
+img_src="../../../assets/img/alg-247.png"
 algcubing = ""
 %}
 
@@ -2352,7 +2373,7 @@ title = "Conjugate and Solve - Example"
 scramble = "R2 L2 D2 F2 D' R2 U' B2 D' F2 U2 F' D2 L' F U B F2 U2 F2 L"
 text = display_text
 solution = "U2 F B' L2 D2 F' U F2 L' B2 L F2 L' B' L' D L B' D L U L' D' L U2 R F2 R' L2 B (30)"
-img_src="../assets/img/alg-244.png"
+img_src="../../../assets/img/alg-244.png"
 algcubing = "https://alg.cubing.net/?alg=F_D-_(L-_U-_R-_U_L_U-_R_U)_U2_(U_R_D-_R-_U-_R_D_R-)_R_%2F%2FEO%0AD-_F-_L2_%2F%2F2x2x2%0AF2_D_F2_%2F%2FPseudo_F2L%26%2345%3B2%0AB-_D_B_%2F%2FF2L%26%2345%3B1%0AF-_D-_F-_%2F%2FAll_But_4_Corners&setup=_L_U2_D-_L-_U2_B-_D_B-_L_U2_F2_R2_F-_R2_L2_F-_U2_D2_F"
 %}
 
@@ -2476,7 +2497,7 @@ Baiqiang Dongによって開発された**[Insertion Finder](https://fewestmov.e
 インサーションファインダーを使うと、自分が見つけられなかったインサーションを見つけることができるので、自分のFMCのソルブを振り返るときに使うといいでしょう。下記に出力される画面の例を下記の追加します。インサーションに使われる記号はなぜか絵文字なのでかわいく見えます。
 {: .notice--info}
 
-![Insertion Finder](../assets/img/if.png){:width="auto" height="200px" class="align-center img-thumbnail"}
+![Insertion Finder](../../../assets/img/if.png){:width="auto" height="200px" class="align-center img-thumbnail"}
 インサーションファインダーの出力画面例
 {: .text-center}
 
@@ -2544,7 +2565,7 @@ title = "Insert Last Pairs - Example"
 scramble = "D' R' U' F U2 F2 L2 D' B2 F2 D' L R' D F' U' R' B' R2 F D U' B' R' U' F"
 text = display_text
 solution = "U2 F' U' B' D B D2 L D2 B L F L' F' B D L' D' U' L2 U L U' L U L'(27)"
-img_src="../assets/img/alg-253.png"
+img_src="../../../assets/img/alg-253.png"
 algcubing = "https://alg.cubing.net/?setup=D-_R-_U-_F_U2_F2_L2_D-_B2_F2_D-_L_R-_D_F-_U-_R-_B-_R2_F_D_U-_B-_R-_U-_F&alg=U2_F-_U-_%2F%2F2x2x2%0AB-_D_B_%2F%2FOrient_two_edges%0AD2_L_D2_B2_%2F%2F2x2x3_%26%232b%3B_6_pairs%0AB-_%2F%2FSave_one_pair_(for_F2L_on_R)%0AL_F_L-_F-_%2F%2FInsert_other_pair%0AB_D_L-_D-_%2F%2FInsert_saved_pair%0AU-_L2_U_L_U-_L_U_L-_%2F%2FLast_Layer"
 %}
 
@@ -2567,7 +2588,7 @@ title = "Insert Last Pairs - Example"
 scramble = "D' R' U' F U2 F2 L2 D' B2 F2 D' L R' D F' U' R' B' R2 F D U' B' R' U' F"
 text = display_text
 solution = "U2 F' U' B' D B D2 L D2 B U' L F L' F' L U L B (20)"
-img_src="../assets/img/alg-253.png"
+img_src="../../../assets/img/alg-253.png"
 algcubing = "https://alg.cubing.net/?setup=D-_R-_U-_F_U2_F2_L2_D-_B2_F2_D-_L_R-_D_F-_U-_R-_B-_R2_F_D_U-_B-_R-_U-_F&alg=U2_F-_U-_%2F%2F2x2x2%0AB-_D_B_%2F%2FOrient_two_edges%0AD2_L_D2_B2_%2F%2F2x2x3_%26%232b%3B_6_pairs%0AB-_U-%2F%2FSave_one_pair_(for_F2L_on_R)%0AL_F_L-_F-_%2F%2FInsert_other_pair%0AL_U_L_B_%2F%2FInsert_saved_pair_and_skip"
 %}
 
@@ -2663,7 +2684,7 @@ title = "逆スクランブル - Example"
 scramble = "D2 L2 B R2 U2 F' L2 U2 B2 L2 F' D L2 B U L' U2 L' F' R'"
 text = display_text
 solution = "D' F D F' R2 F R2 F' R2 B' D' B' U2 B D' B' U2 B2 D F2 L2 F U' R (24)"
-img_src="../assets/img/alg-310.png"
+img_src="../../../assets/img/alg-310.png"
 algcubing = ""
 %}
 
@@ -2757,7 +2778,7 @@ are deeply related.
 
 <!-- 訳者TODO 画像入れる -->
 
-![333fm](../assets/img/alg-321.jpg){:width="300px" height="auto" class="img-responsive align-center"}
+![333fm](../../../assets/img/alg-321.jpg){:width="300px" height="auto" class="img-responsive align-center"}
 キューブのDFLコーナーを見てみましょう
 {: .text-center}
 
@@ -2820,7 +2841,7 @@ title = "プリムーブで修正したスクランブル Example"
 scramble = "D2 F' L2 F2 U2 R2 B R2 F' R2 D2 U2 L' U' B' U R U L2 F2 L'"
 text = display_text
 solution = ""
-img_src="../assets/img/alg-322.png"
+img_src="../../../assets/img/alg-322.png"
 algcubing = ""
 %}
 
@@ -2858,7 +2879,7 @@ scramble = "U L' F' L2 F' D2 F'B' U' R2 U L' F2 U' F2 L2 U2 F2 L2 U2"
 text = display_text
 solution = "R2 B' R2 B D L2 F D F2 L' D F' D2 F D' L' D B L' F L B' L2 F' D'
 L' D2 B2 (28)"
-img_src="../assets/img/alg-3222.png"
+img_src="../../../assets/img/alg-3222.png"
 algcubing = ""
 %}
 
@@ -3744,6 +3765,7 @@ R2 F2 L D' F' D F L' F2 R2
 [^2-0-2]: ソルブのより前の段階で数手をインサートすることで完成させるテクニックです。これもすぐに解説します！もうちょっと待って！
 [^2-0-3]: [http://www.speedsolving.com/forum/threads/fewest-moves-tips-and-techniques.1566/#post-16209](http://www.speedsolving.com/forum/threads/fewest-moves-tips-and-techniques.1566/#post-16209)
 [^2-1-5]: [19 HTM Solve by Mirek Goljan and Guus Razoux Schultz](https://fmcsolves.cubing.net/?p=107)
+[^2-1-5-2]: この解法は二人の競技者によって独立に見つけられたものです。念のため。
 [^2-1-6-1]: 著名な例はZBLS(ZBF2Lとも呼ばれる)やWinter Variationです。これに限らず非常に沢山あります。調べてみましょう！
 [^2-1-6-2]: 「準最適」とは最良の解法よりも多くの手数がかかる解法のことです。
 [^2-1-8]: speedsolving.comの投稿による。もちろん、何が「よいスタート」であるかはあなたのレベルによって変わります。ここでの手数は、熟練者を目指す人にとってのよいゴールとなるように考えられています。もしあなたがそこまで上達していないなら、あまり効率的でないブロックを作って進めてもいいでしょう。「よいスタート」を探すのに多くの時間を使わないようにしてください。最終結果だけがカウントされます！
