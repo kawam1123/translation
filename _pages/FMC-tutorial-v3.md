@@ -2521,11 +2521,20 @@ find solution that are not possible (or very difficult) to find for humans: use 
 
 ### 2.5 EOから始めよ (Starting with EO)
 
+**訳注**  
+2020/04/20 EOファーストアプローチについて理解しつつ翻訳中です。不正確な内容が含まれている可能性があります。
+{: .notice--danger}
+
 ZZでのソルブのように、**全てのエッジの向きを揃える(Edge Orientation, EO)ことからスタートする**のは常に考慮すべき可能性です。このチュートリアルの初版のころから自分のソルブの中で何度も繰り返して使ってきました。試技の一番最初にはまずノーマルスクランブルと逆スクランブル全てのEOを探して、試す価値があるのかを見ていました。試す価値はあります！ 2.1.7節で離したように、多くの著名なFMCerがEOから始めています。
 
 **エッジの向きを揃える方向という点から言えば、エッジには3つの向きがありうるのです。** F/B (＜R, L, U, D＞を除く)、R/L、そしてU/Dです。通常のZZのソルブをした場合、それぞれについて4つの異なる向きでF2Lを作ることができるでしょう。EOから始めるのが好みではなくても、（カラーニュートラルの）ZZを練習してEOの認識を成長させましょう。
 
 さて、ここからはZZとは違ったやり方になります。
+
+**訳注**  
+FMCにおけるEOとは何か？については、うえしゅう氏の記事に詳しく記述があります。  
+[FMCにおけるEOについて（加筆修正版） - uesyuu's Blog (2018年11月12日)](https://uesyuu.com/blog/?p=28)
+{: .notice--info}
 
 <!--
 2.5 Starting with EO
@@ -2539,6 +2548,8 @@ with respect to F/B (reduce to <R, L, U, D>), to R/L and to U/D. If you procede 
 normal ZZ solve, for each of these you can build the F2L on 4 different sides. Even if you don’t
 like starting with EO, I suggest practicing some (color neutral!) ZZ to improve EO recognition.
 From here you have at continue in different ways.
+-->
+<!--
 2.5.1 EO + blockbuilding
 After having oriented all edges, the most common way to go on is blockbuilding. The pro is
 that we don’t have any “bad” edge, but this forces40 us not to use moves that break the EO,
@@ -2582,6 +2593,9 @@ B' (26)
 See on alg.cubing.net
 One last thing: in the examples above there are two nice and short EO steps. But this
 doesn’t mean you should discard a longer EO, if you can build a lot of blocks while doing it!
+-->
+#### 2.5.2 ドミノ・リダクション (Domino Reduction)
+<!--
 2.5.2 Domino Reduction
 Edge orientation can be considered, modulo rotations, a reduction to the subgroup generated
 by the moves <R, L, U, D> or, equivalentely, <R, L, U, D, F2, B2>. In other words, by
@@ -2608,6 +2622,10 @@ L' F2 L //Domino reduction (3/8)
 D2 L2 F2 D F2 D L2 U' R2 D2 R2 //Finish (11/19)
 Solution: R' B U' D F L' F2 L D2 L2 F2 D F2 D L2 U' R2 D2 R2 (19)
 See on alg.cubing.net
+-->
+#### 2.5.3 部分的ドミノ・リダクション (Partial Domino Reduction, PDR)
+##### 古典的PDR
+<!--
 2.5.3 Partial Domino Reduction
 Classic PDR
 The idea of Partial Domino Reduction, shortened to PDR, was first introduced by Alexandre
@@ -2637,7 +2655,11 @@ U2 L2 D R2 U //AB5C (5/17)
 Solution: D2 R' U2 R D R' U F' R B2 R' F2 R B2 R L U R D F2 D2 B2 U2 L2 D
 R2 U (27)
 See on alg.cubing.net
+-->
+##### EO+CO PDR
+<!--
 EO+CO PDR
+
 This second type of “PDR” approach is probably closer to being a “mock DR”, whereas the
 classical PDR described above is closer to an EO + blockbuilding approach.
 42https://www.speedsolving.com/threads/introducing-a-variation-for-fewest-moves.67299/
@@ -2926,12 +2948,14 @@ are deeply related.
 
 スクランブル: `F' L2 F2 U2 R2 B R2 F' R2 D2 U2 L' U' B' U R U L2 F2 L'`
 
+![](../../../assets/img/alg-321a.png){:width="300px" height="auto" class="img-responsive align-center"}
+
 `R2 F`すれば2x2x1ブロックができます。2、3手で2x2x2ブロックに拡張できればいいですが、`L' U B' D`とさらに4手かかるのはちょっと多すぎます。ところが、`L2 D'`とやってみましょう。つまり、合わせて`R2 F L2 D'`と回すと次のようになります。
 
 <!-- 訳者TODO 画像入れる -->
 
-![333fm](../../../assets/img/alg-321.jpg){:width="300px" height="auto" class="img-responsive align-center"}
-キューブのDFLコーナーを見てみましょう
+![](../../../assets/img/alg-321b.png){:width="300px" height="auto" class="img-responsive align-center"}
+`R2 F L2 D'`と回した後にDFLコーナー側から見たキューブ
 {: .text-center}
 
 ここでできているのは本物の2x2x2ブロックではなく疑似2x2x2ブロックです。このときのD面を一時的に`D2`だけズレた状態であると考えて、すべてが完成したあとで`D2`するものだと考えてみることができます。たとえば、このまま（非効率的ですが）CFOPでソルブを進めてみましょう。
