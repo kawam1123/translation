@@ -2,7 +2,7 @@ main:
   - title: "About"
     url: /about/
   - title: "FMCチュートリアル"
-    url: /FMC/FMC-Tutorial/v3
+    url: /FMC/FMC-Tutorial/v3/
   - title: "競技者チュートリアル"
     url: /competitor-tutorial
   - title: "KawamHub"
@@ -12,6 +12,6 @@ leftnav:
   - title: "翻訳一覧"
     children:
       - title: "FMCチュートリアル"
-        url: /FMC/FMC-Tutorial/v3
+        url: /FMC/FMC-Tutorial/v3/
       - title: "競技者チュートリアル"
         url: /competitor-tutorial

@@ -1,10 +1,10 @@
 ---
-title: "最少手数競技入門 - ルービックキューブを少ない手順で解く by Sebastiano Tronto 第三版"
-description: Sebastiano TrontoによるFMCチュートリアル(第三版)の日本語訳です。ルービックキューブの最少手数競技のための入門記事です。
+title: "最少手数競技入門 - ルービックキューブを少ない手順で解く by Sebastiano Tronto 第二版"
+description: Sebastiano TrontoによるFMCチュートリアルの日本語訳（第二版）
 header:
   teaser: /assets/img/333fm.jpg
-permalink: /FMC/FMC-Tutorial/v3/
-redirect_from: ../FMC/FMC-tutorial.html
+permalink: /FMC/FMC-tutorial.html
+
 layout: single
 classes: wide
 toc: false
@@ -21,38 +21,35 @@ footnote_script: true
 <!--
 Fewest Moves Tutorial
 Solving a Rubik’s Cube with as few moves as possible
-v3.01
+v2.0
 Sebastiano Tronto
-April 17, 2020
+September 15, 2017
+2
 -->
 
-![333fm](../../../assets/img/333fm.jpg){:width="400px" height="auto" class="img-responsive align-center"}
-
-[第三版](#){: .btn .btn-success}  
+![333fm](../assets/img/333fm.jpg){:width="400px" height="auto" class="img-responsive align-center"}
 
 **Written by Sebastiano Tronto**  
 Fewest Moves Tutorial - Solving a Rubik’s Cube with as few moves as possible  
-v3.01  
-Sebastiano Tronto  
-April 17, 2020  
+version 2  
+September 15, 2017  
 Original document (3rd edition): [Fewest Moves Tutorial](https://fmcsolves.cubing.net/fmc_tutorial_ENG.pdf)  
-Older edition (2nd edition): [Fewest Moves Tutorial 2nd edition](https://fmcsolves.cubing.net/fmc_tutorial_ENG_v2.pdf)  
+Original document (2nd edition): [Fewest Moves Tutorial](https://fmcsolves.cubing.net/fmc_tutorial_ENG_v2.pdf)  
 License under CC BY 4.0
 
 Japanese Translated by kawam1123  
-version 0.1  
-April 20, 2020  
+version 0.3  
+January 15, 2020  
 License under CC BY 4.0
 
 **免責事項：**  
-本ドキュメントは、**2020年にSebastiano Tronto氏によって書かれたFewest Moves Tutorial(version3.01)を日本語に翻訳したものです。** 2019年12月、本チュートリアルを日本語に翻訳されたものが公開されていなかったため、翻訳プロジェクトをスタートしました。本記事の内容については、最少手数競技に関する知識や用語を確認しながら翻訳を進めていますが、翻訳者の技量不足により不正確である場合があります。あらかじめご了承ください。  
+本ドキュメントは、**2017年にSebastiano Tronto氏によって書かれたFewest Moves Tutorial(version2.0)を日本語に翻訳したものです。** 2019年12月、本チュートリアルを日本語に翻訳されたものが公開されていなかったため、翻訳プロジェクトをスタートしました。本記事の内容については、最少手数競技に関する知識や用語を確認しながら翻訳を進めていますが、翻訳者の技量不足により不正確である場合があります。あらかじめご了承ください。  
 また、すぐに最少手数競技のやりかたを覚えたいという方には、既に[WRCC](http://wrcc.main.jp/commentary_fmc/fmc/index)や[TRCC](http://trcc.sub.jp/solution/fmc/fmcindex.html)の素晴らしい解説記事がありますので、こちらもあわせてご参照ください。  
-This documantion is a Japanese translated edition of Fewest Moves Tutorial (Third Edition) by Sebastiano Tronto. Since no translation in Japanese had been published at December 2019, I started a tranlation project for the tutorial. I am translating the document looking up the basic knowledges and the technical terms on FMC, but the translated content might be wrong by reason of my lack of translation and FMC skills. If you find any mistakes in the translation, please let me know!
+This documantion is a Japanese translated edition of Fewest Moves Tutorial (Second Edition) by Sebastiano Tronto. Since no translation in Japanese had been published at December 2019, I started a tranlation project for the tutorial. I am translating the document looking up the basic knowledges and the technical terms on FMC, but the translated content might be wrong by reason of my lack of translation and FMC skills. If you find any mistakes in the translation, please let me know!
 {: .notice--warning}
 
 **第3版の公開に際して**  
-2020/01/14に本チュートリアルの第3版が公開されました！（2020/04/17に修正版v3.01が公開されました）  
-この日本語版は、第3版の内容に沿って翻訳中のものです。[第2版を翻訳したもの](../v2/)もありますので、興味のある方はこちらもご参照ください。によるものですので、ご注意ください。また、**原著者がGitHubにリポジトリを作成し、原文のLaTeXファイルや画像ファイルなどを公開しています。** 詳細は[こちら](https://github.com/sebastianotronto/fmctutorial)をご覧ください。
+2020/01/14に本チュートリアルの第3版が公開されました！この日本語版は、追って第3版の内容に沿って翻訳しています。[第三版はこちらをご参照ください。](/FMC/FMC-Tutorial/v3/)。下記の内容は第2版によるものですので、ご注意ください。また、**原著者がGitHubにリポジトリを作成し、原文のLaTeXファイルや画像ファイルなどを公開しています。** 詳細は[こちら](https://github.com/sebastianotronto/fmctutorial)をご覧ください。
 {: .notice--success}
 
 **翻訳にあたっての謝辞：**  
@@ -65,7 +62,6 @@ Un ringraziamento speciale a Sebastiano Tronto, una superstar FMC, per aver pubb
 本ドキュメントは、未完成です。原文はコメントアウトされた状態で保存されています。翻訳に協力してくださる方は、コメントアウトを外して日本語の翻訳を書き込んでください。翻訳の進捗は[GitHubのリポジトリ](https://github.com/kawam1123/translation)で管理しており、画像ファイルなどもこちらに格納されています。
 {: .notice--info}
 
-<!-- 第二版進捗
 **翻訳進捗**
 
 |章|ページ|進捗|メモ|
@@ -81,7 +77,6 @@ Un ringraziamento speciale a Sebastiano Tronto, una superstar FMC, per aver pubb
 |付録B Notation                         |55-56  |[未着手](#){: .btn .btn-danger}    ||
 |付録C Last Layer Algorithms            |57-58  |[未着手](#){: .btn .btn-danger}    ||
 {: .table-hover }
--->
 
 <!-- TOC -->
 <!--
@@ -113,70 +108,8 @@ Un ringraziamento speciale a Sebastiano Tronto, una superstar FMC, per aver pubb
 -->
 <!-- /TOC -->
 
-## 第三版への序文 (Preface to the Third Edition)
-**昨年(2019年はFMCにとって素晴らしい年になりました。**2年間、平均24.00手から更新されていなかった世界記録は、Reto Bubendorf (23.00), MarkやBoyanowski (22.33) や私自身(Sebastiano Tronto) (22.00)によって、2手も短くなりました。まとめると、2019年には11人が平均24手の壁を破ったのでした。単発世界記録は18手から16手になりました。
-
-2019年は記録更新だけの年ではありません。**Domino Reduction(DR)が普及した年でもあります。**1年前まで、この手法はトップ競技者によってたまに使われる程度で、継続的に使うのは難しいと考えられていました。しかし、よくあることですが、これがそこまで難しいものではないと気付いた人々がいて、誰にとっても簡単なものになりました。わずか数か月の間で、この手法は多くのトップ競技者がほとんどのソルブで使うようになるまで流行してきました。FMCの新時代が始まったのです。
-
-するとこのチュートリアルはどうなるでしょう？第三版のチュートリアルは「新時代」に向けたものでしょうか？実はそうではありません。「旧時代」のチュートリアルの最後のアップデートだと思うかもしれません。いくつか新しく追加したいことがありましたが、最近の発展を踏まえたものは少しだけです。
-
-このチュートリアルはFMCを学ぼうとする人にとっては素晴らしい出発点であり続けると思います。しかし、新しい手法が開発されていくにつれて、ここに記載されたトピックやその説明方法は陳腐化していくでしょう。願わくば、この文書を最新にものにアップデートしつづけて、数年後にも役に立つガイドであり続けるようにします。
-
-<!--
-Last year has been incredible for FMC. After being stuck at 24.00 for almost two years, the
-world record average has finally dropped by 2 moves, thanks to Reto Bubendorf (23.00), Mark
-Boyanowski (22.33) and myself (22.00). In total, eleven different people broke the 24-moves
-barrier for average in 2019. The world record single also dropped from 18 to 16.
-But 2019 was not only the year of the records: it was also the year when domino reduction
-became popular. Until a year ago, this method was only occasionally used by top solvers and
-was considered difficult to use consistently. However, as often happens, it just takes a few people
-that realize that something is not as difficult as it seems to make it easy for everyone. In a matter
-of months, this method has grown in popularity to the point that many top solvers use in for
-most of their solves. A new era of FMC has begun.
-Where does this leave this tutorial then? Is version 3.0 the tutorial for this “new era”? Not
-really. You might think of this as the last update of the “old era” tutorial. There were a few
-things that I wanted to add, and only some of them are inspired by the recent developments.
-I believe that this tutorial is still a great starting point for someone who wants to learn FMC.
-However, as new methods get developped, the choice of topics included here or the way they are
-explained may become obsolete. Hopefully I will be able to keep this document up to date, so
-that it remains a useful guide for many years to come.
--->
-
-### 変更点
-前のバージョンから無数のタイポを修正し、多数の新しいことを加えました。.png形式の画像を.svgに入れ替えることにしたので、見た目がよくなっているはずです。
-
-付録にあったLast Layerのアルゴリズムは省き、単にテキストファイルへのリンクにしました。EOに関するセクションは第二章に移動し、第四章の残りと第三章をマージしました。
-
-その他、次のようなセクションを追加しました。それ以外は軽微な変更だけです。
-
-- 2.4.6節、3.8節：エッジインサーションについて
-- 2.5.3節：partial domino reductionについて.
-- 3.4節：NISSを用いてよいEOを探す
-- 3.7.1節： 歪んだセンターとNISS (Skew centers and NISS)
-- 3.10節： 交換して短くする (Replace and shorten)
-- 付録C：Reto Bubendorfによる演習問題 (Some exercises by Reto Bubendorf).
-- 付録D：domino reduction概説
-
-<!--List of changes
-Since the last version of this tutorial I have fixed like a million typos and probably introduced
-a lot of new ones. I have also decided to replace .png images with .svg ones, which look much
-better.
-I have removed the appendix with last layer algorithms and just linked a raw text file instead.
-I have moved the general section on EO to Chapter 2 and merged the remainder of Chapter 4
-with Chapter 3.
-Other than that, I have added a few sections:
-• Sections 2.4.6 and 3.8 on edge insertions.
-• Section 2.5.3 about partial domino reduction.
-• Section 3.4 about using NISS to find nice EOs.
-• Section 3.7.1 “Skew centers and NISS”.
-• Section 3.10, “Replace and shorten”.
-• Appendix C, “Some exercises by Reto Bubendorf”.
-• Appendix D, a short introduction to domino reduction.
-All the rest is just minor changes.
--->
 
 ## 第二版への序文 (Preface to the Second Edition)
-<!-- このセクションは第二版から修正しない -->
 数年の間、このチュートリアルの新しいバージョンを作ろうと考えていました。いくつか修正や追加の必要な点があり、また、私自身の考え方が変わったことによって変更すべき点などがありました。
 
 LaTeXで書き直そうとも考えました。LaTexのドキュメントは見た目がとても良くなるからです。ただし、唯一の欠点は、そうしてしまうと翻訳が難しくなるということです。このチュートリアルが高く評価されており、多くの他言語に翻訳をしてくれて、世界中で読めるようになっていくことを非常に嬉しく思います。翻訳者の皆さんそれぞれにお礼を言いたいのですが、ほとんどの方の名前を忘れてしまいました。
@@ -239,11 +172,11 @@ I don’t have anything else to say about this second edition. Go on and enjoy t
 http://www.speedsolving.com/wiki/index.php/Western_Color_Scheme
 3
 -->
-<!-- 第三版－第二版翻訳ライン -->
-## 本書について (About this Book)
-この本は、**WCA公式大会の公式競技のひとつである「最少手数競技（FMC、Fewest Moves Challenge）」と呼ばれる競技でよい結果を出すための指針となることを目的としています。**もしあなたが世界キューブ協会 (World Cube Association) やスピードキューブの公式大会について知らないのであれば、下記のイントロダクションを読んでみてください。
 
-「最少手数競技」は、与えられたルービックキューブの状態(スクランブルされた状態)から、できる限り短い手数で解くものです。使えるのはいくつかのキューブ、ペン、そして紙だけです。コンピュータープログラムの利用は禁止されており、通常は時間制限があります。（WCA公式大会においては1時間、あるオンラインのものでは1週間など)
+## 本書について (About this Book)
+この本は、**WCA公式大会の公式競技のひとつである「最少手数競技（FMC、Fewest Moves Challenge）」と呼ばれる競技でよい結果を出すための指針となることを目的としています。**もしあなたが世界キューブ協会 (World Cube Association) やスピードキューブの公式大会について知らないのであれば、少し先のイントロダクションを読んでみてください。
+
+「最少手数競技」は、特定の状態の(スクランブルされた)ルービックキューブをできる限り短い手数で解くものです。使えるのはいくつかのキューブ、ペン、そして紙だけです。コンピュータープログラムの利用は禁止されており、通常は時間制限があります。（WCA公式大会においては1時間、あるオンラインのものでは1週間)
 
 したがって、この本では一般的なアルゴリズムの説明はしません。一般的なアルゴリズムがFMCで役立たないということは、この本の残りの部分で繰り返し述べられており、次のようにまとめることができます。「たった一つのアプローチに限定することは、あまりにも窮屈！」
 
@@ -267,7 +200,7 @@ www.jaapsch.net.
 -->
 
 ### 前提条件
-**読者は（たとえ簡易LBLであったとしても）ルービックキューブの解き方を知っているものとします。**さらに、通常のOBTM（外層ブロック手数）法の記法（イントロダクション内のリンク、付録Bを参照）と、基本的な用語（たとえば「2x2x2ブロック」）について知っていることが求められます。ただし、多くの専門用語は本文中で解説されます。
+読者は（たとえ簡易LBLであったとしても）ルービックキューブの解き方を知っているものとします。さらに、通常のOBTM（外層ブロック手数）法の記法（イントロダクション内のリンク、付録Bを参照）と、基本的な用語（たとえば「2x2x2ブロック」）について知っていることが求められます。ただし、多くの専門用語は本文中で解説されます。
 
 <!--
 Prerequisites
@@ -279,7 +212,7 @@ Rubik’s Cube) is required, although many technical terms will be explained in 
 -->
 
 ### ソルブ実例について
-第二版からはいくつかのソルブ例を収録しています。これにより本書がもっと自己完結的なものになることを期待しています。これは次のような枠を作って表現します。
+第二版では、本書を自己完結的にするため、いくつかのソルブ例を収録しています。次のような枠の中で表示されます。
 
 {% capture display_text %}
 B' F D2 //Pseudo 2x2x1 (3/3)
@@ -293,7 +226,7 @@ title = "2C2E Insertion - Example"
 scramble = "B' L' D2 R U F' U' L U2 D R2 U2 F B R2 B U2 B L2 B2 U2"
 text = display_text
 solution = "B' F D2 L' R2 B R B' R2 F R' B R F' R2 F2 D F' D2 F R' D' R D2 F U2 (26)"
-img_src="../../../assets/img/2C2E_alg.png"
+img_src="../assets/img/2C2E_alg.png"
 algcubing = "https://alg.cubing.net/?setup=B-_L-_D2_R_U_F-_U-_L_U2_D_R2_U2_F_B_R2_B_U2_B_L2_B2_U2&alg=B-_F_D2_%2F%2FPseudo_2x2x1_(3%2F3)%0AL-_B_(B2_L_B_L-_B_D2_F-_R_F_D2)_R2_%2F%2FPseudo_3x2x2_(3%2F6)%0AF2_D_F-_D2_F_%2F%2FFound_using_NISS_(5%2F11)%0AR-_D-_R_D2_F_U2_%2F%2FFound_using_NISS_(6%2F17)"
 %}
 
@@ -313,13 +246,14 @@ F U2 (26)
 See on alg.cubing.net
 -->
 
-このソリューションの記述のなかで、決して`x`や`y2`などの**「持ち替え記号」**を書いていないことに気付くでしょう。解法を考えるときにキューブを持ち替えてはいけないということではありません。もし持ち替え記号を使わない記述がよくわからないなら、5.1節までスキップすることがオススメです。
+
+このソリューションの記述のなかで、決して`x`や`[f2]`などの**「持ち替え記号」**を書いていないことに気付くかもしれません。解法を考えるときにキューブを持ち替えてはいけないということではありません。もし持ち替え記号を使わない記述がよくわからないなら、6.1節までスキップすることがオススメです。
 
 <!--
-You may notice that in writing the solution I almost never use “rotation” moves such as x or
-y2. This doesn’t mean that you shouldn’t turn the cube around in your hands when trying the
-solution. If you are not familiar with rotationless solution writing, I advise skipping to Section
-5.1 before reading the rest of the book.
+You may notice that in writing the solution I almost never use “rotation” moves such as
+x or [f2]. This doesn’t mean that you shouldn’t turn the cube around in your hands when
+trying the solution. If you are not familiar with rotationless solution writing, I advise skipping
+to Section 6.1 before reading the rest of the book.
 -->
 
 ### 謝辞
@@ -333,7 +267,7 @@ now). I hope this tutorial will be helpful in the same way.
 
 **あわせて感謝を申し上げたいのは、改善点を指摘してくれた全ての方です。**間違いを指摘してくださったり、このチュートリアルを（古い版も含めて）翻訳してくださったりしました。いずれ忘れてしまうでしょうから、全ての方の名前を挙げるのは控えます。
 
-この版では、[visualcube](http://cube.crider.co.uk/visualcube.php)[^0-visualcube]と[alg.cubing.net](https://alg.cubing.net)[^0-algcubingnet]を使いましたので、この２つのツールの作者であるConrad RiderとLucas Garronには、特に感謝を申し上げます。
+第二版では、[visualcube](http://cube.crider.co.uk/visualcube.php)[^0-visualcube]と[alg.cubing.net](https://alg.cubing.net)[^0-algcubingnet]を使いましたので、この２つのツールの作者であるConrad RiderとLucas Garronには、特に感謝を申し上げます。
 <!--
 I also want to thank everybody who gave me suggestions for improvements, pointed out
 mistakes or translated this tutorial (or rather, the old version). I don’t want to name any of you
@@ -352,41 +286,20 @@ goes also to the creators of this two tools, respectively Conrad Rider and Lucas
 
 <!--
 Disclaimer
-As you may know, English is not my first language. If you think that a certain part is poorly
+As you may know, English is not my first language. If you think that a certain passage is poorly
 written or if you find any mistake, please contact me at: sebastiano.tronto [at] gmail [dot] com.
-
-Where to find this
-
-This tutorial can be found at https://fmcsolves.cubing.net/fmc_tutorial_ENG.pdf. If a
-new version is released, the link is updated automatically.
-You can find the LaTeX source files, the pictures and more on my Github repository: https:
-//github.com/sebastianotronto/fmctutorial.
-License
-This work is licensed under the Creative Commons Attribution 4.0 License (CC BY 4.0)4
-. This
-means that you are free not only to redistribute this document, but also to remix, transform,
-and build upon it, as long as you give appropriate credit. For example, feel free to translate this
-tutorial to another language!
+2
+http://cube.crider.co.uk/visualcube.php, although I have acutally used the version hosted at http:
+//stachu.cubing.net/v/, because of problems with png images.
+3
+https://alg.cubing.net/
 -->
-
-### 公開場所
-このチュートリアルは[https://fmcsolves.cubing.net/fmc_tutorial_ENG.pdf](https://fmcsolves.cubing.net/fmc_tutorial_ENG.pdf)で公開しています。新しい版がリリースされたときは、このリンクは自動的に更新されます。LaTexのソースファイルと画像は私のGitHubリポジトリにあります。：[https:
-//github.com/sebastianotronto/fmctutorial](https:
-//github.com/sebastianotronto/fmctutorial)
-
-### ライセンス
-本ドキュメントは[Creative Commons Attribution 4.0 License (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/)で提供されます。つまり、このドキュメントを再配布することができるだけでなく、自由に別の言語に翻訳してもよいということです！
-
-**訳注：**  
-本翻訳も同様にCC BY 4.0で提供されます。
-{: .notice--info}
 
 ## 目次
 
 **訳注：**  
 自動生成しましたので、本項目は省略します。
 {: .notice--info}
-
 <!--
 Contents
 1 Think Outside the Box 9
@@ -489,16 +402,18 @@ FMCはWCA(World Cube Association、世界キューブ協会)の公式種目と�
     - ステッカー（競技者が持参）
 - 解法について
     - 解法は外層ブロック手数(OBTM記法)を用いて記述したものを提出する。
-    - 持ち替え記号(x、y2など)、面操作(R、U2、L'など)、外層ブロック操作(Rw2、FW'など)が許可される。中層回転(M、E、S)は許可されない。
+    - 持ち替え記号、面操作(R、U2、L'など)、外層ブロック操作(Rw2、FW'など)が許可される。中層回転(M、E、S)は許可されない。
     - 持ち替え記号は0手とみなす。それ以外の操作は1手と数える。
     - 競技者の解法はスクランブル手順の任意の部分に直接由来してはならない。解法中の各手順の意図を説明できるようにしておかねばならない。
 
 最後のルールを適用するために、2016年からFMC用のスクランブルには最初と最後に`R' U F`が加えられることになりました。
 
-現在の大会における最高記録は、**Sebastiano Tronto(イタリア)による単発16手 (FMC 2019)**です。３回の試技の平均では、**Cale Schoon (アメリカ)による21.00手 (North Star Cubing Challenge 2020)**が世界記録です。2019年の世界大会での世界チャンピオンは、ともに平均25.33手を出したFirstian Fushada (符逢城)とChristopher Chiです。
+大会における最高記録は、Tim Wong (USA)、Marcel Peters (ドイツ)、Vladislav Ushakov (ベラルーシ)による19手のものです。３回の試技の平均では、Marcel PetersとBaiqiang Dong (中国)による24.33が世界記録です。Marcel Petersは2017年の世界大会で世界チャンピオンのタイトルを獲得しました。
 
 **訳注：**  
-翻訳時点(2020/04)では**Shuto Ueno (上野柊斗)が単発19手、平均24.00手の日本記録を保持しています。**この単発記録は、Baiqiang Dong (董百强)と並んでアジア記録(AsR)でもあります。
+翻訳時点(2020/01)において、世界記録はさらに更新されています。  
+現在の世界記録は、**本チュートリアルの執筆者であるSebastiano Trontoによる単発16手、平均22.00手**です。2019年6月15日-16日に開催されたFMC 2019において達成されました。  2019年に開催された世界大会では、**Firstian Fushada (符逢城)	が単発24手、平均25.33手で世界チャンピオンのタイトルを獲得しました。**  
+また、日本においては、**Shuto Ueno (上野柊斗)が単発19手、平均24.00手の日本記録を保持しています。**この単発記録はアジア記録(AsR)でもあります。
 {: .notice--success}
 
 <!--Article E: Fewest Moves Solving
@@ -535,7 +450,7 @@ Peters also holds the World Champion title (2017).
 このチュートリアルのゴールは、**FMCでよい結果を出すためによく知られたテクニックをまとめることです。** いくつかの説明は詳しく記述して実例もつけていますが、単に総合的な説明を書いて学習のためのリソースを提案しているだけのものもあります。
 
 <!--訳者TODO：ここにFMCの解答用紙の画像をつける-->
-![スクランブルシート](../../../assets/img/fmc_scramble_sheet.png){: class="img-responsive align-center"}
+![スクランブルシート](../assets/img/fmc_scramble_sheet.png){: class="img-responsive align-center"}
 公式スクランブルシートの例
 {: .text-center}
 
@@ -683,8 +598,7 @@ Petrusはブロックビルディングを学ぶには素晴らしい解法で�
 
 ステップ3ではLast Layerについて書いたことはここでも変わりません。ステップ4ではこの弊害を除くことができますが、Mのような中層回転は全て2手としてカウントされることは忘れないでください！（少なくとも、Rouxの標準的なLSEのやりかたは避けましょう。つまり、MとUだけで解くやりかたです）
 
-- Waffle’s Roux Tutorial: [http://wafflelikescubes.webs.com/](http://wafflelikescubes.webs.com/)
-- Kian Mansour’s Roux Tutorial: [https://sites.google.com/view/kianroux/home](https://sites.google.com/view/kianroux/home)
+Waffle’s Roux Tutorial: [http://wafflelikescubes.webs.com/](http://wafflelikescubes.webs.com/)
 
 **訳注：**  
 実際の最少手数競技においては、解答用紙に**M、S、Eの中層回転（スライスムーブ)**の記号を書くことは認められていません。[規則12a](https://www.worldcubeassociation.org/regulations/translations/japanese/#12a)に定義されている3x3x3の回転記号のみを使うようにしましょう。ここでは**「RouxメソッドのやりかたでM列を使う（解答用紙にはR L'のように書く）と2手としてカウントされ、手数が多くなりがちになるので避けたほうがよいですよ」**ということを言っています。
@@ -766,7 +680,7 @@ is not the case for FMC, as efficiency (i.e. number of moves) is the only thing 
 
 1. クロス
 1. 1段目に3つのコーナーを配置する
-1. 3つの中層エッジをインサートする。「自由に」コーナースロットを使う
+1. 3つの中層エッジをインサートする。「自由に」コーナーを使う
 1. コーナーとエッジのペアをインサートする。CFOPやLBLと同様
 
 最初の２ステップをブロックビルディングに置き換えることと、中層のエッジを同時に揃えることで、効率化するとよいでしょう。クロスと3つの中層エッジを揃えてから、3つのコーナーを「自由な」エッジを使って揃えるというバリエーションもあります。
@@ -791,7 +705,7 @@ Despite its simplicity, this method can be very useful in FMC.
 
 ### 1.6. Heise
 1. 2x2x1の「四角」を作る
-1. 「四角」を揃えてエッジを合わせることで、F2L-1の状態を作る。
+1. 「四角」を揃えてエッジを合わせる
 1. 残った5つのエッジと2つのコーナーを揃える
 1. 最後の3つのコーナーをコミューテータで揃える
 
@@ -980,7 +894,7 @@ other tutorials will be linked for a more complete study.
 ### 2.1 ブロックビルディング (Blockbuilding)
 **ブロックビルディングはFMCにおける最重要のテクニックでしょう。**簡単なコンセプトですが、しっかり習得するにはたくさんの練習が必要です。前の章で書いたような、ブロックビルディングの考え方に基づく解法（Petrus、Roux、Heise、ZZ）を練習することで直接的にブロックビルディングのスキルを高めることができます。
 
-ここではいくつか便利な基本となるテクニックを並べましょう。一つ目はRyan Heiseのウェブサイト ([https://www.ryanheise.com/cube](https://www.ryanheise.com/cube))から取ってきたものです。ウェブサイトには実例がたくさんありますから、是非見てみましょう！
+ここではいくつか便利な基本となるテクニックを並べましょう。一つ目はRyan Heiseのウェブサイト ([www.ryanheise.com/cube](www.ryanheise.com/cube))から取ってきたものです。ウェブサイトには実例がたくさんありますから、是非見てみましょう！
 <!--
 2.1 Blockbuilding
 Blockbuilding is probably the most important technique in FMC. It is a simple concept, but
@@ -1008,7 +922,7 @@ title = "並べて、つなげる(Align then Join) - Example"
 scramble = "F U' D2 L D L2 D F R2 B U2 R2 D L2 D L2 D R2 U' L2 F2"
 text = display_text
 solution = "alg.cubing.net"
-img_src="../../../assets/img/alg-211.png"
+img_src="../assets/img/alg-211.png"
 algcubing = "https://alg.cubing.net/?alg=L2_%2F%2FAlign%0AU2_%2F%2FJoin&setup=F_U-_D2_L_D_L2_D_F_R2_B_U2_R2_D_L2_D_L2_D_R2_U-_L2_F2"
 %}
 
@@ -1056,7 +970,7 @@ title = "別のところに持っていく (Move it out of the way) - Example"
 scramble = "F R2 B D2 F D2 L2 B2 F' D2 F' L B U' F2 U2 L2 U B R2 F"
 text = display_text
 solution = "alg.cubing.net"
-img_src="../../../assets/img/alg-212.png"
+img_src="../assets/img/alg-212.png"
 algcubing = "https://alg.cubing.net/?setup=F_R2_B_D2_F_D2_L2_B2_F-_D2_F-_L_B_U-_F2_U2_L2_U_B_R2_F&alg=U2_R2_D_R2_%2F%2F2x2x1_square%0AU-_%2F%2FMove_the_red%26%2345%3Bwhite%26%2345%3Bblue_pair_out_of_the_way%0AF-_D-_%2F%2FExpand_the_square_to_a_2x2x2_block"
 %}
 
@@ -1083,11 +997,11 @@ the yellow-orange-blue one!
 #### 2.1.3 壊して元通りにする (Destroy and Restore)
 ソース: [http://www.ryanheise.com/cube/destroy_restore.html](http://www.ryanheise.com/cube/destroy_restore.html)
 
-この問題を解決するための別の方法とは、一時的にブロックを壊してから、あとで元通りつなげるというものです。同様に「別のところに持っていく」テクニックを使います。
+この問題を解決するための別のアプローチとは、一時的にブロックを壊してから、あとで元通りつなげるというものです。同様に「別のところに持っていく」テクニックを使います。
 
 基本的な例として、`R U R' U`の「スクランブル」をした状態を考えましょう。
 
-![](../../../assets/img/alg-213.png){:width="500px" height="auto" class="align-center"}
+![](../assets/img/alg-213.png){:width="500px" height="auto" class="align-center"}
 
 `U R U' R'`という手順で元に戻りますが、これを知らないふりをして、Last Layerの状態も無視してください。最初の二段目だけを見ると、`R'`することで既にできたペアをF面にある別のピースの隣に動かせることがわかります。しかし、既に完成している別のF2Lスロットを壊してしまいます。このとき、次のように「壊して元通りにする」ことができます。
 
@@ -1101,7 +1015,7 @@ F' //Fをして動かしたピースを戻す
 title = "壊して元通りにする (Destroy and Restore) - Example"
 scramble = "R U R' U'"
 text = display_text
-img_src="../../../assets/img/alg-213.png"
+img_src="../assets/img/alg-213.png"
 %}
 
 <!--
@@ -1135,7 +1049,7 @@ title = "キーホール - Example (出典：Edoardo Disarò)"
 scramble = "R U' R' L F' B U2 R2 B2 L' B R D F2 D2 L2 F2 D' R2 F2"
 solution = "alg.cubing.net"
 text = display_text
-img_src="../../../assets/img/alg-214.png"
+img_src="../assets/img/alg-214.png"
 algcubing="https://alg.cubing.net/?setup=U-_R-_L_F-_B_U2_R2_B2_L-_B_R_D_F2_D2_L2_F2_D-_R2_F2&alg=F-_L-_%2F%2FLayer_minus_one_corner%0AF2_L-_B-_L_%2F%2FKeyhole%0AF_U-_B_U_%2F%2FKeyhole,_accidentally_solving_the_last_corner%0AF-_R-_B2_R_%2F%2FKeyhole%0AF_B_L_B_L-_%2F%2FF2L%0AB-_%2F%2FLL"
 %}
 
@@ -1162,7 +1076,7 @@ L U' F2 D' //2x2x2 (4/4)
 U2 B R2 B //疑似F2L-1 (4/8)
 F' * U F R U2 R' //疑似F2L (6/14)
 U2 R2 //3コーナー以外完成 (2/16)
-* = B' U F2 U' B U F2 U' //Last 3 corners (8-5/19)
+* = B' U F2 U' B U F2 U' //Last 3 corners (3/19)
 {% endcapture %}
 {% include solvebox.html
 title = "Example (by Mirek Goljan and Guus Razoux-Schultz)"
@@ -1170,9 +1084,9 @@ scramble = "D U' F2 U' R' F R2 B D' B R F B' U R' D2 L' R2 F2 B' U' B D B2 F2
 U L F U' B2"
 solution = "L U' F2 D' U2 B R2 F' U F2 U' B U F' R U2 R' U2 R2 (19)"
 text = display_text
-img_src="../../../assets/img/alg-215.png"
+img_src="../assets/img/alg-215.png"
 algcubing="https://alg.cubing.net/?setup=D_U-_F2_U-_R-_F_R2_B_D-_B_R_F_B-_U_R-_D2_L-_R2_F2_B-_U-_B_D_B2_F2_U_L_F_U-_B2&alg=L_U-_F2_D-_%2F%2F2x2x2_(4%2F4)%0AU2_B_R2_B_%2F%2FPseudo_F2L%26%2345%3B1_(4%2F8)%0AF-_(B-_U_F2_U-_B_U_F2_U-)_U_F_R_U2_R-_%2F%2FPseudo_F2L_(6%2F14)%0AU2_R2_%2F%2FAll_but_3_corners_(2%2F16)"
-%}[^2-1-5] [^2-1-5-2]
+%}[^2-1-5]
 
 もしあなたがインサーションについてまだ知らないなら、最後の行は無視してください。**今回注目すべきは最初の行、特に`F2`をしているところです。この一手でDFに2x2x1ブロックを作り、同時に橙-緑エッジを合わせています。**次の一手で2x2x2ブロックができるようになりました。
 
@@ -1212,7 +1126,7 @@ title = "あとのステップに影響を与える - Example"
 scramble = "L2 D2 U R2 F2 D2 B2 U' R2 B2 U B U F D B2 U L D' R' F"
 solution = "alg.cubing.net"
 text = display_text
-img_src="../../../assets/img/alg-216.png"
+img_src="../assets/img/alg-216.png"
 algcubing="https://alg.cubing.net/?setup=L2_D2_U_R2_F2_D2_B2_U-_R2_B2_U_B_U_F_D_B2_U_L_D-_R-_F&alg=L2_B_R_B_%2F%2FTwo_2x2x1_blocks"
 %}
 
@@ -1239,7 +1153,7 @@ move (the red B) the square become 2.
 
 複数の異なる解法を学ぶなかで既にお気づきの方もいるかもしれませんが、Edge Orientationというのは再帰的なステップなのです。前述のように、**Bad edgeが多ければ多いほど、解くのは困難になっていきます。**通常、最後にエッジの向きをそろえることは、効率的ではありません。ZZでそうするように、まず最初にエッジの向きを揃えることが手軽ですが、ブロックビルディングのフェイズで制約を持つことになります。
 
-部分的にでも、**Edge Orientationをブロックビルディングの途中で終わらせるのが良い方法です。**ZZやPetrusなどの解法に習熟すると、数手動かしたあとでエッジの向きが正しいかどうかを簡単に判定できるようになります。もしまだ判定ができないのなら、FMCにおいてはいつでも望むときに戻って修正できるということを忘れないでおきましょう。つまり、EOがうまくいかないときには、前に戻って、何手か加えたり変えたりして、よい方向に進むかどうかを確認すればいいのです。（2.6.1節もご参照ください）
+部分的にでも、**Edge Orientationをブロックビルディングの途中で終わらせるのが良い方法です。**ZZやPetrusなどの解法に習熟すると、数手動かしたあとでエッジの向きが正しいかどうかを簡単に判定できるようになります。もしまだ判定ができないのなら、FMCにおいてはいつでも望むときに戻って修正できるということを忘れないでおきましょう。つまり、EOがうまくいかないときには、前に戻って、何手か加えたり変えたりして、よい方向に進むかどうかを確認すればいいのです。（2.5.1節もご参照ください）
 
 しかし、「EOファースト・アプローチ」をただちに却下しないようにしてください。[João Pedro Batista Ribeiro Costa](https://www.worldcubeassociation.org/persons/2013COST02)(世界大会2015のFMCチャンピオン)や[Grzegorz Łuczyna](https://www.worldcubeassociation.org/persons/2005LUCZ01)(ヨーロッパ大会2010のFMCチャンピオン)などの著名なキューバーは、ほとんど常にEOから始めていますし、[Sébastien Auroux](https://www.worldcubeassociation.org/persons/2008AURO01)(世界大会2011のFMCチャンピオン)や私(Sebastiano Tronto)も非常によく使います。詳細と実例については4.1節を参照してください。
 
@@ -1362,8 +1276,7 @@ final result that counts!
 
 **訳注：**  
 この「詰めキューブ」問題は非常に難しいので、9手や10手のものが苦労なくできるというのはかなりのレベルです！Sebastiano Trontoにとっては簡単なのかもしれませんが…。  
-本チュートリアルの巻末には、Retoによる詰めキューブの問題がいくつか収録されています！　日本国内では、[うえしゅう](https://twitter.com/uesyuu_cube)氏による[詰めキューブ生成](https://uesyuu.com/tsume-cube/)のサービスがあり、**3手から14手までの詰めキューブの問題をランダム生成して楽しむことができます。**（Retoの問題も含まれています）  
-自分で面白い詰めキューブの問題ができたら、[詰めキューブスクランブル生成器](https://uesyuu.com/tsume-cube/generate-scramble.html)でスクランブルを生成して、知り合いのキューバーに問題を出してみましょう！
+日本国内では、[うえしゅう](https://twitter.com/uesyuu_cube)氏による[詰めキューブ生成](https://uesyuu.com/tsume-cube/)のサービスがあり、**3手から14手までの詰めキューブの問題をランダム生成して楽しむことができます。**自分で面白い詰めキューブの問題ができたら、[詰めキューブスクランブル生成器](https://uesyuu.com/tsume-cube/generate-scramble.html)でスクランブルを生成して、知り合いのキューバーに問題を出してみましょう！
 {: .notice--info}
 
 <!--
@@ -1519,11 +1432,9 @@ commutators are the basis for a good FMC solve.
 
 組み合わせが変わる3つのコーナーは同じ面にある必要はありません。`[L D' L', U2]` = `L D' L' U2 L D L' U2` という手順も3-cycleです！
 
-全ての種類のコーナーコミューテータ（このチュートリアルでは解説しません）を学ぶなら、Speedsolving.comの[Brian Yuのチュートリアル](https://www.speedsolving.com/threads/bh-tutorial.12268/)を見てみるとよいでしょう。文書と動画での解説があり、どちらも非常によくできていましたが、残念ながら動画にはアクセスできなくなってしまいました。
+全ての種類のコーナーコミューテータ（このチュートリアルでは解説しません）を学ぶなら、Speedsolving.comの[Brian Yuのチュートリアル](https://www.speedsolving.com/threads/bh-tutorial.12268/)を見てみるとよいでしょう。文書と動画で解説されていますが、どちらも非常によくできています。
 
 FMCをやる上では、**8手の「ピュアコミューテータ」**だけを覚えればいいでしょう。たとえば、Niklasはピュアコミューテータですが、A permは違います。必要ならA9やほかのケースを見てください。しかし、インサーションのところでも話しますが、FMCにおいてはほとんど必要がありません[^2-3-1-2]。
-
-ごく稀に、10手の「スレッジ・インサーション」のコーナーコミューテータ(`[R' F R F', D2]`)が役に立つことがあります。これは8手のコミューテータを使うよりも多くのキャンセルができる場合があるからです。
 
 **訳注：**  
 上記のBrian Yuのチュートリアルにおいては、コミューテータの種類として次のものを上げています。8手のものがピュアコミューテータです。ここでは、A9(9手コミューテータ)以上のコミューテータを覚えても、FMCではあまり使わない、ということを言っています  
@@ -1568,7 +1479,7 @@ but, as we will see when talking about insertions, you will almost never18 need 
 
 全ての人が知っておくべきエッジコミューテータは
 
-![](../../../assets/img/alg-232.png){:width="200px" height="auto" class="align-center"}
+![](../assets/img/alg-232.png){:width="200px" height="auto" class="align-center"}
 `[M', U2]` = `M' U2 M U2` (DF->UB->UF)
 {: .text-center}
 
@@ -1618,7 +1529,7 @@ inverse of the following ones).
 #### 2.3.3 その他のエッジ3-cycle(Other Edge 3-cycles)
 中層回転を使わないエッジの3-cycleもあります。実際にはコミューテータですらないものも含まれます！HTMで8手の例を2つ上げましょう。
 
-![](../../../assets/img/alg-233.png){:width="200px" height="auto" class="align-center"}
+![](../assets/img/alg-233.png){:width="200px" height="auto" class="align-center"}
 `R2 Fw2 R2 U R2 Fw2 R2 U` = `R2 B2 L2 D L2 B2 R2 U`  
 `R2 Fw2 R2 Uw R2 Fw2 R2 Uw` = `R2 B2 L2 U B2 R2 F2 D`
 {: .text-center}
@@ -1677,19 +1588,19 @@ U R U R U2 R' U' R' U' R2
 #### 2.3.4 ブロックコミューテータ(Block Commutators)
 Ryan Heiseのウェブサイトを注意深く読んだなら、**「ペア3-cycle」**あるいは**「ブロックコミューテータ」**というものについても既にわかっていることでしょう。コーナーコミューテータについて既に知っているなら、これを直感的に理解するのは難しくはありません。たとえば次の例を見てみましょう。
 
-![](../../../assets/img/alg-234-1.png){:width="200px" height="auto" class="align-center"}
+![](../assets/img/alg-234-1.png){:width="200px" height="auto" class="align-center"}
 `[L Dw' L', U']` = `L Dw' L' U' L Dw L' U`
 {: .text-center}
 
 これはHeiseのステップ3でとても役立つ手順です。しかしこれは、コーナー3-cycleとエッジ3-cycleを同時に揃えることができます。たとえば、Last layerのアルゴリズムである`M F U F' U' F' L F R'`は次のように書くことができます。
 
-![](../../../assets/img/alg-234-2.png){:width="200px" height="auto" class="align-center"}
+![](../assets/img/alg-234-2.png){:width="200px" height="auto" class="align-center"}
 `[R: [L' Dw L, U']]` = `R L' Dw L U' L' Dw' L U R'`
 {: .text-center}
 
 これはペアコミューテータにセットアップを加えたものです。PLLのJ permも次のようなペア3-cycleとして書くことができます。
 
-![](../../../assets/img/alg-234-3.png){:width="200px" height="auto" class="align-center"}
+![](../assets/img/alg-234-3.png){:width="200px" height="auto" class="align-center"}
 `[R2: [Fw2, D B2 D']]` = `R2 Fw2 D B2 D' Fw2 D B2 D' R2`
 {: .text-center}
 <!--
@@ -1729,7 +1640,7 @@ a way to solve a corners 3-cycle almost certainly with fewer than 8 moves: inser
 
 これが3-cycleのコーナーをほとんど常に8手で解く仕組みです。どうすればもっと改善するでしょうか？　3つのコーナーを揃えることができる全てのインサート可能なコミューテータのなかで選ぶべきは、**最も多くのキャンセルが起こるものです。**通常は、3つのコーナーを揃えるピュアコミューテータをチェックするだけで十分です。そのあとで一番いいものを選びましょう。ごく稀に、一番いいインサーションが9手（あるいはそれ以上）のコミューテータであることがありますが、そういう状況はあまり起こらないので、全ての種類のコミューテータをチェックするのはあまり意味がありません。
 
-スケルトンを作ってから、3つのコーナーの動きを追いかけやすくするため、キューブに白いステッカー[^2-4-1]を貼って1、2、3のような番号（あるいはA、B、Cのような文字）[^2-4-1-2]を書くすることを勧めます。以前は、暗めのステッカーがある安いキューブを用意して、その上に鉛筆で書いてしまうことをしていましたが、これもよい方法でしょう。
+スケルトンを作ってから、3つのコーナーの動きを追いかけやすくするため、キューブに白いステッカー[^2-4-1]を貼って1、2、3のような番号（あるいはA、B、Cのような文字）[^2-4-1-2]を書いたりすることを進める人が多いです。個人的には、暗めのステッカーがある安いキューブを用意して、その上に鉛筆で書いてしまうのがよいと思います。
 
 ソルブの実例を見るともっとわかりやすくなるでしょう。次のスケルトンを安いキューブで回してみましょう。（もしステッカーを貼るなら、どんなキューブでもよいです）
 
@@ -1744,11 +1655,11 @@ title = "単純コーナーインサーション - Example (スケルトン)"
 scramble = "D B2 U' F2 L2 D2 R2 U F2 U2 L2 R' D2 B L' U' R2 F2 R B F2"
 text = display_text
 solution = "alg.cubing.net"
-img_src="../../../assets/img/alg-241.png"
+img_src="../assets/img/alg-241.png"
 algcubing = "https://alg.cubing.net/?setup=D_B2_U-_F2_L2_D2_R2_U_F2_U2_L2_R-_D2_B_L-_U-_R2_F2_R_B_F2&alg=B-_U-_D_L-_F-_%2F%2FEO_%26%232b%3B_blocks%0AD2_L2_D-_L_%2F%2FPseudo1_2x2x3%0AU2_R2_U-_R-_%2F%2FPseudo_2x2x1%0AU_L-_U_R-_U-_L_U2_R-_L-_%2F%2FAll_but_3_corners"
 %}
 
-さて、ステッカーを持ってきて貼り、青-赤-黄コーナーの赤ステッカー(ULB)の上に「1」、青-黄-橙コーナーの橙ステッカー(RDB)に「2」、橙-青-白コーナーの白ステッカー(LDB)に「3」と書きましょう[^2-4-1-3]。キューブを揃えて、またスクランブルしましょう。（たとえば`L B2 L F L' B2 L F' L2`などで揃います）[^2-4-1-3-2]
+この時点で、鉛筆を持って青-赤-黄コーナーの赤ステッカー(ULB)の上に「1」、青-黄-橙コーナーの橙ステッカー(RDB)に「2」、橙-青-白コーナーの白ステッカー(LDB)に「3」と書きましょう[^2-4-1-3]。キューブを揃えて、またスクランブルしましょう。（たとえば`L B2 L F L' B2 L F' L2`などで揃います）
 
 スクランブル後、3つのコーナーを最初からすぐに揃えることもできますが、9手かかります。(`R2 F R B2 R' F' R B2 R`)　なので、まずはスケルトンの最初の1手(`B'`)を回してもっとよいケースがないかを探しましょう。さらに次のムーブ(`U'`)[^2-4-1-4]を回すと、ターゲットの3つのコーナーを8手コミューテータで揃えられます！(`L2 F R F' L2 F R' F'`)　もしこれを採用したいなら、最終解答は次のようになります。
 
@@ -1793,9 +1704,9 @@ algcubing = "https://alg.cubing.net/?setup=D_B2_U-_F2_L2_D2_R2_U_F2_U2_L2_R-_D2_
 `U2 L2 D2 R2 D2 L2`  
 {: .text-center}
 
-そのほか、バリエーションがあります（シフトしてみてください）[^2-4-1-7] エッジを揃えるほかの（もっと発展的な）方法はフリースライス(free slices)を使うことです。(3.8節を参照のこと)
+そのほか、バリエーションがあります（シフトしてみてください）[^2-4-1-7]
 
-最後のヒントです。180度のムーブ(`U2`など)は8手コミューテータの最初や最後にあるのは、それがインターチェンジ(interchange)である場合です。つまり、同じ面にある2点交換をしているということです。この事実がわかっていると時間を節約できます。2手以上のキャンセルを狙っているとき（狙うべきです！）、2点交換がない限り、このようなムーブは完全にキャンセルすることはないと推測できます。前後でキャンセルをするようなコミューテータだけを探せばいいでしょう。
+最後のヒントです。180度のムーブ(`U2`など)は8手コミューテータの最初や最後にあるのは、それがインターチェンジ(interchange)である場合です。つまり、同じ面にある2点交換をしているということです。この事実がわかっていると時間を節約できます。2手以上のキャンセルを狙っているとき（狙うべきです）、2点交換がない限り、このようなムーブは完全にキャンセルすることはないと推測できます。前後でキャンセルをするようなコミューテータだけを探せばいいでしょう。
 
 <!--
 2.4.1 Simple Insertions
@@ -1883,7 +1794,7 @@ moves after (or before) that one.
 #### 2.4.2 複数インサーション：別々のサイクル(3エッジ、3コーナー) (Multiple Insertions: Separated Cycles (3 Edges and 3 Corners))
 スケルトンは常に3-cycleだけが残ったものとは限りません。インサーションはもっと多くの（もっと長い）サイクルでも使うことができます。
 
-既に見たように、3-cycle（コーナーとエッジ）が2回あるような場合は、**ペアコミューテータ**（必要ならセットアップも含めて）で揃えることができます。別のやり方は、「セクシームーブ」や「Sune」(`R U R' U R U2 R'`)やその派生を使ってエッジを揃えることです。これによって必要なコーナーだけに影響を与えることができます[^2-4-2]。これについては2.4.8節を参照してください。どのやり方も頭にとどめておくとよいですが、簡単に使えることはあまりありません。「標準的な」手法は**2つのコミューテータをインサートすることです。**
+既に見たように、3-cycle（コーナーとエッジ）が2回あるような場合は、**ペアコミューテータ**（必要ならセットアップも含めて）で揃えることができます。別のやり方は、「Sune」(`R U R' U R U2 R'`)やその派生を使ってエッジを揃えることです。これによって必要なコーナーだけに影響を与えることができます[^2-4-2]。どちらのやり方も頭にとどめておくとよいですが、簡単に使えることはあまりありません。「標準的な」解法は**2つのコミューテータをインサートすることです。**
 
 コーナーとエッジに番号を振ったあとで[^2-4-2-2]、一手ずつ単純なインサーションを探して進んでいきますが、全ての箇所でコーナーとエッジの解法を見ていきましょう。さらにペアコミューテータとSuneもチェックします。終わったら、2つのインサーションによる最終解答を書くこともできますが、別のやり方を試してみることもできます。たとえば、コーナーコミューテータを残しておきたいけれど、もっといいエッジの交換を探したいとき、コーナーコミューテータだけをインサートした解答をまず作りましょう。ここでできたものが、**3つのエッジだけが残り、数手だけ長くなった新しいスケルトンです。** ここからは単純な(エッジ)インサーションで揃えられます。他の方法もあるなかで、こうすべき理由はなんでしょうか？ それは、**他のコミューテータの手順の中に、エッジコミューテータをインサートするよいポイントが見つかることもあるからです。** 逆に、エッジの交換をインサートしてからコーナーのインサーションをやることもできます。
 
@@ -1894,8 +1805,8 @@ B' R' * F2 U F2 //2x2x1 (5/5)
 R //もう一つ2x2x1 (1/6)
 F R U2 F R B R + B' R //F2L-1 + pair (9/15)
 D' B' L B L' //3エッジ3コーナー以外完成 (5/20)
-* = U B U' F2 U B' U' F2 //3コーナー, 4手キャンセル(8-4/24)
-+ = R B' F D' B' D B F' R' B //3エッジ, 5手キャンセル(10-5/29)
+* = U B U' F2 U B' U' F2 //3コーナー, 4手キャンセル(4/24)
++ = R B' F D' B' D B F' R' B //3エッジ, 5手キャンセル(5/29)
 {% endcapture %}
 {% include solvebox.html
 title = "別々の交換をインサートする - Example"
@@ -1903,13 +1814,11 @@ scramble = "B2 D' R2 D' F2 R2 D B2 U' L2 D2 R' U' R L' D' F D2 B R U2 R'"
 text = display_text
 solution = "B' R' U B U' F2 U B' F2 R F R U2 F R B R2 B' F D' B' D B F' D'
 B' L B L' (29)"
-img_src="../../../assets/img/alg-242.png"
+img_src="../assets/img/alg-242.png"
 algcubing = "https://alg.cubing.net/?alg=B-_R-_(U_B_U-_F2_U_B-_U-_F2)_F2_U_F2_%2F%2F2x2x1_(5%2F5)%0AR_%2F%2FAnother_2x2x1_(1%2F6)%0AF_R_U2_F_R_B_R_(R_B-_F_D-_B-_D_B_F-_R-_B)_B-_R_%2F%2FF2L%26%2345%3B1_%26%232b%3B_pair_(9%2F15)%0AD-_B-_L_B_L-_%2F%2FAll_but_3_edges_and_3_corners_(5%2F20)%0A%0A&setup=B2_D-_R2_D-_F2_R2_D_B2_U-_L2_D2_R-_U-_R_L-_D-_F_D2_B_R_U2_R-"
 %}
 
-**ここでは `(8-4/24)` という記法を使いました。これはインサートされた手数は8手であり、そのうちの4手がキャンセルされたという意味です。**
-
-2つ以上ある別々の交換が必要なケースについても、全く同じアプローチをすることができますが、もっと複雑になるでしょう。たとえば、6つのコーナーが残って、2つのコミューテータで揃えられるような場合です。
+2つ以上ある別々の交換が必要なケースについても、全く同じアプローチをすることができますが、もっと複雑になるでしょう。
 
 <!--
 2.4.2 Multiple Insertions: Separated Cycles (3 Edges and 3 Corners)
@@ -1960,13 +1869,11 @@ complicated.
 
 2つあるいは3つのねじれはコーナーを揃える古典的手法は、**コーナーコミューテータを2回インサートすることです。** 1回目のコミューテータでは、3つのねじれたコーナー（あるいは2つのねじれたコーナーと、それ以外のコーナー）を交換するだけで十分です、通常、多くのキャンセルが見込めます。そこから先は、新しくできたスケルトンに単純なコーナーコミューテータをインサートすればよいだけです。
 
-こうするためには、ねじれたコーナーに「X」などの記号を描いたりステッカーを貼ったりしておけばよいだけです。上に書いたような、「純粋に反転させる（pure flip）」アルゴリズムを使いたい場合は、矢印を描いておいて、どの方向（時計回り、反時計回り）に回転させるべきなのかわかるようにしておくといいでしょう。
+こうするためには、ねじれたコーナーに「X」などの記号を描いておけばよいだけです。上に書いたような、「純粋に反転させる（pure flip）」アルゴリズムを使いたい場合は、矢印を描いておいて、どの方向（時計回り、反時計回り）に回転させるべきなのかわかるようにしておくといいでしょう。
 
 1つめの交換が見つかったら、描いた記号を消して（単純なインサーションを探すのと同じように）1、2、3と番号を書きましょう。
 
 2つのエッジがねじれているときにも同じことができますが、おすすめしません。エッジコミューテータはもっと手数がかかることが多いからです。
-
-インサーションを2回行うお勧めのアプローチをするときには、次にことに気を付けてください。**それぞれのピースの一つのステッカーに印をつけたとしても、印のついていない別のステッカーとのコミューテータを探してしまうことがあります。** この問題を避けるために、私はねじれたピースのすべてのステッカーに印をつけています。
 
 <!--
 2.4.3 Multiple Insertions: 2 or 3 Twisted Corners
@@ -2000,18 +1907,18 @@ better 4 Corners case. About this situation, there is a nice discussion on speed
 
 1. **1つのコーナーの場所はあっているがねじれている。**他の3つのコーナーは「ねじれた3点交換」になっている。つまり、向きを考えずに位置だけを考えた3点交換。
 1. **2つのコーナーのペアが違いに入れ替わっており、向きが合っている。**（2回のスワップ、あるいは回の2点交換）  
-後で話をするやり方でも解けますし、コーナーの2回スワップをエッジの2回スワップに組み替えることでも解けます。たとえば、H perm (`M2 U M2 U2 M2 U M2`)に1手（`U2`)加えることで、コーナーの位置合わせに変えられることがわかるでしょう。`(R U R' U') x 3` (トリプルセクシー)や`(R' F R F') x 3`(トリプルスレッジ)、`(R2 U' Rw2 U F2) x 2`のようなアルゴリズムでも2つのコーナーペアをスワップできます。
+後で話をするやり方でも解けますし、コーナーの2回スワップをエッジの2回スワップに組み替えることでも解けます。たとえば、H perm (`M2 U M2 U2 M2 U M2`)に1手（`U2`)加えることで、コーナーの位置合わせに変えられることがわかるでしょう。`(R U R' U') x 3` (トリプルセクシー)や`(R' F R F') x 3`(トリプルスレッジ)のようなアルゴリズムでも2つのコーナーペアをスワップできます。
 1. **ねじれたコーナーの2回スワップ**
 
 これらのケースは全て**2回のコミュテータで揃えらえます。** 1回目で4つのコーナーのうち1つを揃えて、他の3つのコーナーに適当な影響を与えましょう。そして、1回目のインサーションで新しいスケルトンができますから、2回目では残った3つのコーナーを揃えればいいのです。
 
-この1回目のインサーションについて、1つめのケース（場所はあっているがねじれている）ではもう一つ制約があり、**「場所は合っているけれどねじれている」コーナーを1回目のコミューテータに含めなければなりません。** 含めないと、2つあるいは3つのねじれたコーナーがある状態が残り、さらに2回インサートしなければならなくなります。
+この1回目のインサーションについて、1つめのケース（場所はあっているがねじれている）ではもう一つ制限があり、**「場所は合っているけれどねじれている」コーナーを1回目のコミューテータに含めなければなりません。** 含めないと、2つあるいは3つのねじれたコーナーがある状態が残り、さらに2回インサートしなければならなくなります。
 
 これを間違いなくやるために、私は次のようにコーナーに印をつけます。
 
-1. **ねじれた3点交換 + ねじれたコーナー x 1** : ねじれたコーナーに「X」と印をつけます。ねじれている向きは気にしません。そして、他の3つのコーナーに1から3までの番号を振ります。このとき、ねじれた交換なので、**1は2になり、2は3になりますが、3は1ではなく同じコーナーの別のステッカー[^2-4-4-2]になります。**これは大したことではなく、その別のステッカーに4と番号を振れば大丈夫です。
-1. **ダブルスワップ** : 最初のコーナーのペアにXと印をつけて、次のコーナーのペアにAと印をつける。
-1. **ねじれたダブルスワップ** : ねじれた3点交換には4つの番号を振る必要があり、ねじれた2点交換には3つの番号を振る必要があるので、2点交換には1から3までの番号を、それ以外にはAからCを振る。
+1. ねじれたコーナーに「X」と印をつけます。ねじれている向きは気にしません。そして、他の3つのコーナーに1から3までの番号を振ります。このとき、ねじれた交換なので、**1は2になり、2は3になりますが、3は1ではなく同じコーナーの別のステッカー[^2-4-4-2]になります。**これは大したことではなく、その別のステッカーに4と番号を振れば大丈夫です。
+1. 最初のコーナーのペアにXと印をつけて、次のコーナーのペアにAと印をつける。
+1. ねじれた3点交換には4つの番号を振る必要があり、ねじれた2点交換には3つの番号を振る必要があるので、2点交換には1から3までの番号を、それ以外にはAからCを振る。
 
 たとえば、1つ目のケースでは、可能な「最初のサイクル」は**Xを3に、3を4に、4をXに、**というものがあります。1->2->3->1というのはよいサイクルではなく、3点交換ではなく2つのねじれたコーナーが残ってしまいます。
 
@@ -2031,11 +1938,11 @@ title = "João Pedro Batista Ribeiro Costaの元南アフリカ記録(SAR)"
 scramble = "L' U2 D' L' U2 B' D B' L U2 F2 R2 F' R2 L2 F' U2 D2 F"
 text = display_text
 solution = "F D' L' U' R' U L U' R2 D' R' U' R F' L2 F2 D F2 B' D B F' D' F' L2 (25)"
-img_src="../../../assets/img/alg-244.png"
+img_src="../assets/img/alg-244.png"
 algcubing = "https://alg.cubing.net/?alg=F_D-_(L-_U-_R-_U_L_U-_R_U)_U2_(U_R_D-_R-_U-_R_D_R-)_R_%2F%2FEO%0AD-_F-_L2_%2F%2F2x2x2%0AF2_D_F2_%2F%2FPseudo_F2L%26%2345%3B2%0AB-_D_B_%2F%2FF2L%26%2345%3B1%0AF-_D-_F-_%2F%2FAll_But_4_Corners&setup=_L_U2_D-_L-_U2_B-_D_B-_L_U2_F2_R2_F-_R2_L2_F-_U2_D2_F"
 %}
 
-最初ほうにインサートされたコミューテータ（2つ目のコミューテータ、＋）は後で見つけられたものです。2つ目のコミューテータのほうが早い段階でインサートされています。これでもまったく問題ありません！
+もう少しコメントを追加しましょう。最初ほうにインサートされたコミューテータ（2つ目のコミューテータ、＋）は後で見つけられたものです。2つ目のコミューテータのほうが早い段階でインサートされています。これでもまったく問題ありません！
 
 さらに、2つのコミューテータの間でお互いに何手かキャンセルをしています。
 
@@ -2134,7 +2041,7 @@ any of them. If you have some time left, you can try both insertions and which o
 best second commutator.
 -->
 
-この手法を使うとき、**最適な解答が見けられたかどうか、確信も持つことはできないでしょう。**なので、安全を取って、1段階目で見つかった全てのコミューテータ（あるいはそのほとんど）をチェックして、2段階目をたくさん（ほとんど意味のないものも）試してみるといいでしょう。通常、これはとても時間の無駄になりますし、よい解答になることは滅多にありません。解答をもっとよくできるかどうかわからないときは、基準として**「5つのコーナーの交換を10手か11手で揃えられれば満足できる結果である」**ということを覚えておきましょう。
+この手法を使うとき、**最適な解答が見けられたかどうか、確信も持つことはできないでしょう。**なので、安全を取って、1段階目で見つかった全てのコミューテータ（あるいはそのほとんど）をチェックして、2段階目をたくさん（ほとんど意味のないものも）試してみるといいでしょう。通常、これはとても時間の無駄になりますし、よい解答になることは滅多にありません。解答をもっとよくできるかどうかわからないときは、基準として**5つのコーナーの交換を10手か11手で揃えられれば満足できる結果だ**、ということを覚えておきましょう。
 
 <!--
 With this method you can’t be sure you have found the optimal solution: to be safer, you
@@ -2180,7 +2087,7 @@ solve the corner 5-cycle.
 
 **順序が大切であることも忘れないようにしてください。**見てわかるように、`(1 2 3)`は、後に`(4 5 1)`が来るか、前に`(3 4 5)`が来るかしかありません。これはどういうことかというと、たとえば、`(1 2 3)`を揃えるいいコミューテータを見つけたなら、`(4 5 1)`を揃えるコミューテータをその後のどこかで使うか、`(3 4 5)`を揃えるコミューテータをその前のどこかで使うか、選ばなければならない、ということです。ここに挙げた交換の組について、同じようにやることができます。
 
-この手法は他のものより速くできますが、**「ネストされたインサーション (nested insertions)」、つまり別のインサーションの中にインサートするときには使うことはできません。** そのため、時間がない時にだけ使うか、予備的な分析としてやるといいでしょう。つまり、こうやると何手くらいかかるのかを確認して、2段階目でいい結果になるコミューテータだけをチェックするというやり方です。
+この手法は他のものより速くできますが、**「別のインサーションの中にインサートする」ことはできません。** そのため、時間がない時にだけ使うか、予備的な分析としてやるといいでしょう。つまり、こうやると何手くらいかかるのかを確認して、2段階目でいい結果になるコミューテータだけをチェックするというやり方です。
 <!--
 To understand how, we need some permutation theory; don’t worry, I will cut it down to
 the essential.32
@@ -2226,11 +2133,7 @@ for commutators that may lead to something better.
 `M' U M U'`
 {: .text-center}
 
-が使えます。セットアップが何手かかかる場合でも、非常にいいでしょう。どんなケースで使えるのか、派生はどんなものがあるか、調べてみるといいでしょう。これをシフトした`L F L' R U' R'`というものもあります。エッジの5点交換が残ったスケルトンを得たなら、ステッカーに番号を振ってすぐにこの類のアルゴリズムが使えるかどうか調べてみましょう。しかし、探すのにあまり時間を掛けすぎないようにしてください。
-
-エッジの5点交換を揃える別の方法は、**3点交換とダブルスワップ(2点交換の繰り返し)を組み合わせることです。**たとえば、最初の3点交換で5つのうち1つのエッジだけが揃うならば、ダブルスワップが残ることになります。逆に考えても同じで、最初にダブルスワップをインサートして2つのエッジだけが揃ったとすると、3点交換が残ることになります。このテクニックは最初にエッジの向きを揃えておいたときによい結果をもたらすことでしょう。
-
-さらに発展的なエッジのインサーションについては、3.8節で触れます。
+が使えます。セットアップが何手かかかる場合でも、非常にいいでしょう。どんなケースで使えるのか、派生はどんなものがあるか、調べてみるといいでしょう。これをシフトした`L F L' R U' R'`というものもあります。エッジの5点交換が残ったスケルトンを得たなら、ステッカーに番号を振ってすぐにこの類のアルゴリズムが使えるかどうか調べてみましょう。しかし、探すのにあまり時間を掛けすぎないようにしてください。エッジのインサーションについては、4.2節のコーナーファーストについて話すところでまた触れます。
 
 <!--
 2.4.6 Multiple Insertions: 5 Edges
@@ -2250,8 +2153,8 @@ For more about edge insertions, see Section 4.2 about corner-first methods.
 
 このような場合、いくつかの**10手アルゴリズム**を知っておくと役立ちます。
 
-`Fw2 R D R' Fw2 R D' R D R2 (J perm)`  
-`Rw' U Rw' U2 R B' R' U2 Rw2 B' (T-perm + ねじれコーナー)`
+`Fw2 R D R’ Fw2 R D' R D R2 (J perm)`  
+`Rw' U Rw' U2 R B' R' U2 Rw2 B' (T-perm + corner twist)`
 {: .text-center}
 
 11手のものも多くあります。
@@ -2259,7 +2162,7 @@ For more about edge insertions, see Section 4.2 about corner-first methods.
 `R U2 R' U' R U2 L' U R' U' L (J perm)`  
 `R2 D B2 D' Fw2 D B2 D' Fw2 R2 U' (J perm)`  
 `R2 Uw R2 Uw' R2 F2 Uw' F2 Uw F2 U' (T perm)`  
-`R' U R U2 L' R' U R U' L U2 (J perm + ねじれコーナー)`
+`R' U R U2 L' R' U R U' L U2 (J perm + corner twist)`
 {: .text-center}
 
 <!--
@@ -2291,9 +2194,12 @@ title = "2C2E Insertion - Example"
 scramble = "B' L' D2 R U F' U' L U2 D R2 U2 F B R2 B U2 B L2 B2 U2"
 text = display_text
 solution = "B' F D2 L' R2 B R B' R2 F R' B R F' R2 F2 D F' D2 F R' D' R D2 F U2 (26)"
-img_src="../../../assets/img/alg-247.png"
+img_src="../assets/img/alg-247.png"
 algcubing = ""
 %}
+
+<!--訳者TODO ソルブボックスの挿入-->
+
 
 <!--
 Besides all of these algorithms (this is not a complete list anyway), also their inverses and
@@ -2322,9 +2228,8 @@ result.
 -->
 #### 2.4.8 その他のインサーション:3エッジ、いくつかのコーナー(Other Insertions: 3 Edges and Some Corners)
 
-3つのエッジと、4つか5つ（あるいはもっと）のコーナーが残ったスケルトンが少ない手数（たとえば13手）でできることもあるでしょう。このときエッジ3-cycleのエッジをインサートしていくつかコーナー3-cycleを必要なだけインサートして解くこともできます。
-
-しかし、別のやり方もあります。**「セクシームーブ」（`R U R’ U’`）ではエッジの3-cycleと歪んだコーナーの2-cycleを2回繰り返すことになることがわかると思います。** この短いアルゴリズムやその派生をインサートすることで、エッジの3-cycleをとても効率的に解くことができるのです。もちろん、一回のインサーションでコーナーも完全に揃うのは、4つのコーナーとねじれたダブルスワップが残っているときのとてもラッキーなときだけです。コーナーにこういった影響を与えて、4つか5つかよいコーナーが残るようにする、というのが望み得る最良のことになる場合が多いです。
+3つのエッジと、4つか5つ（あるいはもっと）のコーナーが残ったスケルトンが少ない手数（たとえば13手）でできることもあるでしょう。このときエッジ3-cycleのエッジをインサートして
+いくつかコーナー3-cycleを必要なだけインサートして解くこともできます。しかし、別のやり方もあります。**「セクシームーブ」（`R U R’ U’`）ではエッジの3-cycleと歪んだコーナーの2-cycleを2回繰り返すことになることがわかると思います。** この短いアルゴリズムやその派生をインサートすることで、エッジの3-cycleをとても効率的に解くことができるのです。もちろん、一回のインサーションでコーナーも完全に揃うのは、とてもラッキーときだけです。コーナーにこういった影響を与えて、4つか5つかよいコーナーが残るようにする、というのが望み得る最良のことになる場合が多いです。
 <!--
 2.4.8 Other Insertions: 3 Edges and Some Corners
 In some cases you can get short skeletons (say 13 moves) that leave a 3-cycle of edges and 4 or
@@ -2355,7 +2260,7 @@ you are actually doing when you insert a sexy move.
 **Conjugate**の適切な訳語が思いつかないので保留しています。別の箇所でも書きましたが、数学用語としては共役という意味があります。そのままコンジュゲートとカタカナで訳出してもよいかもしれません。インターチェンジもそのまま使われていますし。
 {: .notice--info}
 
-4つのエッジと4つのコーナーがあり、それぞれ4点交換されるとき（あるいはダブルスワップがあるとき）に、一つのインサーションだけで揃えることができる状況というものがあります。このケースは次のように揃えられます。
+4つのエッジと4つのコーナーがあり、それぞれ4点交換されるときに、一つのインサーションだけで揃えることができる状況というものがあります。このケースは次のように揃えられます。
 
 揃っていない8つのピースをすべて同じ面に集めます(セットアップ)。これで集めた面での単一のムーブで4点交換ができます。そして、8つのピースを元の場所に戻します(逆セットアップ)。8つのピースが2点交換を4つ組み合わせたものであるときにも、このテクニックは使えます。そのときは、「インターチェンジ」は180度のもの、たとえば `U2` などになります。もしピースの数が8つちょうどでなかったり、適切な交換ができない場合には、3.3節で説明するreverse NISSをまた使うことができます。
 <!--
@@ -2380,11 +2285,11 @@ F' * R F2 R' L2 B //4エッジと4コーナー以外完成 (6/11)
 $ = L' D L U L' D' L U' //3 コーナー (5/30)
 {% endcapture %}
 {% include solvebox.html
-title = "コンジュゲートして揃える Conjugate and Solve - Example"
+title = "Conjugate and Solve - Example"
 scramble = "R2 L2 D2 F2 D' R2 U' B2 D' F2 U2 F' D2 L' F U B F2 U2 F2 L"
 text = display_text
 solution = "U2 F B' L2 D2 F' U F2 L' B2 L F2 L' B' L' D L B' D L U L' D' L U2 R F2 R' L2 B (30)"
-img_src="../../../assets/img/alg-244.png"
+img_src="../assets/img/alg-244.png"
 algcubing = "https://alg.cubing.net/?alg=F_D-_(L-_U-_R-_U_L_U-_R_U)_U2_(U_R_D-_R-_U-_R_D_R-)_R_%2F%2FEO%0AD-_F-_L2_%2F%2F2x2x2%0AF2_D_F2_%2F%2FPseudo_F2L%26%2345%3B2%0AB-_D_B_%2F%2FF2L%26%2345%3B1%0AF-_D-_F-_%2F%2FAll_But_4_Corners&setup=_L_U2_D-_L-_U2_B-_D_B-_L_U2_F2_R2_F-_R2_L2_F-_U2_D2_F"
 %}
 
@@ -2465,10 +2370,9 @@ and you can find some more here34
 |              エッジ3-cycle              |   7   |
 | 2つのねじれたコーナー (2コミューテータ) |   8   |
 | 3つのねじれたコーナー (2コミューテータ) |   9   |
-|       4コーナー(ダブルスワップ)        |  9/10   |
-|       4コーナー(3コーナー+1ねじれコーナー)        |  10   |
+|       4コーナー(2コミューテータ)        |  10   |
 |             コーナー5-cycle             | 10/11 |
-|     2コーナー、2エッジ(2点交換を2貝)     |  10   |
+|     2コーナー、2エッジ(2cycleを2回)     |  10   |
 
 
 <!--
@@ -2500,7 +2404,6 @@ Corner 5-cycle 10/11
 http://www.speedsolving.com/forum/threads/the-fmc-thread.13599/page-42#post-614593
 32 CHAPTER 2. HOW TO PROCEED DURING A SOLVE
 -->
-
 #### 2.4.11 インサーションファインダー (Insertion Finder)
 Baiqiang Dongによって開発された**[Insertion Finder](https://fewestmov.es/if)**[^2-4-11]は、インサーションを探して解答の中で何かを見逃していなかったかを確認するために役立つツールです。スケルトンを与えると、最大で4つのインサーションを探すことができます。
 
@@ -2510,7 +2413,7 @@ Baiqiang Dongによって開発された**[Insertion Finder](https://fewestmov.e
 インサーションファインダーを使うと、自分が見つけられなかったインサーションを見つけることができるので、自分のFMCのソルブを振り返るときに使うといいでしょう。下記に出力される画面の例を下記の追加します。インサーションに使われる記号はなぜか絵文字なのでかわいく見えます。
 {: .notice--info}
 
-![Insertion Finder](../../../assets/img/if.png){:width="auto" height="200px" class="align-center img-thumbnail"}
+![Insertion Finder](../assets/img/if.png){:width="auto" height="200px" class="align-center img-thumbnail"}
 インサーションファインダーの出力画面例
 {: .text-center}
 
@@ -2521,173 +2424,8 @@ you have failed to see something in your solutions: it finds up to 4 insertions 
 It is especially useful for easy cases (3 corners or 3 edges) but in complex situation it may
 find solution that are not possible (or very difficult) to find for humans: use it responsibly!
 -->
-
-### 2.5 EOから始めよ (Starting with EO)
-
-**訳注**  
-2020/04/20 EOファーストアプローチについて理解しつつ翻訳中です。不正確な内容が含まれている可能性があります。
-{: .notice--danger}
-
-ZZでのソルブのように、**全てのエッジの向きを揃える(Edge Orientation, EO)ことからスタートする**のは常に考慮すべき可能性です。このチュートリアルの初版のころから自分のソルブの中で何度も繰り返して使ってきました。試技の一番最初にはまずノーマルスクランブルと逆スクランブル全てのEOを探して、試す価値があるのかを見ていました。試す価値はあります！ 2.1.7節で離したように、多くの著名なFMCerがEOから始めています。
-
-**エッジの向きを揃える方向という点から言えば、エッジには3つの向きがありうるのです。** F/B (＜R, L, U, D＞を除く)、R/L、そしてU/Dです。通常のZZのソルブをした場合、それぞれについて4つの異なる向きでF2Lを作ることができるでしょう。EOから始めるのが好みではなくても、（カラーニュートラルの）ZZを練習してEOの認識を成長させましょう。
-
-さて、ここからはZZとは違ったやり方になります。
-
-**訳注**  
-FMCにおけるEOとは何か？については、うえしゅう氏の記事に詳しく記述があります。  
-[FMCにおけるEOについて（加筆修正版） - uesyuu's Blog (2018年11月12日)](https://uesyuu.com/blog/?p=28)
-{: .notice--info}
-
-<!--
-2.5 Starting with EO
-Starting by orienting all edges, as you would do in a ZZ solve, is a possiblity to always keep
-in mind. Since the first version of this tutorial I have used it more and more in my solves, to
-the point that at the beginning of an attempt I always look for all possible EOs on normal and
-inverse scramble to see if they are worth a try: they often are. As mentioned in Section 2.1.7,
-there are many notable FMCers that often start with EO.
-Remember that there are 3 possible orientation with respect to which you can orient edges:
-with respect to F/B (reduce to <R, L, U, D>), to R/L and to U/D. If you procede with a
-normal ZZ solve, for each of these you can build the F2L on 4 different sides. Even if you don’t
-like starting with EO, I suggest practicing some (color neutral!) ZZ to improve EO recognition.
-From here you have at continue in different ways.
--->
-#### 2.5.1 EO + ブロックビルディング
-<!--
-2.5.1 EO + blockbuilding
-After having oriented all edges, the most common way to go on is blockbuilding. The pro is
-that we don’t have any “bad” edge, but this forces40 us not to use moves that break the EO,
-and this is a (relatively small) limit.
-Since you have usually more than one (nice) way to orient edges for a given orientation, you
-should also try to build as many pairs/blocks as you can during the EO step. As an alternative
-approach, you can pay attention to EO while you build the first block(s) (for example, a 2x2x2)
-and orient edges immediately after that.
-Here is the solve that made Gregorz Luczyna the 2010 European Champion. Notice that he
-starts by rotating the cube to his preferred orientation. This makes it easier to spot blocks if
-you are not used to color neutrality, but I dislike this habit. See Section 5.1 for more about how
-to write down a solution.
-38Warning: this varies a lot! If edges are oriented early in the solve, you have better chances of finding a good
-insertion (6 or 8 movers). If you do a domino reduction solve (see Section 2.5.2 and Appendix D), edge insertions
-become much more efficient!
-39https://fewestmov.es/if
-40Obviously, no one is forcing you to do anything, but orienting edges and then destroying what you have just
-done doesn’t look like a smart thing to do. You can also start with a partial EO if you wish.
-2.5. STARTING WITH EO 35
-EO first - Example 1
-Scramble: L D2 B' D2 B R' B' U B L B L2 B2 U2 F2 U R2 D' B2 D' B2
-x y2 L2 D F' //EO (3/3)
-R L2 D * //EOLine (3/6)
-R' U2 B2 R2 B2 //2x2x3 (5/11)
-L2 U' R' U L U' L' R U2 L' U' //All but 3 corners (11/22)
-* = D2 R' U' R D2 R' U R //3c (4/26)
-Solution: x y2 L2 D F' R L2 D' R' U' R D2 R' U' B2 R2 B2 L2 U' R' U L U' L' R
-U2 L' U' (26)
-See on alg.cubing.net
-Here is another example: the first solve of Jo˜ao Pedro Batista Ribeiro Costa at World
-Championship 2015, part of his 25.67 winning mean of 3.
-EO first - Example 2
-Scramble: L2 U' B2 L2 D' F2 L2 D U' L2 U2 B' R2 B' R B R' D' B' F2
-U2 R' U2 * R' //EO (4/4)
-B F2 U2 F //Pseudo 2x2x3 (4/8)
-(B L2) //2x2x3 (2/10)
-B2 U' B2 U' B2 U' B2 U' B' U //All but 3 corners (10/20)
-* = U R' D2 R U' R' D2 R //3c (6/26)
-Solution: U2 R' U' R' D2 R U' R' D2 B F2 U2 F B2 U' B2 U' B2 U' B2 U' B' U L2
-B' (26)
-See on alg.cubing.net
-One last thing: in the examples above there are two nice and short EO steps. But this
-doesn’t mean you should discard a longer EO, if you can build a lot of blocks while doing it!
--->
-#### 2.5.2 ドミノ・リダクション (Domino Reduction)
-<!--
-2.5.2 Domino Reduction
-Edge orientation can be considered, modulo rotations, a reduction to the subgroup generated
-by the moves <R, L, U, D> or, equivalentely, <R, L, U, D, F2, B2>. In other words, by
-orienting edges you reduce the cube to a case that can be solved using only the moves R, L,
-U, D, F2 and B2. Another step in this direction leads to reducing the cube to the subgroup
-generated by <U, D, R2, L2, F2, B2>; in order to do so you have to:
-• Place E layer edges on the E layer;
-• orient corners.
-This reduction is also called “domino reduction” (often shortened to DR), because it makes
-a Rubik’s Cube solvable as a 3x3x2 “cube” (also called “Domino Cube”).
-Recently (2018-2019), domino reduction has gained a lot of popularity, and it has been shown
-that one can reach consistently good results with this method alone.
-A good tutorial on domino reduction could easily fill another long document. And in fact
-it does: if you are interested in the method, I suggest you read this wonderful tutorial41 by
-Alexandros Fokianos and Tommaso Raposio. I have tried to sum up the most important ideas
-of that document in Appendix D.
-Here is an old example solve by Per Kristen Fredlund.
-41https://drive.google.com/drive/folders/1mppifILqu9Bu2phr8zhXGcXasBsSkv_S
-36 CHAPTER 2. HOW TO PROCEED DURING A SOLVE
-DR - Example
-Scramble: R2 F2 L2 D' R' U' R D' F B R U B2 L2 D2 F2 L2 D B2
-R' B U' D F //EO (5/5)
-L' F2 L //Domino reduction (3/8)
-D2 L2 F2 D F2 D L2 U' R2 D2 R2 //Finish (11/19)
-Solution: R' B U' D F L' F2 L D2 L2 F2 D F2 D L2 U' R2 D2 R2 (19)
-See on alg.cubing.net
--->
-#### 2.5.3 部分的ドミノ・リダクション (Partial Domino Reduction, PDR)
-##### 古典的PDR
-<!--
-2.5.3 Partial Domino Reduction
-Classic PDR
-The idea of Partial Domino Reduction, shortened to PDR, was first introduced by Alexandre
-Campos42. It consists in solving EO with respect to two axes, which can also be seen as a
-domino reduction with (some) misoriented corners. Although not included in his original idea,
-the term PDR can also refer to a partial DR where the edges and corners are all oriented, but
-not all E-layer edges are in the E-layer.
-After a normal EO, say with respect to F/B, one can procede with a second EO, say on
-L/R. This second EO step can also be seen as placing the E-layer edges on the E-layer, much
-like you would do in a DR solve, but ignoring corners. Since you want to keep the EO you did
-in the first step, you should not use F and B quarter turn moves during this second step.
-When you have EO on two axes (PDR) a normal way to finish your solve is to build blocks
-and find a skeleton using only “domino moves” <U,D,R2,L2,F2,B2> (i.e. moves that don’t break
-any of your EOs). However, there are some restrictions: using only domino moves you have no
-hope to solve the misoriented corners, so you are forced to leave them unsolved and solve them
-later with insertions. That’s why not leaving many misoriented corners is usually a good idea.
-Alexandre has collected some PDR solves in a document43. Let’s look at the first one as an
-example:
-Classic PDR - Example
-Scr: R' U' F L2 U2 B' L2 F' U2 B L2 B R' B2 L U B L2 B' D' F2 R F R' U' F
-D' * R' U' F + //EO (4/4)
-L R2 U R //PDR4 (4/8)
-D F2 D2 B2 //Corner line + edge line (4/12)
-U2 L2 D R2 U //AB5C (5/17)
-* = D' R' U2 R D R' U2 R //(8-4/21)
-+ = F2 R B2 R' F2 R B2 R' //(8-2/27)
-Solution: D2 R' U2 R D R' U F' R B2 R' F2 R B2 R L U R D F2 D2 B2 U2 L2 D
-R2 U (27)
-See on alg.cubing.net
--->
-##### EO+CO PDR
-<!--
-EO+CO PDR
-
-This second type of “PDR” approach is probably closer to being a “mock DR”, whereas the
-classical PDR described above is closer to an EO + blockbuilding approach.
-42https://www.speedsolving.com/threads/introducing-a-variation-for-fewest-moves.67299/
-43https://docs.google.com/document/d/1oZwr2aSllFBL5lhbLTiWKQWplfk4i0LN0wA0uskeLJs
-2.6. OTHER SIMPLE STRATEGIES 37
-After EO is solved, you can try solving corner orientation using the same type of triggers
-that are used to get a DR. After that, you can solve corners and get an edges-only skeleton.
-This often turns out to be good: although not as nice as with DR, edge insertion can still be
-very good when EO is solved, especially when combined with the advanced techniques described
-in Section 3.8.
-EO+CO PDR - Example
-Scr: F' U R U' F2 R' U2 F' U D' L B' L2 F2 U2 R2 L' U2 B2 U2 R F2 L' F' U R
-F D R2 U' F' //EO (5/5)
-R' //Lucky CO (1/6)
-F2 B2 U2 R2 D U2 * B2 D U' //3e+3e left (9/15)
-* = U R2 U' F2 B2 + D L2 D' F2 B2 //10-3/22)
-+ = U' L' D2 F2 D2 L' U D L2 D' //(10-6/26)
-Solution: F D R2 U' F' R' F2 B2 U2 R2 U' D R2 U' F2 B2 U' L' D2 F2 D2 L' U
-F2 U' D (27)
-See on alg.cubing.net
--->
-
-### 2.6 その他の簡単な戦略(Other Simple Stragies)
-#### 2.6.1 戻ってやり直そう(Go Back and Change Your Sove)
+### 2.5 その他の簡単な戦略(Other Simple Stragies)
+#### 2.5.1 戻ってやり直そう(Go Back and Change Your Sove)
 **よいスタートを切ったあとで詰まってしまったら、「そこまでのソルブを一手ずつ見ていく」ということをしてみましょう。** まだ揃えていないピースしかない面が、少なくとも1面、出てくるのを探しながらやってみましょう。見つかったら、その面を動かしてみましょう(すでに揃えたブロックは崩れません)。可能性は3種類(`U`、`U2`、`U´`など)あります。こうすると、元々のものよりほんの少し(1手)だけ長くなって、3通りのスタートが得られるでしょう。次へのつながりがよくなるなら、たった1手は安いものです！
 
 自由に動かせる面が2つ見つかったなら、もちろん両方使ってみても構いません。追加するムーブはランダムなものでよいですし、そうしなくてもよいです。新しいペアができたり、EOがもっとよくなるのなら、それで十分です。しかし、何手か追加してもすぐにわからず、しばらく進んでいってようやく何が起こったかわかることもあるでしょう。
@@ -2705,7 +2443,7 @@ The moves can, but don’t have to, be random: if you can see a pair forming or 
 better with some moves, good for you, but sometimes you might as well try random moves and
 see what happens later.
 -->
-#### 2.6.2 幸運を手に入れろ！ (Get Lucky!)
+#### 2.5.2 幸運を手に入れろ！ (Get Lucky!)
 当たり前ですが、幸運は学べるスキルではありません。しかし、FMCにおいては**そうすべきなのです。** もし手数が同じであれば、LLスキップで終わる「単純な」ソルブは、複雑でアンラッキーなものと同じくらい価値があります。可能な限りたくさんの代替案を試してみるのがよい、というのはこのためです。10回や20回だけやってみるよりも、100回やったほうがスキップする確率は高くなります。
 
 **訳注：**  
@@ -2721,7 +2459,7 @@ they have the same length. This is one of the reasons why you need to try as man
 alternatives as you can: you are more likely to get a skip if you try 100 solutions than if you try
 10 or 20.
 -->
-#### 2.6.3 一つ目の例: 最後のペアをインサート(First Example: Insert Last Pair(s))
+#### 2.5.3 一つ目の例: 最後のペアをインサート(First Example: Insert Last Pair(s))
 
 F2L-1が完成したあと、最後のペアをインサートすることでF2Lが終わります。これは、幸運が振ってこない限り、あまりよいやり方ではありません。幸運を引き当てるチャンスを高めるには、**考えうる全ての方法で最後のペアをインサートしましょう。**
 
@@ -2743,7 +2481,7 @@ title = "Insert Last Pairs - Example"
 scramble = "D' R' U' F U2 F2 L2 D' B2 F2 D' L R' D F' U' R' B' R2 F D U' B' R' U' F"
 text = display_text
 solution = "U2 F' U' B' D B D2 L D2 B L F L' F' B D L' D' U' L2 U L U' L U L'(27)"
-img_src="../../../assets/img/alg-253.png"
+img_src="../assets/img/alg-253.png"
 algcubing = "https://alg.cubing.net/?setup=D-_R-_U-_F_U2_F2_L2_D-_B2_F2_D-_L_R-_D_F-_U-_R-_B-_R2_F_D_U-_B-_R-_U-_F&alg=U2_F-_U-_%2F%2F2x2x2%0AB-_D_B_%2F%2FOrient_two_edges%0AD2_L_D2_B2_%2F%2F2x2x3_%26%232b%3B_6_pairs%0AB-_%2F%2FSave_one_pair_(for_F2L_on_R)%0AL_F_L-_F-_%2F%2FInsert_other_pair%0AB_D_L-_D-_%2F%2FInsert_saved_pair%0AU-_L2_U_L_U-_L_U_L-_%2F%2FLast_Layer"
 %}
 
@@ -2766,7 +2504,7 @@ title = "Insert Last Pairs - Example"
 scramble = "D' R' U' F U2 F2 L2 D' B2 F2 D' L R' D F' U' R' B' R2 F D U' B' R' U' F"
 text = display_text
 solution = "U2 F' U' B' D B D2 L D2 B U' L F L' F' L U L B (20)"
-img_src="../../../assets/img/alg-253.png"
+img_src="../assets/img/alg-253.png"
 algcubing = "https://alg.cubing.net/?setup=D-_R-_U-_F_U2_F2_L2_D-_B2_F2_D-_L_R-_D_F-_U-_R-_B-_R2_F_D_U-_B-_R-_U-_F&alg=U2_F-_U-_%2F%2F2x2x2%0AB-_D_B_%2F%2FOrient_two_edges%0AD2_L_D2_B2_%2F%2F2x2x3_%26%232b%3B_6_pairs%0AB-_U-%2F%2FSave_one_pair_(for_F2L_on_R)%0AL_F_L-_F-_%2F%2FInsert_other_pair%0AL_U_L_B_%2F%2FInsert_saved_pair_and_skip"
 %}
 
@@ -2809,7 +2547,7 @@ L U L B //Insert saved pair and skip
 Solution: U2 F' U' B' D B D2 L D2 B U' L F L' F' L U L B
 See on alg.cubing.net
 -->
-#### 2.6.4 二つ目の例: アルゴリズムの使い方(Second Example: How to Use Algorithms)
+#### 2.5.4 二つ目の例: アルゴリズムの使い方(Second Example: How to Use Algorithms)
 まず最初に対称なアルゴリズムを識別できるようにしておきましょう（もっと正確にいえば、対称なケース）。つまり`F R U R' U' F'`で揃うOLLはSプレーンについて対称なので、同じケースは`B' R' U' R B U`でも揃います。もし使いたいのであれば、対称なケースも使えるようにして、スキップ（あるいはよいケース）のチャンスを二倍にしましょう。このトリックがうまくいくのは、二つのアルゴリズムは同じOLLケースを揃えるためのものであって、ピースの交換に異なった影響を与えるものだからです。しかし、CLLについては少し違います。同じCLLケースを揃えるアルゴリズムがあって、コーナーが揃わないなら、ほかのアルゴリズムを使ってもコーナーは揃いません。
 
 極端な例を見てみましょう。`R U2 R' U' R U R' U' R U' R'`で揃うOLLを考えます。これと左右対称の`L' U2 L U L' U' L U L' U L`を使うことで、同じケースを4つの向きから揃えることができます。（ほかの2つは逆手順です）このアルゴリズムは、「2-gen」のLast layerアルゴリズムに当てはまることですが、コーナーの相対的な位置関係には影響しません。
@@ -2862,7 +2600,7 @@ title = "逆スクランブル - Example"
 scramble = "D2 L2 B R2 U2 F' L2 U2 B2 L2 F' D L2 B U L' U2 L' F' R'"
 text = display_text
 solution = "D' F D F' R2 F R2 F' R2 B' D' B' U2 B D' B' U2 B2 D F2 L2 F U' R (24)"
-img_src="../../../assets/img/alg-310.png"
+img_src="../assets/img/alg-310.png"
 algcubing = ""
 %}
 
@@ -2952,14 +2690,12 @@ are deeply related.
 
 スクランブル: `F' L2 F2 U2 R2 B R2 F' R2 D2 U2 L' U' B' U R U L2 F2 L'`
 
-![](../../../assets/img/alg-321a.png){:width="300px" height="auto" class="img-responsive align-center"}
-
 `R2 F`すれば2x2x1ブロックができます。2、3手で2x2x2ブロックに拡張できればいいですが、`L' U B' D`とさらに4手かかるのはちょっと多すぎます。ところが、`L2 D'`とやってみましょう。つまり、合わせて`R2 F L2 D'`と回すと次のようになります。
 
 <!-- 訳者TODO 画像入れる -->
 
-![](../../../assets/img/alg-321b.png){:width="300px" height="auto" class="img-responsive align-center"}
-`R2 F L2 D'`と回した後にDFLコーナー側から見たキューブ
+![333fm](../assets/img/alg-321.jpg){:width="300px" height="auto" class="img-responsive align-center"}
+キューブのDFLコーナーを見てみましょう
 {: .text-center}
 
 ここでできているのは本物の2x2x2ブロックではなく疑似2x2x2ブロックです。このときのD面を一時的に`D2`だけズレた状態であると考えて、すべてが完成したあとで`D2`するものだと考えてみることができます。たとえば、このまま（非効率的ですが）CFOPでソルブを進めてみましょう。
@@ -3021,7 +2757,7 @@ title = "プリムーブで修正したスクランブル Example"
 scramble = "D2 F' L2 F2 U2 R2 B R2 F' R2 D2 U2 L' U' B' U R U L2 F2 L'"
 text = display_text
 solution = ""
-img_src="../../../assets/img/alg-322.png"
+img_src="../assets/img/alg-322.png"
 algcubing = ""
 %}
 
@@ -3059,7 +2795,7 @@ scramble = "U L' F' L2 F' D2 F'B' U' R2 U L' F2 U' F2 L2 U2 F2 L2 U2"
 text = display_text
 solution = "R2 B' R2 B D L2 F D F2 L' D F' D2 F D' L' D B L' F L B' L2 F' D'
 L' D2 B2 (28)"
-img_src="../../../assets/img/alg-3222.png"
+img_src="../assets/img/alg-3222.png"
 algcubing = ""
 %}
 
@@ -3285,16 +3021,7 @@ Premoves: R' F' F' U2 R D R' D2 B2 R2
 F2L: F2 U R' U' F D2 F R
 LL: F D F2 R F R2 D R D2
 -->
-### 3.4 EO中のNISS利用 (Using NISS during EO)
-
-未着手
-{: .notice--danger}
-<!--新しく追加されたセクション
--->
-### 3.5 Useful Algorithms
-
-未着手
-{: .notice--danger}
+### 3.4 Useful Algorithms
 <!--
 3.4 Useful Algorithms
 As you can see, in the last example solve I have used an OLL that is maybe not well known, that
@@ -3319,10 +3046,7 @@ R2 Uw R2 Uw' R2 y L2 Uw' L2 Uw L2 (U')
 It is just a useful F2L algorithm repeated twice.
 Besides just learning algorithms, you can also learn from the algorithms.
 -->
-### 3.6 Pair Analysis
-
-未着手
-{: .notice--danger}
+### 3.5 Pair Analysis
 <!--
 3.5 Pair Analysis
 This is a really obscure technique, based on intuition, not proven to actually give you some
@@ -3342,10 +3066,7 @@ as you can.
 There isn’t much documentation about this technique, especially for bad pairs. Guus Razoux Schultz did a good analysis for the first scramble7 of Twente Open 2012 in this post8 on
 speedsolving.com.
 -->
-### 3.7 Solving with Skew Centers
-
-未着手
-{: .notice--danger}
+### 3.6 Solving with Skew Centers
 <!--
 3.6 Solving with Skew Centers
 This technique is understood more naturally in the context of corners first solving, but can be
@@ -3407,26 +3128,165 @@ be canged with same method used the first time. If you are disciplined in writin
 partial solutions, you can get the first version of your solution and copy the last moves, but this
 is not my case, as I write stuff down on my sheets in a very chaotic way.
 -->
-### 3.8 Advanced edge insertions: free slices
-
-未着手
-{: .notice--danger}
-
-### 3.9 Corner First
-
-未着手
-{: .notice--danger}
-
-### 3.10 Replace and shorten
-
-未着手
-{: .notice--danger}
 
 ## 第４章　その他の手法 (Some Other Methods)
-
-未着手
-{: .notice--danger}
-
+<!--
+Chapter 4
+Some Other Methods
+The “standard” method is building a skeleton with blockbuilding and then solving the last few
+pieces with insertions. But there are some other approaches worth mentioning.
+-->
+### 4.1 Starting With EO
+<!--
+4.1 Starting With EO
+Starting by orienting all edges, as you would do in a ZZ solve, is a possiblity to always keep
+in mind. Since the first version of this tutorial I have used it more and more in my solves, to
+the point that at the beginning of an attempt I always look for all possible EOs on normal and
+inverse scramble to see if they are worth a try: they often are. As mentioned in Section 2.1.7,
+there are many notable FMCers that often start with EO.
+Remember that there are 3 possible orientation with respect to which you can orient edges:
+with respect to F/B (reduce to <R, L, U, D>), to R/L and to U/D. If you procede with a
+normal ZZ solve, for each of these you can build the F2L on 4 different sides. Even if you
+don’t like starting with EO, I suggest practicing some (color neutral!) ZZ to improve the EO
+recognition.
+From here you have two ways to continue.
+-->
+#### 4.1.1 EO + Blockbuilding
+<!--
+4.1.1 EO + Blockbuilding
+After having oriented all edges, the most common way to go on is blockbuilding. The pro is
+that we don’t have any “bad” edge, but this forces1 us not to use moves that break the EO, and
+this is a (relatively small) limit.
+Since you have usually more than one (nice) way to orient edges for a given orientation, you
+should also try to build as many pairs/blocks as you can during the EO step. As an alternative
+approach, you can pay attention to EO while you build the first block(s) (for example, a 2x2x2)
+and orient edges immediately after that.
+Here the solve that made Gregorz Luczyna the 2010 European Champion. Notice that he
+starts by rotating the cube to his preferred orientation. This makes it easier to spot blocks if
+you are not used to color neutrality, but I dislike this habit. See Section 6.1 for more about how
+to write down a solution.
+1Obviously, no one is forcing you to do anything, but orienting edges and then destroying what you have just
+done doesn’t look like a smart thing to do. You can also start with a partial EO if you wish.
+45
+46 CHAPTER 4. SOME OTHER METHODS
+EO first - Example 1
+Scramble: L D2 B' D2 B R' B' U B L B L2 B2 U2 F2 U R2 D' B2 D' B2
+x y2 L2 D F' //EO (3/3)
+R L2 D * //EOLine (3/6)
+R' U2 B2 R2 B2 //2x2x3 (5/11)
+L2 U' R' U L U' L' R U2 L' U' //All but 3 corners (11/22)
+* = D2 R' U' R D2 R' U R //3c (4/26)
+Solution: x y2 L2 D F' R L2 D' R' U' R D2 R' U' B2 R2 B2 L2 U' R' U L
+U' L' R U2 L' U' (26)
+See on alg.cubing.net
+Here’s another example: the first solve of Jo˜ao Pedro Batista Ribeiro Costa at World Championship 2015, part of his 25.67 winning Mean of 3.
+EO first - Example 2
+Scramble: L2 U' B2 L2 D' F2 L2 D U' L2 U2 B' R2 B' R B R' D' B' F2
+U2 R' U2 * R' //EO (4/4)
+B F2 U2 F //Pseudo 2x2x3 (4/8)
+(B L2) //2x2x3 (2/10)
+B2 U' B2 U' B2 U' B2 U' B' U //All but 3 corners (10/20)
+* = U R' D2 R U' R' D2 R //3c (6/26)
+Solution: U2 R' U' R' D2 R U' R' D2 B F2 U2 F B2 U' B2 U' B2 U' B2 U' B'
+U L2 B' (26)
+See on alg.cubing.net
+-->
+#### 4.1.2 Domino Reduction (and HTA)
+<!--
+4.1.2 Domino Reduction (and HTA)
+Edge orientation can be considered, modulo rotations, a reduction to the subgroup generated
+by the moves <R, L, U, D> or, equivalentely, <R, L, U, D, F2, B2>. In other words, by
+orienting edges you reduce the cube to a case that can be solved using only the moves R, L,
+U, D, F2 and B2. Another step in this direction leads to reducing the cube to the subgroup
+generated by <U, D, R2, L2, F2, B2>; to do so you have to:
+• Place E layer edges on the E layer;
+• orient corners.
+This reduction is also called “Domino”, because it makes a Rubik’s Cube solvable as a
+3x3x2 “cube” (also called “Domino Cube”). Moreover, these are the first two steps of Human
+Thistlethwaite Algorithm (HTA), a modified version of Thistlethwaite Algorithm. If you are
+interested in this method for FMC, I suggest this tutorial2
+.
+Here is an example solve by Per Kristen Fredlund.
+2
+https://www.speedsolving.com/forum/threads/guide-human-thistlethwaite-algorithm-for-fewest-moves-hta-for-fmc.
+31704/
+4.2. CORNERS FIRST 47
+EO first - Example 2
+Scramble: R2 F2 L2 D' R' U' R D' F B R U B2 L2 D2 F2 L2 D B2
+R' B U' D F //EO (5/5)
+L' F2 L //Domino reduction (3/8)
+D2 L2 F2 D F2 D L2 U' R2 D2 R2 //Finish (11/19)
+Solution: R' B U' D F L' F2 L D2 L2 F2 D F2 D L2 U' R2 D2 R2 (19)
+See on alg.cubing.net
+One last consideration: in the examples above there are two nice and short EO steps. But
+this doesn’t mean you shoul discard a longer EO, if you can build a lot of blocks while doing it!
+-->
+### 4.2 Corners First
+<!--
+4.2 Corners First
+“Corners First” (sometimes shortened to CF) is not really a method, but a class of methods
+that, as the name says, solve the corners first, and then the edges. Roux can be considered a
+CF method.
+Among the ones who have figured out how to solve the cube on their own, many had a
+corners first approach:3 Thinking separately about corners and edges makes it somehow easier
+to solve the cube intuitively. Moreover, by solving the corners first you can solve edges more
+freely: inner layers can be moved without affecting corners.
+But this is also a disadvantage in FMC: inner layer moves count as two moves! Despite
+this, there at least two expert FMCer that use this technique: Attila Horv´ath and Javier
+Cabezuelo S´anchez, Spanish national record holder. Both agree that Corner First methods
+are excellent for FMC, but not very suitable for the one hour time limit. In fact, many of Javier’s
+official results are DNF.
+Attila Horv´ath mostly solves corners using a method similar to Guimond (orient first).
+Centers are not cared about in this step. For this step he sometimes uses premoves or NISS.
+After this, he goes through the solution he has found and modifies it slightly, inserting inner
+layer moves, to get at least 2 or 3 edges solved. At the end he solves the edges left, in no specific
+order. He sometimes doesn’t solve the centers until the end, and solves them with an insertion,
+as discussed in Section 3.6. To learn more about his method, I suggest reading his posts or
+asking him directly on the speedsolving.com forum4
+. He is usually very happy to teach others
+about his techniques.
+Here is a commented solve by Attila.
+Scramble: U L U' R' F' L' U D R L' B2 D B' D L2 D' R2 U F2 D
+3For example, Valery Morozov, who has made a tutorial to learn his method, available here: https://www.
+speedsolving.com/forum/threads/a-unique-phase-method-for-a-rubiks-cube.44264/.
+4Here is his profile: https://www.speedsolving.com/forum/members/attila.10652/.
+48 CHAPTER 4. SOME OTHER METHODS
+Solution: B2 D R' B' D2 U2 F L D' U' R' U2 R' B F2 D2 L2 U' D R U' R' L B2 (24)
+Explanation:
+First I need a short corners-solution, usually I try something with premoves, if the scramble seems too hard. In this case I found this premoves for normal scramble: D B.
+Corners solution:
+B2 D' B' D2 B (Guimond first step: orient corners)
+B2 D' R2 F2 (Solve all corners)
+Corners solve, without premoves:
+B2 D' B' D2 B' D' R2 F2 D B
+Corners solve for inverse scramble: (inverse of previous solve)
+B' D' F2 R2 D B D2 B D B2
+A variation of the previous solve, to get more edges solved:
+B2 M b d' M' F2 R2 d2 D' b d2 B corners -2 moves and 5 edges solve,
+Then I write this, without centers move:
+B2 L' R U R' D' U L2 D2 F2 B' R U2 R
+The second move (M) does not change the first five edges position, but it must be inserted
+to get the lucky ending.
+The next step is obvious, solve more 3 edges:
+U D setup moves, L' F' U2 D2 B R 3 edges algo, then a lucky E slice skip, due to the
+previous M move.
+Since the first version of this tutorial, Attila has gradually changed his method. He still
+orient corners first, but rather solving them completely and then taking care of edges, he reduces
+somehow to a domino solve. Se for example this post5
+.
+Javier Cabezuelo S´anchez solves the corners in a different way: first layer corners first, then
+the other. He then tries to solve the edges inserting moves (or algorithms) in the solution he
+has found. He doesn’t use techniques such as inverse scramble, premoves or NISS. Differently
+from Attila, he cares about centers while solving corners. See also this post6
+.
+Both Attila and Javier only use their CF method, which breaks the “never restrict yourself”
+rule; but they still get excellent results.
+5
+https://www.speedsolving.com/forum/threads/the-3x3x3-example-solve-thread.14345/page-280#
+post-1234805
+6
+https://www.speedsolving.com/forum/threads/the-fmc-thread.13599/page-111#post-945295
+-->
 ## 第５章　練習方法 (How To Practice)
 多くの人は、上達するためには「練習と、練習と、練習が必要です！」と言うでしょう。これは真ですが、練習のやり方を知る必要もあります。ここでは、FMCで上達するための練習方法についていくつかアドバイスをします。
 <!--
@@ -3821,7 +3681,6 @@ R2 F2 L D' F' D F L' F2 R2
 [^2-0-2]: ソルブのより前の段階で数手をインサートすることで完成させるテクニックです。これもすぐに解説します！もうちょっと待って！
 [^2-0-3]: [http://www.speedsolving.com/forum/threads/fewest-moves-tips-and-techniques.1566/#post-16209](http://www.speedsolving.com/forum/threads/fewest-moves-tips-and-techniques.1566/#post-16209)
 [^2-1-5]: [19 HTM Solve by Mirek Goljan and Guus Razoux Schultz](https://fmcsolves.cubing.net/?p=107)
-[^2-1-5-2]: この解法は二人の競技者によって独立に見つけられたものです。念のため。
 [^2-1-6-1]: 著名な例はZBLS(ZBF2Lとも呼ばれる)やWinter Variationです。これに限らず非常に沢山あります。調べてみましょう！
 [^2-1-6-2]: 「準最適」とは最良の解法よりも多くの手数がかかる解法のことです。
 [^2-1-8]: speedsolving.comの投稿による。もちろん、何が「よいスタート」であるかはあなたのレベルによって変わります。ここでの手数は、熟練者を目指す人にとってのよいゴールとなるように考えられています。もしあなたがそこまで上達していないなら、あまり効率的でないブロックを作って進めてもいいでしょう。「よいスタート」を探すのに多くの時間を使わないようにしてください。最終結果だけがカウントされます！
@@ -3839,7 +3698,6 @@ R2 F2 L D' F' D F L' F2 R2
 [^2-4-1]:  大会規則で「無制限の色付きステッカー」の持ち込みが許可されているのはこのためです。
 [^2-4-1-2]: ステッカーは3-cycleの動きが1から2、2から3、3から1へとわかるように貼ります。
 [^2-4-1-3]: 順番を決めるやりかたは他にも同様のものがあります。まずコーナーから始めたり、好きなステッカーから始めたりすることができます。首尾一貫してさえいればよいです。
-[^2-4-1-3-2]: 注意事項：もしスケルトンの中に連続した2手の平行な回転(R、Lなど)があるなら、試しに入れ替えてみて、もっといいインサーションができないかを探してみましょう。この実例ではそういうことはありませんが、やってみるまでわかりません。
 [^2-4-1-4]: 気を付けること：スケルトンにおいて二つの連続した平行な層の回転があるときには、相互に入れ替えてみて、よりよいインサーションがないかを探すこと！今回はそうではありませんが、決してわかりません。
 [^2-4-1-5]: 最後の2手(`U' D`)はE列の中層回転(`E'`)と等価ですから、コーナーには影響しません。このムーブをする前後で3-cycleは持ち替えを法(modulo)として同じものです。（この場合はy'/y持ち替え）
 [^2-4-1-6]: `B2 U' F' U B2 U' F U`もある。

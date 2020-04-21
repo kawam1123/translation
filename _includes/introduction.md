@@ -6,5 +6,5 @@
 
 ## コンテンツ
 - [FMC Tutorial by Sebastiano Tronto（第三版）](./FMC/FMC-Tutorial/v3/)
-- [FMC Tutorial by Sebastiano Tronto（第二版）](./FMC/FMC-Tutorial.html)
+- [FMC Tutorial by Sebastiano Tronto（第二版）](./FMC/FMC-Tutorial/v2/)
 - [WCA大会チュートリアル(競技者向けチュートリアル)](./competitor-tutorial)
