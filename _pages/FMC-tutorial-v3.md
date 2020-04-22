@@ -2554,6 +2554,9 @@ From here you have at continue in different ways.
 -->
 #### 2.5.1 EO + ブロックビルディング
 全てのエッジの向きを揃えたら、次はブロックビルディングに進むのが一般的です。利点は **悪いエッジ("bad edge")が全くないということです。** しかし、EOを崩さないようなムーブをしなければなりません[^2-5-1]。これは比較的小さな制約です。
+
+ある向きでキューブを持ったときに、エッジの向きを揃えるよい方法を複数知っているでしょうから、EOのステップでは可能な限り多くのペアやブロックを作ることを心がけましょう。別のアプローチは、2x2x2ブロックなどを作るときにEOにも注意を払いつつ、ブロックができてからエッジの向きを揃えるというやり方です。
+
 <!--
 2.5.1 EO + blockbuilding
 After having oriented all edges, the most common way to go on is blockbuilding. The pro is
@@ -2565,6 +2568,26 @@ should also try to build as many pairs/blocks as you can during the EO step. As 
 approach, you can pay attention to EO while you build the first block(s) (for example, a 2x2x2)
 and orient edges immediately after that.
 
+-->
+ヨーロッパ大会2010でのGregorz Łuczynaのソルブを見てみましょう。まずキューブを好みの向きに回転させているということがわかるでしょう。こうすることで、カラーニュートラルでなかったとしてもブロックを見つけるのが簡単になりますが、私個人としてはあまり好きなやり方ではありません。5.1節では解答の書き方について詳しく書いています。
+
+{% capture display_text %}
+x y2 L2 D F' //EO (3/3)
+R L2 D * //EOLine (3/6)
+R' U2 B2 R2 B2 //2x2x3 (5/11)
+L2 U' R' U L U' L' R U2 L' U' //3コーナー以外完成 (11/22)
+* = D2 R' U' R D2 R' U R //3c (4/26)
+{% endcapture %}
+{% include solvebox.html
+title = "EOファースト - Example 1"
+scramble = "L D2 B' D2 B R' B' U B L B L2 B2 U2 F2 U R2 D' B2 D' B2"
+text = display_text
+solution = "x y2 L2 D F' R L2 D' R' U' R D2 R' U' B2 R2 B2 L2 U' R' U L U' L' R U2 L' U' (26)"
+img_src="../../../assets/img/alg-251-1.png"
+algcubing = "https://alg.cubing.net/?setup=L_D2_B-_D2_B_R-_B-_U_B_L_B_L2_B2_U2_F2_U_R2_D-_B2_D-_B2&alg=x_y2_L2_D_F-_%2F%2FEO%0AR_L2_D_%2F%2FEOLine%0A(D2_R-_U-_R_D2_R-_U_R)_R-_U2_B2_R2_B2_%2F%2F2x2x3%0AL2_U-_R-_U_L_U-_L-_R_U2_L-_U-_%2F%2FAll_but_3_corners"
+%}
+
+<!--
 Here is the solve that made Gregorz Luczyna the 2010 European Champion. Notice that he
 starts by rotating the cube to his preferred orientation. This makes it easier to spot blocks if
 you are not used to color neutrality, but I dislike this habit. See Section 5.1 for more about how
@@ -2575,7 +2598,7 @@ become much more efficient!
 39https://fewestmov.es/if
 40Obviously, no one is forcing you to do anything, but orienting edges and then destroying what you have just
 done doesn’t look like a smart thing to do. You can also start with a partial EO if you wish.
-2.5. STARTING WITH EO 35
+
 EO first - Example 1
 Scramble: L D2 B' D2 B R' B' U B L B L2 B2 U2 F2 U R2 D' B2 D' B2
 x y2 L2 D F' //EO (3/3)
@@ -2583,9 +2606,32 @@ R L2 D * //EOLine (3/6)
 R' U2 B2 R2 B2 //2x2x3 (5/11)
 L2 U' R' U L U' L' R U2 L' U' //All but 3 corners (11/22)
 * = D2 R' U' R D2 R' U R //3c (4/26)
-Solution: x y2 L2 D F' R L2 D' R' U' R D2 R' U' B2 R2 B2 L2 U' R' U L U' L' R
-U2 L' U' (26)
+Solution: x y2 L2 D F' R L2 D' R' U' R D2 R' U' B2 R2 B2 L2 U' R' U L U' L' R U2 L' U' (26)
 See on alg.cubing.net
+-->
+
+
+別の例を見てみましょう。João Pedro Batista Ribeiro Costaが世界大会2015で最初に行ったソルブです。平均25.67手を出し、優勝しました。
+
+{% capture display_text %}
+U2 R' U2 * R' //EO (4/4)
+B F2 U2 F //疑似2x2x3 (4/8)
+(B L2) //2x2x3 (2/10)
+B2 U' B2 U' B2 U' B2 U' B' U //3コーナー以外完成 (10/20)
+* = U R' D2 R U' R' D2 R //3c (6/26)
+{% endcapture %}
+{% include solvebox.html
+title = "EOファースト - Example 2"
+scramble = "L2 U' B2 L2 D' F2 L2 D U' L2 U2 B' R2 B' R B R' D' B' F2"
+text = display_text
+solution = "U2 R' U' R' D2 R U' R' D2 B F2 U2 F B2 U' B2 U' B2 U' B2 U' B' U L2 B' (26)"
+img_src="../../../assets/img/alg-251-2.png"
+algcubing = "https://alg.cubing.net/?setup=L2_B-_L2_U-_B2_L2_D-_F2_L2_D_U-_L2_U2_B-_R2_B-_R_B_R-_D-_B-_F2&alg=%2F%2FPremoves_(NISS)_added_to_the_scramble%0AU2_R-_U2_(U_R-_D2_R_U-_R-_D2_R)_R-_%2F%2FEO%0AB_F2_U2_F_%2F%2F2x2x3%0AB2_U-_B2_U-_B2_U-_B2_U-_B-_U_%2F%2FAll_but_3_corners"
+%}
+
+このソルブ実例では２つの**短くて良いEOステップ**がありました。しかし、**長いEOしか見つからないときには諦めるしかないわけではなく、より多くのブロックができるなら使えます！**
+
+<!--
 Here is another example: the first solve of Jo˜ao Pedro Batista Ribeiro Costa at World
 Championship 2015, part of his 25.67 winning mean of 3.
 EO first - Example 2
@@ -2595,13 +2641,46 @@ B F2 U2 F //Pseudo 2x2x3 (4/8)
 (B L2) //2x2x3 (2/10)
 B2 U' B2 U' B2 U' B2 U' B' U //All but 3 corners (10/20)
 * = U R' D2 R U' R' D2 R //3c (6/26)
-Solution: U2 R' U' R' D2 R U' R' D2 B F2 U2 F B2 U' B2 U' B2 U' B2 U' B' U L2
-B' (26)
+Solution: U2 R' U' R' D2 R U' R' D2 B F2 U2 F B2 U' B2 U' B2 U' B2 U' B' U L2 B' (26)
 See on alg.cubing.net
 One last thing: in the examples above there are two nice and short EO steps. But this
 doesn’t mean you should discard a longer EO, if you can build a lot of blocks while doing it!
 -->
-#### 2.5.2 ドミノ・リダクション (Domino Reduction)
+#### 2.5.2 ドミノリダクション (Domino Reduction)
+**エッジの向きを揃えることは、キューブの持ち替え(rotation)を法とする＜R, L, U, D＞のムーブによる部分集合への還元 (reduction)とみなすことができます。＜R, L, U, D, F2, B2＞と考えても等価です。** 言い換えると、エッジの向きを揃えることでキューブを`R`,`L`,`U`,`D`,`F2`,`B2`だけで解ける状態に変換してしまうことができる、ということです。
+
+このような考え方をすると、＜U, D, R2, L2, F2, B2＞のムーブによる部分集合に還元させるやり方も可能となります。そのためには下記のことが必要となります。
+
+- E層のエッジはE層に配置する
+- コーナーの向きを揃える
+
+**このような条件が満たされる還元を「ドミノリダクション (Domino Reduction)」（略して 「DR」)と呼びます。**これは、ルービックキューブを3x3x2のキューブ(Domino Cube)とみなして解けるようにすることから名前がついています。
+
+ここ最近、2018年から2019年にかけて、ドミノリダクションの人気は高まってきました。この手法を単独で使うだけでもよい結果を安定して出すことができるということがわかってきています。
+
+ドミノリダクションに関するよいチュートリアルを書こうとすると、非常に長くなるので別のドキュメントが必要になるでしょう。**実際、作られました。**もしこの手法に興味があるなら、Alexandros FokianosとTommaso Raposioによる[素晴らしいチュートリアル](https://drive.google.com/drive/folders/1mppifILqu9Bu2phr8zhXGcXasBsSkv_S)[^2-5-2]を読むとよいでしょう。この中で、特に重要な考え方については付録Dにまとめています。
+
+**訳注**  
+このDomino Reductionに関するチュートリアルは2019年8月に公開されました。原著者のSebastiano Trontoも協力しています。フォーラムの投稿はこちらです。  
+[A Domino Reduction Guide for FMC](https://www.speedsolving.com/threads/a-domino-reduction-guide-for-fmc.74828/) by Alexandros Fokianos, Tommaso Raposio
+{: .notice--info}
+
+ Per Kristen Fredlundによる実例を見てみましょう。
+
+ {% capture display_text %}
+R' B U' D F //EO (5/5)
+L' F2 L //Domino reduction (3/8)
+D2 L2 F2 D F2 D L2 U' R2 D2 R2 //完成 (11/19)
+{% endcapture %}
+{% include solvebox.html
+title = "DR - Example 2"
+scramble = "R2 F2 L2 D' R' U' R D' F B R U B2 L2 D2 F2 L2 D B2"
+text = display_text
+solution = "R' B U' D F L' F2 L D2 L2 F2 D F2 D L2 U' R2 D2 R2 (19)"
+img_src="../../../assets/img/alg-252.png"
+algcubing = "https://alg.cubing.net/?setup=R2_F2_L2_D-_R-_U-_R_D-_F_B_R_U_B2_L2_D2_F2_L2_D_B2&alg=R-_B_U-_D_F_%2F%2FEO_(5%2F5)%0AL-_F2_L_%2F%2FDomino_Reduction(3%2F8)%0AD2_L2_F2_D_F2_D_L2_U-_R2_D2_R2_%2F%2FFinish_(11%2F19)"
+%}
+
 <!--
 2.5.2 Domino Reduction
 Edge orientation can be considered, modulo rotations, a reduction to the subgroup generated
@@ -2630,11 +2709,6 @@ D2 L2 F2 D F2 D L2 U' R2 D2 R2 //Finish (11/19)
 Solution: R' B U' D F L' F2 L D2 L2 F2 D F2 D L2 U' R2 D2 R2 (19)
 See on alg.cubing.net
 -->
-
-**訳注**  
-その他、Domino Reductionに関するまとまったチュートリアルとしては、2019年8月に公開されたドキュメントがあります。原著者のSebastiano Trontoも協力しています。
-[A Domino Reduction Guide for FMC](https://www.speedsolving.com/threads/a-domino-reduction-guide-for-fmc.74828/) by byAlexandros Fokianos, Tommaso Raposio
-{: .notice--info}
 
 **訳注**  
 日本語でのDomino Reductionに関する記事としては、Rami氏のアドカレ記事があります。  
@@ -3868,6 +3942,7 @@ R2 F2 L D' F' D F L' F2 R2
 [^2-4-10]: ほとんどの例はこの投稿からです。 [http://www.speedsolving.com/forum/threads/the-fmc-thread.13599/page-42#post-614593](http://www.speedsolving.com/forum/threads/the-fmc-thread.13599/page-42#post-614593)。一部、私の個人的な意見を加えて調整しています。
 [^2-4-11]: [https://fewestmov.es/if](https://fewestmov.es/if)
 [^2-5-1]: もちろん(FMCにおいては)何かをしてはいけないということはまったくありませんが、**エッジの向きを揃えてからそれをまた崩してしまうのはあまり賢いやり方ではありません。** 望むなら「部分的なEO (Partial EO)」からスタートしてもいいでしょう。
+[^2-5-2]: [https://drive.google.com/drive/folders/1mppifILqu9Bu2phr8zhXGcXasBsSkv_S](https://drive.google.com/drive/folders/1mppifILqu9Bu2phr8zhXGcXasBsSkv_S)
 [^5-1-1]: タイムマネジメントについては6.3節で話します。
 [^5-1-2]: [https://www.ocf.berkeley.edu/˜dadams/fmc/](https://www.ocf.berkeley.edu/˜dadams/fmc/)
 [^5-1-3]: [https://speedcube.de/forum/showthread.php?tid=5795](https://speedcube.de/forum/showthread.php?tid=5795)
