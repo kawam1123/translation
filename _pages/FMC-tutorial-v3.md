@@ -2715,8 +2715,10 @@ See on alg.cubing.net
 [Domino Reduction 入門編 - きゅーぶぶろぐ (2019年12月02日)](http://minayauninareyo.seesaa.net/article/drtanoshii.html)
 {: .notice--info}
 
-#### 2.5.3 部分的ドミノ・リダクション (Partial Domino Reduction, PDR)
+#### 2.5.3 部分的ドミノリダクション (Partial Domino Reduction, PDR)
 ##### 古典的PDR
+**部分的ドミノリダクション (Partial Domino Reduction, PDR)**の考え方を最初に提案したのはAlexandre Campos[^2-5-3]です。これは、EOを2つの軸に対して揃えることで、いくつか揃っていないコーナーのあるドミノリダクションの状態に持ち込む、という考え方です。最初のアイディアには含まれていませんが、PDRという用語は部分的DRの中でも特に**「全てのエッジとコーナーの向きが揃っているが、E層のエッジが全てE層にあるわけではない」**という状態を指すものとして使われます。
+
 <!--
 2.5.3 Partial Domino Reduction
 Classic PDR
