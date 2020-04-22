@@ -2528,11 +2528,11 @@ find solution that are not possible (or very difficult) to find for humans: use 
 2020/04/20 EOファーストアプローチについて理解しつつ翻訳中です。不正確な内容が含まれている可能性があります。
 {: .notice--danger}
 
-ZZでのソルブのように、**全てのエッジの向きを揃える(Edge Orientation, EO)ことからスタートする**のは常に考慮すべき可能性です。このチュートリアルの初版のころから自分のソルブの中で何度も繰り返して使ってきました。試技の一番最初にはまずノーマルスクランブルと逆スクランブル全てのEOを探して、試す価値があるのかを見ていました。試す価値はあります！ 2.1.7節で離したように、多くの著名なFMCerがEOから始めています。
+ZZでのソルブのように、**全てのエッジの向きを揃える(Edge Orientation, EO)ことからスタートする**のはいつも頭に入れておくべき可能性でしょう。このチュートリアルの初版のころから、自分のソルブの中で何度も繰り返してこのやり方を使ってきました。試技の一番最初にはまずノーマルスクランブルと逆スクランブル全てのEOを探して、試す価値があるのかを見ていました。（多くの場合）試す価値はあります！ 2.1.7節で書いたように、多くの著名なFMCerがEOから始めています。
 
-**エッジの向きを揃える方向という点から言えば、エッジには3つの向きがありうるのです。** F/B (＜R, L, U, D＞を除く)、R/L、そしてU/Dです。通常のZZのソルブをした場合、それぞれについて4つの異なる向きでF2Lを作ることができるでしょう。EOから始めるのが好みではなくても、（カラーニュートラルの）ZZを練習してEOの認識を成長させましょう。
+**エッジの向きを揃える方向という点から言えば、エッジには3つの向きがありうるのです。** F/B軸 (＜R, L, U, D＞を除く)、R/L軸、そしてU/D軸です。通常のZZのソルブをした場合、それぞれについて4つの異なる向きでF2Lを作ることができるでしょう。EOから始めるのが好みではなくても、（カラーニュートラルの）ZZを練習してEOの認識を成長させましょう。
 
-さて、ここからはZZとは違ったやり方になります。
+さて、ここからはZZとは違ったやり方に取り掛かりましょう。
 
 **訳注**  
 FMCにおけるEOとは何か？については、うえしゅう氏の記事に詳しく記述があります。  
@@ -2553,15 +2553,18 @@ like starting with EO, I suggest practicing some (color neutral!) ZZ to improve 
 From here you have at continue in different ways.
 -->
 #### 2.5.1 EO + ブロックビルディング
+全てのエッジの向きを揃えたら、次はブロックビルディングに進むのが一般的です。利点は **悪いエッジ("bad edge")が全くないということです。** しかし、EOを崩さないようなムーブをしなければなりません[^2-5-1]。これは比較的小さな制約です。
 <!--
 2.5.1 EO + blockbuilding
 After having oriented all edges, the most common way to go on is blockbuilding. The pro is
 that we don’t have any “bad” edge, but this forces40 us not to use moves that break the EO,
 and this is a (relatively small) limit.
+
 Since you have usually more than one (nice) way to orient edges for a given orientation, you
 should also try to build as many pairs/blocks as you can during the EO step. As an alternative
 approach, you can pay attention to EO while you build the first block(s) (for example, a 2x2x2)
 and orient edges immediately after that.
+
 Here is the solve that made Gregorz Luczyna the 2010 European Champion. Notice that he
 starts by rotating the cube to his preferred orientation. This makes it easier to spot blocks if
 you are not used to color neutrality, but I dislike this habit. See Section 5.1 for more about how
@@ -2627,6 +2630,17 @@ D2 L2 F2 D F2 D L2 U' R2 D2 R2 //Finish (11/19)
 Solution: R' B U' D F L' F2 L D2 L2 F2 D F2 D L2 U' R2 D2 R2 (19)
 See on alg.cubing.net
 -->
+
+**訳注**  
+その他、Domino Reductionに関するまとまったチュートリアルとしては、2019年8月に公開されたドキュメントがあります。原著者のSebastiano Trontoも協力しています。
+[A Domino Reduction Guide for FMC](https://www.speedsolving.com/threads/a-domino-reduction-guide-for-fmc.74828/) by byAlexandros Fokianos, Tommaso Raposio
+{: .notice--info}
+
+**訳注**  
+日本語でのDomino Reductionに関する記事としては、Rami氏のアドカレ記事があります。  
+[Domino Reduction 入門編 - きゅーぶぶろぐ (2019年12月02日)](http://minayauninareyo.seesaa.net/article/drtanoshii.html)
+{: .notice--info}
+
 #### 2.5.3 部分的ドミノ・リダクション (Partial Domino Reduction, PDR)
 ##### 古典的PDR
 <!--
@@ -3853,6 +3867,7 @@ R2 F2 L D' F' D F L' F2 R2
 [^2-4-9-2]: [https://www.speedsolving.com/threads/the-fmc-thread.13599/page-28#post-488378](https://www.speedsolving.com/threads/the-fmc-thread.13599/page-28#post-488378)
 [^2-4-10]: ほとんどの例はこの投稿からです。 [http://www.speedsolving.com/forum/threads/the-fmc-thread.13599/page-42#post-614593](http://www.speedsolving.com/forum/threads/the-fmc-thread.13599/page-42#post-614593)。一部、私の個人的な意見を加えて調整しています。
 [^2-4-11]: [https://fewestmov.es/if](https://fewestmov.es/if)
+[^2-5-1]: もちろん(FMCにおいては)何かをしてはいけないということはまったくありませんが、**エッジの向きを揃えてからそれをまた崩してしまうのはあまり賢いやり方ではありません。** 望むなら「部分的なEO (Partial EO)」からスタートしてもいいでしょう。
 [^5-1-1]: タイムマネジメントについては6.3節で話します。
 [^5-1-2]: [https://www.ocf.berkeley.edu/˜dadams/fmc/](https://www.ocf.berkeley.edu/˜dadams/fmc/)
 [^5-1-3]: [https://speedcube.de/forum/showthread.php?tid=5795](https://speedcube.de/forum/showthread.php?tid=5795)
