@@ -3420,6 +3420,11 @@ LL: `U2 R' U2 R' D' L F2 L' D R2`
 最終解答： D' B' U B2 D' L F2 L' D R U2 R U2 B' R' U2 R U' R B' R' F2 U' L B'
 
 
+**訳注：**  
+ノーマルスクランブルとインバーススクランブルを行ったり来たりするNISSの手法はプリムーブを自然に拡張した手法ですが、理解するまでがなかなか大変なものだと思います。NISSについての日本語レファレンスとしては、やはり[WRCCの解説記事](http://wrcc.main.jp/commentary_fmc/fmc/6)を読んでおくと間違いないでしょう。また、NISSを使ったソルブ例を詳しく解説したものとしては、まっしゅ氏による[FMCアドベントカレンダーの記事](http://cubingmushroom.blog.fc2.com/blog-entry-46.html)が読みやすいと思います。翻訳者はこれを読んでNISSの流れがようやく理解できました。  
+[6. NISS - WRCC FMC入門](http://wrcc.main.jp/commentary_fmc/fmc/6)  
+[FMC Advent Calendar 2019 3日目 - きゅーびんぐまっしゅるーむ](http://cubingmushroom.blog.fc2.com/blog-entry-46.html)
+{: .notice--info}
 <!--
 Explanation:
 Nice start on inverse scramble: B L' U F2
