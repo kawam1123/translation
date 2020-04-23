@@ -1237,11 +1237,14 @@ move (the red B) the square become 2.
 #### 2.1.7 EOに気をつけよう (Pay Attention to EO)
 ここでいう**EO**とはエッジの向き(Edge Orientation)を略したものです。
 
-複数の異なる解法を学ぶなかで既にお気づきの方もいるかもしれませんが、Edge Orientationというのは再帰的なステップなのです。前述のように、**Bad edgeが多ければ多いほど、解くのは困難になっていきます。**通常、最後にエッジの向きをそろえることは、効率的ではありません。ZZでそうするように、まず最初にエッジの向きを揃えることが手軽ですが、ブロックビルディングのフェイズで制約を持つことになります。
+複数の異なる解法を学ぶなかで既にお気づきの方もいるかもしれませんが、Edge Orientationというのは再帰的なステップなのです。前述のように、**Bad edgeが多ければ多いほど、解くのは困難になっていきます。**通常、最後にエッジの向きをそろえることは、効率的ではありません。ZZでそうするように、まず最初にエッジの向きを揃えることが手軽ですが、ブロックビルディングのフェイズで制約が増えることになります。
 
-部分的にでも、**Edge Orientationをブロックビルディングの途中で終わらせるのが良い方法です。**ZZやPetrusなどの解法に習熟すると、数手動かしたあとでエッジの向きが正しいかどうかを簡単に判定できるようになります。もしまだ判定ができないのなら、FMCにおいてはいつでも望むときに戻って修正できるということを忘れないでおきましょう。つまり、EOがうまくいかないときには、前に戻って、何手か加えたり変えたりして、よい方向に進むかどうかを確認すればいいのです。（2.6.1節もご参照ください）
+部分的にでも、**Edge Orientationをブロックビルディングの途中で終わらせるのが良い方法です。**ZZやPetrusなどの解法に習熟すると、数手動かしたあとでエッジの向きが正しいかどうかを簡単に判定できるようになります。もしまだ判定ができないのだとしても、FMCにおいてはいつでも望むときに戻って修正できるということを忘れないでおきましょう。つまり、EOがうまくいかないときには、前に戻って、何手か加えたり変えたりして、よい方向に進むかどうかを確認すればいいのです。（2.6.1節もご参照ください）
 
-しかし、「EOファースト・アプローチ」をただちに却下しないようにしてください。[João Pedro Batista Ribeiro Costa](https://www.worldcubeassociation.org/persons/2013COST02)(世界大会2015のFMCチャンピオン)や[Grzegorz Łuczyna](https://www.worldcubeassociation.org/persons/2005LUCZ01)(ヨーロッパ大会2010のFMCチャンピオン)などの著名なキューバーは、ほとんど常にEOから始めていますし、[Sébastien Auroux](https://www.worldcubeassociation.org/persons/2008AURO01)(世界大会2011のFMCチャンピオン)や私(Sebastiano Tronto)も非常によく使います。詳細と実例については4.1節を参照してください。
+**訳注**  
+ここでいうEOに注目したアプローチを「EOファーストアプローチ(EO first approach)」ということがあります。[João Pedro Batista Ribeiro Costa](https://www.worldcubeassociation.org/persons/2013COST02)(世界大会2015のFMCチャンピオン)や[Grzegorz Łuczyna](https://www.worldcubeassociation.org/persons/2005LUCZ01)(ヨーロッパ大会2010のFMCチャンピオン)、[Sébastien Auroux](https://www.worldcubeassociation.org/persons/2008AURO01)(世界大会2011のFMCチャンピオン)などの著名なキューバーは、ほとんど常にEOファーストアプローチを使うようです。原著者のSebastiano Trontoも非常によく使うということが第二版には記載がありました。EOファーストアプローチについては、2.5節に詳細が書かれています。
+{: .notice--info}
+
 
 <!--
 2.1.7 Pay Attention to EO
@@ -2647,18 +2650,18 @@ One last thing: in the examples above there are two nice and short EO steps. But
 doesn’t mean you should discard a longer EO, if you can build a lot of blocks while doing it!
 -->
 #### 2.5.2 ドミノリダクション (Domino Reduction)
-**エッジの向きを揃えることは、キューブの持ち替え(rotation)を法とする＜R, L, U, D＞のムーブによる部分集合への還元 (reduction)とみなすことができます。＜R, L, U, D, F2, B2＞と考えても等価です。** 言い換えると、エッジの向きを揃えることでキューブを`R`,`L`,`U`,`D`,`F2`,`B2`だけで解ける状態に変換してしまうことができる、ということです。
+**エッジの向きを揃えることは、キューブの持ち替え(rotation)を法とする＜R, L, U, D＞のムーブによる部分集合への還元 (reduction)とみなすことができます。＜R, L, U, D, F2, B2＞と考えても等価です。** 言い換えると、エッジの向きを揃えることでキューブを`R`, `L`, `U`, `D`, `F2`, `B2`だけで解ける状態に変換してしまうことができる、ということです。
 
 このような考え方をすると、＜U, D, R2, L2, F2, B2＞のムーブによる部分集合に還元させるやり方も可能となります。そのためには下記のことが必要となります。
 
 - E列のエッジはE列に配置する
 - コーナーの向きを揃える
 
-**このような条件が満たされる還元を「ドミノリダクション (Domino Reduction)」（略して 「DR」)と呼びます。**これは、ルービックキューブを3x3x2のキューブ(Domino Cube)とみなして解けるようにすることから名前がついています。
+**このような条件が満たされる還元を「ドミノリダクション (Domino Reduction)」（略して 「DR」)と呼びます。**これは、ルービックキューブを3x3x2のキューブ(Domino Cube、[Rubik's Domino](https://www.speedsolving.com/wiki/index.php/Rubik%27s_Domino)とも言う)とみなして解けるようにすることから名前がついています。
 
 ここ最近、2018年から2019年にかけて、ドミノリダクションの人気は高まってきました。この手法を単独で使うだけでもよい結果を安定して出すことができるということがわかってきています。
 
-ドミノリダクションに関するよいチュートリアルを書こうとすると、非常に長くなるので別のドキュメントが必要になるでしょう。**実際、作られました。**もしこの手法に興味があるなら、Alexandros FokianosとTommaso Raposioによる[素晴らしいチュートリアル](https://drive.google.com/drive/folders/1mppifILqu9Bu2phr8zhXGcXasBsSkv_S)[^2-5-2]を読むとよいでしょう。この中で、特に重要な考え方については付録Dにまとめています。
+ドミノリダクションに関するよいチュートリアルを書こうとすると、非常に長くなるので別のドキュメントが必要になるでしょう。**実際、作られました。**もしこの手法に興味があるなら、**Alexandros FokianosとTommaso Raposioによる[素晴らしいチュートリアル](https://drive.google.com/drive/folders/1mppifILqu9Bu2phr8zhXGcXasBsSkv_S)[^2-5-2]を読むとよいでしょう。**この中で、特に重要な考え方については付録Dにまとめています。
 
 **訳注**  
 このDomino Reductionに関するチュートリアルは2019年8月に公開されました。原著者のSebastiano Trontoも協力しています。フォーラムの投稿はこちらです。  
@@ -2729,9 +2732,11 @@ the term PDR can also refer to a partial DR where the edges and corners are all 
 not all E-layer edges are in the E-layer.
 -->
 
-たとえばF/B軸を考えてEOを揃えたあと、L/R軸などの別のEOを揃える、という風に進めることができるでしょう。この2つ目のEOステップを「E列のエッジをE列に配置する」と見なすこともできます。これはDRのソルブでやることと同じですが、コーナーは無視しています。1つ目のステップで揃えたEOをそのままにして置きたいので、`F`や`B`などの1/4回転のムーブは2つ目のステップでは使えません。2つ軸に対するEO(PDR)を考えるなら、まずブロックビルディングをしてから、ドミノムーブ（＜U, D, R2, L2, F2, B2＞）だけを使って揃えられるスケルトンを作るのが自然なやり方でしょう。こうするとEOが崩れることはありません。
+たとえばF/B軸を考えてEOを揃えたあと、L/R軸などの別のEOを揃える、という風に進めることができるでしょう。この2つ目のEOステップを「E列のエッジをE列に配置する」と見なすこともできます。これはDRのソルブでやることと同じですが、コーナーは無視しています。1つ目のステップで揃えたEOをそのままにして置きたいので、`F`や`B`などの1/4回転のムーブは2つ目のステップでは使えません。
 
-しかし、制約もあります。ドミノムーブだけを使う場合には、向きの揃っていないコーナーを揃えることができないのです。ですので、このコーナーを揃えないままにしておいて、後からインサートして揃える必要が出てきます。こうならないようにするために、向きの揃っていないコーナーをたくさん残しておくべきではありません。
+2つの軸に対するEO(PDR)を考えるなら、まずブロックビルディングをしてから、ドミノムーブ（＜U, D, R2, L2, F2, B2＞）だけを使って揃えられるスケルトンを作るのが自然なやり方でしょう。こうするとEOが崩れることはありません。
+
+しかし、制約もあります。**ドミノムーブだけを使う場合には、向きの揃っていないコーナーを揃えることができないのです。**ですので、このコーナーを揃えないままにしておいて、後からインサートして揃える必要が出てきます。こうならないようにするために、向きの揃っていないコーナーをたくさん残しておくべきではありません。
 
 [AlexandreはDRのソルブ例をいくつか収集しています](https://docs.google.com/document/d/1oZwr2aSllFBL5lhbLTiWKQWplfk4i0LN0wA0uskeLJs)[^2-5-3-2]から、そのうちの一つを見てみましょう。
 
@@ -2845,7 +2850,7 @@ better with some moves, good for you, but sometimes you might as well try random
 see what happens later.
 -->
 #### 2.6.2 幸運を手に入れろ！ (Get Lucky!)
-当たり前ですが、幸運は学べるスキルではありません。しかし、FMCにおいては**そうすべきなのです。** もし手数が同じであれば、LLスキップで終わる「単純な」ソルブは、複雑でアンラッキーなものと同じくらい価値があります。可能な限りたくさんの代替案を試してみるのがよい、というのはこのためです。10回や20回だけやってみるよりも、100回やったほうがスキップする確率は高くなります。
+当たり前ですが、幸運は学べるスキルではありません。しかし、FMCにおいては**幸運を求めるべきなのです。** LLスキップで終わる「単純な」ソルブは、複雑でアンラッキーなものと同じくらい価値があります。つまり、可能な限りたくさんの代替案を試してみるのがよいということです。10回や20回だけやってみるよりも、100回やったほうがスキップする確率は高くなります。
 
 **訳注：**  
 LLスキップを引き当てる幸運値はトレーニングできませんが、**LLのアルゴリズムやサブステップをたくさん知っている人ほど、その確率を高くすることができます。**開眼3x3x3のスキルはFMCには直接影響しないと言われますが、速い人はそもそもたくさんのアルゴリズムを知っていて、制限時間内に何度も試行錯誤をすることができるので、有利かもしれません。他の競技を学ぶことでFMCに生きてくることがある、というのは面白いですね。たとえば、原著者であるSebastiano Trontoは**目隠し競技の達人(3x3x3目隠し、4x4x4目隠し、5x5x5目隠しのイタリアNRホルダー)でもあります。**
@@ -2974,7 +2979,7 @@ corners: if you complete the F2L and are left with 2 bad edges, you can try this
 34 CHAPTER 2. HOW TO PROCEED DURING A SOLVE
 -->
 ## 第３章　高度なツール (Advanced Tools)
-ここまでの章では、よい解答を見つけるために必要な基本的なテクニックを見てきました。この章では、もっと高度なツールを紹介します。必須ではありませんが、探索に行き詰まったときの助けになります。
+ここまでの章では、よい解答を見つけるために必要な基本的なテクニックを見てきました。この章ではもっと高度なツールを紹介します。必須ではありませんが、探索に行き詰まったときの助けになります。
 <!--
 Chapter 3
 Advanced Tools
@@ -2984,7 +2989,7 @@ unstuck and give you more possibilities to explore.
 -->
 ### 3.1 逆スクランブル(Inverse Scramble)
 
-**いいスタートが見つからない時は、逆スクランブル(Inverse scramble)を試してみましょう。**逆スクランブルで解答を見つけたら、それを逆手順にすることで通常のスクランブルに対する解答になります。複雑そうに見えますが、実はとてもシンプルです。
+**いいスタートが見つからない時は、逆スクランブル(Inverse scramble、インバーススクランブル)を試してみましょう。**逆スクランブルで解答を見つけたら、それを逆手順にすることで通常のスクランブルに対する解答になります。複雑そうに見えますが、実はとてもシンプルです。
 
 Tim Reynoldsの北アメリカ記録から例を挙げましょう。
 
@@ -3002,7 +3007,7 @@ scramble = "D2 L2 B R2 U2 F' L2 U2 B2 L2 F' D L2 B U L' U2 L' F' R'"
 text = display_text
 solution = "D' F D F' R2 F R2 F' R2 B' D' B' U2 B D' B' U2 B2 D F2 L2 F U' R (24)"
 img_src="../../../assets/img/alg-310.png"
-algcubing = ""
+algcubing = "https://alg.cubing.net/?setup=R_F_L_U2_L_U-_B-_L2_D-_F_L2_B2_U2_L2_F_U2_R2_B-_L2_D2&alg=R-_U_F-_L2_%2F%2F2x2x2%0AF2_D-_B-_(B-_U2_B_D_B-_U2_B_D-)_D2_B_%2F%2F2x2x3%0AR2_F_R2_F-_R2_%2F%2FF2L%26%2345%3B1%0AF_D-_F-_D_%2F%2FAll_but_3_corners"
 %}
 
 <!--
@@ -3026,6 +3031,11 @@ See on alg.cubing.net
 -->
 
 この解答を追いかけるには、まず逆スクランブルを回してから、解答のステップに入りましょう。画像は「ノーマルスクランブル」のものです。逆スクランブルのものではないので、逆スクランブルしても一致しません。最後に、逆スクランブルに対する`R' U F' L2 F2 D' B2 U2 B D B' U2 B D B R2 F R2 F' R2 F D' F' D`という解答が見つかりました。これを逆手順にしたものが上記の最終解答です。
+
+|ノーマルスクランブル|逆スクランブル|
+|:-------------------|:--------------|
+|![](../../../assets/img/alg-310n.png){:width="250px" height="auto" class="img-responsive align-center"}|![](../../../assets/img/alg-310.png){:width="250px" height="auto" class="img-responsive align-center"}|
+|D2 L2 B R2 U2 F' L2 U2 B2 L2 F' D L2 B U L' U2 L' F' R'|R F L U2 L U' B' L2 D' F L2 B2 U2 L2 F U2 R2 B' L2 D2|
 
 よくある間違いとして、通常のスクランブルと逆スクランブルはまったく関係がないという考えがありますが、実はこの二つはよく似ています。たとえば、ZZを使うなら、二つのスクランブルを見て同じ数の悪いエッジ(bad edge)があるけれど違う場所にあることがわかるでしょう。また、どちらか一方で見つけたブロックはもう一方にもあって、色の組み合わせや場所が違っていることもわかるでしょう。
 
@@ -3062,7 +3072,7 @@ in the inverse scramble, with twisted corners twisted the other way round. “Fi
 stay the same, while “moving” blocks will be made of different pieces and placed somewhere else.
 -->
 
-公式／非公式の試技で、開始時に逆スクランブルをそのまま書いておく人もいますし、NISSなどを使うときに書く人もいます。こうしておくと、特に努力することなく、使いたいときいつでも逆スクランブルを使いやすくなります。ただし、最初に紙に書いて間違いがないかを確認しなければなりません。私はこうする代わりに、**通常のスクランブルを右から左に読みながら、頭の中でそれぞれの記号を逆にして逆スクランブルを使います。** 最初は難しいでしょうけれど、最終的には普通のスクランブルと同じくらい速くなりますし、ほとんど苦労しないでしょう。この手法を取るかはあなたの好み次第です。 
+公式／非公式の試技で、始まったときにまず逆スクランブルを書いておく人もいますし、NISSなどを使うときに初めて書く人もいます。こうしておくと、特に努力することなく、使いたいときいつでも逆スクランブルを使いやすくなります。ただし、最初に紙に書いて間違いがないかを確認しなければなりません。私はこうする代わりに、**通常のスクランブルを右から左に読みながら、頭の中でそれぞれの記号を逆にして逆スクランブルを使います。** 最初は難しいでしょうけれど、最終的には普通のスクランブルと同じくらい速く回せるようになりますし、ほとんど苦労しないでしょう。このやり方をするかどうかはあなたの好み次第です。 
 
 そのままでも役立つテクニックですが、ソルブの最初で詰まったときや単にもっと多くの可能性を探索したいときに、ここで説明したアイディアは次の節で話すことの基礎になります。
 
@@ -3080,7 +3090,7 @@ solve or simply to get more possibilities to explore, the ideas explained here a
 the techniques introduced in the next paragraph.
 -->
 ### 3.2 疑似ブロック、プリムーブ、NISS (Pseudo Blocks, Premoves and NISS)
-3.2節はまとめて同時に読むといいでしょう。ここで説明する3つのテクニックは密接な関連があります。
+3.2節はまとめて一気に読むといいでしょう。ここで説明する3つのテクニックは密接な関連があります。
 <!--
 3.2 Pseudo Blocks, Premoves and NISS
 This whole Section 3.2 is better read all at the same time, since the three techniques explained
@@ -3101,7 +3111,7 @@ are deeply related.
 `R2 F L2 D'`と回した後にDFLコーナー側から見たキューブ
 {: .text-center}
 
-ここでできているのは本物の2x2x2ブロックではなく疑似2x2x2ブロックです。このときのD面を一時的に`D2`だけズレた状態であると考えて、すべてが完成したあとで`D2`するものだと考えてみることができます。たとえば、このまま（非効率的ですが）CFOPでソルブを進めてみましょう。
+ここでできているのは**本物の2x2x2ブロックではなく疑似2x2x2ブロックです。**このときのD面を一時的に`D2`だけズレた状態であると考えて、すべてが完成したあとで`D2`するものだと考えてみることができます。たとえば、このまま（非効率的ですが）CFOPでソルブを進めてみましょう。
 
 <!--
 3.2.1 Pseudo Blocks
@@ -3119,13 +3129,13 @@ What you get is not an actual 2x2x2 block, but a pseudo 2x2x2 block. We can thin
 D layer as it was temporarily off by a D2 move, that we can do at the end to solve everything
 back. For example, we can continue with a (inefficient) CFOP solve:
 -->
-`R2 F L2 D'` //Pseudo 2x2x2  
-`B' U2 R' U2 R2 U R` //Cross and second pair  
-`U2 F' U F U' F' U' F` //Third pair  
-`L U2 L'` //Fourth pair  
+`R2 F L2 D'` //疑似2x2x2  
+`B' U2 R' U2 R2 U R` //クロス、2つ目のペア  
+`U2 F' U F U' F' U' F` //3つ目のペア  
+`L U2 L'` //4つ目のペア  
 `B L' B' U' B U L U' B'` //OLL  
 `F2 D' L2 D F2 R2 D B2 D' R2` //PLL  
-`D2` //Undo premove  
+`D2` //プリムーブをもとに戻す  
 
 このケースであれば、`D2`はOLLの前やOLLとPLLの間にやってしまっても構いませんが、F2Lのステップが終わっていないなら最後にやらなければなりません。
 
@@ -3182,7 +3192,7 @@ F2 D' L2 D F2 R2 D B2 D' R2 //PLL
 See on alg.cubing.net
 -->
 
-このような解答を見つけたときには、プリムーブを解答の最後に付け加えることで元のスクランブルに対する解答になると覚えておきましょう。一つ前の節で見たものはこうして得られたものです。複数手のプリムーブをやることもできます。例として次のソルブを見てみましょう。これは私の最初の公式ソルブで、元イタリア記録のものです。スクランブルする前にプリムーブを入れるのを忘れないようにしてください。
+このような解答を見つけたときには、**プリムーブを解答の最後に付け加えることで元のスクランブルに対する解答になると覚えておきましょう。**一つ前の節で見たものはこうして得られたものです。複数手のプリムーブをやることもできます。例として次のソルブを見てみましょう。これは私の最初の公式ソルブで、元イタリア記録のものです。スクランブルする前にプリムーブを入れるのを忘れないようにしてください。
 
 {% capture display_text %}
 Premoves: D2 B2
@@ -3227,22 +3237,24 @@ See on alg.cubing.net
 `F' L2 F2 U2 R2 B R2 F' R2 D2 U2 L' U' B' U R U L2 F2 L'`
 {: .text-center}
 
-<!--TODO 画像入れる -->
+![](../../../assets/img/alg-323-1.png){:width="300px" height="auto" class="img-responsive align-center"}
 
 同じように2x2x1ブロックから始めてみましょう(`R2 F'`)。ここに`D F'`というプリムーブを加えることで2x2x2ブロックができることに気づくのは、たとえ熟練者でも難しいでしょう。加えると次のようになります。
 
-`D F' F' L2 F2 U2 R2 B R2 F' R2 D2 U2 L' U' B' U R U L2 F2 L'`  
+スクランブル：`D F' F' L2 F2 U2 R2 B R2 F' R2 D2 U2 L' U' B' U R U L2 F2 L'`  
 ここに`R2 F'`をして2x2x2ができる
 {: .text-center}
 
-<!--TODO 画像入れる -->
+![](../../../assets/img/alg-323-2.png){:width="300px" height="auto" class="img-responsive align-center"}
+`D F'`というプリムーブを加えてから、`R2 F`をした状態(DFRコーナーから見たもの)
+{: .text-center}
 
-**しかし、NISS (Normal-Inverse Scramble Switch)を知っていれば、こういったプリムーブを見つけることはそう難しくありません。** このテクニックは2009年にRazoux Schultzによって最初に考案されました。ここ説明する概要は、Tomoaki Okayamaによる素晴らしい投稿によるものです。[^3-2-3] 
+**しかし、NISS (Normal-Inverse Scramble Switch)を知っていれば、こういったプリムーブを見つけることはそう難しくありません。** このテクニックは2009年にRazoux Schultzによって最初に考案されました。
 
-最も重要な事実は、次の点です。
+ここ説明する概要は、Tomoaki Okayamaによる素晴らしい投稿によるものです。[^3-2-3-1] 最も重要なのことは次のようにまとめられます。
 
 **スクランブルと解答は、単一のムーブのループ配列として考えることができ、これはキューブの状態にまったく影響しない。**
-{; .notice}
+{: .notice}
 
 <!--/
 3.2.3 NISS
@@ -3261,7 +3273,7 @@ is the following:
 The scramble and the solution can be thought of as a single move sequence
 loop, that doesn’t affect the cube in any way.
 -->
-たとえば、抽象化して、`A B C D`をスクランブル、`p q r s`をそれに対する解答と考えてみましょう。`A B C D p q r s `という配列で、キューブは完成状態に戻る。ここで、同じように、「ズラした」配列を考えてみると、どれもキューブの状態に影響しないことがわかります。
+たとえば、抽象化して、`A B C D`をスクランブル、`p q r s`をそれに対する解答と考えてみましょう。`A B C D p q r s `という配列で、キューブは完成状態に戻ります。ここで、同じように、「ズラした」配列を考えてみると、どれもキューブの状態に影響しないことがわかります。
 
 `s (A B C D p q r s) s’` = `s A B C D p q r`  
 `r s (A B C D p q r s) s' r'` = `r s A B C D`  
@@ -3287,12 +3299,12 @@ doesn’t affect the cube. Inverse sequences don’t affect the cube either, obv
 -->
 `D2`を使う最初のプリムーブの例では、このループは次のようになっていました。
 
-(Scramble) `R2 F L2 D'` (Other moves) `D2`
+(スクランブル) `R2 F L2 D'` (他のムーブ) `D2`
 {: .text-center}
 
-言い換えれば、ここでの「`R2 F L2 D'` (Other moves) `D2`」をスクランブルに対する解答と見なすことができるわけです。つまり、「`R2 F L2 D'` (Other moves)」を「`D2` (Scramble)」に対する解答と見なすこともできます。[^3-2-3-2]
+言い換えれば、ここでの**「`R2 F L2 D'` (他のムーブ) `D2`」をスクランブルに対する解答と見なすことができるわけです。**つまり、「`R2 F L2 D'` (他のムーブ)」を「`D2` (スクランブル)」に対する解答と見なすこともできます。[^3-2-3-2]
 
-プリムーブの仕組みを理解するにはこれで十分だと思います。このことを知っていれば、**通常のスクランブルに対する部分解答と逆スクランブルに対する部分解答を見つけることができるのです。** どういうことでしょうか？同じスクランブルで同じように`R2 F`から考えてみましょう。この時点で、(W)を何らかの手順と考えると、解答は`R2 F (W)`となることがわかります。ここでのループ配列は次のようになります。
+プリムーブの仕組みを理解するにはこれで十分だと思います。このことを知っていれば、**通常のスクランブルに対する部分解答と逆スクランブルに対する部分解答を見つけることができるのです。** つまり、どういうことでしょうか？　同じスクランブルで同じように`R2 F`から考えてみましょう。この時点で、(W)を何らかの手順と考えると、解答は`R2 F (W)`となることがわかります。ここでのループ配列は次のようになります。
 <!--
 In our first example with premove D2, the loop would have been:
 (Scramble) R2 F L2 D' (Other moves) D2
@@ -3320,10 +3332,9 @@ https://www.speedsolving.com/forum/threads/the-fmc-thread.13599/page-52#post-667
 
 なので、`(W)' F' R2`を`(逆スクランブル)`に対するに解答、またたとえば`(W)'`を`F' R2 (逆スクランブル)`に対する解答と考えることができます。このように、次の一般則を導くことができます。
 
-通常スクランブルで見つけた手順の逆手順を、逆スクランブルに対するプリムーブとして使うことができる
+**通常スクランブルで見つけた手順の逆手順を、逆スクランブルに対するプリムーブとして使うことができる**
 {: .notice}
 
-仮に、逆スクランブルに対して`(K)`という解答を見つけたとしましょう。
 <!--
 (Scramble) R2 F (W)
 As we said before, the inverse of this is also an “identity” loop (It is equivalent to finding a
@@ -3334,6 +3345,29 @@ example, (W)' as a solutin for “F' R2 (Inverse Scramble)”. In this way we ha
 general rule
 You can use the inverse of the moves found on normal scramble as premoves
 for the inverse scramble.
+-->
+
+仮に、逆スクランブルに対して`F' R2`というプリムーブを加えてから**`(K)`**という解答を見つけたとしましょう。すると、 **`(K)`**は上に示した`(W)'`と同じような効果になるでしょう。これで終わりです！最終解答は **`R2 F (K)'`**という形になるでしょう。
+
+
+このプロセスは繰り返すことができます。逆スクランブルに対して上のプリムーブを加えてから`F D'`をすると、2x2x2ブロックができたがあまりうまく続かなかったとしましょう。**この時点で(さらに)ノーマルスクランブルに戻ることができます。**　今度は`D F'`をプリムーブとして考えます。まとめると、ループした配列は次のようになります。
+
+`F' R2 (逆スクランブル) F D' (まだ見つかっていないムーブ)`
+{: .text-center}
+
+これを逆にすることで別のループを作ることができます。
+
+`(まだ見つかっていないムーブの逆) D F' (スクランブル) R2 F`
+{: .text-center}
+
+つまり、ここでは `D F'` を本来のスクランブルに対するプリムーブ、 `R2 F'`はスクランブルのあとのムーブとしてみなすことができます。[実例](https://www.speedsolving.com/forum/threads/the-fmc-thread.13599/page-10#post-258791)を見るともっとはっきりとわかるでしょう。[^3-2-3-3]
+
+|ノーマルスクランブル|逆スクランブル|
+|:-------------------|:--------------|
+|![](../../../assets/img/alg-323-b-1n.png){:width="250px" height="auto" class="img-responsive align-center"}|![](../../../assets/img/alg-323-b-1i.png){:width="250px" height="auto" class="img-responsive align-center"}|
+|R B U L' U' B U2 D2 F D R L D B2 L2 D' F2 D2 L2 D|D' L2 D2 F2 D L2 B2 D' L' R' D' F' D2 U2 B' U L U' B' R'|
+
+<!--
 Suppose now you have found a solution, call it (K), to the inverse scramble with premoves
 F' R2. Then (K) must have the same effect as (W)', so you are done: your final solution would
 be R2 F (K)'.
@@ -3348,12 +3382,48 @@ An example5 will make everything clearer.
 Scramble: R B U L' U' B U2 D2 F D R L D B2 L2 D' F2 D2 L2 D
 Inverse Scramble: D' L2 D2 F2 D L2 B2 D' L' R' D' F' D2 U2 B' U L U' B' R'
 Normal Scramble Inverse Scramble
+-->
+まずは逆スクランブルで `B L' U F2` といういいスタートがあります。
+
+![](../../../assets/img/alg-323-b2.png){:width="300px" height="auto" class="img-responsive align-center"}
+(逆スクランブル) B L' U F2
+{: .text-center}
+
+これをノーマルスクランブルに適用します。(`F2 U' L B'`をプリムーブにして）`D' B' U B2 R2`とするとつながりがよいです。
+
+![](../../../assets/img/alg-323-b3.png){:width="300px" height="auto" class="img-responsive align-center"}
+F2 U' L B' (スクランブル) D' B' U B2 R2
+{: .text-center}
+
+さらに逆スクランブルに適用します。(`R2 B2 U' B D`をプリムーブにして) `B L' U F2`と回します。
+
+![](../../../assets/img/alg-323-b4.png){:width="300px" height="auto" class="img-responsive align-center"}
+R2 B2 U' B D (逆スクランブル) B L' U F2
+{: .text-center}
+
+このまま逆スクランブルで続けてもよい手順があります。`R B R' U R' U2 R B`でF2Lを完成させましょう。
+
+![](../../../assets/img/alg-323-b5.png){:width="300px" height="auto" class="img-responsive align-center"}
+F2 U' L B' (逆スクランブル) D' B' U B2 R2 R B R' U R' U2 R B
+{: .text-center}
+
+最後にLLを揃えます。
+
+LL: `U2 R' U2 R' D' L F2 L' D R2`
+{: .text-center}
+
+そしてプリムーブをキャンセルする補正をしましょう。
+
+`R2 B2 U' B D`
+{: .text-center}
+
+最終解答： D' B' U B2 D' L F2 L' D R U2 R U2 B' R' U2 R U' R B' R' F2 U' L B'
+
+
+<!--
 Explanation:
 Nice start on inverse scramble: B L' U F2
 (Inverse Scramble) B L' U F2
-5Taken from here: https://www.speedsolving.com/forum/threads/the-fmc-thread.13599/page-10#
-post-258791.
-40 CHAPTER 3. ADVANCED TOOLS
 Apply on normal scramble: [pre-moves F2 U' L B'] nice continuation: D' B' U B2 R2
 F2 U' L B' (Scramble) D' B' U B2 R2
 Apply on inverse scramble: [pre-moves R2 B2 U' B D]: B L' U F2
@@ -3390,6 +3460,9 @@ the final solution is
 A B D G' F' E' C'
 -->
 ### 3.3 Reverse NISS
+
+未着手
+{: .notice--danger}
 <!--
 3.3 Reverse NISS
 It is not a widely used technique, but it can occasionally be useful: it can be considered an
@@ -3996,6 +4069,10 @@ R2 F2 L D' F' D F L' F2 R2
 [^2-5-2]: [https://drive.google.com/drive/folders/1mppifILqu9Bu2phr8zhXGcXasBsSkv_S](https://drive.google.com/drive/folders/1mppifILqu9Bu2phr8zhXGcXasBsSkv_S)
 [^2-5-3-1]: https://www.speedsolving.com/threads/introducing-a-variation-for-fewest-moves.67299/
 [^2-5-3-2]: https://docs.google.com/document/d/1oZwr2aSllFBL5lhbLTiWKQWplfk4i0LN0wA0uskeLJs
+[^3-2-3-1]: [https://www.speedsolving.com/threads/the-fmc-thread.13599/page-52#post-667292](https://www.speedsolving.com/threads/the-fmc-thread.13599/page-52#post-667292)
+[^3-2-3-2]: 「スクランブル」を解答に対する解答としてみなすこともできます！
+[^3-2-3-3]: Taken from here: [https://www.speedsolving.com/forum/threads/the-fmc-thread.13599/page-10#post-258791](https://www.speedsolving.com/forum/threads/the-fmc-thread.13599/page-10#post-258791)
+post-258791.]
 [^5-1-1]: タイムマネジメントについては6.3節で話します。
 [^5-1-2]: [https://www.ocf.berkeley.edu/˜dadams/fmc/](https://www.ocf.berkeley.edu/˜dadams/fmc/)
 [^5-1-3]: [https://speedcube.de/forum/showthread.php?tid=5795](https://speedcube.de/forum/showthread.php?tid=5795)
