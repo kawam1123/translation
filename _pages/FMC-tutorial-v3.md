@@ -2651,7 +2651,7 @@ doesn’t mean you should discard a longer EO, if you can build a lot of blocks 
 
 このような考え方をすると、＜U, D, R2, L2, F2, B2＞のムーブによる部分集合に還元させるやり方も可能となります。そのためには下記のことが必要となります。
 
-- E層のエッジはE層に配置する
+- E列のエッジはE列に配置する
 - コーナーの向きを揃える
 
 **このような条件が満たされる還元を「ドミノリダクション (Domino Reduction)」（略して 「DR」)と呼びます。**これは、ルービックキューブを3x3x2のキューブ(Domino Cube)とみなして解けるようにすることから名前がついています。
@@ -2717,7 +2717,7 @@ See on alg.cubing.net
 
 #### 2.5.3 部分的ドミノリダクション (Partial Domino Reduction, PDR)
 ##### 古典的PDR
-**部分的ドミノリダクション (Partial Domino Reduction, PDR)**の考え方を最初に提案したのはAlexandre Campos[^2-5-3]です。これは、EOを2つの軸に対して揃えることで、いくつか揃っていないコーナーのあるドミノリダクションの状態に持ち込む、という考え方です。最初のアイディアには含まれていませんが、PDRという用語は部分的DRの中でも特に**「全てのエッジとコーナーの向きが揃っているが、E層のエッジが全てE層にあるわけではない」**という状態を指すものとして使われます。
+**部分的ドミノリダクション (Partial Domino Reduction, PDR)**の考え方を最初に提案したのは[Alexandre Campos](https://www.speedsolving.com/threads/introducing-a-variation-for-fewest-moves.67299/)[^2-5-3-1]です。これは、EOを2つの軸に対して揃えることで、いくつか揃っていないコーナーのあるドミノリダクションの状態に持ち込む、という考え方です。また、最初のアイディアには含まれていませんが、PDRという用語は部分的DRの中でも特に **「全てのエッジとコーナーの向きが揃っているが、E列のエッジが全てE列にあるわけではない」** という状態を指すものとして使われます。
 
 <!--
 2.5.3 Partial Domino Reduction
@@ -2727,6 +2727,15 @@ Campos42. It consists in solving EO with respect to two axes, which can also be 
 domino reduction with (some) misoriented corners. Although not included in his original idea,
 the term PDR can also refer to a partial DR where the edges and corners are all oriented, but
 not all E-layer edges are in the E-layer.
+-->
+
+たとえばF/B軸を考えてEOを揃えたあと、L/R軸などの別のEOを揃える、という風に進めることができるでしょう。この2つ目のEOステップを「E列のエッジをE列に配置する」と見なすこともできます。これはDRのソルブでやることと同じですが、コーナーは無視しています。1つ目のステップで揃えたEOをそのままにして置きたいので、`F`や`B`などの1/4回転のムーブは2つ目のステップでは使えません。2つ軸に対するEO(PDR)を考えるなら、まずブロックビルディングをしてから、ドミノムーブ（＜U, D, R2, L2, F2, B2＞）だけを使って揃えられるスケルトンを作るのが自然なやり方でしょう。こうするとEOが崩れることはありません。
+
+しかし、制約もあります。ドミノムーブだけを使う場合には、向きの揃っていないコーナーを揃えることができないのです。ですので、このコーナーを揃えないままにしておいて、後からインサートして揃える必要が出てきます。こうならないようにするために、向きの揃っていないコーナーをたくさん残しておくべきではありません。
+
+[AlexandreはDRのソルブ例をいくつか収集しています](https://docs.google.com/document/d/1oZwr2aSllFBL5lhbLTiWKQWplfk4i0LN0wA0uskeLJs)[^2-5-3-2]から、そのうちの一つを見てみましょう。
+
+<!--
 After a normal EO, say with respect to F/B, one can procede with a second EO, say on
 L/R. This second EO step can also be seen as placing the E-layer edges on the E-layer, much
 like you would do in a DR solve, but ignoring corners. Since you want to keep the EO you did
@@ -2738,6 +2747,26 @@ hope to solve the misoriented corners, so you are forced to leave them unsolved 
 later with insertions. That’s why not leaving many misoriented corners is usually a good idea.
 Alexandre has collected some PDR solves in a document43. Let’s look at the first one as an
 example:
+-->
+
+{% capture display_text %}
+D' * R' U' F + //EO (4/4)
+L R2 U R //PDR4 (4/8)
+D F2 D2 B2 //Corner line + edge line (4/12)
+U2 L2 D R2 U //AB5C (5/17)
+* = D' R' U2 R D R' U2 R //(8-4/21)
++ = F2 R B2 R' F2 R B2 R' //(8-2/27)
+{% endcapture %}
+{% include solvebox.html
+title = "古典的PDR - Example"
+scramble = "R' U' F L2 U2 B' L2 F' U2 B L2 B R' B2 L U B L2 B' D' F2 R F R' U' F"
+text = display_text
+solution = "D2 R' U2 R D R' U F' R B2 R' F2 R B2 R L U R D F2 D2 B2 U2 L2 D R2 U (27)"
+img_src="../../../assets/img/alg-253-1.png"
+algcubing = ""
+%}
+
+<!--
 Classic PDR - Example
 Scr: R' U' F L2 U2 B' L2 F' U2 B L2 B R' B2 L U B L2 B' D' F2 R F R' U' F
 D' * R' U' F + //EO (4/4)
@@ -2746,14 +2775,15 @@ D F2 D2 B2 //Corner line + edge line (4/12)
 U2 L2 D R2 U //AB5C (5/17)
 * = D' R' U2 R D R' U2 R //(8-4/21)
 + = F2 R B2 R' F2 R B2 R' //(8-2/27)
-Solution: D2 R' U2 R D R' U F' R B2 R' F2 R B2 R L U R D F2 D2 B2 U2 L2 D
-R2 U (27)
+Solution: D2 R' U2 R D R' U F' R B2 R' F2 R B2 R L U R D F2 D2 B2 U2 L2 D R2 U (27)
 See on alg.cubing.net
 -->
 ##### EO+CO PDR
-<!--
-EO+CO PDR
+別の種類の「PDR」は「見せ掛けDR」とでも呼ぶべきアプローチです。これに対して、上に書いたような古典的は「EO＋ブロックビルディング」のアプローチに近いものです。
 
+EOを揃えたあと、DRを作るのと同じようなアプローチでコーナーの向きを揃えることができるでしょう。その後で、コーナーを揃えてエッジだけが残ったスケルトンを作ることができます。こうするといいことが起こります。DRとしてはあまりよい状態ではありませんが、EOが揃っているならエッジのインサートは非常によいものになります。特に、3.8節に書くような発展的なテクニックを使うとよいでしょう。
+
+<!--
 This second type of “PDR” approach is probably closer to being a “mock DR”, whereas the
 classical PDR described above is closer to an EO + blockbuilding approach.
 42https://www.speedsolving.com/threads/introducing-a-variation-for-fewest-moves.67299/
@@ -2764,6 +2794,26 @@ that are used to get a DR. After that, you can solve corners and get an edges-on
 This often turns out to be good: although not as nice as with DR, edge insertion can still be
 very good when EO is solved, especially when combined with the advanced techniques described
 in Section 3.8.
+
+-->
+
+{% capture display_text %}
+F D R2 U' F' //EO (5/5)
+R' //Lucky CO (1/6)
+F2 B2 U2 R2 D U2 * B2 D U' //3e+3e left (9/15)
+* = U R2 U' F2 B2 + D L2 D' F2 B2 //10-3/22)
++ = U' L' D2 F2 D2 L' U D L2 D' //(10-6/26)
+{% endcapture %}
+{% include solvebox.html
+title = "EO+CO PDR - Example"
+scramble = "F' U R U' F2 R' U2 F' U D' L B' L2 F2 U2 R2 L' U2 B2 U2 R F2 L' F' U R"
+text = display_text
+solution = "F D R2 U' F' R' F2 B2 U2 R2 U' D R2 U' F2 B2 U' L' D2 F2 D2 L' U F2 U' D (27)"
+img_src="../../../assets/img/alg-253-2.png"
+algcubing = "https://alg.cubing.net/?setup=F-_U_R_U-_F2_R-_U2_F-_U_D-_L_B-_L2_F2_U2_R2_L-_U2_B2_U2_R_F2_L-_F-_U_R_&alg=F_D_R2_U-_F-_%2F%2FEO_(5%2F5)%0AR-_%2F%2FLucky_CO_(1%2F6)%0AF2_B2_U2_R2_D_U2_B2_D_U-_%2F%2F3e_%26%232b%3B_3e_left"
+%}
+
+<!--
 EO+CO PDR - Example
 Scr: F' U R U' F2 R' U2 F' U D' L B' L2 F2 U2 R2 L' U2 B2 U2 R F2 L' F' U R
 F D R2 U' F' //EO (5/5)
@@ -2771,8 +2821,7 @@ R' //Lucky CO (1/6)
 F2 B2 U2 R2 D U2 * B2 D U' //3e+3e left (9/15)
 * = U R2 U' F2 B2 + D L2 D' F2 B2 //10-3/22)
 + = U' L' D2 F2 D2 L' U D L2 D' //(10-6/26)
-Solution: F D R2 U' F' R' F2 B2 U2 R2 U' D R2 U' F2 B2 U' L' D2 F2 D2 L' U
-F2 U' D (27)
+Solution: F D R2 U' F' R' F2 B2 U2 R2 U' D R2 U' F2 B2 U' L' D2 F2 D2 L' U F2 U' D (27)
 See on alg.cubing.net
 -->
 
@@ -2833,7 +2882,7 @@ title = "Insert Last Pairs - Example"
 scramble = "D' R' U' F U2 F2 L2 D' B2 F2 D' L R' D F' U' R' B' R2 F D U' B' R' U' F"
 text = display_text
 solution = "U2 F' U' B' D B D2 L D2 B L F L' F' B D L' D' U' L2 U L U' L U L'(27)"
-img_src="../../../assets/img/alg-253.png"
+img_src="../../../assets/img/alg-263.png"
 algcubing = "https://alg.cubing.net/?setup=D-_R-_U-_F_U2_F2_L2_D-_B2_F2_D-_L_R-_D_F-_U-_R-_B-_R2_F_D_U-_B-_R-_U-_F&alg=U2_F-_U-_%2F%2F2x2x2%0AB-_D_B_%2F%2FOrient_two_edges%0AD2_L_D2_B2_%2F%2F2x2x3_%26%232b%3B_6_pairs%0AB-_%2F%2FSave_one_pair_(for_F2L_on_R)%0AL_F_L-_F-_%2F%2FInsert_other_pair%0AB_D_L-_D-_%2F%2FInsert_saved_pair%0AU-_L2_U_L_U-_L_U_L-_%2F%2FLast_Layer"
 %}
 
@@ -2856,7 +2905,7 @@ title = "Insert Last Pairs - Example"
 scramble = "D' R' U' F U2 F2 L2 D' B2 F2 D' L R' D F' U' R' B' R2 F D U' B' R' U' F"
 text = display_text
 solution = "U2 F' U' B' D B D2 L D2 B U' L F L' F' L U L B (20)"
-img_src="../../../assets/img/alg-253.png"
+img_src="../../../assets/img/alg-263.png"
 algcubing = "https://alg.cubing.net/?setup=D-_R-_U-_F_U2_F2_L2_D-_B2_F2_D-_L_R-_D_F-_U-_R-_B-_R2_F_D_U-_B-_R-_U-_F&alg=U2_F-_U-_%2F%2F2x2x2%0AB-_D_B_%2F%2FOrient_two_edges%0AD2_L_D2_B2_%2F%2F2x2x3_%26%232b%3B_6_pairs%0AB-_U-%2F%2FSave_one_pair_(for_F2L_on_R)%0AL_F_L-_F-_%2F%2FInsert_other_pair%0AL_U_L_B_%2F%2FInsert_saved_pair_and_skip"
 %}
 
@@ -3945,6 +3994,8 @@ R2 F2 L D' F' D F L' F2 R2
 [^2-4-11]: [https://fewestmov.es/if](https://fewestmov.es/if)
 [^2-5-1]: もちろん(FMCにおいては)何かをしてはいけないということはまったくありませんが、**エッジの向きを揃えてからそれをまた崩してしまうのはあまり賢いやり方ではありません。** 望むなら「部分的なEO (Partial EO)」からスタートしてもいいでしょう。
 [^2-5-2]: [https://drive.google.com/drive/folders/1mppifILqu9Bu2phr8zhXGcXasBsSkv_S](https://drive.google.com/drive/folders/1mppifILqu9Bu2phr8zhXGcXasBsSkv_S)
+[^2-5-3-1]: https://www.speedsolving.com/threads/introducing-a-variation-for-fewest-moves.67299/
+[^2-5-3-2]: https://docs.google.com/document/d/1oZwr2aSllFBL5lhbLTiWKQWplfk4i0LN0wA0uskeLJs
 [^5-1-1]: タイムマネジメントについては6.3節で話します。
 [^5-1-2]: [https://www.ocf.berkeley.edu/˜dadams/fmc/](https://www.ocf.berkeley.edu/˜dadams/fmc/)
 [^5-1-3]: [https://speedcube.de/forum/showthread.php?tid=5795](https://speedcube.de/forum/showthread.php?tid=5795)
