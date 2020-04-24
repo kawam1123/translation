@@ -3599,6 +3599,9 @@ LL: F D F2 R F R2 D R D2
 
 たとえば、上記のケースでの(逆スクランブルでの)悪いエッジはDF, UL, UB, RF[^3-4]にあります。つまり、スイッチしたあとでは、悪いエッジはそれぞれDF, UL, UB, RFにあるのです。
 
+翻訳中
+{: .notice--warning}
+
 ### 3.5 Useful Algorithms
 未着手
 {: .notice--danger}
