@@ -3602,31 +3602,45 @@ LL: F D F2 R F R2 D R D2
 このテクニックを練習したいなら、F/B軸に対する5手EO手順が他にないか探してみましょう。この例では逆スクランブルから始めて、数手回してから、ノーマルスクランブルに戻ってきています。[^3-4-2]
 
 ### 3.5 役立つアルゴリズム (Useful Algorithms)
-未着手
-{: .notice--danger}
-<!--新しく追加されたセクション
--->
+気付いたかもしれませんが、一つ前のソルブ例ではあまり知られていないであろうOLL手順(`R U R2 F R F2 U F (U2)`)を使いました。これは特に役立つアルゴリズムで、ピースの位置を変えずに向きだけを変えることができます。
+
+一般的にLast Layerの最短アルゴリズム**(9～10手以下まで)**を覚えておくと役に立ちます。全手順のリスト（回転、左右対称、逆手順は法とする）を作りましたので、[こちら](https://github.com/sebastianotronto/fmctutorial/blob/master/misc/LL_algs_6-10.txt)を参照してください。
+
+「決してLast Layerに影響を与えずにF2Lを完成させてはならない」ルール（役立ちます！）を破ろうとするなら、Last Layerを短い簡単なアルゴリズムで揃えられると嬉しいでしょう。こういうケースではたくさん知っているほど嬉しいことがあります！
+
+ちょっとしたコツも共有しましょう。**Last Layerのアルゴリズムを使うときには、AUF (U面合わせ、Adjust Upper Face)をその前後で試してみましょう。前後でキャンセルするかもしれません。**
+
+少なくとも6手～9手までのアルゴリズムを知っておくといい理由はこれだけではありません。さらに2つあります。1つ目は、Last Layerの正確なアルゴリズムを知らない場合やF2Lがまだ終わっていない場合であっても、**アルゴリズムを使うことでよいスケルトン(3コーナーなど)になることがあるからです。**数手キャンセルがあるかもしれません。
+
+2つ目は、アルゴリズムを学ぶことで、ブロックの作り方、F2Lの揃え方、スケルトンの作り方など、違うやり方を知ることができるからです。たとえば、T permの最適手順を見てみましょう。
+
+`R2 Uw R2 Uw' R2 y L2 Uw' L2 Uw L2 (U')`
+{: .text-center}
+
+これはF2Lアルゴリズム(`R2 Uw R2 Uw' R2`)を2回繰り返しているだけです。
+
+**単にアルゴリズムを学ぶだけでなく、アルゴリズムから学ぶこともできるのです。**
 
 <!--
-3.4 Useful Algorithms
-As you can see, in the last example solve I have used an OLL that is maybe not well known, that
-is R U R2 F R F2 U F (U2) (modulo rotations). This one in particular is very useful, because
-it is the shortest algorithm that affects the orientation but not the permutation of pieces.
+3.5 Useful Algorithms
+As you can see, in the last example solve I have used an OLL that is maybe not well known: R
+U R2 F R F2 U F (U2) (modulo rotations). This one in particular is very useful, because it is
+the shortest algorithm that affects the orientation but not the permutation of pieces.
 It is in general useful to know some of the shortest last layer algorithms, up to 9 or 10
-moves. You can find a complete list (modulo rotations, symmetries and inverses) in Appendix
-C.
+moves. You can find a complete list (modulo rotations, symmetries and inverses) here: https:
+//github.com/sebastianotronto/fmctutorial/blob/master/misc/LL_algs_6-10.txt.
 If you decide to break the “never build an F2L without influencing the last layer” rule
-(sometimes it is worth trying!) you can hope the last layer can be solved with a short algorithm:
-in this case, the more you know, the better!
+(sometimes it is worth trying!) you can hope the last layer can be solved with a single short
+algorithm: in this case, the more you know, the better!
 A little tip: when using a last layer algorithm, remember that you can try performing the
-AUF (“Adjust Upper Face”) both before and after it, hoping to cancel some move with the ones
-before it of with premoves.
-There are two other reasons why it is worth learning some algorithm, at least the ones from
+AUF (“Adjust Upper Face”) both before and after it, hoping to cancel some moves with the
+ones before it of with premoves.
+There are two other reasons why it is worth learning some algorithms, at least the ones from
 6 to 9 moves. The first one is that even if you don’t know the exact algorithm for the last layer,
 or if you haven’t completed the F2L, one of these algorithms may leave you with a good skeleton
-(for example, a corner 3-cycle), hopefully canceling some move.
-The second reason is that by studying algorithms you can learn to match blocks or complete
-the F2L. Let’s take a look at the optimal T perm:
+(for example, a corner 3-cycle), hopefully cancelling some moves.
+The second reason is that by studying algorithms you can learn different ways to match
+blocks, complete the F2L or ake a skeleton. Let’s take a look at the optimal T perm:
 R2 Uw R2 Uw' R2 y L2 Uw' L2 Uw L2 (U')
 It is just a useful F2L algorithm repeated twice.
 Besides just learning algorithms, you can also learn from the algorithms.
