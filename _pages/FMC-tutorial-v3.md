@@ -3439,6 +3439,29 @@ R2 B2 U' B D (Inverse Scramble) B L' U F2 R B R' U R' U2 R B
 LL: U2 R' U2 R' D' L F2 L' D R2
 Premoves correction: R2 B2 U' B D
 Solution: D' B' U B2 D' L F2 L' D R U2 R U2 B' R' U2 R U' R B' R' F2 U' L B'
+-->
+このような(NISSを繰り返す)解答を短く簡単に書くには、**逆スクランブルでのムーブをカッコで囲むという表記を使うとよいでしょう。**今ではこのような表記は広くFMC競技者に受け入れられていますが、NISSを知らない初心者が説明なしで見ると混乱するかもしれません。
+
+たとえば、Guusのソルブであれば次のようになります。
+
+{% capture display_text %}
+Premoves: D2 B2
+R2 B' R2 B //2x2x2, found premove B2 here
+D L2 F D F2 //2x2x3
+L' D F' D2 F D' //F2L-1, found premove D2 here
+L' D * L' F L' F' D' L' //All but 3 corners
+* = B L' F L B' L' F' L //Last 3 corners
+{% endcapture %}
+{% include solvebox.html
+title = "NISS Example"
+scramble = "R B U L' U' B U2 D2 F D R L D B2 L2 D' F2 D2 L2 D"
+text = display_text
+solution = "R2 B' R2 B D L2 F D F2 L' D F' D2 F D' L' D B L' F L B' L2 F' D'
+L' D2 B2 (28)"
+img_src="../../../assets/img/alg-3222.png"
+algcubing = ""
+%}
+<!--
 To make writing such solutions shorter and easier, I have proposed the following notation:
 put moves that are done on inverse scramble are written inside round brackets. This notation
 is now widely accepted and used among FMC solvers, but can still confuse beginners who don’t
