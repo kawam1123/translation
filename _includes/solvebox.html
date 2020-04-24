@@ -1,6 +1,7 @@
 <div class="solvebox clearfix shadow-sm">
     {% if include.title %}<p class="solvetitle">{{ include.title }}</p>{% endif %}
     {% if include.scramble %}<div class="solvetext scramble">スクランブル: {{ include.scramble }}</div>{% endif %}
+    {% if include.inversescramble %}<div class="solvetext scramble">逆スクランブル: {{ include.inversescramble }}</div>{% endif %}
     <img class='align-right img-responsive shadow-none' style='width:250px;height:auto;padding:0;margin:15px 0 0 15px;' src='{{ include.img_src }}'>
     <div class="solvetext shadow-none clearfix"><pre class="shadow-none">{{ include.text }}</pre></div>
     {% if include.solution %}
