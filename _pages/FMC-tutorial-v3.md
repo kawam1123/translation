@@ -2831,7 +2831,7 @@ See on alg.cubing.net
 -->
 
 ### 2.6 その他の簡単な戦略(Other Simple Stragies)
-#### 2.6.1 戻ってやり直そう(Go Back and Change Your Sove)
+#### 2.6.1 戻ってやり直そう(Go Back and Change Your Solve)
 **よいスタートを切ったあとで詰まってしまったら、「そこまでのソルブを一手ずつ見ていく」ということをしてみましょう。** まだ揃えていないピースしかない面が、少なくとも1面、出てくるのを探しながらやってみましょう。見つかったら、その面を動かしてみましょう(すでに揃えたブロックは崩れません)。可能性は3種類(`U`、`U2`、`U´`など)あります。こうすると、元々のものよりほんの少し(1手)だけ長くなって、3通りのスタートが得られるでしょう。次へのつながりがよくなるなら、たった1手は安いものです！
 
 自由に動かせる面が2つ見つかったなら、もちろん両方使ってみても構いません。追加するムーブはランダムなものでよいですし、そうしなくてもよいです。新しいペアができたり、EOがもっとよくなるのなら、それで十分です。しかし、何手か追加してもすぐにわからず、しばらく進んでいってようやく何が起こったかわかることもあるでしょう。
@@ -3445,22 +3445,21 @@ Solution: D' B' U B2 D' L F2 L' D R U2 R U2 B' R' U2 R U' R B' R' F2 U' L B'
 たとえば、Guusのソルブであれば次のようになります。
 
 {% capture display_text %}
-Premoves: D2 B2
-R2 B' R2 B //2x2x2, found premove B2 here
-D L2 F D F2 //2x2x3
-L' D F' D2 F D' //F2L-1, found premove D2 here
-L' D * L' F L' F' D' L' //All but 3 corners
-* = B L' F L B' L' F' L //Last 3 corners
+(B L' U F2) //逆スクランブルでのよいスタート
+D' B' U B2 R2 //つながりもよい
+(R B R' U R' U2 R B) //F2L
+(U2 R' U2 R' D' L F2 L' D R2) //LL
 {% endcapture %}
 {% include solvebox.html
 title = "NISS Example"
 scramble = "R B U L' U' B U2 D2 F D R L D B2 L2 D' F2 D2 L2 D"
+inversescramble = "D' L2 D2 F2 D L2 B2 D' L' R' D' F' D2 U2 B' U L U' B' R'"
 text = display_text
-solution = "R2 B' R2 B D L2 F D F2 L' D F' D2 F D' L' D B L' F L B' L2 F' D'
-L' D2 B2 (28)"
-img_src="../../../assets/img/alg-3222.png"
+solution = "D' B' U B2 D' L F2 L' D R U2 R U2 B' R' U2 R U' R B' R' F2 U' L B' (25)"
+img_src="../../../assets/img/alg-323-4.png"
 algcubing = ""
 %}
+
 <!--
 To make writing such solutions shorter and easier, I have proposed the following notation:
 put moves that are done on inverse scramble are written inside round brackets. This notation
@@ -3476,6 +3475,23 @@ D' B' U B2 R2 //Nice continuation
 (R B R' U R' U2 R B) //F2L
 (U2 R' U2 R' D' L F2 L' D R2) //LL
 Solution: D' B' U B2 D' L F2 L' D R U2 R U2 B' R' U2 R U' R B' R' F2 U' L B' (25)
+-->
+
+最終解答にまとめるときには、**ノーマルスクランブルに対するムーブを上から順に進んで行き、そして逆スクランブルに対するムーブを逆向きに書いていきましょう。**たとえば、カッコ付きの記法で次のような解答ができたとしましょう。
+
+`A B`  
+(`C`)  
+`D`  
+(`E F`)  
+(`G`)
+{: .text-center}
+
+すると、**最終解答は次のように書きます。**
+
+`A B D G' F' E' C'`
+{: .text-center}
+
+<!--
 When you have to write down the final solution, just go though all the moves done on the
 normal scramble and then backwards through the moves on inverse scramble, inverting each of
 them. For example, if you have written down the solution with the brackets notation
@@ -3488,9 +3504,43 @@ the final solution is
 A B D G' F' E' C'
 -->
 ### 3.3 Reverse NISS
+これは広く知られたテクニックではありませんが、役に立つ場合もあります。「2.4.9節Conjugateをして揃える(Conjugate and Solve)」や「2.6.1節 戻ってやり直そう (Go Back and Change your Solve)」の両方を改善したものと考えてもいいでしょう。
 
-未着手
-{: .notice--danger}
+少しだけ(4～8個)ピースを無視すればよいスケルトンになる手順を見つけたとしましょう。ここでインサートして揃えるのが普通ですが、このピースのステッカーの色に一つも共通のものがない（つまり全て違う層にある）ときは、インサートするアルゴリズムを見つけるのが非常に大変でしょう。
+
+ここでの仕掛けはこうです：**（スケルトンを作る途中の）ソルブの中で全ての未処理ピースが単一の層で共役(conjugate)になる点を見つけて、このソルブを「分割」してしまうのです。分割した前半のムーブは全てプリムーブとして考えます。**これがReverse NISSと呼ばれる所以です。さて、このとき「Last Layer」だけが残った状態になります。必要なら何手かのセットアップをはさんでもいいでしょう。
+
+では実例を見てみましょう！ [^3-3]
+
+{% capture display_text %}
+プリムーブ: R2
+F2 U R' U' F D2 * F' U2 //2x2x3
+R D R' D2 B2 //F2L (5ピース以外全部)
+R2 //プリムーブを戻す
+* = (F R) F D F2 R F R2 D R D2 (R' F') //5ピース
+{% endcapture %}
+{% include solvebox.html
+title = "Reverse NISS Example"
+scramble = "L2 D2 F2 U' L2 D L2 D2 B2 U' F' U' R' D B2 L D B' F' R'"
+text = display_text
+solution = "F2 U R' U' F D2 F R F D F2 R F R2 D R D2 R' F2 U2 R D R' D2 B2 R2 (26)"
+img_src="../../../assets/img/alg-330.png"
+algcubing = "https://alg.cubing.net/?setup=R2_L2_D2_F2_U-_L2_D_L2_D2_B2_U-_F-_U-_R-_D_B2_L_D_B-_F-_R-&alg=%2F%2FPremove_added_to_the_scramble%0AF2_U_R-_U-_F_D2_((F_R)_F_D_F2_R_F_R2_D_R_D2_(R-_F-))_F-_U2_%2F%2F2x2x3%0AR_D_R-_D2_B2_%2F%2FF2L_(All_but_5_pieces)"
+%}
+
+インサーションの中にある`F R`というムーブで全ての未処理のピースを単一の層で共役可能にしています。これを加えると、スケルトンは
+
+`F2 U R' U' F D2` `F R`{: .codestrong} `*` `R' F'`{: .codestrong} `F' U2 R D R' D2 B2 R2`
+{: .text-center}
+
+となります。ここで`*`のポイントでソルブを「分割」してみましょう。
+
+すると、**`R' F' F' U2 R D R' D2 B2 R2`がノーマルスクランブルに対するプリムーブとなります。**まとめると次のようになります。
+
+プリムーブ：`R' F2 U2 R D R' D2 B2 R2`  
+F2L: `F2 U R' U' F D2 F R`  
+LL: `F D F2 R F R2 D R D2`
+
 <!--
 3.3 Reverse NISS
 It is not a widely used technique, but it can occasionally be useful: it can be considered an
@@ -3526,15 +3576,35 @@ F2L: F2 U R' U' F D2 F R
 LL: F D F2 R F R2 D R D2
 -->
 ### 3.4 EO中のNISS利用 (Using NISS during EO)
+よいEOが見つけられないとき、NISSが役立つときがあります。ノーマルスクランブルで1手か2手だけ動かすことで、悪いエッジ (Bad edge)の個数を減らすことができることがあるでしょう。残った悪いエッジがノーマルスクランブルで悪い位置にあったとして、逆スクランブルにスイッチしてもっといい位置に移動しないか試してみることができます。もちろん、逆スクランブルからスタートして、途中でノーマルスクランブルにスイッチしてからEOを終わらせる順番でもよいです。
 
+次のスクランブルを見てみましょう。
+
+スクランブル：R' U' F L F L B2 L2 U2 B2 L B2 R B2 L2 U F' D U' F2 R' B R' U' F
+{: .text-center}
+![](../../../assets/img/alg-340n.png){:width="300px" height="auto" class="img-responsive align-center"}
+
+たとえば、F/B軸でのよいEOを探しているとしましょう。しかし、6手かかるムーブ(たとえば`F B L' U D' F`)より良いものが見つけられません。逆スクランブルでもそれほど状況は変わらず、6手かかります。(たとえば`F B L' U D' F`)
+
+しかし、ここでノーマルスクランブルに戻って、EO手順の最初の2手(`F B`のこと)をやったところで立ち止まってみましょう。この時点でF/B軸に対する悪いエッジは4つ(UL, RF, DL, DR)しかありません。しかし、最良の場所ではありません。ここでEOを逆スクランブルにスイッチすることで簡単になるでしょうか？やってみましょう！
+
+プリムーブ：`F' B'`  
+逆スクランブル：R' U' F L F L B2 L2 U2 B2 L B2 R B2 L2 U F' D U' F2 R' B R' U' F  
+{: .text-center}
+![](../../../assets/img/alg-340i.png){:width="300px" height="auto" class="img-responsive align-center"}
+
+すると、たった3手のムーブ(`U' L F`)でEOを解消できます。すなわち、5手のEO処理が見つかったということです。上述した表記を使えば、 `F B (U' L F)`と書くことができます。
+
+数手ごとに簡単なEOがないかをチェックするためにスクランブルをスイッチするのは時間がかかります。しかし、練習すれば何度もやらなくてもよくなります。上のスクランブルに戻って、`F B`のムーブをしたときに何が起きているかをよく見てみましょう。ここで探しているのは、スイッチした後に4つの悪いエッジがよい場所に移動しているという状況です。しかし、3.1節で説明したように、**逆スクランブルを使ったときにエッジがノーマルスクランブルのどこに移動するかを知る手段があります。**どのエッジの向きが揃っていないかを確認することができます。
+
+たとえば、上記のケースでの(逆スクランブルでの)悪いエッジはDF, UL, UB, RF[^3-4]にあります。つまり、スイッチしたあとでは、悪いエッジはそれぞれDF, UL, UB, RFにあるのです。
+
+### 3.5 Useful Algorithms
 未着手
 {: .notice--danger}
 <!--新しく追加されたセクション
 -->
-### 3.5 Useful Algorithms
 
-未着手
-{: .notice--danger}
 <!--
 3.4 Useful Algorithms
 As you can see, in the last example solve I have used an OLL that is maybe not well known, that
@@ -4100,7 +4170,8 @@ R2 F2 L D' F' D F L' F2 R2
 [^3-2-3-1]: [https://www.speedsolving.com/threads/the-fmc-thread.13599/page-52#post-667292](https://www.speedsolving.com/threads/the-fmc-thread.13599/page-52#post-667292)
 [^3-2-3-2]: 「スクランブル」を解答に対する解答としてみなすこともできます！
 [^3-2-3-3]: Taken from here: [https://www.speedsolving.com/forum/threads/the-fmc-thread.13599/page-10#post-258791](https://www.speedsolving.com/forum/threads/the-fmc-thread.13599/page-10#post-258791)
-post-258791.]
+[^3-3]: じつはこのソルブでは、揃っていないピースに矢印やバツ印を書くことで簡単にアルゴリズムを認識できるようになるのです。なので、私はここではReverse NISSというテクニックを実際には使いませんでしたが、解答自体がよい実例になるので書きます。
+[^3-4]: Which are placed in UR, RF, DL and DR respectively, but we don’t care about this at the moment
 [^5-1-1]: タイムマネジメントについては6.3節で話します。
 [^5-1-2]: [https://www.ocf.berkeley.edu/˜dadams/fmc/](https://www.ocf.berkeley.edu/˜dadams/fmc/)
 [^5-1-3]: [https://speedcube.de/forum/showthread.php?tid=5795](https://speedcube.de/forum/showthread.php?tid=5795)
