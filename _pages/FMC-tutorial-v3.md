@@ -3745,10 +3745,13 @@ img_src="../../../assets/img/alg-370-2.png"
 
 解答を作るにあたって、最初は`S' M S M'`などの等価な手順を使ってセンターを揃えていました。そしてノーマルスクランブルでの解答を考えるにあたって、コーナーインサートを含む手順に至ったのです。この時点から解答を完成させるまでは、キューブに触れる必要もありません。
 
-上記のインサートを含む解答を見つけた後で、**すべてのムーブをセンターファーストで解いていないかのよのように書き直さなければなりません。**これは簡単な変換です。`R`は`U`に、`D`は`F`に、という風に変換していくだけです。
+上記のインサートを含む解答を見つけた後で、**センターファーストを使っていないかのように、すべてのムーブを書き直さなければなりません。**これは簡単な変換です。`R`は`U`に、`D`は`F`に、という風に変換していくだけです。
 
-翻訳
-{: .notice--warning}
+次に3つあるコミューテータのうちのどれかをインサートして、センターを揃えます。**センターピースは持ち替えやスライスムーブがなければ動くことはないので、センターを揃えるコミューテータはどの時点も使うことができます。**このことさえ知っていれば、実際にキューブを回してみる必要はありません。単に、3つのコミューテータの1つを選んで、最もキャンセルが起こる場所を探せばいいだけです。
+
+最後に、スライスムーブをインサートしてセンターを揃えたら、二回目の（そして最後の）書き直しをします。インサートしたところより前のムーブは変わりませんが、後のムーブは一回目と同じように変換しなければなりません。部分的解答を書くのに慣れていれば、最初のバージョンから最後のムーブだけをコピーすればよいですが、ここでは私はそうせず、解答用紙にとても乱雑に書くのでした。
+
+コツをもう一つだけ。時間がないなら、センターをインサートした後にキューブの持ち替え記号を書いてしまい、書き直しの時間を節約してもいいでしょう。しかし、キャンセルを見逃さないようにしてください。スライスムーブでのキャンセル探しは通常よりもやりにくいですよ！
 
 <!--
 Skew Centers - Example
@@ -3784,6 +3787,38 @@ be canged with same method used the first time. If you are disciplined in writin
 partial solutions, you can get the first version of your solution and copy the last moves, but this
 is not my case, as I write stuff down on my sheets in a very chaotic way.
 -->
+#### 歪んだセンターとNISS (Skew centers and NISS)
+
+<!--
+3.7.1 Skew centers and NISS
+In the previous example solve I used NISS. However, the last three moves of the skeleton on
+inverse are B2 L2 B2 instead of R2 D2 R2, which are the first three moves done on normal!
+What is happening here? The problem is that one of the insertions that have been left for
+later moves the centers around, changing all subsequent moves! Apply the inverse scramble and
+then the first 13 moves of the skeleton (U2 L2 B2 U L B' L2 U2 L' U2 L' U2 L). Now solve
+the centers with M S' M' S and rotate back to have white on top and green on front (or just
+apply the moves R L' U D' B F' R L'). From here you can apply the “correct” premoves R2 D2
+R2 to get the 3c skeleton.
+How to solve this problem? In this case it can be easy to see what the correct moves to
+apply are, since there are only 3 moves done on the normal scramble. But in general it may be
+tricky. There are basically two ways.
+The first one is to use a “translation table” that tells you which moves you have to apply
+on inverse depending on which moves you have done on normal. In this case it will look like:
+Normal: B F L R U D
+Inverse: U D F B R L
+So the R2 D2 R2 on normal become B2 L2 B2 on inverse! This method works better when there
+are only 4 centers left to fix (like M E2 M' E2): in that situation, the table can easily be kept in
+mind without writing it down.
+Another way consists in using rotations to bring the solved pieces to their usual position,
+disregarding centers. For example, our skeleton (on inverse) would be:
+Moves done on inverse: U2 L2 B2 U L B' L2 U2 L' U2 L' U2 L
+Fix: x z'
+Moves done on normal: R2 D2 R2
+Complete skeleton (on inverse): U2 L2 B2 U L B' L2 U2 L' U2 L' U2 L x z' R2 D2 R2
+But be careful with rotations!12
+3
+-->
+
 ### 3.8 高度なエッジインサーション：フリースライス (Advanced edge insertions: free slices)
 
 未着手
