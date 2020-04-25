@@ -3727,13 +3727,13 @@ As an example, take my last solve from World Championship 2017 (which features a
 and a corner insertion). Notice that, ignoring centers, a 2x2x2 block is already solved!
 -->
 {% capture display_text %}
-(U2 L2 B2 U) //3 pairs (4/4)
-R2 D2 R2 //blocks (3/7)
+(U2 L2 B2 U) //3ペア (4/4)
+R2 D2 R2 //ブロック (3/7)
 (L B') //2x2x3 + square (2/9)
-(L2 U2 L' U2 L' U2 L) //All but 3 corners (7/16)
-Skeleton: U2 L2 B2 U L + B' L2 * U2 L' U2 L' U2 L B2 L2 B2
+(L2 U2 L' U2 L' U2 L) //3コーナー以外完成 (7/16)
+逆スクランブルでのスケルトン: U2 L2 B2 U L + B' L2 * U2 L' U2 L' U2 L B2 L2 B2
 * = F' D F U2 F' D' F U2 //3c (6/22)
-+ = M' E M E' //Centers (4/26)
++ = M' S' M S //センター (4/26)
 {% endcapture %}
 {% include solvebox.html
 title = "Skew Centers - Example"
@@ -3742,6 +3742,13 @@ text = display_text
 solution = "R2 D2 R2 D' B2 D B2 D L' F L B2 L' F' L D2 L B' F D U' R' U' B2 L2 U2 (26)"
 img_src="../../../assets/img/alg-370-2.png"
 %}
+
+解答を作るにあたって、最初は`S' M S M'`などの等価な手順を使ってセンターを揃えていました。そしてノーマルスクランブルでの解答を考えるにあたって、コーナーインサートを含む手順に至ったのです。この時点から解答を完成させるまでは、キューブに触れる必要もありません。
+
+上記のインサートを含む解答を見つけた後で、**すべてのムーブをセンターファーストで解いていないかのよのように書き直さなければなりません。**これは簡単な変換です。`R`は`U`に、`D`は`F`に、という風に変換していくだけです。
+
+翻訳
+{: .notice--warning}
 
 <!--
 Skew Centers - Example
@@ -3777,17 +3784,16 @@ be canged with same method used the first time. If you are disciplined in writin
 partial solutions, you can get the first version of your solution and copy the last moves, but this
 is not my case, as I write stuff down on my sheets in a very chaotic way.
 -->
-### 3.8 Advanced edge insertions: free slices
+### 3.8 高度なエッジインサーション：フリースライス (Advanced edge insertions: free slices)
 
 未着手
 {: .notice--danger}
 
-### 3.9 Corner First
-
+### 3.9 コーナーファースト (Corner First)
 未着手
 {: .notice--danger}
 
-### 3.10 Replace and shorten
+### 3.10 交換して短くする (Replace and shorten)
 
 未着手
 {: .notice--danger}
