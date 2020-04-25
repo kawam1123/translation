@@ -1085,7 +1085,7 @@ the yellow-orange-blue one!
 
 この問題を解決するための別の方法とは、一時的にブロックを壊してから、あとで元通りつなげるというものです。同様に「別のところに持っていく」テクニックを使います。
 
-基本的な例として、`R U R' U`の「スクランブル」をした状態を考えましょう。
+基本的な例として、`R U R' U'`の「スクランブル」をした状態を考えましょう。
 
 ![](../../../assets/img/alg-213.png){:width="500px" height="auto" class="align-center"}
 
@@ -3674,9 +3674,19 @@ There isn’t much documentation about this technique, especially for bad pairs.
 speedsolving.com.
 -->
 ### 3.7 Solving with Skew Centers
+コーナーファーストという考え方を踏まえると、このテクニックを自然に理解しやすくなるでしょう。しかし、それ以外の手法でも使うことができるテクニックです。
 
-未着手
-{: .notice--danger}
+コーナーとエッジをインサートするやり方はすでに見ましたが、ここではインサートすることでセンターを揃えるやり方を見てみましょう。ソルブ中にセンターを無視して揃わないままにしておき、偶数手のスライスムーブ[^3-7-1]で揃う状態にします。すると、`M E M' E'`や`M E2 M' E2`などのアルゴリズムで揃えることができるようになります。[^3-7-2]
+
+もちろんスライスムーブ（内層回転ムーブ）をしなければならないので、歪んだセンターを揃えるには8手必要になります。しかし、心配しないでください。この8手をキャンセルできるチャンスはとても沢山あります。このインサートを使うと、平均で3～4手でセンターを揃えることができます。
+
+どうしてこんなことになるのでしょう？この手順には複数の揃え方があるのです。
+
+`M E M' E'` = `S M' S' M` = `E' S' E S`
+{: .text-center}
+
+
+
 <!--
 3.6 Solving with Skew Centers
 This technique is understood more naturally in the context of corners first solving, but can be
