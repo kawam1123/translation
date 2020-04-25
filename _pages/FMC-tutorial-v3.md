@@ -3787,7 +3787,32 @@ be canged with same method used the first time. If you are disciplined in writin
 partial solutions, you can get the first version of your solution and copy the last moves, but this
 is not my case, as I write stuff down on my sheets in a very chaotic way.
 -->
-#### 歪んだセンターとNISS (Skew centers and NISS)
+#### 3.7.1 歪んだセンターとNISS (Skew centers and NISS)
+一つ前のソルブ例ではNISSを使いましたが、逆スクランブルに対するスケルトンの最後の3手は`R2 D2 R2`ではなく、`B2 L2 B2`になっています。これはノーマルスクランブルで解いたときの最初の3手と同じです！
+
+するとどんな問題が起こるでしょうか？　それは、後でやろうと思っていたインサートによってセンターが動いてしまい、その後に続くムーブがすべて変わってしまうということです！逆スクランブルに対するスケルトンの最初の13手(`U2 L2 B2 U L B' L2 U2 L' U2 L' U2 L`)をやってみましょう。そして次に、M S' M' Sでセンターを揃え、U面が白、F面が緑の向きに持ち替えましょう。単に`R L' U D' B F' R L'`とやってもよいです。ここからは「正しい」プリムーブの`R2 D2 R2`を使って、3コーナーのスケルトンにすることができます。
+
+この問題はどうやって解決しましょう？　このケースでは、ノーマルスクランブルではたった3手しか回していないため、適応すべき正しいムーブがどれなのかを簡単に知ることができます。しかし一般的にはやりにくいものです。やり方は大きく2つあります。
+1つ目は、**ノーマルスクランブルでのムーブから逆スクランブルでのムーブを知るための「変換表」**を用意することです。このケースでは次のような表ができます。
+
+|                   |   |   |   |   |   |   |
+|-------------------|---|---|---|---|---|---|
+|ノーマルスクランブル：|B|F|L|R|U|D|
+|逆スクランブル：|U|D|F|B|R|L|
+
+なので、ノーマルスクランブルでの`R2 D2 R2`は、逆スクランブルでは`B2 L2 B2`になります！この手法は4つのセンターだけが残されているときには特に役立ちます。そういうときに、この表を毎回書かかなくてもいいようにしっかり覚えておきましょう。
+
+2つ目の方法は、**持ち替えを使い、センターを無視した状態で揃ったピースを本来の位置に戻すことです。**たとえば、（逆スクランブルでの）スケルトンは次のようになります。
+
+逆スクランブルでやったムーブ: `U2 L2 B2 U L B' L2 U2 L' U2 L' U2 L`
+持ち替えして修正する: `x z'`
+ノーマルスクランブルでやったムーブ: `R2 D2 R2`
+逆スクランブルでのスケルトン: `U2 L2 B2 U L B' L2 U2 L' U2 L' U2 L` `x z'` `R2 D2 R2`
+
+**くれぐれも持ち替え記号には注意してください！** [^3-7-1-1]
+
+
+
 
 <!--
 3.7.1 Skew centers and NISS
@@ -3824,21 +3849,184 @@ But be careful with rotations!12
 未着手
 {: .notice--danger}
 
+<!--
+3.8 Advanced edge insertions: free slices
+If you have a skeleton that only leaves some edges unsolved, the standard way to conclude with
+insertions is to insert edge commutators or maybe double swaps of edges, like M2 U2 M2 U2.
+There is also a more advanced technique to solve edges, of which some edge commutators
+like [M2, U R U'] can be interpreted as a special case.
+
+The main idea is the following: consider the move M. It counts only as 2 moves in HTM, but its
+effect is interesting. Ignoring centers, it completes a 4-cycle of edges: UF→FD→DB→BU→UF.
+Similarly, the move M2 is a double 2-cycle of edges: UF↔DB and UB↔DF. Thus by inserting
+simple slice moves like M and M2 in the skeleton one can very efficiently solve any type of edgecycle(s)! In case it is necessary, one can use setup moves; for example [R F: M2] = R F M2
+F' R' is a double 2-cycle, just like M2.
+I like to call this method free slices, but it has other popular names like slice insertions or
+slicey shenanigans.
+But what about centers? They are not a big problem: one can either pay attention that
+the slice insertions “cancel each other” so that centers end up solved as well, or forget about
+them and solve them with an extra center insertion like [M,E] later. If you go for this second
+approach, the only thing to care about is avoiding parity: make sure that the total number of
+slice moves inserted is even (where M2 counts as 2). But if this is not the case then edges cannot
+result solved.
+Let’s start with a (lucky) example:
+World Championship 2019 - Scramble 2
+Scr: R' U' F U2 R2 D' F2 D' L2 U' F2 L F' D' R' U' R2 F L2 B F R2 B2 R' U' F
+(B D' R F) //EO + 3 pairs (4/4)
+D2 R U' //2 squares (3/7)
+(R2 B2 R) //3c7e (3/10)
+Skeleton: D2 R U' R' B2 R2 [1] F' R' D B' [2]
+Insert M2 both at [1] and at [2] to leave 3e3c in 12
+New skeleton: D2 R U' R' B2 L2 B' R' U F' * R2 L2
+* = U + R U' R2 L2 D R' D' R2 L2 (6)
++ = U2 R' D' R U2 R' D R (6)
+Sol: D2 R U' R' B2 L2 B' R' U F' U' R' D' R U2 R' D R2 U' R2 L2 D R' D' (24)
+See on alg.cubing.net
+Here the first insertion (the one marked by [1]) solves 3 edges and cancels 2 moves. This is
+a very lucky case. The second insertion (marked with [2]) is more standard: it solves only one
+more edge, leaving a 3-cycle, and solves back the centers that were set off by the first insertion.
+The last two insertions are standard commutators, but there is one thing certainly worth
+noticing: the edge commutator (insertion marked with *) is [U R U', M2], and it is inserted
+right before an M2 move, leading to a cancellation of the last slice move. In fact, one could have
+found the same exact solution by inserting [U R U': M2] = U R U' M2 U R' U' at [2], which
+is just a setup + slice! Many edge commutators can be seen a combination of 2 slice insertions
+– one simple (without setup moves) and one with setup moves.
+Let’s take another example:
+Another free slices example
+Scramble: R' U' F U R2 D R2 B2 D' B2 L' D2 L2 R D U L2 F' U2 B L' B R' U' F
+Skeleton: U' B' U B' * L2 B2 R2 + F2 R D' R L' F D2 (5e)
+* = E'
++ = [R' B' D' B: E]
+Sol: U' B' U B' D U' F2 L2 B L' D' L D' U B' D B R F2 R D' L' R F D2 (25)
+See on alg.cubing.net
+Here the first insertion solves 2 of the 5 edges and unsolves a solved one, leading to 4 edges
+unsolved in a 4-cycle. The second insertion is a setup to a 4-cycle.
+
+It is not always easy to understand what is a good place to insert a slice move in a skeleton.
+I mostly go with trial-and-error, but there are some tricks to keep in mind:
+• Sometimes it is useful to insert slice moves that don’t seem to accomplish much, but also
+don’t add many moves, for example because there is no setup move, or there are even
+cancellations. But there is even more: by inserting, for example, an M2 move next to a
+squence like R2 L one can even save one move. It can then happen that such a slice move
+solves some edges (what luck!) or at least doesn’t change the number of unsolved edges.
+In general, I tend to first go through the skeleton with this approach in mind and hopefully
+simplify the situation using very few moves. Then, when there is only a 3-cycle or a double
+swap left, I tend to use longer insertions to finish up the solve.
+• It easy to find out how many edges are going to be solved after a slice insertion by counting
+how many more end up in the correct spot (and how many solved edges become unsolved,
+if any). Then it often possible to deduce the exact type of cycle they form, excluding some
+cases by parity reasons.
+For example, consider the first solve above. There are 7 unsolved edges in total, and the
+first insertion (the M2 labelled with [1]) solves exactly 3 of them. No solved edge is taken
+out of place. It follows that after that insertion exactly 4 edges are left unsolved. But
+then, since M2 does not create center-parity, there is only one possibility: those 4 edges
+must form a 2-2 cycle (double swap).
+• Avoid edges flipped in place and “twisted cycles” like UF→UR→FU. If your skeleton has
+some, try to get rid of them with your first slices.
+• Skeletons with EO – or even Domino Reduction, see Appendix D – solved at the beginning
+tend to give much nicer edge insertions, both with standard algorithms (commutators,
+double swaps) and with free slices!
+-->
+
+
 ### 3.9 コーナーファースト (Corner First)
 未着手
 {: .notice--danger}
+
+<!--
+3.9 Corners First
+“Corners First” (sometimes shortened to CF) is not really a method, but more a class of methods.
+With these methods, as the name says, one solves first the corners and then the edges. Roux
+can be considered a CF method.
+Among the ones who have figured out how to solve the cube on their own, many had a
+corners first approach:13 Thinking separately about corners and edges makes it somehow easier
+to solve the cube intuitively. Moreover, by solving corners first one can solve edges more freely:
+inner layers can be moved without affecting corners.
+But this is also a disadvantage in FMC: inner layer moves count as two moves! Despite
+this, there at least two expert FMCers that use this technique: Attila Horv´ath and Javier
+Cabezuelo S´anchez. Both agree that Corner First methods are excellent for FMC, but not
+very suitable for the one hour time limit. In fact, many of Javier’s official results are DNF.
+Attila Horv´ath mostly solves corners using a method similar to Guimond (orient first).
+Centers are not cared about in this step. For this step he sometimes uses premoves or NISS.
+After this, he goes through the solution he has found and modifies it slightly, inserting inner
+layer moves, to get at least 2 or 3 edges solved. At the end he solves the edges left, in no specific
+order. He sometimes doesn’t solve the centers until the end, and solves them with an insertion,
+as discussed in Section 3.7. To learn more about his method, I suggest reading his posts or
+asking him directly on the speedsolving.com forum14. He is usually very happy to teach others
+about his techniques.
+Here is a commented solve by Attila.
+13For example, Valery Morozov, who has made a tutorial to learn his method, available here: https://www.
+speedsolving.com/forum/threads/a-unique-phase-method-for-a-rubiks-cube.44264/.
+14Here is his profile: https://www.speedsolving.com/forum/members/attila.10652/.
+52 CHAPTER 3. ADVANCED TOOLS
+Scramble: U L U' R' F' L' U D R L' B2 D B' D L2 D' R2 U F2 D
+Solution: B2 D R' B' D2 U2 F L D' U' R' U2 R' B F2 D2 L2 U' D R U' R' L B2 (24)
+Explanation:
+First I need a short corners-solution, usually I try something with premoves, if the
+scramble seems too hard. In this case I found this premoves for normal scramble: D B.
+Corners solution:
+B2 D' B' D2 B (Guimond first step: orient corners)
+B2 D' R2 F2 (Solve all corners)
+Corners solve, without premoves:
+B2 D' B' D2 B' D' R2 F2 D B
+Corners solve for inverse scramble: (inverse of previous solve)
+B' D' F2 R2 D B D2 B D B2
+A variation of the previous solve, to get more edges solved:
+B2 M b d' M' F2 R2 d2 D' b d2 B corners -2 moves and 5 edges solve,
+Then I write this, without centers move:
+B2 L' R U R' D' U L2 D2 F2 B' R U2 R
+The second move (M) does not change the first five edges position, but it must be inserted
+to get the lucky ending.
+The next step is obvious, solve more 3 edges: U D setup moves, L' F' U2 D2 B R 3 edges
+algo, then a lucky E slice skip, due to the previous M move.
+Since the first version of this tutorial, Attila has gradually changed his method. He still
+orients corners first, but rather than solving them completely and then taking care of edges,
+he performs a CO-first Domino Reduction. Se for example this post15, or the example solves
+collected in Alexandros’ and Tommaso’s DR tutorial.
+Javier solves corners in a different way: first layer corners first, then the other four. He then
+tries to solve edges inserting moves (or algorithms) in the solution he has found. He doesn’t use
+techniques such as inverse scramble, premoves or NISS. Differently from Attila, he cares about
+centers while solving corners. See also this post16
+.
+Both Attila and Javier only use their CF method, which breaks the “never restrict yourself”
+rule; but they still get excellent results.
+15https://www.speedsolving.com/forum/threads/the-3x3x3-example-solve-thread.14345/page-280#
+post-1234805
+16https://www.speedsolving.com/forum/threads/the-fmc-thread.13599/page-111#post-945295
+-->
 
 ### 3.10 交換して短くする (Replace and shorten)
 
 未着手
 {: .notice--danger}
 
-## 第４章　その他の手法 (Some Other Methods)
+<!--
+3.10 Replace and shorten
+Sometimes it happens that you have a nice solution written down, but some short subsequence
+of this solution is actually inefficient. This might be hard to notice during the normal steps of
+the solve, especially when you have used a combination of NISS and insertions so that moves
+that are next to each other in the final solution are actually far apart in your thought process.
+These inefficient subsequences can be substituted with equivalent but shorter sequences,
+giving a better solution. One way to do so is to go through your solve once more and look for
+inefficient sequences. These may look like “F2L-1” solutions, “domino” steps (see Section 2.5.2
+and Appendix D) or something else. This is not very easy in practice, unless the sequence you
+are looking at is a domino step. For this case you can see an example at the end of Appendix
+D (WR solve), or many more in the DR tutorial by Alex and Tommaso17
+Once you have found a “suspicious” sequence, apply it18 to a solved cube as a scramble, and
+try to find a shorter solution. If you do, you can replace the original sequence with the shorter
+one, and save a few moves! If you find an alternative solution of the same length as the original
+one, you can try and see if it cancels something with the moves around it.
+Here is an example of “replace and shorten” applied to an F2L-1 sequence:
+Scramble: R' U' F U2 L' D2 B2 L R F2 R2 D' R2 U' L' D' B2 D2 F' D2 R' U R' U' F
+Solution: F R L U' B F2 D' F2 D F2 D2 F2 [D R' L D' R D L' D'] L' D L D L2 U
+Now apply the bracketed sequence D R' L D' R D L' D' as a scramble:
+And solve it with B R' D R D' B':
+New solution: F R L U' B F2 D' F2 D F2 D2 F2 [B R' D R D' B'] L' D L D L2 U
+17You can find a link link in Section 2.5.2, Appendix A or Appendix D.
+18Or its inverse.
+-->
 
-未着手
-{: .notice--danger}
-
-## 第５章　練習方法 (How To Practice)
+## 第４章　練習方法 (How To Practice)
 多くの人は、上達するためには「練習と、練習と、練習が必要です！」と言うでしょう。これは真ですが、練習のやり方を知る必要もあります。ここでは、FMCで上達するための練習方法についていくつかアドバイスをします。
 <!--
 Chapter 5
@@ -3847,7 +4035,7 @@ Many people say that to get better you need to “practice, practice, practice�
 you also need to know how to practice: here is some advice on how to practice to get better at
 FMC.
 -->
-### 5.1 時間無制限と大会シミュレーション(No Time Limit and Competition Simulation)
+### 4.1 時間無制限と大会シミュレーション(No Time Limit and Competition Simulation)
 常に大会をシミュレーションして1時間以内に解答を完成させるようにすることは一番よい方法ではありません。これと反対に、時間制限を設けないで、結果に満足するまで同じスクランブルを何度もやることをおすすめします。
 
 1時間の時間制限を設けた練習が悪いわけではありません。自分のレベルを判別することができるようになるでしょうし、タイムマネジメントの戦略を探すのにも役立つでしょう[^5-1-1]。私がおすすめするのは、FMCのオンライン大会に参加することです。たとえば、David Adamsのウェブサイト[^5-1-2]やGerman Forum competition[^5-1-3]などがあります。
@@ -3876,7 +4064,9 @@ competition3
 Trying for one hour as it was a competition and then keep trying until you reach a good
 result is a balanced compromise.
 -->
-### 5.2 上級者と比べよう (Compare Yourself to the Masters (and Study their Solves))
+### 4.2 ペンと紙を使う (Use pen and paper)
+
+### 4.3 上級者と比べよう (Compare Yourself to the Masters (and Study their Solves))
 練習したいときは、既にどこかでFMC上級者が解いたスクランブル使ってみるとよいでしょう。あなたの解答と上級者のものを比べて、あなたが気付かなかった点を見つけることができます。全ての秘密を手中に収めましょう！
 
 加えて、ブロックビルディングや他の解法の訓練をするのであれば、上級者の解答を研究することは必須です。オンライン大会の過去のラウンドの結果から見ることもできますし、speedsolving.comのFMCスレッドでも見つかるでしょう。数年前、ブログ型のウェブサイト[http://fmcsolves.cubing.net/](http://fmcsolves.cubing.net/)を始めて、FMCの素晴らしいソルブ例を集めています。しかし、ここ数年更新していません。
@@ -3892,7 +4082,7 @@ cited before or on the FMC Thread on speedsolving.com. A couple of years ago I s
 blog-style website http://fmcsolves.cubing.net/ to collect nice FMC solves, but I haven’t
 updated it in ages.
 -->
-### 5.3 Hard Scrambles
+### 4.4 Hard Scrambles
 「最悪ケースのシナリオ」において何ができるかを知るために、上級者でも難しかったというスクランブルをやってみるのもよいでしょう。[ここ](
 https://www.speedsolving.com/forum/threads/the-fmc-thread.13599/page-88#post-842681)[^5-3]で難しいスクランブルのリストを得られます。
 <!--
@@ -3911,7 +4101,7 @@ https://www.speedsolving.com/forum/threads/the-fmc-thread.13599/page-88#post-842
 49
 50 CHAPTER 5. HOW TO PRACTICE
 -->
-### 5.4 熟考する練習(Deliberate Practice)
+### 4.5 熟考する練習(Deliberate Practice)
 よいスタートがなかなか見つからないと感じているのであれば、こういう練習をしてみましょう。スクランブルをして、2x2x2や2x2x3などを気が済むまで探します。そのあと、スクランブルを変えて、同じように続けます。同じ考えをF2L-1や他のサブステップについてやることもできます。
 <!--
 5.4 Deliberate Practice
@@ -3919,7 +4109,7 @@ If you think you have troubles in finding a good start, practice that: take a sc
 2x2x2, 2x2x3 or something else until you are satisfied, then change scramble. You can apply
 this idea to F2L-1 or any other substep.
 -->
-### 5.5 ファストスクランブル(Fast Scrambling)
+### 4.6 ファストスクランブル(Fast Scrambling)
 必要ではないとしても、NISSのようなテクニックを使うときや、単に私と同じように、ソルブ中に何度もキューブをスクランブルすることがあるなら、「ゆっくり過ぎない」スクランブルを試してみるといいでしょう。最も重要なことは正確性です。（スクランブルを間違えないこと！）20手のスクランブルを10秒でできるようになれば上出来です。
 <!--
 5.5 Fast Scrambling
@@ -3928,7 +4118,7 @@ solve and scramble the cube many times during a solve, you should try to be at l
 slow” at scrambling, and most important to be accurate (don’t make mistakes). 10 seconds for
 a 20 moves scramble is fine.
 -->
-### 5.6 よく学べ！(Study!)
+### 4.7 よく学べ！(Study!)
 大事なことを言い忘れていました。**このガイドをよく読んで学び、他のリソースからも学び、既知のものも未知のものも含めてアルゴリズムやテクニックを学びましょう。**私はspeedsolving.comの「FMCスレッド」を二回、最初から最後まで読みました。
 
 **アルゴリズムを学びましょう。**膨大な量のアルゴリズムがあります。たとえば、LLEF(Last Layes Edges First)[^5-6-1]やSummer Variation[^5-6-2]などがあります。繰り返しますが、**単に暗記するのではなく、どのように機能しているのかを理解するようにしましょう。**
@@ -3947,12 +4137,12 @@ https://www.speedsolving.com/wiki/index.php/LLEF
 https://www.speedsolving.com/wiki/index.php/Summer_Variation
 -->
 
-## 第６章　公式大会 (In Competition)
+## 第５章　公式大会 (In Competition)
 <!--
 Chapter 6
 In Competition
 -->
-### 6.1 解答の書き方(How to Write a Solution)
+### 5.1 解答の書き方(How to Write a Solution)
 大会のときでも練習のときでも、**解答は持ち替え記号なしで書くのがよいでしょう。**これにはいくつもの理由があります。
 - 持ち替え記号を使うと、間違いを起こしやすい
 - 持ち替え記号があるとキャンセルが見つけにくい。`R z' U'` のようなことをやるのはとんでもない手数のムダです！
@@ -3976,7 +4166,7 @@ U.
 To help memorizing the scheme (not that it is hard), remember that Blue and Red begin
 with the same letter as their layer. This trick actually works well in many other languages.
 -->
-### 6.2 バックアップ解答(Backup Solution)
+### 5.2 バックアップ解答(Backup Solution)
 <!--
 6.2 Backup Solution
 It is good habit, in time-limited competitions, to write a “backup solution”. It is usually a not
@@ -4002,13 +4192,13 @@ What can a good backup solution be? Any solution! Anything is better than a DNF,
 especially now that the preferred format for FMC (in official competitions) is “Mean of 3”: a
 single DNF gives you a DNF mean.
 -->
-### 6.3 タイムマネジメント(Time Managment)
+### 5.3 タイムマネジメント(Time Managment)
 <!--
 6.3 Time Managment
 “How to manage your time” is a complex topic, and I don’t want to say that my advice is
 absolutely good in any case: follow it carefully! In fact, I consider myself pretty bad at timemanagment. The best teacher, in this case, is personal experience.
 -->
-#### 6.3.1 ひっからないように(Don’t Get Stuck)
+#### 5.3.1 ひっからないように(Don’t Get Stuck)
 <!--
 6.3.1 Don’t Get Stuck
 It can happen to anyone: during a competition you get stuck on a certain start and don’t
@@ -4018,7 +4208,7 @@ world only). My advice, maybe trivial, is: don’t get stuck. If you have tried 
 technique you know and found nothing, don’t stare at the cube hoping it solves itself: go back
 and try something else.
 -->
-#### 6.3.2 全ての可能性を調べようとしない((Don’t) Explore Every Possibility)
+#### 5.3.2 全ての可能性を調べようとしない((Don’t) Explore Every Possibility)
 <!--
 6.3.2 (Don’t) Explore Every Possibility
 In the first version of this tutorial this section was called “Explore Every Possibility” - a radical
@@ -4051,50 +4241,55 @@ https://en.wikipedia.org/wiki/Tree_(data_structure)
 ## 付録A　その他の参考資料 (Other Resources)
 <!--
 Appendix A
-Other Resources
-Here is a list of the sources where I got all this information from and other useful links.
+Other resources
+Here is a list of the sources where I got all this information from and other useful links. This
+list can easily become outdated in the future, since new tutorials may keep coming out and the
+ones that I learned from may not be the best ones anymore.
 Speedsolving.com
-The speedsolving.com forum is the place where all the knowledge come from. In particular:
-• The FMC Thread: https://www.speedsolving.com/forum/threads/the-fmc-thread.
+The speedsolving.com forum is the place where all the knowledge comes from. In particular:
+• The FMC thread: https://www.speedsolving.com/forum/threads/the-fmc-thread.
 13599/
 A thread dedicated to FMC, where people constantly post their results and ask for advice.
 • Fewest Moves: Tips and Techniques: https://www.speedsolving.com/forum/threads/
 fewest-moves-tips-and-techniques.1566/
 A thread by Arnaud van Galen collecting the most useful techniques, already included in
 this tutorial.
-• A Tutorial for Corner Commutators by Brian Yu: https://www.speedsolving.com/
-forum/threads/bh-tutorial.12268/
-Other Tutorials
+• A tutorial for corner commutators by Brian Yu: https://www.speedsolving.com/forum/
+threads/bh-tutorial.12268/
+Other tutorials
+• A recent (2019) and complete video tutorial by SpeedCubeReview: https://www.youtube.
+com/watch?v=YCuDT4Bfg4s
+• A written tutorial on Domino Reduction by Alexandros Fokianos and Tommaso Raposio:
+https://drive.google.com/drive/folders/1mppifILqu9Bu2phr8zhXGcXasBsSkv_S
 • A video by Daniel Sheppard with advice on how to get better at FMC: https://www.
 youtube.com/watch?v=q0mrMD933rM
 • A 5-part video tutorial by Ranzha, first part:
 https://www.youtube.com/watch?v=-gKAzXYonHI
 • A presentation by Pranav Maneriker:
 https://prezi.com/cng_isud-im-/rubiks-cube-fewest-moves/
-Online Competitions
+Online competitions
 Online competitions are useful not only for competing and testing yourself against other people
-on the same scramble, but also to study multiple good solutions to the same scramble: have a
+on the same scramble, but also to study multiple good solutions for the same scramble: have a
 look at the past rounds!
-• David Adams’ Online Competition: https://www.ocf.berkeley.edu/˜dadams/fmc/
-• German Forum Competition: https://speedcube.de/forum/showthread.php?tid=5795
-53
-54 APPENDIX A. OTHER RESOURCES
-Cube Solving Programs
+59
+60 APPENDIX A. OTHER RESOURCES
+• fewest-moves.info online competition: https://www.fewest-moves.info/
+• German forum competition: https://speedcube.de/forum/showthread.php?tid=5795
+Cube solving programs
 Cube solving programs can be useful to compare your solution with the optimal one, especially
-for the first blocks.
+for the first blocks or for short endings.
 • Cube Explorer, a cube solving program by Herbert Kociemba: http://kociemba.org/
 cube.htm
 It can be used, for example, to find the optimal algorithm for a given case or the best
-possible ending for a partial solution (see also the last example in Section 2.5.3). Pay
-attention in this last case: you may beat the optimal solution with insertions!
-• Insertion Finder, by Baiqiang Dong: https://fewestmov.es/cube/if.cube?lang=en
+possible ending for a partial solution (see also the last example in Section 2.6.2). Remember
+that in this last case you may beat the optimal solution with insertions!
+• Insertion Finder, by Baiqiang Dong: https://fewestmov.es/if
 This tool is very useful to check if you have found optimal insertions for a given skeleton.
 • HARCS, by Matt DiPalma (replacing JARCS by Johanes Laire):
 https://www.speedsolving.com/forum/threads/harcs-jarcs-replacement-cube-solver.
 63241/
-This tool is useful to find optimal solution to substeps of common metods (in fact, of any
-method).
-Other Websites
+This tool is useful to find optimal solution to substeps of common metods.
+Other websites
 • Ryan Heise’s website: http://www.ryanheise.com/cube/
 – In particular, the Fundamental Techniqes section: http://www.ryanheise.com/cube/
 fundamental_techniques.html
@@ -4111,108 +4306,305 @@ B = Back.
 • Without additional symbols, the letter means “turn that face 90 degrees clockwise”. Modification are: “2” (for example, U2) for 180 degrees turns; '(prime or apostrphe, for example:
 U') for 90 degrees counter-clockwise turns.
 In the following table you can see all the basic moves, that are the only ones you need to
-write down your solution. See Section 6.1.
+write down your solution. See Section 5.1.
 R R2 R' L L2 L'
 U U2 U' D D2 D'
 F F2 F' B B2 B'
-55
-56 APPENDIX B. NOTATION
-Other Moves
-Other moves include:
-• Wide moves: denoted by a lowercase w after the letter (for example Uw or Rw’ or Dw2)
-denote “wide turn”: you have to move the inner layer together with the outer one. For
-example:
-Rw
-They are sometimes also denoted by a lowercase letter (The
-move in the picure would be r), although this notation is not standard.
-• Cube rotations: denoted by a lowercase letter in square brackets, or by x, y and z (with
-the rule x = [r], y = [u], z = [f]) denote a rotation of the whole cube (3 layers, if you
-want). The usual modificators can be used: for example, y2 and [u2] both denote a 180
-degrees rotation of the cube along the U/D axis.
-• Inner layer moves: M = R L' x', E = U D' y' and S = F' B z.
-M E S
-They cannot be used in official FMC solutions.
+
 -->
 
-## 付録C　LLアルゴリズム (Last Layer Algorithms)
+## 付録C　Reto Bubendorfの詰めキューブ練習 (Some exercises by Reto Bubendorf)
 <!--
 Appendix C
-Last Layer Algorithms
-Here is a list of last layer algorithms requiring 10 moves or less, modulo inverses and rotations.
-I have also excluded all the edge and corner 3-cycles, that are better learnt in that context.
-6 to 9 Moves
-ZBLLs (all edges oriented)
-R U R' U R U2 R' (7)
-R U2 R2 U' R2 U' R2 U2 R (9)
-R2 D L' B2 L D' R' U2 R' (9)
-R B2 L2 D L D' L B2 R' (9)
-F2 R2 L2 B2 D B2 R2 L2 F2 (9)
-Other Algorithms
-F R U R' U' F' (6)
-L F R' F R F2 L' (7)
-R U R2 F R F2 U F (8)
-R' U' R' F R F' U R (8)
-R U R' U' R' F R F' (8)
-R U2 R' U2 R' F R F' (8)
-R U R' F' L' U' L F (8)
-R U2 R2 F R F' R U2 R' (9)
-R' F R U R' U' F' U R (9)
-R' F R2 B' R2 F' R2 B R' (9)
-R' B U2 B' U2 B' R2 B R' (9)
-R B' R B2 L' B L B2 R2 (9)
-57
-58 APPENDIX C. LAST LAYER ALGORITHMS
-10 Moves
-ZBLLs (all edges oriented)
-R U' B L U L' B2 R B R2
-B2 L U L' B2 R D' R D R2
-R2 U R2 D' F2 L2 U' L2 D F2
-L' B L' D2 R F' R' D2 L2 B'
-F U R U2 R' U R U R' F'
-R U2 R' B' U R U R' U' B
-R U' R' U2 R L U' R' U L'
-R U' L U L2 D' B2 D R' L
-R U' L' B2 U' B2 U B2 R' L
-R B2 R2 U L U' R2 L' B2 R'
-Other Algorithms
-F U R U2 R' U F' L' U L
-F U R U2 R' U' R U R' F'
-F U R U2 R' U' F' L' U L
-F U R U2 R' F' U' L' U2 L
-F R B' R B R' U R' U' F'
-F R U' B U B' U R' U' F'
-F R U R' U' R U R' U' F'
-F U R U' F' L F R' F' L'
-F U R U' B R' F' R B' R'
-F U R' U2 R2 U R2 U R F'
-F U R2 D R' U' R D' R2 F'
-F U R' U' R F' U' R' U2 R
-F U R' F R F' R U' R' F'
-R U R' U' B' R' F R F' B
-R U2 R' U2 B' R' F R F' B
-R U R2 F' U' F U R2 U2 R'
-R U R' F D B' R' B D' F'
-R U R' F2 D' B L' B' D F2
-R U R' F2 B D' L' D F2 B'
-R U R' B' R B U' B' R' B
-R U L B L' U' L B' R' L'
-R U2 F' U2 F R2 B' R2 B R'
-R U2 R F2 L F L' F2 R2 F'
-R U2 R2 F R F L F L' F
-R U2 R' F2 L' B L' B' L2 F2
-R U' F2 D2 L B2 D L' D F2
-R U' F' L' U L F R U' R2
-R U' L' U R' U2 B' U B L
-R F' U' L' U F R' F' L F
-R B U B2 U' R' U R B R'
-R B U B' R' U' R' F R F'
-L F L' R U R' U' L F' L'
-R B R' F R B2 R B R2 F'
-R B' R B R2 U2 F R' F' R
-R L2 D' B' D B L B' R' L
-R2 F2 R' U B U' B' R F2 R2
-R2 F2 L D' F' D F L' F2 R2
+Some exercises by Reto Bubendorf
+The following exercises where proposed by Reto, and I consider them very useful. I will not
+include any solution: it’s good to struggle on them on your own!
+For each exercise Reto gave a number out of 10 describing its difficulty. This may or may
+not be accurate depending on your knowledge, but they are a good indication.
+C.1 Direct solve
+The goal of this first set of exercises is to find the shortest direct solution. You can use any
+technique you want, but I find it more interesting to try and solve them linearly, that is without
+using NISS or insertions.
+5 moves:
+(5a) Scramble: F R' U F' R2 U' B' R B R2 U
+Difficulty: 1
+(5b) Scramble: F2 U2 R' L F2 L D2 L' D2 R L'
+Difficulty: 2
+6 moves:
+(6a) Scramble: L' U2 B2 R' U' R U B2 L U2
+Difficulty: 3
+(6b) Scramble: L F L' F' U2 L' U' L F U2
+Difficulty: 4
+(6c) Scramble: D' R' D F2 L F2 L' D' R D
+Difficulty: 6
+7 moves:
+(7a) Scramble: R' L' U2 R B R B2 L' R' B' L2 U2
+Difficulty: 5
+63
+64 APPENDIX C. SOME EXERCISES BY RETO BUBENDORF
+(7b) Scramble: R L' U' L U2 R' U L' U2 L
+Difficulty: 5
+(7c) Scramble: L F2 U B' U F2 U' B U' F2 L'
+Difficulty: 6
+(7d) Scramble: B' F U L D R D' L' U' B F'
+Difficulty: 7
+(7e) Scramble: F U R' D' L' F2 L D R U' F'
+Difficulty: 7
+(7f) Scramble: U L F' U' F' U' F' U F2 U L' U'
+Difficulty: 8
+8 moves:
+(8a) Scramble: U R B' R2 B R' U F R2 F' R2
+Difficulty: 6
+(8b) Scramble: U2 F' U F U R B' R B R' U' R'
+Difficulty: 7
+(8c) Scramble: L2 B2 L R B2 R' U' L U2 R' U R
+Difficulty: 7
+(8d) Scramble: R2 D2 L D' L' D2 R F2 R' D R2
+Difficulty: 7
+(8e) Scramble: R' L F R F' D' L' U L D L' U'
+Difficulty: 8
+(8f) Scramble: L' B2 D' U R U' R B2 D L2 U' L'
+Difficulty: 8
+(8g) Scramble: U2 R L D' F' B' D2 F B D R' L'
+Difficulty: 9
+C.1. DIRECT SOLVE 65
+9 moves:
+(9a) Scramble: L' U2 F' L D L' U2 L D' L' F L
+Difficulty: 7
+(9b) Scramble: R2 U' F U R F' R2 F R U' F' R'
+Difficulty: 8
+(9c) Scramble: D2 L U' L' U' R U R' L U L' D2
+Difficulty: 9
+10 moves:
+(10a) Scramble: D2 L D2 L2 D2 L' F' L2 F L' D2 L
+Difficulty: 5
+(10b) Scramble: U2 L2 D' R B R' B' D L2 R' U R U
+Difficulty: 7
+(10c) Scramble: R2 B2 R' L' U D B2 U' D' B2 R' L
+Difficulty: 8
+(10d) Scramble: F U2 F' D2 F U2 F' R U R' D2 R U' R'
+Difficulty: 8
+(10e) Scramble: U R' D2 R U' R' F' L2 F' L2 F2 D2 R
+Difficulty: 8
+(10f) Scramble: U2 F2 R L F2 R' L' U' D' F2 U' D
+Difficulty: 9
+(10g) Scramble: R F2 U2 L' F2 L U2 R' D2 L D2 L'
+Difficulty: 10
+11 moves:
+(11a) Scramble: B2 U2 B2 U L' D L' U L' U' L D' L
+Difficulty: 7
+(11b) Scramble: U' R U' R2 U B2 L2 D' F2 D L2 B2 R'
+Difficulty: 9
+66 APPENDIX C. SOME EXERCISES BY RETO BUBENDORF
+12 moves:
+(12a) Scramble: R L F B R L' F2 L2 F2 U D B2 R2 B2 R2
+Difficulty: 10
+C.2 Find the skeleton
+In the following exercises you are asked to find a skeleton. In the first set you have to leave a
+3-cycle of corners, in the second a 3-cycle of edges. This time Reto did not a provide a difficulty
+level for each of them.
+3c skeleton
+(3c1) Scramble: L' F L2 F' U' F L2 F' U F' U' F L
+Moves: 5
+(3c2) Scramble: L' F R' F' L F2 R U2 R' F' R F'
+Moves: 5
+(3c3) Scramble: R2 D' F' L' U' L D L' U R2 L
+Moves: 5
+(3c4) Scramble: B2 L F L' B2 L' B2 L' B2 L2 F'
+Moves: 5
+(3c5) Scramble: R' F U' F' U F' R2 F R2 F L' R' U2 L R2 U'
+Moves: 6
+(3c6) Scramble: F U' R F' L F R2 F R F2 L'
+Moves: 6
+(3c7) Scramble: F R' U' R U2 F R2 F L F' R2 F L' F
+Moves: 6
+(3c8) Scramble: U' R2 U R2 U R2 U L' U R2 U' L
+Moves: 7
+(3c9) Scramble: U R' U' F2 R U' R' U F2 U L' U L U' R
+Moves: 7
+C.2. FIND THE SKELETON 67
+(3c10) Scramble: U' B U2 B R2 F' L' B2 L' F' L2 F2 R2 U'
+Moves: 7
+(3c11) Scr.: R' U2 R' U2 F R' F2 R U R2 U R U2 R' F2 R2 F'
+Moves: 7
+(3c12) Scramble: F R F2 B U2 F R' F R F' B' R2
+Moves: 7
+(3c13) Scramble: U F R2 U2 R' U F R F2 R' F2 U R2 U' F2
+Moves: 9
+3e skeleton
+(3e1) Scramble: F' U' L2 F2 U F U' R' F L2 R U
+Moves: 3
+(3e2) Scramble: L' R U R' U L U L D F2 D' L' U'
+Moves: 4
+(3e3) Scramble: F B' D' R2 D F' B2 U' B' U2
+Moves: 5
+(3e4) Scramble: U L F R' F' R L' F U R U' R' F'
+Moves: 7
+(3e5) Scramble: U2 L2 F' R' F R L' U' R' F' R U2 F U L'
+Moves: 7
+(3e6) Scramble: L2 R2 D B D B' D2 L2 R2 U R' F2 R U'
+Moves: 7
+(3e7) Scramble: R' U L F' U F' U' F' U F2 U' L' U' R
+Moves: 7
 -->
+
+## 付録D A (way too short) introduction to Domino Reduction
+
+### D.1 ステップ１：ドミノへの還元
+
+### D.2 ステップ２：残り全部！
+#### D.2.1 ブロックビルディング
+#### D.2.2 コーナーファースト (Solving corners first)
+
+### D.3 世界記録のソルブ
+<!--
+Appendix D
+A (way too short) introduction to Domino Reduction
+The goal of this appendix is to give a brief introduction to the domino reduction method. The
+explanations are taken from Alexandros Fokianos’ and Tommaso Raposio’s tutorial1
+. If you
+want a more detailed resource, you can skip this last few pages and learn everything you need
+from there.
+D.1 Step 1: reduce to domino
+The first step of the method is reducing to the cube to the <U,D,R2,L2,F2,B2> moveset (see
+section 2.5.2). In order to do so, you need to:
+(a) Orient all edges (with respect to F/B or R/L);
+(b) Place the E-layer edges on the E-layer (non necessarily in their respective spot);
+(c) Orient corners (with respect to U/D).
+Of course one can solve DR with respect to a different axis as well.
+There are different ways to solve this first step, but the easiest to get a grasp on is the
+following:
+1. Orient edges;
+2. Simplify to get a “good number” of unoriented corners and misplaced E-layer edges;
+3. Setup to a known “trigger”;
+4. Apply the “trigger”.
+The first substep is the same as that explained in Section 2.5. For the last 3 cases, the first
+thing you need to know is what triggers are. They are four basic cases from which it is easy to
+reduce to the DR state; some2
+resemble an F2L pair insertion of CFOP. Here they are:
+Case: 4c2e Case: 3c1e Case: 3c1e Case: 4c1e
+Solve: R Solve: R U' R' Solve: R U R' Solve: R U2 R'
+or L F2 L'
+1
+https://drive.google.com/drive/folders/1mppifILqu9Bu2phr8zhXGcXasBsSkv_S?usp=sharing
+2All except the first one, which is just one move
+69
+70 APPENDIX D. A (WAY TOO SHORT) INTRODUCTION TO DOMINO REDUCTION
+(In the pictures above, only the U/D stickers and the E-layer pieces are colored. I have used
+the same color for stickers of opposite layers: both the U and D stickers are white, the F/B
+stickers are green and the L/R stickers are red. This is because, for this step, we don’t care
+about the “side” colors of the U/D pieces and we don’t need to distinguish between opposite
+colors.)
+In each case the notation “4c1e”, “3c1e” and so on means 4 misoriented corners, 1 misplaced
+E-layer edge, and so on. Remember than in each of these cases you can replace the last move
+by its inverse and still get a DR!
+The goal of the second substep is thus to reduce to 3 or 4 bad corners and to one or 2 misplaced
+edges. After that, in substep 3 you can use moves from the DR moveset <U,D,R2,L2,F2,B2>
+to setup those 3-5 pieces to one of these triggers; don’t use non-DR moves in this third substep,
+or you’ll change the number of bad corners/misplaced edges. Lastly, in substep 4 you apply the
+correct trigger and get a DR.
+Ideally, one should try to find an EO such that the simplification step is quite short (1 to
+3 moves). Setting up the pieces to a trigger configuration can be tricky, especially in the 4c2e
+case; it gets easier in the 4c1e and even easier in the 3c1e cases, because you have fewer pieces
+to take care of. Of course if you have 3 bad corners and 1 misplaced edge you can try setting
+up to any of the two 3c1e triggers.
+Let’s see an example:
+DR step 1 - Example
+Scr: R' U' F U2 B2 L D2 B2 L' D2 F2 R' F2 L U' R B F2 L' R2 U' R U B R' U' F
+R' F' B L' //EO (4/4)
+D2 F //Simplify 4c2e (2/6)
+D' B2 D' //Setup (3/9)
+B' //DR trigger (1/10)
+One last piece of advice: since setups to triggers can be very hard, try using NISS to see if
+the setup is easier on the inverse scramble!
+Getting a DR can be tricky at first; don’t expect to be able to use this method consistently
+for one-hour attempt without a lot of practice.
+D.2 Step 2: all the rest!
+Once you have a DR, there are different ways to complete your solution. Since this is just an
+introduction to the method, I have decided to describe here just two of them.
+D.2.1 Blockbuilding
+The first, simple thing one may try after a DR is to build blocks and get a skeleton as in a
+“normal” solve, but using only moves from the domino moveset. As with EO-start solves, since
+pieces are already oriented, they tend to match easily, and skips are not rare! However, as a
+drowback, a DR takes many more moves to achieve than a simple EO.
+For example, let’s continue the solve we started at the beginning of this section:
+D.3. WORLD RECORD SOLVE 71
+DR step 2 - Example 1 (blockbuilding)
+Scr: R' U' F U2 B2 L D2 B2 L' D2 F2 R' F2 L U' R B F2 L' R2 U' R U B R' U' F
+R' F' B L' //EO (4/4)
+D2 F //Simplify 4c2e (2/6)
+D' B2 D' //Setup (3/9)
+B' //DR trigger (1/10)
+D2 L2 U2 //One more square (3/13)
+D2 R2 //Two more squares (2/15)
+L2 * F2 U' R2 F2 //3c (5/20)
+U B2 U' F2 U B2 U' F2 //Solve 3c (8-3/25)
+Solution: R' F' B L' D2 F D' B2 D' B' D2 L2 U D2 R2 L2 U B2 U' F2 U B2 U2
+R2 F2 (25)
+See on alg.cubing.net
+One last tip for DR + blockbuilding: the most important blocks are those consisting entirely
+of pieces of the U or D layer (pairs, squares and 3x2x1’s). You may ignore the E-layer until
+the end of the solve and try fixing it later, either with insertions or by changing your solution
+slightly; for example you can try replacing sequences like R2 U B2 with R2 Uw B2 = R2 D L2.
+D.2.2 Solving corners first
+An approach to domino solves that is usually very efficient is solving the corners, together with
+some edges, and then finish the remaining edges with insertions. There reason is that many
+short edges cycles (6 or 8 moves) are for cases where DR is already solved. For example:
+M' U2 M U2, (R2 Fw2 R2 U)*2, (R2 Fw2 R2 Uw)*2, (R2 F2 R2 U2)*2 (3 edges)
+(R2 U2)*3, (M2 U2)*2, R2 F2 R2 U2 F2 R2 F2 U2, (R2 F2 Rw2 U)*2, (2e2e)
+As an example, consider a different skeleton for the same DR that we used before:
+DR step 2 - Example 2 (corners first)
+Scr: R' U' F U2 B2 L D2 B2 L' D2 F2 R' F2 L U' R B F2 L' R2 U' R U B R' U' F
+R' F' B L' //EO (4/4)
+D2 F //Simplify 4c2e (2/6)
+D' B2 D' //Setup (3/9)
+B' //DR trigger (1/10)
+D L2 B2 //“Corner bars” (3/13)
+U' L2 U D F2 * D' U //3e (7/20)
+F2 U' F2 R2 B2 D' B2 R2 //Solve 3e (8-4/24)
+Sol: R' F' B L' D2 F D' B2 D' B' D L2 B2 U' L2 D F2 R2 B2 D' B2 R2 D' U (24)
+See on alg.cubing.net
+You might think that cancelling 4 moves with an 8 moves edge 3-cycle is very lucky, but it
+is actually quite common with DR. With this method, edge insertions are often more efficient
+than corner insertions.
+D.3 World record solve
+The current world record single (16 moves) that I got at FMC 2019 is a DR solve. I have used
+many of the techniques explained so far: inverse scramble, multiple edge insertions (also free
+slices), center insertions, “replace and shorten”...
+The final solution ended up being quite lucky, but it is a nice representative of what FMC
+is like: the more you know, the higher your chances of getting lucky are.
+72 APPENDIX D. A (WAY TOO SHORT) INTRODUCTION TO DOMINO REDUCTION
+World record solve
+Scr: R' U' F D2 L2 F R2 U2 R2 B D2 L B2 D' B2 L' R' B D2 B U2 L U2 R' U' F
+Inv: F' U R U2 L' U2 B' D2 B' R L B2 D B2 L' D2 B' R2 U2 R2 F' L2 D2 F' U R
+(U D' F R) //EO (4/4)
+(L2 F' B2) //Setup to trigger (3/7)
+(U' B2 U' [1]) //DR (3/10)
+(R2 B [2] F D2) //5e (4/14)
+[1] = U D' F2 D U' [3] R2 //Reduce to 2e2e (6-4/16)
+[2] = E2 //Reduce to 4x (2/18)
+[3] = E M2 E' M2 //Solve 4x (8-6/20)
+First solution:
+D2 F' D2 U2 F' L2 R2 [U' D B2 D B2 U] B2 F L2 R' F' D U'
+Replace the moves in square brackets with R2 D R2 D, which
+cancels 2 with the preceding R2.
+Final solution:
+D2 F' D2 U2 F' L2 D R2 D B2 F L2 R' F' D U' (16)
+Inverse scramble
+See on alg.cubing.net
+This very complicated solve actually could have been found in a much easier way, simply by
+using a different DR trigger:
+(U D' F R) //EO (4/4)
+(L2 F' B2) //Setup to trigger (3/7)
+(D' R2 D') //DR (3/10)
+(L2 F U2 D2 F D2) //Finish (6/16)
+But in the end both ways lead to the same solution, which is the only optimal one for that
+scramble.
+-->
+
+
+
+
 [^0-1]: 訳注。[World Rubik's Cube Championship 2017](https://www.worldcubeassociation.org/competitions/WC2017)のこと。2年に1回の頻度で開催されるルービックキューブの世界大会を指す。2017年はパリ（フランス）、2019年はメルボルン（オーストラリア）で開催された。
 [^0-2]: [Western Color Scheme](https://www.speedsolving.com/wiki/index.php/Western_Color_Scheme)
 [^0-visualcube]: http://cube.crider.co.uk/visualcube.php
@@ -4277,6 +4669,7 @@ R2 F2 L D' F' D F L' F2 R2
 [^3-6]: [https://www.speedsolving.com/forum/threads/the-fmc-thread.13599/page-62##post-721942](https://www.speedsolving.com/forum/threads/the-fmc-thread.13599/page-62##post-721942)
 [^3-7-1]: パリティを避けるためにこの条件が必要です。
 [^3-7-2]: 実はコミューテータです。`M E M' E'` = `[M, E]`で、`M E2 M' E2` = `[M, E2]`
+[^3-7-1-1]: 持ち替え記号なしの解答の書き方については、5.1節を参照。
 [^5-1-1]: タイムマネジメントについては6.3節で話します。
 [^5-1-2]: [https://www.ocf.berkeley.edu/˜dadams/fmc/](https://www.ocf.berkeley.edu/˜dadams/fmc/)
 [^5-1-3]: [https://speedcube.de/forum/showthread.php?tid=5795](https://speedcube.de/forum/showthread.php?tid=5795)
