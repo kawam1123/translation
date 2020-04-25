@@ -3645,12 +3645,17 @@ R2 Uw R2 Uw' R2 y L2 Uw' L2 Uw L2 (U')
 It is just a useful F2L algorithm repeated twice.
 Besides just learning algorithms, you can also learn from the algorithms.
 -->
-### 3.6 Pair Analysis
+### 3.6 ペア分析 (Pair Analysis)
+これはとても曖昧なテクニックであり、直感に基づいています。これを使うことで、ソルブが有利に進むかどうかは実証されていません。では、ペア分析とはどんなものでしょう？「ペアを分析する」というのは、スクランブルの中にあるいくつかの要素を考慮に入れるということです。たとえば
 
-未着手
-{: .notice--danger}
+- **既にできているペアはあるか** : これは言うまでもありません。
+- **1手で揃うペアはあるか** : これを見つけるには、前に書いたように、「総当たりテクニック」を使うこともできますし、一目見て判断できるように練習することもできます。さらに言えば、**疑似ペア(pseudo pair)の認識方法**を知っておくことも役に立つことがあるでしょう。ノーマルスクランブルや逆スクランブルでペアを作る手順が見つかれば、最初の1手として使うほか、その逆向きのスクランブルに対するプリムーブとしても使えます。
+- **悪いペアはあるか** : コーナーとエッジのペアのどちらかがねじれていて、正しくマッチしていないものがあります。直感的ですが、こういったペアは悪いペアなので、できるだけ早く壊すのがいいでしょう。
+
+このテクニックについてはドキュメントがたくさんあるわけではありません。特に「悪いペア」についてはまるでありません。Guus Razoux SchultzがTwente Open 2012の第一試技についてよい分析をしたものが[speedsolving.comに投稿されています。](https://www.speedsolving.com/forum/threads/the-fmc-thread.13599/page-62##post-721942)[^3-6]
+
 <!--
-3.5 Pair Analysis
+3.6 Pair Analysis
 This is a really obscure technique, based on intuition, not proven to actually give you some
 advantage during the solve. What is it about? “Analyzing pairs” means taking into account
 some things about the scramble, which are:
@@ -3664,8 +3669,8 @@ are considering.
 • Bad Pairs: those corner/edge pairs that are wrongly matched, because one of the pieces
 is misoriented. Intuitively, such pairs are bad and you want to break most of them as soon
 as you can.
-3.6. SOLVING WITH SKEW CENTERS 43
-There isn’t much documentation about this technique, especially for bad pairs. Guus Razoux Schultz did a good analysis for the first scramble7 of Twente Open 2012 in this post8 on
+
+There isn’t much documentation about this technique, especially for bad pairs. Guus Razoux Schultz did a good analysis for the first scramble of Twente Open 2012 in this post9 on
 speedsolving.com.
 -->
 ### 3.7 Solving with Skew Centers
@@ -4189,6 +4194,7 @@ R2 F2 L D' F' D F L' F2 R2
 [^3-3]: じつはこのソルブでは、揃っていないピースに矢印やバツ印を書くことで簡単にアルゴリズムを認識できるようになるのです。なので、私はここではReverse NISSというテクニックを実際には使いませんでしたが、解答自体がよい実例になるので書きます。
 [^3-4-1]: ノーマルスクランブルではそれぞれUR, RF, DL, DR にあたります。しかし、現時点では無視してよいです。
 [^3-4-2]: 実はこのスクランブルは非常にレアな偶然が重なっています。F/B軸に対してノーマルスクランブルと逆スクランブルの両方で6手が最適手順であり、どちらから始めてNISSを使ったとしても5手が最適となっています。
+[^3-6]: [https://www.speedsolving.com/forum/threads/the-fmc-thread.13599/page-62##post-721942](https://www.speedsolving.com/forum/threads/the-fmc-thread.13599/page-62##post-721942)
 [^5-1-1]: タイムマネジメントについては6.3節で話します。
 [^5-1-2]: [https://www.ocf.berkeley.edu/˜dadams/fmc/](https://www.ocf.berkeley.edu/˜dadams/fmc/)
 [^5-1-3]: [https://speedcube.de/forum/showthread.php?tid=5795](https://speedcube.de/forum/showthread.php?tid=5795)
