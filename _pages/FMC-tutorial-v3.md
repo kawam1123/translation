@@ -4065,6 +4065,8 @@ Trying for one hour as it was a competition and then keep trying until you reach
 result is a balanced compromise.
 -->
 ### 4.2 ペンと紙を使う (Use pen and paper)
+未着手
+{: .notice--danger}
 
 ### 4.3 上級者と比べよう (Compare Yourself to the Masters (and Study their Solves))
 練習したいときは、既にどこかでFMC上級者が解いたスクランブル使ってみるとよいでしょう。あなたの解答と上級者のものを比べて、あなたが気付かなかった点を見つけることができます。全ての秘密を手中に収めましょう！
@@ -4167,6 +4169,8 @@ To help memorizing the scheme (not that it is hard), remember that Blue and Red 
 with the same letter as their layer. This trick actually works well in many other languages.
 -->
 ### 5.2 バックアップ解答(Backup Solution)
+未着手
+{: .notice--danger}
 <!--
 6.2 Backup Solution
 It is good habit, in time-limited competitions, to write a “backup solution”. It is usually a not
@@ -4193,12 +4197,16 @@ especially now that the preferred format for FMC (in official competitions) is �
 single DNF gives you a DNF mean.
 -->
 ### 5.3 タイムマネジメント(Time Managment)
+未着手
+{: .notice--danger}
 <!--
 6.3 Time Managment
 “How to manage your time” is a complex topic, and I don’t want to say that my advice is
 absolutely good in any case: follow it carefully! In fact, I consider myself pretty bad at timemanagment. The best teacher, in this case, is personal experience.
 -->
 #### 5.3.1 ひっからないように(Don’t Get Stuck)
+未着手
+{: .notice--danger}
 <!--
 6.3.1 Don’t Get Stuck
 It can happen to anyone: during a competition you get stuck on a certain start and don’t
@@ -4209,6 +4217,8 @@ technique you know and found nothing, don’t stare at the cube hoping it solves
 and try something else.
 -->
 #### 5.3.2 全ての可能性を調べようとしない((Don’t) Explore Every Possibility)
+未着手
+{: .notice--danger}
 <!--
 6.3.2 (Don’t) Explore Every Possibility
 In the first version of this tutorial this section was called “Explore Every Possibility” - a radical
@@ -4239,6 +4249,9 @@ https://en.wikipedia.org/wiki/Tree_(data_structure)
 -->
 
 ## 付録A　その他の参考資料 (Other Resources)
+
+未着手
+{: .notice--danger}
 <!--
 Appendix A
 Other resources
@@ -4297,6 +4310,9 @@ fundamental_techniques.html
 -->
 
 ## 付録B　回転記号 (Notation)
+
+未着手
+{: .notice--danger}
 <!--
 Appendix B
 Notation
@@ -4314,6 +4330,9 @@ F F2 F' B B2 B'
 -->
 
 ## 付録C　Reto Bubendorfの詰めキューブ練習 (Some exercises by Reto Bubendorf)
+
+未着手
+{: .notice--danger}
 <!--
 Appendix C
 Some exercises by Reto Bubendorf
@@ -4449,14 +4468,24 @@ Moves: 7
 -->
 
 ## 付録D A (way too short) introduction to Domino Reduction
+未着手
+{: .notice--danger}
 
 ### D.1 ステップ１：ドミノへの還元
-
+未着手
+{: .notice--danger}
 ### D.2 ステップ２：残り全部！
+未着手
+{: .notice--danger}
 #### D.2.1 ブロックビルディング
+未着手
+{: .notice--danger}
 #### D.2.2 コーナーファースト (Solving corners first)
-
+未着手
+{: .notice--danger}
 ### D.3 世界記録のソルブ
+未着手
+{: .notice--danger}
 <!--
 Appendix D
 A (way too short) introduction to Domino Reduction
