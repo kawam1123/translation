@@ -150,12 +150,12 @@ that it remains a useful guide for many years to come.
 その他、次のようなセクションを追加しました。それ以外は軽微な変更だけです。
 
 - 2.4.6節、3.8節：エッジインサーションについて
-- 2.5.3節：partial domino reductionについて.
+- 2.5.3節：Partial Domino Reductionについて
 - 3.4節：NISSを用いてよいEOを探す
 - 3.7.1節： 歪んだセンターとNISS (Skew centers and NISS)
 - 3.10節： 交換して短くする (Replace and shorten)
 - 付録C：Reto Bubendorfによる演習問題 (Some exercises by Reto Bubendorf).
-- 付録D：domino reduction概説
+- 付録D：Domino Reduction概説
 
 <!--List of changes
 Since the last version of this tutorial I have fixed like a million typos and probably introduced
@@ -205,10 +205,10 @@ other without asking anything back, and I wanted to do my part - again.
 
 - 2.3.3節：「その他のエッジ3-cycle」（このケースについてはもっと書くことがありますが）
 - 2.4.8節：「3エッジとコーナー」 インサーションについて
-- 3.6節：「ズレたセンター(skew centers)」について
+- 3.6節：「歪んだセンター(skew centers)」について
 - 付録：回転記号とLLアルゴリズム
 
-ほかにやったのは、ソルブ例にいい感じの箱をつけたことです。（下のほうをご覧ください）
+ほかにやったのは、ソルブ例にいい感じのボックスをつけたことです。（下のほうをご覧ください）
 
 主な理由は、この本を自己完結型にしたいと思ったからです。初版では多くのソルブが単にリンクされていただけでした。ハイパーリンクをつけていますが、脚注に完全なリンクもあわせて書いています。これにより、この本は電子機器と紙の両方で読めるようになっています。
 
@@ -239,7 +239,6 @@ I don’t have anything else to say about this second edition. Go on and enjoy t
 http://www.speedsolving.com/wiki/index.php/Western_Color_Scheme
 3
 -->
-<!-- 第三版－第二版翻訳ライン -->
 ## 本書について (About this Book)
 この本は、**WCA公式大会の公式競技のひとつである「最少手数競技（FMC、Fewest Moves Challenge）」と呼ばれる競技でよい結果を出すための指針となることを目的としています。**もしあなたが世界キューブ協会 (World Cube Association) やスピードキューブの公式大会について知らないのであれば、下記のイントロダクションを読んでみてください。
 
@@ -313,7 +312,7 @@ F U2 (26)
 See on alg.cubing.net
 -->
 
-このソリューションの記述のなかで、決して`x`や`y2`などの**「持ち替え記号」**を書いていないことに気付くでしょう。解法を考えるときにキューブを持ち替えてはいけないということではありません。もし持ち替え記号を使わない記述がよくわからないなら、5.1節までスキップすることがオススメです。
+このソリューションの記述のなかでは、決して`x`や`y2`などの**「持ち替え記号」**を使わずに書いていることがわかるでしょうか。解答を考えるときにキューブを持ち替えてはいけないということではありません。もし持ち替え記号を使わない記述がよくわからないなら、5.1節までスキップすることがオススメです。
 
 <!--
 You may notice that in writing the solution I almost never use “rotation” moves such as x or
@@ -1132,7 +1131,7 @@ B' //LL
 {% endcapture %}
 {% include solvebox.html
 title = "キーホール - Example (出典：Edoardo Disarò)"
-scramble = "R U' R' L F' B U2 R2 B2 L' B R D F2 D2 L2 F2 D' R2 F2"
+scramble = "U' R' L F' B U2 R2 B2 L' B R D F2 D2 L2 F2 D' R2 F2"
 solution = "alg.cubing.net"
 text = display_text
 img_src="../../../assets/img/alg-214.png"
@@ -3673,19 +3672,32 @@ as you can.
 There isn’t much documentation about this technique, especially for bad pairs. Guus Razoux Schultz did a good analysis for the first scramble of Twente Open 2012 in this post9 on
 speedsolving.com.
 -->
-### 3.7 Solving with Skew Centers
+### 3.7 歪んだセンターで揃える (Solving with Skew Centers)
 コーナーファーストという考え方を踏まえると、このテクニックを自然に理解しやすくなるでしょう。しかし、それ以外の手法でも使うことができるテクニックです。
 
-コーナーとエッジをインサートするやり方はすでに見ましたが、ここではインサートすることでセンターを揃えるやり方を見てみましょう。ソルブ中にセンターを無視して揃わないままにしておき、偶数手のスライスムーブ[^3-7-1]で揃う状態にします。すると、`M E M' E'`や`M E2 M' E2`などのアルゴリズムで揃えることができるようになります。[^3-7-2]
+コーナーとエッジをインサートするやり方はすでに見ましたが、ここではインサートすることでセンターを揃えるやり方を見てみましょう。**ソルブ中にセンターを無視して揃わないままにしておき、偶数手のスライスムーブ[^3-7-1]で揃う状態にします。**すると、`M E M' E'`や`M E2 M' E2`などのアルゴリズムで揃えることができるようになります。[^3-7-2]
 
-もちろんスライスムーブ（内層回転ムーブ）をしなければならないので、歪んだセンターを揃えるには8手必要になります。しかし、心配しないでください。この8手をキャンセルできるチャンスはとても沢山あります。このインサートを使うと、平均で3～4手でセンターを揃えることができます。
+![](../../../assets/img/alg-370-1.png){:width="300px" height="auto" class="img-responsive align-center"}
+歪んだセンター：`M E M' E'`で揃う状態
+{: .text-center}
 
-どうしてこんなことになるのでしょう？この手順には複数の揃え方があるのです。
+もちろんスライスムーブ（内層回転ムーブ）をしなければならないので、歪んだセンターを揃えるには8手必要になります。しかし、心配しないでください。この8手をキャンセルできるチャンスはとても沢山あります。**このインサートを使うと、平均で3～4手でセンターを揃えることができます。**
+
+どうしてこんなことになるのでしょう？実は、この手順には複数の揃え方があるのです。
 
 `M E M' E'` = `S M' S' M` = `E' S' E S`
 {: .text-center}
 
+`M E2 M' E2` = `M' E2 M E2` = `M S2 M' S2` = `M' S2 M S2`
+{: .text-center}
 
+さらに2つ目は、逆手順にしても同じように揃います！
+
+1つ目のケースを見てみましょう。センターを正しい位置に動かすためのスライスムーブをするときに、少なくとも4手はキャンセルすることになります。しかしそれだけではなく、もっと多くキャンセルする場合もありますので後で書く例を見てみましょう。
+
+この手法の弱点は**書き直すのに時間がかかる**ということです。センターを動かすとき、ほかのピースにも同様に影響するように修正して書く必要があります。結果として、慣れていないと非常に時間がかかります。
+
+では、私が世界大会2017で最後にやったソルブを例として見てみます。NISSとコーナーインサートも使っています。ここでは**センターを無視すれば2x2x2ブロックがすでに出来ているという状態です！**
 
 <!--
 3.6 Solving with Skew Centers
@@ -3713,18 +3725,35 @@ around, the moves you have written need to be changed to affect in the same way 
 pieces. As a result, it can be really time consuming if you aren’t confident with it.
 As an example, take my last solve from World Championship 2017 (which features also NISS
 and a corner insertion). Notice that, ignoring centers, a 2x2x2 block is already solved!
+-->
+{% capture display_text %}
+(U2 L2 B2 U) //3 pairs (4/4)
+R2 D2 R2 //blocks (3/7)
+(L B') //2x2x3 + square (2/9)
+(L2 U2 L' U2 L' U2 L) //All but 3 corners (7/16)
+Skeleton: U2 L2 B2 U L + B' L2 * U2 L' U2 L' U2 L B2 L2 B2
+* = F' D F U2 F' D' F U2 //3c (6/22)
++ = M' E M E' //Centers (4/26)
+{% endcapture %}
+{% include solvebox.html
+title = "Skew Centers - Example"
+scramble = "R' U' F U R2 B2 D' L2 F2 D U' F2 R' B D' F' U' L R D F2 U F' R' U' F"
+text = display_text
+solution = "R2 D2 R2 D' B2 D B2 D L' F L B2 L' F' L D2 L B' F D U' R' U' B2 L2 U2 (26)"
+img_src="../../../assets/img/alg-370-2.png"
+%}
+
+<!--
 Skew Centers - Example
 Scramble: R' U' F U R2 B2 D' L2 F2 D U' F2 R' B D' F' U' L R D F2 U F' R' U' F
 (U2 L2 B2 U) //3 pairs (4/4)
 R2 D2 R2 //blocks (3/7)
 (L B') //2x2x3 + square (2/9)
 (L2 U2 L' U2 L' U2 L) //All but 3 corners (7/16)
-Skeleton: U2 L2 B2 U L + B' L2 * U2 L' U2 L' U2 L
-B2 L2 B2
+Skeleton: U2 L2 B2 U L + B' L2 * U2 L' U2 L' U2 L B2 L2 B2
 * = F' D F U2 F' D' F U2 //3c (6/22)
 + = M' E M E' //Centers (4/26)
-Solution: R2 D2 R2 D' B2 D B2 D L' F L B2 L' F' L D2 L B' F D U' R' U' B2
-L2 U2 (26)
+Solution: R2 D2 R2 D' B2 D B2 D L' F L B2 L' F' L D2 L B' F D U' R' U' B2 L2 U2 (26)
 To find this solution, at first I did S' M S M', or one of the equivalent sequences, at the
 beginning of the solve. Then I went on with finding a solution as I would do in a normal solve.
 From this point on the final solution can be derived without touching the cube anymore.
@@ -4205,6 +4234,8 @@ R2 F2 L D' F' D F L' F2 R2
 [^3-4-1]: ノーマルスクランブルではそれぞれUR, RF, DL, DR にあたります。しかし、現時点では無視してよいです。
 [^3-4-2]: 実はこのスクランブルは非常にレアな偶然が重なっています。F/B軸に対してノーマルスクランブルと逆スクランブルの両方で6手が最適手順であり、どちらから始めてNISSを使ったとしても5手が最適となっています。
 [^3-6]: [https://www.speedsolving.com/forum/threads/the-fmc-thread.13599/page-62##post-721942](https://www.speedsolving.com/forum/threads/the-fmc-thread.13599/page-62##post-721942)
+[^3-7-1]: パリティを避けるためにこの条件が必要です。
+[^3-7-2]: 実はコミューテータです。`M E M' E'` = `[M, E]`で、`M E2 M' E2` = `[M, E2]`
 [^5-1-1]: タイムマネジメントについては6.3節で話します。
 [^5-1-2]: [https://www.ocf.berkeley.edu/˜dadams/fmc/](https://www.ocf.berkeley.edu/˜dadams/fmc/)
 [^5-1-3]: [https://speedcube.de/forum/showthread.php?tid=5795](https://speedcube.de/forum/showthread.php?tid=5795)
