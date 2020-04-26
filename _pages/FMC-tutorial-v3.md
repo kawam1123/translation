@@ -3811,9 +3811,6 @@ is not my case, as I write stuff down on my sheets in a very chaotic way.
 
 **くれぐれも持ち替え記号には注意してください！** [^3-7-1-1]
 
-
-
-
 <!--
 3.7.1 Skew centers and NISS
 In the previous example solve I used NISS. However, the last three moves of the skeleton on
@@ -3845,9 +3842,21 @@ But be careful with rotations!12
 -->
 
 ### 3.8 高度なエッジインサーション：フリースライス (Advanced edge insertions: free slices)
+エッジだけが残ったスケルトンを揃えるには、通常エッジコミューテータをインサートするか、エッジのダブルスワップ(`M2 U2 M2 U2`など)をインサートするかです。エッジを揃えるにはさらに高度はテクニックがあり、`[M2, U R U']`などのエッジコミューテータを特殊ケースとして変換することができます。
 
-未着手
-{: .notice--danger}
+考え方を説明しましょう。たとえば`M`というムーブを考えると、これはHTMでは2手になりますが、興味深い性質があります。センターを無視すれば、これはエッジの4点交換をしていることになります。(UF→FD→DB→BU→UF) 同じように、`M2` はエッジの2点交換を繰り返しています。(UF↔DB、UB↔DF)
+
+**このように単純なスライスムーブ(`M`や`M2`)をインサートすることで、エッジ交換を非常に効率的に揃えることができます！**
+
+必要に応じてセットアップしてもよいでしょう。たとえば `[R F: M2]` = `R F M2 F' R'`は`M2`のような2点交換の繰り返しになります。この手法を**フリースライス(Free Slices)**と呼びたいですが、**スライスインサーション(slice insertions)**や**slicey shenanigans**という呼び方が一般的です。
+
+**訳注**  
+**slicey shenanigans**は直訳すれば「いたずらスライス」とか「ごまかしスライス」などと訳すことができます。ここではそのまま使います。
+{: .notice--info}
+
+しかし、センターはどうするのでしょう？これは大きな問題ではありません。スライスインサーションを使って、センターが揃うようなキャンセルが起こるかどうか注意してみたり、最後まで残しておいてから`[M, E]`などの手順を追加でインサートしてセンターを揃えたりしてもいいでしょう。追加のインサートをする場合、気をつけなければならないのは**パリティが起こらないようにすること**です。スライスムーブを使ったインサートの数が偶数になるようにしましょう。(`M2`は2回とカウントします) 偶数でない場合、エッジは揃えられません。
+
+ラッキーな実例を見てみましょう。
 
 <!--
 3.8 Advanced edge insertions: free slices
@@ -3859,10 +3868,10 @@ like [M2, U R U'] can be interpreted as a special case.
 The main idea is the following: consider the move M. It counts only as 2 moves in HTM, but its
 effect is interesting. Ignoring centers, it completes a 4-cycle of edges: UF→FD→DB→BU→UF.
 Similarly, the move M2 is a double 2-cycle of edges: UF↔DB and UB↔DF. Thus by inserting
-simple slice moves like M and M2 in the skeleton one can very efficiently solve any type of edgecycle(s)! In case it is necessary, one can use setup moves; for example [R F: M2] = R F M2
-F' R' is a double 2-cycle, just like M2.
+simple slice moves like M and M2 in the skeleton one can very efficiently solve any type of edgecycle(s)! In case it is necessary, one can use setup moves; for example [R F: M2] = R F M2 F' R' is a double 2-cycle, just like M2.
 I like to call this method free slices, but it has other popular names like slice insertions or
 slicey shenanigans.
+
 But what about centers? They are not a big problem: one can either pay attention that
 the slice insertions “cancel each other” so that centers end up solved as well, or forget about
 them and solve them with an extra center insertion like [M,E] later. If you go for this second
@@ -3870,6 +3879,26 @@ approach, the only thing to care about is avoiding parity: make sure that the to
 slice moves inserted is even (where M2 counts as 2). But if this is not the case then edges cannot
 result solved.
 Let’s start with a (lucky) example:
+-->
+{% capture display_text %}
+(B D' R F) //EO + 3ペア (4/4)
+D2 R U' //2スクエア (3/7)
+(R2 B2 R) //3c7e (3/10)
+スケルトン: D2 R U' R' B2 R2 [1] F' R' D B' [2]
+[1] と [2] にM2をインサートして 3e3c の12手スケルトンを作る
+新しいスケルトン: D2 R U' R' B2 L2 B' R' U F' * R2 L2
+* = U + R U' R2 L2 D R' D' R2 L2 (6)
++ = U2 R' D' R U2 R' D R (6)
+{% endcapture %}
+{% include solvebox.html
+title = "世界大会2019の第2試技"
+scramble = "R' U' F U2 R2 D' F2 D' L2 U' F2 L F' D' R' U' R2 F L2 B F R2 B2 R' U' F"
+text = display_text
+solution = "D2 R U' R' B2 L2 B' R' U F' U' R' D' R U2 R' D R2 U' R2 L2 D R' D' (24)"
+img_src="../../../assets/img/alg-380-1.png"
+algcubing="https://alg.cubing.net/?setup=R-_U-_F_U2_R2_D-_F2_D-_L2_U-_F2_L_F-_D-_R-_U-_R2_F_L2_B_F_R2_B2_R-_U-_F&alg=D2_R_U-_R-_B2_L2_B-_R-_U_F-_U-_R-_D-_R_U2_R-_D_R2_U-_R2_L2_D_R-_D-"
+%}
+<!--
 World Championship 2019 - Scramble 2
 Scr: R' U' F U2 R2 D' F2 D' L2 U' F2 L F' D' R' U' R2 F L2 B F R2 B2 R' U' F
 (B D' R F) //EO + 3 pairs (4/4)
@@ -3882,6 +3911,14 @@ New skeleton: D2 R U' R' B2 L2 B' R' U F' * R2 L2
 + = U2 R' D' R U2 R' D R (6)
 Sol: D2 R U' R' B2 L2 B' R' U F' U' R' D' R U2 R' D R2 U' R2 L2 D R' D' (24)
 See on alg.cubing.net
+-->
+
+[1]と書いた1つ目のインサートでは、3エッジを揃えて2手キャンセルしています。これは非常にラッキーなケースです。[2]と書いた2つ目のインサートはもっと標準的なもので、エッジを追加で1つだけ揃えて、3点交換を残し、1つ目のインサートで動いたセンターをもとに戻しています。
+
+最後の2つのインサートは通常のコミューテータです。しかし、注目すべきは、＊と書いたエッジコミューテータは`[U R U', M2]`であり、`M2`直前にインサートされ、最後のスライスムーブをキャンセルしています。[2]の箇所に`[U R U', M2]` = `U R U' M2 U R' U'` をインサートしてもまったく同じ回答になります。単にセットアップしてからスライスムーブをしているだけです。多くのエッジコミューテータは2つのスライスインサーションの組み合わせでできています。セットアップなしのシンプルなものと、セットアップのあるものです。
+
+では、次の例を見てみましょう。
+<!--
 Here the first insertion (the one marked by [1]) solves 3 edges and cancels 2 moves. This is
 a very lucky case. The second insertion (marked with [2]) is more standard: it solves only one
 more edge, leaving a 3-cycle, and solves back the centers that were set off by the first insertion.
@@ -3892,6 +3929,21 @@ found the same exact solution by inserting [U R U': M2] = U R U' M2 U R' U' at [
 is just a setup + slice! Many edge commutators can be seen a combination of 2 slice insertions
 – one simple (without setup moves) and one with setup moves.
 Let’s take another example:
+-->
+{% capture display_text %}
+スケルトン: U' B' U B' * L2 B2 R2 + F2 R D' R L' F D2 (5e)
+* = E'
++ = [R' B' D' B: E]
+{% endcapture %}
+{% include solvebox.html
+title = "Another free slices example"
+scramble = "R' U' F U R2 D R2 B2 D' B2 L' D2 L2 R D U L2 F' U2 B L' B R' U' F"
+text = display_text
+solution = "U' B' U B' D U' F2 L2 B L' D' L D' U B' D B R F2 R D' L' R F D2 (25)"
+img_src="../../../assets/img/alg-380-2.png"
+algcubing="https://alg.cubing.net/?alg=U-_B-_U_B-_E-_L2_B2_R2_%5BR-_B-_D-_B:_E%5D_F2_R_D-_R_L-_F_D2&setup=R-_U-_F_U_R2_D_R2_B2_D-_B2_L-_D2_L2_R_D_U_L2_F-_U2_B_L-_B_R-_U-_F"
+%}
+<!--
 Another free slices example
 Scramble: R' U' F U R2 D R2 B2 D' B2 L' D2 L2 R D U L2 F' U2 B L' B R' U' F
 Skeleton: U' B' U B' * L2 B2 R2 + F2 R D' R L' F D2 (5e)
@@ -3927,7 +3979,6 @@ some, try to get rid of them with your first slices.
 tend to give much nicer edge insertions, both with standard algorithms (commutators,
 double swaps) and with free slices!
 -->
-
 
 ### 3.9 コーナーファースト (Corner First)
 未着手
