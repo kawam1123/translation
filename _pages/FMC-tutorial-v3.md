@@ -3918,6 +3918,7 @@ See on alg.cubing.net
 最後の2つのインサートは通常のコミューテータです。しかし、注目すべきは、＊と書いたエッジコミューテータは`[U R U', M2]`であり、`M2`直前にインサートされ、最後のスライスムーブをキャンセルしています。[2]の箇所に`[U R U', M2]` = `U R U' M2 U R' U'` をインサートしてもまったく同じ回答になります。単にセットアップしてからスライスムーブをしているだけです。多くのエッジコミューテータは2つのスライスインサーションの組み合わせでできています。セットアップなしのシンプルなものと、セットアップのあるものです。
 
 では、次の例を見てみましょう。
+
 <!--
 Here the first insertion (the one marked by [1]) solves 3 edges and cancels 2 moves. This is
 a very lucky case. The second insertion (marked with [2]) is more standard: it solves only one
@@ -3961,6 +3962,7 @@ See on alg.cubing.net
 たとえば、上に示した1つ目のソルブを見てみましょう。合わせて7つの揃っていないエッジがあり、1つ目のインサート([1]の箇所にある`M2`)で3つのエッジを揃えています。既に揃ったエッジは崩れません。このインサートの後には4つのエッジが揃っていない状態になります。しかし、`M2`はセンターのパリティを生みませんから、ここから先の可能性は1つだけです。この残った4つのエッジは2点交換を2回繰り返す（ダブルスワップ）ことで揃えられます。
 - **場所はあっているけれどねじれたエッジや、`UF→UR→FU`などの「ねじれた交換」を避けるようにしましょう。**もしスケルトンの中にあるなら、最初のスライスムーブで取り除けないか試してみましょう。
 - **最初にEOを処理をしたスケルトン（あるいはDomino Reduction。付録D参照）では、よいエッジのインサートが見つかることが多いです。**これは普通のアルゴリズム（コミューテータ、ダブルスワップ）でも、フリースライスでも同じことです。
+
 <!--
 Here the first insertion solves 2 of the 5 edges and unsolves a solved one, leading to 4 edges
 unsolved in a 4-cycle. The second insertion is a setup to a 4-cycle.
