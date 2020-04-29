@@ -4413,9 +4413,6 @@ fundamental_techniques.html
 -->
 
 ## 付録B　回転記号 (Notation)
-未着手
-{: .notice--danger}
-
 標準的な回転記号(OBTM)は非常にシンプルで学びやすいものです。基本的な書き方は次のとおりです。
 - 全ての面にはそれぞれ文字を割り当てる。`R`(Right)、`L`(Left)、`U`(Up)、`D`(Down)、`F`(Front)、`B`(Back)
 - それぞれの文字は**「その面を時計回りに90度回転する」**ことを意味する。`U2`は「180度回転する」、`U'`は「反時計回りに90度回転する」を意味する。
@@ -4443,7 +4440,9 @@ F F2 F' B B2 B'
 
 - 二層回し(Wide moves): 基本ムーブの後に小文字の`w`をつけて表記します。たとえば、`Uw`、`Rw'`、`Dw2`と書きます。外側の層と一緒に内側の層も回します。  
 小文字の`w`をつけて表記する以外に、基本ムーブの文字を小文字にする書き方（たとえば `r`）もありますが、標準的なものではありません。
-- 持ち替え記号(Cube Rotations): `x`、`y`、`z`のように表記します。これはキューブ全体を回転させるものです(3層を回転すると考えてもよい)。
+- 持ち替え記号(Cube Rotations): `x`、`y`、`z`のように表記します。これはキューブ全体を回転させるものです(3層を回転すると考えてもよい)。`x`は`R`と同じ方向に、`y`は`U`と同じ方向に、`z`は`F`と同じ方向になります。
+- 中層回転: `M` = `R L' x'` 、 `E` = `U D' y'` 、`S` = `F' B z`  
+中層回転の記号は公式大会のFMCソルブでは使うことができません。
 
 
 
@@ -4465,9 +4464,13 @@ This inner layer moves notation cannot be used in official FMC solutions.
 -->
 
 ## 付録C　Reto Bubendorfの詰めキューブ練習 (Some exercises by Reto Bubendorf)
+作業中
+{: .notice--warning}
 
-未着手
-{: .notice--danger}
+Retoが作成した詰めキューブの練習問題です。個人的にはとても役立つものだと思います。ここには解答を掲載しませんので、ぜひ自分自身で試行錯誤してみてください！
+
+それぞれの問題にはRetoによる難易度(1～10)がつけられています。あなたの知識レベルによっては正確ではないかもしれませんが、指標としてお使いください。
+
 <!--
 Appendix C
 Some exercises by Reto Bubendorf
@@ -4475,6 +4478,20 @@ The following exercises where proposed by Reto, and I consider them very useful.
 include any solution: it’s good to struggle on them on your own!
 For each exercise Reto gave a number out of 10 describing its difficulty. This may or may
 not be accurate depending on your knowledge, but they are a good indication.
+-->
+### C1. Direct Solve
+最初の練習問題は最短の解答を直接見つけるものです。使えるテクニックは全て使って構いませんが、NISSやインサーションなどは使わずに、直線的に解いていくのが楽しいだろうと思います。
+
+#### 5手詰め
+未着手
+{: .notice--danger}
+
+|問題|画像|
+|:---|----|
+|(5a) Scramble: F R' U F' R2 U' B' R B R2 U <br> Difficulty: 1|![333fm](../../../assets/img/alg-211.png){:width="150px" height="auto" class="img-responsive align-center"}|
+
+
+<!--
 C.1 Direct solve
 The goal of this first set of exercises is to find the shortest direct solution. You can use any
 technique you want, but I find it more interesting to try and solve them linearly, that is without
@@ -4553,6 +4570,10 @@ Difficulty: 9
 12 moves:
 (12a) Scramble: R L F B R L' F2 L2 F2 U D B2 R2 B2 R2
 Difficulty: 10
+-->
+### C.2 Find the skeleton
+
+<!--
 C.2 Find the skeleton
 In the following exercises you are asked to find a skeleton. In the first set you have to leave a
 3-cycle of corners, in the second a 3-cycle of edges. This time Reto did not a provide a difficulty
