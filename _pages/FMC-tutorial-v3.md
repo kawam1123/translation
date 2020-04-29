@@ -4315,10 +4315,6 @@ https://en.wikipedia.org/wiki/Tree_(data_structure)
 -->
 
 ## 付録A　その他の参考資料 (Other Resources)
-
-翻訳中
-{: .notice--warning}
-
 学習のための参考資料や役立つリンクをここに書きます。しかし、新しいチュートリアルがどんどん出てきていますから、このリストはすぐに古くなってしまうことでしょう。私がFMCを学ぶのに使ったものが他の人にとっても最良のものとは限りません。
 
 ### Speedsolving.com
@@ -4345,24 +4341,21 @@ Brian Yuによりコーナーコミューテータのチュートリアル。
 - fewest-moves.info online competition: https://www.fewest-moves.info/
 - German forum competition: https://speedcube.de/forum/showthread.php?tid=5795
 
-### Cube solving programs
+### キューブを揃えるプログラム
 キューブを揃えるプログラムを使うことで、自分の解答と最適な解答を比べることができるので役立ちます。特に1つ目のブロック作りや、エンディングを短くするやり方などに使えるでしょう。
-- Cube Explorer, a cube solving program by Herbert Kociemba: http://kociemba.org/cube.htm  
-あるケースに対する最適なアルゴリズムを見つけたり、部分的な解答に対する最良のエンディングを見つけるのに役立ちます。2.6.2節の最後の例を参照してもらうとわかりますが、インサートをすることで最適な解答よりも短い手数を出すこともできます！
-It can be used, for example, to find the optimal algorithm for a given case or the best 
-possible ending for a partial solution (see also the last example in Section 2.6.2). Remember
-that in this last case you may beat the optimal solution with insertions!
-- Insertion Finder, by Baiqiang Dong: https://fewestmov.es/if
-This tool is very useful to check if you have found optimal insertions for a given skeleton.
-• HARCS, by Matt DiPalma (replacing JARCS by Johanes Laire):
-https://www.speedsolving.com/forum/threads/harcs-jarcs-replacement-cube-solver.
-63241/
-This tool is useful to find optimal solution to substeps of common metods.
-Other websites
-• Ryan Heise’s website: http://www.ryanheise.com/cube/
-– In particular, the Fundamental Techniqes section: http://www.ryanheise.com/cube/
-fundamental_techniques.html
-• Lars Petrus' website, with useful blockbuilding examples: http://lar5.com/cube/
+- [Cube Explorer](http://kociemba.org/cube.htm), a cube solving program by Herbert Kociemba: http://kociemba.org/cube.htm  
+あるケースに対する最適なアルゴリズムを見つけたり、部分的な解答に対する最良のエンディングを見つけるのに役立ちます。2.6.2節の最後の例を参照してもらうとわかりますが、インサートをすることで最適な解答よりも短い手数を出すこともできます！(2.6.2節の2つ目のソルブ例を参照)
+- [Insertion Finder](https://fewestmov.es/if), by Baiqiang Dong : https://fewestmov.es/if  
+あるスケルトンに対する最適なインサーションを見つけられたかを確認できるツール
+- [HARCS](https://www.speedsolving.com/forum/threads/harcs-jarcs-replacement-cube-solver.63241/) by Matt DiPalma (replacing JARCS by Johanes Laire):  
+サブステップに対する最適解答を探すのに役立つツール
+
+### その他のウェブサイト
+- [Ryan Heise’s website](http://www.ryanheise.com/cube/): http://www.ryanheise.com/cube/fundamental_techniques.html  
+特に「Fundamental Techniqes」のセクション
+- [Lars Petrus' website](http://lar5.com/cube/): http://lar5.com/cube/  
+ブロックビルディングの役立つ例
+
 <!--
 Appendix A
 Other resources
@@ -4425,8 +4418,6 @@ fundamental_techniques.html
 未着手
 {: .notice--danger}
 <!--
-Appendix B
-Notation
 The standard (OBTM) notation is actually very simple to learn. The basic rules are the following:
 • To each face is assigned a letter: R = Right, L = Left, U = Up, D = Down, F = Front and
 B = Back.
@@ -4437,7 +4428,23 @@ write down your solution. See Section 5.1.
 R R2 R' L L2 L'
 U U2 U' D D2 D'
 F F2 F' B B2 B'
-
+61
+62 APPENDIX B. NOTATION
+Other moves
+Other moves include:
+• Wide moves: denoted by a lowercase w after the letter (for example Uw or Rw' or Dw2)
+denote a “wide turn”: you have to move the inner layer together with the outer one. For
+example:
+Rw
+These moves are sometimes also denoted by a lowercase letter (the move in the picure
+would be r), although this notation is not standard.
+• Cube rotations: denoted by x, y and z, they describe a rotation of the whole cube (3
+layers, if you want), with the rule that x follows R, y = follows U and z = follows F. The
+usual modificators can be used: for example y2 denotes a 180° rotation of the cube along
+the U/D axis.
+• Inner layer moves: M = R L' x', E = U D' y' and S = F' B z.
+M E S
+This inner layer moves notation cannot be used in official FMC solutions.
 -->
 
 ## 付録C　Reto Bubendorfの詰めキューブ練習 (Some exercises by Reto Bubendorf)
