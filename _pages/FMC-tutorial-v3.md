@@ -4332,9 +4332,8 @@ Brian Yuによりコーナーコミューテータのチュートリアル。
 - [ドミノリダクションについてのチュートリアル by Alexandros Fokianos Tommaso Raposio](https://drive.google.com/drive/folders/1mppifILqu9Bu2phr8zhXGcXasBsSkv_S)
 -[Daniel SheppardによるFMC上達のアドバイス](https://www.youtube.com/watch?v=q0mrMD933rM)  
 {% include video id="q0mrMD933rM" provider="youtube" %}
-- A 5-part video tutorial by Ranzha, first part: https://www.youtube.com/watch?v=-gKAzXYonHI  
-{% include video id="gKAzXYonHI" provider="youtube" %}
-• [Pranav Manerikerによるプレゼンテーション(prezi)](https://prezi.com/cng_isud-im-/rubiks-cube-fewest-moves/)
+- [A 5-part video tutorial by Ranzha, first part (限定公開)](https://www.youtube.com/watch?v=-gKAzXYonHI): https://www.youtube.com/watch?v=-gKAzXYonHI
+- [Pranav Manerikerによるプレゼンテーション(prezi)](https://prezi.com/cng_isud-im-/rubiks-cube-fewest-moves/)
 
 ### オンライン大会
 オンライン大会は同じスクランブルで他の人と競い合うだけでなく、複数のよい解答を見て学ぶことができるので、とても役に立ちます。過去のラウンドでのソルブも見てみましょう。
@@ -4414,9 +4413,17 @@ fundamental_techniques.html
 -->
 
 ## 付録B　回転記号 (Notation)
-
 未着手
 {: .notice--danger}
+
+標準的な回転記号(OBTM)は非常にシンプルで学びやすいものです。基本的な書き方は次のとおりです。
+- 全ての面にはそれぞれ文字を割り当てる。`R`(Right)、`L`(Left)、`U`(Up)、`D`(Down)、`F`(Front)、`B`(Back)
+- それぞれの文字は**「その面を時計回りに90度回転する」**ことを意味する。`U2`は「180度回転する」、`U'`は「反時計回りに90度回転する」を意味する。
+
+基本ムーブを次の表にまとめます。これさえあれば解答を書くことはできるようになります。詳しくは5.1節を参照してください。
+
+![](../../../assets/img/appendix_B.png){:width="auto" height="auto" class="img-responsive align-center"}
+
 <!--
 The standard (OBTM) notation is actually very simple to learn. The basic rules are the following:
 • To each face is assigned a letter: R = Right, L = Left, U = Up, D = Down, F = Front and
@@ -4430,7 +4437,17 @@ U U2 U' D D2 D'
 F F2 F' B B2 B'
 61
 62 APPENDIX B. NOTATION
-Other moves
+-->
+### Other moves
+その他のムーブとしては次のものがあります。
+
+- 二層回し(Wide moves): 基本ムーブの後に小文字の`w`をつけて表記します。たとえば、`Uw`、`Rw'`、`Dw2`と書きます。外側の層と一緒に内側の層も回します。  
+小文字の`w`をつけて表記する以外に、基本ムーブの文字を小文字にする書き方（たとえば `r`）もありますが、標準的なものではありません。
+- 持ち替え記号(Cube Rotations): `x`、`y`、`z`のように表記します。これはキューブ全体を回転させるものです(3層を回転すると考えてもよい)。
+
+
+
+<!--
 Other moves include:
 • Wide moves: denoted by a lowercase w after the letter (for example Uw or Rw' or Dw2)
 denote a “wide turn”: you have to move the inner layer together with the outer one. For
