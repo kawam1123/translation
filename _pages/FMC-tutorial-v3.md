@@ -31,7 +31,7 @@ April 17, 2020
 [第三版](#){: .btn .btn-success}  
 
 **Written by Sebastiano Tronto**  
-Fewest Moves Tutorial - Solving a Rubik’s Cube with as few moves as possible  
+Fewest Moves Tutorial - Solving a Rubik's Cube with as few moves as possible  
 v3.01  
 Sebastiano Tronto  
 April 17, 2020  
@@ -585,7 +585,7 @@ Figure 1: Example of official scramble sheet.
 発想を柔軟にして「既成概念にとらわれず」に考えるには、少し逆説的ですが、**まず多くの既成概念を知ることが最良の方法です。**つまり、多くの解法を学びましょう。
 
 まずはFMCにおける最も有益（だと私が考える）な解法について簡単に書きましょう。  
-解法の開発された歴史やスピードソルブにおける利点／欠点については話しません。それぞれの解法について、オンラインで参照できるチュートリアルのリンクをつけますが、Googleやspeedsolving.comなどでさらなる情報を調べることをお勧めします。speedsolving.comのフォーラムにある[「初心者向けスピード解法の選び方ガイド(Beginner’s Guide to Choosing a Speedsolving Method)」](https://www.speedsolving.com/threads/beginners-guide-to-choosing-a-speedsolving-method.43471/)はよく使われている４つの解法について知るよいきっかけになるでしょう。(スピード解法について考えるなら、という注意書きが付きます)
+解法の開発された歴史やスピードソルブにおける利点／欠点については話しません。それぞれの解法について、オンラインで参照できるチュートリアルのリンクをつけますが、Googleやspeedsolving.comなどでさらなる情報を調べることをお勧めします。speedsolving.comのフォーラムにある[「初心者向けスピード解法の選び方ガイド(Beginner's Guide to Choosing a Speedsolving Method)」](https://www.speedsolving.com/threads/beginners-guide-to-choosing-a-speedsolving-method.43471/)はよく使われている４つの解法について知るよいきっかけになるでしょう。(スピード解法について考えるなら、という注意書きが付きます)
 
 次の４つの解法についてそれぞれ書きます。
 - CFOP
@@ -682,8 +682,8 @@ Petrusはブロックビルディングを学ぶには素晴らしい解法で�
 
 ステップ3ではLast Layerについて書いたことはここでも変わりません。ステップ4ではこの弊害を除くことができますが、Mのような中層回転は全て2手としてカウントされることは忘れないでください！（少なくとも、Rouxの標準的なLSEのやりかたは避けましょう。つまり、MとUだけで解くやりかたです）
 
-- Waffle’s Roux Tutorial: [http://wafflelikescubes.webs.com/](http://wafflelikescubes.webs.com/)
-- Kian Mansour’s Roux Tutorial: [https://sites.google.com/view/kianroux/home](https://sites.google.com/view/kianroux/home)
+- Waffle's Roux Tutorial: [http://wafflelikescubes.webs.com/](http://wafflelikescubes.webs.com/)
+- Kian Mansour's Roux Tutorial: [https://sites.google.com/view/kianroux/home](https://sites.google.com/view/kianroux/home)
 
 **訳注：**  
 実際の最少手数競技においては、解答用紙に**M、S、Eの中層回転（スライスムーブ)**の記号を書くことは認められていません。[規則12a](https://www.worldcubeassociation.org/regulations/translations/japanese/#12a)に定義されている3x3x3の回転記号のみを使うようにしましょう。ここでは**「RouxメソッドのやりかたでM列を使う（解答用紙にはR L'のように書く）と2手としてカウントされ、手数が多くなりがちになるので避けたほうがよいですよ」**ということを言っています。
@@ -741,7 +741,7 @@ FreeFOPでは、最初の二つのステップは「自由な」ブロックビ�
 
 何にせよ、スキップができない限り、Last LayerをOLLとPLLで解くことはまったくおすすめできない方法です。
 
-Badmephisto’s Tutorial: [http://badmephisto.com/](http://badmephisto.com/)
+Badmephisto's Tutorial: [http://badmephisto.com/](http://badmephisto.com/)
 
 <!--
 1.4 CFOP (Fridrich) and FreeFOP
@@ -755,7 +755,7 @@ to know different ways to insert a corner/edge pair.
 In FreeFOP, the first two steps are replaced by a “free” blockbuilding F2L.
 Anyways, I strongly advise against solving the last layer with OLL + PLL, unless you get
 to skip one of the two steps.
-Badmephisto’s Tutorial: http://badmephisto.com/.
+Badmephisto's Tutorial: http://badmephisto.com/.
 4For speedsolving, it may be better to solve one block at the time, since it is usually more ergonomic. But this
 is not the case for FMC, as efficiency (i.e. number of moves) is the only thing that matters!
 -->
@@ -802,7 +802,7 @@ Despite its simplicity, this method can be very useful in FMC.
 
 最後のステップではコミューテータを使います。FMCにおいては、インサーションが使えるようになるということです。（コミューテータとインサーションについては、次の章で説明します）
 
-Heise method’s page on Ryan Heise’s website: [http://www.ryanheise.com/cube/heise_method.html](http://www.ryanheise.com/cube/heise_method.html)
+Heise method's page on Ryan Heise's website: [http://www.ryanheise.com/cube/heise_method.html](http://www.ryanheise.com/cube/heise_method.html)
 
 <!--
 1.6 Heise
@@ -832,7 +832,7 @@ useful information (see for example the Fundamental Techniques page).
 -->
 ### 1.7 何をどうやって学ぶか
 当たり前のことですが、ここに書いたすべての解法を覚えて速くなることはゴールではありません。スピード解法でキューブを解くことはいくらか助けになることもありますし、楽しいものです。しかし、**ここではスピードは気にしません。**ゴールは**できるだけ短い手順でキューブを解くことですから、効率的になるよう努めましょう。**  
-**Color Neutral (CN)**[^1-7-1]であることも大切なことですし、**「不一致ブロック(Non Matching Blocks)」**（疑似ブロック (Pseudo-block)[^1-7-2]について取り組むのも役に立つでしょう。
+**Color Neutral (CN)**[^1-7-1]であることも大切なことですし、**「不一致ブロック(Non Matching Blocks)」**(疑似ブロック、Pseudo-block)[^1-7-2]について取り組むのも役に立つでしょう。
 
 しかし、スピード解法と最少手数競技用の解法の大きな違いは、**FMCではいくつもの異なる可能性を試すことができるということです。**たとえばPetrusにおいては、2x2x3ブロックを作ったあとに6つの悪いエッジ(Bad edge)が残ったとき、最初から別のブロックを作り始めるか、ブロックの作り方を少し変えて状況を改善させるかすることができます。[^1-7-3]
 
@@ -2326,7 +2326,7 @@ result.
 
 3つのエッジと、4つか5つ（あるいはもっと）のコーナーが残ったスケルトンが少ない手数（たとえば13手）でできることもあるでしょう。このときエッジ3-cycleのエッジをインサートしていくつかコーナー3-cycleを必要なだけインサートして解くこともできます。
 
-しかし、別のやり方もあります。**「セクシームーブ」（`R U R’ U’`）ではエッジの3-cycleと歪んだコーナーの2-cycleを2回繰り返すことになることがわかると思います。** この短いアルゴリズムやその派生をインサートすることで、エッジの3-cycleをとても効率的に解くことができるのです。もちろん、一回のインサーションでコーナーも完全に揃うのは、4つのコーナーとねじれたダブルスワップが残っているときのとてもラッキーなときだけです。コーナーにこういった影響を与えて、4つか5つかよいコーナーが残るようにする、というのが望み得る最良のことになる場合が多いです。
+しかし、別のやり方もあります。**「セクシームーブ」（`R U R' U'`）ではエッジの3-cycleと歪んだコーナーの2-cycleを2回繰り返すことになることがわかると思います。** この短いアルゴリズムやその派生をインサートすることで、エッジの3-cycleをとても効率的に解くことができるのです。もちろん、一回のインサーションでコーナーも完全に揃うのは、4つのコーナーとねじれたダブルスワップが残っているときのとてもラッキーなときだけです。コーナーにこういった影響を与えて、4つか5つかよいコーナーが残るようにする、というのが望み得る最良のことになる場合が多いです。
 <!--
 2.4.8 Other Insertions: 3 Edges and Some Corners
 In some cases you can get short skeletons (say 13 moves) that leave a 3-cycle of edges and 4 or
@@ -2831,7 +2831,7 @@ See on alg.cubing.net
 
 ### 2.6 その他の簡単な戦略(Other Simple Stragies)
 #### 2.6.1 戻ってやり直そう(Go Back and Change Your Solve)
-**よいスタートを切ったあとで詰まってしまったら、「そこまでのソルブを一手ずつ見ていく」ということをしてみましょう。** まだ揃えていないピースしかない面が、少なくとも1面、出てくるのを探しながらやってみましょう。見つかったら、その面を動かしてみましょう(すでに揃えたブロックは崩れません)。可能性は3種類(`U`、`U2`、`U´`など)あります。こうすると、元々のものよりほんの少し(1手)だけ長くなって、3通りのスタートが得られるでしょう。次へのつながりがよくなるなら、たった1手は安いものです！
+**よいスタートを切ったあとで詰まってしまったら、「そこまでのソルブを一手ずつ見ていく」ということをしてみましょう。** まだ揃えていないピースしかない面が、少なくとも1面、出てくるのを探しながらやってみましょう。見つかったら、その面を動かしてみましょう(すでに揃えたブロックは崩れません)。可能性は3種類(`U`、`U2`、`U'`など)あります。こうすると、元々のものよりほんの少し(1手)だけ長くなって、3通りのスタートが得られるでしょう。次へのつながりがよくなるなら、たった1手は安いものです！
 
 自由に動かせる面が2つ見つかったなら、もちろん両方使ってみても構いません。追加するムーブはランダムなものでよいですし、そうしなくてもよいです。新しいペアができたり、EOがもっとよくなるのなら、それで十分です。しかし、何手か追加してもすぐにわからず、しばらく進んでいってようやく何が起こったかわかることもあるでしょう。
 <!--
@@ -2864,7 +2864,7 @@ they have the same length. This is one of the reasons why you need to try as man
 alternatives as you can: you are more likely to get a skip if you try 100 solutions than if you try
 10 or 20.
 -->
-#### 2.6.3 一つ目の例: 最後のペアをインサート(First Example: Insert Last Pair(s))
+##### 一つ目の例: 最後のペアをインサート(First Example: Insert Last Pair(s))
 
 F2L-1が完成したあと、最後のペアをインサートすることでF2Lが終わります。これは、幸運が振ってこない限り、あまりよいやり方ではありません。幸運を引き当てるチャンスを高めるには、**考えうる全ての方法で最後のペアをインサートしましょう。**
 
@@ -2952,12 +2952,14 @@ L U L B //Insert saved pair and skip
 Solution: U2 F' U' B' D B D2 L D2 B U' L F L' F' L U L B
 See on alg.cubing.net
 -->
-#### 2.6.4 二つ目の例: アルゴリズムの使い方(Second Example: How to Use Algorithms)
-まず最初に対称なアルゴリズムを識別できるようにしておきましょう（もっと正確にいえば、対称なケース）。つまり`F R U R' U' F'`で揃うOLLはSプレーンについて対称なので、同じケースは`B' R' U' R B U`でも揃います。もし使いたいのであれば、対称なケースも使えるようにして、スキップ（あるいはよいケース）のチャンスを二倍にしましょう。このトリックがうまくいくのは、二つのアルゴリズムは同じOLLケースを揃えるためのものであって、ピースの交換に異なった影響を与えるものだからです。しかし、CLLについては少し違います。同じCLLケースを揃えるアルゴリズムがあって、コーナーが揃わないなら、ほかのアルゴリズムを使ってもコーナーは揃いません。
+##### 二つ目の例: アルゴリズムの使い方(Second Example: How to Use Algorithms)
+まず最初に対称なアルゴリズムを識別できるようにしておきましょう（もっと正確にいえば、対称なケース）。つまり`F R U R' U' F'`で揃うOLLはSプレーンについて対称なので、同じケースは`B' R' U' R U B`でも揃います。もし使いたいのであれば、対称なケースも使えるようにして、スキップ（あるいはよいケース）のチャンスを二倍にしましょう。
 
-極端な例を見てみましょう。`R U2 R' U' R U R' U' R U' R'`で揃うOLLを考えます。これと左右対称の`L' U2 L U L' U' L U L' U L`を使うことで、同じケースを4つの向きから揃えることができます。（ほかの2つは逆手順です）このアルゴリズムは、「2-gen」のLast layerアルゴリズムに当てはまることですが、コーナーの相対的な位置関係には影響しません。
+このトリックがうまくいくのは、二つのアルゴリズムは同じOLLケースを揃えるためのものであって、ピースの交換に異なった影響を与えるものだからです。しかし、CLLについては少し違います。同じCLLケースを揃えるアルゴリズムがあって、コーナーが揃わないなら、ほかのアルゴリズムを使ってもコーナーは揃いません。
 
-次に、学んだときの目的に従ってアルゴリズムを使う必要はありません。`F R U R' U' F'`について考えると、おそらくOLLのひとつとして知っていることでしょう。ところが、コーナーを無視してこれを使うこともできます。すると、F2L完了時点で2つの悪いエッジ（bad edge）が残っているときに、このアルゴリズムを4つの向きから使うことでスキップするか（あるいは簡単なケースになるか）どうかを試すことができます。
+極端な例を見てみましょう。`R U2 R' U' R U R' U' R U' R'`で揃うOLLを考えます。これと左右対称の`L' U2 L U L' U' L U L' U L`を使うことで、同じケースを4つの向きから揃えることができます（ほかの2つは逆手順です）。「2-gen」のLast layerアルゴリズムに当てはまることですが、このアルゴリズムは、コーナーの相対的な位置関係には影響しません。
+
+次に、学んだときの目的と同じようにアルゴリズムを使う必要はありません。`F R U R' U' F'`について考えると、おそらくOLLのひとつとして覚えている手順でしょう。ところが、コーナーを無視してこれを使うこともできます。すると、F2L完了時点で2つの悪いエッジ（bad edge）が残っているときに、このアルゴリズムを4つの向きから使うことでスキップするか（あるいは簡単なケースになるか）どうかを試すことができます。
 <!--
 First of all, you need to be able to recognize symmetries in algorithms (more precisely, in
 cases): the OLL that is solved by F R U R' U' F' is symmetrical about the S plane, so the
@@ -3274,7 +3276,7 @@ loop, that doesn’t affect the cube in any way.
 -->
 たとえば、抽象化して、`A B C D`をスクランブル、`p q r s`をそれに対する解答と考えてみましょう。`A B C D p q r s `という配列で、キューブは完成状態に戻ります。ここで、同じように、「ズラした」配列を考えてみると、どれもキューブの状態に影響しないことがわかります。
 
-`s (A B C D p q r s) s’` = `s A B C D p q r`  
+`s (A B C D p q r s) s'` = `s A B C D p q r`  
 `r s (A B C D p q r s) s' r'` = `r s A B C D`  
 `q r s (A B C D p q r s) s' r' q'` = `q r s A B C D`  
 `p q r s (A B C D p q r s) s' r' q' p'` = `p q r s A B C D`  
@@ -4265,10 +4267,10 @@ single DNF gives you a DNF mean.
 {: .notice--danger}
 <!--
 6.3 Time Managment
-“How to manage your time” is a complex topic, and I don’t want to say that my advice is
+“How to manage your time” is a complex topic, and I don't want to say that my advice is
 absolutely good in any case: follow it carefully! In fact, I consider myself pretty bad at timemanagment. The best teacher, in this case, is personal experience.
 -->
-#### 5.3.1 ひっからないように(Don’t Get Stuck)
+#### 5.3.1 ひっからないように(Don't Get Stuck)
 未着手
 {: .notice--danger}
 <!--
@@ -4280,7 +4282,7 @@ world only). My advice, maybe trivial, is: don’t get stuck. If you have tried 
 technique you know and found nothing, don’t stare at the cube hoping it solves itself: go back
 and try something else.
 -->
-#### 5.3.2 全ての可能性を調べようとしない((Don’t) Explore Every Possibility)
+#### 5.3.2 全ての可能性を調べようとしない((Don't) Explore Every Possibility)
 未着手
 {: .notice--danger}
 <!--
@@ -4314,8 +4316,53 @@ https://en.wikipedia.org/wiki/Tree_(data_structure)
 
 ## 付録A　その他の参考資料 (Other Resources)
 
-未着手
-{: .notice--danger}
+翻訳中
+{: .notice--warning}
+
+学習のための参考資料や役立つリンクをここに書きます。しかし、新しいチュートリアルがどんどん出てきていますから、このリストはすぐに古くなってしまうことでしょう。私がFMCを学ぶのに使ったものが他の人にとっても最良のものとは限りません。
+
+### Speedsolving.com
+**speedsolving.com**はここで書いたすべての知識が書かれているところです。特に重要なスレッドは次のものです。
+- **[The FMC thread](https://www.speedsolving.com/forum/threads/the-fmc-thread.13599/)**  
+FMC専用スレッド。FMCの結果を共有したり、アドバイスをしあう場所。
+- **[Fewest Moves: Tips and Techniques](https://www.speedsolving.com/forum/threads/fewest-moves-tips-and-techniques.1566/)**  
+Arnaud van Galenが役立つテクニックを集めているスレッド。このチュートリアルに含まれています。
+- **[A tutorial for corner commutators by Brian Yu](https://www.speedsolving.com/forum/threads/bh-tutorial.12268/)**  
+Brian Yuによりコーナーコミューテータのチュートリアル。
+
+### その他のチュートリアル(Other tutorials)
+- [2019年時点のまとまったチュートリアル(SpeedCubeReview)](https://www.youtube.com/watch?v=YCuDT4Bfg4s)
+{% include video id="YCuDT4Bfg4s" provider="youtube" %}
+- [ドミノリダクションについてのチュートリアル by Alexandros Fokianos Tommaso Raposio](https://drive.google.com/drive/folders/1mppifILqu9Bu2phr8zhXGcXasBsSkv_S)
+-[Daniel SheppardによるFMC上達のアドバイス](https://www.youtube.com/watch?v=q0mrMD933rM)  
+{% include video id="q0mrMD933rM" provider="youtube" %}
+- A 5-part video tutorial by Ranzha, first part: https://www.youtube.com/watch?v=-gKAzXYonHI  
+{% include video id="gKAzXYonHI" provider="youtube" %}
+• [Pranav Manerikerによるプレゼンテーション(prezi)](https://prezi.com/cng_isud-im-/rubiks-cube-fewest-moves/)
+
+### オンライン大会
+オンライン大会は同じスクランブルで他の人と競い合うだけでなく、複数のよい解答を見て学ぶことができるので、とても役に立ちます。過去のラウンドでのソルブも見てみましょう。
+- fewest-moves.info online competition: https://www.fewest-moves.info/
+- German forum competition: https://speedcube.de/forum/showthread.php?tid=5795
+
+### Cube solving programs
+キューブを揃えるプログラムを使うことで、自分の解答と最適な解答を比べることができるので役立ちます。特に1つ目のブロック作りや、エンディングを短くするやり方などに使えるでしょう。
+- Cube Explorer, a cube solving program by Herbert Kociemba: http://kociemba.org/cube.htm  
+あるケースに対する最適なアルゴリズムを見つけたり、部分的な解答に対する最良のエンディングを見つけるのに役立ちます。2.6.2節の最後の例を参照してもらうとわかりますが、インサートをすることで最適な解答よりも短い手数を出すこともできます！
+It can be used, for example, to find the optimal algorithm for a given case or the best 
+possible ending for a partial solution (see also the last example in Section 2.6.2). Remember
+that in this last case you may beat the optimal solution with insertions!
+- Insertion Finder, by Baiqiang Dong: https://fewestmov.es/if
+This tool is very useful to check if you have found optimal insertions for a given skeleton.
+• HARCS, by Matt DiPalma (replacing JARCS by Johanes Laire):
+https://www.speedsolving.com/forum/threads/harcs-jarcs-replacement-cube-solver.
+63241/
+This tool is useful to find optimal solution to substeps of common metods.
+Other websites
+• Ryan Heise’s website: http://www.ryanheise.com/cube/
+– In particular, the Fundamental Techniqes section: http://www.ryanheise.com/cube/
+fundamental_techniques.html
+• Lars Petrus' website, with useful blockbuilding examples: http://lar5.com/cube/
 <!--
 Appendix A
 Other resources
@@ -4367,10 +4414,10 @@ https://www.speedsolving.com/forum/threads/harcs-jarcs-replacement-cube-solver.
 63241/
 This tool is useful to find optimal solution to substeps of common metods.
 Other websites
-• Ryan Heise’s website: http://www.ryanheise.com/cube/
+• Ryan Heise's website: http://www.ryanheise.com/cube/
 – In particular, the Fundamental Techniqes section: http://www.ryanheise.com/cube/
 fundamental_techniques.html
-• Lars Petrus’ website, with useful blockbuilding examples: http://lar5.com/cube/
+• Lars Petrus' website, with useful blockbuilding examples: http://lar5.com/cube/
 -->
 
 ## 付録B　回転記号 (Notation)
