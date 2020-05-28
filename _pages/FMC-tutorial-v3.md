@@ -4317,9 +4317,6 @@ and try something else.
 
 何年もの練習を経ていますが、部分解答のうち、どれが深く探索すべきものでどれ捨てるべきものなのかを判断する一番良い方法はわからないままです。あなた自身のやり方でこの問題を解決することができるようにするには、私にはこういった問題があることを伝えることしかできません。
 
-
-未着手
-{: .notice--danger}
 <!--
 5.3.2 (Don’t) explore every possibility
 In the first version of this tutorial this section was called “Explore every possibility” - a radical
