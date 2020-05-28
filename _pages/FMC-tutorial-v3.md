@@ -113,7 +113,7 @@ Un ringraziamento speciale a Sebastiano Tronto, una superstar FMC, per aver pubb
 -->
 <!-- /TOC -->
 
-## 第三版への序文 (Preface to the Third Edition)
+## 第三版への序文 (Preface to the Third Edition) {#third-preface}
 **昨年(2019年はFMCにとって素晴らしい年になりました。**2年間、平均24.00手から更新されていなかった世界記録は、Reto Bubendorf (23.00), MarkやBoyanowski (22.33) や私自身(Sebastiano Tronto) (22.00)によって、2手も短くなりました。まとめると、2019年には11人が平均24手の壁を破ったのでした。単発世界記録は18手から16手になりました。
 
 2019年は記録更新だけの年ではありません。**Domino Reduction(DR)が普及した年でもあります。**1年前まで、この手法はトップ競技者によってたまに使われる程度で、継続的に使うのは難しいと考えられていました。しかし、よくあることですが、これがそこまで難しいものではないと気付いた人々がいて、誰にとっても簡単なものになりました。わずか数か月の間で、この手法は多くのトップ競技者がほとんどのソルブで使うようになるまで流行してきました。FMCの新時代が始まったのです。
@@ -175,7 +175,7 @@ Other than that, I have added a few sections:
 All the rest is just minor changes.
 -->
 
-## 第二版への序文 (Preface to the Second Edition)
+## 第二版への序文 (Preface to the Second Edition) {#second-preface}
 <!-- このセクションは第二版から修正しない -->
 数年の間、このチュートリアルの新しいバージョンを作ろうと考えていました。いくつか修正や追加の必要な点があり、また、私自身の考え方が変わったことによって変更すべき点などがありました。
 
@@ -239,7 +239,7 @@ I don’t have anything else to say about this second edition. Go on and enjoy t
 http://www.speedsolving.com/wiki/index.php/Western_Color_Scheme
 3
 -->
-## 本書について (About this Book)
+## 本書について (About this Book) {#about-this-book}
 この本は、**WCA公式大会の公式競技のひとつである「最少手数競技（FMC、Fewest Moves Challenge）」と呼ばれる競技でよい結果を出すための指針となることを目的としています。**もしあなたが世界キューブ協会 (World Cube Association) やスピードキューブの公式大会について知らないのであれば、下記のイントロダクションを読んでみてください。
 
 「最少手数競技」は、与えられたルービックキューブの状態(スクランブルされた状態)から、できる限り短い手数で解くものです。使えるのはいくつかのキューブ、ペン、そして紙だけです。コンピュータープログラムの利用は禁止されており、通常は時間制限があります。（WCA公式大会においては1時間、あるオンラインのものでは1週間など)
@@ -380,7 +380,7 @@ tutorial to another language!
 本翻訳も同様にCC BY 4.0で提供されます。
 {: .notice--info}
 
-## 目次
+## 目次 {#toc}
 
 **訳注：**  
 自動生成しましたので、本項目は省略します。
@@ -468,7 +468,7 @@ B Notation 55
 C Last Layer Algorithms 57
 -->
 
-## イントロダクション
+## イントロダクション {#introduction}
 
 ルービックキューブをできる限り速く解くということは面白いものですが、**さらに面白いのは一番少ない手数で解くということです。これが最少手数競技のゴールです。** 最少手数競技は**FMC**あるいは**Fewest Moves Challenge**と呼ばれます。
 <!--
@@ -577,7 +577,7 @@ Figure 1: Example of official scramble sheet.
 
 -->
 
-## 第１章：既成概念にとらわれずに考える (Think Outside the Box)
+## 第１章：既成概念にとらわれずに考える (Think Outside the Box) {#ch1}
 あなたのメイン解法が何であれ、その一つの解法に縛られるのはFMCにおいて最悪のやり方です。**一つの解法／メソッドに限定してはいけません。** あらゆる状況を活用するようにしましょう。
 
 たとえば、あなたが2x3x3ブロックを作ったとしましょう。ここからいくつもの可能性があります。最後の「クロス」エッジを揃えてからCFOPにおけるF2Lをやっても構いません。Petrusのようにエッジの向きを揃えもよいですし、FreeFOPやHeiseを使ってもっと自由にブロックを作ってもよいでしょう。どの解法を使ってもよい結果になるでしょう。なので、もっともよいやり方は、**これを全部使って解いてしまうということです。**（全部でなくても、その多くを使うのでもよいです）
@@ -941,7 +941,7 @@ post-1013053.
 14 CHAPTER 1. THINK OUTSIDE THE BOX
 -->
 
-## 第２章 ソルブの進め方
+## 第２章 ソルブの進め方 {#ch2}
 
 [Per Kristen Fredlund](https://www.worldcubeassociation.org/persons/2004FRED02)[^2-0]の言葉を引用すれば、一般的な進め方は次の通りです。
 > もっと次のように考えましょう。キューブを二段階で解くのだ、と。
@@ -2979,7 +2979,7 @@ corners: if you complete the F2L and are left with 2 bad edges, you can try this
 4 different angles to see if you get a skip, or at least an easy case.
 34 CHAPTER 2. HOW TO PROCEED DURING A SOLVE
 -->
-## 第３章　高度なツール (Advanced Tools)
+## 第３章　高度なツール (Advanced Tools) {#ch3}
 ここまでの章では、よい解答を見つけるために必要な基本的なテクニックを見てきました。この章ではもっと高度なツールを紹介します。必須ではありませんが、探索に行き詰まったときの助けになります。
 <!--
 Chapter 3
@@ -4092,7 +4092,7 @@ New solution: F R L U' B F2 D' F2 D F2 D2 F2 [B R' D R D' B'] L' D L D L2 U
 18Or its inverse.
 -->
 
-## 第４章　練習方法 (How To Practice)
+## 第４章　練習方法 (How To Practice) {#ch4}
 多くの人は、上達するためには「練習と、練習と、練習が必要です！」と言うでしょう。これは真ですが、練習のやり方を知る必要もあります。ここでは、FMCで上達するための練習方法についていくつかアドバイスをします。
 <!--
 Chapter 5
@@ -4205,76 +4205,95 @@ https://www.speedsolving.com/wiki/index.php/LLEF
 https://www.speedsolving.com/wiki/index.php/Summer_Variation
 -->
 
-## 第５章　公式大会 (In Competition)
+## 第５章　公式大会 (In Competition) {#ch5}
 <!--
 Chapter 6
 In Competition
 -->
 ### 5.1 解答の書き方(How to Write a Solution)
-大会のときでも練習のときでも、**解答は持ち替え記号なしで書くのがよいでしょう。**これにはいくつもの理由があります。
-- 持ち替え記号を使うと、間違いを起こしやすい
-- 持ち替え記号があるとキャンセルが見つけにくい。`R z' U'` のようなことをやるのはとんでもない手数のムダです！
+大会のときでも練習のときでも、**解答は持ち替え記号なしで書くのがよいでしょう[^5-1-0]。**これにはいくつもの理由があります。
+- **持ち替え記号を使うと解答を書き間違えやすい**
+- **持ち替え記号があるとキャンセルが見つけにくい。** `R z' U'` のようなことをやるのはとんでもない手数のムダです！ (これはキャンセルして0手になります)
 - ソルブ中にキューブを持ち替える場合、どの面がどこにあるかを常に意識しておかなければならない
 
-ではどうやって持ち替え記号なしで解答を書くのか？　B面でPLLを回すのは厄介でしょう。簡単なやり方があるのです。BOYカラースキーム（標準配色）で標準的な持ち方を維持したまま、**「白センターのある面は常にUだ」「緑はF」「黄色はD」と覚えておけばいいだけです。**
+ではどうやって持ち替え記号なしで解答を書いたらいいのでしょう？　B面でPLLを回すのは厄介で難しいでしょう。しかし、簡単なやり方があるのです。標準配色(BOY配色)でいつもの向きでキューブを持ったときに、**「白センターのある面は常にUだ」「緑はF」「黄色はD」と覚えておけばいいだけです。**それぞれの面を回すとき、どの向きで持っていても関係なく「白面だからUだ」と書けばいいのです。これはそこまで難しくありませんが、覚えるためには「青(Blue)はB面」「赤(Red)はR面」と頭文字が同じ面から覚えていくといいでしょう。他の多くの言語でも同じように使えます。
+
+**訳注：**  
+ここで著者が言っているヒントはインド・ヨーロッパ語族（英語、ドイツ語、フランス語、イタリア語など）ならだいたい当てはまるものですが、日本語では役に立たないかもしれません。U面が白、F面が緑、という向きでなくてもよいですが、自分なりの覚え方を決めてみるといいでしょう。
+{: .notice--info}
 
 <!--
-6.1 How to Write a Solution
-Both in competition and while practicing, you should write down your solution without rotations. There are many good reasons to do so:
+5.1 How to write a solution
+Both in competition and while practicing, you should write down your solution without rotations1
+. There are many good reasons to do so:
 • Using rotations, it is easier to make mistakes.
-• Rotations can hide cancellations: things like . . . R z' U' . . . are a terrible way to waste
+• Rotations can hide cancellations: things like . . . R z' U'. . . are a terrible way to waste
 moves!
 • While solving, if you rotate the cube, you always need to keep in mind which side is where.
-How to write a solution without rotations? A PLL in B is very awkward. There is an easy
+How to write a solution without rotations? A PLL on B is very awkward! There is an easy
 way: keeping the standard orientation, with a BOY color scheme (the “standard” one), you just
 need to remember that the white-centered layer is always U, the green-centered one is F, the
 yellow-centered one is D and so on. Every time you move a layer, for example the white-centered
-one, you don’t need to care about how you are looking at the cube at that moment: just write
-U.
-To help memorizing the scheme (not that it is hard), remember that Blue and Red begin
-with the same letter as their layer. This trick actually works well in many other languages.
+one, you don’t need to care about how you are looking at the cube at that moment: just write U.
+To help memorizing the scheme (not that it is hard), remember that Blue and Red begin with
+the same letter as their layer. This trick actually works well in many other languages too.
+
 -->
 ### 5.2 バックアップ解答(Backup Solution)
-未着手
-{: .notice--danger}
+**大会のように時間制限がある環境でFMCをやるなら、あらかじめ「バックアップ解答」を作っておくことを身につけましょう。**つまり、試技を始めてから早い段階(たとえば最初の30分以内)に見つけた解答で、最低限キューブを揃えることができるものを書いておきましょう。あまりよくないものでもよいです。どんなに手数がかかる解答でも、白紙で解答を出すよりはずっとよいです！
+
+たとえば、平均35手が出そうなペースで進んでいるときに、20分考えて40手の解答を見つけたとしましょう。すると、残りの40分間は落ち着いた気持ちで取り組むことができるはずです。解答用紙にそのまま書き込んでも構いません。後で解答を変えたくなったら、バックアップ解答を消して新しいものを書き直せばいいだけですし、別の紙に書いて提出してしまうという手もあります。バックアップ解答を見つけるにはたくさんのアプローチがあります。
+
+- 自分で決めた制限時間 (たとえば35分)の中で、どんなに悪いものでも必ず解答を見つけて書くようにしましょう。私はやりませんが、もし制限時間ギリギリになっても解答用紙が空白であることが多いなら、やってみると役立つでしょう。
+- **偶然によい解答を見つけてしまったら、どこかにメモしておきましょう。**いいスタートを切ってからもう一度スクランブルしていたらPLLスキップを見つけてしまった！ということもあるでしょう。
+- 私はバックアップ解答を準備することはあまりないです。**代わりにバックアップ用のスケルトンを作っておきます。**たとえば、28手以下を目指すとしましょう。このとき、3コーナーのスケルトン(24手)を見つけても、あまり使えないでしょうけれど、どこかにメモしておくようにします。制限時間まで残り10分になったとき、他によい解答を見つけられなかったら、このスケルトンを使ってインサートを探す、という風にします。3コーナーのインサートを1回やるだけなら、私はだいたい5分くらいしかかかりません。あなたのスピードにあわせて、制限時間までどれくらいになったら使うかを調整してみるといいでしょう。
+
+よいバックアップ解答とはどういうものでしょう？　これは、なんでもよいのです！　解答が書いてあればDNFよりは何でもよいものです。**特に、現在の((公式大会の)FMC競技形式はMean of 3 (3回の試技の平均)という形式ですから、1回でもDNFをしてしまうと平均もDNFになってしまいます。**
+
 <!--
-6.2 Backup Solution
-It is good habit, in time-limited competitions, to write a “backup solution”. It is usually a not
-so good solution, but still better than a DNF, found before the last moments, when haste may
-lead to making a mistake or not finding a solution at all. If, for example, you average about 35
-moves, but after 20 minutes you have found and written down somewhere a 40 moves solution,
-you will be more relaxed for the remaining 40 minutes. You can even write it down on the
-official sheet: if you later want to change your solution, you can delete the backup solution and
-write down the new one. There are many possible approaches to finding a backup solution:
+5.2 Backup solution
+It is good habit, in time-limited competitions, to write a “backup solution”. By this I mean a
+solution that may be not so good, but at least works, that you have found at some point during
+the attempt (say in the first 30 minutes). For how bad it can be, it is certainly better than not
+having any solution at all!
+For example, if you average about 35 moves, but after 20 minutes you have found and written
+down somewhere a 40 moves solution, you will be more relaxed for the remaining 40 minutes.
+You can even write it down on the official sheet: if you later want to change your solution, you
+can delete the backup solution and write down the new one, or simply submit it on a different
+sheet of paper. There are many possible approaches to finding a backup solution:
 • Force yourself to have found and written a solution, no matter how bad, in a fixed time
-limit (i.e.: 35 minutes). I don’t do this, but it can be useful if you often find yourself at
-the end of the hour without anything written down.
-• If you casually come across some solution (i.e.: you have found a good start and solving
-the cube to re-scramble it you get a PLL skip), take note of it somewhere.
-• What I do: I don’t really find backup solutions, but many backup skeletons. For example,
-my goal is usually sub-30; in this case, a skeleton leaving 3 corners in 26 moves is not
-good, but if I find one I keep it somewhere. If I have, for example, 10 minutes left and I
-don’t have anything better, I look for an insertion in that skeleton. A single 3c insertion
-usually takes me about 5 minutes, so you should adjust my “10 minutes” to your speed.
-51
-52 CHAPTER 6. IN COMPETITION
+limit (for example 35 minutes). I don’t do this, but it can be useful if you often find
+yourself at the end of the hour without anything written down.
+• If you come across some solution by chance (for example you have found a good start and
+solving the cube to re-scramble it you get a PLL skip), take note of it somewhere.
+1Rotations, as well as wide and slice moves, can be useful to write down certain steps (like edge insertions),
+but can you always remove them from the final solution that you submit.
+57
+58 CHAPTER 5. IN COMPETITION
+• What I do: I don’t really find backup solutions, but rather backup skeletons. For example,
+my goal is usually sub-28; in this case, a skeleton leaving 3 corners in 24 moves is not good,
+but if I find one I keep it somewhere. If I have, for example, 10 minutes left and I don’t
+have anything better, I look for an insertion in that skeleton. A single 3c insertion usually
+takes me about 5 minutes, so you should adjust my “10 minutes” to your speed.
 What can a good backup solution be? Any solution! Anything is better than a DNF,
-especially now that the preferred format for FMC (in official competitions) is “Mean of 3”: a
+especially now that the preferred format for FMC (in official competitions) is “mean of 3”: a
 single DNF gives you a DNF mean.
 -->
 ### 5.3 タイムマネジメント(Time Managment)
 未着手
 {: .notice--danger}
 <!--
-6.3 Time Managment
-“How to manage your time” is a complex topic, and I don't want to say that my advice is
-absolutely good in any case: follow it carefully! In fact, I consider myself pretty bad at timemanagment. The best teacher, in this case, is personal experience.
+“How to manage your time” is a complex topic, and I don’t want to say that my advice is
+absolutely good in any case: follow it carefully!
+In fact, until early 2019 I considered myself pretty bad at time management. Only after a lot
+of “competition simualtion” practice I got better at it. I am afraid there is no special technique
+other than “practice, practice, practice” to build up a better time management.
+
 -->
 #### 5.3.1 ひっからないように(Don't Get Stuck)
 未着手
 {: .notice--danger}
 <!--
-6.3.1 Don’t Get Stuck
 It can happen to anyone: during a competition you get stuck on a certain start and don’t
 seem to find any better continuation. The ability to quickly understand if a start can lead to
 a good continuation would be as useful as being able to read other people’s mind (in the FMC
@@ -4286,35 +4305,34 @@ and try something else.
 未着手
 {: .notice--danger}
 <!--
-6.3.2 (Don’t) Explore Every Possibility
-In the first version of this tutorial this section was called “Explore Every Possibility” - a radical
+5.3.2 (Don’t) explore every possibility
+In the first version of this tutorial this section was called “Explore every possibility” - a radical
 change! The content of the old section is still valid though:
-If you are computer scientist, mathematicians or so I can tell you that exploring different
-possible solution is actually a tree search1
-: you can choose if you prefer a DFS (depth-first
-search, trying to complete a solution before moving to another one) or a BFS (breadth-first
-search, “advance” every solution in parallel) approach, or a mixed one. Keep in mind that form
-a single partial solution can derive a lot of nice branches as well a none; for this reason I don’t
-use a fixed method. It is also important to know when to prune a branch (that is, discarding
-unpromising partial solutions).
-Why did I change the title? Simply because in the last three years I have realized that
-my obsession for not missing any (promising) start and/or continuation gave me a strange
-(and wrong!) attitude during the solves: there were moments when I tried not to find a good
-continuation for the most promising start(s), but to convinve myself that certain starts were
-not good and had to be discarded. In the computer science language used above, I was trying
-to hard to prune bad branches of the tree, while I should have been looking for the most fruity
-ones.
+If you are computer scientist or mathematician I can tell you that exploring different possible
+solutions is actually a tree search2
+: you can choose if you prefer a DFS (depth-first search, trying
+to complete a solution before moving to another one) or a BFS (breadth-first search, “advance”
+every solution in parallel) approach, or a mixed one. Keep in mind that from a single partial
+solution you can derive a lot of nice branches as well a none; for this reason I don’t use a fixed
+method. It is also important to know when to prune a branch (that is, discarding unpromising
+partial solutions).
+Why did I change the title? Simply because in the last years I have realized that my obsession
+for not missing any (promising) start and/or continuation gave me a strange (and wrong!)
+attitude during the solves: there were moments when I tried not to find a good continuation for
+the most promising start(s), but to convince myself that certain starts were not good and had
+to be discarded. In the computer science language used above, I was trying too hard to prune
+bad branches of the tree, while I should have been looking for the most fruity ones.
 For example, I used to always check both the normal and inverse scramble for EO and
 blockbuilding starts. Now, if I find something very good immediately, I postpone or even skip
-checking other stuff or the inverse scramble.
+checking for other stuff.
 After years of practice, I still don’t know what is the best way to choose which partial
 solutions to explore and which to discard. All I can do is tell you what the problems are, so
 that you can try and find a way to solve them on your own.
-1
+2
 https://en.wikipedia.org/wiki/Tree_(data_structure)
 -->
 
-## 付録A　その他の参考資料 (Other Resources)
+## 付録A　その他の参考資料 (Other Resources) {#appendix-a}
 学習のための参考資料や役立つリンクをここに書きます。しかし、新しいチュートリアルがどんどん出てきていますから、このリストはすぐに古くなってしまうことでしょう。私がFMCを学ぶのに使ったものが他の人にとっても最良のものとは限りません。
 
 ### Speedsolving.com
@@ -4412,7 +4430,7 @@ fundamental_techniques.html
 • Lars Petrus' website, with useful blockbuilding examples: http://lar5.com/cube/
 -->
 
-## 付録B　回転記号 (Notation)
+## 付録B　回転記号 (Notation) {#appendix-b}
 標準的な回転記号(OBTM)は非常にシンプルで学びやすいものです。基本的な書き方は次のとおりです。
 - 全ての面にはそれぞれ文字を割り当てる。`R`(Right)、`L`(Left)、`U`(Up)、`D`(Down)、`F`(Front)、`B`(Back)
 - それぞれの文字は**「その面を時計回りに90度回転する」**ことを意味する。`U2`は「180度回転する」、`U'`は「反時計回りに90度回転する」を意味する。
@@ -4463,7 +4481,7 @@ M E S
 This inner layer moves notation cannot be used in official FMC solutions.
 -->
 
-## 付録C　Reto Bubendorfの詰めキューブ練習 (Some exercises by Reto Bubendorf)
+## 付録C　Reto Bubendorfの詰めキューブ練習 (Some exercises by Reto Bubendorf) {#appendix-c}
 作業中
 {: .notice--warning}
 
@@ -4623,7 +4641,7 @@ Moves: 7
 Moves: 7
 -->
 
-## 付録D A (way too short) introduction to Domino Reduction
+## 付録D ドミノリダクション入門（ちょっとだけ） {#appendix-d}
 未着手
 {: .notice--danger}
 
@@ -4855,6 +4873,7 @@ scramble.
 [^3-7-1]: パリティを避けるためにこの条件が必要です。
 [^3-7-2]: 実はコミュテータです。`M E M' E'` = `[M, E]`で、`M E2 M' E2` = `[M, E2]`
 [^3-7-1-1]: 持ち替え記号なしの解答の書き方については、5.1節を参照。
+[^5-1-0]: エッジインサーションなどのステップでは、持ち替え記号や二層回し、スライスムーブなどを使うことも役立つ場合があります。しかし、解答を提出する前にはこれらの記号を削除することもできます。
 [^5-1-1]: タイムマネジメントについては6.3節で話します。
 [^5-1-2]: [https://www.ocf.berkeley.edu/˜dadams/fmc/](https://www.ocf.berkeley.edu/˜dadams/fmc/)
 [^5-1-3]: [https://speedcube.de/forum/showthread.php?tid=5795](https://speedcube.de/forum/showthread.php?tid=5795)
