@@ -4279,9 +4279,11 @@ What can a good backup solution be? Any solution! Anything is better than a DNF,
 especially now that the preferred format for FMC (in official competitions) is “mean of 3”: a
 single DNF gives you a DNF mean.
 -->
-### 5.3 タイムマネジメント(Time Managment)
-未着手
-{: .notice--danger}
+### 5.3 タイムマネジメント(Time Managment) {#ch5-3}
+「試技の間の時間管理をどうするか？」というのはちょっと複雑なトピックです。私のアドバイスがどんな場合も必ず役立つとは言えません。このアドバイスは注意深く読んで使ってください。
+
+実際、2019年の前半まで自分自身はとても時間管理が下手なほうだと思っていました。「大会形式の練習」をたくさんしたことでようやく上手になってきたと思います。**残念ながら、時間管理のスキルを高めるには特別なテクニックはなく、「練習、練習、そして練習！」しかありません。**
+
 <!--
 “How to manage your time” is a complex topic, and I don’t want to say that my advice is
 absolutely good in any case: follow it carefully!
@@ -4290,9 +4292,11 @@ of “competition simualtion” practice I got better at it. I am afraid there i
 other than “practice, practice, practice” to build up a better time management.
 
 -->
-#### 5.3.1 ひっからないように(Don't Get Stuck)
-未着手
-{: .notice--danger}
+#### 5.3.1 ひっかからないように(Don't Get Stuck) {#ch5-3-1}
+誰にでも起こることですが、大会ではどこかで長く詰まったり、次の手へのよいつながりを見つけられずに時間が経ってしまうことがあります。
+
+「いまやっているところから続けていくとよい手順が見つかるかどうか」を即座に判断する能力があれば、**他人の心の中を読み取る（ただしFMC中に限る）くらい役立つことでしょう！** 本当に大したことではありませんが、私からのアドバイスは**「どこかでひっかからないようにすること、止まらないようにすること」**です。知っているすべての手法とテクニックを使っても何も見つからないとしたら、キューブをじっと見つめて「勝手に解ければいいのに」と考えるのは一旦やめましょう。少し戻って、別のやり方を色々試してみましょう。
+
 <!--
 It can happen to anyone: during a competition you get stuck on a certain start and don’t
 seem to find any better continuation. The ability to quickly understand if a start can lead to
@@ -4302,6 +4306,18 @@ technique you know and found nothing, don’t stare at the cube hoping it solves
 and try something else.
 -->
 #### 5.3.2 全ての可能性を調べようとしない((Don't) Explore Every Possibility)
+このチュートリアルの初版では「全ての可能性を調べよう！」という名前の章でした。正反対に変わりましたね！　しかし、前の版には今も役立つ内容が書いてあります。
+> あなたがコンピュータサイエンティストや数学者なら、全てのありうる解答を探索していくのは木探索(tree search)[^5-3-2]のようなものだと説明するでしょう。
+>
+>**DFS(深さ優先探索) で「解答を見つけるまで次の分岐に行かない」**のか、**BFS(幅優先探索)で「全ての解答を並行して探索する」**のか、その混合なのか、好みに応じて選択できます。たったひとつの部分解答から、多くの有望な分岐ができることも、何も生み出さないこともあります。そのため、私は決まったやり方は取りません。どの段階で枝刈りをするかを決めるのも重要です。つまり、有望ではない部分解答を切り捨てるということです。
+
+では、**なぜ章のタイトルを変えたのか？** それは単純なことで、去年あることに気付いたからです。有望なスタートやいいつながりを決して見逃さないようにしようということに取りつかれていて、ソルブに対する考え方が変な方向（間違った方向！）に向かっていました。あるとき、非常に有望なスタートを切ってから、その先のつながりを探索するのをやめようとしました。代わりに、特定のスタートから始めてもあまりよくないかもしれないし後で捨てることになるかもしれないぞ、と自分に言い聞かせたのです。**コンピュータサイエンスの用語で言えば、私は悪い分岐の枝刈りをしようとしすぎていて、最も実りある枝を探すのを怠っていたということです。**
+
+たとえば、それまではノーマルスクランブルと逆スクランブルの両方からEOとブロックビルディングを探していました。しかし今では、よいものが短時間で見つかったなら、ほかの可能性をチェックすることは後回しにしたり、やめてしまうことさえあります。
+
+何年もの練習を経ていますが、部分解答のうち、どれが深く探索すべきものでどれ捨てるべきものなのかを判断する一番良い方法はわからないままです。あなた自身のやり方でこの問題を解決することができるようにするには、私にはこういった問題があることを伝えることしかできません。
+
+
 未着手
 {: .notice--danger}
 <!--
@@ -4878,6 +4894,7 @@ scramble.
 [^5-1-2]: [https://www.ocf.berkeley.edu/˜dadams/fmc/](https://www.ocf.berkeley.edu/˜dadams/fmc/)
 [^5-1-3]: [https://speedcube.de/forum/showthread.php?tid=5795](https://speedcube.de/forum/showthread.php?tid=5795)
 [^5-3]: [https://www.speedsolving.com/forum/threads/the-fmc-thread.13599/page-88#post-842681](https://www.speedsolving.com/forum/threads/the-fmc-thread.13599/page-88#post-842681)
+[^5-3-2]: [木構造 (データ構造)](https://ja.wikipedia.org/wiki/%E6%9C%A8%E6%A7%8B%E9%80%A0_(%E3%83%87%E3%83%BC%E3%82%BF%E6%A7%8B%E9%80%A0))
 [^5-6-1]: [https://www.speedsolving.com/wiki/index.php/LLEF](https://www.speedsolving.com/wiki/index.php/LLEF)
 [^5-6-2]: [https://www.speedsolving.com/wiki/index.php/Summer_Variation](https://www.speedsolving.com/wiki/index.php/Summer_Variation)
 *[CFOP]: Cross, F2L, OLL, and PLL
