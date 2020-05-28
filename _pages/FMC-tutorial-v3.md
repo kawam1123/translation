@@ -4133,7 +4133,8 @@ Trying for one hour as it was a competition and then keep trying until you reach
 result is a balanced compromise.
 -->
 ### 4.2 紙とペンを使う (Use pen and paper)
-絶対に必要なことではありませんが、公式大会と同じように1時間取って練習してみるとよいでしょう。つまり、PCを使ったりせず、紙とペンを使ってやってみるのです。ペンで書くときは、小さくて読みやすい文字を心がけましょう。標準的なA4サイズの紙があれば試技一回分としては十分です。私の場合、紙を横向きににして、二列に分けて使いますが、自分に合ったやり方を色々試してみましょう！
+絶対に必要なことではありませんが、公式大会と同じように1時間取って練習してみるとよいでしょう。**つまり、PCを使ったりせず、紙とペンを使ってやってみるのです。**ペンで書くときは、小さくて読みやすい文字を心がけましょう。標準的なA4サイズの紙があれば試技一回分としては十分です。私の場合、紙を横向きににして、二列に分けて使いますが、自分に合ったやり方を色々試してみましょう！
+
 <!--
 4.2 Use pen and paper
 It is not strictly necessary, but it is useful to do your practice 1-hour attempts as if they were an official competition. This means also using pen and paper instead of a PC.
@@ -4661,94 +4662,74 @@ Moves: 7
 -->
 
 ## 付録D ドミノリダクション入門（ちょっとだけ） {#appendix-d}
-未着手
-{: .notice--danger}
+作業中
+{: .notice--warn}
+
+この章ではドミノリダクションをごく簡単にだけ紹介します。ここに記載する内容はAlexandros Fokianos’と Tommaso Raposioのチュートリアルから採ったものです。もっと詳しく知りたいなら、ここから数ページを飛ばして元のチュートリアルを読むといいでしょう。
+
+<!--
+A (way too short) introduction to Domino Reduction
+The goal of this appendix is to give a brief introduction to the domino reduction method. The explanations are taken from Alexandros Fokianos’ and Tommaso Raposio’s tutorial1. If you want a more detailed resource, you can skip this last few pages and learn everything you need from there.
+
+-->
 
 ### D.1 ステップ１：ドミノへの還元
 未着手
 {: .notice--danger}
-### D.2 ステップ２：残り全部！
-未着手
-{: .notice--danger}
-#### D.2.1 ブロックビルディング
-未着手
-{: .notice--danger}
-#### D.2.2 コーナーファースト (Solving corners first)
-未着手
-{: .notice--danger}
-### D.3 世界記録のソルブ
-未着手
-{: .notice--danger}
+
 <!--
-Appendix D
-A (way too short) introduction to Domino Reduction
-The goal of this appendix is to give a brief introduction to the domino reduction method. The
-explanations are taken from Alexandros Fokianos’ and Tommaso Raposio’s tutorial1
-. If you
-want a more detailed resource, you can skip this last few pages and learn everything you need
-from there.
+
 D.1 Step 1: reduce to domino
-The first step of the method is reducing to the cube to the <U,D,R2,L2,F2,B2> moveset (see
-section 2.5.2). In order to do so, you need to:
+The first step of the method is reducing to the cube to the <U,D,R2,L2,F2,B2> moveset (see section 2.5.2). In order to do so, you need to:
 (a) Orient all edges (with respect to F/B or R/L);
 (b) Place the E-layer edges on the E-layer (non necessarily in their respective spot);
 (c) Orient corners (with respect to U/D).
 Of course one can solve DR with respect to a different axis as well.
-There are different ways to solve this first step, but the easiest to get a grasp on is the
-following:
+There are different ways to solve this first step, but the easiest to get a grasp on is the following:
 1. Orient edges;
 2. Simplify to get a “good number” of unoriented corners and misplaced E-layer edges;
 3. Setup to a known “trigger”;
 4. Apply the “trigger”.
-The first substep is the same as that explained in Section 2.5. For the last 3 cases, the first
-thing you need to know is what triggers are. They are four basic cases from which it is easy to
-reduce to the DR state; some2
-resemble an F2L pair insertion of CFOP. Here they are:
-Case: 4c2e Case: 3c1e Case: 3c1e Case: 4c1e
-Solve: R Solve: R U' R' Solve: R U R' Solve: R U2 R'
-or L F2 L'
-1
-https://drive.google.com/drive/folders/1mppifILqu9Bu2phr8zhXGcXasBsSkv_S?usp=sharing
+The first substep is the same as that explained in Section 2.5. For the last 3 cases, the first thing you need to know is what triggers are. They are four basic cases from which it is easy to reduce to the DR state; some2 resemble an F2L pair insertion of CFOP. Here they are:
+Case: 4c2e Case: 3c1e Case: 3c1e Case: 4c1e Solve: R Solve: R U' R' Solve: R U R' Solve: R U2 R'
+orL F2 L' 1 https://drive.google.com/drive/folders/1mppifILqu9Bu2phr8zhXGcXasBsSkv_S?usp=sharing
 2All except the first one, which is just one move
 69
+     
 70 APPENDIX D. A (WAY TOO SHORT) INTRODUCTION TO DOMINO REDUCTION
-(In the pictures above, only the U/D stickers and the E-layer pieces are colored. I have used
-the same color for stickers of opposite layers: both the U and D stickers are white, the F/B
-stickers are green and the L/R stickers are red. This is because, for this step, we don’t care
-about the “side” colors of the U/D pieces and we don’t need to distinguish between opposite
-colors.)
-In each case the notation “4c1e”, “3c1e” and so on means 4 misoriented corners, 1 misplaced
-E-layer edge, and so on. Remember than in each of these cases you can replace the last move
-by its inverse and still get a DR!
-The goal of the second substep is thus to reduce to 3 or 4 bad corners and to one or 2 misplaced
-edges. After that, in substep 3 you can use moves from the DR moveset <U,D,R2,L2,F2,B2>
-to setup those 3-5 pieces to one of these triggers; don’t use non-DR moves in this third substep,
-or you’ll change the number of bad corners/misplaced edges. Lastly, in substep 4 you apply the
-correct trigger and get a DR.
-Ideally, one should try to find an EO such that the simplification step is quite short (1 to
-3 moves). Setting up the pieces to a trigger configuration can be tricky, especially in the 4c2e
-case; it gets easier in the 4c1e and even easier in the 3c1e cases, because you have fewer pieces
-to take care of. Of course if you have 3 bad corners and 1 misplaced edge you can try setting
-up to any of the two 3c1e triggers.
+(In the pictures above, only the U/D stickers and the E-layer pieces are colored. I have used the same color for stickers of opposite layers: both the U and D stickers are white, the F/B stickers are green and the L/R stickers are red. This is because, for this step, we don’t care about the “side” colors of the U/D pieces and we don’t need to distinguish between opposite colors.)
+In each case the notation “4c1e”, “3c1e” and so on means 4 misoriented corners, 1 misplaced E-layer edge, and so on. Remember than in each of these cases you can replace the last move by its inverse and still get a DR!
+The goal of the second substep is thus to reduce to 3 or 4 bad corners and to one or 2 misplaced edges. After that, in substep 3 you can use moves from the DR moveset <U,D,R2,L2,F2,B2> to setup those 3-5 pieces to one of these triggers; don’t use non-DR moves in this third substep, or you’ll change the number of bad corners/misplaced edges. Lastly, in substep 4 you apply the correct trigger and get a DR.
+Ideally, one should try to find an EO such that the simplification step is quite short (1 to 3 moves). Setting up the pieces to a trigger configuration can be tricky, especially in the 4c2e case; it gets easier in the 4c1e and even easier in the 3c1e cases, because you have fewer pieces to take care of. Of course if you have 3 bad corners and 1 misplaced edge you can try setting up to any of the two 3c1e triggers.
 Let’s see an example:
 DR step 1 - Example
 Scr: R' U' F U2 B2 L D2 B2 L' D2 F2 R' F2 L U' R B F2 L' R2 U' R U B R' U' F
 R' F' B L' //EO (4/4)
-D2 F //Simplify 4c2e (2/6)
-D' B2 D' //Setup (3/9)
+D2 F //Simplify 4c2e (2/6) D' B2 D' //Setup (3/9)
 B' //DR trigger (1/10)
-One last piece of advice: since setups to triggers can be very hard, try using NISS to see if
-the setup is easier on the inverse scramble!
-Getting a DR can be tricky at first; don’t expect to be able to use this method consistently
-for one-hour attempt without a lot of practice.
+ 
+One last piece of advice: since setups to triggers can be very hard, try using NISS to see if the setup is easier on the inverse scramble!
+Getting a DR can be tricky at first; don’t expect to be able to use this method consistently for one-hour attempt without a lot of practice.
+
+-->
+
+### D.2 ステップ２：残り全部！
+未着手
+{: .notice--danger}
+
+<!--
 D.2 Step 2: all the rest!
-Once you have a DR, there are different ways to complete your solution. Since this is just an
-introduction to the method, I have decided to describe here just two of them.
+Once you have a DR, there are different ways to complete your solution. Since this is just an introduction to the method, I have decided to describe here just two of them.
+
+-->
+
+#### D.2.1 ブロックビルディング
+未着手
+{: .notice--danger}
+
+<!--
 D.2.1 Blockbuilding
-The first, simple thing one may try after a DR is to build blocks and get a skeleton as in a
-“normal” solve, but using only moves from the domino moveset. As with EO-start solves, since
-pieces are already oriented, they tend to match easily, and skips are not rare! However, as a
-drowback, a DR takes many more moves to achieve than a simple EO.
+The first, simple thing one may try after a DR is to build blocks and get a skeleton as in a “normal” solve, but using only moves from the domino moveset. As with EO-start solves, since pieces are already oriented, they tend to match easily, and skips are not rare! However, as a drowback, a DR takes many more moves to achieve than a simple EO.
 For example, let’s continue the solve we started at the beginning of this section:
 D.3. WORLD RECORD SOLVE 71
 DR step 2 - Example 1 (blockbuilding)
@@ -4761,20 +4742,24 @@ D2 L2 U2 //One more square (3/13)
 D2 R2 //Two more squares (2/15)
 L2 * F2 U' R2 F2 //3c (5/20)
 U B2 U' F2 U B2 U' F2 //Solve 3c (8-3/25)
-Solution: R' F' B L' D2 F D' B2 D' B' D2 L2 U D2 R2 L2 U B2 U' F2 U B2 U2
-R2 F2 (25)
+ 
+Solution: R'F'B L'D2 F D'B2 D'B'D2 L2 U D2 R2 L2 U B2 U'F2 U B2 U2 R2 F2 (25)
 See on alg.cubing.net
-One last tip for DR + blockbuilding: the most important blocks are those consisting entirely
-of pieces of the U or D layer (pairs, squares and 3x2x1’s). You may ignore the E-layer until
-the end of the solve and try fixing it later, either with insertions or by changing your solution
-slightly; for example you can try replacing sequences like R2 U B2 with R2 Uw B2 = R2 D L2.
+One last tip for DR + blockbuilding: the most important blocks are those consisting entirely of pieces of the U or D layer (pairs, squares and 3x2x1’s). You may ignore the E-layer until the end of the solve and try fixing it later, either with insertions or by changing your solution slightly; for example you can try replacing sequences like R2 U B2 with R2 Uw B2 = R2 D L2.
+-->
+
+#### D.2.2 コーナーファースト (Solving corners first)
+未着手
+{: .notice--danger}
+
+<!--
+
 D.2.2 Solving corners first
-An approach to domino solves that is usually very efficient is solving the corners, together with
-some edges, and then finish the remaining edges with insertions. There reason is that many
-short edges cycles (6 or 8 moves) are for cases where DR is already solved. For example:
+An approach to domino solves that is usually very efficient is solving the corners, together with some edges, and then finish the remaining edges with insertions. There reason is that many short edges cycles (6 or 8 moves) are for cases where DR is already solved. For example:
 M' U2 M U2, (R2 Fw2 R2 U)*2, (R2 Fw2 R2 Uw)*2, (R2 F2 R2 U2)*2 (3 edges)
-(R2 U2)*3, (M2 U2)*2, R2 F2 R2 U2 F2 R2 F2 U2, (R2 F2 Rw2 U)*2, (2e2e)
+(R2 U2)*3, (M2 U2)*2, R2 F2 R2 U2 F2 R2 F2 U2, (R2 F2 Rw2 U)*2,
 As an example, consider a different skeleton for the same DR that we used before:
+(2e2e)
 DR step 2 - Example 2 (corners first)
 Scr: R' U' F U2 B2 L D2 B2 L' D2 F2 R' F2 L U' R B F2 L' R2 U' R U B R' U' F
 R' F' B L' //EO (4/4)
@@ -4782,48 +4767,49 @@ D2 F //Simplify 4c2e (2/6)
 D' B2 D' //Setup (3/9)
 B' //DR trigger (1/10)
 D L2 B2 //“Corner bars” (3/13)
-U' L2 U D F2 * D' U //3e (7/20)
+U'L2 U D F2 * D'U //3e(7/20)
 F2 U' F2 R2 B2 D' B2 R2 //Solve 3e (8-4/24)
-Sol: R' F' B L' D2 F D' B2 D' B' D L2 B2 U' L2 D F2 R2 B2 D' B2 R2 D' U (24)
+ 
+Sol: R'F'B L'D2 F D'B2 D'B'D L2 B2 U'L2 D F2 R2 B2 D'B2 R2 D'U(24)
 See on alg.cubing.net
-You might think that cancelling 4 moves with an 8 moves edge 3-cycle is very lucky, but it
-is actually quite common with DR. With this method, edge insertions are often more efficient
-than corner insertions.
+You might think that cancelling 4 moves with an 8 moves edge 3-cycle is very lucky, but it is actually quite common with DR. With this method, edge insertions are often more efficient than corner insertions.
+-->
+
+### D.3 世界記録のソルブ
+未着手
+{: .notice--danger}
+
+<!--
 D.3 World record solve
-The current world record single (16 moves) that I got at FMC 2019 is a DR solve. I have used
-many of the techniques explained so far: inverse scramble, multiple edge insertions (also free
-slices), center insertions, “replace and shorten”...
-The final solution ended up being quite lucky, but it is a nice representative of what FMC
-is like: the more you know, the higher your chances of getting lucky are.
+The current world record single (16 moves) that I got at FMC 2019 is a DR solve. I have used many of the techniques explained so far: inverse scramble, multiple edge insertions (also free slices), center insertions, “replace and shorten”...
+The final solution ended up being quite lucky, but it is a nice representative of what FMC is like: the more you know, the higher your chances of getting lucky are.
 72 APPENDIX D. A (WAY TOO SHORT) INTRODUCTION TO DOMINO REDUCTION
 World record solve
-Scr: R' U' F D2 L2 F R2 U2 R2 B D2 L B2 D' B2 L' R' B D2 B U2 L U2 R' U' F
-Inv: F' U R U2 L' U2 B' D2 B' R L B2 D B2 L' D2 B' R2 U2 R2 F' L2 D2 F' U R
-(U D' F R) //EO (4/4)
-(L2 F' B2) //Setup to trigger (3/7)
-(U' B2 U' [1]) //DR (3/10)
+ 
+Scr: R' U' F D2 L2 F R2 U2 R2 B D2 L B2 D' B2 L' R' B D2 B U2 L U2 R' U' F Inv: F' U R U2 L' U2 B' D2 B' R L B2 D B2 L' D2 B' R2 U2 R2 F' L2 D2 F' U R
+ (U D' F R) //EO (4/4)
+(L2 F' B2) //Setup to trigger (3/7) (U' B2 U' [1]) //DR (3/10)
 (R2 B [2] F D2) //5e (4/14)
-[1] = U D' F2 D U' [3] R2 //Reduce to 2e2e (6-4/16)
-[2] = E2 //Reduce to 4x (2/18)
+[1] = U D' F2 D U' [3] R2 //Reduce to 2e2e (6-4/16) [2] = E2 //Reduce to 4x (2/18)
 [3] = E M2 E' M2 //Solve 4x (8-6/20)
 First solution:
 D2 F' D2 U2 F' L2 R2 [U' D B2 D B2 U] B2 F L2 R' F' D U'
-Replace the moves in square brackets with R2 D R2 D, which
-cancels 2 with the preceding R2.
+Replace the moves in square brackets with R2 D R2 D, which cancels 2 with the preceding R2.
 Final solution:
 D2 F' D2 U2 F' L2 D R2 D B2 F L2 R' F' D U' (16)
 Inverse scramble
+  
 See on alg.cubing.net
-This very complicated solve actually could have been found in a much easier way, simply by
-using a different DR trigger:
-(U D' F R) //EO (4/4)
-(L2 F' B2) //Setup to trigger (3/7)
-(D' R2 D') //DR (3/10)
-(L2 F U2 D2 F D2) //Finish (6/16)
-But in the end both ways lead to the same solution, which is the only optimal one for that
-scramble.
+This very complicated solve actually could have been found in a much easier way, simply by using a different DR trigger:
+(U D' F R)
+(L2 F' B2)
+(D' R2 D')
+(L2 F U2 D2 F D2)
+//EO (4/4)
+//Setup to trigger (3/7) //DR (3/10)
+//Finish (6/16)
+But in the end both ways lead to the same solution, which is the only optimal one for that scramble.
 -->
-
 
 
 
