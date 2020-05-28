@@ -2,7 +2,7 @@
 title: "最少手数競技入門 - ルービックキューブを少ない手順で解く by Sebastiano Tronto 第三版"
 description: Sebastiano TrontoによるFMCチュートリアル(第三版)の日本語訳です。ルービックキューブの最少手数競技のための入門記事です。
 header:
-  teaser: /assets/img/333fm.jpg
+  teaser: /assets/img/fmc-tutorial-header.png
 permalink: /FMC/FMC-Tutorial/v3/
 redirect_from: ../FMC/FMC-tutorial.html
 layout: single
