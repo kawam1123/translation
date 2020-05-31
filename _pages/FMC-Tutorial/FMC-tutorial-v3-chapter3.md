@@ -1173,7 +1173,7 @@ F2L-1の部分で「置換して短くする」ことの実例を挙げます。
 
 ![](../../../assets/img/alg-3-10-0.png){:width="300px" height="auto" class="img-responsive align-center"}
 
-これを `B R' D R D' B'`と解くことができるので、回答は次のように短くなります！
+これを `B R' D R D' B'`と解くことができるので、解答は次のように短くなります！
 
 新しい解答: `F R L U' B F2 D' F2 D F2 D2 F2 [B R' D R D' B'] L' D L D L2 U`
 {: .text-center}
