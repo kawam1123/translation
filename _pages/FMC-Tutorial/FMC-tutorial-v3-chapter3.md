@@ -1217,7 +1217,5 @@ New solution: F R L U' B F2 D' F2 D F2 D2 F2 [B R' D R D' B'] L' D L D L2 U
 [^3-7-1]: パリティを避けるためにこの条件が必要です。
 [^3-7-2]: 実はコミュテータです。`M E M' E'` = `[M, E]`で、`M E2 M' E2` = `[M, E2]`
 [^3-7-1-1]: 持ち替え記号なしの解答の書き方については、5.1節を参照。
-[^3-9-0]: たとえば Valery Morozov という人物は自分の解法を解説するチュートリアルを作りました。詳しくは[https://www.
-speedsolving.com/forum/threads/a-unique-phase-method-for-a-rubiks-cube.44264/](https://www.
-speedsolving.com/forum/threads/a-unique-phase-method-for-a-rubiks-cube.44264/) を参照してください。
+[^3-9-0]: たとえば Valery Morozov という人物は自分の解法を解説するチュートリアルを作りました。詳しくは[https://www.speedsolving.com/forum/threads/a-unique-phase-method-for-a-rubiks-cube.44264/](https://www.speedsolving.com/forum/threads/a-unique-phase-method-for-a-rubiks-cube.44264/) を参照してください。
 [^3-9-1]: 彼のプロフィールページです。[https://www.speedsolving.com/forum/members/attila.10652/](https://www.speedsolving.com/forum/members/attila.10652/)
