@@ -722,7 +722,7 @@ as you can.
 There isn’t much documentation about this technique, especially for bad pairs. Guus Razoux Schultz did a good analysis for the first scramble of Twente Open 2012 in this post9 on
 speedsolving.com.
 -->
-### 3.7 歪んだセンターで揃える (Solving with Skew Centers)
+### 3.7 歪んだセンターで揃える (Solving with Skew Centers) {#ch3-7}
 コーナーファーストという考え方を踏まえると、このテクニックを自然に理解しやすくなるでしょう。しかし、それ以外の手法でも使うことができるテクニックです。
 
 コーナーとエッジをインサートするやり方はすでに見ましたが、ここではインサートすることでセンターを揃えるやり方を見てみましょう。**ソルブ中にセンターを無視して揃わないままにしておき、偶数手のスライスムーブ[^3-7-1]で揃う状態にします。**すると、`M E M' E'`や`M E2 M' E2`などのアルゴリズムで揃えることができるようになります。[^3-7-2]
@@ -1043,9 +1043,56 @@ tend to give much nicer edge insertions, both with standard algorithms (commutat
 double swaps) and with free slices!
 -->
 
-### 3.9 コーナーファースト (Corner First)
-未着手
-{: .notice--danger}
+### 3.9 コーナーファースト (Corner First) {#corner-first}
+**「コーナーファースト」は厳密に言えば解法ではなく、むしろ解法のクラスと言ったほうがいいものでしょう。**CFと略されることもあります。たとえば、RouxはCF解法と見なすことができます。
+
+ルービックキューブの揃え方を自分自身で見つけた人たちの中では、コーナーファーストのアプローチを取った人が多数派でしょう[^3-9-0]。直感的にキューブを揃えるようとするなら、コーナーとエッジを別々に考えるのは実に理にかなっていて、簡単です。さらに、コーナーを先に揃えてしまえば、エッジをもっと自由に動かして揃えることができるようになります。つまり、内側の層はコーナーに影響することなく動かすことができるのです。
+
+ところが、これはFMCにおいては不利にもなる性質です。内側の層を回転させると2手としてカウントされてしまいます！こういう状況であるにも関わらず、少なくとも2名のFMCエキスパートはコーナーファーストのテクニックを使っています。[Attila Horváth](https://www.worldcubeassociation.org/persons/2012HORV01)と[Javier Cabezuelo Sánchez](https://www.worldcubeassociation.org/persons/2007SANC01)(FMCのスペイン記録保持者)です。この2名が共通して同意するのは、コーナーファーストはFMC向きの素晴らしい解法であると同時に、1時間という制限時間がある状況にはあまり向いていない、ということです。実際、Javierの公式記録のほとんどはDNFです。
+
+Attila Horváthは、ほとんどの場合Guimond(向きを最初に揃える)に近い解法でコーナーを揃えています。このステップではセンターは気にしません。時々プリムーブやNISSを使うこともあります。それから、自分自信の見つけた解答を少しずつ修正していき、内層のムーブをインサートして、少なくとも2-3個のエッジは揃えてしまいます。最後に残ったエッジを揃えますが、特に決まった順番はありません。Attilaは最後までセンターを揃えないままでいることもあり、[3.7節](#ch3-7)で見たようにインサートしてセンターを揃えます。彼の解法をもっと知るには、speedsolving.comのフォーラムで彼の投稿[^3-9-1]を読んで直接聞いてみるのがいいと思います。喜んでテクニックを教えてくれるでしょう。
+
+Attliaのソルブにコメントを付けたものがあります。
+
+{% capture display_text %}
+まずは短い手順でコーナーを揃えます。スクランブルが難しそうなら、いつもはプリムーブなどを使います。
+このケースでは、ノーマルスクランブルに対して D B というプリムーブを見つけました。
+
+コーナーの解法はこうなります。
+B2 D' B' D2 B (Guimondの1ステップ目：コーナーの向きを揃える)
+B2 D' R2 F2 (全てのコーナーを揃える)
+
+プリムーブなしのコーナー解法はこうです。
+B2 D' B' D2 B' D' R2 F2 D B
+
+逆スクランブルでのコーナー解法はこうです。(1つ前のものの逆手順)
+B' D' F2 R2 D B D2 B D B2
+
+このバリエーションとして、より多くのエッジを揃えてみます。
+B2 M b d' M' F2 R2 d2 D' b d2 B (コーナーまで2手、5エッジ揃う)
+
+ここでセンタームーブを除いて、このように書きます。
+B2 L' R U R' D' U L2 D2 F2 B' R U2 R
+
+2手目のMは最初の4エッジに影響しませんが、最後にラッキーを引くために入れています。
+
+次のステップは明らかです。3つのエッジを揃えるだけです。
+U D セットアップでL' F' U2 D2 B Rという3エッジのアルゴリズムを回して、Eスライスのスキップが置きます。あらかじめMをいれておいたおかげです。
+{% endcapture %}
+{% include solvebox.html
+title = ""
+scramble = "U L U' R' F' L' U D R L' B2 D B' D L2 D' R2 U F2 D"
+text = display_text
+solution = "B2 D R' B' D2 U2 F L D' U' R' U2 R' B F2 D2 L2 U' D R U' R' L B2 (24)"
+img_src="../../../assets/img/alg-390.png"
+algcubing=""
+%}
+
+このチュートリアルの初版から、Attliaは徐々に解法を変化させてきました。最初にコーナーの向きを揃えるのは変わりませんが、エッジに注意しながらコーナーを完全に揃えるのではなく、COファーストのドミノリダクションをやるようになっています。たとえば、[Speedsolving.comのこの投稿](https://www.speedsolving.com/forum/threads/the-3x3x3-example-solve-thread.14345/page-280#post-1234805)や AlexandrosとTommasoの書いたドミノリダクションのチュートリアルにある実例を見てみるといいでしょう。
+
+Javierのコーナーの揃え方は少し違います。一段目のコーナーを先に揃えてから、残りの4つを揃えるというやり方です。そして、インサートをしてエッジを揃えようとします。彼は逆スクランブル、プリムーブ、NISSなどのテクニックは使いません。Attliaと異なるのは、コーナーを揃えている最中にもセンターに注目しているということです。[Speedsolving.comのこの投稿](https://www.speedsolving.com/forum/threads/the-fmc-thread.13599/page-111#post-945295)も見るといいでしょう。
+
+AttliaとJavierはCF解法しか使いません。「何の制限もするな」というFMCのセオリーには反していますが、実際素晴らしい記録を残しているのです。
 
 <!--
 3.9 Corners First
@@ -1109,10 +1156,7 @@ post-1234805
 16https://www.speedsolving.com/forum/threads/the-fmc-thread.13599/page-111#post-945295
 -->
 
-### 3.10 交換して短くする (Replace and shorten)
-
-未着手
-{: .notice--danger}
+### 3.10 交換して短くする (Replace and shorten) {#replace-and-shorten}
 
 <!--
 3.10 Replace and shorten
@@ -1153,3 +1197,7 @@ New solution: F R L U' B F2 D' F2 D F2 D2 F2 [B R' D R D' B'] L' D L D L2 U
 [^3-7-1]: パリティを避けるためにこの条件が必要です。
 [^3-7-2]: 実はコミュテータです。`M E M' E'` = `[M, E]`で、`M E2 M' E2` = `[M, E2]`
 [^3-7-1-1]: 持ち替え記号なしの解答の書き方については、5.1節を参照。
+[^3-9-0]: たとえば Valery Morozov という人物は自分の解法を解説するチュートリアルを作りました。詳しくは[https://www.
+speedsolving.com/forum/threads/a-unique-phase-method-for-a-rubiks-cube.44264/](https://www.
+speedsolving.com/forum/threads/a-unique-phase-method-for-a-rubiks-cube.44264/) を参照してください。
+[^3-9-1]: 彼のプロフィールページです。[https://www.speedsolving.com/forum/members/attila.10652/](https://www.speedsolving.com/forum/members/attila.10652/)
