@@ -19,7 +19,7 @@ sidebar:
   nav: "fmc-v3"
 footnote_script: true
 ---
-[戻る：第4章](chapter4){: .btn .btn--inverse} [目次](toc){: .btn .btn--primary} [進む：付録](appendix){: .btn .btn--inverse}
+[戻る：第4章](chapter4){: .btn .btn--inverse} [目次](../v3/){: .btn .btn--primary} [進む：付録](appendix){: .btn .btn--inverse}
 
 <!-- 通常コンテンツここから -->
 ## 公式大会 (In Competition) {#ch5}
@@ -163,7 +163,7 @@ https://en.wikipedia.org/wiki/Tree_(data_structure)
 -->
 <!-- 通常コンテンツここまで-->
 
-[戻る：第4章](chapter4){: .btn .btn--inverse} [目次](toc){: .btn .btn--primary} [進む：付録](appendix){: .btn .btn--inverse}
+[戻る：第4章](chapter4){: .btn .btn--inverse} [目次](../v3/){: .btn .btn--primary} [進む：付録](appendix){: .btn .btn--inverse}
 
 [^5-1-0]: エッジインサーションなどのステップでは、持ち替え記号や二層回し、スライスムーブなどを使うことも役立つ場合があります。しかし、解答を提出する前にはこれらの記号を削除することもできます。
 [^5-1-1]: タイムマネジメントについては6.3節で話します。

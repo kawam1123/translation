@@ -18,7 +18,7 @@ author_profile: false
 sidebar:
 footnote_script: true
 ---
-[戻る：第3章](chapter3){: .btn .btn--inverse} [目次](toc){: .btn .btn--primary} [進む：第5章](chapter5){: .btn .btn--inverse}
+[戻る：第3章](chapter3){: .btn .btn--inverse} [目次](../v3/){: .btn .btn--primary} [進む：第5章](chapter5){: .btn .btn--inverse}
 
 <!-- 通常コンテンツここから -->
 ## 練習方法 (How To Practice)
@@ -141,7 +141,7 @@ https://www.speedsolving.com/wiki/index.php/Summer_Variation
 
 <!-- 通常コンテンツここまで-->
 
-[戻る：第3章](chapter3){: .btn .btn--inverse} [目次](toc){: .btn .btn--primary} [進む：第5章](chapter5){: .btn .btn--inverse}
+[戻る：第3章](chapter3){: .btn .btn--inverse} [目次](../v3/){: .btn .btn--primary} [進む：第5章](chapter5){: .btn .btn--inverse}
 
 [^4-1-1]: タイムマネジメントについては6.3節で話します。
 [^4-1-2]: [https://www.ocf.berkeley.edu/˜dadams/fmc/](https://www.ocf.berkeley.edu/˜dadams/fmc/)

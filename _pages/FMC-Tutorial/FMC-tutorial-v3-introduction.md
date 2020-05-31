@@ -19,7 +19,7 @@ sidebar:
   nav: "fmc-v3"
 footnote_script: true
 ---
-[戻る：翻訳版序文](translation-preface){: .btn .btn--inverse} [目次](toc){: .btn .btn--primary} [進む：第1章](chapter1){: .btn .btn--inverse}
+[戻る：翻訳版序文](translation-preface){: .btn .btn--inverse} [目次](../v3/){: .btn .btn--primary} [進む：第1章](chapter1){: .btn .btn--inverse}
 
 <!-- 通常コンテンツここから -->
 
@@ -132,7 +132,7 @@ Figure 1: Example of official scramble sheet.
 
 <!-- 通常コンテンツここまで-->
 
-[戻る：翻訳版序文](translation-preface){: .btn .btn--inverse} [目次](toc){: .btn .btn--primary} [進む：第1章](chapter1){: .btn .btn--inverse}
+[戻る：翻訳版序文](translation-preface){: .btn .btn--inverse} [目次](../v3/){: .btn .btn--primary} [進む：第1章](chapter1){: .btn .btn--inverse}
 
 
 [^0-1]: 訳注。[World Rubik's Cube Championship 2017](https://www.worldcubeassociation.org/competitions/WC2017)のこと。2年に1回の頻度で開催されるルービックキューブの世界大会を指す。2017年はパリ（フランス）、2019年はメルボルン（オーストラリア）で開催された。

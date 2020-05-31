@@ -19,7 +19,7 @@ sidebar:
   nav: "fmc-v3"
 footnote_script: true
 ---
-[戻る：第1章](chapter1){: .btn .btn--inverse} [目次](toc){: .btn .btn--primary} [進む：第3章](chapter3){: .btn .btn--inverse}
+[戻る：第1章](chapter1){: .btn .btn--inverse} [目次](../v3/){: .btn .btn--primary} [進む：第3章](chapter3){: .btn .btn--inverse}
 
 <!-- 通常コンテンツここから -->
 ## ソルブの進め方
@@ -2063,7 +2063,7 @@ corners: if you complete the F2L and are left with 2 bad edges, you can try this
 
 <!-- 通常コンテンツここまで-->
 
-[戻る：第1章](chapter1){: .btn .btn--inverse} [目次](toc){: .btn .btn--primary} [進む：第3章](chapter3){: .btn .btn--inverse}
+[戻る：第1章](chapter1){: .btn .btn--inverse} [目次](../v3/){: .btn .btn--primary} [進む：第3章](chapter3){: .btn .btn--inverse}
 
 
 [^2-0]: 訳注:ノルウェーのキューバー。2004-2006年にFMCのノルウェーNRを達成。2005年の世界大会でFMC第2位。

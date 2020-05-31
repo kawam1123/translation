@@ -19,7 +19,7 @@ sidebar:
   nav: "fmc-v3"
 footnote_script: true
 ---
-[戻る：第2章](chapter2){: .btn .btn--inverse} [目次](toc){: .btn .btn--primary} [進む：第4章](chapter4){: .btn .btn--inverse}
+[戻る：第2章](chapter2){: .btn .btn--inverse} [目次](../v3/){: .btn .btn--primary} [進む：第4章](chapter4){: .btn .btn--inverse}
 
 <!-- 通常コンテンツここから -->
 
@@ -1137,7 +1137,7 @@ New solution: F R L U' B F2 D' F2 D F2 D2 F2 [B R' D R D' B'] L' D L D L2 U
 -->
 <!-- 通常コンテンツここまで-->
 
-[戻る：第2章](chapter2){: .btn .btn--inverse} [目次](toc){: .btn .btn--primary} [進む：第4章](chapter4){: .btn .btn--inverse}
+[戻る：第2章](chapter2){: .btn .btn--inverse} [目次](../v3/){: .btn .btn--primary} [進む：第4章](chapter4){: .btn .btn--inverse}
 
 [^3-2-3-1]: [https://www.speedsolving.com/threads/the-fmc-thread.13599/page-52#post-667292](https://www.speedsolving.com/threads/the-fmc-thread.13599/page-52#post-667292)
 [^3-2-3-2]: 「スクランブル」を解答に対する解答としてみなすこともできます！

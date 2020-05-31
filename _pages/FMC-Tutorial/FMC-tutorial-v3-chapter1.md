@@ -19,7 +19,7 @@ sidebar:
   nav: "fmc-v3"
 footnote_script: true
 ---
-[戻る：イントロダクション](introduction){: .btn .btn--inverse} [目次](../)){: .btn .btn--primary} [進む：第2章](chapter2){: .btn .btn--inverse}
+[戻る：イントロダクション](introduction){: .btn .btn--inverse} [目次](../v3/){: .btn .btn--primary} [進む：第2章](chapter2){: .btn .btn--inverse}
 
 <!-- 通常コンテンツここから -->
 
@@ -388,7 +388,7 @@ post-1013053.
 14 CHAPTER 1. THINK OUTSIDE THE BOX
 -->
 
-[戻る：イントロダクション](introduction){: .btn .btn--inverse} [目次](toc){: .btn .btn--primary} [進む：第2章](chapter2){: .btn .btn--inverse}
+[戻る：イントロダクション](introduction){: .btn .btn--inverse} [目次](../v3/){: .btn .btn--primary} [進む：第2章](chapter2){: .btn .btn--inverse}
 
 [^1-1-Petrus]: **ブロックビルディングとは、複数のピースからブロックを作り、つなげるテクニックのことです。**CFOPにおけるF2Lとは大きく違うものと見なされがちですが、F2Lも一種のブロックビルディングと見なすことができます。対比すべきものとしては、エッジオリエンテーション(EO、PetrusやZZで用いられる)や「コーナーファースト」、アルゴリズムやコミュテータの利用などがあります。これらのテクニックは全て本書で説明されます。
 [^1-1-Petrus-2]: たとえば、HARCSというは無料で利用できます。 https://www.speedsolving.com/forum/threads/

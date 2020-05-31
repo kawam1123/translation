@@ -19,7 +19,7 @@ sidebar:
   nav: "fmc-v3"
 footnote_script: true
 ---
-[戻る：第5章](chapter5){: .btn .btn--inverse} [目次](toc){: .btn .btn--primary} [進む：付録](appendix-a){: .btn .btn--inverse}
+[戻る：第5章](chapter5){: .btn .btn--inverse} [目次](../v3/){: .btn .btn--primary} [進む：付録](appendix-a){: .btn .btn--inverse}
 
 <!-- 通常コンテンツここから -->
 
@@ -496,4 +496,4 @@ scramble.
 
 <!-- 通常コンテンツここまで-->
 
-[戻る：第5章](chapter5){: .btn .btn--inverse} [目次](toc){: .btn .btn--primary} [進む：付録](appendix-a){: .btn .btn--inverse}
+[戻る：第5章](chapter5){: .btn .btn--inverse} [目次](../v3/){: .btn .btn--primary} [進む：付録](appendix-a){: .btn .btn--inverse}

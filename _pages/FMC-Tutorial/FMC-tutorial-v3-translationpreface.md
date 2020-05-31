@@ -19,7 +19,7 @@ sidebar:
   nav: "fmc-v3"
 footnote_script: true
 ---
-[目次](toc){: .btn .btn--primary} [進む：序文](preface){: .btn .btn--inverse}
+[目次](../v3/){: .btn .btn--primary} [進む：序文](preface){: .btn .btn--inverse}
 
 ## このドキュメントは何？
 本ドキュメントは、**2020年にSebastiano Tronto氏によって書かれたFewest Moves Tutorial(version3.01)を日本語に翻訳したものです。** 2019年12月、本チュートリアルを日本語に翻訳されたものが公開されていなかったため、翻訳プロジェクトをスタートしました。本記事の内容については、最少手数競技に関する知識や用語を確認しながら翻訳を進めていますが、翻訳者の技量不足により不正確である場合があります。あらかじめご了承ください。
@@ -74,4 +74,4 @@ Un ringraziamento speciale a Sebastiano Tronto, una superstar FMC, per aver pubb
 **本ドキュメントは、未完成です。**原文はコメントアウトされた状態で保存されています。翻訳に協力してくださる方は、コメントアウトを外して日本語の翻訳を書き込んでください。翻訳の進捗は[GitHubのリポジトリ](https://github.com/kawam1123/translation)で管理しており、画像ファイルなどもこちらに格納されています。
 
 
-[目次](toc){: .btn .btn--primary} [進む：序文](preface){: .btn .btn--inverse}
+[目次](../v3/){: .btn .btn--primary} [進む：序文](preface){: .btn .btn--inverse}
