@@ -65,10 +65,10 @@ fmc-v3:
   - title : "付録"
     children:
       - title: "付録A: 参考資料"
-        url: /FMC/FMC-Tutorial/v3/appendix-a
+        url: /FMC/FMC-Tutorial/v3/appendix#appendix-a
       - title: "付録B: 回転記号"
-        url: /FMC/FMC-Tutorial/v3/appendix-b
+        url: /FMC/FMC-Tutorial/v3/appendix#appendix-b
       - title: "付録C: 詰めキューブ練習"
-        url: /FMC/FMC-Tutorial/v3/appendix-c
+        url: /FMC/FMC-Tutorial/v3/appendix#appendix-c
       - title: "付録D: ドミノリダクション入門"
-        url: /FMC/FMC-Tutorial/v3/appendix-d
+        url: /FMC/FMC-Tutorial/v3/appendix#appendix-d

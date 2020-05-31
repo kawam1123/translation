@@ -5,17 +5,20 @@ date: 2020-05-28 23:00:00 +0900
 header:
   og_image: /assets/img/fmc-tutorial-header.png
   teaser: /assets/img/fmc-tutorial-header.png
-permalink: /FMC/FMC-Tutorial/v3/
-redirect_from: ../FMC/FMC-tutorial.html
+permalink: /FMC/FMC-Tutorial/v3/singlepage
 layout: single
 classes: wide
 toc: false
 tocright: true
 toc_icon: "cog"
 toc_sticky: true
+
 author_profile: false
 sidebar: true
 footnote_script: true
+
+published: false
+
 ---
 <!--
 訳注：原文はコメントアウトで表示し、必要に応じて参照できるようにしています。

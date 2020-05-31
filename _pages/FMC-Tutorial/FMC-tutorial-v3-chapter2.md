@@ -1,5 +1,5 @@
 ---
-title: 第2章 - 最少手数競技入門 - ルービックキューブを少ない手順で解く by Sebastiano Tronto 第三版
+title: 第2章 ソルブの進め方 - 最少手数競技入門 by Sebastiano Tronto 第三版
 description: Sebastiano TrontoによるFMCチュートリアル(第三版)の日本語訳です。ルービックキューブの最少手数競技のための入門記事です。
 date: 2020-05-31 15:00:00 +0900
 header:

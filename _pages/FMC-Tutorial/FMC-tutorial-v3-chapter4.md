@@ -1,5 +1,5 @@
 ---
-title: 第4章 - 最少手数競技入門 - ルービックキューブを少ない手順で解く by Sebastiano Tronto 第三版
+title: 第4章 練習方法 - 最少手数競技入門 by Sebastiano Tronto 第三版
 description: Sebastiano TrontoによるFMCチュートリアル(第三版)の日本語訳です。ルービックキューブの最少手数競技のための入門記事です。
 date: 2020-05-31 17:00:00 +0900
 header:
@@ -16,13 +16,12 @@ toc_sticky: true
 
 author_profile: false
 sidebar:
-  nav: "fmc-v3"
 footnote_script: true
 ---
 [戻る：第3章](chapter3){: .btn .btn--inverse} [目次](toc){: .btn .btn--primary} [進む：第5章](chapter5){: .btn .btn--inverse}
 
 <!-- 通常コンテンツここから -->
-## 第４章　練習方法 (How To Practice) {#ch4}
+## 練習方法 (How To Practice)
 多くの人は、上達するためには「練習と、練習と、練習が必要です！」と言うでしょう。これは真ですが、練習のやり方を知る必要もあります。ここでは、FMCで上達するための練習方法についていくつかアドバイスをします。
 <!--
 Chapter 5
@@ -61,8 +60,13 @@ Trying for one hour as it was a competition and then keep trying until you reach
 result is a balanced compromise.
 -->
 ### 4.2 ペンと紙を使う (Use pen and paper)
-未着手
-{: .notice--danger}
+絶対に必要なことではありませんが、公式大会と同じように1時間取って練習してみるとよいでしょう。**つまり、PCを使ったりせず、紙とペンを使ってやってみるのです。**ペンで書くときは、小さくて読みやすい文字を心がけましょう。標準的なA4サイズの紙があれば試技一回分としては十分です。私の場合、紙を横向きににして、二列に分けて使いますが、自分に合ったやり方を色々試してみましょう！
+
+<!--
+4.2 Use pen and paper
+It is not strictly necessary, but it is useful to do your practice 1-hour attempts as if they were an official competition. This means also using pen and paper instead of a PC.
+Try to keep a small and readable handwriting. One side of a standard A4 sheet of paper should be enough for one attempt. I usually keep it horizontally and divide it in two columns, but you can try and find a setup that suits you!
+-->
 
 ### 4.3 上級者と比べよう (Compare Yourself to the Masters (and Study their Solves))
 練習したいときは、既にどこかでFMC上級者が解いたスクランブル使ってみるとよいでしょう。あなたの解答と上級者のものを比べて、あなたが気付かなかった点を見つけることができます。全ての秘密を手中に収めましょう！
@@ -82,7 +86,7 @@ updated it in ages.
 -->
 ### 4.4 Hard Scrambles
 「最悪ケースのシナリオ」において何ができるかを知るために、上級者でも難しかったというスクランブルをやってみるのもよいでしょう。[ここ](
-https://www.speedsolving.com/forum/threads/the-fmc-thread.13599/page-88#post-842681)[^5-3]で難しいスクランブルのリストを得られます。
+https://www.speedsolving.com/forum/threads/the-fmc-thread.13599/page-88#post-842681)[^4-4]で難しいスクランブルのリストを得られます。
 <!--
 5.3 Hard Scrambles
 To see what you can do in the “worst case scenario”, I suggest trying out some scrambles that
@@ -119,7 +123,7 @@ a 20 moves scramble is fine.
 ### 4.7 よく学べ！(Study!)
 大事なことを言い忘れていました。**このガイドをよく読んで学び、他のリソースからも学び、既知のものも未知のものも含めてアルゴリズムやテクニックを学びましょう。**私はspeedsolving.comの「FMCスレッド」を二回、最初から最後まで読みました。
 
-**アルゴリズムを学びましょう。**膨大な量のアルゴリズムがあります。たとえば、LLEF(Last Layes Edges First)[^5-6-1]やSummer Variation[^5-6-2]などがあります。繰り返しますが、**単に暗記するのではなく、どのように機能しているのかを理解するようにしましょう。**
+**アルゴリズムを学びましょう。**膨大な量のアルゴリズムがあります。たとえば、LLEF(Last Layes Edges First)[^4-7-1]やSummer Variation[^4-7-2]などがあります。繰り返しますが、**単に暗記するのではなく、どのように機能しているのかを理解するようにしましょう。**
 <!--
 5.6 Study!
 Last but not least. Study this guide, study from other sources, study algorithms and techniques,
@@ -142,3 +146,6 @@ https://www.speedsolving.com/wiki/index.php/Summer_Variation
 [^4-1-1]: タイムマネジメントについては6.3節で話します。
 [^4-1-2]: [https://www.ocf.berkeley.edu/˜dadams/fmc/](https://www.ocf.berkeley.edu/˜dadams/fmc/)
 [^4-1-3]: [https://speedcube.de/forum/showthread.php?tid=5795](https://speedcube.de/forum/showthread.php?tid=5795)
+[^4-4]: [https://www.speedsolving.com/forum/threads/the-fmc-thread.13599/page-88#post-842681](https://www.speedsolving.com/forum/threads/the-fmc-thread.13599/page-88#post-842681)
+[^4-7-1]: [https://www.speedsolving.com/wiki/index.php/LLEF](https://www.speedsolving.com/wiki/index.php/LLEF)
+[^4-7-2]: [https://www.speedsolving.com/wiki/index.php/Summer_Variation](https://www.speedsolving.com/wiki/index.php/Summer_Variation)

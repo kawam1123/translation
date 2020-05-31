@@ -1,5 +1,5 @@
 ---
-title: 第5章 - 最少手数競技入門 - ルービックキューブを少ない手順で解く by Sebastiano Tronto 第三版
+title: 第5章 公式大会 - 最少手数競技入門 by Sebastiano Tronto 第三版
 description: Sebastiano TrontoによるFMCチュートリアル(第三版)の日本語訳です。ルービックキューブの最少手数競技のための入門記事です。
 date: 2020-05-31 17:00:00 +0900
 header:
@@ -15,16 +15,16 @@ toc_icon: "cog"
 toc_sticky: true
 
 author_profile: false
-sidebar:
+sidebar: 
   nav: "fmc-v3"
 footnote_script: true
 ---
-[戻る：第4章](chapter4){: .btn .btn--inverse} [目次](toc){: .btn .btn--primary} [進む：付録](appendix-a){: .btn .btn--inverse}
+[戻る：第4章](chapter4){: .btn .btn--inverse} [目次](toc){: .btn .btn--primary} [進む：付録](appendix){: .btn .btn--inverse}
 
 <!-- 通常コンテンツここから -->
-## 第５章　公式大会 (In Competition) {#ch5}
+## 公式大会 (In Competition) {#ch5}
 <!--
-Chapter 6
+Chapter 5
 In Competition
 -->
 ### 5.1 解答の書き方(How to Write a Solution)
@@ -163,4 +163,8 @@ https://en.wikipedia.org/wiki/Tree_(data_structure)
 -->
 <!-- 通常コンテンツここまで-->
 
-[戻る：第4章](chapter4){: .btn .btn--inverse} [目次](toc){: .btn .btn--primary} [進む：付録](appendix-a){: .btn .btn--inverse}
+[戻る：第4章](chapter4){: .btn .btn--inverse} [目次](toc){: .btn .btn--primary} [進む：付録](appendix){: .btn .btn--inverse}
+
+[^5-1-0]: エッジインサーションなどのステップでは、持ち替え記号や二層回し、スライスムーブなどを使うことも役立つ場合があります。しかし、解答を提出する前にはこれらの記号を削除することもできます。
+[^5-1-1]: タイムマネジメントについては6.3節で話します。
+[^5-3-2]: [木構造 (データ構造)](https://ja.wikipedia.org/wiki/%E6%9C%A8%E6%A7%8B%E9%80%A0_(%E3%83%87%E3%83%BC%E3%82%BF%E6%A7%8B%E9%80%A0))
