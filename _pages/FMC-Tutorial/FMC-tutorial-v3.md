@@ -4133,8 +4133,13 @@ Trying for one hour as it was a competition and then keep trying until you reach
 result is a balanced compromise.
 -->
 ### 4.2 ペンと紙を使う (Use pen and paper)
-未着手
-{: .notice--danger}
+絶対に必要なことではありませんが、公式大会と同じように1時間取って練習してみるとよいでしょう。**つまり、PCを使ったりせず、紙とペンを使ってやってみるのです。**ペンで書くときは、小さくて読みやすい文字を心がけましょう。標準的なA4サイズの紙があれば試技一回分としては十分です。私の場合、紙を横向きににして、二列に分けて使いますが、自分に合ったやり方を色々試してみましょう！
+
+<!--
+4.2 Use pen and paper
+It is not strictly necessary, but it is useful to do your practice 1-hour attempts as if they were an official competition. This means also using pen and paper instead of a PC.
+Try to keep a small and readable handwriting. One side of a standard A4 sheet of paper should be enough for one attempt. I usually keep it horizontally and divide it in two columns, but you can try and find a setup that suits you!
+-->
 
 ### 4.3 上級者と比べよう (Compare Yourself to the Masters (and Study their Solves))
 練習したいときは、既にどこかでFMC上級者が解いたスクランブル使ってみるとよいでしょう。あなたの解答と上級者のものを比べて、あなたが気付かなかった点を見つけることができます。全ての秘密を手中に収めましょう！
