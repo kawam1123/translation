@@ -196,7 +196,7 @@ D2 //Undo premove
 In this case the D2 move could have been done before the OLL, or between OLL and PLL,
 but if you don’t finish the F2L as an intermediate step you have to do it at the end.
 -->
-#### 3.2.2 プリムーブ (Premoves)
+#### 3.2.2 プリムーブ (Premoves) {#premove}
 前の節で示した状況はそこまで難しいものではありませんが、「疑似性 (pseudoness)」を考え
 たまま、ソルブを進めるのは難しいでしょう。**F2Lのペアの認識はすぐにはできませんし、F2Lがズレた状態でのOLLやPLLを認識することを考えると、通常はとんでもないことになります。**たとえば、`R`だけズレたものを考えてみましょう！
 
@@ -548,7 +548,7 @@ D
 the final solution is
 A B D G' F' E' C'
 -->
-### 3.3 Reverse NISS
+### 3.3 Reverse NISS {#ch3-3}
 これは広く知られたテクニックではありませんが、役に立つ場合もあります。「2.4.9節Conjugateをして揃える(Conjugate and Solve)」や「2.6.1節 戻ってやり直そう (Go Back and Change your Solve)」の両方を改善したものと考えてもいいでしょう。
 
 少しだけ(4～8個)ピースを無視すればよいスケルトンになる手順を見つけたとしましょう。ここでインサートして揃えるのが普通ですが、このピースのステッカーの色に一つも共通のものがない（つまり全て違う層にある）ときは、インサートするアルゴリズムを見つけるのが非常に大変でしょう。
@@ -887,7 +887,7 @@ But be careful with rotations!12
 3
 -->
 
-### 3.8 高度なエッジインサーション：フリースライス (Advanced edge insertions: free slices)
+### 3.8 高度なエッジインサーション：フリースライス (Advanced edge insertions: free slices) {#freeslice}
 エッジだけが残ったスケルトンを揃えるには、通常エッジコミュテータをインサートするか、エッジのダブルスワップ(`M2 U2 M2 U2`など)をインサートするかです。エッジを揃えるにはさらに高度はテクニックがあり、`[M2, U R U']`などのエッジコミュテータを特殊ケースとして変換することができます。
 
 考え方を説明しましょう。たとえば`M`というムーブを考えると、これはHTMでは2手になりますが、興味深い性質があります。センターを無視すれば、これはエッジの4点交換をしていることになります。(UF→FD→DB→BU→UF) 同じように、`M2` はエッジの2点交換を繰り返しています。(UF↔DB、UB↔DF)

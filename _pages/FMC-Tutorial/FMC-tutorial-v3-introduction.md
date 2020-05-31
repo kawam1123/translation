@@ -1,7 +1,7 @@
 ---
 title: イントロダクション - 最少手数競技入門 by Sebastiano Tronto 第三版
 description: Sebastiano TrontoによるFMCチュートリアル(第三版)の日本語訳です。ルービックキューブの最少手数競技のための入門記事です。
-date: 2020-05-31 14:00:00 +0900
+date: 2020-05-31 22:00:00 +0900
 header:
   og_image: /assets/img/fmc-tutorial-header.png
   teaser: /assets/img/fmc-tutorial-header.png
@@ -23,7 +23,7 @@ footnote_script: true
 
 <!-- 通常コンテンツここから -->
 
-ルービックキューブをできる限り速く解くということは面白いものですが、**さらに面白いのは一番少ない手数で解くということです。これが最少手数競技のゴールです。** 最少手数競技は**FMC**あるいは**Fewest Moves Challenge**と呼ばれます。
+ルービックキューブに限らずどんなパズルでも同じことですが、できる限り速く解くということは面白いもの。しかし、**さらに面白いのは一番少ない手数で解くということです。これが最少手数競技のゴールです。** 最少手数競技は**FMC**あるいは**Fewest Moves Challenge**と呼ばれます。
 <!--
 Introduction
 Trying to solve a Rubik’s Cube (or, in general, any puzzle) as fast as possible is interesting, but
@@ -31,7 +31,7 @@ it is even more interesting trying to solve it using the fewest moves: this is t
 Moves” solving (or FMC, “Fewest Moves Challenge”).
 -->
 ### 公式大会
-FMCはWCA(World Cube Association、世界キューブ協会)の公式種目として知られています。WCAはルービックキューブやそれに類するパズルの大会を統括する組織です。[WCA大会規則(第E条)](https://www.worldcubeassociation.org/regulations/translations/japanese/#article-E-fewest-moves)に書いてあることをまとめると次のようになります。
+FMCは[WCA(World Cube Association、世界キューブ協会)](https://www.worldcubeassociation.org)の公式種目として知られています。WCAはルービックキューブやそれに類するパズルの大会を統括する組織です。[FMCに関するWCA大会規則(第E条)](https://www.worldcubeassociation.org/regulations/translations/japanese/#article-E-fewest-moves)に書いてあることをまとめると次のようになります。
 
 - スクランブルの書かれた紙が全競技者に与えられる
 - 時間制限は60分
@@ -84,9 +84,8 @@ Peters also holds the World Champion title (2017).
 -->
 
 ### このチュートリアルのゴール
-このチュートリアルのゴールは、**FMCでよい結果を出すためによく知られたテクニックをまとめることです。** いくつかの説明は詳しく記述して実例もつけていますが、単に総合的な説明を書いて学習のためのリソースを提案しているだけのものもあります。
+このチュートリアルのゴールは、**FMCでよい結果を出すためによく知られたテクニックをまとめることです。** いくつかの説明は詳しく記述して実例もつけていますが、単に総合的な説明を記述するだけの箇所もあります。代わりに学習のためのリソースをつけています。
 
-<!--訳者TODO：ここにFMCの解答用紙の画像をつける-->
 ![スクランブルシート](../../../assets/img/fmc_scramble_sheet.png){: class="img-responsive align-center"}
 公式スクランブルシートの例
 {: .text-center}
