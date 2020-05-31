@@ -1727,7 +1727,7 @@ See on alg.cubing.net
 One last thing: in the examples above there are two nice and short EO steps. But this
 doesn’t mean you should discard a longer EO, if you can build a lot of blocks while doing it!
 -->
-#### 2.5.2 ドミノリダクション (Domino Reduction)
+#### 2.5.2 ドミノリダクション (Domino Reduction) {#ch2-5-2}
 **エッジの向きを揃えることは、キューブの持ち替え(rotation)を法とする＜R, L, U, D＞のムーブによる部分集合への還元 (reduction)とみなすことができます。＜R, L, U, D, F2, B2＞と考えても等価です。** 言い換えると、エッジの向きを揃えることでキューブを`R`, `L`, `U`, `D`, `F2`, `B2`だけで解ける状態に変換してしまうことができる、ということです。
 
 このような考え方をすると、＜U, D, R2, L2, F2, B2＞のムーブによる部分集合に還元させるやり方も可能となります。そのためには下記のことが必要となります。
