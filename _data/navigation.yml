@@ -20,7 +20,7 @@ fmc-v3:
   - title: "はじめに"
     children:
       - title: "全体目次"
-        url : /FMC/FMC-Tutorial/v3/toc
+        url : /FMC/FMC-Tutorial/v3/
       - title: "翻訳版序文"
         url : /FMC/FMC-Tutorial/v3/translation-preface
       - title: "序文"

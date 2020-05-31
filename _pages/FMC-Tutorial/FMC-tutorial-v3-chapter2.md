@@ -1435,7 +1435,7 @@ that produce the skeleton and just look at the insertions.
 Another approach to this reverse NISS (Section 3.3), which can help you understand what
 you are actually doing when you insert a sexy move.
 -->
-#### 2.4.9 その他のインサーション: Conjugateをして揃える(Other Insertions: Conjugate and Solve)
+#### 2.4.9 その他のインサーション: Conjugateをして揃える(Other Insertions: Conjugate and Solve) {#ch2-4-9}
 
 **訳注:**  
 **Conjugate**の適切な訳語が思いつかないので保留しています。別の箇所でも書きましたが、数学用語としては共役という意味があります。そのままコンジュゲートとカタカナで訳出してもよいかもしれません。インターチェンジもそのまま使われていますし。

@@ -204,9 +204,9 @@ but if you don’t finish the F2L as an intermediate step you have to do it at t
 
 {% capture display_text %}
 R2 F L2 D' //2x2x2
-B' U2 R' U2 R2 U R //Cross and second pair
-U2 F' U F U' F' U' F //Third pair
-L U2 L' //Fourth pair
+B' U2 R' U2 R2 U R //クロス、2つ目のペア
+U2 F' U F U' F' U' F //3つ目のペア
+L U2 L' //4つ目のペア
 B L' B' U' B U L U' B' //OLL
 F2 D' L2 D F2 R2 D B2 D' R2 //PLL
 {% endcapture %}
@@ -241,11 +241,11 @@ See on alg.cubing.net
 
 {% capture display_text %}
 Premoves: D2 B2
-R2 B' R2 B //2x2x2, found premove B2 here
+R2 B' R2 B //2x2x2, B2というプリムーブをここで見つけた
 D L2 F D F2 //2x2x3
-L' D F' D2 F D' //F2L-1, found premove D2 here
-L' D * L' F L' F' D' L' //All but 3 corners
-* = B L' F L B' L' F' L //Last 3 corners
+L' D F' D2 F D' //F2L-1, D2というプリムーブをここで見つけた
+L' D * L' F L' F' D' L' //3コーナー以外完成
+* = B L' F L B' L' F' L //3コーナー
 {% endcapture %}
 {% include solvebox.html
 title = "プリムーブで修正したスクランブル Example"
@@ -296,7 +296,7 @@ See on alg.cubing.net
 
 **しかし、NISS (Normal-Inverse Scramble Switch)を知っていれば、こういったプリムーブを見つけることはそう難しくありません。** このテクニックは2009年にRazoux Schultzによって最初に考案されました。
 
-ここ説明する概要は、Tomoaki Okayamaによる素晴らしい投稿によるものです。[^3-2-3-1] 最も重要なのことは次のようにまとめられます。
+ここ説明する概要は、Tomoaki Okayamaによる素晴らしい投稿によるものです[^3-2-3-1]。最も重要なのことは次のようにまとめられます。
 
 **スクランブルと解答は、単一のムーブのループ配列として考えることができ、これはキューブの状態にまったく影響しない。**
 {: .notice}
@@ -318,7 +318,10 @@ is the following:
 The scramble and the solution can be thought of as a single move sequence
 loop, that doesn’t affect the cube in any way.
 -->
-たとえば、抽象化して、`A B C D`をスクランブル、`p q r s`をそれに対する解答と考えてみましょう。`A B C D p q r s `という配列で、キューブは完成状態に戻ります。ここで、同じように、「ズラした」配列を考えてみると、どれもキューブの状態に影響しないことがわかります。
+
+これだけではわかりにくいので解説しましょう。たとえば、抽象化して、`A B C D`をスクランブル、`p q r s`をそれに対する解答と考えてみましょう。`A B C D p q r s `という配列で、キューブは完成状態に戻ります。
+
+ここで、同じように、次のような「ズラした」配列をいくつか考えてみると、どれもキューブの状態に影響しないことがわかります。（崩れません）
 
 `s (A B C D p q r s) s'` = `s A B C D p q r`  
 `r s (A B C D p q r s) s' r'` = `r s A B C D`  
@@ -328,7 +331,7 @@ loop, that doesn’t affect the cube in any way.
 . . .
 {: .text-center}
 
-もちろん、逆手順にしてもキューブの状態に影響しません
+もちろん、逆手順にしてもキューブの状態に影響しません。
 
 <!--
 For example, let abstractly A B C D be a scramble and p q r s a solution for it. The
@@ -342,12 +345,13 @@ D p q r s (A B C D p q r s) s' r' q' p' D' = D p q r s A B C
 . . .
 doesn’t affect the cube. Inverse sequences don’t affect the cube either, obviously.
 -->
-`D2`を使う最初のプリムーブの例では、このループは次のようになっていました。
+
+さて、`D2`を使う最初のプリムーブの例では、このループは次のようになっていました。
 
 (スクランブル) `R2 F L2 D'` (他のムーブ) `D2`
 {: .text-center}
 
-言い換えれば、ここでの**「`R2 F L2 D'` (他のムーブ) `D2`」をスクランブルに対する解答と見なすことができるわけです。**つまり、「`R2 F L2 D'` (他のムーブ)」を「`D2` (スクランブル)」に対する解答と見なすこともできます。[^3-2-3-2]
+言い換えれば、ここでの**「`R2 F L2 D'` (他のムーブ) `D2`」をスクランブルに対する解答と見なすことができるわけです。**つまり、「`R2 F L2 D'` (他のムーブ)」を「`D2` (スクランブル)」に対する解答と見なすこともできます[^3-2-3-2]。
 
 プリムーブの仕組みを理解するにはこれで十分だと思います。このことを知っていれば、**通常のスクランブルに対する部分解答と逆スクランブルに対する部分解答を見つけることができるのです。** つまり、どういうことでしょうか？　同じスクランブルで同じように`R2 F`から考えてみましょう。この時点で、(W)を何らかの手順と考えると、解答は`R2 F (W)`となることがわかります。ここでのループ配列は次のようになります。
 <!--
@@ -549,7 +553,7 @@ the final solution is
 A B D G' F' E' C'
 -->
 ### 3.3 Reverse NISS {#ch3-3}
-これは広く知られたテクニックではありませんが、役に立つ場合もあります。「2.4.9節Conjugateをして揃える(Conjugate and Solve)」や「2.6.1節 戻ってやり直そう (Go Back and Change your Solve)」の両方を改善したものと考えてもいいでしょう。
+これは広く知られたテクニックではありませんが、役に立つ場合もあります。「[2.4.9節 Conjugateをして揃える(Conjugate and Solve)](chapter2#ch2-4-9)」や「[2.6.1節 戻ってやり直そう (Go Back and Change your Solve)](chapter2#ch2-6-1)」の両方を改善したものと考えてもいいでしょう。
 
 少しだけ(4～8個)ピースを無視すればよいスケルトンになる手順を見つけたとしましょう。ここでインサートして揃えるのが普通ですが、このピースのステッカーの色に一つも共通のものがない（つまり全て違う層にある）ときは、インサートするアルゴリズムを見つけるのが非常に大変でしょう。
 
