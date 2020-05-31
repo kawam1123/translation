@@ -15,3 +15,60 @@ leftnav:
         url: /FMC/FMC-Tutorial/v3/
       - title: "競技者チュートリアル"
         url: /competitor-tutorial
+
+fmc-v3:
+  - title: "はじめに"
+    children:
+      - title: "全体目次"
+        url : /FMC/FMC-Tutorial/v3/toc
+      - title: "翻訳版序文"
+        url : /FMC/FMC-Tutorial/v3/translation-preface
+      - title: "序文"
+        url : /FMC/FMC-Tutorial/v3/preface
+  - title : "イントロダクション"
+    url: /FMC/FMC-Tutorial/v3/introduction
+  - title : "第1章 既成概念にとらわれずに考える"
+    url: /FMC/FMC-Tutorial/v3/chapter1
+  - title : "第2章 ソルブの進め方"
+    url: /FMC/FMC-Tutorial/v3/chapter2
+    children:
+      - title: ブロックビルディング
+        url: /FMC/FMC-Tutorial/v3/chapter1#blockbuilding
+      - title: スケルトン
+        url: /FMC/FMC-Tutorial/v3/chapter1#find-sckelton
+      - title: コミュテータ
+        url: /FMC/FMC-Tutorial/v3/chapter1#commutators
+      - title: インサーション
+        url: /FMC/FMC-Tutorial/v3/chapter1#insertions
+      
+  - title : "第3章 高度なツール"
+    url: /FMC/FMC-Tutorial/v3/chapter3
+    children:
+      - title: 逆スクランブル
+        url: /FMC/FMC-Tutorial/v3/chapter3#inverse
+      - title: 疑似ブロック、プリムーブ、NISS
+        url: /FMC/FMC-Tutorial/v3/chapter3#niss
+      - title: Reverse NISS
+        url: /FMC/FMC-Tutorial/v3/chapter3#reverse-niss
+      - title: ペア分析
+        url: /FMC/FMC-Tutorial/v3/chapter3#pairs
+      - title: 歪んだセンター
+        url: /FMC/FMC-Tutorial/v3/chapter3#skewed-center
+      - title: フリースライス
+        url: /FMC/FMC-Tutorial/v3/chapter3#freeslice
+      - title: コーナーファースト
+        url: /FMC/FMC-Tutorial/v3/chapter3#cornere-first
+  - title : "第4章 練習方法"
+    url: /FMC/FMC-Tutorial/v3/chapter4
+  - title : "第5章 公式大会"
+    url: /FMC/FMC-Tutorial/v3/chapter5
+  - title : "付録"
+    children:
+      - title: "付録A: 参考資料"
+        url: /FMC/FMC-Tutorial/v3/appendix-a
+      - title: "付録B: 回転記号"
+        url: /FMC/FMC-Tutorial/v3/appendix-b
+      - title: "付録C: 詰めキューブ練習"
+        url: /FMC/FMC-Tutorial/v3/appendix-c
+      - title: "付録D: ドミノリダクション入門"
+        url: /FMC/FMC-Tutorial/v3/appendix-d

@@ -8,7 +8,7 @@ twitter_username: kawam1123
 github_username: kawam1123
 minimal_mistakes_skin: default
 search: true
-breadcrumbs: true
+breadcrumbs: false
 
 # Build settings
 markdown: kramdown
