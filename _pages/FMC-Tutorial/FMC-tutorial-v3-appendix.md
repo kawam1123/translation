@@ -383,19 +383,109 @@ img_src="../../../assets/img/alg-d-1.png"
 
 最初はDR状態にするというのが複雑に見えるでしょう。この手法をどんなときも使えるものだとは思わないほうがよいと思います。1時間という時間制限の試技の中で使えるようになるには、たくさんの練習が必要です。
 
-
 ### D.2 ステップ２：残り全部！ {#step2}
-未着手
-{: .notice--danger}
+DRができてから、解答を完成させるまでには様々なやり方があります。これはドミノリダクションのごく簡単な紹介なので、そのうち2つのやり方だけ書くことにしましょう。
+
 #### D.2.1 ブロックビルディング {#blockbuilding}
-未着手
-{: .notice--danger}
+多くの人がDRができてから最初にやろうとするのは、「いつもの」ソルブのようにブロックビルディングをしてスケルトンを探すことでしょう。ただし、ドミノ手順の組み合わせだけを使ってやります。EOスタートアプローチのソルブと同じように、ピースの向きは既に揃えてあるので、簡単に合わせることができるでしょうし、スキップだって頻繁に起こります！しかし、一長一短があるもので、単純にEOスタートするのと比べると、DRまで持っていくには非常に多くの手数がかかります。
+
+たとえば、この章の最初の方で見たソルブ例の続きを見てみましょう。
+
+
+{% capture display_text %}
+R' F' B L' //EO (4/4)
+D2 F //単純化して 4c2e (2/6)
+D' B2 D' //セットアップ (3/9)
+B' //DR トリガー手順 (1/10)
+D2 L2 U2 //四角をもうひとつ追加 (3/13)
+D2 R2 //さらに追加 (2/15)
+L2 * F2 U' R2 F2 //3c (5/20)
+U B2 U' F2 U B2 U' F2 //3cを揃える (8-3/25)
+{% endcapture %}
+{% include solvebox.html
+title = "DR ステップ2 (ブロックビルディング)"
+scramble = "R' U' F U2 B2 L D2 B2 L' D2 F2 R' F2 L U' R B F2 L' R2 U' R U B R' U' F"
+solution = "R' F' B L' D2 F D' B2 D' B' D2 L2 U D2 R2 L2 U B2 U' F2 U B2 U2 R2 F2 (25)"
+text = display_text
+img_src="../../../assets/img/alg-d-1.png"
+algcubing="https://alg.cubing.net/?setup=R-_U-_F__U2_B2_L__D2_B2_L-_D2_F2_R-_F2_L__U-_R__B__F2_L-_R2_U-_R__U__B__R-_U-_F&alg=R-_F-_B_L-_%2F%2FEO_(4%2F4)%0AD2_F_%2F%2FSimplify_(2%2F6)%0AD-_B2_D-_B-_%2F%2FDR_(4%2F10)%0AD2_L2_U_%2F%2FOne_more_square_(3%2F13)%0AD2_R2_%2F%2FTwo_more_squares_(2%2F15)%0AL2_F2_U-_R2_F2_%2F%2F3c_(5%2F25)"
+%}
+
+DRをしてブロックビルディングをするヒントをもう一つだけ。最も重要なブロック(ペア、四角、3x2x1など)は、U面あるいはD面のピースだけで構成されたブロックです。E列はソルブの最後まで無視しても構いません。後でインサーションを使ったり途中を少し変えたりして揃えればいいだけです。たとえば、`R2 U B2`のような手順があれば `R2 Uw B2`と置き換えてもよいでしょう。これは`R2 D L2`になります。
+
 #### D.2.2 コーナーファースト (Solving corners first) {#corners-first}
-未着手
-{: .notice--danger}
+**ドミノ状態に持っていくのに非常に効率的なアプローチは、いくつかのエッジと一緒にコーナーを揃えてしまうことです。**そうしてから、残ったエッジをインサーションで揃えてしまいましょう。なぜかと言うと、DRが揃ったあとに使える、6~8手の短いエッジ交換手順が多くあるからです。例を見てみましょう。
+
+`M' U2 M U2`, `(R2 Fw2 R2 U)*2`, `(R2 Fw2 R2 Uw)*2`, `(R2 F2 R2 U2)*2` (3エッジ)  
+`(R2 U2)*3`, `(M2 U2)*2`, `R2 F2 R2 U2 F2 R2 F2 U2`, `(R2 F2 Rw2 U)*2` (2e2e)
+
+上で使ったのと同じDRについて、別のスケルトンを考える例を見てみましょう。
+
+{% capture display_text %}
+R' F' B L' //EO (4/4)
+D2 F //単純化して 4c2e (2/6)
+D' B2 D' //セットアップ (3/9)
+B' //DR トリガー手順 (1/10)
+D L2 B2 //“コーナーにバーを作る” (3/13)
+U' L2 U D F2 * D' U //3e (7/20)
+F2 U' F2 R2 B2 D' B2 R2 //3eを揃える (8-4/24)
+{% endcapture %}
+{% include solvebox.html
+title = "DR ステップ2 (コーナーファースト)"
+scramble = "R' U' F U2 B2 L D2 B2 L' D2 F2 R' F2 L U' R B F2 L' R2 U' R U B R' U' F"
+solution = "R' F' B L' D2 F D' B2 D' B' D L2 B2 U' L2 D F2 R2 B2 D' B2 R2 D' U (24)"
+text = display_text
+img_src="../../../assets/img/alg-d-1.png"
+algcubing="https://alg.cubing.net/?alg=R-_F-_B_L-_%2F%2FEO_(4%2F4)%0AD2_F_%2F%2FSimplify_(2%2F6)%0AD-_B2_D-_B-_%2F%2FDR_(4%2F10)%0AD_L2_B2_%2F%2FCorner_bars_(3%2F13)%0AU-_L2_U_D_F2_D-_U_%2F%2F3e_(7%2F20)&setup=R-_U-_F__U2_B2_L__D2_B2_L-_D2_F2_R-_F2_L__U-_R__B__F2_L-_R2_U-_R__U__B__R-_U-_F"
+%}
+
+**「8手のエッジ3点交換をして4手もキャンセルしている、なんてラッキー！」と思うかもしれません。**しかし、これはDRにおいてはよくあることです。この手法でエッジインサーションをすると、コーナーインサーションをするよりもずっと効率的になることがよくあります。
+
 ### D.3 世界記録のソルブ {#world-record}
-未着手
-{: .notice--danger}
+現在のFMC世界記録(単発)は、私がFMC 2019で出した16手です。**これはDRを使ったものです。**ここまで説明してきたテクニックをたくさん使いました。逆スクランブル、複数エッジインサーション（フリースライスも）、センターインサーション、「置換して短くせよ」…
+
+最終解答はとてもラッキーを引きましたが、これはFMCとはどういうものかを代表する結果だったと思います。**多くのことを知れば知るほど、ラッキーを引くチャンスは増えるのだ、ということです！**
+
+{% capture display_text %}
+(U D' F R) //EO (4/4)
+(L2 F' B2) //トリガーにセットアップ (3/7)
+(U' B2 U' [1]) //DR (3/10)
+(R2 B [2] F D2) //5e (4/14)
+[1] = U D' F2 D U' [3] R2 //2e2eにする (6-4/16)
+[2] = E2 //4xにする (2/18)
+[3] = E M2 E' M2 //4xを揃える (8-6/20)
+
+最初の解答:
+D2 F' D2 U2 F' L2 R2 [U' D B2 D B2 U] B2 F L2 R' F' D U'
+
+カッコで書いた箇所を[R2 D R2 D]に入れ替えて短くする。
+一つ前のR2との間で2手キャンセルする
+
+最終解答:
+D2 F' D2 U2 F' L2 D R2 D B2 F L2 R' F' D U' (16)
+{% endcapture %}
+{% include solvebox.html
+title = "世界記録のソルブ"
+scramble = "R' U' F D2 L2 F R2 U2 R2 B D2 L B2 D' B2 L' R' B D2 B U2 L U2 R' U' F"
+inversescramble = "F' U R U2 L' U2 B' D2 B' R L B2 D B2 L' D2 B' R2 U2 R2 F' L2 D2 F' U R"
+solution = "D2 F' D2 U2 F' L2 D R2 D B2 F L2 R' F' D U' (16)"
+text = display_text
+img_src="../../../assets/img/alg-d-1.png"
+algcubing="https://alg.cubing.net/?alg=U_D-_F_R_%2F%2FEO_(4%2F4)%0AL2_F-_B2_%2F%2FSetup_to_trigger_(3%2F7)%0AU-_B2_U-_%2F%2FDR_(3%2F10)%0AR2_B_F_D2_%2F%2F5e_(4%2F14)&setup=F-_U_R_U2_L-_U2_B-_D2_B-_R_L_B2_D_B2_L-_D2_B-_R2_U2_R2_F-_L2_D2_F-_U_R_%2F%2FInverse_scramble"
+%}
+
+このソルブでは非常に複雑なアプローチをしていますが、実は、次のように別のDRトリガーに持ち込むことでずっと簡単に見つけることもできました。
+
+`(U D' F R)` //EO (4/4)  
+`(L2 F' B2)` //トリガーにセットアップ (3/7)  
+`(D' R2 D')` //DR (3/10)  
+`(L2 F U2 D2 F D2)` //完成！ (6/16)
+
+しかし、どちらのやり方で進んでも、最後には同じ解答にたどり着きます。**この16手はこのスクランブルでの唯一の最適解なのです。**
+
+
+
+
 <!--
 Appendix D
 A (way too short) introduction to Domino Reduction
