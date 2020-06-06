@@ -331,7 +331,7 @@ Moves: 7
 -->
 
 ## 付録D ドミノリダクション入門（ちょっとだけ） {#appendix-d}
-ここではドミノリダクションという手法について簡単に紹介します。ここでの説明はAlexandros FokianosとTommaso Raposioが作ったチュートリアルである**[「A Domino Reduction Guide」](https://drive.google.com/drive/folders/1mppifILqu9Bu2phr8zhXGcXasBsSkv_S)**に基づいています。ここに書いてあること以上に詳しいリソースを探しているなら、ここから数ページはスキップしてA Domino Recution Guideを読みましょう！
+ここではドミノリダクションという手法について簡単に紹介します。ここでの説明はAlexandros FokianosとTommaso Raposioが作ったチュートリアルである**[「A Domino Reduction Guide」](https://drive.google.com/drive/folders/1mppifILqu9Bu2phr8zhXGcXasBsSkv_S)**に基づいています。ここに書いてあること以上に詳しいリソースを探しているなら、ここから数ページはスキップしてA Domino Reduction Guideを読みましょう！
 
 ### D.1 ステップ１：ドミノへの還元 {#step1}
 ドミノリダクションの最初のステップは、キューブを`＜U,D,R,L2,F2,B2＞`の手順の組み合わせだけで解ける状態に還元することです。詳しくは[2.5.2節](chapter2#ch2-5-2)を読んでください。このような状態にするには、次のようにします。
