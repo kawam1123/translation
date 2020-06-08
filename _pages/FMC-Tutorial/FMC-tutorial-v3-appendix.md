@@ -19,8 +19,7 @@ sidebar:
   nav: "fmc-v3"
 footnote_script: true
 ---
-[戻る：第5章](chapter5){: .btn .btn--inverse} [目次](../v3/){: .btn .btn--primary} [進む：付録](appendix-a){: .btn .btn--inverse}
-
+[戻る：第5章](chapter5){: .btn .btn--inverse} [目次](../v3/){: .btn .btn--primary}
 <!-- 通常コンテンツここから -->
 
 ## 付録A　その他の参考資料 (Other Resources) {#appendix-a}
@@ -633,6 +632,6 @@ scramble.
 
 <!-- 通常コンテンツここまで-->
 
-[戻る：第5章](chapter5){: .btn .btn--inverse} [目次](../v3/){: .btn .btn--primary} [進む：付録](appendix-a){: .btn .btn--inverse}
+[戻る：第5章](chapter5){: .btn .btn--inverse} [目次](../v3/){: .btn .btn--primary}
 
 [^d-1]: 1つ目の手順は1手だけなのでF2Lには似ていませんが
