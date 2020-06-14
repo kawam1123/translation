@@ -33,13 +33,13 @@ fmc-v3:
     url: /FMC/FMC-Tutorial/v3/chapter2
     children:
       - title: ブロックビルディング
-        url: /FMC/FMC-Tutorial/v3/chapter1#blockbuilding
+        url: /FMC/FMC-Tutorial/v3/chapter2#blockbuilding
       - title: スケルトン
-        url: /FMC/FMC-Tutorial/v3/chapter1#find-sckelton
+        url: /FMC/FMC-Tutorial/v3/chapter2#find-sckelton
       - title: コミュテータ
-        url: /FMC/FMC-Tutorial/v3/chapter1#commutators
+        url: /FMC/FMC-Tutorial/v3/chapter2#commutators
       - title: インサーション
-        url: /FMC/FMC-Tutorial/v3/chapter1#insertions
+        url: /FMC/FMC-Tutorial/v3/chapter2#insertions
       
   - title : "第3章 高度なツール"
     url: /FMC/FMC-Tutorial/v3/chapter3
